@@ -33,7 +33,7 @@ account.h clan.h constants.h decl.h group.h net_link.h \
 object_damage.h protos.h server.h structs.h trigram.h utils.h  BroadwaveClient.h
 
 # default target
-/home/ARPI/tp/bin/server: $(OBJS)
+/home/LRPI/tp/bin/server: $(OBJS)
 	if test -f ../bin || install -v -d ../bin; then \
 $(CC) $(INCLUDE) $(LIBDIRS) -o $@ $(LFLAGS) $(CFLAGS) $(OBJS) $(PFLAGS); fi
 
@@ -52,5 +52,5 @@ clean:
 claim:
 	chmod 771 $(INSTALL_DIR)/bin
 	chmod 771 $(INSTALL_DIR)/bin/server
-	chown Holmes:LRPI $(INSTALL_DIR)/bin
-	chown Holmes:LRPI $(INSTALL_DIR)/bin/server
+	chown LRPI:LRPI $(INSTALL_DIR)/bin
+	chown LRPI:LRPI $(INSTALL_DIR)/bin/server
