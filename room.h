@@ -29,6 +29,8 @@
 #include "structs.h"
 #include "net_link.h"
 
+//test
+
 enum exit_state
   {
     unlocked_and_open,
