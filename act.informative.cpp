@@ -9048,8 +9048,8 @@ do_help (CHAR_DATA * ch, char *argument, int cmd)
                  " use \'#6help on <topic name>#0\'.\n\n"
                  "For a detailed description of HELP searching syntax,"
                  " please see \'#6help help#0\'.\n\n"
-                 "For more detailed information, be sure to check out the ParallelWiki:\n"
-				 "#6http://www.forum.parallelrpi.com/doku.php.#0\n",
+                 "For more detailed information, be sure to check out the SoI-Laketown Wiki:\n"
+				 "#6http://www.laketownrpi.us/wiki#0\n",
                  MUD_NAME,
                  help_available,
                  category_list.empty () ? "#6None#0\n" : category_list.c_str (),

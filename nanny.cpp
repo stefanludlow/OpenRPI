@@ -352,10 +352,12 @@ nanny_login_choice (DESCRIPTOR_DATA * d, char *argument)
 
     else if (*buf == 'C')
     {
-        if (!strstr (d->strClientHostname, "localhost")
-                && reference_ip (NULL, d->strClientHostname))
-        {
-            SEND_TO_Q
+         
+         if (!strstr (d->strClientHostname, "localhost")
+                && reference_ip (NULL, d->strClientHostname)
+		&& FALSE) // Change the FALSE to TRUE to re-enable IP Restrictions -Nimrod
+         {
+           SEND_TO_Q
             ("#1\nWe apologize, but our records indicate that an account has already been\n"
              "registered from this IP. If you have legitimate reasons for obtaining another\n"
              "login account, such as sharing your internet connection with other individuals,\n"
@@ -364,15 +366,19 @@ nanny_login_choice (DESCRIPTOR_DATA * d, char *argument)
              " for assistance.\n\n", d);
             SEND_TO_Q ("Your Selection: ", d);
             return;
-        }
+         }
+        
 
-		SEND_TO_Q ("All new accounts must be created through the Parallel RPI Website.\n"
-				   "The following link will take you to the account creation page:\n"
-				   "http://www.forum.parallelrpi.com", d);
-		SEND_TO_Q ("Your Selection: ", d);
-        //SEND_TO_Q (get_text_buffer (NULL, text_list, "account_application"), d);
-        //SEND_TO_Q ("What would you like to name your login account? ", d);
-        //d->connected = CON_NEW_ACCT_NAME;
+	// remarking out message that sends folks to Parallel website for account creation - Nimrod
+	//	SEND_TO_Q ("All new accounts must be created through the Parallel RPI Website.\n"
+	//			   "The following link will take you to the account creation page:\n"
+	//			   "http://www.forum.parallelrpi.com", d);
+	//	SEND_TO_Q ("Your Selection: ", d);
+	// unremarking out the account application portion, next three lines -Nimrod
+
+        SEND_TO_Q (get_text_buffer (NULL, text_list, "account_application"), d);
+        SEND_TO_Q ("What would you like to name your login account? ", d);
+        d->connected = CON_NEW_ACCT_NAME;
         return;
     }
 
@@ -627,7 +633,7 @@ nanny_check_password (DESCRIPTOR_DATA * d, char *argument)
             }
         }
         SEND_TO_Q
-        ("\n\nIncorrect password - have you forgotten it? Visit here to obtain a new one:\n\nhttp://www.forum.parallelrpi.com",
+        ("\n\nIncorrect password - have you forgotten it? Visit here to obtain a new one:\n\nhttp://www.laketownrpi.us/forums",
          d);
         d->acct->password_attempt++;
         return;
@@ -3339,7 +3345,7 @@ nanny_choose_pc (DESCRIPTOR_DATA * d, char *argument)
     {
         send_to_char ("\n", d->character);
         act
-        ("Welcome to Parallel RPI! If you are a new player and have any questions, please type #6HELP HELPLINE#0. If your questions require an admin, please type #6HELP PETITION#0. We don't bite, promise.",
+        ("Welcome to SoI-Laketown RPI! If you are a new player and have any questions, please type #6HELP HELPLINE#0. If your questions require an admin, please type #6HELP PETITION#0. We don't bite, promise.",
          false, d->character, 0, 0, TO_CHAR | _ACT_FORMAT);
     }
 

@@ -41,7 +41,7 @@ create_guest_avatar (DESCRIPTOR_DATA * d, char *argument)
   {
     if (d->character->in_room == NOWHERE)
     {
-      SEND_TO_Q ("An error has occured - your previous character was not able to be removed. Please email holmes@parallelrpi.com immediately", d);
+      SEND_TO_Q ("An error has occured - your previous character was not able to be removed. Please email staff@laketownrpi.us immediately", d);
       return;
     }
     else

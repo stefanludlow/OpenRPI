@@ -750,7 +750,7 @@ send_email (account * to_acct, const char *cc, char *from, char *subject,
 
 
     fprintf (fp,
-             "\n\n\n\n\n--\nParallel RPI: http://www.forum.parallelrpi.com\n");
+             "\n\n\n\n\n--\nSoI-Laketown RPI: http://www.laketownrpi.us/forums\n");
 
     // Remove this line to remove reference to SoI's weekly automated newsletter
     /*

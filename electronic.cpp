@@ -1259,7 +1259,7 @@ void do_deactivate (CHAR_DATA *ch, char *argument, int cmd)
 	}
 	else
 	{
-		act("$n could not power down - please email a log of this to holmes@parallelrpi.com", false, ch, 0, 0, TO_ROOM | _ACT_FORMAT);
+		act("$n could not power down - please email a log of this to staff@laketownrpi.us", false, ch, 0, 0, TO_ROOM | _ACT_FORMAT);
 		return;
 	}
 
