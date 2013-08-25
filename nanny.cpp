@@ -355,7 +355,7 @@ nanny_login_choice (DESCRIPTOR_DATA * d, char *argument)
          
          if (!strstr (d->strClientHostname, "localhost")
                 && reference_ip (NULL, d->strClientHostname)
-		&& FALSE) // Change the FALSE to TRUE to re-enable IP Restrictions -Nimrod
+		&& 0) // Change the 0 to 1 to re-enable IP Restrictions -Nimrod
          {
            SEND_TO_Q
             ("#1\nWe apologize, but our records indicate that an account has already been\n"
