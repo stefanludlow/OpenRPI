@@ -3449,7 +3449,7 @@ do_idea (CHAR_DATA * ch, char *argument, int cmd)
 
     send_to_char
     ("Please submit your ideas for consideration on our web forum, located at:\n\n"
-     "   #6forum.parallelrpi.com#0\n", ch);
+     "   #6laketownrpi.us/forums#0\n", ch);
     return;
 
 }

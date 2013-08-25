@@ -31,18 +31,18 @@
 
 #define ENCRYPT_PASS		"w01fm3a7"
 
-#define STAFF_EMAIL		"staff@parallelrpi.com"
+#define STAFF_EMAIL		"staff@laketownrpi.us"
 
-#define APP_EMAIL		"staff@parallelrpi.com"
-#define CODE_EMAIL		"staff@parallelrpi.com"
-#define PET_EMAIL		"staff@parallelrpi.com"
-#define REPORT_EMAIL		"staff@parallelrpi.com"
+#define APP_EMAIL		"staff@laketownrpi.us"
+#define CODE_EMAIL		"staff@laketownrpi.us"
+#define PET_EMAIL		"staff@laketownrpi.us"
+#define REPORT_EMAIL		"staff@laketownrpi.us"
 
 #define IMPLEMENTOR_ACCOUNT	"Holmes"
-#define SERVER_LOCATION		"http://parallelrpi.com"
+#define SERVER_LOCATION		"http://laketownrpi.us"
 
-#define MUD_NAME		"Parallel RPI"
-#define MUD_EMAIL		"staff@parallelrpi.com"
+#define MUD_NAME		"SoI-Laketown RPI"
+#define MUD_EMAIL		"staff@laketownrpi.us"
 
 /* Be sure to define without trailing slashes! */
 
