@@ -31,6 +31,8 @@ const char *direct[] =
 // 1 = firearm is wielded
 // 2 = firearm is held.
 
+// Object Data
+
 OBJ_DATA *
 	has_firearm (CHAR_DATA *ch, int cmd)
 {
