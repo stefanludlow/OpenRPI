@@ -2186,21 +2186,22 @@ Original - 30 Aug 13 - Nimrod
 */
 // New Materials added 30 Aug 13 -Nimrod
 #define MAT_NONE	0
-#define MAT_ORGANIC	1
-#define MAT_TEXTILE	2
-#define MAT_METAL	3
-#define MAT_CERAMIC	4
-#define MAT_GLASS	5
-#define MAT_ELECTRONIC	6
-#define MAT_PLASTIC	7
+#define MAT_ORGANIC	8
+#define MAT_TEXTILE	11
+#define MAT_METAL	6
+#define MAT_CERAMIC	2
+#define MAT_GLASS	3
+#define MAT_ELECTRONIC	15
+#define MAT_PLASTIC	14
 #define MAT_PAPER	8
-#define MAT_LIQUID	9
-#define MAT_OTHER	10
+#define MAT_LIQUID	5
+#define MAT_OTHER	13
 
-#define MAT_BONE	11
-#define MAT_MINERAL	12
-#define MAT_STONE	13
-#define MAT_WOOD	14
+#define MAT_BONE	1
+#define MAT_MINERAL	7
+#define MAT_STONE	10
+#define MAT_WOOD	12
+#define MAT_LEATHER	4
 
 
 struct room_extra_data
