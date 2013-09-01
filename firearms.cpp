@@ -3055,11 +3055,11 @@ int
 	{
 		total -= 1;
 	}
-
+	
 	total = MAX(0, total);
 	total = MIN(10, total);
-
-	return total;
+  
+  	return total;
 }
 
 void
@@ -3080,7 +3080,9 @@ void
 	char original[MAX_STRING_LENGTH];
 	sprintf (original, "%s", argument);
 
-
+send_to_char ("Fire is temporarily disabled.  -Nimrod\n", ch);
+		return;
+	
 	if (IS_SWIMMING (ch))
 	{
 		send_to_char ("You can't do that while swimming!\n", ch);
@@ -3113,10 +3115,20 @@ void
 	}
 
 	// Do we have a firearm in either wear_both, wear_prim, or wear_sec?
-	if (!((firearm = get_equip (ch, WEAR_BOTH)) || (firearm = get_equip (ch, WEAR_PRIM))  || (firearm = get_equip (ch, WEAR_SEC))) || (GET_ITEM_TYPE(firearm) != ITEM_FIREARM))
+	if (!((firearm = get_equip (ch, WEAR_BOTH)) || (firearm = get_equip (ch, WEAR_PRIM))  || (firearm = get_equip (ch, WEAR_SEC))) || ((GET_ITEM_TYPE(firearm) != ITEM_FIREARM) && (GET_ITEM_TYPE(firearm) != ITEM_SHORTBOW) ))
 	{
 		send_to_char ("You aren't wielding a firearm.\n", ch);
 		return;
+	}
+	
+	// NIMROD TEST
+	if (GET_ITEM_TYPE(firearm) == ITEM_SHORTBOW)
+	{
+	send_to_char ("It's still a shortbow1.\n", ch);
+	}
+	else
+	{
+	send_to_char ("It's NOT a shortbow!1.\n", ch);
 	}
 
 	// Is it loaded?
@@ -3151,6 +3163,16 @@ void
 
 	if (!ranged)
 	{
+	// NIMROD TEST
+	if (GET_ITEM_TYPE(firearm) == ITEM_SHORTBOW)
+	{
+	send_to_char ("It's still a shortbow2.\n", ch);
+	}
+	else
+	{
+	send_to_char ("It's NOT a shortbow!2.\n", ch);
+	}
+	
 		if (!(target = get_char_room_vis (ch, arg1)))
 		{
 			send_to_char ("Who did you want to target?\n", ch);
@@ -3231,7 +3253,15 @@ void
 				return;
 			}
 		}
-
+// NIMROD TEST
+	if (GET_ITEM_TYPE(firearm) == ITEM_SHORTBOW)
+	{
+	send_to_char ("It's still a shortbow3.\n", ch);
+	}
+	else
+	{
+	send_to_char ("It's NOT a shortbow!3.\n", ch);
+	}
 		if (bodypart >= 0 && get_second_affect (ch, SA_POINTSTRIKE, NULL))
 		{
 			remove_second_affect(get_second_affect (ch, SA_POINTSTRIKE, NULL));
@@ -3250,7 +3280,7 @@ void
 		if (ch->aiming_at && ch->aiming_at != target)
 			sprintf (buf, "Switching targets, you now take aim at #5%s#0%s%s.", char_short (target), (bodypart >= 0 ? "'s " : ""), (bodypart >= 0 ? arg2 : ""));
 		else
-			sprintf (buf, "You take aim at #5%s#0%s%s.", char_short (target), (bodypart >= 0 ? "'s " : ""), (bodypart >= 0 ? arg2 : ""));
+			sprintf (buf, "You take your time to aim at #5%s#0%s%s.", char_short (target), (bodypart >= 0 ? "'s " : ""), (bodypart >= 0 ? arg2 : ""));
 		act (buf, false, ch, 0, 0, TO_CHAR | _ACT_FORMAT);
 		sprintf (buf, "%s#0 takes aim at #5%s#0%s%s with #2%s#0.", char_short (ch), char_short (target), (bodypart >= 0 ? "'s " : ""), (bodypart >= 0 ? arg2 : ""), obj_short_desc(firearm));
 		*buf = toupper (*buf);
@@ -3268,13 +3298,25 @@ void
 		sprintf (buf, "%s#0 takes aim at you%s%s with #2%s#0!",  char_short (ch), (bodypart >= 0 ? "r " : ""), (bodypart >= 0 ? arg2 : ""), obj_short_desc(firearm));
 		*buf = toupper (*buf);
 		sprintf (buffer, "#5%s", buf);
+		
+		// NIMROD TEST
+	if (GET_ITEM_TYPE(firearm) == ITEM_SHORTBOW)
+	{
+	send_to_char ("It's still a shortbow4.\n", ch);
+	}
+	else
+	{
+	send_to_char ("It's NOT a shortbow!4.\n", ch);
+	}
+		
 		if (CAN_SEE (target, ch))
 			act (buffer, false, ch, 0, target, TO_VICT | _ACT_FORMAT);
 
 		ch->aiming_at = target;
-		ch->aim = aim_penalty(ch, firearm, ch->delay_info1);
+		ch->aim = aim_penalty(ch, firearm, ch->delay_info1); // Nimrod bookmark
 		ch->aim -= delay;
 		ch->aim = MAX(ch->aim, 0);
+		ch->aim = 1;
 		if (bodypart >= 0)
 			add_second_affect (SA_POINTSTRIKE, 90, ch, NULL, NULL, bodypart);
 		add_targeted(target, ch);
@@ -3285,11 +3327,21 @@ void
 		target->combat_block = 3;
 
 		criminalize (ch, target, target->room->zone, CRIME_SHOOT);
-
+// NIMROD TEST
+	if (GET_ITEM_TYPE(firearm) == ITEM_SHORTBOW)
+	{
+	send_to_char ("It's still a shortbow7.\n", ch);
+	}
+	else
+	{
+	send_to_char ("It's NOT a shortbow!7.\n", ch);
+	}
 		return;
 	}
+		
 	else if (ranged)
 	{
+	send_to_char ("If we see this there's something wrong.\n", ch);
 		if (!strn_cmp ("north", arg1, strlen (arg1)))
 			dir = 0;
 		else if (!strn_cmp ("east", arg1, strlen (arg1)))
@@ -4998,7 +5050,7 @@ void
 	sprintf (original, "%s", argument);
 
 	argument = one_argument(argument, arg);
-
+    send_to_char( "BEGIN Nimrod checkpoint 4. Beginning of do_firearm_fire.\n", ch );
 	//if (!str_cmp (arg, "volley"))
 	//{
 	//	argument = one_argument(argument, arg);
@@ -5088,22 +5140,35 @@ void
 	*/
 
 	// If we've got an object wielded in our right hand that is of type firearm, that's what we're looking for.
-	if (ch->right_hand && GET_ITEM_TYPE(ch->right_hand) == ITEM_FIREARM &&
+	if (ch->right_hand && 
+		(
+		GET_ITEM_TYPE(ch->right_hand) == ITEM_FIREARM ||
+		GET_ITEM_TYPE(ch->right_hand) == ITEM_SHORTBOW 
+		)
+		&&
 		(ch->right_hand->location == WEAR_BOTH || ch->right_hand->location == WEAR_PRIM || ch->right_hand->location == WEAR_SEC))
 	{
 		firearm = ch->right_hand;
+	    send_to_char ("Nimrod checkpoint: firearm in right hand.\n", ch);
 	}
 
 	// If we've got a firearm in our left hand...
-	if (ch->left_hand && GET_ITEM_TYPE(ch->left_hand) == ITEM_FIREARM &&
+	if (ch->left_hand && 
+		(
+		GET_ITEM_TYPE(ch->left_hand) == ITEM_FIREARM ||
+		GET_ITEM_TYPE(ch->left_hand) == ITEM_SHORTBOW 
+		)
+		&&
 		(ch->left_hand->location == WEAR_BOTH || ch->left_hand->location == WEAR_PRIM || ch->left_hand->location == WEAR_SEC))
 	{
 		// ...and we've already got a firearm i.e. one in our right hand...
 		if (firearm)
 		{
+		send_to_char ("Nimrod checkpoint: firearm in right AND left hand too.\n", ch);
 			// If our firearm in our right hand is wielded primary,
 			if (firearm->location == WEAR_PRIM)
 			{
+			    send_to_char ("Nimrod checkpoint: firearm wielded primarily wear_prim.\n", ch);
 				// And our secondary delay is less than our primary delay
 				if (ch->secondary_delay < ch->primary_delay)
 				{
@@ -5143,23 +5208,33 @@ void
 	if (firearm->o.firearm.setting == 2)
 	{
 		fired = 3;
+		send_to_char ("Nimrod checkpoint: fired = 3.\n", ch);
 	}
 	else if (firearm->o.firearm.setting == 3)
 	{
 		fired = number(7,13);
+		send_to_char ("Nimrod checkpoint: fired = 7,13.\n", ch);
 	}
 	else
 	{
 		fired = 1;
+		send_to_char ("Nimrod checkpoint: fired = 1.\n", ch);
 	}
 
 	// Obviously, if we have less bullets in the gun we want to fire, we fail.
 
-	if (count_bullets(firearm) < fired)
+	// if ((count_bullets(firearm) < fired) && (GET_ITEM_TYPE(firearm) == ITEM_FIREARM)) // Added last part after && - Nimrod
+	// The above crashes the mud.
+	// return;  // NIMROD added for test, remove.
+	
+	if(GET_ITEM_TYPE(firearm) == ITEM_FIREARM)
 	{
-		fired = count_bullets(firearm);
+		if (count_bullets(firearm) < fired)
+		{
+			fired = count_bullets(firearm);
+		}
 	}
-
+	 //return;  // NIMROD added for test, remove.
 	// You can do "shoot person" to shoot at someone in the room, but it's a snap-shot so no aim bonus.
 	if (*arg && str_cmp(arg, "!"))
 	{
@@ -5274,22 +5349,80 @@ void
 			}
 		}
 	}
+send_to_char( "BEGIN Nimrod checkpoint 3. Just before is_direct. END.\n", ch );
 
 	if (IS_DIRECT(firearm))
 	{
-
-		for (tobj = firearm->contains; tobj; tobj = tobj->next_content)
+		send_to_char( "BEGIN Nimrod checkpoint 2.  END.\n", ch );
+	
+		//sprintf(buf, "Nimrod Checkpoint: Missile is: $p, END.");
+		//	act (buf, false, ch, firearm->attached, 0, TO_CHAR | _ACT_FORMAT);
+			
+		sprintf(buf, "Nimrod Checkpoint: Weapon is: $p, END.");
+			act (buf, false, ch, firearm, 0, TO_CHAR | _ACT_FORMAT);
+		sprintf(buf, "Nimrod TESTING TESTING: $p, END.");
+			act (buf, false, ch, firearm, 0, TO_CHAR | _ACT_FORMAT);
+	
+	// Testing for bows - Nimrod
+		if(GET_ITEM_TYPE(firearm) == ITEM_SHORTBOW)
 		{
-			if (GET_ITEM_TYPE(tobj) == ITEM_ROUND)
+			send_to_char( "Item type is a shortbow.\n", ch );
+			
+			//
+			
+			//sprintf (buf2, "%s#0 %sfires #2%s#0, #2%s %s%s#0 shooting towards #5%s#0.",
+			//	char_short(ch), (af ? "rise from cover and " : ""),
+			//	obj_short_desc(firearm), buf6, shell_name[firearm->o.firearm.caliber], (fired == 1 ? "" : "s"), char_short (original_target));
+			//*buf2 = toupper (*buf2);
+			//sprintf (buffer, "#5%s", buf2);
+			//sprintf (buf2, "%s", buffer);
+			//watched_action(ch, buf2, 0, 1);
+
+			//sprintf (buf3, "%s#0 %sfires #2%s#0, #2%s %s%s#0 shooting towards #5you#0!",
+			//	char_short(ch), (af ? "rise from cover and " : ""),
+			//	obj_short_desc(firearm), buf6, shell_name[firearm->o.firearm.caliber], (fired == 1 ? "" : "s"));
+			//*buf3 = toupper (*buf3);
+			//sprintf (buffer, "#5%s", buf3);
+			//sprintf (buf3, "%s", buffer);
+//			ammo[0] = firearm->attached;
+
+	//		sprintf (buf, "You %sloose the bowstring of #2%s#0, shooting #2%s#0 towards #5%s#0.",
+		//		(af ? "rise from cover and " : ""),	obj_short_desc(firearm), obj_short_desc(ammo[0]), char_short (ch->aiming_at));
+			//act (buf, false, ch, firearm , 0, TO_CHAR | _ACT_FORMAT);	
+			
+			//firearm->attached = NULL;
+			//remove_targeted(ch->aiming_at, ch);
+            //ch->aiming_at = NULL;
+			//firearm->location = WEAR_PRIM; // WEAR_BOTH
+				return;
+		
+			
+			//
+			
+		
+			
+		// end of test for bows.  -Nimrod	
+		}
+		else
+		{
+		
+			// Only do this if it's an actual firearm, not a bow
+			for (tobj = firearm->contains; tobj; tobj = tobj->next_content)
 			{
-				ammo[0] = tobj;
-				break;
+				if (GET_ITEM_TYPE(tobj) == ITEM_ROUND)
+				{
+					ammo[0] = tobj;
+					break;
+				}
+			
 			}
 		}
+		send_to_char( "BEGIN Nimrod checkpoint 5.\n", ch );
+			
 
-		if ((ammo[0]) == NULL)
+		if (((ammo[0]) == NULL))
 		{
-			sprintf(buf, "You %ssqueeze the trigger of $p, but nothing happens.", (af ? "rises from cover and " : ""));
+			sprintf(buf, "You %ssqueeze the trigger of $p, but nothing happens Nimrod 5300.", (af ? "rises from cover and " : ""));
 			act (buf, false, ch, firearm, 0, TO_CHAR | _ACT_FORMAT);
 			sprintf(buf2, "$n %ssqueezes the trigger of $p, but nothing happens.\n", (af ? "rises from cover and " : ""));
 			act (buf2, false, ch, firearm, 0, TO_ROOM | _ACT_FORMAT | _ACT_FIREFIGHT);
@@ -5299,6 +5432,7 @@ void
 	}
 	else if (IS_SLING(firearm))
 	{
+		send_to_char( "We've fallen into the is_sling function.  This is bad -Nimrod. \n", ch );
 		for (tobj = firearm->contains; tobj; tobj = tobj->next_content)
 		{
 			if (GET_ITEM_TYPE(tobj) == ITEM_ROUND)
@@ -5322,7 +5456,7 @@ void
 	{
 		if (!(clip = firearm->contains))
 		{
-			sprintf(buf, "You %ssqueeze the trigger of $p, but nothing happens.", (af ? "rises from cover and " : ""));
+			sprintf(buf, "You %ssqueeze the trigger of $p, but nothing happens. Nimrod 5333", (af ? "rises from cover and " : ""));
 			act (buf, false, ch, firearm, 0, TO_CHAR | _ACT_FORMAT);
 			sprintf(buf2, "$n %ssqueezes the trigger of $p, but nothing happens.\n", (af ? "rises from cover and " : ""));
 			act (buf2, false, ch, firearm, 0, TO_ROOM | _ACT_FORMAT | _ACT_FIREFIGHT);
@@ -5332,7 +5466,7 @@ void
 
 		if (!(ammo[0] = clip->contains))
 		{
-			sprintf(buf, "You %ssqueeze the trigger of $p, but nothing happens.", (af ? "rises from cover and " : ""));
+			sprintf(buf, "You %ssqueeze the trigger of $p, but nothing happens. Nimrod 5343", (af ? "rises from cover and " : ""));
 			act (buf, false, ch, firearm, 0, TO_CHAR | _ACT_FORMAT);
 			sprintf(buf2, "$n %ssqueezes the trigger of $p, but nothing happens.\n", (af ? "rises from cover and " : ""));
 			act (buf2, false, ch, firearm, 0, TO_ROOM | _ACT_FORMAT | _ACT_FIREFIGHT);
@@ -5340,6 +5474,7 @@ void
 			return;
 		}
 	}
+send_to_char( "Starting counts of rounds. -Nimrod. \n", ch );
 
 	int counts = 1;
 	int last = 0;
@@ -5387,7 +5522,7 @@ void
 
 	if (firearm->o.firearm.setting == 1 || firearm->o.firearm.setting < 0)
 	{
-		sprintf(buf, "You %ssqueeze the trigger of $p, but nothing happens.", (af ? "rises from cover and " : ""));
+		sprintf(buf, "You %ssqueeze the trigger of $p, but nothing happens. Nimrod 5398", (af ? "rises from cover and " : ""));
 		act (buf, false, ch, firearm, 0, TO_CHAR | _ACT_FORMAT);
 		sprintf(buf2, "$n %ssqueezes the trigger of $p, but nothing happens.\n", (af ? "rises from cover and " : ""));
 		act (buf2, false, ch, firearm, 0, TO_ROOM | _ACT_FORMAT | _ACT_FIREFIGHT);
@@ -5402,6 +5537,7 @@ void
 	attack_mod += (99 - (9 * ch->aim));
 
 	// If you are fully aimed, however, you get a bit of a bonus.
+	send_to_char( "Checking to see how well we're aimed. -Nimrod. \n", ch );
 	if (ch->aim >= 20)
 		pointblank = true;
 	else if (ch->aim == 11)
@@ -5409,11 +5545,14 @@ void
 
 	// Modify our difficuly by weapon 10 for each level we've dropped -
 	// need to take care of yo weapon, fool.
-	attack_mod += object__determine_condition(firearm) * 10;
+	
+	// remarking this next out for shortbow tests.  -Nimrod Need to put back if you want firearms to work properly.
+	// attack_mod += object__determine_condition(firearm) * 10;
 
-	if (!wild)
-	{
-		add_targeted(target, ch);
+	// Remarking next out to prevent wild shots for now during shortbow tests.  -Nimrod
+	 if (!wild)
+	 {
+	 	add_targeted(target, ch);
 		target = ch->aiming_at;
 	}
 
@@ -5500,9 +5639,11 @@ void
 		if (!ch->delay_info1)
 			ch->delay_info1 = 1;
 	}
+	send_to_char ( "Just before checking for RANGED. -Nimrod\n" , ch);
 
 	if (ranged)
 	{
+	send_to_char( "It appears we are ranged at line 5633.  This is bad -Nimrod. \n", ch );
 		if (!ch->delay_who)
 		{
 			send_to_char ("You seem to have lost sight of your quarry.\n", ch);
@@ -5577,6 +5718,7 @@ void
 		if (firearm->o.firearm.use_skill == SKILL_HANDGUN)
 			attack_mod -= 20;
 		else
+		    send_to_char( "Modifying the attack modifier at line 5708.  This is bad -Nimrod. \n", ch );
 			attack_mod -= 10;
 	}
 	// At one room, it's noitcable harder to hit with a handgun or shotgun
@@ -5658,7 +5800,8 @@ void
 	bool combat_involved = false; // Is there some combat going on here?
 	bool table_involved = false;
 	CHAR_DATA *original_target = target;
-
+send_to_char ( "Just before checking for WILD - Nimrod\n" , ch);
+	
 	if (!wild)
 	{
 		if (!pointblank && ch != target)
@@ -5982,7 +6125,7 @@ void
 			sprintf (buf3, "%s", buffer);
 
 
-			sprintf (buf, "You %srelease the pocket of #2%s#0, #2%s %s%s#0 shooting towards #5%s#0.",
+			sprintf (buf, "You %srelease the pocket NIMROD 6003 of #2%s#0, #2%s %s%s#0 shooting towards #5%s#0.",
 				(af ? "rise from cover and " : ""),
 				obj_short_desc(firearm), buf6, shell_name[firearm->o.firearm.caliber], (fired == 1 ? "" : "s"), char_short (original_target));
 		}
@@ -5991,7 +6134,7 @@ void
 	{
 		if (jam == true && fired == 0)
 		{
-			sprintf(buf, "You %ssqueeze the trigger of $p, but nothing happens.", (af ? "rises from cover and " : ""));
+			sprintf(buf, "You %ssqueeze the trigger of $p, but nothing happens. Nimrod 6002", (af ? "rises from cover and " : ""));
 			act (buf, false, ch, firearm, 0, TO_CHAR | _ACT_FORMAT);
 			sprintf(buf2, "$n %ssqueezes the trigger of $p, but nothing happens.\n", (af ? "rises from cover and " : ""));
 			act (buf2, false, ch, firearm, 0, TO_ROOM | _ACT_FORMAT | _ACT_FIREFIGHT);

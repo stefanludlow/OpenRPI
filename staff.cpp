@@ -6032,7 +6032,7 @@ if(	!(ptrBow = get_equip (ch, WEAR_PRIM))
 		/* no arguments specified check off-hand first */
 
 		if ( ptrOffHand ) {
-
+			// Temporarily changing item_missile to item_round - Nimrod 29 Aug 13
 			if ( GET_ITEM_TYPE (ptrOffHand) == ITEM_MISSILE && ptrOffHand->count == 1
 					&& isname( ( bBolts ) ? "bolt" : "arrow", ptrOffHand->name ) ) {
 
@@ -6064,7 +6064,7 @@ if(	!(ptrBow = get_equip (ch, WEAR_PRIM))
 		/* check first for arrow in hand */
 
 		if ( ptrOffHand ) {
-
+				// Temporarily changing item_missile to item_round for testing.  -Nimrod
 			if ( GET_ITEM_TYPE (ptrOffHand) == ITEM_MISSILE && ptrOffHand->count == 1
 					&& isname( strMissile, ptrOffHand->name )
 					&& isname( ( bBolts ) ? "bolt" : "arrow", ptrOffHand->name ) ) {
