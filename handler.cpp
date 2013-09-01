@@ -3656,14 +3656,16 @@ update_delays (void)
         {
 
             obj = get_equip (ch, WEAR_BOTH);
-            if (!obj || GET_ITEM_TYPE(obj) != ITEM_FIREARM)
+			
+            if (!obj || !((GET_ITEM_TYPE(obj) == ITEM_FIREARM) || (GET_ITEM_TYPE(obj) == ITEM_SHORTBOW)))
                 obj = get_equip (ch, WEAR_PRIM);
-            else if (!obj || GET_ITEM_TYPE(obj) != ITEM_FIREARM)
+            else if (!obj || !((GET_ITEM_TYPE(obj) == ITEM_FIREARM) || (GET_ITEM_TYPE(obj) == ITEM_SHORTBOW)))
                 obj = get_equip (ch, WEAR_SEC);
-            else if (!obj || GET_ITEM_TYPE(obj) != ITEM_FIREARM)
+            else if (!obj || !((GET_ITEM_TYPE(obj) == ITEM_FIREARM) || (GET_ITEM_TYPE(obj) == ITEM_SHORTBOW)))
                 obj = NULL;
 
-            // If we are not wielding a firearm, then we need to break our aim.
+            // If we are not wielding a firearm, then we need to break our aim. BAH!
+			
             if (!obj || !ch->aiming_at)
             {
                 broke_aim(ch, 0);
@@ -3695,7 +3697,7 @@ update_delays (void)
                 ch->aim++;
                 if ((ch->in_room == ch->aiming_at->in_room && ch->aim >= 5 && IS_NPC (ch)) || ch->aim >= 11)
                 {
-                    send_to_char ("", ch);
+                    send_to_char ("...", ch);
                     if (IS_NPC (ch) && !ch->descr() && !IS_FROZEN (ch->room->zone))
                     {
                         if (CAN_SEE (ch, ch->aiming_at) &&
@@ -3947,6 +3949,8 @@ update_delays (void)
         // then clear out all of the delay info we might still be carrying on us.
         if (!ch->delay)
             clear_delays(ch);
+			
+			
 
     }
 }

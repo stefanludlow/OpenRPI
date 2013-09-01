@@ -139,6 +139,7 @@ const char *wound_locations[] =
 };
 
 const char *materials[] =
+/* Original - 30 Aug 13 -Nimrod
 {
     "None",
     "Organic",
@@ -153,6 +154,27 @@ const char *materials[] =
     "Other",
     "\n"
 };
+*/
+{
+    "None",
+    "Bone",
+	"Ceramic",
+	"Glass",
+	"Leather",
+	"Liquid",
+	"Metal",
+	"Mineral",
+	"Organic", 
+	"Paper",
+	"Stone", 
+	"Textile", 
+	"Wood", 
+	"Other",
+    "\n"
+};
+
+
+
 
 const char *drinks[] =
 {
@@ -500,7 +522,10 @@ const char *item_types[] =
 	"Artwork",
 	"eBook",
 	"eBreather",
-    "\n"
+	"Shortbow",
+	"Longbow",
+	"Crossbow",
+	"\n"
 };
 
 const char *trap_bits[] =

@@ -447,6 +447,10 @@ typedef signed char shortint;
 // ITEM_E_BOOK uses 91
 
 #define ITEM_E_BREATHER     92
+#define ITEM_SHORTBOW	93
+#define ITEM_LONGBOW	94
+#define ITEM_CROSSBOW	95
+
 
 /* Bitvector For 'wear_flags' */
 
@@ -2166,6 +2170,8 @@ struct shop_data
 };
 
 // MATERIALS
+/*
+Original - 30 Aug 13 - Nimrod
 #define MAT_NONE	0
 #define MAT_ORGANIC	1
 #define MAT_TEXTILE	2
@@ -2177,6 +2183,25 @@ struct shop_data
 #define MAT_PAPER	8
 #define MAT_LIQUID	9
 #define MAT_OTHER	10
+*/
+// New Materials added 30 Aug 13 -Nimrod
+#define MAT_NONE	0
+#define MAT_ORGANIC	1
+#define MAT_TEXTILE	2
+#define MAT_METAL	3
+#define MAT_CERAMIC	4
+#define MAT_GLASS	5
+#define MAT_ELECTRONIC	6
+#define MAT_PLASTIC	7
+#define MAT_PAPER	8
+#define MAT_LIQUID	9
+#define MAT_OTHER	10
+
+#define MAT_BONE	11
+#define MAT_MINERAL	12
+#define MAT_STONE	13
+#define MAT_WOOD	14
+
 
 struct room_extra_data
 {
