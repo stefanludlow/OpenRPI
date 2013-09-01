@@ -2197,10 +2197,10 @@ Original - 30 Aug 13 - Nimrod
 #define MAT_LIQUID	9
 #define MAT_OTHER	10
 
-#define MAT_BONE	1
-#define MAT_MINERAL	7
-#define MAT_STONE	10
-#define MAT_WOOD	12
+#define MAT_BONE	11
+#define MAT_MINERAL	12
+#define MAT_STONE	13
+#define MAT_WOOD	14
 
 
 struct room_extra_data
