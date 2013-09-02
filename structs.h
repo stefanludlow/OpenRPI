@@ -631,7 +631,7 @@ typedef signed char shortint;
 #define EX_ISGATE       ( 1 << 9 )
 
 /* For 'Sector types' */
-
+/* Old Sector Types from Atonement
 #define SECT_INSIDE	    0
 #define SECT_MOONPLAIN		1
 #define SECT_MOONHILL		2
@@ -669,7 +669,75 @@ typedef signed char shortint;
 #define SECT_RUINKITCHEN	34
 #define SECT_RUINDOMICILE	35
 #define SECT_FREEFALL 		36
-
+ - End of old Sectors
+ 
+ Begin new Sectors for SoI-Laketown -Nimrod */
+ 
+ #define SECT_INSIDE		0
+ #define SECT_BOARDWALK		1
+ #define SECT_CITY			2  // Called SETTLEMENT - Nimrod
+ #define SECT_ROAD			3
+ #define SECT_TRAIL			4
+ #define SECT_FIELDS		5
+ #define SECT_WOODS			6
+ #define SECT_FOREST		7
+ #define SECT_HILLS			8
+ #define SECT_MOUNTAIN		9
+ #define SECT_SWAMP			10
+ #define SECT_DOCK			11	
+ #define SECT_CAVE			12
+ #define SECT_PASTURE		13
+ #define SECT_HEATH			14
+ #define SECT_PIT			15
+ #define SECT_LEANTO		16
+ #define SECT_SHALLOW_LAKE	17
+ #define SECT_LAKE			18
+ #define SECT_DEEP_LAKE		19
+ #define SECT_RIVER			20
+ #define SECT_REEF			21
+ #define SECT_UNDERWATER	22
+ #define SECT_MIRKWOOD		23
+ #define SECT_MIRKWOOD_DEEP	24
+ #define SECT_MIRKWOOD_SPIDER	25
+ #define SECT_MIRKWOOD_ELVEN	26
+ #define SECT_MIRKWOOD_VALLEY	27
+ #define SECT_MIRKWOOD_ORC		28
+ #define SECT_DESOLATION		29
+ #define SECT_DOL_GULDUR		30
+ #define SECT_ELVEN_HALLS		31
+ 
+ // Not needed right now but defining to not disturb code.  -Nimrod
+ #define SECT_OCEAN 	99
+ #define SECT_FREEFALL	98
+ #define SECT_RUINSTREET	97
+ #define SECT_RUINHIGHWAY	96
+ #define SECT_OUTSIDE 95
+ /*
+ #define SECT_RUINSHOP
+ #define SECT_RUINGENERATOR
+ #define SECT_RUINCHEMLAB
+ #define SECT_RUINWORKSHOP
+ #define SECT_RUINKITCHEN
+ #define SECT_RUINDOMICILE
+ #define SECT_RUINUTIL
+ #define SECT_RUINSTREET
+ #define SECT_RUINRELIG
+ #define SECT_RUINOUTSIDE
+ #define SECT_RUINOFFICE
+ #define SECT_RUINLAB
+ #define SECT_RUININSIDE
+ #define SECT_RUINHIGHWAY
+ #define SECT_RUINGYM
+ #define SECT_RUINAPARTMENT
+ #define SECT_MONSAND
+ #define SECT_MOONPLAIN
+ #define SECT_MOONMOUNTAIN
+ #define SECT_MOONLIGHT
+ #define SECT_MOONHILL
+ #define SECT_MOONDARK
+ */
+ 
+ 
 /* ---- For new herb stuff ---- */
 
 /* Herb sectors */
