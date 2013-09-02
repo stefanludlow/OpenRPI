@@ -11075,15 +11075,15 @@ void do_map( CHAR_DATA * ch, char *argument, int cmd ) {
 	"", /* Outside */
 	"#5", /* Spaceship */
 	"#3", // RuinGym
-			"#3", // Ruin Utility
-			"#3", // Ruin Religion
-			"#3", // Ruin Shop
-			"#3", // Ruin Generator
-			"#3", // Ruin Chemlab
-			"#3", // Ruin Workshop
-			"#3", // Ruin Kitchen
-			"#3", // Ruin Domicile
-			"#3" // FREEFALL
+	"#3", // Ruin Utility
+	"#3", // Ruin Religion
+	"#3", // Ruin Shop
+	"#3", // Ruin Generator
+	"#3", // Ruin Chemlab
+	"#3", // Ruin Workshop
+	"#3", // Ruin Kitchen
+	"#3", // Ruin Domicile
+	"#3" // FREEFALL
 			};
 	unsigned char i = 0, j = 0, x = 0, y = 0, nInRoom = 0, bSearch = 0;
 	int r = 0;

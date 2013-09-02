@@ -35,29 +35,31 @@ bool
 	if (!room || room == NULL || room->vnum == NOWHERE)
 		return false;
 
-	if (room->sector_type == SECT_MOONCAVE ||
-		room->sector_type == SECT_MOONDARK ||
-		room->sector_type == SECT_MOONHILL ||
-		room->sector_type == SECT_MOONLIGHT ||
-		room->sector_type == SECT_MOONMOUNTAIN ||
-		room->sector_type == SECT_MOONPLAIN ||
-		room->sector_type == SECT_MOONSAND ||
-		room->sector_type == SECT_RUINAPARTMENT ||
-		room->sector_type == SECT_RUINGYM ||
-		room->sector_type == SECT_RUINHIGHWAY ||
-		room->sector_type == SECT_RUININSIDE ||
-		room->sector_type == SECT_RUINLAB ||
-		room->sector_type == SECT_RUINOFFICE ||
-		room->sector_type == SECT_RUINOUTSIDE ||
-		room->sector_type == SECT_RUINRELIG ||
-		room->sector_type == SECT_RUINSTREET ||
-		room->sector_type == SECT_RUINSHOP ||
-		room->sector_type == SECT_RUINGENERATOR ||
-		room->sector_type == SECT_RUINCHEMLAB ||
-		room->sector_type == SECT_RUINWORKSHOP ||
-		room->sector_type == SECT_RUINKITCHEN ||
-		room->sector_type == SECT_RUINDOMICILE ||
-		room->sector_type == SECT_RUINUTIL)
+	if (room->sector_type == SECT_BOARDWALK ||
+		room->sector_type == SECT_CITY ||
+		room->sector_type == SECT_ROAD ||
+		room->sector_type == SECT_TRAIL ||
+		room->sector_type == SECT_FIELDS ||
+		room->sector_type == SECT_WOODS ||
+		room->sector_type == SECT_FOREST ||
+		room->sector_type == SECT_HILLS ||
+		room->sector_type == SECT_MOUNTAIN ||
+		room->sector_type == SECT_SWAMP ||
+		room->sector_type == SECT_DOCK ||
+		room->sector_type == SECT_PASTURE ||
+		room->sector_type == SECT_HEATH ||
+		room->sector_type == SECT_SHALLOW_LAKE ||
+		room->sector_type == SECT_LAKE ||
+		room->sector_type == SECT_DEEP_LAKE ||
+		room->sector_type == SECT_RIVER ||
+		room->sector_type == SECT_REEF ||
+		room->sector_type == SECT_MIRKWOOD ||
+		room->sector_type == SECT_MIRKWOOD_DEEP ||
+		room->sector_type == SECT_MIRKWOOD_SPIDER ||
+		room->sector_type == SECT_MIRKWOOD_ELVEN ||
+		room->sector_type == SECT_MIRKWOOD_VALLEY ||
+		room->sector_type == SECT_MIRKWOOD_ORC ||
+		room->sector_type == SECT_DESOLATION )
 		return true;
 	else
 		return false;
