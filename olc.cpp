@@ -4054,7 +4054,7 @@ void
 do_rlink (CHAR_DATA * ch, char *argument, int cmd)
 {
 
-    char buf1[MAX_INPUT_LENGTH];
+    char buf1[2];
     char buf2[MAX_INPUT_LENGTH];
     int dir;
     int cha_rnum;
@@ -4068,12 +4068,42 @@ do_rlink (CHAR_DATA * ch, char *argument, int cmd)
         send_to_char ("Syntax:  rlink <direction> <room-number>\n", ch);
         return;
     }
-
-    switch (*buf1)
+	
+	if (!strncmp(buf1, "n", 2))
+		dir = 0;
+	else if (!strncmp(buf1, "e", 2))
+		dir = 1;
+	else if (!strncmp(buf1, "s", 2))
+		dir = 2;
+	else if (!strncmp(buf1, "w", 2))
+		dir = 3;
+	else if (!strncmp(buf1, "u", 2))
+		dir = 4;
+	else if (!strncmp(buf1, "d", 2))
+		dir = 5;
+	else if (!strncmp(buf1, "o", 2))
+		dir = 6;
+	else if (!strncmp(buf1, "i", 2))
+		dir = 7;
+	else if (!strncmp(buf1, "ne", 2))
+		dir = 8;
+	else if (!strncmp(buf1, "nw", 2))
+		dir = 9;
+	else if (!strncmp(buf1, "se", 2))
+		dir = 10;
+	else if (!strncmp(buf1, "sw", 2))
+		dir = 11;
+	
+	else
+		dir = -1;
+		
+	
+	/* Can't switch on an array, so I changed them to strncmp commands above to allow for ordinal directions -Nimrod
+    switch (buf1[0])
     {
 
-    case 'n':
-        dir = 0;
+    case 'ne':
+        dir = 8;
         break;
     case 'e':
         dir = 1;
@@ -4096,23 +4126,23 @@ do_rlink (CHAR_DATA * ch, char *argument, int cmd)
     case 'i':
         dir = 7;
         break;
-    case 'j':
-        dir = 8;
+    case 'n':
+        dir = 0;
         break;
-    case 'h':
+    case 'nw':
         dir = 9;
         break;
-    case 'x':
+    case 'se':
         dir = 10;
         break;
-    case 'z':
+    case 'sw':
         dir = 11;
         break;
     default:
         dir = -1;
         break;
     }
-
+   */
     if (dir == -1)
     {
         send_to_char ("What direction is that?\n", ch);
@@ -4619,12 +4649,41 @@ do_redesc (CHAR_DATA * ch, char *argument, int cmd)
 void
 do_rlinkrm (CHAR_DATA * ch, char *argument, int cmd)
 {
-    char buf[256];
+    char buf[2];
     int dir;
     int cha_rnum, old_rnum;
 
     one_argument (argument, buf);
-
+	
+if (!strncmp(buf, "n", 2))
+		dir = 0;
+	else if (!strncmp(buf, "e", 2))
+		dir = 1;
+	else if (!strncmp(buf, "s", 2))
+		dir = 2;
+	else if (!strncmp(buf, "w", 2))
+		dir = 3;
+	else if (!strncmp(buf, "u", 2))
+		dir = 4;
+	else if (!strncmp(buf, "d", 2))
+		dir = 5;
+	else if (!strncmp(buf, "o", 2))
+		dir = 6;
+	else if (!strncmp(buf, "i", 2))
+		dir = 7;
+	else if (!strncmp(buf, "ne", 2))
+		dir = 8;
+	else if (!strncmp(buf, "nw", 2))
+		dir = 9;
+	else if (!strncmp(buf, "se", 2))
+		dir = 10;
+	else if (!strncmp(buf, "sw", 2))
+		dir = 11;
+	
+	else
+		dir = -1;	
+	
+/* Swapping out the switch for strncmp to enable ordinal directions -Nimrod
     switch (*buf)
     {
     case 'n':
@@ -4655,7 +4714,7 @@ do_rlinkrm (CHAR_DATA * ch, char *argument, int cmd)
         dir = -1;
         break;
     }
-
+*/
     if (dir == -1)
     {
         send_to_char ("What direction is that?\n", ch);
