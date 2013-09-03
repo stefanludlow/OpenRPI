@@ -6834,7 +6834,11 @@ do_exits (CHAR_DATA * ch, char *argument, int cmd)
         "Up   ",
         "Down ",
         "Outside",
-        "Inside"
+        "Inside",
+		"Northeast",
+		"Northwest",
+		"Southeast",
+		"Southwest"
     };
 
     if (is_dark (ch->room) &&
