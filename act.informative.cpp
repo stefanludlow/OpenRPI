@@ -10440,7 +10440,7 @@ do_scan (CHAR_DATA * ch, char *argument, int cmd)
     
     // Can't switch on an actual string, so inserting strncmp function instead -Nimrod
     
-    if (!strncmp(buf1, "n", 2))
+    if (!strncmp(buf, "n", 2))
 		dir = 0;
 	else if (!strncmp(buf, "e", 2))
 		dir = 1;
