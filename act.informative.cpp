@@ -10437,7 +10437,39 @@ do_scan (CHAR_DATA * ch, char *argument, int cmd)
         area_scan(ch, cmd);
         return;
     } //if (!*buf)
-
+    
+    // Can't switch on an actual string, so inserting strncmp function instead -Nimrod
+    
+    if (!strncmp(buf, "n", 2))
+		dir = 0;
+	else if (!strncmp(buf, "e", 2))
+		dir = 1;
+	else if (!strncmp(buf, "s", 2))
+		dir = 2;
+	else if (!strncmp(buf, "w", 2))
+		dir = 3;
+	else if (!strncmp(buf, "u", 2))
+		dir = 4;
+	else if (!strncmp(buf, "d", 2))
+		dir = 5;
+	else if (!strncmp(buf, "o", 2))
+		dir = 6;
+	else if (!strncmp(buf, "i", 2))
+		dir = 7;
+	else if (!strncmp(buf, "ne", 2))
+		dir = 8;
+	else if (!strncmp(buf, "nw", 2))
+		dir = 9;
+	else if (!strncmp(buf, "se", 2))
+		dir = 10;
+	else if (!strncmp(buf, "sw", 2))
+		dir = 11;
+	else {
+    send_to_char ("Which direction would you like to scan?\n", ch);
+        return;
+		// dir = -1;
+        }
+/*
     switch (*buf)
     {
     case 'n':
@@ -10468,7 +10500,7 @@ do_scan (CHAR_DATA * ch, char *argument, int cmd)
         send_to_char ("Which direction would you like to scan?\n", ch);
         return;
     }
-
+*/
     exit = EXIT (ch, dir);
 
     if (!exit || !(next_room = vnum_to_room (exit->to_room)))
