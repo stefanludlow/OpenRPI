@@ -3080,7 +3080,7 @@ void
 	char original[MAX_STRING_LENGTH];
 	sprintf (original, "%s", argument);
 
-send_to_char ("Fire is temporarily disabled.  -Nimrod\n", ch);
+ send_to_char ("Fire is temporarily disabled.  -Nimrod\n", ch);
 		return;
 	
 	if (IS_SWIMMING (ch))
@@ -3154,6 +3154,14 @@ send_to_char ("Fire is temporarily disabled.  -Nimrod\n", ch);
 		!strn_cmp ("west", arg1, strlen (arg1)) ||
 		!strn_cmp ("north", arg1, strlen (arg1)) ||
 		!strn_cmp ("south", arg1, strlen (arg1)) ||
+		!strn_cmp ("northeast", arg1, strlen (arg1)) ||
+		!strn_cmp ("northwest", arg1, strlen (arg1)) ||
+		!strn_cmp ("southeast", arg1, strlen (arg1)) ||
+		!strn_cmp ("southwest", arg1, strlen (arg1)) ||
+		!strn_cmp ("ne", arg1, strlen (arg1)) ||
+		!strn_cmp ("nw", arg1, strlen (arg1)) ||
+		!strn_cmp ("se", arg1, strlen (arg1)) ||
+		!strn_cmp ("sw", arg1, strlen (arg1)) ||
 		!strn_cmp ("up", arg1, strlen (arg1)) ||
 		!strn_cmp ("down", arg1, strlen (arg1))) && *arg2)
 	{
@@ -3354,7 +3362,27 @@ send_to_char ("Fire is temporarily disabled.  -Nimrod\n", ch);
 			dir = 4;
 		else if (!strn_cmp ("down", arg1, strlen (arg1)))
 			dir = 5;
-
+		else if (!strn_cmp ("outside", arg1, strlen (arg1)))
+			dir = 6;
+		else if (!strn_cmp ("inside", arg1, strlen (arg1)))
+			dir = 7;
+		else if (!strn_cmp ("northeast", arg1, strlen (arg1)))
+			dir = 8;
+		else if (!strn_cmp ("northwest", arg1, strlen (arg1)))
+			dir = 9;
+		else if (!strn_cmp ("southeast", arg1, strlen (arg1)))
+			dir = 10;
+		else if (!strn_cmp ("southwest", arg1, strlen (arg1)))
+			dir = 11;
+		else if (!strn_cmp ("ne", arg1, strlen (arg1)))
+			dir = 8;
+		else if (!strn_cmp ("nw", arg1, strlen (arg1)))
+			dir = 9;
+		else if (!strn_cmp ("se", arg1, strlen (arg1)))
+			dir = 10;
+		else if (!strn_cmp ("sw", arg1, strlen (arg1)))
+			dir = 11;
+			
 		if (!EXIT (ch, dir))
 		{
 			send_to_char ("There isn't an exit in that direction.\n", ch);
