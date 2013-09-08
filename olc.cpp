@@ -2072,6 +2072,8 @@ do_rdoor (CHAR_DATA * ch, char *argument, int cmd)
 
     half_chop (argument, buf1, buf2);
 
+	dir = lookup_dir(buf1);
+	/* Replaced by lookup_dir call - Nimrod 7 Sept 13
     switch (*buf1)
     {
     case 'n':
@@ -2102,7 +2104,7 @@ do_rdoor (CHAR_DATA * ch, char *argument, int cmd)
         dir = -1;
         break;
     }
-
+*/
     if (dir == -1)
     {
         send_to_char ("What direction is that?\n", ch);
@@ -2135,6 +2137,9 @@ do_rgate (CHAR_DATA * ch, char *argument, int cmd)
     ROOM_DATA *room;
 
     half_chop (argument, buf1, buf2);
+	
+	dir = lookup_dir(buf1);
+	/* Replaced by lookup_dir call - Nimrod 7 Sept 13
 
     switch (*buf1)
     {
@@ -2166,7 +2171,7 @@ do_rgate (CHAR_DATA * ch, char *argument, int cmd)
         dir = -1;
         break;
     }
-
+*/
     if (dir == -1)
     {
         send_to_char ("What direction is that?\n", ch);
@@ -4068,6 +4073,8 @@ do_rlink (CHAR_DATA * ch, char *argument, int cmd)
         send_to_char ("Syntax:  rlink <direction> <room-number>\n", ch);
         return;
     }
+	dir = lookup_dir(buf1);
+	/* Replaced by lookup_dir call - Nimrod 7 Sept 13
 	
 	if (!strncmp(buf1, "n", 2))
 		dir = 0;
@@ -4096,7 +4103,7 @@ do_rlink (CHAR_DATA * ch, char *argument, int cmd)
 	
 	else
 		dir = -1;
-		
+	*/	
 	
 	/* Can't switch on an array, so I changed them to strncmp commands above to allow for ordinal directions -Nimrod
     switch (buf1[0])
@@ -4193,6 +4200,9 @@ do_rcret (CHAR_DATA * ch, char *argument, int cmd)
     }
     dif = atoi (buf2);
 
+	dir = lookup_dir(buf1);
+	/* Replaced by lookup_dir call - Nimrod 7 Sept 13
+	
     switch (*buf1)
     {
     case 'n':
@@ -4223,7 +4233,7 @@ do_rcret (CHAR_DATA * ch, char *argument, int cmd)
         dir = -1;
         break;
     }
-
+*/
     if (dir == -1)
     {
         send_to_char ("What direction is that?\n", ch);
@@ -4269,7 +4279,8 @@ do_rexit (CHAR_DATA * ch, char *argument, int cmd)
         send_to_char ("No room specified...aborting...\n", ch);
         return;
     }
-
+	dir = lookup_dir(buf1);
+	/* Replaced by lookup_dir call - Nimrod 7 Sept 13
     switch (*buf1)
     {
     case 'n':
@@ -4300,7 +4311,7 @@ do_rexit (CHAR_DATA * ch, char *argument, int cmd)
         dir = -1;
         break;
     }
-
+*/
     if (dir == -1)
     {
         send_to_char ("What direction is that?\n", ch);
@@ -4654,8 +4665,11 @@ do_rlinkrm (CHAR_DATA * ch, char *argument, int cmd)
     int cha_rnum, old_rnum;
 
     one_argument (argument, buf);
+
+	dir = lookup_dir(buf);
+	/* Replaced by lookup_dir call - Nimrod 7 Sept 13
 	
-if (!strncmp(buf, "n", 2))
+	if (!strncmp(buf, "n", 2))
 		dir = 0;
 	else if (!strncmp(buf, "e", 2))
 		dir = 1;
@@ -4682,7 +4696,8 @@ if (!strncmp(buf, "n", 2))
 	
 	else
 		dir = -1;	
-	
+*/
+		
 /* Swapping out the switch for strncmp to enable ordinal directions -Nimrod
     switch (*buf)
     {
@@ -4746,6 +4761,9 @@ do_rexitrm (CHAR_DATA * ch, char *argument, int cmd)
     int cha_rnum;
 
     one_argument (argument, buf);
+	
+	dir = lookup_dir(buf);
+	/* Replaced by lookup_dir call - Nimrod 7 Sept 13
 
     switch (*buf)
     {
@@ -4777,7 +4795,7 @@ do_rexitrm (CHAR_DATA * ch, char *argument, int cmd)
         dir = -1;
         break;
     }
-
+*/
     if (dir == -1)
     {
         send_to_char ("What direction is that?\n", ch);
@@ -4948,6 +4966,9 @@ do_rddesc (CHAR_DATA * ch, char *argument, int cmd)
     char buf[256];
 
     one_argument (argument, buf);
+	
+	dir = lookup_dir(buf);
+	/* Replaced by lookup_dir call - Nimrod 7 Sept 13
 
     switch (*buf)
     {
@@ -4979,7 +5000,8 @@ do_rddesc (CHAR_DATA * ch, char *argument, int cmd)
         dir = -1;
         break;
     }
-
+*/
+	
     if (dir == -1)
     {
         send_to_char ("What direction is that?\n", ch);
@@ -5017,7 +5039,13 @@ do_rkey (CHAR_DATA * ch, char *argument, int cmd)
     ROOM_DATA *room;
 
     argument = one_argument (argument, buf);
-
+	
+	if((dir = lookup_dir(buf)) == -1)
+	{
+		send_to_char ("What direction is that?\n", ch);
+        return;
+	}
+	/* Replaced by lookup_dir call - Nimrod 7 Sept 13
     switch (*buf)
     {
     case 'n':
@@ -5049,7 +5077,7 @@ do_rkey (CHAR_DATA * ch, char *argument, int cmd)
         send_to_char ("What direction is that?\n", ch);
         return;
     }
-
+*/
     room = vnum_to_room (ch->in_room);
 
     if (!room->dir_option[dir])
@@ -5842,6 +5870,27 @@ index_lookup (const char* const* index, const char* const lookup)
             return i;
 
     return -1;
+}
+
+
+int
+lookup_dir(char *value) // Nimrod added 7 Sept 13 - Returns directional integer based on text in value.
+{
+	unsigned int i;
+	
+	for (i = 0; i <= LAST_DIR; i++)
+	{
+        if (!strncmp (dirs[i], value, strlen (value)))
+			return i;
+	}
+	// did not find in dirs, now look in short_dirs
+    for (i = 0; i <= LAST_DIR; i++)
+	{
+        if (!strncmp (short_dirs[i], value, strlen (value)))
+			return i;
+    }
+	// did not find at all
+    return -1; 
 }
 
 extern std::multimap<int, variable_data> obj_variable_list;

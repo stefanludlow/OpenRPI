@@ -227,6 +227,24 @@ const char* const dirs[] =
 	"\n"
 };
 
+// short_dirs MUST match dirs[] above -Nimrod
+const char* const short_dirs[] =
+{
+	"n",
+	"e",
+	"s",
+	"w",
+	"u",
+	"d",
+	"o",
+	"i",
+	"ne",
+	"nw",
+	"se",
+	"sw",
+	"\n"
+};
+
 const int rev_dir[] =
 {
 	2,
@@ -578,36 +596,43 @@ void
 				nPartyRoom = 0;
 				return;
 			}
-
-			switch (tolower (strPartyDir[0]))
+			
+			nPartyDir = lookup_dir(strPartyDir);
+			if (nPartyDir == -1)
 			{
-			case 'n':
-				nPartyDir = 0;
-				break;
-			case 'e':
-				nPartyDir = 1;
-				break;
-			case 's':
-				nPartyDir = 2;
-				break;
-			case 'w':
-				nPartyDir = 3;
-				break;
-			case 'u':
-				nPartyDir = 4;
-				break;
-			case 'd':
-				nPartyDir = 5;
-				break;
-			default:
-				{
-					send_to_char
-						("You need to specify the direction of the exit leading into the party.\n",
-						ch);
-					return;
-				}
+				send_to_char("You need to specify the direction of the exit leading into the party.\n",	ch);
+				return;
 			}
-
+			
+			// using lookup_dir instead of switch - Nimrod 7 Sept 13
+			/*
+			 switch (tolower (strPartyDir[0]))
+				{
+					case 'n':
+						nPartyDir = 0;
+						break;
+					case 'e':
+						nPartyDir = 1;
+						break;
+					case 's':
+						nPartyDir = 2;
+						break;
+					case 'w':
+						nPartyDir = 3;
+						break;
+					case 'u':
+						nPartyDir = 4;
+						break;
+					case 'd':
+						nPartyDir = 5;
+						break;
+					default:
+					{
+						send_to_char("You need to specify the direction of the exit leading into the party.\n",	ch);
+						return;
+					}
+				}
+				*/
 			sprintf (msg, "Starting party monitor at room %d for %s\n",
 				nPartyRoom, ptrPartyClan->literal);
 			send_to_gods (msg);
@@ -4847,7 +4872,7 @@ void
 }
 
 int
-	find_door (CHAR_DATA * ch, char *type, char *dir)
+	find_door (CHAR_DATA * ch, char *type, char *dir) // Nimrod bookmark
 {
 	char buf[MAX_STRING_LENGTH];
 	int door;
@@ -5841,6 +5866,15 @@ void
 
 		return;
 	}
+	
+	if((dir = lookup_dir(buf)) == -1)
+	{
+		send_to_char ("You may pick n, s, e, w, ne, nw, se, sw, up or down.\n", ch);
+		return;
+	}
+	
+	
+	/* Replaced by lookup_dir call - Nimrod 7 Sept 13
 
 	switch (*buf)
 	{
@@ -5867,7 +5901,7 @@ void
 			"down.\n", ch);
 		return;
 	}
-
+*/
 	if (!EXIT (ch, dir))
 	{
 		send_to_char ("There is no exit in that direction.\n", ch);
@@ -6374,8 +6408,10 @@ void
 			}
 			return;
 		}
-
-		if ((dir = index_lookup (dirs, buf)) == -1)
+		
+			
+			if((dir = lookup_dir(buf)) < 0)  // Calling lookup_dir instead of index_lookup
+		// if ((dir = index_lookup (dirs, buf)) == -1)  // Nimrod bookmark
 		{
 			send_to_char ("Stand where?\n", ch);
 			return;

@@ -391,6 +391,12 @@ one_argument (char *argument, char *arg_first)
 
     while (isspace (*argument))
         argument++;
+		
+	//if (str_cmp(argument, "ne"))
+	//  return "northeast";
+	// if (str_cmp(argument) "nw"))
+	//  return "northwest";
+	  
 
     return argument;
 }

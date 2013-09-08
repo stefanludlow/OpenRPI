@@ -5845,8 +5845,11 @@ void do_look (CHAR_DATA * ch, char *argument, int cmd)
 
     /* LOOK IN A CERTAIN DIRECTION */
 
-    if (*arg1 && strcasecmp (arg1, "in") != STR_MATCH
-            && (dir = index_lookup (dirs, arg1)) != -1)
+    //if (*arg1 && strcasecmp (arg1, "in") != STR_MATCH
+    //       && (dir = index_lookup (dirs, arg1)) != -1)
+			
+	if (*arg1 && strcasecmp (arg1, "in") != STR_MATCH
+		&& (dir = lookup_dir (arg1)) != -1)
     {
 
         if (!(exit = EXIT (ch, dir)))
@@ -10436,40 +10439,15 @@ do_scan (CHAR_DATA * ch, char *argument, int cmd)
         }
         area_scan(ch, cmd);
         return;
-    } //if (!*buf)
-    
-    // Can't switch on an actual string, so inserting strncmp function instead -Nimrod
-    
-    if (!strncmp(buf, "n", 2))
-		dir = 0;
-	else if (!strncmp(buf, "e", 2))
-		dir = 1;
-	else if (!strncmp(buf, "s", 2))
-		dir = 2;
-	else if (!strncmp(buf, "w", 2))
-		dir = 3;
-	else if (!strncmp(buf, "u", 2))
-		dir = 4;
-	else if (!strncmp(buf, "d", 2))
-		dir = 5;
-	else if (!strncmp(buf, "o", 2))
-		dir = 6;
-	else if (!strncmp(buf, "i", 2))
-		dir = 7;
-	else if (!strncmp(buf, "ne", 2))
-		dir = 8;
-	else if (!strncmp(buf, "nw", 2))
-		dir = 9;
-	else if (!strncmp(buf, "se", 2))
-		dir = 10;
-	else if (!strncmp(buf, "sw", 2))
-		dir = 11;
-	else {
-    send_to_char ("Which direction would you like to scan?\n", ch);
+    } 
+	// dir = lookup_dir(buf);
+	if((dir = lookup_dir(buf)) < 0)
+	{
+		send_to_char ("Which direction would you like to scan?\n", ch);
         return;
-		// dir = -1;
-        }
-/*
+	}
+   
+/*  This can be removed anytime, replaced by lookup_dir function - Nimrod
     switch (*buf)
     {
     case 'n':
