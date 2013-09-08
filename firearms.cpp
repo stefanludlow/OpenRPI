@@ -3080,7 +3080,7 @@ void
 	char original[MAX_STRING_LENGTH];
 	sprintf (original, "%s", argument);
 
- send_to_char ("Fire is temporarily disabled.  -Nimrod\n", ch);
+  send_to_char ("Fire is temporarily disabled.  -Nimrod\n", ch);
 		return;
 	
 	if (IS_SWIMMING (ch))
@@ -3150,6 +3150,10 @@ void
 	*/
 
 	// If our arg1 is n, e, s, w, d or u, we're ranged baby.
+	
+	// this can all be replaced with call to lookup_dir(arg1)
+		
+	/*
 	if ((!strn_cmp ("east", arg1, strlen (arg1)) ||
 		!strn_cmp ("west", arg1, strlen (arg1)) ||
 		!strn_cmp ("north", arg1, strlen (arg1)) ||
@@ -3164,6 +3168,8 @@ void
 		!strn_cmp ("sw", arg1, strlen (arg1)) ||
 		!strn_cmp ("up", arg1, strlen (arg1)) ||
 		!strn_cmp ("down", arg1, strlen (arg1))) && *arg2)
+	*/
+	if ((lookup_dir(arg1) > -1) && *arg2)
 	{
 		ranged = 1;
 		ch->delay_info1 = 1;
@@ -3350,6 +3356,11 @@ void
 	else if (ranged)
 	{
 	send_to_char ("If we see this there's something wrong.\n", ch);
+	
+	// this can all be replaced with call to lookup_dir - Nimrod
+	
+	dir = lookup_dir(arg1);
+	/*
 		if (!strn_cmp ("north", arg1, strlen (arg1)))
 			dir = 0;
 		else if (!strn_cmp ("east", arg1, strlen (arg1)))
@@ -3382,7 +3393,7 @@ void
 			dir = 10;
 		else if (!strn_cmp ("sw", arg1, strlen (arg1)))
 			dir = 11;
-			
+		*/	
 		if (!EXIT (ch, dir))
 		{
 			send_to_char ("There isn't an exit in that direction.\n", ch);

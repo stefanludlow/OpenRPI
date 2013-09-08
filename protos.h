@@ -213,6 +213,7 @@ extern struct msg_data *msg_list;
 extern struct spell_table_data spell_list[];
 extern const struct body_info body_tab[NUM_TABLES][MAX_HITLOC];
 extern const char* const dirs[];
+extern const char* const short_dirs[];
 extern const char* const relative_dirs[];
 extern const int rev_dir[];
 extern int season_time;
@@ -1450,6 +1451,9 @@ int soma_add_affect (CHAR_DATA * ch, int type, int duration, int latency,
 
 int swimming_check (CHAR_DATA * ch);
 char *lookup_string (int value, int reg_index);
+int lookup_dir(char *value); // Nimrod added 7 Sept 13
+
+//char* vc_rand(char *category);
 
 void set_hobbitmail_flags (int id, int flags);
 void setup_registry (void);
