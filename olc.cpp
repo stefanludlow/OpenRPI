@@ -3866,6 +3866,7 @@ do_show (CHAR_DATA * ch, char *argument, int cmd)
             {
                 if (troom->dir_option[n] && troom->dir_option[n]->to_room != -1)
                 {
+				
                     switch (n)
                     {
                     case 0:
@@ -3890,6 +3891,30 @@ do_show (CHAR_DATA * ch, char *argument, int cmd)
                         break;
                     case 5:
                         sprintf (tmp + strlen (tmp), "  D [%5d]",
+                                 troom->dir_option[n]->to_room);
+                        break;
+					case 6:
+						sprintf (tmp + strlen (tmp), " OUT[%5d]",
+                                 troom->dir_option[n]->to_room);
+                        break;
+					case 7:
+						sprintf (tmp + strlen (tmp), " IN [%5d]",
+                                 troom->dir_option[n]->to_room);
+                        break;
+					case 8:
+						sprintf (tmp + strlen (tmp), " NE[%5d]",
+                                 troom->dir_option[n]->to_room);
+                        break;
+					case 9:
+						sprintf (tmp + strlen (tmp), " NW [%5d]",
+                                 troom->dir_option[n]->to_room);
+                        break;
+					case 10:
+						sprintf (tmp + strlen (tmp), " SE[%5d]",
+                                 troom->dir_option[n]->to_room);
+                        break;
+					case 11:
+						sprintf (tmp + strlen (tmp), "  SW [%5d]",
                                  troom->dir_option[n]->to_room);
                         break;
                     }

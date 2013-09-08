@@ -5614,26 +5614,38 @@ void r_door( CHAR_DATA *ch, char *argument ) {
 	ArgumentList = one_argument( ArgumentList, ThisArgument );
 	
 	
-	//	Start lookup_dir replacement for switch below.
-	//direction = lookup_dir(ThisArgument);  //won't work with std::string, dammit.
 	
-	//if (direction == -1)
-	//{
-	//	return;
-	//}
-	//  Replacing with lookup_dir - Nimrod 7 Sept 13
-	
-	
+	//  Added nested switch to account for ordinals - Nimrod 8 Sept 13
 	switch ( ThisArgument[ 0 ] ) {
 		case 'n':
-			direction = 0;
-			break;
+			switch ( ThisArgument[ 1 ] ) {
+				case 'e':
+					direction = 8;
+					break;
+				case 'w':
+					direction = 9;
+					break;
+				default:
+					direction = 0;
+				break;
+			}
+		break;
 		case 'e':
 			direction = 1;
 			break;
 		case 's':
-			direction = 2;
-			break;
+			switch ( ThisArgument[ 1 ] ) {
+				case 'e':
+					direction = 10;
+					break;
+				case 'w':
+					direction = 11;
+					break;
+				default:
+					direction = 2;
+					break;
+			}
+		break;
 		case 'w':
 			direction = 3;
 			break;
