@@ -1366,6 +1366,12 @@ void
 	}
 	else
 	{
+	
+	dir = lookup_dir(buf);
+		
+	/*  Replacing with lookup_dir - Nimrod 7 Sept 13
+	
+	
 		switch (*buf)
 		{
 		case 'n':
@@ -1390,6 +1396,7 @@ void
 			dir = -1;
 			break;
 		}
+		*/
 	}
 
 	af = get_affect (ch, AFFECT_SHADOW);
