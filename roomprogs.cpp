@@ -1072,6 +1072,18 @@ void reval( CHAR_DATA * ch, char * arg, room_prog_var *& variable_list ) {
 
 	else if ( !strncmp( sarg, "door", 4 ) ) {
 		int direction;
+		
+	//	Start lookup_dir replacement for switch below.
+		if((dir = lookup_dir(rbuf)) < 0)
+	{
+		ifin[ nNest ] = 1;
+		return;
+    }
+	
+	//  Replacing with lookup_dir - Nimrod 7 Sept 13 
+		
+		
+		/*
 		switch ( rbuf[ 0 ] ) {
 			case 'n':
 				direction = 0;
@@ -1095,6 +1107,8 @@ void reval( CHAR_DATA * ch, char * arg, room_prog_var *& variable_list ) {
 				ifin[ nNest ] = 1;
 				return;
 		}
+		
+		*/
 
 		if ( !EXIT(ch, direction)
 		)
@@ -1748,6 +1762,19 @@ void reval( CHAR_DATA * ch, char * arg, room_prog_var *& variable_list ) {
 			virt = ch->room->vnum;
 		else
 			virt = atol( rbuf );
+			
+			//	Start lookup_dir replacement for switch below.
+			if((dir = lookup_dir(dbuf)) < 0)
+			{
+				system_log( "Unknown direction in reval::link", true );
+				ifin[ nNest ] = 1;
+				return;
+			}
+			//  Replacing with lookup_dir - Nimrod 7 Sept 13
+			
+			
+			
+		/*	
 		switch ( *dbuf ) {
 			case 'n':
 				dir = 0;
@@ -1772,7 +1799,7 @@ void reval( CHAR_DATA * ch, char * arg, room_prog_var *& variable_list ) {
 				ifin[ nNest ] = 1;
 				return;
 		}
-
+		*/
 		if ( !( troom = vnum_to_room( virt )) ) {
 			system_log( "ERROR: tar room not found in reval::link", true );
 			ifin[ nNest ] = 1;
@@ -3581,7 +3608,13 @@ void r_link( CHAR_DATA * ch, char *argument ) {
 		system_log( "ERROR: Missing args in r_link", true );
 		return;
 	}
-
+	
+	//	Start lookup_dir replacement for switch below.
+	dir = lookup_dir(buf2);
+	//  Replacing with lookup_dir - Nimrod 7 Sept 13
+	
+	
+	/*
 	switch ( *buf2 ) {
 		case 'n':
 			dir = 0;
@@ -3605,7 +3638,7 @@ void r_link( CHAR_DATA * ch, char *argument ) {
 			dir = -1;
 			break;
 	}
-
+	*/
 	if ( dir == -1 ) {
 		system_log( "ERROR: Invalid direction in r_link", true );
 		return;
@@ -3662,7 +3695,11 @@ void r_exit( CHAR_DATA * ch, char *argument ) {
 		system_log( "ERROR: Missing args in r_link", true );
 		return;
 	}
-
+	
+	//	Start lookup_dir replacement for switch below.
+	dir = lookup_dir(buf2);
+	//  Replacing with lookup_dir - Nimrod 7 Sept 13
+	/*
 	switch ( *buf2 ) {
 		case 'n':
 			dir = 0;
@@ -3686,7 +3723,7 @@ void r_exit( CHAR_DATA * ch, char *argument ) {
 			dir = -1;
 			break;
 	}
-
+	*/
 	if ( dir == -1 ) {
 		system_log( "ERROR: Invalid direction in r_link", true );
 		return;
@@ -4021,7 +4058,12 @@ void r_unlink( CHAR_DATA * ch, char *argument ) {
 		location = ch->room->vnum;
 	else
 		location = atoi( arg2 );
-
+		
+		//	Start lookup_dir replacement for switch below.
+		dir = lookup_dir(arg1);
+			
+			//  Replacing with lookup_dir - Nimrod 7 Sept 13
+	/*
 	switch ( *arg1 ) {
 		case 'n':
 			dir = 0;
@@ -4045,7 +4087,7 @@ void r_unlink( CHAR_DATA * ch, char *argument ) {
 			dir = -1;
 			break;
 	}
-
+	*/
 	if ( dir == -1 ) {
 		system_log( "ERROR: Invalid direction in r_unlink", true );
 		return;
@@ -4080,7 +4122,11 @@ void r_unexit( CHAR_DATA * ch, char *argument ) {
 		location = ch->room->vnum;
 	else
 		location = atoi( arg2 );
-
+		
+		//	Start lookup_dir replacement for switch below.
+		dir = lookup_dir(arg1);
+		//  Replacing with lookup_dir - Nimrod 7 Sept 13
+	/*
 	switch ( *arg1 ) {
 		case 'n':
 			dir = 0;
@@ -4104,7 +4150,7 @@ void r_unexit( CHAR_DATA * ch, char *argument ) {
 			dir = -1;
 			break;
 	}
-
+	*/
 	if ( dir == -1 ) {
 		system_log( "ERROR: Invalid direction in r_unexit", true );
 		return;
@@ -4354,7 +4400,12 @@ void r_lock( CHAR_DATA * ch, char *argument ) {
 	half_chop( argument, arg1, arg2 );
 
 	virt = atol( arg2 );
-
+	
+	//	Start lookup_dir replacement for switch below.
+	dir = lookup_dir(arg1);
+	//  Replacing with lookup_dir - Nimrod 7 Sept 13
+	
+	/*
 	switch ( *arg1 ) {
 		case 'n':
 			dir = 0;
@@ -4378,7 +4429,7 @@ void r_lock( CHAR_DATA * ch, char *argument ) {
 			dir = -1;
 			break;
 	}
-
+	*/
 	if ( dir == -1 ) {
 		system_log( "ERROR: Invalid direction in r_unexit", true );
 		return;
@@ -5561,6 +5612,18 @@ void r_door( CHAR_DATA *ch, char *argument ) {
 		room = atoi( ThisArgument.c_str() );
 
 	ArgumentList = one_argument( ArgumentList, ThisArgument );
+	
+	
+	//	Start lookup_dir replacement for switch below.
+	//direction = lookup_dir(ThisArgument);  //won't work with std::string, dammit.
+	
+	//if (direction == -1)
+	//{
+	//	return;
+	//}
+	//  Replacing with lookup_dir - Nimrod 7 Sept 13
+	
+	
 	switch ( ThisArgument[ 0 ] ) {
 		case 'n':
 			direction = 0;
@@ -5583,7 +5646,7 @@ void r_door( CHAR_DATA *ch, char *argument ) {
 		default:
 			return;
 	}
-
+	
 	if ( !vnum_to_room( room ) || !vnum_to_room( room )->dir_option[ direction ] )
 		return;
 

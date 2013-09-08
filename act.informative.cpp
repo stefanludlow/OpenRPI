@@ -5378,6 +5378,14 @@ do_search (CHAR_DATA * ch, char *argument, int cmd)
         dir = -1;
     else
     {
+	
+	if((dir = lookup_dir(buf)) < 0)
+	{
+		send_to_char ("That's not a valid direction.\n", ch);
+        return;
+	}
+	
+	/*  Replacing with lookup_dir - Nimrod 7 Sept 13
         switch (*buf)
         {
         case 'n':
@@ -5402,6 +5410,7 @@ do_search (CHAR_DATA * ch, char *argument, int cmd)
             send_to_char ("That's not a valid direction.\n", ch);
             return;
         }
+		*/
     }
 
     act ("$n carefully searches the area.", true, ch, 0, 0, TO_ROOM | _ACT_SEARCH);
