@@ -7346,7 +7346,8 @@ void do_day( CHAR_DATA * ch, char *argument, int cmd ) {
 		times = 1;
 
 	for ( i = 1; i <= times; i++ ) {
-		time_info.hour += 84;
+		// Nimrod remarked out next line for time update 11 Sept 13
+		//time_info.hour += 84;
 		next_hour_update = time( 0 );
 		next_minute_update = time( 0 );
 		weather_and_time( 1 );

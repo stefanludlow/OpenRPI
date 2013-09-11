@@ -4012,17 +4012,20 @@ struct encumberance_info
 #define TRIG_PRISONER	11
 #define TRIG_KNOCK		12
 
-#define GAME_BASE_YEAR		83   // Translates to BETA start of 147 years since founding of NP
+#define GAME_BASE_YEAR		2697   // Battle of 5 armies was 2941  189
 #define GAME_SECONDS_BEGINNING  100	/* Subtr 10800 to ++gametime 12hr */
-#define GAME_SECONDS_PER_YEAR	31104000
-#define GAME_SECONDS_PER_MONTH	2592000
-#define GAME_SECONDS_PER_DAY	86400
-#define GAME_SECONDS_PER_HOUR	3600
+#define GAME_SECONDS_PER_YEAR	31104000 // real life seconds in a year
+#define GAME_SECONDS_PER_MONTH	2592000 // real life seconds in a month
+#define GAME_SECONDS_PER_DAY	86400 //real life seconds in a day
+#define GAME_SECONDS_PER_HOUR	3600 // real life seconds in an hour
 
 #define MOON_SECONDS_PER_HOUR	3600
-#define MOON_SECONDS_PER_DAY	302400   // 84 hours per phase
-#define MOON_SECONDS_PER_MONTH	2419200  // 8 phases per Lunar day
-#define MOON_SECONDS_PER_YEAR	31449600 // 13 Days per Year
+#define MOON_SECONDS_PER_DAY	86400   // 84 hours per phase
+#define MOON_SECONDS_PER_MONTH	2592000  // 8 phases per Lunar day
+#define MOON_SECONDS_PER_YEAR	31104000 // 12 
+
+#define MOON_CYCLE 2881443 // 29 days, 12 hours, 44 minutes and 3 seconds)
+#define MOON_ORBIT 2388720 // 27.3days
 
 
 #define MODE_COMMAND		(1 << 0)

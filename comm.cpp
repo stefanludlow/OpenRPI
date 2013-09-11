@@ -639,6 +639,7 @@ game_loop (int s)
 
         if (!(pulse % SECOND_PULSE))
         {
+			 
             second_affect_update ();
             if (pending_reboot)
                 check_reboot ();
@@ -692,6 +693,9 @@ game_loop (int s)
 
         if (!(pulse % (10 * SECOND_PULSE)))
             ten_second_update ();
+			
+		if (!(pulse % (SECOND_PULSE * 60 / PULSES_PER_SEC)))
+			add_a_minute();
 
         if (knockout)
         {

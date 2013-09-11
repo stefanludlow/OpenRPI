@@ -8242,9 +8242,10 @@ char * time_string( CHAR_DATA * ch )
     char phrase[MAX_STRING_LENGTH];
     static char time_str[MAX_STRING_LENGTH] = { '\0' };
 
-    minutes = 4 * (15 * 60 - (next_hour_update - time (0))) / 60;
+//Nimrod commented this out
+//    minutes = 4 * (15 * 60 - (next_hour_update - time (0))) / 60;
 
-    sprintf (phrase, "[report error: %d]", time_info.hour);
+ //   sprintf (phrase, "[report error: %d]", time_info.hour);
 
     /* Astronomy skill gives knowledge of more precise time
     if (ch && ch->skills[SKILL_ASTRONOMY])
@@ -8326,15 +8327,18 @@ char * time_string( CHAR_DATA * ch )
     }
     */
 
-    sprintf (buf, "It is %s, %s ", sun_phase[time_info.phaseSun], earth_phase[time_info.phaseEarth]);
+    // sprintf (buf, "It is %s, %s ", sun_phase[time_info.phaseSun], earth_phase[time_info.phaseEarth]);
 
     if (ch && !IS_MORTAL (ch))
     {
-        sprintf (buf + strlen (buf), "[%d:%s%d]  ", time_info.hour, minutes >= 10 ? "" : "0", minutes);
-		sprintf (buf + strlen (buf), "[real_hour:%d], [day: %d], [month: %d], [phaseEarth: %d]",  time_info.hour + (84 * time_info.day), time_info.day, time_info.month, time_info.phaseEarth);
+        sprintf (buf + strlen (buf), "It is [%d:%s%d]  ", time_info.hour, time_info.minute >= 10 ? "" : "0", time_info.minute);
+	//	sprintf (buf + strlen (buf), "[real_hour:%d], [day: %d], [month: %d], [phaseEarth: %d]",  time_info.hour + (84 * time_info.day), time_info.day, time_info.month, time_info.phaseEarth);
+	    sprintf (buf + strlen (buf), "[real_hour:%d], [day: %d], [month: %d], ",  time_info.hour , time_info.day, time_info.month);
+		sprintf (buf + strlen (buf), " Month Name: %s ", month_name[time_info.month]);
     }
 
-    day = time_info.month + 1;	/* day in [1..12] */
+/* Nimrod commented this out
+ //   day = time_info.month + 1;	// day in [1..12] 
 
     if (day == 1)
         strcpy (suf, "st");
@@ -8357,7 +8361,7 @@ char * time_string( CHAR_DATA * ch )
 
 
     sprintf (buf + strlen (buf), "on the %s Lunar day,", day_buf);
-
+*/
     /*
     if (time_info.holiday == 0 &&
         !(time_info.month == 1 && day == 12) &&

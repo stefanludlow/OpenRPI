@@ -722,8 +722,9 @@ void reset_time( void ) {
 
 	time_info = moon_time_passed( time( 0 ), beginning_of_time );
 
-	if ( time_info.day >= 8 || time_info.day < 0 )
-		time_info.day = 0;
+// Nimrod commented following out	
+//	if ( time_info.day >= 8 || time_info.day < 0 ) 
+//		time_info.day = 0;
 
 	weather_info[ i ].sunlight = SUN_LIGHT;
 
@@ -732,7 +733,7 @@ void reset_time( void ) {
 	system_log( buf, false );
 
 	if ( time_info.month >= 0 && time_info.month <= 5 )
-		time_info.season = SEASON_NEAR;
+		time_info.season = SEASON_NEAR; // Need to set the seasons here, Nimrod bookmark
 	else
 		time_info.season = SEASON_FAR;
 
@@ -752,6 +753,8 @@ void reset_time( void ) {
 		weather_info[ i ].temperature = calcTemp( i );
 		weather_info[ i ].wind_speed = number( 0, 2 );
 	}
+
+/* Commented out by Nimrod for Time update - 11 Sept 13
 
 	int sunCount = ( time_info.day * 84 ) + time_info.hour;
 	int sunPhase = PHASE_SET;
@@ -798,6 +801,8 @@ void reset_time( void ) {
 		time_info.phaseEarth = PHASE_FIRST_QUARTER;
 	else
 		time_info.phaseEarth = PHASE_GIBBOUS_WAXING;
+
+End of Nimrod's commenting out for Time Update */
 
 	time_info.holiday = 0;
 }

@@ -4403,7 +4403,7 @@ second_affect_update (void)
 
     for (sa = second_affect_list; sa; sa = next_sa)
     {
-
+		
         next_sa = sa->next;
 
         if (--(sa->seconds) > 0)
@@ -5313,6 +5313,36 @@ rl_minute_affect_update (void)
 	}
 	minute_update_count++;
 }
+
+void
+add_a_minute (void)
+{
+	//bool new_day = false;
+	
+	// Adding time update code -Nimrod
+	// send_to_gods("Adding a minute.");
+		
+	if (time_info.minute++ >= GAME_SECONDS_PER_HOUR / 60 ) // 60 Minutes in an hour
+	{
+		time_info.minute = 0;
+		if (time_info.hour++ >= GAME_SECONDS_PER_DAY / GAME_SECONDS_PER_HOUR)  // 24 hours in a day
+		{
+			time_info.hour = 0;
+			if (time_info.day++ >= GAME_SECONDS_PER_MONTH / GAME_SECONDS_PER_DAY)  // 30 days in a month	
+			{
+				//new_day = true;
+				time_info.day = 0;
+				if (time_info.month++ >= GAME_SECONDS_PER_YEAR / GAME_SECONDS_PER_MONTH)  // 12 Months in a year
+				{
+					time_info.month = 0;
+					time_info.year++;
+				}
+			}
+		}
+	}
+}
+
+
 
 void
 ten_second_update (void)

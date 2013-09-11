@@ -1037,17 +1037,22 @@ struct time_info_data
     };
 
     secs = (t2 - t1) * PULSES_PER_SEC;
+	
+	
 
     now.year += secs / MOON_SECONDS_PER_YEAR;
     secs = secs % MOON_SECONDS_PER_YEAR;
 
     now.month += secs / MOON_SECONDS_PER_MONTH;
     secs = secs % MOON_SECONDS_PER_MONTH;
-
-    now.day += secs / MOON_SECONDS_PER_DAY;
+	
+	now.day += secs / MOON_SECONDS_PER_DAY;
     secs = secs % MOON_SECONDS_PER_DAY;
-
+	
     now.hour += secs / MOON_SECONDS_PER_HOUR;
+	secs = secs % MOON_SECONDS_PER_HOUR;
+	
+	now.minute += secs / 60;
 
     return now;
 }

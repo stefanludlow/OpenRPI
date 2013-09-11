@@ -480,13 +480,16 @@ weather_and_time (int mode)
     int i;
     int zone;
     bool new_day = false;
-
-	next_hour_update += 900;	/* This is a mud hour; 60*60/4 */
+	
+	 // Nimrod commented out from here down for TIME (approximately 97 lines)
+	 /*
+	 next_hour_update += 900;	// This is a mud hour; 60*60/4 
 
     sun_light = 1;
-    /*global_moon_light = 0; */
-
-    time_info.hour++;
+    //global_moon_light = 0; 
+	
+	
+     time_info.hour++;
 
     int true_hour = time_info.hour + (84 * time_info.day);
 
@@ -510,7 +513,8 @@ weather_and_time (int mode)
 		time_info.phaseEarth = PHASE_GIBBOUS_WAXING;
 	else
 		time_info.phaseEarth = PHASE_TERRA_ECLIPSE;
-	
+
+
 	if (time_info.hour >= 84)
     {
         time_info.day++;
@@ -573,6 +577,8 @@ weather_and_time (int mode)
 
     //if (sunrise[time_info.month] <= time_info.hour && sunset[time_info.month] > time_info.hour)
     sun_light = 1;
+	
+
 
     for (zone = 0; zone <= 99; zone++)
     {
@@ -641,7 +647,7 @@ weather_and_time (int mode)
             else
                 send_outside_zone ("A glow illuminates the eastern horizon.\n\r", zone);
         }
-        */
+        
     }
 
     if (is_room_affected (world_affects, MAGIC_WORLD_SOLAR_FLARE))
@@ -653,7 +659,9 @@ weather_and_time (int mode)
     if (is_room_affected (world_affects, MAGIC_WORLD_MOON))
         global_moon_light = 1;
 
-    weather (moon_setting, moon_rising, moon_set);
+Nimrod commented out down to here for time */
+
+//    weather (moon_setting, moon_rising, moon_set);
 }
 
 int

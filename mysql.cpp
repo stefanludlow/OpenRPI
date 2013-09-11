@@ -164,9 +164,11 @@ int
 	int result = mysql_real_query (database, query, strlen (query));
 	  if (mysql_errno(database))
 	    {
-	      fprintf (stderr, "The library call 'mysql_real_query' failed to run "
+		/* Nimrod commenting out until we get linked to the forums with the game. 11 Sept 13
+		      fprintf (stderr, "The library call 'mysql_real_query' failed to run "
 		       "the query '%s' for the following reason: %s\n",
 		       query, mysql_error (database));
+		*/
 	    }
 	return (result);
 }
