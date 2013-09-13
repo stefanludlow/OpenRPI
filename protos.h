@@ -57,7 +57,8 @@ extern const char *direction[];
 extern const int movement_loss[];
 extern struct timeval time_now;
 extern SITE_INFO *banned_site;
-
+extern const int sunrise[];	// weather.c
+extern const int sunset[];	// weather.c
 extern const char *earth_phase[];
 extern const char *sun_phase[];
 extern const char *temp_phrase[];

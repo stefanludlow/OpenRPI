@@ -20,6 +20,8 @@ int moon_light[100];
 int sun_light = 1;
 int desc_weather[100];
 AFFECTED_TYPE *world_affects = NULL;
+const int sunrise[] = { 7, 6, 6, 6, 6, 5, 4, 4, 5, 5, 6, 6 };
+const int sunset[] = { 18, 18, 19, 19, 20, 21, 22, 22, 21, 20, 19, 18 };
 
 
 const char *earth_phase[] =
@@ -104,16 +106,27 @@ const char *wind_temp_phrase[] =
 // 6 = evening
 
 
-const int seasonal_temp[6][12] =
-{
-    {90, 85, 70, 50, 35, 25, 20, 25, 35, 50, 70, 85},	/* Wilderness Baseline */
-    {90, 85, 70, 60, 45, 35, 30, 35, 45, 60, 70, 85},	/* Urban Baseline */
-    {80, 75, 60, 50, 35, 25, 20, 25, 35, 50, 60, 75},	/* Desert Baseline */
-    {70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70},	/* Underground Baseline */
-    {60, 55, 40, 30, 25, 15, 10, 15, 25, 30, 40, 55},	/* Crater Baseline */
-    { 0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0}	/* Nolight Baseline */
-};
+// const int seasonal_temp[6][12] =
+// {
+//    {90, 85, 70, 50, 35, 25, 20, 25, 35, 50, 70, 85},	/* Wilderness Baseline */
+//    {90, 85, 70, 60, 45, 35, 30, 35, 45, 60, 70, 85},	/* Urban Baseline */
+//    {80, 75, 60, 50, 35, 25, 20, 25, 35, 50, 60, 75},	/* Desert Baseline */
+//    {70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70},	/* Underground Baseline */
+//    {60, 55, 40, 30, 25, 15, 10, 15, 25, 30, 40, 55},	/* Crater Baseline */
+//    { 0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0}	/* Nolight Baseline */
+// };
 
+const int seasonal_temp[7][12] = {
+	{40, 47, 55, 63, 71, 79, 85, 79, 71, 63, 55, 47},	/* Temperate baseline */
+
+	{22, 29, 37, 45, 53, 61, 67, 61, 53, 45, 37, 29},	/* Cool */
+	{15, 22, 28, 38, 46, 50, 55, 50, 46, 38, 28, 22},	/* Cold */
+	{7, 14, 18, 22, 25, 27, 30, 27, 25, 22, 18, 14},	/* Arctic */
+
+	{55, 57, 60, 65, 73, 81, 89, 81, 73, 65, 60, 53},	/* Hot */
+	{60, 62, 65, 70, 78, 86, 94, 86, 78, 70, 65, 58},	/* Hot */
+	{75, 77, 80, 85, 93, 101, 109, 101, 93, 85, 80, 73}	/* Desert */
+};
 void
 initialize_weather_zones (void)
 {
@@ -468,7 +481,7 @@ is_leap_year (int year)
 
     return 0;
 }
-
+/*
 void
 weather_and_time (int mode)
 {
@@ -659,10 +672,176 @@ weather_and_time (int mode)
     if (is_room_affected (world_affects, MAGIC_WORLD_MOON))
         global_moon_light = 1;
 
-Nimrod commented out down to here for time */
+Nimrod commented out down to here for time 
 
 //    weather (moon_setting, moon_rising, moon_set);
+// }
+*/
+void
+weather_and_time (int mode)
+{
+	int moon_rising = 0;
+	int moon_setting = 0;
+	int moon_set = 0;
+	int moon_q;
+	int d_day;
+	int i;
+	bool new_day = false;
+
+	next_hour_update += 900;	/* This is a mud hour; 60*60/4 */
+
+	sun_light = 0;
+	/*global_moon_light = 0; */
+
+	time_info.hour++;
+
+	if (time_info.hour >= 24)
+	{
+		time_info.day++;
+		time_info.hour = 0;
+		new_day = true;
+	}
+
+	if (time_info.day >= 30 && new_day)
+	{
+		if (!time_info.holiday)
+			time_info.month++;
+		if (time_info.month >= 12)
+		{
+			time_info.month = 0;
+		}
+		if (time_info.month == 0 || time_info.month == 1
+			|| time_info.month == 11)
+			time_info.season = WINTER;
+		else if (time_info.month >= 2 && time_info.month <= 4)
+			time_info.season = SPRING;
+		else if (time_info.month > 4 && time_info.month <= 7)
+			time_info.season = SUMMER;
+		else if (time_info.month > 7 && time_info.month <= 10)
+			time_info.season = AUTUMN;
+		
+		if (time_info.holiday == HOLIDAY_METTARE)
+		{
+			time_info.holiday = HOLIDAY_YESTARE;
+			time_info.year++;
+		}
+		else if (time_info.holiday == HOLIDAY_LOENDE
+				 && is_leap_year (time_info.year))
+			time_info.holiday = HOLIDAY_ENDERI;
+		else if (time_info.holiday == HOLIDAY_ENDERI)
+		{
+			time_info.holiday = 0;
+			time_info.day = 0;
+		}
+		else if (time_info.month == 0)
+		{
+			if (time_info.holiday != HOLIDAY_YESTARE)
+				time_info.holiday = HOLIDAY_METTARE;
+			else
+			{
+				time_info.holiday = 0;
+				time_info.day = 0;
+			}
+		}
+		else if (time_info.month == 3)
+		{
+			if (time_info.holiday != HOLIDAY_TUILERE)
+				time_info.holiday = HOLIDAY_TUILERE;
+			else
+			{
+				time_info.holiday = 0;
+				time_info.day = 0;
+			}
+		}
+		else if (time_info.month == 6)
+		{
+			if (time_info.holiday != HOLIDAY_LOENDE)
+				time_info.holiday = HOLIDAY_LOENDE;
+			else
+			{
+				time_info.holiday = 0;
+				time_info.day = 0;
+			}
+		}
+		else if (time_info.month == 9)
+		{
+			if (time_info.holiday != HOLIDAY_YAVIERE)
+				time_info.holiday = HOLIDAY_YAVIERE;
+			else
+			{
+				time_info.holiday = 0;
+				time_info.day = 0;
+			}
+		}
+		else
+			time_info.day = 0;
+	}
+
+	if (time_info.month >= 12)
+	{
+		time_info.year++;
+		time_info.month = 0;
+	}
+
+	if (sunrise[time_info.month] <= time_info.hour &&
+		sunset[time_info.month] > time_info.hour)
+		sun_light = 1;
+
+	if (sunrise[time_info.month] == time_info.hour + 1)
+		send_outside ("A glow illuminates the eastern horizon.\n\r");
+
+	if (sunrise[time_info.month] == time_info.hour)
+		send_outside
+		("Anor's fiery exterior slowly lifts itself up over the eastern horizon beneath Arien's unwavering guidance.\n\r");
+
+	if (sunset[time_info.month] == time_info.hour + 1)
+		send_outside
+		("Anor begins dipping below the western horizon, guided to its respite by Arien.\n\r");
+
+	if (sunset[time_info.month] == time_info.hour)
+		send_outside
+		("Anor sets in a fiery cascade of brilliant color upon the western horizon.\n\r");
+
+	d_day = (time_info.day + 15) % 30;
+	moon_q = d_day * 24 / 30;
+
+	for (i = -7; i <= 6; i++)
+	{
+		if (moon_q == (24 + time_info.hour + i) % 24)
+		{
+			if (i == -7)
+			{
+				moon_set = 1;
+				global_moon_light = 0;
+			}
+			/*else
+			global_moon_light = 1; */
+
+			if (i == -6)
+			{
+				moon_setting = 1;
+			}
+			if (i == 6)
+			{
+				moon_rising = 1;
+				global_moon_light = (time_info.hour > 16
+					&& time_info.hour < 20) ? 1 : 0;
+			}
+		}
+	}
+
+	if (is_room_affected (world_affects, MAGIC_WORLD_SOLAR_FLARE))
+		sun_light = 1;
+
+	if (is_room_affected (world_affects, MAGIC_WORLD_CLOUDS))
+		sun_light = 0;
+
+	if (is_room_affected (world_affects, MAGIC_WORLD_MOON))
+		global_moon_light = 1;
+
+	weather (moon_setting, moon_rising, moon_set);
 }
+
 
 int
 weather_object_exists(OBJ_DATA * list, int vnum)

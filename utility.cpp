@@ -1027,6 +1027,7 @@ struct time_info_data
 
 
 /* Calculate the MUD time passed over the last t2-t1 centuries (secs) */
+/*
 struct time_info_data
             moon_time_passed (time_t t2, time_t t1)
 {
@@ -1056,13 +1057,13 @@ struct time_info_data
 
     return now;
 }
-
+*/
 struct time_info_data
             age (CHAR_DATA * ch)
 {
     struct time_info_data player_age;
 
-    player_age = moon_time_passed (time (0), ch->time.birth);
+    player_age = mud_time_passed (time (0), ch->time.birth);
 
     player_age.year += ch->age - GAME_BASE_YEAR;	/* All players start at 17 */
 

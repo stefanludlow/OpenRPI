@@ -707,7 +707,106 @@ void stock_new_deliveries( void ) {
 
 	system_log( "New shopkeeper deliveries stocked.", false );
 }
+void
+reset_time (void)
+{
+	char buf[MAX_STRING_LENGTH];
 
+	long beginning_of_time = GAME_SECONDS_BEGINNING;
+
+	int qz[] = { 6, 6, 6, 6, 5, 5, 4, 4, 5, 6, 6, 7 };
+	int moonrise, sunrise, moonset, t1, t2, t3;
+
+	int i = 0;
+
+	struct time_info_data mud_time_passed (time_t t2, time_t t1);
+
+	next_hour_update = time (0) + ((time (0) - beginning_of_time) % 900);
+	next_minute_update = time (0);
+
+	time_info = mud_time_passed (time (0), beginning_of_time);
+
+	sunrise = qz[(int) time_info.month];	/* sunrise is easy */
+	if (time_info.day <= 15)
+		t1 = 15 - time_info.day;
+	else
+		t1 = time_info.day - 15;
+	/* t1 is 0 at new moon when moon is up for day length and 15 at
+	full moon when moon is up for night length */
+	t3 = sunrise << 1;		/* because it doesn't work otherwise! :( */
+	t2 = ((t3 + 1) * (15 - t1)) + ((23 - t3) * t1);
+	/* t2 = time between moonrise and moonset * 15 */
+	moonrise = (345 + time_info.day * 24 - t2) / 30;
+	moonset = (345 + time_info.day * 24 + t2) / 30;
+	if (moonrise >= 24)
+	{
+		moonrise -= 24;
+		moonset -= 24;
+	}				/* moonset is allowed to be >= 24 if the moon is out at midnight */
+
+	for (i = 0; i <= 99; i++)
+	{
+		if (time_info.hour == sunrise)
+			weather_info[i].sunlight = SUN_RISE;
+		else if (time_info.hour == (23 - t3))
+			weather_info[i].sunlight = SUN_SET;
+		else if (time_info.hour > sunrise && time_info.hour < (23 - t3))
+			weather_info[i].sunlight = SUN_LIGHT;
+		else if (time_info.hour >= moonrise && time_info.hour < moonset)
+			weather_info[i].sunlight = MOON_RISE;
+		else if (time_info.hour < (moonset % 24) && moonset >= 24)
+			weather_info[i].sunlight = MOON_RISE;
+		else
+			weather_info[i].sunlight = SUN_DARK;
+	}
+
+	sprintf (buf, "   Current Gametime: %dH %dD %dM %dY.",
+		time_info.hour, time_info.day, time_info.month, time_info.year);
+	system_log (buf, false);
+
+	if (time_info.month == 0 || time_info.month == 1 || time_info.month == 11)
+		time_info.season = WINTER;
+	else if (time_info.month < 11 && time_info.month > 7)
+		time_info.season = AUTUMN;
+	else if (time_info.month < 8 && time_info.month > 4)
+		time_info.season = SUMMER;
+	else
+		time_info.season = SPRING;
+
+	for (i = 0; i <= 99; i++)
+	{
+		if (Weather::weather_unification (i))
+			continue;
+		// weather_info[].clouds must be added to members. - Nimrod 12 Sept 13
+		weather_info[i].trend = number (0, 15);
+		// weather_info[i].clouds = number (0, 3);
+		if (time_info.season == SUMMER)
+		//	weather_info[i].clouds = number (0, 1);
+		if (zone_table[i].weather_type == WEATHER_DESERT)
+		//	weather_info[i].clouds = 0;
+		weather_info[i].fog = 0;
+		// if (weather_info[i].clouds > 0 && zone_table[i].weather_type != WEATHER_DESERT)
+		//	weather_info[i].state = number (0, 1);
+		// else if (zone_table[i].weather_type == WEATHER_DESERT)
+		//	weather_info[i].state = NO_RAIN;
+		// weather_info[i].temperature =
+		//	seasonal_temp[zone_table[i].weather_type][time_info.month];
+		weather_info[i].wind_speed = number (0, 2);
+		if (time_info.hour >= sunrise
+			&& time_info.hour < sunset[time_info.month])
+		{
+			sun_light = 1;
+			weather_info[i].temperature += 15;
+		}
+		else
+			weather_info[i].temperature -= 15;
+	}
+
+	time_info.holiday = 0;
+}
+
+// Commenting out Reset_time to insert old version above -Nimrod 12 Sept 13
+/*
 void reset_time( void ) {
 	char buf[ MAX_STRING_LENGTH ];
 
@@ -802,11 +901,12 @@ void reset_time( void ) {
 	else
 		time_info.phaseEarth = PHASE_GIBBOUS_WAXING;
 
-End of Nimrod's commenting out for Time Update */
+
 
 	time_info.holiday = 0;
 }
 
+*/
 void create_room_zero( void ) {
 	ROOM_DATA *room;
 

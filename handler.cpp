@@ -5243,6 +5243,8 @@ setup_registry (void)
     add_registry (REG_SKILLS, SKILL_VOODOO, "Voodoo");
     add_registry (REG_SKILLS, SKILL_EDUCATION, "Education");
     add_registry (REG_SKILLS, SKILL_COMMON, "Common");
+	add_registry (REG_SKILLS, SKILL_ASTRONOMY, "Astronomy");
+	
 
 
     add_registry (REG_MISC_NAMES, MISC_DELAY_OFFSET, "Delayoffset");

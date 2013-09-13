@@ -244,10 +244,17 @@ typedef signed char shortint;
 //#define HOLIDAY_ENDERI2		4
 //#define HOLIDAY_ENDERI3		5
 
-//#define SPRING	        0
-//#define SUMMER  	        1
-//#define AUTUMN		    2
-//#define WINTER	        3
+#define HOLIDAY_METTARE		1
+#define HOLIDAY_YESTARE		2
+#define HOLIDAY_TUILERE		3
+#define HOLIDAY_LOENDE		4
+#define HOLIDAY_ENDERI		5
+#define HOLIDAY_YAVIERE		6
+
+#define SPRING	        0
+#define SUMMER  	        1
+#define AUTUMN		    2
+#define WINTER	        3
 
 // We have two moon seasons: near and far on our axial tilt. Modifies temperature a little.
 #define SEASON_NEAR     0
@@ -1350,13 +1357,15 @@ typedef signed char shortint;
 #define SKILL_HANDICRAFT		36
 #define SKILL_ARTISTRY			37
 
+
 // odds and ends
 #define SKILL_EDUCATION         38
 #define SKILL_VOODOO  	        39
 #define SKILL_COMMON            40
+#define SKILL_ASTRONOMY			41
 
 
-#define LAST_SKILL		SKILL_COMMON
+#define LAST_SKILL		SKILL_ASTRONOMY
 
 #define PSIONIC_TALENTS		1
 

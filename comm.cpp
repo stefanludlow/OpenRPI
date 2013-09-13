@@ -694,8 +694,8 @@ game_loop (int s)
         if (!(pulse % (10 * SECOND_PULSE)))
             ten_second_update ();
 			
-		if (!(pulse % (SECOND_PULSE * 60 / PULSES_PER_SEC)))
-			add_a_minute();
+	//	if (!(pulse % (SECOND_PULSE * 60 / PULSES_PER_SEC)))
+	//		add_a_minute();
 
         if (knockout)
         {

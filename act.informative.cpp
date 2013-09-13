@@ -105,18 +105,18 @@ const char *dec_short[11] =
 
 const char *month_name[12] =
 {
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December"
+    "January, the Freezing Cold",
+    "February, the Miring Month",
+    "March, the Month of Birches",
+    "April, the Month of Sprouting",
+    "May, the Month of Flowers",
+    "June, the Month of Pearls",
+    "July, the Month of Mutton",
+    "August, the Skyfall",
+    "September, the Harvestmath",
+    "October, the Yellow Month",
+    "November, the Culling Month",
+    "December, the Yuletide"
 };
 
 const char *season_name[4] =
@@ -576,6 +576,145 @@ parse_room_description (CHAR_DATA * ch, char *desc)
 void
 do_timeconvert (CHAR_DATA * ch, char *argument, int cmd)
 {
+	char buf[MAX_STRING_LENGTH] = { '\0' };
+	int hour = 0, day = 0, month = 0, year = 0;
+	time_t temp_time = 0;
+	struct tm real_date;
+	struct time_info_data game_date;
+	char suf[5] = { '\0' };
+	
+	if (!ch->descr() || !ch->descr()->acct)
+	{
+		send_to_char ("Only PCs can use this command.\n", ch);
+		return;
+	}
+
+	argument = one_argument (argument, buf);
+	hour = atoi (buf);
+
+	if (hour > 23 || hour < 0)
+	{
+		send_to_char ("You must specify an hour between 0 and 23.\n", ch);
+		return;
+	}
+
+	argument = one_argument (argument, buf);
+	day = atoi (buf);
+
+	if (day > 31 || day < 1)
+	{
+		send_to_char ("You must specify a day between 1 and 31.\n", ch);
+		return;
+	}
+
+	argument = one_argument (argument, buf);
+	month = atoi (buf);
+
+	if (month > 12 || month < 1)
+	{
+		send_to_char ("You must specify a month between 1 and 12.\n", ch);
+		return;
+	}
+
+	argument = one_argument (argument, buf);
+	year = atoi (buf);
+
+	if (year < 2600 && year > 2460)
+	{
+
+		if (day > 30 || day < 1)
+		{
+			send_to_char ("You must specify a day between 1 and 30.\n", ch);
+			return;
+		}
+			
+			
+			
+			
+		temp_time =
+			GAME_SECONDS_BEGINNING + 
+			(int) (ch->descr()->acct->timezone * 60.0 * 60.0);
+		temp_time +=
+			((((year - GAME_BASE_YEAR) * GAME_SECONDS_PER_YEAR) +
+			((month - 1) * GAME_SECONDS_PER_MONTH) +
+			((day - 1) * GAME_SECONDS_PER_DAY) +
+			(hour * GAME_SECONDS_PER_HOUR)) / PULSES_PER_SEC);
+
+
+		strftime (buf, 255,
+			"In your timezone, the specified in-game time will fall at or near %I:%M %P, %A %B %e %Y.",
+			localtime (&temp_time));
+		act (buf, false, ch, 0, 0, TO_CHAR | _ACT_FORMAT);
+
+	}
+	else if (year < 2100 && year > 2002)
+	{
+
+		real_date.tm_hour = hour;
+		real_date.tm_mday = day;
+		real_date.tm_mon = month - 1;
+		real_date.tm_year = year - 1900;
+		real_date.tm_sec = 0;
+		real_date.tm_min = 0;
+//changed for auroness version
+			//#ifndef MACOSX
+		temp_time =
+			((mktime (&real_date))
+			- ((int)(ch->descr()->acct->timezone * 60.0 * 60.0)))
+			- timezone;
+/**#else
+		(int) temp_time =
+			(((int) mktime (&real_date))
+			- ((int) (ch->desc->acct->timezone * 60.0 * 60.0)))
+			- (int) timezone;
+#endif**/
+		game_date = mud_time_passed (temp_time, GAME_SECONDS_BEGINNING);
+
+		day = game_date.day + 1;
+
+		if (day == 1)
+			strcpy (suf, "st");
+		else if (day == 2)
+			strcpy (suf, "nd");
+		else if (day == 3)
+			strcpy (suf, "rd");
+		else if (day < 20)
+			strcpy (suf, "th");
+		else if ((day % 10) == 1)
+			strcpy (suf, "st");
+		else if ((day % 10) == 2)
+			strcpy (suf, "nd");
+		else if ((day % 10) == 3)
+			strcpy (suf, "rd");
+		else
+			strcpy (suf, "th");
+
+		sprintf (buf,
+			"In your timezone, the specified time will fall at or near %d:00 %s on the %d%s day of the %s in the year %d of the Third Age.",
+			(game_date.hour ==
+			0) ? 12 : ((game_date.hour >
+			12) ? game_date.hour - 11 : game_date.hour),
+			(game_date.hour <= 12) ? "am" : "pm", game_date.day + 1, suf,
+			month_name[(int) game_date.month], game_date.year);
+		act (buf, false, ch, 0, 0, TO_CHAR | _ACT_FORMAT);
+
+		return;
+
+	}
+	else
+	{
+		send_to_char ("You must specify a year between 2460 and 2600.\n", ch);
+	}
+
+}
+
+
+
+
+/*
+void
+do_timeconvert (CHAR_DATA * ch, char *argument, int cmd)
+{
     char buf[MAX_STRING_LENGTH] = { '\0' };
     int hour = 0, day = 0, month = 0, year = 0;
     time_t temp_time = 0;
@@ -714,7 +853,7 @@ do_timeconvert (CHAR_DATA * ch, char *argument, int cmd)
     }
 
 }
-
+*/
 char *frame_built[] =
 {
     "fragily-built",
@@ -1114,11 +1253,12 @@ find_ex_description (char *word, EXTRA_DESCR_DATA * list)
     return NULL;
 }
 
-/*
-Old compare command is deprecated. It is no longer used on SOI
-but will be left commented here in case it is wanted at a
-later date - Valarauka
 
+// Old compare command is deprecated. It is no longer used on SOI
+// but will be left commented here in case it is wanted at a
+// later date - Valarauka
+
+/*
 void
 do_compare (CHAR_DATA * ch, char *argument, int cmd)
 {
@@ -1151,7 +1291,9 @@ do_compare (CHAR_DATA * ch, char *argument, int cmd)
     ch_height_rating = 2;
   if (ch->height < 36)
     ch_height_rating = 1;
+*/
 
+/*
   if ((tch = get_char_room_vis (ch, arg1)))
     {
       tch_height_rating = 8;
@@ -1204,7 +1346,9 @@ do_compare (CHAR_DATA * ch, char *argument, int cmd)
 	  return;
 	}
     }
+*/
 
+/*
   if (tch2 == ch)
     {
       send_to_char ("Compare yourself to yourself? Eh?\n", ch);
@@ -1264,6 +1408,10 @@ do_compare (CHAR_DATA * ch, char *argument, int cmd)
 			 char_short (tch), frame_built[tch->frame]);
 	    }
 	}
+	
+*/
+
+/*
       else if (tch_height_rating < ch_height_rating)
 	{
 	  if (ch_height_rating - tch_height_rating == 7)
@@ -1393,7 +1541,8 @@ do_compare (CHAR_DATA * ch, char *argument, int cmd)
 
   act (buf, false, ch, 0, 0, TO_CHAR | _ACT_FORMAT);
 
-}*/
+}
+*/
 
 /* New version of the compare command to compare objects
 
@@ -8230,7 +8379,250 @@ do_talents (CHAR_DATA * ch, char *argument, int cmd)
         unload_pc (who);
 }
 
+// old time_string inserted by Nimrod 12 Sept 13
+char *
+time_string (CHAR_DATA * ch)
+{
+	char buf[MAX_STRING_LENGTH] = { '\0' };
+	char suf[4] = { '\0' };
+	int day = 0;
+	int minutes = 0;
+	int high_sun = 0;
+	int nCharAstronomySkill = 0;
+	char day_buf[AVG_STRING_LENGTH];
+	char phrase[MAX_STRING_LENGTH];
+	static char time_str[MAX_STRING_LENGTH] = { '\0' };
+	int day_of_week = 0;
+	const char *season_string[AVG_STRING_LENGTH] = {
+		"deep winter",
+		"late winter",
+		"early spring",
+		"mid-spring",
+		"late spring",
+		"early summer",
+		"high summer",
+		"late summer",
+		"early autumn",
+		"mid-autumn",
+		"late autumn",
+		"early winter"
+	};
+	const char *weekday[AVG_STRING_LENGTH] = {
+		"Sunsday",
+		"Moonsday",
+		"Treesday",
+		"Heavensday",
+		"Lakeday",
+		"Highday",
+		"Starsday"
+	};
+	
+	day_of_week = (int(time(0) / GAME_SECONDS_PER_DAY) % 7);
+	
+	minutes = 4 * (15 * 60 - (next_hour_update - time (0))) / 60;
 
+	high_sun = ((sunrise[time_info.month] + sunset[time_info.month]) / 2);
+
+	sprintf (phrase, "[report error: %d]", time_info.hour);
+
+	if (time_info.hour == sunset[time_info.month] - 2)
+		sprintf (phrase, "late afternoon");
+	else if (time_info.hour == sunset[time_info.month] - 1)
+		sprintf (phrase, "dusk");
+	else if (time_info.hour == sunset[time_info.month])
+		sprintf (phrase, "twilight");
+	else if (time_info.hour == 23)
+		sprintf (phrase, "before midnight");
+	else if (time_info.hour == 0)
+		sprintf (phrase, "midnight");
+	else if (time_info.hour == 1)
+		sprintf (phrase, "after midnight");
+	else if (time_info.hour == sunrise[time_info.month] - 1)
+		sprintf (phrase, "before dawn");
+	else if (time_info.hour == sunrise[time_info.month])
+		sprintf (phrase, "dawn");
+	else if (time_info.hour == sunrise[time_info.month] + 1)
+		sprintf (phrase, "early morning");
+	else if (time_info.hour == high_sun - 1)
+		sprintf (phrase, "late morning");
+	else if (time_info.hour == high_sun)
+		sprintf (phrase, "high sun");
+	else if (time_info.hour == high_sun + 1)
+		sprintf (phrase, "early afternoon");
+
+	else if (time_info.hour > high_sun
+		&& time_info.hour < sunset[time_info.month] - 2)
+		sprintf (phrase, "afternoon");
+	else if (time_info.hour > sunrise[time_info.month] + 1
+		&& time_info.hour < high_sun - 1)
+		sprintf (phrase, "morning");
+	else if (time_info.hour >= sunset[time_info.month] && time_info.hour < 21)
+		sprintf (phrase, "evening");
+	else if (time_info.hour >= sunset[time_info.month] && time_info.hour < 23)
+		sprintf (phrase, "night time");
+	else if (time_info.hour > high_sun + 1
+		&& time_info.hour < sunset[time_info.hour] - 2)
+		sprintf (phrase, "afternoon");
+	else if (time_info.hour > 1
+		&& time_info.hour < sunrise[time_info.month] - 1)
+		sprintf (phrase, "late at night");
+
+	// Astronomy skill gives knowledge of more precise time
+	// Remarking out for now.  -Nimrod 12 Sept 13
+/*
+	if (ch && ch->skills[SKILL_ASTRONOMY])
+	{
+
+		nCharAstronomySkill = ch->skills[SKILL_ASTRONOMY];
+		if (!IS_OUTSIDE (ch) || (IS_NIGHT && !moon_light[ch->room->zone]))
+		{
+			nCharAstronomySkill -= 40;
+		}
+		else
+		{
+			nCharAstronomySkill -= (10 * weather_info[ch->room->zone].clouds);
+			nCharAstronomySkill -= (2 * weather_info[ch->room->zone].state);
+		}
+
+		if (nCharAstronomySkill >= 70)
+		{
+			if (minutes < 7)
+			{
+				sprintf (phrase + strlen (phrase), ", about %s o'clock,",
+					strTimeWord[time_info.hour]);
+			}
+			else if (minutes < 23)
+			{
+				sprintf (phrase + strlen (phrase), ", quarter-past %s o'clock,",
+					strTimeWord[time_info.hour]);
+			}
+			else if (minutes < 37)
+			{
+				sprintf (phrase + strlen (phrase), ", half-past %s o'clock,",
+					strTimeWord[time_info.hour]);
+			}
+			else if (minutes < 52)
+			{
+				sprintf (phrase + strlen (phrase), ", quarter-to %s o'clock,",
+					strTimeWord[(time_info.hour + 1) % 24]);
+			}
+			else
+			{
+				sprintf (phrase + strlen (phrase), ", about %s o'clock,",
+					strTimeWord[(time_info.hour + 1) % 24]);
+			}
+		}
+
+		else if (nCharAstronomySkill >= 50)
+		{
+			if (minutes < 15)
+			{
+				sprintf (phrase + strlen (phrase), ", about %s o'clock,",
+					strTimeWord[time_info.hour]);
+			}
+			else if (minutes < 45)
+			{
+				sprintf (phrase + strlen (phrase), ", half-past %s o'clock,",
+					strTimeWord[time_info.hour]);
+			}
+			else
+			{
+				sprintf (phrase + strlen (phrase), ", about %s o'clock,",
+					strTimeWord[(time_info.hour + 1) % 24]);
+			}
+		}
+
+		else if (nCharAstronomySkill >= 30)
+		{
+			if (minutes < 30)
+			{
+				sprintf (phrase + strlen (phrase), ", about %s o'clock,",
+					strTimeWord[time_info.hour]);
+			}
+			else
+			{
+				sprintf (phrase + strlen (phrase), ", about %s o'clock,",
+					strTimeWord[(time_info.hour + 1) % 24]);
+			}
+		}
+
+	}
+*/
+	sprintf (buf, "It is %s ", phrase);
+
+	if (ch && !IS_MORTAL (ch))
+	{
+		sprintf (buf + strlen (buf), "[%d:%s%d %s] ",
+			((time_info.hour % 12 == 0) ? 12 : ((time_info.hour) % 12)),
+			minutes >= 10 ? "" : "0", minutes,
+			((time_info.hour >= 12) ? "pm" : "am"));
+	}
+	
+	// Adding day of week - Nimrod
+		sprintf (buf + strlen (buf), "on %s, ", weekday[day_of_week]);
+
+	day = time_info.day + 1;	/* day in [1..35] */
+
+	if (day == 1)
+		strcpy (suf, "st");
+	else if (day == 2)
+		strcpy (suf, "nd");
+	else if (day == 3)
+		strcpy (suf, "rd");
+	else if (day < 20)
+		strcpy (suf, "th");
+	else if ((day % 10) == 1)
+		strcpy (suf, "st");
+	else if ((day % 10) == 2)
+		strcpy (suf, "nd");
+	else if ((day % 10) == 3)
+		strcpy (suf, "rd");
+	else
+		strcpy (suf, "th");
+
+	sprintf (day_buf, "%d%s", day, suf);
+
+	/* Special output for holidays */
+
+	if (time_info.holiday == 0 &&
+		!(time_info.month == 1 && day == 12) &&
+		!(time_info.month == 4 && day == 10) &&
+		!(time_info.month == 7 && day == 11) &&
+		!(time_info.month == 10 && day == 12))
+		sprintf (buf + strlen (buf), " the %s day of %s,", day_buf,
+		month_name[(int) time_info.month]);
+	else
+	{
+		if (time_info.holiday > 0)
+		{
+			sprintf (buf + strlen (buf), "on %s,",
+				holiday_names[time_info.holiday]);
+		}
+		else if (time_info.month == 1 && day == 12)
+			sprintf (buf + strlen (buf), "on Erukyerme, The Prayer to Eru,");
+		else if (time_info.month == 4 && day == 10)
+			sprintf (buf + strlen (buf), "on Lairemerende, The Greenfest,");
+		else if (time_info.month == 7 && day == 11)
+			sprintf (buf + strlen (buf), "on Eruhantale, Thanksgiving to Eru,");
+		else if (time_info.month == 10 && day == 12)
+			sprintf (buf + strlen (buf), "on Airilaitale, The Hallowmas,");
+	}
+
+//	sprintf (buf + strlen (buf),
+//		" %s in the year %d of the Third Age.\n",
+//		season_string[(int) time_info.month], time_info.year);
+
+	sprintf (buf + strlen (buf), " in the year %d of the Third Age.\n", time_info.year);
+	
+	sprintf (time_str, "%s", buf);
+
+	return time_str;
+}
+
+
+
+
+/*
 char * time_string( CHAR_DATA * ch )
 {
     char buf[MAX_STRING_LENGTH] = { '\0' };
@@ -8325,7 +8717,7 @@ char * time_string( CHAR_DATA * ch )
         }
 
     }
-    */
+    
 
     // sprintf (buf, "It is %s, %s ", sun_phase[time_info.phaseSun], earth_phase[time_info.phaseEarth]);
 
@@ -8385,7 +8777,7 @@ char * time_string( CHAR_DATA * ch )
         else if (time_info.month == 10 && day == 12)
       sprintf (buf + strlen (buf), "on Airilaitale, The Hallowmas,");
       }
-    */
+    
 
     sprintf (buf + strlen (buf), " %d years since The Liberation.\n", time_info.year);
 
@@ -8393,16 +8785,17 @@ char * time_string( CHAR_DATA * ch )
 
     return time_str;
 }
-
-void do_time ( CHAR_DATA * ch, char *argument, int cmd )
-{
+*/
+/*
+ void do_time ( CHAR_DATA * ch, char *argument, int cmd )
+ {
     char buf[MAX_STRING_LENGTH] = { '\0' };
     char *p;
     //int day = time_info.day + 1, d_day = 0, moon_q = 0, moon_r = 0, moon_s = 0;
     /*static char *strRelativeTime[] = {
       "morning", "morning", "morning", "morning", "afternoon", "afternoon",
       "evening", "night"
-    };*/
+    };
 
 
 
@@ -8441,6 +8834,218 @@ void do_time ( CHAR_DATA * ch, char *argument, int cmd )
         sprintf (buf, "   Light count in room:  %d\n", ch->room->light);
         send_to_char (buf, ch);
     }
+}
+*/
+// old do_time inserted by Nimrod 12 Sept 13
+void
+do_time (CHAR_DATA * ch, char *argument, int cmd)
+{
+	char buf[MAX_STRING_LENGTH] = { '\0' };
+	char *p;
+	int day = time_info.day + 1, d_day = 0, moon_q = 0, moon_r = 0, moon_s = 0;
+	static char *strRelativeTime[] = {
+		"morning", "morning", "morning", "morning", "afternoon", "afternoon",
+		"evening", "night"
+	};
+
+	sprintf (buf, "\n#6%s#0", time_string (ch));
+  
+// Leaving remarked out for the time being because we don't have astronomy skill and a few other
+// minor glitches.  -Nimrod 12 Sept 13 
+/*
+	if (ch->skills[SKILL_ASTRONOMY])
+	{
+
+		// Sunrise and set
+
+		if (time_info.hour < sunrise[time_info.month])
+		{
+
+			sprintf (buf + strlen (buf),
+				" #6Anor shall rise around %s o'clock this morning and will rest again around %s o'clock today.#0 ",
+				strTimeWord[sunrise[time_info.month]],
+				strTimeWord[sunset[time_info.month]]);
+
+		}
+		else if (time_info.hour > sunset[time_info.month])
+		{
+
+			sprintf (buf + strlen (buf),
+				" #6Anor shall rise around %s o'clock this morning and will rest again around %s o'clock tomorrow.#0 ",
+				strTimeWord[sunrise[time_info.month]],
+				strTimeWord[sunset[time_info.month]]);
+
+		}
+		else
+		{
+			sprintf (buf + strlen (buf),
+				" #6Anor shall rest around %s o'clock today and will rise again around %s o'clock tomorrow morning.#0 ",
+				strTimeWord[sunset[time_info.month]],
+				strTimeWord[sunrise[time_info.month]]);
+		}
+
+
+		// Moon rise, set and phase
+
+		d_day = (time_info.day + 15) % 30;
+		moon_q = d_day * 24 / 30;
+		moon_r = (24 + (moon_q - 6)) % 24;
+		moon_s = (24 + (moon_q - 17)) % 24;
+
+
+		if (moon_r < moon_s)
+		{
+
+			if (time_info.hour < moon_r)
+			{
+				sprintf (buf + strlen (buf),
+					" #6(1) Ithil shall rise around %s o'clock this %s and will rest again around %s o'clock this %s.#0 ",
+					strTimeWord[moon_r], strRelativeTime[moon_r / 3],
+					strTimeWord[moon_s], strRelativeTime[moon_s / 3]);
+			}
+			else if (time_info.hour > moon_s)
+			{
+				sprintf (buf + strlen (buf),
+					" #6(2) Ithil shall rise around %s o'clock tomorrow %s and will rest again around %s o'clock tomorrow %s.#0 ",
+					strTimeWord[moon_r], strRelativeTime[moon_r / 3],
+					strTimeWord[moon_s], strRelativeTime[moon_s / 3]);
+
+			}
+			else
+			{
+				sprintf (buf + strlen (buf),
+					" #6(3) Ithil shall rest around %s o'clock this %s and will rise again around %s o'clock tomorrow %s.#0 ",
+					strTimeWord[moon_s], strRelativeTime[moon_s / 3],
+					strTimeWord[moon_r], strRelativeTime[moon_r / 3]);
+
+			}
+
+		}
+
+		else
+		{
+			if (time_info.hour < moon_s)
+			{
+				sprintf (buf + strlen (buf),
+					" #6(4) Ithil shall rest around %s o'clock this %s and will rise again around %s o'clock this %s.#0 ",
+					strTimeWord[moon_s], strRelativeTime[moon_s / 3],
+					strTimeWord[moon_r], strRelativeTime[moon_r / 3]);
+			}
+			else if (time_info.hour > moon_r)
+			{
+				sprintf (buf + strlen (buf),
+					" #6(5) Ithil shall rest around %s o'clock tomorrow %s and will rise again around %s o'clock tomorrow %s.#0 ",
+					strTimeWord[moon_s], strRelativeTime[moon_s / 3],
+					strTimeWord[moon_r], strRelativeTime[moon_r / 3]);
+
+			}
+			else
+			{
+				sprintf (buf + strlen (buf),
+					" #6(6) Ithil shall rise around %s o'clock this %s and will rest again around %s o'clock tomorrow %s.#0 ",
+					strTimeWord[moon_r], strRelativeTime[moon_r / 3],
+					strTimeWord[moon_s], strRelativeTime[moon_s / 3]);
+
+			}
+		}
+
+
+		// Feastday info
+
+		if (time_info.holiday == 0 &&
+			!(time_info.month == 1 && day == 12) &&
+			!(time_info.month == 4 && day == 10) &&
+			!(time_info.month == 7 && day == 11) &&
+			!(time_info.month == 10 && day == 12))
+		{
+			strcat (buf, "\n#6The next holiday will be ");
+			if (time_info.month < 1
+				|| (time_info.month == 1 && time_info.day <= 12))
+			{
+				sprintf (buf + strlen (buf), "Erukyerme in %d days.#0",
+					((1 - time_info.month) * 30) + (12 - time_info.day));
+			}
+			else if (time_info.month < 3)
+			{
+				sprintf (buf + strlen (buf),
+					"The Feastday of Tuilere in %d days.#0",
+					((2 - time_info.month) * 30) + (30 - time_info.day));
+			}
+			else if (time_info.month < 4
+				|| (time_info.month == 4 && time_info.day <= 10))
+			{
+				sprintf (buf + strlen (buf), "The Greenfest in %d days.#0",
+					((4 - time_info.month) * 30) + (10 - time_info.day));
+			}
+			else if (time_info.month < 6)
+			{
+				// todo: add enderi in leapyears
+				sprintf (buf + strlen (buf),
+					"The Feastday of Loende in %d days.#0",
+					((5 - time_info.month) * 30) + (30 - time_info.day));
+			}
+			else if (time_info.month < 7
+				|| (time_info.month == 7 && time_info.day <= 11))
+			{
+				sprintf (buf + strlen (buf), "Eruhantale in %d days.#0",
+					((7 - time_info.month) * 30) + (11 - time_info.day));
+			}
+			else if (time_info.month < 9)
+			{
+				sprintf (buf + strlen (buf),
+					"The Feastday of Yaviere in %d days.#0",
+					((8 - time_info.month) * 30) + (30 - time_info.day));
+			}
+			else if (time_info.month < 10
+				|| (time_info.month == 10 && time_info.day <= 12))
+			{
+				sprintf (buf + strlen (buf), "The Hallowmas in %d days.#0",
+					((10 - time_info.month) * 30) + (12 - time_info.day));
+			}
+			else
+			{
+				sprintf (buf + strlen (buf),
+					"The Feastdays of Mettare & Yestare in %d days.#0",
+					((12 - time_info.month) * 30) + (30 - time_info.day));
+			}
+		}
+	}
+	*/
+	reformat_string (buf, &p);
+
+	send_to_char ("\n", ch);
+	send_to_char (p, ch);
+
+	// free_mem (p); //char* - Need to check this out -Nimrod 12 Sept 13
+	p = NULL;
+
+	if (GET_TRUST (ch))
+	{
+		send_to_char ("\nThe following variables apply:\n", ch);
+
+		if (IS_LIGHT (ch->room))
+			send_to_char ("   IS_LIGHT is true.\n", ch);
+		else
+			send_to_char ("   IS_LIGHT is false.\n", ch);
+
+		if (IS_OUTSIDE (ch))
+			send_to_char ("   OUTSIDE is true.\n", ch);
+		else
+			send_to_char ("   OUTSIDE is false.\n", ch);
+
+		if (IS_NIGHT)
+			send_to_char ("   IS_NIGHT is true.\n", ch);
+		else
+			send_to_char ("   IS_NIGHT is false.\n", ch);
+
+		send_to_char ((global_moon_light) ? "   Global Moon is true.\n" :
+			"   Global Moon is false.\n", ch);
+		send_to_char ((moon_light[ch->room->zone]) ? "   Zone Moon is true.\n" :
+			"   Zone Moon is false.\n", ch);
+
+		sprintf (buf, "   Light count in room:  %d\n", ch->room->light);
+		send_to_char (buf, ch);
+	}
 }
 
 
