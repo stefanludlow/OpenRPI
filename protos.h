@@ -57,7 +57,8 @@ extern const char *direction[];
 extern const int movement_loss[];
 extern struct timeval time_now;
 extern SITE_INFO *banned_site;
-
+extern const int sunrise[];	// weather.c
+extern const int sunset[];	// weather.c
 extern const char *earth_phase[];
 extern const char *sun_phase[];
 extern const char *temp_phrase[];
@@ -1906,6 +1907,7 @@ char *obj_short_desc (OBJ_DATA * obj);
 char *obj_desc (OBJ_DATA * obj);
 OBJ_DATA *split_obj (OBJ_DATA * obj, int count);
 void ten_second_update (void);
+void add_a_minute (void);
 char *get_line (char **buf, char *ret_buf);
 ALIAS_DATA *is_alias (CHAR_DATA * ch, char *argument);
 void alias_free (ALIAS_DATA * alias);

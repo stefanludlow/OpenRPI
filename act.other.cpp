@@ -4403,7 +4403,7 @@ second_affect_update (void)
 
     for (sa = second_affect_list; sa; sa = next_sa)
     {
-
+		
         next_sa = sa->next;
 
         if (--(sa->seconds) > 0)
@@ -5313,6 +5313,9 @@ rl_minute_affect_update (void)
 	}
 	minute_update_count++;
 }
+
+
+
 
 void
 ten_second_update (void)
