@@ -8417,7 +8417,7 @@ time_string (CHAR_DATA * ch)
 		"Starsday"
 	};
 	
-	day_of_week = (int(time(0) / GAME_SECONDS_PER_DAY) % 7);
+	day_of_week = int((time(0)/GAME_SECONDS_PER_DAY)  % 7);
 	
 	minutes = 4 * (15 * 60 - (next_hour_update - time (0))) / 60;
 
