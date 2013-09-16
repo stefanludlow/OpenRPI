@@ -6999,7 +6999,23 @@ do_exits (CHAR_DATA * ch, char *argument, int cmd)
 		"Northeast",
 		"Northwest",
 		"Southeast",
-		"Southwest"
+		"Southwest",
+		"UpNorth",
+		"UpEast",
+		"UpSouth",
+		"UpWest",
+		"UpNortheast",
+		"UpNorthwest",
+		"UpSoutheast",
+		"UpSouthwest",
+		"DownNorth",
+		"DownEast",
+		"DownSouth",
+		"DownWest",
+		"DownNortheast",
+		"DownNorthwest",
+		"DownSoutheast",
+		"DownSouthwest"
     };
 
     if (is_dark (ch->room) &&
@@ -8417,7 +8433,8 @@ time_string (CHAR_DATA * ch)
 		"Starsday"
 	};
 	
-	day_of_week = (int(time(0) / GAME_SECONDS_PER_DAY) % 7);
+	
+	//day_of_week = int(((time(0)-GAME_SECONDS_BEGINNING)/GAME_SECONDS_PER_DAY * 4)  % 7);
 	
 	minutes = 4 * (15 * 60 - (next_hour_update - time (0))) / 60;
 
@@ -8559,7 +8576,7 @@ time_string (CHAR_DATA * ch)
 	}
 	
 	// Adding day of week - Nimrod
-		sprintf (buf + strlen (buf), "on %s, ", weekday[day_of_week]);
+		sprintf (buf + strlen (buf), "on %s, ", weekday[time_info.dayofweek]);
 
 	day = time_info.day + 1;	/* day in [1..35] */
 

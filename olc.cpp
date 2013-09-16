@@ -1466,7 +1466,7 @@ fwrite_room (ROOM_DATA * troom, FILE * fp)
                      troom->extra->alas[j] : "");
     }
 
-    for (j = 0; j <= 11; j++)
+    for (j = 0; j <= LAST_DIR; j++)  // was 11, changing to last_dir -Nimrod
     {
 
         if (!troom->dir_option[j])
@@ -1943,44 +1943,45 @@ save_rooms (CHAR_DATA * ch, int zone)
         fprintf (magic, "%s", buf);
         fclose (magic);
     }
-
+    // Nimrod bookmark 1
+	
     for (troom = full_room_list; troom; troom = troom->lnext)
         if (troom->zone == zone)
         {
 
             room_good = 0;
 
-            for (n = 0; n <= LAST_DIR; n++)
+            for (n = 0; n <= LAST_DIR; n++) 
                 if (troom->dir_option[n] && troom->dir_option[n]->to_room > 0)
-                    room_good = 1;
+				  room_good = 1;
+				
+				if (troom->contents || troom->people)
+					room_good = 1;
 
-            if (troom->contents || troom->people)
-                room_good = 1;
+				if (strncmp (troom->description, "No Description Set", 18))
+					room_good = 1;
 
-            if (strncmp (troom->description, "No Description Set", 18))
-                room_good = 1;
+				if (room_good)
+				{
+					fwrite_room (troom, fr);
+					fwrite_resets (troom, fz);
+				}
+				else
+				{
+					empty_rooms++;
+					total_empty_rooms++;
+				}
+			}
 
-            if (room_good)
-            {
-                fwrite_room (troom, fr);
-                fwrite_resets (troom, fz);
-            }
-            else
-            {
-                empty_rooms++;
-                total_empty_rooms++;
-            }
-        }
-
-    if (empty_rooms)
-    {
-        sprintf (buf, "%d empty rooms were not saved for zone %d.",
+		if (empty_rooms)
+		{
+			sprintf (buf, "%d empty rooms were not saved for zone %d.",
                  empty_rooms, zone);
-        system_log (buf, false);
+			system_log (buf, false);
 
-        strcat (buf, "\n");
-        send_to_char (buf, ch);
-    }
+			strcat (buf, "\n");
+			send_to_char (buf, ch);
+		}
 
     for (tmob = full_mobile_list; tmob; tmob = tmob->mob->lnext)
         if (tmob->mob->zone == zone && !tmob->deleted

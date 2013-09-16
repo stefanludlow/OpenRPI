@@ -6,6 +6,8 @@
 
 #include "structs.h"
 
+
+
 const char *verbal_number[] = {
   "zero",
   "one",
@@ -125,6 +127,22 @@ const char *verbose_dirs[] = {
   "the northwest",
   "the southeast",
   "the southwest",
+  "the upper north",
+  "the upper east",
+  "the upper south",
+  "the upper west",
+  "the upper northeast",
+  "the upper northwest",
+  "the upper southeast",
+  "the upper southwest",
+  "the lower north",
+  "the lower east",
+  "the lower south",
+  "the lower west",
+  "the lower northeast",
+  "the lower northwest",
+  "the lower southeast",
+  "the lower southwest"
   "\n"
 };
 
