@@ -5014,7 +5014,95 @@ void
 	do_move (ch, argument, UPNORTH);
 }
 
+void
+	do_upeast (CHAR_DATA * ch, char *argument, int cmd)
+{
+	do_move (ch, argument, UPEAST);
+}
 
+void
+	do_upsouth (CHAR_DATA * ch, char *argument, int cmd)
+{
+	do_move (ch, argument, UPSOUTH);
+}
+
+void
+	do_upwest (CHAR_DATA * ch, char *argument, int cmd)
+{
+	do_move (ch, argument, UPWEST);
+}
+
+void
+	do_upnortheast (CHAR_DATA * ch, char *argument, int cmd)
+{
+	do_move (ch, argument, UPNORTHEAST);
+}
+
+void
+	do_upnorthwest (CHAR_DATA * ch, char *argument, int cmd)
+{
+	do_move (ch, argument, UPNORTHWEST);
+}
+
+void
+	do_upsoutheast (CHAR_DATA * ch, char *argument, int cmd)
+{
+	do_move (ch, argument, UPSOUTHEAST);
+}
+
+void
+	do_upsouthwest (CHAR_DATA * ch, char *argument, int cmd)
+{
+	do_move (ch, argument, UPSOUTHWEST);
+}
+
+void
+	do_downnorth (CHAR_DATA * ch, char *argument, int cmd)
+{
+	do_move (ch, argument, DOWNNORTH);
+}
+
+void
+	do_downeast (CHAR_DATA * ch, char *argument, int cmd)
+{
+	do_move (ch, argument, DOWNEAST);
+}
+
+void
+	do_downsouth (CHAR_DATA * ch, char *argument, int cmd)
+{
+	do_move (ch, argument, DOWNSOUTH);
+}
+
+void
+	do_downwest (CHAR_DATA * ch, char *argument, int cmd)
+{
+	do_move (ch, argument, DOWNWEST);
+}
+
+void
+	do_downnortheast (CHAR_DATA * ch, char *argument, int cmd)
+{
+	do_move (ch, argument, DOWNNORTHEAST);
+}
+
+void
+	do_downnorthwest (CHAR_DATA * ch, char *argument, int cmd)
+{
+	do_move (ch, argument, DOWNNORTHWEST);
+}
+
+void
+	do_downsoutheast (CHAR_DATA * ch, char *argument, int cmd)
+{
+	do_move (ch, argument, DOWNSOUTHEAST);
+}
+
+void
+	do_downsouthwest (CHAR_DATA * ch, char *argument, int cmd)
+{
+	do_move (ch, argument, DOWNSOUTHWEST);
+}
 
 
 

@@ -832,7 +832,25 @@ void do_snoop (CHAR_DATA * ch, char *argument, int cmd);
 void do_south (CHAR_DATA * ch, char *argument, int cmd);
 void do_southeast (CHAR_DATA * ch, char *argument, int cmd);
 void do_southwest (CHAR_DATA * ch, char *argument, int cmd);
+
 void do_upnorth (CHAR_DATA * ch, char *argument, int cmd);
+void do_upeast (CHAR_DATA * ch, char *argument, int cmd);
+void do_upwest (CHAR_DATA * ch, char *argument, int cmd);
+void do_upsouth (CHAR_DATA * ch, char *argument, int cmd);
+void do_upnortheast (CHAR_DATA * ch, char *argument, int cmd);
+void do_upnorthwest (CHAR_DATA * ch, char *argument, int cmd);
+void do_upsoutheast (CHAR_DATA * ch, char *argument, int cmd);
+void do_upsouthwest (CHAR_DATA * ch, char *argument, int cmd);
+
+void do_downnorth (CHAR_DATA * ch, char *argument, int cmd);
+void do_downeast (CHAR_DATA * ch, char *argument, int cmd);
+void do_downsouth (CHAR_DATA * ch, char *argument, int cmd);
+void do_downwest (CHAR_DATA * ch, char *argument, int cmd);
+void do_downnortheast (CHAR_DATA * ch, char *argument, int cmd);
+void do_downnorthwest (CHAR_DATA * ch, char *argument, int cmd);
+void do_downsoutheast (CHAR_DATA * ch, char *argument, int cmd);
+void do_downsouthwest (CHAR_DATA * ch, char *argument, int cmd);
+
 void do_speak (CHAR_DATA * ch, char *argument, int cmd);
 void do_spells (CHAR_DATA * ch, char *argument, int cmd);
 void do_stable (CHAR_DATA * ch, char *argument, int cmd);
