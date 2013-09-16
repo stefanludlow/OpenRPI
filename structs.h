@@ -2345,7 +2345,8 @@ struct time_info_data
     int minute;
     int holiday;
     int phaseEarth;         // What phase is the earth in?
-    int phaseSun;           // What phase is the sun in?
+    int phaseSun; 	// What phase is the sun in?
+	int dayofweek;
 };
 
 struct time_data

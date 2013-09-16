@@ -1951,16 +1951,10 @@ save_rooms (CHAR_DATA * ch, int zone)
 
             room_good = 0;
 
-            for (n = 0; n <= 27; n++) // LAST_DIR - Change back to last_dir sometime -Nimrod
+            for (n = 0; n <= LAST_DIR; n++) 
                 if (troom->dir_option[n] && troom->dir_option[n]->to_room > 0)
-				{
-                    room_good = 1;
-					// if (n >= 9  && zone <= 1) 
-					// {
-					//    send_to_gods ("We have a direction greater than eight.\n");
-					// }
-				}
-
+				  room_good = 1;
+				
 				if (troom->contents || troom->people)
 					room_good = 1;
 

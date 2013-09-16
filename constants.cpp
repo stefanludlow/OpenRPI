@@ -6,6 +6,8 @@
 
 #include "structs.h"
 
+
+
 const char *verbal_number[] = {
   "zero",
   "one",

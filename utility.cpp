@@ -1010,6 +1010,8 @@ struct time_info_data
     };
 
     secs = (t2 - t1) * PULSES_PER_SEC;
+	
+	now.dayofweek = int((secs/GAME_SECONDS_PER_DAY )  % 7);
 
     now.year += secs / GAME_SECONDS_PER_YEAR;
     secs = secs % GAME_SECONDS_PER_YEAR;
@@ -1021,6 +1023,8 @@ struct time_info_data
     secs = secs % GAME_SECONDS_PER_DAY;
 
     now.hour += secs / GAME_SECONDS_PER_HOUR;
+	
+	
 
     return now;
 }

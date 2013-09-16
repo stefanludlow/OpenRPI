@@ -699,8 +699,12 @@ weather_and_time (int mode)
 	{
 		time_info.day++;
 		time_info.hour = 0;
+		time_info.dayofweek++;
 		new_day = true;
 	}
+	
+	if (time_info.dayofweek >= 7)
+	  time_info.dayofweek = 0;
 
 	if (time_info.day >= 30 && new_day)
 	{
