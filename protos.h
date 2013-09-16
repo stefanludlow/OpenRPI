@@ -832,6 +832,7 @@ void do_snoop (CHAR_DATA * ch, char *argument, int cmd);
 void do_south (CHAR_DATA * ch, char *argument, int cmd);
 void do_southeast (CHAR_DATA * ch, char *argument, int cmd);
 void do_southwest (CHAR_DATA * ch, char *argument, int cmd);
+void do_upnorth (CHAR_DATA * ch, char *argument, int cmd);
 void do_speak (CHAR_DATA * ch, char *argument, int cmd);
 void do_spells (CHAR_DATA * ch, char *argument, int cmd);
 void do_stable (CHAR_DATA * ch, char *argument, int cmd);

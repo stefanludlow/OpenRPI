@@ -40,7 +40,23 @@ extern const char *rev_d[] =
 	"the southwest",
 	"the southeast",
 	"the northwest",
-	"the northeast"
+	"the northeast",
+	"the downsouth",
+	"the downwest",
+	"the downnorth",
+	"the downeast",
+	"the downsouthwest",
+	"the downsoutheast",
+	"the downnorthwest",
+	"the downnortheast",
+	"the upsouth",
+	"the upwest",
+	"the upnorth",
+	"the upeast",
+	"the upsouthwest",
+	"the upsoutheast",
+	"the upnorthwest",
+	"the upnortheast"
 };
 
 

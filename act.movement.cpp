@@ -208,6 +208,24 @@ const char* const relative_dirs[] =
 	"northwestern",
 	"southeastern",
 	"southwestern",
+	
+	"upper northern",
+	"upper eastern",
+	"upper southern",
+	"upper western",
+	"upper northeastern",
+	"upper northwestern",
+	"upper southeastern",
+	"upper southwestern",
+	"lower northern",
+	"lower eastern",
+	"lower southern",
+	"lower western",
+	"lower northeastern",
+	"lower northwestern",
+	"lower southeastern",
+	"lower southwestern"
+	
 };
 
 const char* const dirs[] =
@@ -224,6 +242,22 @@ const char* const dirs[] =
 	"northwest",
 	"southeast",
 	"southwest",
+	"upnorth",
+	"upeast",
+	"upsouth",
+	"upwest",
+	"upnortheast",
+	"upnorthwest",
+	"upsoutheast",
+	"upsouthwest",
+	"downnorth",
+	"downeast",
+	"downsouth",
+	"downwest",
+	"downnortheast",
+	"downnorthwest",
+	"downsoutheast",
+	"downsouthwest",
 	"\n"
 };
 
@@ -242,6 +276,22 @@ const char* const short_dirs[] =
 	"nw",
 	"se",
 	"sw",
+	"un",
+	"ue",
+	"us",
+	"uw",
+	"une",
+	"unw",
+	"use",
+	"usw",
+	"dn",
+	"de",
+	"ds",
+	"dw",
+	"dne",
+	"dnw",
+	"dse",
+	"dsw",
 	"\n"
 };
 
@@ -258,7 +308,23 @@ const int rev_dir[] =
 	11,
 	10,
 	9,
-	8
+	8,
+	22,
+	23,
+	20,
+	21,
+	27,
+	26,
+	25,
+	24,
+	14,
+	15,
+	12,
+	13,
+	19,
+	18,
+	17,
+	16
 };
 
 const char* const speeds[] =
@@ -318,6 +384,22 @@ const char *direction[] =
 	"southeast",
 	"northwest",
 	"northeast"
+	"upnorth",
+	"upeast",
+	"upsouth",
+	"upwest",
+	"upnortheast",
+	"upnorthwest",
+	"upsoutheast",
+	"upsouthwest",
+	"downnorth",
+	"downeast",
+	"downsouth",
+	"downwest",
+	"downnortheast",
+	"downnorthwest",
+	"downsoutheast",
+	"downsouthwest"
 };
 
 const char *rev_d2[] =
@@ -334,6 +416,22 @@ const char *rev_d2[] =
 	"the southeast",
 	"the northwest",
 	"the northeast"
+	"the upnorth",
+	"the upeast",
+	"the upsouth",
+	"the upwest",
+	"the upnortheast",
+	"the upnorthwest",
+	"the upsoutheast",
+	"the upsouthwest",
+	"the downnorth",
+	"the downeast",
+	"the downsouth",
+	"the downwest",
+	"the downnortheast",
+	"the downnorthwest",
+	"the downsoutheast",
+	"the downsouthwest",
 };
 
 const float move_speeds[] = { 1.00, 2.50, 1.60, 0.50, 0.33, 0.25, 1.60, 3.00 };
@@ -1751,11 +1849,50 @@ void enter_room (QE_DATA * qe)
 	char travel_str[MAX_STRING_LENGTH];
 	char group_str[MAX_STRING_LENGTH];
 	const char *direction2[] =
-	{ "north", "east", "south", "west", "up", "down", "outside", "inside", "northeast", "northwest", "southeast", "southwest" };
+	{ "north", "east", "south", "west", "up", "down",
+	"outside", "inside", "northeast", "northwest", "southeast", 
+	"southwest",
+	"upnorth1", 
+	"upeast1",
+	"upsouth1",
+	"upwest1",
+	"upnortheast1",
+	"upnorthwest1",
+	"upsoutheast1",
+	"upsouthwest1",
+	"downnorth1",
+	"downeast1",
+	"downsouth1",
+	"downwest1",
+	"downnortheast1",
+	"downnorthwest1",
+	"downsoutheast1",
+	"downsouthwest1"
+	
+	
+	};
 	const char *dir_names[] =
 	{
 		"to the north", "to the east", "to the south",
-		"to the west", "above", "below", "outside", "inside", "to the northeast", "to the northwest", "to the southeast", "to the southwest"
+		"to the west", "above", "below", "outside", "inside", "to the northeast", "to the northwest", "to the southeast", "to the southwest",
+		"to the upper north",
+	"to the upper east",
+	"to the upper south",
+	"to the upper west",
+	"to the upper northeast",
+	"to the upper northwest",
+	"to the upper southeast",
+	"to the upper southwest",
+	"to the lower north",
+	"to the lower east",
+	"to the lower south",
+	"to the lower west",
+	"to the lower northeast",
+	"to the lower northwest",
+	"to the lower southeast",
+	"to the lower southwest"
+		
+		
 	};
 	bool toward = false, away = false;
 
@@ -4870,6 +5007,16 @@ void
 {
 	do_move (ch, argument, DOWN);
 }
+
+void
+	do_upnorth (CHAR_DATA * ch, char *argument, int cmd)
+{
+	do_move (ch, argument, UPNORTH);
+}
+
+
+
+
 
 int
 	find_door (CHAR_DATA * ch, char *type, char *dir) // Nimrod bookmark

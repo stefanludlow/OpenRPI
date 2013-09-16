@@ -6999,7 +6999,23 @@ do_exits (CHAR_DATA * ch, char *argument, int cmd)
 		"Northeast",
 		"Northwest",
 		"Southeast",
-		"Southwest"
+		"Southwest",
+		"UpNorth",
+		"UpEast",
+		"UpSouth",
+		"UpWest",
+		"UpNortheast",
+		"UpNorthwest",
+		"UpSoutheast",
+		"UpSouthwest",
+		"DownNorth",
+		"DownEast",
+		"DownSouth",
+		"DownWest",
+		"DownNortheast",
+		"DownNorthwest",
+		"DownSoutheast",
+		"DownSouthwest"
     };
 
     if (is_dark (ch->room) &&

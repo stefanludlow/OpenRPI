@@ -364,6 +364,9 @@ const struct command_data commands[] =
     {"upgrade", do_upgrade, DEAD,
      C_DEL | C_HID | C_SUB | C_DOA | C_BLD | C_PAR | C_SPL
     },
+	{"upnorth", do_upnorth, FIGHT, C_HID | C_DOA | C_BLD},
+	{"upn", do_upnorth, FIGHT, C_HID | C_DOA | C_BLD},
+	{"un", do_upnorth, FIGHT, C_HID | C_DOA | C_BLD},
     //{"unpack", do_take, STAND, C_MNT},
     {"value", do_value, SIT, C_BLD},
     {"vis", do_vis, REST, C_DEL | C_SUB | C_DOA | C_BLD | C_PAR},

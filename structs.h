@@ -621,8 +621,27 @@ typedef signed char shortint;
 #define SOUTHEAST       10
 #define SOUTHWEST       11
 
+#define UPNORTH		12
+#define UPEAST		13
+#define UPSOUTH		14
+#define UPWEST		15
+#define UPNORTHEAST       16
+#define UPNORTHWEST       17
+#define UPSOUTHEAST       18
+#define UPSOUTHWEST       19
 
-#define LAST_DIR	SOUTHWEST
+#define DOWNNORTH		20
+#define DOWNEAST		21
+#define DOWNSOUTH		22
+#define DOWNWEST		23
+#define DOWNNORTHEAST       24
+#define DOWNNORTHWEST       25
+#define DOWNSOUTHEAST       26
+#define DOWNSOUTHWEST       27
+
+
+
+#define LAST_DIR	DOWNSOUTHWEST
 
 /* exit_info */
 
