@@ -1122,7 +1122,18 @@ void load_rooms( void ) {
 							tmp_prg->next = r_prog;
 						}
 					}
-
+					
+					// New addition by Nimrod - 19 Sept 13
+					else if ( *chk == 'R') 
+					{
+						// New weather descriptions - Just reading to end now and not placing.
+						for ( i = 0; i <= 56; i++ ) {
+							if (!strncmp (fread_string ( fl ),  "END_WEATHER_DESCS", 10))
+								break;
+						}	
+						continue;
+					}
+					
 					else if ( *chk == 'A' ) {
 						/* Additional descriptions */
 
