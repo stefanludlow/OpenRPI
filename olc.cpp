@@ -1471,10 +1471,10 @@ fwrite_room (ROOM_DATA * troom, FILE * fp)
 		// write line before weather desc that shows night/day, season, weather
 		// need a way to convert night, season, weather to a consistent number.
 
-        for (j = 0; j < WR_DESCRIPTIONS; j++)
+        for (j = 0; j < (WR_DESCRIPTIONS * NUM_SEASONS * NUM_THAT_TIME_OF_DAY); j++)
 		{
 			if (troom->extra->weather_desc[j]) 
-				fprintf (fp, "%s~%s~%s~%s~\n", weather_room[int(j%7)], season_string[int(j/7)], that_time_of_day[int(j/28)], troom->extra->weather_desc[j]) ;
+				fprintf (fp, "%s~%s~%s~%s~\n", weather_room[int(j%7)], season_string[j > 28 ? int((j-28)/7) : int(j/7)], that_time_of_day[int(j/28)], troom->extra->weather_desc[j]) ;
 		}
 		fprintf (fp, "END_WEATHER_DESCS~\n");
 		
@@ -16497,7 +16497,12 @@ void
 do_rset (CHAR_DATA * ch, char *argument, int cmd)
 {
     int ind;
+	int weather_desc_val;
+	int season_desc_val;
+	int time_desc_val;
+	int i;
     char buf[MAX_STRING_LENGTH];
+	char msg[MAX_STRING_LENGTH];
 
     argument = one_argument (argument, buf);
 
@@ -16505,8 +16510,9 @@ do_rset (CHAR_DATA * ch, char *argument, int cmd)
     {
         send_to_char ("Type tags weather-room for possible descriptions.\n",
                       ch);
-        send_to_char ("\n\nSyntax:\n     rset <weather-room> [reformat|delete]\n", ch);
+        send_to_char ("\n\nSyntax:\n     rset <weather-room> <season> <day/night> [reformat|delete]\n", ch);
         send_to_char ("     rset alas <direction>\n", ch);
+		send_to_char ("     rset list\n", ch);
         return;
     }
 
@@ -16553,11 +16559,53 @@ do_rset (CHAR_DATA * ch, char *argument, int cmd)
         return;
     }
 
-    if ((ind = index_lookup (weather_room, buf)) == -1)
+	if (!str_cmp (buf, "list")){
+	// Show all the weather descriptions for this room. Nimrod Bookmark
+				
+		for ( i = 0; i <= 56; i++ ) {
+		
+			if(!ch->room->extra->weather_desc[ i ] == NULL){
+				sprintf (buf, "\n%s %s %s\n ", weather_room[int(i%7)], season_string[i > 28 ? int((i-28)/7) : int(i/7)], that_time_of_day[int(i/28)]);
+				send_to_char (buf, ch);
+				send_to_char (ch->room->extra->weather_desc[i], ch);
+			}
+		}			
+		send_to_char ("\n\nEnd of list.", ch);
+		
+		return;
+	}
+	
+    if ((weather_desc_val = index_lookup (weather_room, buf)) == -1)
     {
         send_to_char ("No such weather-room description.\n", ch);
         return;
     }
+// New weather-room stuff -Nimrod 21 Sept 13
+// ind is our weather
+// need to get season and that_time_of_day
+	argument = one_argument (argument, buf);
+
+	if ((season_desc_val = index_lookup (season_string, buf)) == -1)
+	{
+		send_to_char ("No such season. Use Spring, Summer, Autumn, Winter.\n", ch);
+        return;
+	}
+	
+	argument = one_argument (argument, buf);
+	
+	if ((time_desc_val = index_lookup (that_time_of_day, buf)) == -1)
+	{
+		send_to_char ("No such time of day. Use day or night.\n", ch);
+        return;
+	}
+		
+
+	ind = time_desc_val * 28 + season_desc_val * 7 + weather_desc_val;
+	
+	// debug message
+	// sprintf( msg, "Weather = %d. Season = %d. Time of day = %d.\n Total = %d.", weather_desc_val, season_desc_val, time_desc_val, ind );
+	// send_to_char (msg, ch);
+	
 
     if (ind == WR_NORMAL)
     {
@@ -16566,13 +16614,21 @@ do_rset (CHAR_DATA * ch, char *argument, int cmd)
     }
 
     argument = one_argument (argument, buf);
+	
+	if (!str_cmp (buf, "delete"))
+    {
+		sprintf (buf, "Deleting %s %s %s description.\n", weather_room[weather_desc_val], season_string[season_desc_val], that_time_of_day[time_desc_val]);
+        send_to_char (buf, ch);
+		ch->room->extra->weather_desc[ind] = NULL;	
+		return;
+	}
 
     if (!str_cmp (buf, "reformat"))
     {
 
         if (!ch->room->extra || !ch->room->extra->weather_desc[ind])
         {
-            sprintf (buf, "No current %s description.\n", weather_room[ind]);
+            sprintf (buf, "No current %s %s %s description.\n", weather_room[weather_desc_val], season_string[season_desc_val], that_time_of_day[time_desc_val]);
             send_to_char (buf, ch);
             return;
         }

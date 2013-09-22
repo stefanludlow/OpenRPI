@@ -1138,11 +1138,11 @@ void load_rooms( void ) {
 					// Set all weather_descs to NULL
 					// Need to update what is used in place of WR_DESCRIPTIONS - Nimrod 21 Sept 13
 					// Should be WR_DESCRIPTIONS * NUM_SEASONS * NUM_THAT_TIME_OF_DAY
-					for (i = 0; i <= WR_DESCRIPTIONS; i++)	{
+					for (i = 0; i <= (WR_DESCRIPTIONS * NUM_SEASONS * NUM_THAT_TIME_OF_DAY); i++)	{
 						room->extra->weather_desc[ i ] = NULL;
 					}
 					
-						// New weather descriptions - Just reading to end now and not placing.
+						// New weather descriptions 
 						for ( i = 0; i <=  256; i++ ) {
 							
 								
