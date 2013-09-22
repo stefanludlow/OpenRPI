@@ -153,6 +153,11 @@ const char *season_string[4] = {
   "winter"
 };
 
+const char *that_time_of_day[2] = {
+  "day",
+  "night"
+  };
+
 const char *month_short_name[12] = {
   "First",
   "Second",
@@ -665,12 +670,6 @@ const char *weather_room[] = {
   "stormy",
   "snowy",
   "blizzard",
-  "night",
-  "nfoggy",
-  "nrainy",
-  "nstormy",
-  "nsnowy",
-  "nblizzard",
   "day",
   "\n"
 };

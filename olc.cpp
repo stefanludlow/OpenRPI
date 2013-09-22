@@ -1420,16 +1420,17 @@ fwrite_room (ROOM_DATA * troom, FILE * fp)
     struct room_prog *rp;
     int j;
     SCENT_DATA *scent;
-	const char *season_string[4] = {
-		"spring",
-		"summer",
-		"autumn",
-		"winter"
-		};
-	const char *day_string[2] = {
-		"day",
-		"night"
-		};
+	
+	// const char *season_string[4] = {
+	//	"spring",
+	//	"summer",
+	//	"autumn",
+	//	"winter"
+	//	};
+	//const char *day_string[2] = {
+	//	"day",
+	//	"night"
+	//	};
 
     if (!troom->description)
         troom->description = add_hash ("No Description Set\n");
@@ -1473,21 +1474,21 @@ fwrite_room (ROOM_DATA * troom, FILE * fp)
         for (j = 0; j < WR_DESCRIPTIONS; j++)
 		{
 			if (troom->extra->weather_desc[j]) 
-				fprintf (fp, "%s~%s~%s~%s~\n", weather_room[int(j%7)], season_string[int(j/7)], day_string[int(j/28)], troom->extra->weather_desc[j]) ;
+				fprintf (fp, "%s~%s~%s~%s~\n", weather_room[int(j%7)], season_string[int(j/7)], that_time_of_day[int(j/28)], troom->extra->weather_desc[j]) ;
 		}
 		fprintf (fp, "END_WEATHER_DESCS~\n");
 		
+		// Commenting out the weather descriptions 21 Sept 13 -Nimrod
 		
-		fprintf (fp, "A\n");
-        for (j = 0; j < WR_DESCRIPTIONS; j++)
-			fprintf (fp, "%s~\n", troom->extra->weather_desc[j] ?
-                    troom->extra->weather_desc[j] : "");
+        // for (j = 0; j < WR_DESCRIPTIONS; j++)
+		//	fprintf (fp, "%s~\n", troom->extra->weather_desc[j] ?
+        //            troom->extra->weather_desc[j] : "");
 		
         for (j = 0; j <= 5; j++)
             fprintf (fp, "%s~\n", troom->extra->alas[j] ?
                      troom->extra->alas[j] : "");
 		
-    }
+		}
 
     for (j = 0; j <= LAST_DIR; j++)  // was 11, changing to last_dir -Nimrod
     {

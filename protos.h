@@ -210,6 +210,8 @@ extern const char *verbal_time[];
 extern const char *fullness[];
 extern const char *color_liquid[];
 extern const char *weather_room[];
+extern const char *season_string[];
+extern const char *that_time_of_day[];
 extern struct msg_data *msg_list;
 extern struct spell_table_data spell_list[];
 extern const struct body_info body_tab[NUM_TABLES][MAX_HITLOC];
