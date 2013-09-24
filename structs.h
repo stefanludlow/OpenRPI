@@ -251,10 +251,16 @@ typedef signed char shortint;
 #define HOLIDAY_ENDERI		5
 #define HOLIDAY_YAVIERE		6
 
+#define NUM_SEASONS	4
+#define NUM_THAT_TIME_OF_DAY 2
+
+
 #define SPRING	        0
 #define SUMMER  	        1
 #define AUTUMN		    2
 #define WINTER	        3
+
+
 
 // We have two moon seasons: near and far on our axial tilt. Modifies temperature a little.
 #define SEASON_NEAR     0
@@ -336,21 +342,23 @@ typedef signed char shortint;
 
 /* Weather-room descrition constants - see weather_room in constants.c */
 
-#define		WR_DESCRIPTIONS		12	/* Doesn't include WR_NORMAL */
+#define		WR_DESCRIPTIONS		7 // Used to be 12	 Update 21 Sept 13 -Nimrod Doesn't include WR_NORMAL 
 
-#define		WR_FOGGY		0
-#define		WR_CLOUDY		1
-#define		WR_RAINY		2
-#define		WR_STORMY		3
-#define		WR_SNOWY		4
-#define		WR_BLIZARD		5
-#define		WR_NIGHT		6
-#define		WR_NIGHT_FOGGY		7
-#define		WR_NIGHT_RAINY		8
-#define		WR_NIGHT_STORMY		9
-#define		WR_NIGHT_SNOWY		10
-#define		WR_NIGHT_BLIZARD	11
-#define		WR_NORMAL		12
+#define		WR_NORMAL		0
+#define		WR_FOGGY		1
+#define		WR_CLOUDY		2
+#define		WR_RAINY		3
+#define		WR_STORMY		4
+#define		WR_SNOWY		5
+#define		WR_BLIZARD		6
+
+#define		WR_NIGHT		7
+#define		WR_NIGHT_FOGGY		8
+#define		WR_NIGHT_RAINY		9
+#define		WR_NIGHT_STORMY		10
+#define		WR_NIGHT_SNOWY		11
+#define		WR_NIGHT_BLIZARD	12
+
 
 /* For 'type_flag' */
 
@@ -2303,7 +2311,7 @@ Original - 30 Aug 13 - Nimrod
 struct room_extra_data
 {
     char *alas[6];
-    char *weather_desc[WR_DESCRIPTIONS];
+    char *weather_desc[WR_DESCRIPTIONS * NUM_SEASONS * NUM_THAT_TIME_OF_DAY];
 };
 
 #define PC_TRACK	( 1 << 0 )

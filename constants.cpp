@@ -146,12 +146,19 @@ const char *verbose_dirs[] = {
   "\n"
 };
 
-const char *season_string[4] = {
+const char *season_string[] = {
   "spring",
   "summer",
   "autumn",
-  "winter"
+  "winter",
+  "\n"
 };
+
+const char *that_time_of_day[] = {
+  "day",
+  "night",
+  "\n"
+  };
 
 const char *month_short_name[12] = {
   "First",
@@ -659,18 +666,12 @@ const char *sex_noun[] = {
 };
 
 const char *weather_room[] = {
+  "default",
   "foggy",
   "cloudy",
   "rainy",
   "stormy",
   "snowy",
   "blizzard",
-  "night",
-  "nfoggy",
-  "nrainy",
-  "nstormy",
-  "nsnowy",
-  "nblizzard",
-  "day",
-  "\n"
+   "\n"
 };

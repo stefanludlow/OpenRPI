@@ -317,9 +317,9 @@ void boot_db( void ) {
 		PERM_MEMORY_SIZE = 12000000;
 		MAX_OVERHEAD = 16000000;
 	} else {
-		MAX_MEMORY = 5000000;
-		PERM_MEMORY_SIZE = 3250000;
-		MAX_OVERHEAD = 4512000;
+		MAX_MEMORY = 150000000;  
+		PERM_MEMORY_SIZE = 132500009;
+		MAX_OVERHEAD = 145120000;
 	}
 
 	system_log( "Initializing read-only memory.", false );
@@ -936,7 +936,7 @@ void load_rooms( void ) {
 	FILE * fl;
 	int zon, flag = 0, tmp, sdir;
 	int virtual_nr;
-	char *temp, chk[ 50 ], errbuf[ 80 ], wfile[ 80 ];
+	char *temp, *temp1, chk[ 50 ], errbuf[ 80 ], wfile[ 80 ];
 	struct extra_descr_data *new_descr;
 	struct written_descr_data *w_desc;
 	struct room_prog *r_prog;
@@ -945,6 +945,10 @@ void load_rooms( void ) {
 	SCENT_DATA *scent;
 	ROOM_DATA *room;
 	int i;
+	int room_desc_val;
+	int weather_desc_val;
+	int season_desc_val;
+	int time_desc_val;
 
 	for ( i = 0; i < ZONE_SIZE; i++ ) {
 		wld_tab[ i ] = NULL;
@@ -1122,14 +1126,118 @@ void load_rooms( void ) {
 							tmp_prg->next = r_prog;
 						}
 					}
-
+					
+					// New addition by Nimrod - 19 Sept 13
+					else if ( *chk == 'R') 
+					{
+					sprintf( errbuf, "Entering Load Loop for new Weather Descriptions.\n" );
+					system_log( errbuf, true );
+					
+					CREATE( room->extra, ROOM_EXTRA_DATA, 1 );
+					
+					// Set all weather_descs to NULL
+					// Need to update what is used in place of WR_DESCRIPTIONS - Nimrod 21 Sept 13
+					// Should be WR_DESCRIPTIONS * NUM_SEASONS * NUM_THAT_TIME_OF_DAY
+					for (i = 0; i <= (WR_DESCRIPTIONS * NUM_SEASONS * NUM_THAT_TIME_OF_DAY); i++)	{
+						room->extra->weather_desc[ i ] = NULL;
+					}
+					
+						// New weather descriptions 
+						for ( i = 0; i <=  256; i++ ) {
+							
+								
+							// Read a line and check what weather desc it is with a index_lookup
+							temp1 = fread_string ( fl );
+							// Debugging information
+							// system_log( temp1, true );
+							if (!strncmp (temp1,  "END_WEATHER_DESCS", 10))
+								break;
+							
+							if ((weather_desc_val = index_lookup (weather_room, temp1)) == -1)
+								weather_desc_val = 9999;
+							
+							// Debugging information
+							// sprintf( errbuf, "weather_desc_val = %d.\n", weather_desc_val );
+							// system_log( errbuf, true );
+							
+							// Read a line and check what season it is
+							temp1 = fread_string ( fl );
+							
+							// Debugging information
+							// system_log( temp1, true );
+							
+							if (!strncmp (temp1,  "END_WEATHER_DESCS", 10))
+								break;
+							
+							 if ((season_desc_val = index_lookup (season_string, temp1)) == -1)
+								season_desc_val = 9999;
+								
+								// Debugging information
+								// sprintf( errbuf, "season_desc_val = %d.\n", season_desc_val );
+								// system_log( errbuf, true );
+								
+								
+							// Read a line and check what time of day it is
+							temp1 = fread_string ( fl );
+							
+							// Debugging information
+							// system_log( temp1, true );
+							
+							if (!strncmp (temp1,  "END_WEATHER_DESCS", 10))
+								break;
+							if ((time_desc_val = index_lookup (that_time_of_day, temp1)) == -1)
+								time_desc_val = 9999;
+							
+							// Debugging information
+							// sprintf( errbuf, "time_desc_val = %d.\n", time_desc_val );
+							// system_log( errbuf, true );
+							
+							/* 
+								Digits below need to use following constants
+								WR_DESCRIPTIONS which should equal 7, but right now is 12
+								NUM_SEASONS which should equal 4
+								NUM_THAT_TIME_OF_DAY which should equal 2 
+								This next line is what it should eventually be:
+								room_desc_val = time_desc_val * WR_DESCRIPTIONS * NUM_SEASONS + season_desc_val * WR_DESCRIPTIONS + weather_desc_val;
+								Get rid of following line and replace with one above.  21 Sept 13 -Nimrod
+							*/
+							room_desc_val = time_desc_val * 28 + season_desc_val * 7 + weather_desc_val;
+							
+							// Debugging information
+							// sprintf( errbuf, "room_desc_val = %d.\n", room_desc_val );
+							//	system_log( errbuf, true );
+						
+						// Read the weather description
+						 temp1 = fread_string ( fl );
+						//	system_log( temp1, true );
+							if (!strncmp (temp1,  "END_WEATHER_DESCS", 10))
+								break;
+												
+							if (room_desc_val <= 9998 && room_desc_val >= 0){
+								//	 We have a good weather description, let's set it
+								if ( strlen(temp1) )
+									room->extra->weather_desc[ room_desc_val ] = temp1;
+							}
+							
+						}	
+						// Reading Alas Descriptions
+						for ( i = 0; i <= 5; i++ ) {
+							room->extra->alas[ i ] = fread_string( fl );
+							if ( !strlen( room->extra->alas[ i ] ) )
+								room->extra->alas[ i ] = NULL;
+						}
+					}
+					
 					else if ( *chk == 'A' ) {
-						/* Additional descriptions */
+						/* Legacy Additional descriptions - depracated  */
+						sprintf( errbuf, "Entering Legacy Loop for OLD Weather Descriptions.\n" );
+						system_log( errbuf, true );
 
 						CREATE( room->extra, ROOM_EXTRA_DATA, 1 );
 
 						for ( i = 0; i < WR_DESCRIPTIONS; i++ ) {
-							room->extra->weather_desc[ i ] = fread_string( fl );
+						
+							 room->extra->weather_desc[ i ] = fread_string( fl );
 							if ( !strlen( room->extra->weather_desc[ i ] ) )
 								room->extra->weather_desc[ i ] = NULL;
 						}
@@ -1140,7 +1248,7 @@ void load_rooms( void ) {
 								room->extra->alas[ i ] = NULL;
 						}
 					} //else if (*chk == 'A')
-
+					
 					else if ( *chk == 'C' ) {
 						/* Which room it is currently copying. */
 						fscanf( fl, "%d\n", &tmp );
