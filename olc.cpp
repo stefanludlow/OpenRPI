@@ -16561,7 +16561,7 @@ do_rset (CHAR_DATA * ch, char *argument, int cmd)
 
 	if (!str_cmp (buf, "list")){
 	// Show all the weather descriptions for this room. Nimrod Bookmark
-				
+		if (!ch->room->extra) { send_to_char ("No listings.", ch); return; }		
 		for ( i = 0; i <= 56; i++ ) {
 		
 			if(!ch->room->extra->weather_desc[ i ] == NULL){
