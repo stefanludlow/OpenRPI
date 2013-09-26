@@ -1135,14 +1135,7 @@ void load_rooms( void ) {
 					
 					CREATE( room->extra, ROOM_EXTRA_DATA, 1 );
 					
-					// Set all weather_descs to NULL
-					// Need to update what is used in place of WR_DESCRIPTIONS - Nimrod 21 Sept 13
-					// Should be WR_DESCRIPTIONS * NUM_SEASONS * NUM_THAT_TIME_OF_DAY
-					for (i = 0; i <= (WR_DESCRIPTIONS * NUM_SEASONS * NUM_THAT_TIME_OF_DAY); i++)	{
-						room->extra->weather_desc[ i ] = NULL;
-					}
-					
-						// New weather descriptions 
+					// New weather descriptions 
 						for ( i = 0; i <=  256; i++ ) {
 							
 								
@@ -1191,17 +1184,8 @@ void load_rooms( void ) {
 							// Debugging information
 							// sprintf( errbuf, "time_desc_val = %d.\n", time_desc_val );
 							// system_log( errbuf, true );
-							
-							/* 
-								Digits below need to use following constants
-								WR_DESCRIPTIONS which should equal 7, but right now is 12
-								NUM_SEASONS which should equal 4
-								NUM_THAT_TIME_OF_DAY which should equal 2 
-								This next line is what it should eventually be:
-								room_desc_val = time_desc_val * WR_DESCRIPTIONS * NUM_SEASONS + season_desc_val * WR_DESCRIPTIONS + weather_desc_val;
-								Get rid of following line and replace with one above.  21 Sept 13 -Nimrod
-							*/
-							room_desc_val = time_desc_val * 28 + season_desc_val * 7 + weather_desc_val;
+														
+							room_desc_val = time_desc_val * WR_DESCRIPTIONS * NUM_SEASONS + season_desc_val * WR_DESCRIPTIONS + weather_desc_val;
 							
 							// Debugging information
 							// sprintf( errbuf, "room_desc_val = %d.\n", room_desc_val );
