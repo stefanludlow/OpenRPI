@@ -2311,7 +2311,7 @@ Original - 30 Aug 13 - Nimrod
 struct room_extra_data
 {
     char *alas[6];
-    char *weather_desc[WR_DESCRIPTIONS * NUM_SEASONS * NUM_THAT_TIME_OF_DAY];
+    char *weather_desc[WR_DESCRIPTIONS * NUM_SEASONS * NUM_THAT_TIME_OF_DAY + 1];
 };
 
 #define PC_TRACK	( 1 << 0 )

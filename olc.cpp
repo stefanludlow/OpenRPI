@@ -16528,8 +16528,9 @@ do_rset (CHAR_DATA * ch, char *argument, int cmd)
             return;
         }
 
-        if (!ch->room->extra)
+        if (!ch->room->extra){
             CREATE (ch->room->extra, ROOM_EXTRA_DATA, 1);
+		}
 
         if (ch->room->extra->alas[ind] &&
                 !IS_SET (ch->descr()->edit_mode, MODE_VISEDIT))
@@ -16558,17 +16559,22 @@ do_rset (CHAR_DATA * ch, char *argument, int cmd)
 
         return;
     }
-
-	if (!str_cmp (buf, "list")){
+	
+if (!str_cmp (buf, "list"))
+	{
 	// Show all the weather descriptions for this room. Nimrod Bookmark
-		if (!ch->room->extra) { send_to_char ("No listings.", ch); return; }		
-		for ( i = 0; i <= 56; i++ ) {
-		
-			if(!ch->room->extra->weather_desc[ i ] == NULL){
-				sprintf (buf, "\n%s %s %s\n ", weather_room[int(i%7)], season_string[i > 28 ? int((i-28)/7) : int(i/7)], that_time_of_day[int(i/28)]);
+		if (!ch->room->extra){ send_to_char ("No listings.", ch); return; }		
+		for ( i = 0; i <= (WR_DESCRIPTIONS * NUM_SEASONS * NUM_THAT_TIME_OF_DAY); i++ ) 
+		{
+		  if (ch->room->extra->weather_desc[ i ]) 
+		  {
+			if (!ch->room->extra->weather_desc[ i ] == NULL)
+			{
+				sprintf (buf, "\n%s %s %s\n ", weather_room[int(i%WR_DESCRIPTIONS)], season_string[i > (WR_DESCRIPTIONS * NUM_SEASONS) ? int((i-(WR_DESCRIPTIONS * NUM_SEASONS))/WR_DESCRIPTIONS) : int(i/7)], that_time_of_day[int(i/28)]);
 				send_to_char (buf, ch);
 				send_to_char (ch->room->extra->weather_desc[i], ch);
 			}
+		  }
 		}			
 		send_to_char ("\n\nEnd of list.", ch);
 		
@@ -16581,8 +16587,7 @@ do_rset (CHAR_DATA * ch, char *argument, int cmd)
         return;
     }
 // New weather-room stuff -Nimrod 21 Sept 13
-// ind is our weather
-// need to get season and that_time_of_day
+
 	argument = one_argument (argument, buf);
 
 	if ((season_desc_val = index_lookup (season_string, buf)) == -1)
@@ -16599,13 +16604,7 @@ do_rset (CHAR_DATA * ch, char *argument, int cmd)
         return;
 	}
 		
-
-	ind = time_desc_val * 28 + season_desc_val * 7 + weather_desc_val;
-	
-	// debug message
-	// sprintf( msg, "Weather = %d. Season = %d. Time of day = %d.\n Total = %d.", weather_desc_val, season_desc_val, time_desc_val, ind );
-	// send_to_char (msg, ch);
-	
+    ind = time_desc_val * WR_DESCRIPTIONS * NUM_SEASONS + season_desc_val * WR_DESCRIPTIONS + weather_desc_val;
 
     if (ind == WR_NORMAL)
     {
@@ -16643,6 +16642,7 @@ do_rset (CHAR_DATA * ch, char *argument, int cmd)
     if (!ch->room->extra)
     {
         CREATE (ch->room->extra, ROOM_EXTRA_DATA, 1);
+						
         printf ("Creating extra room data.\n");
         fflush (stdout);
     }
