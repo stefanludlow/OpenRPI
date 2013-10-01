@@ -2078,7 +2078,7 @@ const char *male_ages[8][2] =
     {"young man", "youthful man"},
     {"man", "male", "fellow", "chap", "gent", "gentleman"},
     {"middle-aged man", "mature-aged man"},
-    {"aged man", "elderly man"},
+    {"aged man", "elderly man", "gaffer"},
     {"geezer", "old man"}
 };
 
