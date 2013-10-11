@@ -575,12 +575,12 @@ game_loop (int s)
                         prompt += " / ";
                         prompt += fatigue_bar (point->character, true);
 
-                        if (get_affect (point->character, AFFECT_HOLDING_BREATH))
+                       /* if (get_affect (point->character, AFFECT_HOLDING_BREATH))
                         {
                             prompt += " / ";
                             prompt += breath_bar (point->character, true);
                         }
-
+*/
                         if (get_affect (point->character, AFFECT_CHOKING))
                         {
                             prompt += " / ";
