@@ -317,9 +317,9 @@ void boot_db( void ) {
 		PERM_MEMORY_SIZE = 12000000;
 		MAX_OVERHEAD = 16000000;
 	} else {
-		MAX_MEMORY = 150000000;  
-		PERM_MEMORY_SIZE = 132500009;
-		MAX_OVERHEAD = 145120000;
+		MAX_MEMORY = 5000000;
+		PERM_MEMORY_SIZE = 3250000;
+		MAX_OVERHEAD = 4512000;
 	}
 
 	system_log( "Initializing read-only memory.", false );
