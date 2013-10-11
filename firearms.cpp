@@ -5640,10 +5640,11 @@ void
       dir = 4;
     else if (!strn_cmp ("down", ch->delay_who, strlen (ch->delay_who)))
       dir = 5;
-  }
-  else
-    dir = 6;
 */
+  }
+//  else
+//    dir = 6;
+
 
   if (get_affect (ch, MAGIC_HIDDEN))
   {
