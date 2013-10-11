@@ -5303,7 +5303,7 @@ void
         return;
       }
 
-      if (dir <= 5 && dir >= 0)
+      if (dir <= 5 && dir >= 0) // Not sure what this is doing atm, -Nimrod
       {
         room = vnum_to_room (EXIT (ch, dir)->to_room);
 
@@ -5625,6 +5625,9 @@ void
       return;
     }
     // Needs to be replaced with a lookupdir call -Nimrod
+	
+	dir = lookup_dir(ch->delay_who);
+/*	
     if (!strn_cmp ("north", ch->delay_who, strlen (ch->delay_who)))
       dir = 0;
     else if (!strn_cmp ("east", ch->delay_who, strlen (ch->delay_who)))
@@ -5640,6 +5643,7 @@ void
   }
   else
     dir = 6;
+*/
 
   if (get_affect (ch, MAGIC_HIDDEN))
   {
@@ -5680,7 +5684,7 @@ void
   object__add_damage (firearm, 1, fired);
 
   // We also add scent.
-  if (!IS_SLING(firearm))
+  if (!IS_SLING(firearm) && (!usingarrow))
   {
     add_scent(firearm, scent_lookup("the acrid sting of cordite"), 1, (fired * 20), 1000, 0, 0);
     add_scent(ch->room, scent_lookup("the acrid sting of cordite"), 1, fired * 10, 1000, 0, 0);
@@ -6210,6 +6214,11 @@ void
       sprintf (buffer, "#5%s", buf2);
       sprintf (buf2, "%s", buffer);
       watched_action(ch, buf2, 0, 1);
+	  
+	    if (usingarrow || usingbolt)
+          broke_aim(ch, 0);
+      
+	  
     }
     else
     {
@@ -6257,7 +6266,7 @@ void
         (usingarrow ? "streaking" : "shooting"),
         char_short (original_target));
         
-        if (usingarrow)
+        if (usingarrow || usingbolt)
           broke_aim(ch, 0);
       
     }
