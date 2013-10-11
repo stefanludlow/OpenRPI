@@ -584,7 +584,7 @@ game_loop (int s)
                         if (get_affect (point->character, AFFECT_CHOKING))
                         {
                             prompt += " / ";
-                            prompt += breath_bar (point->character, true);
+                            prompt += choke_bar (point->character, true);
                         }
 
                         if (point->character->plr_flags & COMBAT_DISPLAY && point->character->fighting)
