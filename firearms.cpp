@@ -6216,7 +6216,7 @@ void
       sprintf (buf2, "%s", buffer);
       watched_action(ch, buf2, 0, 1);
 	  
-	    if (usingarrow || usingbolt)
+	    if ((usingarrow || usingbolt) && !get_trust( ch ))
           broke_aim(ch, 0);
       
 	  
@@ -6686,13 +6686,14 @@ void
 
     if (result_table[0])
     {
+	 
       sprintf(buf + strlen(buf), " miss%s you%s", (fired == 1 ? "es" : ""),
         (!number(0,4) ? " completely" :
         !number(0,3) ? " broadly" :
         !number(0,2) ? "" :
         !number(0,1) ? " barely" : " by a whisper"));
 
-      sprintf(buf2 + strlen(buf2), " miss%s %s%s", (fired == 1 ? "es" : ""), HMHR(target),
+      sprintf(buf2 + strlen(buf2), " (nimrod test 1131141) miss%s %s%s", (fired == 1 ? "es" : ""), HMHR(target),
         (!number(0,4) ? " completely" :
         !number(0,3) ? " broadly" :
         !number(0,2) ? "" :
@@ -7576,7 +7577,7 @@ void
   }
   else
   {
-    for (int ind = 0; ind < fired; ind++)
+    for (int ind = 0; ind < fired; ind++) // loop through each bullet shot, determine where it goes (lodged, dropped in room, etc...)
     {
       old_result = res_result[ind];
       shell = NULL;
@@ -7693,8 +7694,10 @@ void
       }
       else if (res_result[ind] == CRITICAL_HIT || res_result[ind] == HIT || res_result[ind] == SHATTER_HIT)
       {
+	     send_to_char("Nimrod Test point 43479 Hit or Crit hit.......................................... \n", ch);
         if (res_result[ind] == SHATTER_HIT)
         {
+		  send_to_char("Nimrod Test point 43588 Shattered. \n", ch);
           if ((bullet = load_colored_object(fBULLET, ammo[ind]->var_color[0], "shattered", ammo[ind]->var_color[1], 0, 0, 0, 0, 0, 0, 0)))
           {
             bullet->o.od.value[2] = ammo[ind]->o.od.value[2];
@@ -7705,8 +7708,9 @@ void
         }
         else if (!number(0,2))
         {
-          if ((bullet = load_colored_object(fBULLET, ammo[ind]->var_color[0], "flattened", ammo[ind]->var_color[1], 0, 0, 0, 0, 0, 0, 0)))
-          {
+		send_to_char("Nimrod Test point 43598 Hopefully this one will work. lodge one. \n", ch);
+          if ((bullet = load_colored_object(10, ammo[ind]->var_color[0], vd_short("$arrowtwo", 3), ammo[ind]->var_color[2], 0, 0, 0, 0, 0, 0, 0)))
+		  {
             bullet->o.od.value[2] = ammo[ind]->o.od.value[2];
             bullet->o.od.value[4] = ammo[ind]->o.od.value[4];
             lodge_missile (target, bullet, location_table[ind], 1);
@@ -7714,6 +7718,7 @@ void
         }
         else if (!number(0,1))
         {
+		  send_to_char("Nimrod Test point 43789 lodge one. \n", ch);
           if ((bullet = load_colored_object(fBULLET, ammo[ind]->var_color[0], "chipped", ammo[ind]->var_color[1], 0, 0, 0, 0, 0, 0, 0)))
           {
             bullet->o.od.value[2] = ammo[ind]->o.od.value[2];
@@ -7723,6 +7728,7 @@ void
         }
         else
         {
+		  send_to_char("Nimrod Test point 44455 lodge one. \n", ch);
           if ((bullet = load_colored_object(fBULLET, ammo[ind]->var_color[0], "oblong", ammo[ind]->var_color[1], 0, 0, 0, 0, 0, 0, 0)))
           {
             bullet->o.od.value[2] = ammo[ind]->o.od.value[2];
@@ -7743,7 +7749,7 @@ void
             {
               CREATE (res_armor1[ind]->lodged, LODGED_OBJECT_INFO, 1);
               res_armor1[ind]->lodged->vnum = bullet->nVirtual;
-              res_armor1[ind]->lodged->location = add_hash ("internal");
+              res_armor1[ind]->lodged->location = add_hash ("reye");  // changed from 'internal' to 'reye'
               res_armor1[ind]->lodged->next = NULL;
               res_armor1[ind]->lodged->colored = 1;
               res_armor1[ind]->lodged->var_color = bullet->var_color[0];
@@ -7777,16 +7783,36 @@ void
 
       if (!IS_DIRECT(firearm))
         clip->o.clip.amount -= 1;
+		
+      // These next two lines need to be active, remarked out for testing.  -Nimrod
+       obj_from_obj(&ammo[ind], 1); // remove one object from another.  Removing bullet from firearm.
 
-      obj_from_obj(&ammo[ind], 1);
-      extract_obj(ammo[ind]);
+	  
+	  send_to_char("Nimrod Test point 23456\n", ch);
+	  
+	  if (usingarrow)
+	  { 
+	    send_to_char("Nimrod Test point 23459 Lodging Arrow. \n", ch);
+		// ammo[ind]->var_color[0] = "$chipped";
+		//lodge_missile (target, ammo[ind], location_table[ind], 1);
+		
+	   // send_to_char("Nimrod Test point 23479 Dropping Arrow. \n", ch);
+	   // obj_to_room (ammo[ind], ch->in_room);
+				
+	  }
+	  else
+	  {
+	    extract_obj(ammo[ind]);  // Destroy object from memory.
+	  }
 
       if ((shell = LOAD_COLOR(ammo[ind], fSHELL + ammo[ind]->o.bullet.size)))
       {
+	    send_to_char("Nimrod Test point 23457.  Changing variable.\n", ch);
         shell->o.od.value[2] = ammo[ind]->o.od.value[2];
         shell->o.od.value[4] = ammo[ind]->o.od.value[4];
-        if (IS_DIRECT(firearm))
+        if (IS_DIRECT(firearm) )
         {
+		send_to_char("Nimrod Test point 23458", ch);
           obj_to_obj(shell, firearm);
         }
         else

@@ -1785,9 +1785,9 @@ do_variables (CHAR_DATA *ch, char *argument, int cmd)
 
                 output.append("#2|#0");
 
-                output.append(skills[it->second.skill_name], MIN((int) strlen(item_types[it->second.skill_name]), 6));
+                output.append(skills[it->second.skill_name], MIN((int) strlen(skills[it->second.skill_name]), 6));
 
-                for (i = 0, j = (6 - MIN((int) strlen(item_types[it->second.skill_name]), 5)); i < j; i++)
+                for (i = 0, j = (7 - MIN((int) strlen(skills[it->second.skill_name]), 6)); i < j; i++)
                     output.append(" ");
 
                 output.append("#2|#0");
