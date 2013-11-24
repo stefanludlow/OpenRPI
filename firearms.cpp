@@ -3080,8 +3080,8 @@ void
   char original[MAX_STRING_LENGTH];
   sprintf (original, "%s", argument);
 
-  // send_to_char ("Fire is temporarily disabled.  -Nimrod\n", ch);
-    // return;
+   // send_to_char ("Fire is temporarily disabled.  -Nimrod\n", ch);
+   //  return;
   
   if (IS_SWIMMING (ch))
   {
@@ -7774,10 +7774,15 @@ void
 	  if (usingarrow)
 	  { 
 	    send_to_char("Nimrod Test point 23459 Lodging Arrow. \n", ch);
-		// ammo[ind]->var_color[0] = "$chipped";
-		//lodge_missile (target, ammo[ind], location_table[ind], 1);
 		
-	   // send_to_char("Nimrod Test point 23479 Dropping Arrow. \n", ch);
+		  // This is not setting the variable correctly yet. This is a test.
+		  ammo[ind]->var_color[0] = "$chipped";
+		  
+		  // This lodges a missile every time.  It's just a test.  Need to check if strike is really a good one and an arrow should be lodged.
+		//  lodge_missile (target, ammo[ind], location_table[ind], 1); // Nimrodlodge
+		  
+		
+	    send_to_char("Nimrod Test point 23479 Dropping Arrow. \n", ch);
 	   // obj_to_room (ammo[ind], ch->in_room);
 				
 	  }
