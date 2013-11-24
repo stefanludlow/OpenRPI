@@ -744,20 +744,19 @@ send_email (account * to_acct, const char *cc, char *from, char *subject,
     fprintf (fp, "To: %s\n", to_acct->email.c_str ());
     if (cc != NULL && *cc)
         fprintf (fp, "Cc: %s\n", cc);
-    fprintf (fp, "X-Sender: %s\n", MUD_EMAIL);
-    fprintf (fp, "Mime-Version: 1.0\n");
-    fprintf (fp, "Content-type: text/plain;charset=\"us-ascii\"\n");
-    fprintf (fp, "Organization: %s\n", MUD_NAME);
+    // fprintf (fp, "X-Sender: %s\n", MUD_EMAIL);
+    // fprintf (fp, "Mime-Version: 1.0\n");
+   // fprintf (fp, "Content-type: text/plain;charset=\"us-ascii\"\n");
+   // fprintf (fp, "Organization: %s\n", MUD_NAME);
     fprintf (fp, "Subject: %s\n", subject);
     fprintf (fp, "\n");
-    fprintf (fp, "%s", message);
-
+    //fprintf (fp, "%s", message);
+    fwrite(message, 1, strlen(message), fp);
     // Remove this line to remove MUD-specific email footer
 
 
-    fprintf (fp,
-             "\n\n\n\n\n--\nSoI-Laketown RPI: http://www.laketownrpi.us/forums\n");
-
+   // fprintf (fp, "\n--\nSoI-Laketown RPI: http://www.laketownrpi.us/forums\n");
+    fwrite (".\n", 1, 2, fp);
     // Remove this line to remove reference to SoI's weekly automated newsletter
     /*
       if (strstr (subject, "Palantir Weekly"))

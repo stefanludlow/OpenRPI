@@ -3249,15 +3249,7 @@ void
         return;
       }
     }
-// NIMROD TEST
-  if (GET_ITEM_TYPE(firearm) == ITEM_SHORTBOW)
-  {
-  send_to_char ("It's still a shortbow3.\n", ch);
-  }
-  else
-  {
-  send_to_char ("It's NOT a shortbow!3.\n", ch);
-  }
+
     if (bodypart >= 0 && get_second_affect (ch, SA_POINTSTRIKE, NULL))
     {
       remove_second_affect(get_second_affect (ch, SA_POINTSTRIKE, NULL));
@@ -3295,16 +3287,6 @@ void
     *buf = toupper (*buf);
     sprintf (buffer, "#5%s", buf);
     
-    // NIMROD TEST
-  if (GET_ITEM_TYPE(firearm) == ITEM_SHORTBOW)
-  {
-  send_to_char ("It's still a shortbow4.\n", ch);
-  }
-  else
-  {
-  send_to_char ("It's NOT a shortbow!4.\n", ch);
-  }
-    
     if (CAN_SEE (target, ch))
       act (buffer, false, ch, 0, target, TO_VICT | _ACT_FORMAT);
 
@@ -3323,24 +3305,17 @@ void
     target->combat_block = 3;
 
     criminalize (ch, target, target->room->zone, CRIME_SHOOT);
-// NIMROD TEST
-  if (GET_ITEM_TYPE(firearm) == ITEM_SHORTBOW)
-  {
-  send_to_char ("It's still a shortbow7.\n", ch);
-  }
-  else
-  {
-  send_to_char ("It's NOT a shortbow!7.\n", ch);
-  }
     return;
   }
     
   else if (ranged)
   {
    
-  // this can all be replaced with call to lookup_dir - Nimrod
+  
   
   dir = lookup_dir(arg1);
+   
+  // this can all be replaced with call to lookup_dir as added above - Nimrod
   /*
     if (!strn_cmp ("north", arg1, strlen (arg1)))
       dir = 0;
@@ -5069,8 +5044,7 @@ void
   bool usingarrow = false;
   bool usingbolt = false;
   char original[MAX_STRING_LENGTH];
-
-// Still crashing when firing while holding a wielded, unloaded bow. -Nimrod
+  bool testoutput = true; // Change this to false to bypass Nimrod's output text for testing purposes.
 
   sprintf (original, "%s", argument);
 
@@ -5172,8 +5146,10 @@ void
     (ch->right_hand->location == WEAR_BOTH || ch->right_hand->location == WEAR_PRIM || ch->right_hand->location == WEAR_SEC))
   {
     firearm = ch->right_hand;
-      send_to_char ("Nimrod checkpoint: firearm in right hand.\n", ch);
-    ammunition = ch->right_hand->contains;
+     if(testoutput)
+	   send_to_char ("Nimrod checkpoint: firearm in right hand.\n", ch);
+    
+	ammunition = ch->right_hand->contains;
   }
 
   // If we've got a firearm in our left hand...
@@ -5188,8 +5164,10 @@ void
       // If our firearm in our right hand is wielded primary,
       if (firearm->location == WEAR_PRIM)
       {
-          send_to_char ("Nimrod checkpoint: firearm wielded primarily wear_prim.\n", ch);
-        // And our secondary delay is less than our primary delay
+          if (testoutput)
+		    send_to_char ("Nimrod checkpoint: firearm wielded primarily wear_prim.\n", ch);
+        
+		// And our secondary delay is less than our primary delay
         if (ch->secondary_delay < ch->primary_delay)
         {
           // Swap our firearm to our left hand.
@@ -5384,12 +5362,15 @@ void
 
   if (IS_DIRECT(firearm)) // Bows and crossbows are always direct - Nimrod
   {
-    sprintf(buf, "Nimrod Checkpoint: Missile is: $p, END.");
-      act (buf, false, ch, ammunition, 0, TO_CHAR | _ACT_FORMAT);
+    if (testoutput)
+	{
+      sprintf(buf, "Nimrod Checkpoint: Missile is: $p, END.");
+        act (buf, false, ch, ammunition, 0, TO_CHAR | _ACT_FORMAT);
       
-    sprintf(buf, "Nimrod Checkpoint: Weapon is: $p, END.");
-      act (buf, false, ch, firearm, 0, TO_CHAR | _ACT_FORMAT);
-    
+      sprintf(buf, "Nimrod Checkpoint: Weapon is: $p, END.");
+        act (buf, false, ch, firearm, 0, TO_CHAR | _ACT_FORMAT);
+    }
+	
       // Only do this if it's an actual firearm, not a bow
       for (tobj = firearm->contains; tobj; tobj = tobj->next_content)
       {
