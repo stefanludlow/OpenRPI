@@ -612,6 +612,7 @@ const struct command_data commands[] =
     {"givedream", do_givedream, DEAD, C_LV4},
     {"hedit", do_hedit, DEAD, C_LV4},
     {"hour", do_hour, DEAD, C_LV4},
+	// {"wound", do_wound, DEAD, C_LV4},
     {"xlog", do_log, DEAD, C_LV4},
     {"party", do_party, DEAD, C_LV4},
     {"passwd", do_passwd, DEAD, C_LV4},
