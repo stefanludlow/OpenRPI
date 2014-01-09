@@ -1902,7 +1902,7 @@ void
     else
     {
       if (amount)
-        sprintf (strBuf, "You begin loading %d of #2%s#0 in to #2%s#0.", amount, obj_short_desc (ptrRound), obj_short_desc (ptrFirearm));
+        sprintf (strBuf, "You begin (nimrod test 010920141557)  loading %d of #2%s#0 in to #2%s#0.", amount, obj_short_desc (ptrRound), obj_short_desc (ptrFirearm));
       else
         sprintf (strBuf, "You begin loading #2%s#0 in to #2%s#0.", obj_short_desc (ptrRound), obj_short_desc (ptrFirearm));
 
@@ -2344,6 +2344,8 @@ void
   int count = 0;
   int cap = 0;
   int size = 0;
+  
+  send_to_char ("Starting delayed_load_firearm in firearms.cpp line 2348.\n",  ch);
 
   if (!(((ptrFirearm = ch->right_hand) && GET_ITEM_TYPE (ptrFirearm) == ITEM_FIREARM)
     || ((ptrFirearm = ch->left_hand) && GET_ITEM_TYPE (ptrFirearm) == ITEM_FIREARM)))
@@ -2361,8 +2363,10 @@ void
 
   if (IS_DIRECT(ptrFirearm))
   {
+  send_to_char ("Nimrod 0109141548.\n", ch);
     if (ch->delay_info1 < 0)
     {
+	send_to_char ("Nimrod 0109141549.\n", ch);
       if (ch->right_hand && ch->right_hand->coldload_id == ch->delay_info2)
       {
         ptrRound = ch->right_hand;
@@ -2374,6 +2378,7 @@ void
     }
     else
     {
+	  send_to_char ("Nimrod 0109141550.\n", ch);
       if (ch->left_hand && ch->right_hand)
       {
         send_to_char ("Having taken another object in hand, you cease loading your firearm.\n",  ch);
@@ -2430,9 +2435,14 @@ void
 
     if (count > ptrRound->count)
       count = ptrRound->count;
+	  
+	send_to_char ("Nimrod 0109141551.\n", ch);
 
     sprintf (buf, "You finish loading %d of #2%s#0 in to #2%s#0.\n", count, obj_short_desc(ptrRound), obj_short_desc (ptrFirearm));
-    act(buf, true, ch, 0, 0, TO_CHAR | _ACT_FORMAT);
+    act(buf, false, ch, 0, 0, TO_CHAR | _ACT_FORMAT);
+	// Changed above from TRUE to FALSE - 9 Jan 14 for testing purposes.  -Nimrod  
+	send_to_char ("Nimrod 0109141602.\n", ch);
+	
     *buf = '\0';
     sprintf (buf, "$n finishes loading %d of #2%s#0 with #2%s#0.", count, obj_short_desc(ptrRound), obj_short_desc (ptrFirearm));
     act (buf, true, ch, 0, 0, TO_ROOM | _ACT_FORMAT | _ACT_FIREFIGHT);
