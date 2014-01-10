@@ -2596,6 +2596,7 @@ void
   char buffer[MAX_STRING_LENGTH];
   char buf2[MAX_STRING_LENGTH];
   char *error;
+  bool unloadingarrow = false;
 
   if (!(((ptrFirearm = ch->right_hand) && GET_ITEM_TYPE (ptrFirearm) == ITEM_FIREARM)
     || ((ptrFirearm = ch->left_hand) && GET_ITEM_TYPE (ptrFirearm) == ITEM_FIREARM)))
@@ -2651,9 +2652,18 @@ void
         obj_from_obj (&ptrRound, 0);
         obj_to_char(ptrRound, ch);
       }
-
-      sprintf (buf, "You unload %s%s%s from $P.",
-        (rounds > 1 ? "some rounds" : rounds == 1 ? "a round" : ""),
+	  
+	  // Check to see if the word 'arrow' exists in ammunition.
+  
+     if ( !strn_cmp( ptrRound->name, "arrow", 5 ))
+	   {
+         unloadingarrow = true;
+	     send_to_char("We're unloading an arrow now.  Nimrod 0109142056\n", ch);
+	   
+	   }
+       // This is the output when unloading a bow.
+      sprintf (buf, "You unload (nimrod 0109142042) %s%s%s from $P.",
+        (unloadingarrow ? obj_short_desc(ptrRound) : rounds > 1 ? "some rounds" : rounds == 1 ? "a round" : ""),
         (rounds && casings ? " and " : ""),
         (casings > 1 ? "some casings" : casings == 1 ? "a casing" : ""));
       sprintf (buf2, "$n unloads %s%s%s from $P.",
@@ -2738,7 +2748,7 @@ void
         obj_to_char(ptrRound, ch);
       }
 
-      sprintf (buf, "You unload %s%s%s from $P.",
+      sprintf (buf, "You unload (nimrod 0109142041) %s%s%s from $P.",
         (rounds > 1 ? "some BBs" : rounds == 1 ? "a BB" : ""),
         (rounds && casings ? " and " : ""),
         (casings > 1 ? "some casings" : casings == 1 ? "a casing" : ""));
@@ -2808,7 +2818,7 @@ void
 
       obj_from_obj (&ptrClip, 0);
       obj_to_char(ptrClip, ch);
-      sprintf (buf, "You unload $p from $P.");
+      sprintf (buf, "You unload (nimrod 0109142040) $p from $P.");
       sprintf (buf2, "$n unloads $p from $P.");
     }
     else
