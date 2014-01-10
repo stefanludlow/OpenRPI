@@ -2662,7 +2662,7 @@ void
 	   
 	   }
        // This is the output when unloading a bow.
-      sprintf (buf, "You unload (nimrod 0109142042) %s%s%s from $P.",
+      sprintf (buf, "You unload %s%s%s from $P.",
         (unloadingarrow ? obj_short_desc(ptrRound) : rounds > 1 ? "some rounds" : rounds == 1 ? "a round" : ""),
         (rounds && casings ? " and " : ""),
         (casings > 1 ? "some casings" : casings == 1 ? "a casing" : ""));
