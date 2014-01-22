@@ -6864,7 +6864,7 @@ read_virtual_message (CHAR_DATA * ch, char *name, char *argument)
     sprintf (b_buf, "#6Date:#0     %s\n"
              "#6Author:#0   %s\n"
              "#6Subject:#0  %s\n"
-             "#6Context:#0  http://www.atonementrpi.com.org/staffportal.php?context=%ld&db=all##%ld\n\n%s",
+             "#6Context:#0  http://www.middle-earth.us/staffportal.php?context=%ld&db=all##%ld\n\n%s",
              message->date, message->poster, message->subject,
              message->nTimestamp, message->nTimestamp, message->message);
 

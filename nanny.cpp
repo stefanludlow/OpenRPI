@@ -644,7 +644,7 @@ nanny_check_password (DESCRIPTOR_DATA * d, char *argument)
     d->color = d->acct->color;
     d->sound = d->acct->sound;
 
-    if (!strstr (d->strClientHostname, "atonementrpi.com"))
+    if (!strstr (d->strClientHostname, "middle-earth.us"))
     {
         std::string escaped_ip;
         std::string escaped_name;
@@ -671,7 +671,7 @@ nanny_check_password (DESCRIPTOR_DATA * d, char *argument)
             if (!IS_SET (d->acct->flags, ACCOUNT_IPSHARER) && nSharedIP > 0
                     && str_cmp (d->acct->name.c_str (), "Guest") != 0
                     && str_cmp (d->acct->last_ip.c_str (), "(null)") != 0
-                    && d->acct->last_ip.find ("atonementrpi.com") == std::string::npos)
+                    && d->acct->last_ip.find ("middle-earth.us") == std::string::npos)
             {
                 strcpy (strAccountSharer,
                         "  #1Possible IP sharing detected with:");
@@ -2312,7 +2312,7 @@ nanny_connect_select (DESCRIPTOR_DATA * d, char *argument)
         ("While visiting as a guest, you will be held responsible for\n"
          "following our policies. Guest logins are provided for new\n"
          "players to experience the game in a limited capacity while\n"
-         "waiting for an application, or for researching Atonement\n"
+         "waiting for an application, or for researching SoI\n"
          "using our in-game material. We hope you enjoy your stay!\n\n"
          "#1Under NO CIRCUMSTANCES should these logins be used to harass\n"
          "immortals regarding pending character applications! We frown\n"
@@ -2951,7 +2951,7 @@ nanny_choose_pc (DESCRIPTOR_DATA * d, char *argument)
     if (result)
         mysql_free_result (result);
 
-    if (!strstr (d->strClientHostname, "atonementrpi.com"))
+    if (!strstr (d->strClientHostname, "middle-earth.us"))
     {
         for (td = descriptor_list; td; td = td->next)
         {
@@ -8587,10 +8587,10 @@ create_menu_actions (DESCRIPTOR_DATA * d, char *arg)
         ("You will receive an email at the address registered for this\n"
          "account when the application has been reviewed, along with any\n"
          "comments the reviewing administrator wished to make.\n" "\n"
-         "Character review generally takes anywhere from 48-72 hours,\n"
+         "Character review generally takes anywhere from 12 to 24 hours,\n"
          "depending on the workload of our roleplay admins. We thank you\n"
-         "in advance for your patience, and for your interest in Atonement RPI!\n"
-         "We'll see you soon, in the Future!\n", d);
+         "in advance for your patience, and for your interest in Shadows\n"
+         "of Isildur! We'll see you in-game soon!\n", d);
         d->character->time.birth = time (0);
         d->character->time.played = 0;
         d->character->time.logon = time (0);
