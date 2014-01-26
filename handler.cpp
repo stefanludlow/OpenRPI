@@ -5200,50 +5200,66 @@ setup_registry (void)
     for (i = 1; i < LAST_SKILL; i++)
         add_registry (REG_CRAFT_MAGIC, MAGIC_SKILL_MOD_FIRST + i, skills[i]);
 
-    add_registry (REG_SKILLS, SKILL_BRAWLING, "Brawling");
-    add_registry (REG_SKILLS, SKILL_SMALL_BLADE, "Small-Blade");
-    add_registry (REG_SKILLS, SKILL_LONG_BLADE, "Long-Blade");
-    add_registry (REG_SKILLS, SKILL_POLEARM, "Polearm");
-    add_registry (REG_SKILLS, SKILL_BLUDGEON, "Bludgeon");
-    add_registry (REG_SKILLS, SKILL_DEFLECT, "Deflect");
-    add_registry (REG_SKILLS, SKILL_DODGE, "Dodge");
-    add_registry (REG_SKILLS, SKILL_SOLE_WIELD, "Sole-Wield");
-    add_registry (REG_SKILLS, SKILL_DUAL_WIELD, "Dual-Wield");
-    add_registry (REG_SKILLS, SKILL_AIM, "Aim");
-    add_registry (REG_SKILLS, SKILL_HANDGUN, "Handgun");
-    add_registry (REG_SKILLS, SKILL_RIFLE, "Rifle");
-    add_registry (REG_SKILLS, SKILL_SMG, "Machinegun");
-    add_registry (REG_SKILLS, SKILL_GUNNERY, "Gunnery");
-    add_registry (REG_SKILLS, SKILL_EXPLOSIVES, "Explosives");
+    add_registry (REG_SKILLS, SKILL_BRAWLING, "Brawling"); // keep
+    add_registry (REG_SKILLS, SKILL_SMALL_BLADE, "Small-Blade"); // keep
+    add_registry (REG_SKILLS, SKILL_LONG_BLADE, "Long-Blade"); // keep
+    add_registry (REG_SKILLS, SKILL_POLEARM, "Polearm"); // keep
+    add_registry (REG_SKILLS, SKILL_BLUDGEON, "Bludgeon"); // keep
+    add_registry (REG_SKILLS, SKILL_DEFLECT, "Deflect"); // keep
+    add_registry (REG_SKILLS, SKILL_DODGE, "Dodge"); // keep
+    add_registry (REG_SKILLS, SKILL_SOLE_WIELD, "Sole-Wield"); // keep
+    add_registry (REG_SKILLS, SKILL_DUAL_WIELD, "Dual-Wield"); // keep
+    add_registry (REG_SKILLS, SKILL_AIM, "Aim"); // keep
+    add_registry (REG_SKILLS, SKILL_HANDGUN, "Handgun"); // can be deleted
+    add_registry (REG_SKILLS, SKILL_RIFLE, "Rifle"); // can be deleted
+    add_registry (REG_SKILLS, SKILL_SMG, "Machinegun"); // can be deleted
+    add_registry (REG_SKILLS, SKILL_GUNNERY, "Gunnery"); // can be deleted
+    add_registry (REG_SKILLS, SKILL_EXPLOSIVES, "Explosives"); // can be deleted
 
-    add_registry (REG_SKILLS, SKILL_SNEAK, "Sneak");
-    add_registry (REG_SKILLS, SKILL_HIDE, "Hide");
-    add_registry (REG_SKILLS, SKILL_STEAL, "Steal");
-    add_registry (REG_SKILLS, SKILL_PICK, "Picklock");
-    add_registry (REG_SKILLS, SKILL_HAGGLE, "Haggle");
-    add_registry (REG_SKILLS, SKILL_HANDLE, "Handle");
-    add_registry (REG_SKILLS, SKILL_HUNTING, "Hunting");
-    add_registry (REG_SKILLS, SKILL_FIRSTAID, "First-Aid");
-    add_registry (REG_SKILLS, SKILL_MEDICINE, "Medicine");
-    add_registry (REG_SKILLS, SKILL_FORAGE, "Scavenge");
-    add_registry (REG_SKILLS, SKILL_EAVESDROP, "Eavesdrop");
-    add_registry (REG_SKILLS, SKILL_BUTCHERY, "Butchery");
+    add_registry (REG_SKILLS, SKILL_SNEAK, "Sneak"); // keep
+    add_registry (REG_SKILLS, SKILL_HIDE, "Hide"); // keep
+    add_registry (REG_SKILLS, SKILL_STEAL, "Steal"); // keep
+    add_registry (REG_SKILLS, SKILL_PICK, "Picklock"); // keep
+    add_registry (REG_SKILLS, SKILL_HAGGLE, "Haggle"); // keep
+    add_registry (REG_SKILLS, SKILL_HANDLE, "Handle"); // keep
+    add_registry (REG_SKILLS, SKILL_HUNTING, "Hunting"); // keep
+    add_registry (REG_SKILLS, SKILL_FIRSTAID, "First-Aid"); // keep
+    add_registry (REG_SKILLS, SKILL_MEDICINE, "Medicine"); // keep
+    add_registry (REG_SKILLS, SKILL_FORAGE, "Forage"); // Possibly rename FORAGING?
+    add_registry (REG_SKILLS, SKILL_EAVESDROP, "Eavesdrop"); // keep
+    add_registry (REG_SKILLS, SKILL_BUTCHERY, "Butchery"); // keep
 
-    add_registry (REG_SKILLS, SKILL_CHEMISTRY, "Chemistry");
-    add_registry (REG_SKILLS, SKILL_MECHANICS, "Mechanics");
-    add_registry (REG_SKILLS, SKILL_GUNSMITH, "Gunsmith");
-    add_registry (REG_SKILLS, SKILL_COMPUTEROLOGY, "Computerology");
-    add_registry (REG_SKILLS, SKILL_ELECTRONICS, "Electronics");
-    add_registry (REG_SKILLS, SKILL_BIOLOGY, "Biology");
-    add_registry (REG_SKILLS, SKILL_WEAPONCRAFT, "Weaponcraft");
-    add_registry (REG_SKILLS, SKILL_ARMORCRAFT, "Armorcraft");
-    add_registry (REG_SKILLS, SKILL_HANDICRAFT, "Handicraft");
-    add_registry (REG_SKILLS, SKILL_ARTISTRY, "Artistry");
+    add_registry (REG_SKILLS, SKILL_CHEMISTRY, "Chemistry"); // can remove
+    add_registry (REG_SKILLS, SKILL_MECHANICS, "Mechanics"); // can remove
+    add_registry (REG_SKILLS, SKILL_GUNSMITH, "Gunsmith"); // can remove
+    add_registry (REG_SKILLS, SKILL_COMPUTEROLOGY, "Computerology"); // can remove
+    add_registry (REG_SKILLS, SKILL_ELECTRONICS, "Electronics"); // can remove
+    add_registry (REG_SKILLS, SKILL_BIOLOGY, "Biology"); // can remove
+    add_registry (REG_SKILLS, SKILL_WEAPONCRAFT, "Weaponcraft"); // keep
+    add_registry (REG_SKILLS, SKILL_ARMORCRAFT, "Armorcraft"); // keep
+    add_registry (REG_SKILLS, SKILL_HANDICRAFT, "Handicraft"); // ?
+    add_registry (REG_SKILLS, SKILL_ARTISTRY, "Artistry"); // keep
 
-    add_registry (REG_SKILLS, SKILL_VOODOO, "Voodoo");
-    add_registry (REG_SKILLS, SKILL_EDUCATION, "Education");
-    add_registry (REG_SKILLS, SKILL_COMMON, "Common");
-	add_registry (REG_SKILLS, SKILL_ASTRONOMY, "Astronomy");
+    add_registry (REG_SKILLS, SKILL_VOODOO, "Empathy"); // Changed to Empathy - Nimrod 1-26-13
+    add_registry (REG_SKILLS, SKILL_EDUCATION, "Education"); // keep
+    add_registry (REG_SKILLS, SKILL_COMMON, "Common"); // keep
+	
+    add_registry (REG_SKILLS, SKILL_METALCRAFT, "Metalcraft");
+    add_registry (REG_SKILLS, SKILL_LEATHERCRAFT, "Leathercraft");
+    add_registry (REG_SKILLS, SKILL_TEXTILECRAFT, "Textilecraft");
+    add_registry (REG_SKILLS, SKILL_WOODCRAFT, "Woodcraft");
+    add_registry (REG_SKILLS, SKILL_COOKING, "Cooking");
+    add_registry (REG_SKILLS, SKILL_BAKING, "Baking");
+    add_registry (REG_SKILLS, SKILL_BREWING, "Brewing");
+    add_registry (REG_SKILLS, SKILL_FISHING, "Fishing");
+    add_registry (REG_SKILLS, SKILL_STONECRAFT, "Stonecraft");
+    add_registry (REG_SKILLS, SKILL_EARTHENCRAFT, "Earthencraft");
+    add_registry (REG_SKILLS, SKILL_FARMING, "Farming");
+    add_registry (REG_SKILLS, SKILL_SHORTBOW, "Shortbow");
+    add_registry (REG_SKILLS, SKILL_LONGBOW, "Longbow");
+    add_registry (REG_SKILLS, SKILL_CROSSBOW, "Crossbow");
+    add_registry (REG_SKILLS, SKILL_MUSIC, "Music");
+	add_registry (REG_SKILLS, SKILL_ASTRONOMY, "Astronomy"); // can remove
 	
 
 

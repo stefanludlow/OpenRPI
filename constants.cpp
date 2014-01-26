@@ -217,7 +217,7 @@ const char *somatics[] = {
 
 
 const char *skills[] = {
-  "Unused",
+  "Unused", // 0
   "Brawling",
   "Small-Blade",
   "Long-Blade",
@@ -227,7 +227,7 @@ const char *skills[] = {
   "Deflect",
   "Sole-Wield",
   "Dual-Wield",
-  "Aim",
+  "Aim", //10
   "Handgun",
   "Rifle",
   "Machinegun",
@@ -243,7 +243,7 @@ const char *skills[] = {
   "Hunting",
   "First-Aid",
   "Medicine",
-  "Scavenge",
+  "Forage",
   "Eavesdrop",
   "Butchery",
 
@@ -259,9 +259,25 @@ const char *skills[] = {
   "Artistry",
 
   "Education",
-  "Voodoo",
+  "Empathy",
   "Common",
-
+  "Metalcraft", 
+  "Leathercraft", 
+  "Textilecraft", 
+  "Woodcraft", 
+  "Cooking", 
+  "Baking", 
+  "Brewing", 
+  "Fishing", 
+  "Stonecraft", 
+  "Earthencraft", 
+  "Gardening",
+  "Farming", 
+  "Shortbow", 
+  "Longbow", 
+  "Crossbow", 
+  "Music", 
+  "Astronomy",
   "\n"
 };
 

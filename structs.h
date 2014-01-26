@@ -1389,7 +1389,23 @@ typedef signed char shortint;
 #define SKILL_EDUCATION         38
 #define SKILL_VOODOO  	        39
 #define SKILL_COMMON            40
-#define SKILL_ASTRONOMY			41
+#define SKILL_METALCRAFT        41
+#define SKILL_LEATHERCRAFT      42
+#define SKILL_TEXTILECRAFT      43
+#define SKILL_WOODCRAFT         44
+#define SKILL_COOKING           45
+#define SKILL_BAKING            46
+#define SKILL_BREWING           47
+#define SKILL_FISHING           48
+#define SKILL_STONECRAFT        49
+#define SKILL_EARTHENCRAFT      50
+#define SKILL_GARDENING         51
+#define SKILL_FARMING           52
+#define SKILL_SHORTBOW          53
+#define SKILL_LONGBOW           54
+#define SKILL_CROSSBOW          55
+#define SKILL_MUSIC             56
+#define SKILL_ASTRONOMY			57
 
 
 #define LAST_SKILL		SKILL_ASTRONOMY
