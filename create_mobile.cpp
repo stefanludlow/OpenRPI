@@ -1849,10 +1849,11 @@ randomize_mobile (CHAR_DATA * mob)
             mob->race == lookup_race_id("Mutation") || mob->race == lookup_race_id("Cybernetic") ||
             mob->race == lookup_race_id("Phoenixer"))
     {
-        new_randomize_mobile(mob, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+	    new_randomize_mobile(mob, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
         return;
     }
 
+	return;
 
     CHAR_DATA *proto;
     int attr_starters[] = { 16, 15, 12, 12, 11, 10, 8 };
@@ -3867,8 +3868,8 @@ void new_create_description (CHAR_DATA * mob,
     mob->long_descr = add_hash (buf);
 
 
-    if (IS_NPC(mob))
-    {
+  //  if (IS_NPC(mob)) // Remarking out to test if it will add keywords to guest avatars.  -Nimrod 215001272014
+  //  {
         if (mob->name)
             mem_free (mob->name);
 
@@ -3882,7 +3883,7 @@ void new_create_description (CHAR_DATA * mob,
         sprintf(buf3 + strlen(buf3), " %s %s %s", adj1, adj2, age);
 
         mob->name = add_hash (buf3);
-    }
+  //  }
 
     *buf3 = '\0';
     sprintf (buf3, "%s %s %s %s %s", buf2, sentence[0], sentence[1], sentence[2], sentence[3]);
