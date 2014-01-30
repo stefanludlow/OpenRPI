@@ -3697,7 +3697,7 @@ update_delays (void)
                 ch->aim++;
                 if ((ch->in_room == ch->aiming_at->in_room && ch->aim >= 5 && IS_NPC (ch)) || ch->aim >= 11)
                 {
-                    send_to_char ("...", ch);
+                    send_to_char ("You feel you have the best aim you're going to get.\n", ch);
                     if (IS_NPC (ch) && !ch->descr() && !IS_FROZEN (ch->room->zone))
                     {
                         if (CAN_SEE (ch, ch->aiming_at) &&

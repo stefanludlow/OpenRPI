@@ -2658,7 +2658,9 @@ void
      if ( !strn_cmp( ptrRound->name, "arrow", 5 ))
 	   {
          unloadingarrow = true;
-	     send_to_char("We're unloading an arrow now.  Nimrod 0109142056\n", ch);
+	     send_to_char("We're unloading an arrow now.  Let's break aim first.  Nimrod 0109142056\n", ch);
+		 broke_aim(ch, 0);
+		 send_to_char("Aim should be broken now.  Nimrod 0129141720\n", ch);
 	   
 	   }
        // This is the output when unloading a bow.
@@ -3137,7 +3139,7 @@ void
   // Do we have a firearm in either wear_both, wear_prim, or wear_sec?
   if (!((firearm = get_equip (ch, WEAR_BOTH)) || (firearm = get_equip (ch, WEAR_PRIM))  || (firearm = get_equip (ch, WEAR_SEC))) || ((GET_ITEM_TYPE(firearm) != ITEM_FIREARM) && (GET_ITEM_TYPE(firearm) != ITEM_SHORTBOW) ))
   {
-    send_to_char ("You aren't wielding a firearm.\n", ch);
+    send_to_char ("You aren't wielding a weapon.\n", ch);
     return;
   }
   
@@ -3145,7 +3147,7 @@ void
   
   if (!firearm->contains)
   {
-  send_to_char ("Your firearm isn't loaded.\n", ch);
+  send_to_char ("Your weapon isn't loaded.\n", ch);
   return;
   }
   
@@ -3154,7 +3156,7 @@ void
   
   if (firearm && !IS_SLING(firearm) && !IS_DIRECT(firearm) && firearm->contains && !firearm->contains->contains)
   {
-  send_to_char ("Your firearm isn't loaded.\n", ch);
+  send_to_char ("Your weapon isn't loaded.\n", ch);
   return;
   }
   
@@ -3314,7 +3316,12 @@ void
     ch->aim = aim_penalty(ch, firearm, ch->delay_info1); // Nimrod bookmark
     ch->aim -= delay;
     ch->aim = MAX(ch->aim, 0);
-    ch->aim = 1;
+    // ch->aim = 1;  // This is overriding all of the above delays.  Everyone uses this no matter what when in the same room. 0129142115 -Nim
+	  if (!IS_MORTAL (ch) && !IS_NPC (ch)){ // Set aim time to 10 if not mortal
+	    ch->aim = 10;  // 10 is shortest aim delay, 1 is longest -Nim
+		send_to_char("Instant-aim since you're not mortal.\n",ch);
+		}
+	
     if (bodypart >= 0)
       add_second_affect (SA_POINTSTRIKE, 90, ch, NULL, NULL, bodypart);
     add_targeted(target, ch);
@@ -3558,15 +3565,28 @@ void
       add_targeted(target, ch);
       ch->aim -= delay;
       ch->aim = MAX(ch->aim, 0);
+	  	  if (!IS_MORTAL (ch) && !IS_NPC (ch)){ // Set aim time to 10 if not mortal
+	    ch->aim = 10;  // 10 is shortest aim delay, 1 is longest -Nim
+		send_to_char("Instant-aim since you're not mortal.\n",ch);
+		}
       if (bodypart >= 0)
         add_second_affect (SA_POINTSTRIKE, 90, ch, NULL, NULL, bodypart);
     }
     else
     {
+	  // send_to_char("Setting the aim time. 0129141743\n", ch);
       ch->aiming_at = target;
-      ch->aim = MAX(aim_penalty(ch, firearm, ch->delay_info1), 0);
+      ch->aim = MAX(aim_penalty(ch, firearm, ch->delay_info1), 6); // Changed to 6 for a test.  0129141743 -Nimrod
       ch->aim -= delay;
-      ch->aim = MAX(ch->aim, 0);
+      ch->aim = MAX(ch->aim, 6);
+	  if (!IS_MORTAL (ch) && !IS_NPC (ch)){ // Set aim time to 10 if not mortal
+	    ch->aim = 10;  // 10 is shortest aim delay, 1 is longest -Nim
+		send_to_char("Instant-aim since you're not mortal.\n",ch);
+		}
+		// sprintf (buf, "Character delay time: %d.  Aim Penalty: %d. \n",ch->delay_info1, aim_penalty(ch, firearm, ch->delay_info1));
+		// send_to_char(buf, ch);
+    act (buf, false, ch, 0, 0, TO_CHAR | _ACT_FORMAT);
+		
       if (bodypart >= 0)
         add_second_affect (SA_POINTSTRIKE, 90, ch, NULL, NULL, bodypart);
       add_targeted(target, ch);
