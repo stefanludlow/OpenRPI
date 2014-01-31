@@ -1853,7 +1853,7 @@ randomize_mobile (CHAR_DATA * mob)
         return;
     }
 
-	return;
+	// return;
 
     CHAR_DATA *proto;
     int attr_starters[] = { 16, 15, 12, 12, 11, 10, 8 };
