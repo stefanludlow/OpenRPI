@@ -3872,8 +3872,10 @@ void new_create_description (CHAR_DATA * mob,
   //  {
         if (mob->name)
             mem_free (mob->name);
-
-        sprintf(buf3, "x%d%d%d%d%d-%s", number(1,9), number(0,9), number(0,9),number(0,9),number(0,9),mob->tname);
+			
+  // Need to get rid of this next line if it's a player.
+        if (IS_NPC(mob))
+          sprintf(buf3, "x%d%d%d%d%d-%s", number(1,9), number(0,9), number(0,9),number(0,9),number(0,9),mob->tname);
 
         if (mob->tname)
             mem_free (mob->tname);
