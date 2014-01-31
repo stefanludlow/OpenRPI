@@ -505,7 +505,7 @@ wound_to_char (CHAR_DATA * ch, char *location, int impact, int type,
             sprintf (name, "hole");
             break;
         case 2:
-            sprintf (name, "bullet-wound");
+            sprintf (name, "hole");
             break;
         case 3:
             sprintf (name, "puncture");
@@ -517,7 +517,7 @@ wound_to_char (CHAR_DATA * ch, char *location, int impact, int type,
             sprintf (name, "rupture");
             break;
         case 6:
-            sprintf (name, "gunshot");
+            sprintf (name, "puncture");
             break;
         }
     }
@@ -526,7 +526,7 @@ wound_to_char (CHAR_DATA * ch, char *location, int impact, int type,
         switch (number (1, 1))
         {
         case 1:
-            sprintf (name, "exit-wound");
+            sprintf (name, "wound");
             break;
         }
     }
@@ -631,7 +631,7 @@ wound_to_char (CHAR_DATA * ch, char *location, int impact, int type,
         else if (type == 9)
             wound->type = str_dup ("fist");
         else if (type >= 10)
-            wound->type = str_dup ("bullet");
+            wound->type = str_dup ("pierce");
 
         wound->name = str_dup (name);
         wound->severity = str_dup (severity);
@@ -2938,15 +2938,15 @@ show_wounds (CHAR_DATA * ch, int mode)
                 {
                     if (wound->bindskill >= 70)
                     {
-                        strcat (buf4, "neatly bound bullet ");
+                        strcat (buf4, "neatly bound puncture ");
                     }
                     else if (wound->bindskill >= 30)
                     {
-                        strcat (buf4, "bound bullet ");
+                        strcat (buf4, "bound puncture ");
                     }
                     else
                     {
-                        strcat (buf4, "poorly bound bullet ");
+                        strcat (buf4, "poorly bound puncture ");
                     }
                 }
                 else
