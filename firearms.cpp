@@ -1656,7 +1656,7 @@ void
 
     if (count_all_bullets(ptrFirearm) >= cap)
     {
-      sprintf(buf, "%s#0 already has all of its chambers loaded.\n", obj_short_desc(ptrFirearm));
+      sprintf(buf, "%s#0 is already loaded.\n", obj_short_desc(ptrFirearm));
       *buf = toupper(*buf);
       sprintf(buffer, "#2%s", buf);
       send_to_char(buffer, ch);
