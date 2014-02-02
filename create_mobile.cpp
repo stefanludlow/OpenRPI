@@ -1847,7 +1847,7 @@ randomize_mobile (CHAR_DATA * mob)
 
     if (mob->race == lookup_race_id("Survivor") || mob->race == lookup_race_id("Denizen") ||
             mob->race == lookup_race_id("Mutation") || mob->race == lookup_race_id("Cybernetic") ||
-            mob->race == lookup_race_id("Phoenixer"))
+            mob->race == lookup_race_id("Human"))
     {
 	    new_randomize_mobile(mob, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
         return;
