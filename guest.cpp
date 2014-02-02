@@ -116,7 +116,7 @@ create_guest_avatar (DESCRIPTOR_DATA * d, char *argument)
 	d->character->pc->skills[i] = 0;
   }
 
-  d->character->nat_attack_type = 1;
+  d->character->nat_attack_type = 0; // Set to 0 (Punch) for guest lounge.  0201142149 -Nimrod
   d->character->skills[SKILL_COMMON] = 55;
   d->character->pc->skills[SKILL_COMMON] = 55;
   d->character->speaks = SKILL_COMMON;
