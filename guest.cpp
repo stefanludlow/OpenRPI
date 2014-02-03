@@ -163,7 +163,7 @@ create_guest_avatar (DESCRIPTOR_DATA * d, char *argument)
     {
       act ("$n is incarnated in a soft glimmer of light.", true, d->character,
 	   0, 0, TO_ROOM | _ACT_FORMAT);
-      sprintf (buf, "%s [%s] has entered the lounge.", ch->tname,
+      sprintf (buf, "%s [%s] has entered the halls of Mandos.", ch->tname,
 	       ch->descr()->strClientHostname);
       send_to_gods (buf);
       d->connected = CON_PLYNG;
@@ -184,7 +184,7 @@ create_guest_avatar (DESCRIPTOR_DATA * d, char *argument)
 	  ("$n appears in a sudden glimmer of light, looking slightly dazed.",
 	   true, ch, 0, 0, TO_ROOM | _ACT_FORMAT);
       act
-	("You feel your form briefly waver before it solidifies into yet another new guise, returned safely to the pleasant confines of Club Graveyard.",
+	("You feel your form briefly waver before it solidifies into yet another new guise, returned safely to the pleasant confines of the Halls of Mandos.",
 	 false, ch, 0, 0, TO_CHAR | _ACT_FORMAT);
     }
 }
