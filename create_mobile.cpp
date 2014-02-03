@@ -4072,6 +4072,22 @@ new_randomize_mobile (CHAR_DATA * mob,
     {
         make_height (mob);
         make_frame (mob);
+		// Adding this to set stats for GL Avatars, hopefully this'll eventually go away.  0202142208 -Nimrod
+		mob->str = attr_starters[attr_priorities[0]];
+        mob->dex = attr_starters[attr_priorities[1]];
+        mob->con = attr_starters[attr_priorities[2]];
+        mob->wil = attr_starters[attr_priorities[3]];
+        mob->intel = attr_starters[attr_priorities[4]];
+        mob->aur = attr_starters[attr_priorities[5]];
+        mob->agi = attr_starters[attr_priorities[6]];
+
+        mob->tmp_str = mob->str;
+        mob->tmp_dex = mob->dex;
+        mob->tmp_intel = mob->intel;
+        mob->tmp_aur = mob->aur;
+        mob->tmp_agi = mob->agi;
+        mob->tmp_con = mob->con;
+        mob->tmp_wil = mob->wil;
     }
 
     mob->sex = number (1, 2);
