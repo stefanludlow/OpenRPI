@@ -112,7 +112,7 @@ create_guest_avatar (DESCRIPTOR_DATA * d, char *argument)
 
   for (i = 0; i <= MAX_SKILLS; i++)
   {
-   	d->character->skills[i] = (i < 15 ? number(12,65) : 0);
+   	d->character->skills[i] = (i < 11 ? number(12,65) : 0);
 	d->character->pc->skills[i] = d->character->skills[i];
   }
   
