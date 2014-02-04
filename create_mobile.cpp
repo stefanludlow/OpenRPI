@@ -4073,23 +4073,7 @@ new_randomize_mobile (CHAR_DATA * mob,
     {
         make_height (mob);
         make_frame (mob);
-		// Adding this to set stats for GL Avatars, hopefully this'll eventually go away.  0202142208 -Nimrod
-		mob->str = number (8,25);
-        mob->dex = number (8,25);
-        mob->con = number (8,25);
-        mob->wil = number (8,25);
-        mob->intel = number (8,25);
-        mob->aur = number (8,25);
-        mob->agi = number (8,25);
-
-        mob->tmp_str = mob->str;
-        mob->tmp_dex = mob->dex;
-        mob->tmp_intel = mob->intel;
-        mob->tmp_aur = mob->aur;
-        mob->tmp_agi = mob->agi;
-        mob->tmp_con = mob->con;
-        mob->tmp_wil = mob->wil;
-    }
+	}
 
     mob->sex = number (1, 2);
     if (IS_SET (mob->act, ACT_ENFORCER))
