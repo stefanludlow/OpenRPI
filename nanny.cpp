@@ -355,7 +355,7 @@ nanny_login_choice (DESCRIPTOR_DATA * d, char *argument)
          
          if (!strstr (d->strClientHostname, "localhost")
                 && reference_ip (NULL, d->strClientHostname)
-		&& 0) // Change the 0 to 1 to re-enable IP Restrictions -Nimrod
+		&& 1) // Change the 0 to 1 to re-enable IP Restrictions -Nimrod
          {
            SEND_TO_Q
             ("#1\nWe apologize, but our records indicate that an account has already been\n"
@@ -370,10 +370,10 @@ nanny_login_choice (DESCRIPTOR_DATA * d, char *argument)
         
 
 	// remarking out message that sends folks to Parallel website for account creation - Nimrod
-	//	SEND_TO_Q ("All new accounts must be created through the Parallel RPI Website.\n"
-	//			   "The following link will take you to the account creation page:\n"
-	//			   "http://www.forum.parallelrpi.com", d);
-	//	SEND_TO_Q ("Your Selection: ", d);
+		SEND_TO_Q ("All new accounts must be created through the Shadows of Isildur Web Portal.\n"
+				   "The following link will take you to the account creation page:\n"
+				   "http://www.middle-earth.us/generator/adduser.php", d);
+		SEND_TO_Q ("Your Selection: ", d);
 	// unremarking out the account application portion, next three lines -Nimrod
 
         SEND_TO_Q (get_text_buffer (NULL, text_list, "account_application"), d);
