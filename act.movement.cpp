@@ -432,6 +432,7 @@ const char *rev_d2[] =
 	"the downnorthwest",
 	"the downsoutheast",
 	"the downsouthwest",
+	"report this to nimrod"
 };
 
 const float move_speeds[] = { 1.00, 2.50, 1.60, 0.50, 0.33, 0.25, 1.60, 3.00 };
