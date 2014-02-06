@@ -1957,6 +1957,7 @@ void
 void
 	grunge_arena__update_delays (void)
 {
+return; // Disabling this for now as it's crashing the mud.  0205141926 -Nim
 	if (grunge_arena_last_echo > 1)
 	{
 		grunge_arena_last_echo--;
