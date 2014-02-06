@@ -415,7 +415,7 @@ const char *rev_d2[] =
 	"the southwest",
 	"the southeast",
 	"the northwest",
-	"the northeast"
+	"the northeast",
 	"the upnorth",
 	"the upeast",
 	"the upsouth",
