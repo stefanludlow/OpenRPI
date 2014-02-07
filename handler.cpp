@@ -5261,8 +5261,14 @@ setup_registry (void)
     add_registry (REG_SKILLS, SKILL_MUSIC, "Music");
 	add_registry (REG_SKILLS, SKILL_ASTRONOMY, "Astronomy"); // can remove
 	
-
-
+	add_registry (REG_SKILLS, SKILL_ORKISH, "Orkish");
+	add_registry (REG_SKILLS, SKILL_WARGISH, "Wargish");
+	add_registry (REG_SKILLS, SKILL_DALISH, "Dalish");
+	add_registry (REG_SKILLS, SKILL_SINDARIN, "Sindarin");
+	add_registry (REG_SKILLS, SKILL_KHUZDUL, "Khuzdul");
+	add_registry (REG_SKILLS, SKILL_TENGWAR, "Tengwar");
+	add_registry (REG_SKILLS, SKILL_CIRITH, "Cirith");
+	
     add_registry (REG_MISC_NAMES, MISC_DELAY_OFFSET, "Delayoffset");
     add_registry (REG_MISC_NAMES, MISC_MAX_CARRY_N, "Maxcarry_n");
     add_registry (REG_MISC_NAMES, MISC_MAX_CARRY_W, "Maxcarry_w");

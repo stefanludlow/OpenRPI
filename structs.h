@@ -1406,9 +1406,15 @@ typedef signed char shortint;
 #define SKILL_CROSSBOW          55
 #define SKILL_MUSIC             56
 #define SKILL_ASTRONOMY			57
+#define SKILL_ORKISH			58
+#define SKILL_WARGISH			59
+#define SKILL_DALISH			60
+#define SKILL_SINDARIN			61
+#define SKILL_KHUZDUL			62
+#define SKILL_TENGWAR			63
+#define SKILL_CIRITH			64
 
-
-#define LAST_SKILL		SKILL_ASTRONOMY
+#define LAST_SKILL		SKILL_CIRITH
 
 #define PSIONIC_TALENTS		1
 
