@@ -2380,7 +2380,11 @@ void
 	} lang_tab[] =
 	{
 		{"Common", SKILL_COMMON},
-		{"Voodoo", SKILL_VOODOO},
+		{"Orkish", SKILL_ORKISH},  // Orkish, Wargish, Dalish, Sindarin, Khuzdul
+		{"Wargish", SKILL_WARGISH},
+		{"Dalish", SKILL_DALISH},
+		{"Sindarin", SKILL_SINDARIN},
+		{"Khuzdul", SKILL_KHUZDUL},
 		{"\0", 0}
 	};
 
@@ -2430,7 +2434,8 @@ void
 	} lang_tab[] =
 	{
 		{"common", SKILL_COMMON},
-		{"voodoo", SKILL_VOODOO},
+		{"tengwar", SKILL_TENGWAR},
+		{"cirith", SKILL_CIRITH},
 		{"\0", 0}
 	};
 
@@ -2442,7 +2447,7 @@ void
 
 	if (!lang_tab[i].skill)
 	{
-		send_to_char ("Your only choice is: Common\n", ch);
+		send_to_char ("That is not a valid script.\n", ch);
 		return;
 	}
 
@@ -2454,7 +2459,7 @@ void
 		return;
 	}
 
-	if (ch->speaks == lang_tab[i].skill)
+	if (ch->writes == lang_tab[i].skill) // Changed to ch->writes from ch->speaks. 0206141915 -Nim
 	{
 		sprintf (buf, "You are already writing in %s.\n",
 			CAP (lang_tab[i].lang));

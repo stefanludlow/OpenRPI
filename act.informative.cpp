@@ -7757,9 +7757,10 @@ do_score (CHAR_DATA * ch, char *argument, int cmd)
         send_to_char ("If in combat, you will #2FLEE#0.\n", ch);
 
     // Until we have more than one language, why bother knowing?
+	// We have more than one now, modifying to show to mortals.  0206141924 - Nim
 
-    if (!IS_MORTAL(ch))
-    {
+   // if (!IS_MORTAL(ch))
+    // {
 
         sprintf (buf, "You are currently speaking #2%s#0.\n", skills[ch->speaks]);
         send_to_char (buf, ch);
@@ -7770,7 +7771,7 @@ do_score (CHAR_DATA * ch, char *argument, int cmd)
                      skills[ch->writes]);
             send_to_char (buf, ch);
         }
-    }
+    // }
 
     for (i = 0; i <= 3; i++)
         if (GET_STR (ch) * enc_tab[i].str_mult_wt >= IS_CARRYING_W (ch))
