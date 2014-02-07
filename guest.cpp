@@ -79,6 +79,8 @@ create_guest_avatar (DESCRIPTOR_DATA * d, char *argument)
   randomize_mobile (ch);
 
   ch->pc->account_name = str_dup (d->acct->name.c_str ());
+  
+  ch->time.logon = time (0);  // This may need to be changed eventually. 0206142224 -Nim
 
   if (d->acct->guide && ch->pc)
   {
