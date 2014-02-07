@@ -10878,7 +10878,7 @@ do_who (CHAR_DATA * ch, char *argument, int cmd)
 
     if (guests)
         sprintf (s_buf + strlen (s_buf),
-                 "There %s currently #2%d#0 guest%s masquerading within the Graveyard.\n",
+                 "There %s currently #2%d#0 guest%s lingering in the Halls of Mandos.\n",
                  guests == 1 ? "is" : "are", guests, guests == 1 ? "" : "s");
 
     sprintf (s_buf + strlen (s_buf),

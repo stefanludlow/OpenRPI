@@ -278,6 +278,13 @@ const char *skills[] = {
   "Crossbow", 
   "Music", 
   "Astronomy",
+  "Orkish",
+  "Wargish",
+  "Dalish",
+  "Sindarin",
+  "Khuzdul",
+  "Tengwar",
+  "Cirith",
   "\n"
 };
 
