@@ -119,6 +119,22 @@ const char *month_name[12] =
     "December, the Yuletide"
 };
 
+const char *short_month_name[12] =
+{
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+};
+
 const char *season_name[4] =
 {
     "Spring",
@@ -7803,11 +7819,11 @@ do_score (CHAR_DATA * ch, char *argument, int cmd)
     {
         if (birth_date.year > 0)
             sprintf (buf,
-                     "You were born on the #2%s#0, #2%d#0.\n",
+                     "You were born on #2%s#0, #2%d#0.\n",
                      short_time_string(birth_date.day, birth_date.month), birth_date.year);
         else
             sprintf (buf,
-                     "You were born on the #2%s#0, many millenia past.\n",
+                     "You were born on #2%s#0, many millenia past.\n",
                      short_time_string(birth_date.day, birth_date.month));
         send_to_char (buf, ch);
     }

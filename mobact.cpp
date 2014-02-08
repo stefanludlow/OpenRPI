@@ -300,7 +300,7 @@ mob_wander (CHAR_DATA * ch)
     ROOM_DATA *room;
     int room_exit_zone;
     int room_exit_virt;
-    int exit_tab[6];
+    int exit_tab[LAST_DIR + 1];
     int zone;
     int num_exits = 0;
     int to_exit;
