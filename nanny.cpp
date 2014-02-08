@@ -2458,6 +2458,12 @@ nanny_connect_select (DESCRIPTOR_DATA * d, char *argument)
 
     else if (c == 'h' || argn == 9)
     {
+			// Temporarily disabling this option 0207142053 - Nimrod
+		SEND_TO_Q
+			("Hobbitmail has been temporarily disabled.\n\n\n", d);
+        display_main_menu (d);
+		return;
+	
         if (strcasecmp ("Unknown", d->acct->name.c_str ()) == 0)
         {
             SEND_TO_Q
@@ -2474,6 +2480,12 @@ nanny_connect_select (DESCRIPTOR_DATA * d, char *argument)
 
     else if (c == 'r' || argn == 3)
     {
+		// Temporarily disabling this option 0207142051 - Nimrod
+		SEND_TO_Q
+			("Character Creation has been temporarily disabled.\n\n\n", d);
+        display_main_menu (d);
+		return;
+
         if (str_cmp ("Unknown", d->acct->name.c_str ()) == 0)
         {
             SEND_TO_Q
