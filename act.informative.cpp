@@ -4033,25 +4033,56 @@ enter_exit_msg (CHAR_DATA * ch, char *buffer)
     bool isLeaving = false;
     char *e_dirs[] =
     {
-        "to the north",
-        "to the east",
-        "to the south",
-        "to the west",
-        "up",
-        "down",
-        "to the outside",
-        "to the inside"
+		"to the north", "to the east", "to the south",
+		"to the west", "above", "below", "outside", "inside", "to the northeast", "to the northwest", "to the southeast", "to the southwest",
+		"to the upper north",
+	"to the upper east",
+	"to the upper south",
+	"to the upper west",
+	"to the upper northeast",
+	"to the upper northwest",
+	"to the upper southeast",
+	"to the upper southwest",
+	"to the lower north",
+	"to the lower east",
+	"to the lower south",
+	"to the lower west",
+	"to the lower northeast",
+	"to the lower northwest",
+	"to the lower southeast",
+	"to the lower southwest"
     };
     char *a_dirs[] =
     {
-        "the south",
-        "the west",
-        "the north",
-        "the east",
-        "below",
-        "above",
-        "the outside",
-        "the inside"
+       "the south",
+	"the west",
+	"the north",
+	"the east",
+	"below",
+	"above",
+	"inside",
+	"outside",
+	"the southwest",
+	"the southeast",
+	"the northwest",
+	"the northeast",
+	"the upnorth",
+	"the upeast",
+	"the upsouth",
+	"the upwest",
+	"the upnortheast",
+	"the upnorthwest",
+	"the upsoutheast",
+	"the upsouthwest",
+	"the downnorth",
+	"the downeast",
+	"the downsouth",
+	"the downwest",
+	"the downnortheast",
+	"the downnorthwest",
+	"the downsoutheast",
+	"the downsouthwest",
+	"report this to nimrod"
     };
 
     extern QE_DATA *quarter_event_list;
