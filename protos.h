@@ -239,6 +239,7 @@ extern const char *day_name[];
 extern const char *season_name[];
 
 extern const char *month_name[];
+extern const char *short_month_name[];
 
 extern struct room_direction_data *dir_options[];
 extern MYSQL *database;
