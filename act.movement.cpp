@@ -2496,7 +2496,10 @@ void enter_room (QE_DATA * qe)
 		send_to_gods("Error: char moved room but didn't keep ch->room. Let Kith know.");
 		ch->room = vnum_to_room(ch->in_room);
 	}
-
+	
+// Next dozen lines can be replaced by this 0208142142 -Nimrod
+	ch->from_dir = rev_dir[qe->dir];
+/*
 	if (qe->dir == 0)
 		from_dir = 2;
 	else if (qe->dir == 1)
@@ -2511,6 +2514,7 @@ void enter_room (QE_DATA * qe)
 		from_dir = 4;
 
 	ch->from_dir = from_dir;
+*/
 
 	if (!IS_NPC (ch) && !IS_SET (ch->act, ACT_VEHICLE))
 		weaken (ch, 0, qe->move_cost, NULL);
@@ -4829,6 +4833,9 @@ void do_move (CHAR_DATA * ch, char *argument, int dir) {
 	if (get_affect (ch, MAGIC_TOLL))
 		stop_tolls (ch);
 
+	// dir = lookup_dir(dir); use constant dirs[] instead of all this other crap
+		sprintf (command, dirs[dir]); // this should take the place of all the crap below. 0208142154 -Nimrod
+/*		
 	if (dir == UP)
 		sprintf (command, "up");
 	else if (dir == DOWN)
@@ -4842,6 +4849,7 @@ void do_move (CHAR_DATA * ch, char *argument, int dir) {
 	else
 		sprintf (command, "south");
 
+*/
 
 	if (!is_mounted (ch) && GET_POS (ch) == POSITION_FIGHTING)
 	{
@@ -9026,6 +9034,9 @@ void
 
 		if (IS_NPC (ch) && IS_SET (ch->affected_by, AFF_SNEAK))
 		{
+		sprintf (buf, dirs[cmd]);
+		/* Line above replaces dozen below 0208142156 -Nimrod
+		
 			if (cmd == 0)
 				sprintf (buf, "north");
 			if (cmd == 1)
@@ -9038,6 +9049,7 @@ void
 				sprintf (buf, "up");
 			if (cmd == 5)
 				sprintf (buf, "down");
+			*/
 		}
 		else
 		{

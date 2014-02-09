@@ -356,7 +356,11 @@ do_point (CHAR_DATA * ch, char *argument, int cmd)
 
     argument = one_argument (argument, arg1);
     argument = one_argument (argument, arg2);
-
+	
+	
+	if((dir = lookup_dir(arg1)) == -1)
+	{
+    /* Line above replaces dozen below 0208142203 -Nimrod
     if (!strn_cmp ("north", arg1, strlen (arg1)))
         dir = 0;
     else if (!strn_cmp ("east", arg1, strlen (arg1)))
@@ -370,8 +374,10 @@ do_point (CHAR_DATA * ch, char *argument, int cmd)
     else if (!strn_cmp ("down", arg1, strlen (arg1)))
         dir = 5;
     else
-    {
-        send_to_char ("Usage: point <direction> <target>\n", ch);
+	{
+	*/
+    
+        send_to_char ("Usage format: point <direction> <target>\n", ch);
         return;
     }
 
