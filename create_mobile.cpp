@@ -935,10 +935,13 @@ insert_mobile_variables (CHAR_DATA * mob, CHAR_DATA * proto, char *string0, char
                 }
                 sprintf (buf2 + strlen (buf2), "%c", original[y]);
             }
+			 send_to_gods("Test point 1./n");
 			if (&buf2[0] == "a" || &buf[0] == "A")
 			{
+			  send_to_gods("It has an 'a'./n");
 			  if (&buf2[1] == " " && isvowel(buf2[2]))
 			  {
+			     send_to_gods("It has a vowel./n");
 			    // Change the 'a' to 'an' in buf2
 				sprintf (buf3, "%c", buf2[2]);
 				sprintf (buf2, "an %c", buf3);
