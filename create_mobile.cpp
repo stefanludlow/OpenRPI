@@ -943,7 +943,9 @@ insert_mobile_variables (CHAR_DATA * mob, CHAR_DATA * proto, char *string0, char
 			  {
 			     send_to_gods("It has a vowel./n");
 			    // Change the 'a' to 'an' in buf2
-				sprintf (buf3, "%s", buf2[2]);
+				strcpy(buf3, &buf2[2]);
+				
+				// sprintf (buf3, "%c", buf2[2]);
 				sprintf (buf2, "an %s", buf3);
 				
 			  } 
