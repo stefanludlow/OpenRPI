@@ -943,9 +943,11 @@ insert_mobile_variables (CHAR_DATA * mob, CHAR_DATA * proto, char *string0, char
 			  {
 			     send_to_gods("It has a vowel./n");
 			    // Change the 'a' to 'an' in buf2
-				sprintf (buf3, "%s", buf2[2]);
-				sprintf (buf2, "an %s", buf3);
+				strcpy(buf3, &buf2[2]);
 				
+				// sprintf (buf3, "%c", buf2[2]);
+				sprintf (buf2, "an %s", buf3);
+				// testing
 			  } 
 			}
             mem_free (mob->short_descr);  // This is where we need to add the a/an information -Nimrod
