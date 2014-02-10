@@ -935,22 +935,16 @@ insert_mobile_variables (CHAR_DATA * mob, CHAR_DATA * proto, char *string0, char
                 }
                 sprintf (buf2 + strlen (buf2), "%c", original[y]);
             }
-			 send_to_gods("Test point 1./n");
-			if ((buf2[0] == 'a') || (buf[0] == 'A'))
+		    // Change 'a' to 'an' if needed. 0209142340 -Nimrod
+			if ((buf2[0] == 'a') || (buf[0] == 'A')) // Check first letter for 'a'
 			{
-			  send_to_gods("It has an 'a'./n");
-			  if ((buf2[1] == ' ') && (isvowel(buf2[2])))
+			  if ((buf2[1] == ' ') && (isvowel(buf2[2]))) // Check second letter for a space.
 			  {
-			     send_to_gods("It has a vowel./n");
-			    // Change the 'a' to 'an' in buf2
-				strcpy(buf3, &buf2[2]);
-				
-				// sprintf (buf3, "%c", buf2[2]);
-				sprintf (buf2, "an %s", buf3);
-				// testing
+				strcpy(buf3, &buf2[2]); // Exclude 'a ' from buf3
+				sprintf (buf2, "an %s", buf3); // write 'an ' to buf3
 			  } 
 			}
-            mem_free (mob->short_descr);  // This is where we need to add the a/an information -Nimrod
+            mem_free (mob->short_descr);
             mob->short_descr = add_hash (buf2);
         }
 
@@ -1011,6 +1005,7 @@ insert_mobile_variables (CHAR_DATA * mob, CHAR_DATA * proto, char *string0, char
          */
 
         *buf2 = '\0';
+		*buf3 = '\0';
         sprintf (original, "%s", proto->name);
         point = strpbrk (original, "$");
         round = 0;
