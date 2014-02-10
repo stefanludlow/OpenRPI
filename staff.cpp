@@ -37,7 +37,7 @@ char b_buf[ B_BUF_SIZE ];
 const char *player_bits[] = { "Brief", "NoShout", "Compact", "DONTSET", "Quiet", "Reboot", "Shutdown", "Build",
 		"Approval", "Outlaw", "\n" };
 
-const char* trap_attrs[ 8 ] = { "None", "Str", "Dex", "Con", "Int", "Wil", "Mut", "Agi" };
+const char* trap_attrs[ 8 ] = { "None", "Str", "Dex", "Con", "Int", "Wil", "Pre", "Agi" };
 
 extern rpie::server engine;
 extern const char *skills[];
