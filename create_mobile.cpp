@@ -947,7 +947,7 @@ insert_mobile_variables (CHAR_DATA * mob, CHAR_DATA * proto, char *string0, char
 				
 				// sprintf (buf3, "%c", buf2[2]);
 				sprintf (buf2, "an %s", buf3);
-				
+				// testing
 			  } 
 			}
             mem_free (mob->short_descr);  // This is where we need to add the a/an information -Nimrod
