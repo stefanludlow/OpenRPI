@@ -692,6 +692,7 @@ void
 insert_mobile_variables (CHAR_DATA * mob, CHAR_DATA * proto, char *string0, char *string1, char *string2, char *string3, char *string4, char *string5, char *string6, char *string7, char *string8, char *string9)
 {
     char buf2[MAX_STRING_LENGTH];
+	char buf3[MAX_STRING_LENGTH];
     char temp[MAX_STRING_LENGTH];
     char original[MAX_STRING_LENGTH];
 
@@ -934,7 +935,17 @@ insert_mobile_variables (CHAR_DATA * mob, CHAR_DATA * proto, char *string0, char
                 }
                 sprintf (buf2 + strlen (buf2), "%c", original[y]);
             }
-            mem_free (mob->short_descr);
+			if (&buf2[0] == "a" || &buf[0] == "A")
+			{
+			  if (&buf2[1] == " " && isvowel(buf2[2]))
+			  {
+			    // Change the 'a' to 'an' in buf2
+				sprintf (buf3, "%c", buf2[2]);
+				sprintf (buf2, "an %c", buf3);
+				
+			  } 
+			}
+            mem_free (mob->short_descr);  // This is where we need to add the a/an information -Nimrod
             mob->short_descr = add_hash (buf2);
         }
 
