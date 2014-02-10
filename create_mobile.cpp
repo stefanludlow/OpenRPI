@@ -935,6 +935,7 @@ insert_mobile_variables (CHAR_DATA * mob, CHAR_DATA * proto, char *string0, char
                 }
                 sprintf (buf2 + strlen (buf2), "%c", original[y]);
             }
+			/*
 		    // Change 'a' to 'an' if needed. 0209142340 -Nimrod
 			if ((buf2[0] == 'a') || (buf[0] == 'A')) // Check first letter for 'a'
 			{
@@ -944,8 +945,12 @@ insert_mobile_variables (CHAR_DATA * mob, CHAR_DATA * proto, char *string0, char
 				sprintf (buf2, "an %s", buf3); // write 'an ' to buf3
 			  } 
 			}
+			*/
+	   			
             mem_free (mob->short_descr);
             mob->short_descr = add_hash (buf2);
+			
+			correct_grammar(mob->short_descr, &mob->short_descr);
         }
 
         /*
