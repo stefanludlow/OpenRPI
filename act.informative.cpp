@@ -694,6 +694,7 @@ do_timeconvert (CHAR_DATA * ch, char *argument, int cmd)
 
 		day = game_date.day + 1;
 
+		 // could just make a call to suffix() here rather than the next 12 lines.
 		if (day == 1)
 			strcpy (suf, "st");
 		else if (day == 2)
@@ -7742,7 +7743,7 @@ do_score (CHAR_DATA * ch, char *argument, int cmd)
                      verbal_stats[get_stat_range (GET_AGI (ch))]);
         else
             sprintf (buf,
-                     "Str[#2%d#0] Dex[#2%d#0] Con[#2%d#0] Int[#2%d#0] Wil[#2%d#0] Mut[#2%d#0] Agi[#2%d#0]\n",
+                     "Str[#2%d#0] Dex[#2%d#0] Con[#2%d#0] Int[#2%d#0] Wil[#2%d#0] Pre[#2%d#0] Agi[#2%d#0]\n",
                      GET_STR (ch), GET_DEX (ch), GET_CON (ch), GET_INT (ch),
                      GET_WIL (ch), GET_AUR (ch), GET_AGI (ch));
 
@@ -7857,7 +7858,7 @@ do_score (CHAR_DATA * ch, char *argument, int cmd)
         if (birth_date.year > 0)
             sprintf (buf,
                      "You were born on #2%s#0, #2%d#0.\n",
-                     short_time_string(birth_date.day, birth_date.month), birth_date.year);
+                     short_time_string(birth_date.day, birth_date.month), birth_date.year); // can use call to suffix(birth_date.day) to show 'st', 'th', 'nd'
         else
             sprintf (buf,
                      "You were born on #2%s#0, many millenia past.\n",
