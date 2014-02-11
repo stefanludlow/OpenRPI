@@ -7529,9 +7529,7 @@ void
   { 
      // Why are we setting buffer with data and then turning right around and setting buf or buf2 with buffer?
      // Why not just set them directly?  This seems like it's just wasting time. -Nimrod
-	 // Check if (usingarrow)
-	 //  ((usingarrow || usingbolt) ? obj_short_desc(ammunition) : shell_name[firearm->o.firearm.caliber]),
-	 
+		 
     sprintf (buffer, "#2%s %s %s%s#0 comes whirring through the air from %s, heading straight towards you!\n\n%s",
 	  ((usingarrow || usingbolt) ? "" : buf6),
 	  ((usingarrow || usingbolt) ? "" : buf5),
