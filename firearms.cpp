@@ -7529,32 +7529,87 @@ void
   { 
      // Why are we setting buffer with data and then turning right around and setting buf or buf2 with buffer?
      // Why not just set them directly?  This seems like it's just wasting time. -Nimrod
-    sprintf (buffer, "#2%s %s %s%s#0 comes whirring through the air from %s, heading straight towards you!\n\n%s", buf6, buf5, shell_name[firearm->o.firearm.caliber], (fired == 1 ? "" : "s"), from_direction, buf);
+	 // Check if (usingarrow)
+	 //  ((usingarrow || usingbolt) ? obj_short_desc(ammunition) : shell_name[firearm->o.firearm.caliber]),
+	 
+    sprintf (buffer, "#2%s %s %s%s#0 comes whirring through the air from %s, heading straight towards you!\n\n%s",
+	  ((usingarrow || usingbolt) ? "" : buf6),
+	  ((usingarrow || usingbolt) ? "" : buf5),
+	  ((usingarrow || usingbolt) ? obj_short_desc(ammunition) : shell_name[firearm->o.firearm.caliber]),
+	  (fired == 1 ? "" : "s"),
+	  from_direction,
+	  buf);
+	
     sprintf(buf, "%s", buffer);
-    sprintf (buffer, "#2%s %s %s%s#0 comes whirring through the air from %s, heading straight towards #5%s#0!\n\n%s", buf6, buf5, shell_name[firearm->o.firearm.caliber], (fired == 1 ? "" : "s"), from_direction, char_short(target), buf2);
-    sprintf(buf2, "%s", buffer);
+    sprintf (buffer, "#2%s %s %s%s#0 comes whirring through the air from %s, heading straight towards #5%s#0!\n\n%s",
+	  ((usingarrow || usingbolt) ? "" : buf6),
+	  ((usingarrow || usingbolt) ? "" : buf5),
+	  ((usingarrow || usingbolt) ? obj_short_desc(ammunition) : shell_name[firearm->o.firearm.caliber]),
+	  (fired == 1 ? "" : "s"),
+	  from_direction,
+	  char_short(target),
+	  buf2);
+
+	sprintf(buf2, "%s", buffer);
 
     if (result_table[1] > 0 || result_table[10] > 0 || result_table[2] > 0 || result_table[8] > 0 || result_table[9] > 0)
     {
-      sprintf (buffer, "#2%s %s %s%s#0 comes whirring through the air from %s, hitting #5%s#0.", buf6, buf5, shell_name[firearm->o.firearm.caliber], (fired == 1 ? "" : "s"), from_direction, char_short(target));
+      sprintf (buffer, "#2%s %s %s%s#0 comes whirring through the air from %s, hitting #5%s#0.",
+	   ((usingarrow || usingbolt) ? "" : buf6),
+	   ((usingarrow || usingbolt) ? "" : buf5),
+	   ((usingarrow || usingbolt) ? obj_short_desc(ammunition) : shell_name[firearm->o.firearm.caliber]),
+	   (fired == 1 ? "" : "s"),
+	   from_direction,
+	   char_short(target));
+	  		
       sprintf (buf4, "%s", buffer);
-      sprintf (buffer, "#2%s %s %s%s#0 hits #5%s#0.", buf6, buf5, shell_name[firearm->o.firearm.caliber], (fired == 1 ? "" : "s"), char_short(target));
-      sprintf (buf7, "%s", buffer);
+      
+	  sprintf (buffer, "#2%s %s %s%s#0 hits #5%s#0.",
+       ((usingarrow || usingbolt) ? "" : buf6),
+	   ((usingarrow || usingbolt) ? "" : buf5),
+	   ((usingarrow || usingbolt) ? obj_short_desc(ammunition) : shell_name[firearm->o.firearm.caliber]),
+	   (fired == 1 ? "" : "s"),
+	   from_direction,
+	   char_short(target));	  
+ 
+	  sprintf (buf7, "%s", buffer);
     }
     else
     {
-      sprintf (buffer, "#2%s %s %s%s#0 comes whirring through the air from %s, missing #5%s#0.", buf6, buf5, shell_name[firearm->o.firearm.caliber], (fired == 1 ? "" : "s"), from_direction, char_short(target));
+      sprintf (buffer, "#2%s %s %s%s#0 comes whirring through the air from %s, missing #5%s#0.",
+	    ((usingarrow || usingbolt) ? "" : buf6),
+	    ((usingarrow || usingbolt) ? "" : buf5),
+	    ((usingarrow || usingbolt) ? obj_short_desc(ammunition) : shell_name[firearm->o.firearm.caliber]),
+		(fired == 1 ? "" : "s"),
+		from_direction,
+		char_short(target));
+		
       sprintf (buf4, "%s", buffer);
-      sprintf (buffer, "#2%s %s %s%s#0 misses #5%s#0.", buf6, buf5, shell_name[firearm->o.firearm.caliber], (fired == 1 ? "" : "s"), char_short(target));
-      sprintf (buf7, "%s", buffer);
+      
+	  sprintf (buffer, "#2%s %s %s%s#0 misses #5%s#0.",
+ 	    ((usingarrow || usingbolt) ? "" : buf6),
+	    ((usingarrow || usingbolt) ? "" : buf5),
+	    ((usingarrow || usingbolt) ? obj_short_desc(ammunition) : shell_name[firearm->o.firearm.caliber]),
+		(fired == 1 ? "" : "s"),
+		char_short(target));
+      
+	  sprintf (buf7, "%s", buffer);
       only_miss = true;
     }
 
     if (switched_target)
     {
       *buf3 = tolower(*buf3);
-      sprintf (buffer, "#2%s %s %s%s#0 strays off course, heading instead towards #5%s#0: %s", buf6, buf5, shell_name[firearm->o.firearm.caliber], (fired == 1 ? "" : "s"), char_short(target), buf3);
-      sprintf(buf3, "%s", buffer);
+      
+	  sprintf (buffer, "#2%s %s %s%s#0 strays off course, heading instead towards #5%s#0: %s",
+	    ((usingarrow || usingbolt) ? "" : buf6),
+	    ((usingarrow || usingbolt) ? "" : buf5),
+	    ((usingarrow || usingbolt) ? obj_short_desc(ammunition) : shell_name[firearm->o.firearm.caliber]),
+		(fired == 1 ? "" : "s"),
+		char_short(target),
+		buf3);
+      
+	  sprintf(buf3, "%s", buffer);
     }
   }
   else if (switched_target && !jam)
