@@ -5937,8 +5937,8 @@ void do_look (CHAR_DATA * ch, char *argument, int cmd)
     char arg1[MAX_STRING_LENGTH] = { '\0' };
     char buf[MAX_STRING_LENGTH] = { '\0' };
     char stink_buf[MAX_STRING_LENGTH] = { '\0' };
-    //int nRoomVnum = 0, nZone = 1, original_loc = 0;
-    //bool change = false, again = true, abrt = false,
+    int nRoomVnum = 0, nZone = 1, original_loc = 0;
+    bool change = false, again = true, abrt = false;
     bool found = false;
     bool eq = true;
     bool hands = true;
@@ -5988,19 +5988,20 @@ void do_look (CHAR_DATA * ch, char *argument, int cmd)
 
 
     /** Window **/
-    /*
-    if ((strcasecmp (arg1, "vortex") == STR_MATCH && ch->in_room == OOC_LOUNGE)
-        || (!strn_cmp (arg1, "vortex", 6)
+    
+    if ((strcasecmp (arg1, "window") == STR_MATCH && ch->in_room == OOC_LOUNGE)
+        || (!strn_cmp (arg1, "window", 6)
         && strcasecmp (ch->room->name, PREGAME_ROOM_NAME) == STR_MATCH))
       {
 
-        while (again)
+         while (again)  // This is really horrible.  There needs to be some sort of test to make sure it doesn't get caught in a loop.
       {
 
-        nZone = number (10, 19);
-        nRoomVnum = (nZone * 1000) + number (1, 999);
-
-        if (!(troom = vtor (nRoomVnum)))
+        // nZone = number (10, 19);
+		nZone = 75;
+         nRoomVnum = (nZone * 1000) + number (1, 999);
+         		 
+        if (!(troom = vnum_to_room (nRoomVnum)))
           continue;
 
         if (IS_SET (troom->room_flags, INDOORS))
@@ -6012,7 +6013,7 @@ void do_look (CHAR_DATA * ch, char *argument, int cmd)
         if (IS_SET (troom->room_flags, STORAGE))
           continue;
 
-        if (strlen (troom->description) < 256)
+        if (strlen (troom->description) < 25)
           continue;
 
         if (!strncmp (troom->description, "No Description Set", 17))
@@ -6039,7 +6040,7 @@ void do_look (CHAR_DATA * ch, char *argument, int cmd)
       }
         original_loc = ch->in_room;
         act
-      ("You peer in to the swirling vortex, a sudden lifelike picture forming before you. . .",
+      ("You press your face to the window, a sudden lifelike picture forming before you...",
        false, ch, 0, 0, TO_CHAR | _ACT_FORMAT);
         char_from_room (ch);
         char_to_room (ch, nRoomVnum);
@@ -6053,7 +6054,7 @@ void do_look (CHAR_DATA * ch, char *argument, int cmd)
       ch->affected_by &= ~AFF_INFRAVIS;
         return;
       }
-    */
+    
 
     /* LOOK IN A CERTAIN DIRECTION */
 
