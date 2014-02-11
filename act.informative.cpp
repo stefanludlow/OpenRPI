@@ -11566,7 +11566,7 @@ do_count (CHAR_DATA * ch, char *argument, int cmd)
     if (!*buf)
     {
         sprintf (buf,
-                 "You begin searching through your belongings, taking a tally of your credit.\n");
+                 "You begin searching through your belongings, taking a tally of your coins.\n");
         send_to_char (buf, ch);
     }
     else
