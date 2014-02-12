@@ -1418,6 +1418,14 @@ typedef signed char shortint;
 
 #define PSIONIC_TALENTS		1
 
+#define MAX_CALORIES            2000
+#define AVG_WEIGHT				150
+#define MIN_CALORIES			-10000
+#define MIN_THIRST				0
+#define MAX_THIRST				300
+#define HOURLY_CALORIES			30
+#define HOURLY_THIRST			6
+
 /* How much light is in the land ? */
 
 #define SUN_DARK		0

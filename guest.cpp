@@ -152,8 +152,8 @@ create_guest_avatar (DESCRIPTOR_DATA * d, char *argument)
   //if (ch->race != 89 && ch->race != 69 && ch->race != 64)
     equip_newbie (ch);
 
-  ch->hunger = 48;
-  ch->thirst = 300;
+  ch->hunger = MAX_CALORIES;
+  ch->thirst = MAX_THIRST;
 
   // If we're recreating, we're either recovering from a reboot or returning a dead
   // guest to the lounge, in which case we can skip a lot of this.

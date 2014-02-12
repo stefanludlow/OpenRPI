@@ -6013,7 +6013,7 @@ void do_look (CHAR_DATA * ch, char *argument, int cmd)
         if (IS_SET (troom->room_flags, STORAGE))
           continue;
 
-        if (strlen (troom->description) < 25)
+        if (strlen (troom->description) < 180)
           continue;
 
         if (!strncmp (troom->description, "No Description Set", 17))
@@ -7209,32 +7209,55 @@ get_stat_range (int score)
 
 
 int
-get_comestible_range (int num)
+get_comestible_range (int num)  // Thirst only?
 {
     if (num <= 0)
         return 0;
-    if (num >= 1 && num <= 24)
+    if (num >= 0 && num <= MAX_THIRST * .15)
         return 1;
-    if (num >= 25 && num <= 48)
+    if (num >= MAX_THIRST * .15 && num <= MAX_THIRST * .30) 
         return 2;
-    if (num >= 49 && num <= 72)
+    if (num >= MAX_THIRST * .30 && num <= MAX_THIRST * .45) 
         return 3;
-    if (num >= 73 && num <= 96)
+    if (num >= MAX_THIRST * .45 && num <= MAX_THIRST * .60) 
         return 4;
-    if (num >= 97 && num <= 200)
+    if (num >= MAX_THIRST * .60 && num <= MAX_THIRST * .70) 
         return 5;
-    if (num >= 201 && num <= 240)
+    if (num >= MAX_THIRST * .70 && num <= MAX_THIRST * .80) 
         return 6;
-    if (num >= 241 && num <= 280)
+    if (num >= MAX_THIRST * .80 && num <= MAX_THIRST * .90) 
         return 7;
-    if (num >= 281)
+    if (num >= MAX_THIRST * .90)
         return 8;
     return 0;
 }
 
 int
-get_hunger_comestible_range (int num)
+get_hunger_comestible_range (int num) // Changing to use MIN_CALORIE and MAX_CALORIE global values 0211141844 -Nimrod
 {
+    if (num <= MIN_CALORIES * .9)
+        return 0;
+    if (num >= MIN_CALORIES * .9 && num <= MIN_CALORIES * .75)
+        return 1;
+    if (num >= MIN_CALORIES * .75 && num <= MIN_CALORIES * .5)
+        return 2;
+    if (num >= MIN_CALORIES * .5 && num <= MIN_CALORIES * .25)
+        return 3;
+    if (num >= MIN_CALORIES * .25 && num <= 0)
+        return 4;
+    if (num >= 0 && num <= MAX_CALORIES * .25)
+        return 5;
+    if (num >= MAX_CALORIES * .25 && num <= MAX_CALORIES * .50)
+        return 6;
+    if (num >= MAX_CALORIES * .50 && num <= MAX_CALORIES * .75)
+        return 7;
+    if (num >= MAX_CALORIES * .75 && num <= MAX_CALORIES * .90)
+        return 8;
+    if (num >= MAX_CALORIES * .90)
+        return 9;
+    return 0;
+
+/* Old values - leaving just in case for now.  0211141655 -Nimrod
     if (num <= -145)
         return 0;
     if (num >= -144 && num <= -97)
@@ -7256,6 +7279,7 @@ get_hunger_comestible_range (int num)
     if (num >= 35)
         return 9;
     return 0;
+*/
 }
 
 
@@ -7299,21 +7323,22 @@ hunger_thirst_process (CHAR_DATA * ch)
     }
 
 
-    if (ch->hunger > -169)
-        ch->hunger--;
-    if (ch->thirst > 0)
-        ch->thirst-= 6;
+    if (ch->hunger > MIN_CALORIES)
+        ch->hunger-= HOURLY_CALORIES;
+    if (ch->thirst > MIN_THIRST)
+        ch->thirst-= HOURLY_THIRST;
 
 
-    if (ch->thirst < -1)
-        ch->thirst = 0;
-    if (ch->hunger < -169)
-        ch->hunger = -168;
+    if (ch->thirst < MIN_THIRST)
+        ch->thirst = MIN_THIRST;
+    if (ch->hunger < MIN_CALORIES)
+        ch->hunger = MIN_CALORIES;
 
-    if (GET_TRUST(ch) || IS_NPC(ch))
-        ch->hunger = 48;
+    // if (GET_TRUST(ch) || IS_NPC(ch)) Disabled for testing purposes 0212140024 -Nimrod
+	if (IS_NPC(ch))
+        ch->hunger = MAX_CALORIES;
 
-    if (ch->hunger <= -145)
+    if (ch->hunger <= MIN_CALORIES)
     {
         if ((af = get_affect(ch, MAGIC_STARVE_ONE)))
             remove_affect_type (ch, MAGIC_STARVE_ONE);
@@ -7329,7 +7354,7 @@ hunger_thirst_process (CHAR_DATA * ch)
 
         wound_to_char (ch, "bloodloss", 5, 0, 0, 0, 0);
     }
-    else if (ch->hunger >= -144 && ch->hunger <= -97)
+    else if (ch->hunger >= MIN_CALORIES && ch->hunger <= MIN_CALORIES * .75)
     {
         if ((af = get_affect(ch, MAGIC_STARVE_ONE)))
             remove_affect_type(ch, MAGIC_STARVE_ONE);
@@ -7343,7 +7368,7 @@ hunger_thirst_process (CHAR_DATA * ch)
         if (!(af = get_affect(ch, MAGIC_STARVE_THREE)))
             magic_add_affect (ch, MAGIC_STARVE_THREE, -1, 0, 0, 0, 0);
     }
-    else if (ch->hunger >= -96 && ch->hunger <= -49)
+    else if (ch->hunger >= MIN_CALORIES * .75 && ch->hunger <= MIN_CALORIES * .5)
     {
         if ((af = get_affect(ch, MAGIC_STARVE_ONE)))
             remove_affect_type(ch, MAGIC_STARVE_ONE);
@@ -7357,7 +7382,7 @@ hunger_thirst_process (CHAR_DATA * ch)
         if (!(af = get_affect(ch, MAGIC_STARVE_TWO)))
             magic_add_affect (ch, MAGIC_STARVE_TWO, -1, 0, 0, 0, 0);
     }
-    else if (ch->hunger >= -48 && ch->hunger <= -1)
+    else if (ch->hunger >= MIN_CALORIES * .5 && ch->hunger <= MIN_CALORIES * .25)
     {
         if ((af = get_affect(ch, MAGIC_STARVE_TWO)))
             remove_affect_type(ch, MAGIC_STARVE_TWO);
@@ -7782,7 +7807,7 @@ do_score (CHAR_DATA * ch, char *argument, int cmd)
     /* Add support for listing, hunger, thirst, and intox. */
     sprintf (buf, "You are #2%s#0, and #2%s#0.\n",
              ch->hunger >=
-             -169 ? verbal_hunger[get_hunger_comestible_range (ch->hunger)] : "full",
+             MIN_CALORIES ? verbal_hunger[get_hunger_comestible_range (ch->hunger)] : "full",
              ch->thirst >=
              0 ? verbal_thirst[get_comestible_range (ch->thirst)] : "quenched");
     send_to_char (buf, ch);
