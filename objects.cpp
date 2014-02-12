@@ -3664,6 +3664,7 @@ void
 	const char *verbose_liquid_amount [] = {"", "some of the ", "a lot of the ", "most of the ", "all of the "};
 	//POISON_DATA *poison;
 	int poisoned = 0;
+	int WEIGHT = get_weight (ch) / 100;
 
 	argument = one_argument (argument, buf);
 
@@ -3791,51 +3792,51 @@ void
 		// again. It should ony take one day's worth of food, or two 2-course meals, to
 		// get you back to merely malnourished.
 
-		if (ch->hunger >= 0)
+		if (ch->hunger >= 0)  // Need to update these.  0211141740 -Nimrod
 		{
-			ch->hunger += (drink->o.fluid.food * sips);
+			ch->hunger += (drink->o.fluid.food * sips * AVG_WEIGHT / WEIGHT);
 		}
-		else if (ch->hunger <= -25 && ch->hunger >= -48)
+		else if (ch->hunger <= 0 && ch->hunger >= MIN_CALORIES * .18)
 		{
-			ch->hunger += 2 * (drink->o.fluid.food * sips);
+			ch->hunger += 2 * (drink->o.fluid.food * sips * AVG_WEIGHT / WEIGHT);
 
-			if (ch->hunger > 2)
-				ch->hunger = 2;
+			if (ch->hunger > 0)
+				ch->hunger = 0;
 		}
-		else if (ch->hunger <= -49 && ch->hunger >= -72)
+		else if (ch->hunger <= MIN_CALORIES * .18 && ch->hunger >= MIN_CALORIES * .36)
 		{
-			ch->hunger += 3 * (drink->o.fluid.food * sips);
+			ch->hunger += 3 * (drink->o.fluid.food * sips * AVG_WEIGHT / WEIGHT);
 
-			if (ch->hunger > 2)
-				ch->hunger = 2;
+			if (ch->hunger > MIN_CALORIES * .18)
+				ch->hunger = MIN_CALORIES * .18;
 		}
-		else if (ch->hunger <= -73 && ch->hunger >= -96)
+		else if (ch->hunger <= MIN_CALORIES * .36 && ch->hunger >= MIN_CALORIES * .54)
 		{
-			ch->hunger += 4 * (drink->o.fluid.food * sips);
+			ch->hunger += 4 * (drink->o.fluid.food * sips * AVG_WEIGHT / WEIGHT);
 
-			if (ch->hunger > 2)
-				ch->hunger = 2;
+			if (ch->hunger > MIN_CALORIES * .36)
+				ch->hunger = MIN_CALORIES * .36;
 		}
-		else if (ch->hunger <= -97 && ch->hunger >= -120)
+		else if (ch->hunger <= MIN_CALORIES * .54 && ch->hunger >= MIN_CALORIES * .72)
 		{
-			ch->hunger += 5 * (drink->o.fluid.food * sips);
+			ch->hunger += 5 * (drink->o.fluid.food * sips * AVG_WEIGHT / WEIGHT);
 
-			if (ch->hunger > 2)
-				ch->hunger = 2;
+			if (ch->hunger > MIN_CALORIES * .54)
+				ch->hunger = MIN_CALORIES * .54;
 		}
-		else if (ch->hunger <= -121 && ch->hunger >= -144)
+		else if (ch->hunger <= MIN_CALORIES * .72 && ch->hunger >= MIN_CALORIES * .90)
 		{
-			ch->hunger += 6 * (drink->o.fluid.food * sips);
+			ch->hunger += 6 * (drink->o.fluid.food * sips * AVG_WEIGHT / WEIGHT);
 
-			if (ch->hunger > 2)
-				ch->hunger = 6;
+			if (ch->hunger > MIN_CALORIES * .72)
+				ch->hunger = MIN_CALORIES * .72;
 		}
-		else if (ch->hunger <= -145)
+		else if (ch->hunger <= MIN_CALORIES * .90)
 		{
-			ch->hunger += 7 * (drink->o.fluid.food * sips);
+			ch->hunger += 7 * (drink->o.fluid.food * sips * AVG_WEIGHT / WEIGHT);
 
-			if (ch->hunger > 2)
-				ch->hunger = 2;
+			if (ch->hunger > MIN_CALORIES * .90)
+				ch->hunger = MIN_CALORIES * .90;
 		}
 		else
 		{
@@ -3871,6 +3872,8 @@ void
 	int poisoned = 0;
 	OBJ_DATA *tobj = NULL;
 	bool tasted = false;
+	int WEIGHT = get_weight (ch) / 100;
+
 
 	argument = one_argument (argument, buf);
 
@@ -3924,7 +3927,7 @@ void
 		else if (!strcmp (buf, "all"))
 		{
 			bites = MAX (1, obj->o.food.bites);
-			if ((obj->o.food.food_value + ch->hunger) > 48)
+			if ((obj->o.food.food_value + ch->hunger) > MAX_CALORIES) // Changed from 48 to 2000 0211141701 -Nimrod
 			{
 				send_to_char ("You are much too full to eat that much!\n", ch);
 				return;
@@ -4028,57 +4031,60 @@ void
 
 			if (ch->hunger >= 0)
 			{
-				ch->hunger += get_bite_value (obj);
+				ch->hunger += get_bite_value (obj) * AVG_WEIGHT / WEIGHT;
 			}
-			else if (ch->hunger <= -25 && ch->hunger >= -48)
+			else if (ch->hunger <= 0 && ch->hunger >= MIN_CALORIES * .18)
 			{
-				ch->hunger += 2 * get_bite_value (obj);
+				ch->hunger += 2 * get_bite_value (obj) * AVG_WEIGHT / WEIGHT;
 
-				if (ch->hunger > 2)
-					ch->hunger = 2;
+				if (ch->hunger > 0)
+					ch->hunger = 0;
 			}
-			else if (ch->hunger <= -49 && ch->hunger >= -72)
+			else if (ch->hunger <= MIN_CALORIES * .18 && ch->hunger >= MIN_CALORIES * .36)
 			{
-				ch->hunger += 3 * get_bite_value (obj);
+				ch->hunger += 3 * get_bite_value (obj) * AVG_WEIGHT / WEIGHT;
 
-				if (ch->hunger > 2)
-					ch->hunger = 2;
+				if (ch->hunger > MIN_CALORIES * .18)
+					ch->hunger = MIN_CALORIES * .18;
 			}
-			else if (ch->hunger <= -73 && ch->hunger >= -96)
+			else if (ch->hunger <= MIN_CALORIES * .36 && ch->hunger >= MIN_CALORIES * .54)
 			{
-				ch->hunger += 4 * get_bite_value (obj);
+				ch->hunger += 4 * get_bite_value (obj) * AVG_WEIGHT / WEIGHT;
 
-				if (ch->hunger > 2)
-					ch->hunger = 2;
+				if (ch->hunger > MIN_CALORIES * .36)
+					ch->hunger = MIN_CALORIES * .36;
 			}
-			else if (ch->hunger <= -97 && ch->hunger >= -120)
+			else if (ch->hunger <= MIN_CALORIES * .54 && ch->hunger >= MIN_CALORIES * .72)
 			{
-				ch->hunger += 5 * get_bite_value (obj);
+				ch->hunger += 5 * get_bite_value (obj) * AVG_WEIGHT / WEIGHT;
 
-				if (ch->hunger > 2)
-					ch->hunger = 2;
+				if (ch->hunger > MIN_CALORIES * .54)
+					ch->hunger = MIN_CALORIES * .54;
 			}
-			else if (ch->hunger <= -121 && ch->hunger >= -144)
+			else if (ch->hunger <= MIN_CALORIES * .72 && ch->hunger >= MIN_CALORIES * .90)
 			{
-				ch->hunger += 6 * get_bite_value (obj);
+				ch->hunger += 6 * get_bite_value (obj) * AVG_WEIGHT / WEIGHT;
 
-				if (ch->hunger > 2)
-					ch->hunger = 6;
+				if (ch->hunger > MIN_CALORIES * .72)
+					ch->hunger = MIN_CALORIES * .72;
 			}
-			else if (ch->hunger <= -145)
+			else if (ch->hunger <= MIN_CALORIES * .9) // 90%
 			{
-				ch->hunger += 7 * get_bite_value (obj);
+				ch->hunger += 7 * get_bite_value (obj) * AVG_WEIGHT / WEIGHT;
 
-				if (ch->hunger > 2)
-					ch->hunger = 2;
+				if (ch->hunger > MIN_CALORIES * .9)
+					ch->hunger = MIN_CALORIES * .9;
 			}
 			else
 			{
-				ch->hunger += get_bite_value (obj);
+				ch->hunger += get_bite_value (obj) * AVG_WEIGHT / WEIGHT;
 			}
 
-			if (ch->hunger > 48)
-				ch->hunger = 48;
+			if (ch->hunger > MAX_CALORIES)
+				ch->hunger = MAX_CALORIES;
+				
+			if (ch->hunger < MIN_CALORIES)
+				ch->hunger = MIN_CALORIES;
 
 			if (ch->thirst > 300)
 				ch->thirst = 300;
@@ -4109,9 +4115,9 @@ void
 			}
 		}
 
-		if (ch->hunger > 48)
-			ch->hunger = 48;
-		if (ch->hunger > 36)
+		if (ch->hunger > MAX_CALORIES)
+			ch->hunger = MAX_CALORIES;
+		if (ch->hunger > MAX_CALORIES * .9)
 			act ("You are full.", false, ch, 0, 0, TO_CHAR);
 
 		if (poisoned > 0)
