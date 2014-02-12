@@ -3768,7 +3768,7 @@ void
 
 	if (evaluate_emote_string(ch, &first_person, third_person, argument))
 	{
-	    sips *= 10;
+	   // sips *= 10; // Why is this here? -Nimrod
 		if (!tasted)
 		{
 			if (drink->ink_color && str_cmp(drink->ink_color, "(null)"))
@@ -3792,7 +3792,7 @@ void
 		// again. It should ony take one day's worth of food, or two 2-course meals, to
 		// get you back to merely malnourished.
 
-		if (ch->hunger >= 0)  // Need to update these.  0211141740 -Nimrod
+		if (ch->hunger >= 0)  // Updated to use global variables  0211141740 -Nimrod
 		{
 			ch->hunger += (drink->o.fluid.food * sips * AVG_WEIGHT / WEIGHT);
 		}
@@ -3844,11 +3844,11 @@ void
 		}
 
 
-		if (ch->hunger > 48)
-			ch->hunger = 48;
+		if (ch->hunger > MAX_CALORIES)
+			ch->hunger = MAX_CALORIES;
 
-		if (ch->thirst > 300)
-			ch->thirst = 300;
+		if (ch->thirst > MAX_THIRST)
+			ch->thirst = MAX_THIRST;
 
 		if (GET_ITEM_TYPE(container) != ITEM_FOUNTAIN)
 		{
@@ -4086,8 +4086,8 @@ void
 			if (ch->hunger < MIN_CALORIES)
 				ch->hunger = MIN_CALORIES;
 
-			if (ch->thirst > 300)
-				ch->thirst = 300;
+			if (ch->thirst > MAX_THIRST)
+				ch->thirst = MAX_THIRST;
 
 			obj->o.food.bites--;
 
