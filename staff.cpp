@@ -4219,7 +4219,7 @@ void objstat( CHAR_DATA * ch, char *name ) {
 			break;
 
 		case ITEM_FOOD:
-			sprintf( buf, "#2Oval0 - Food Value:#0 %d\n"
+			sprintf( buf, "#2Oval0 - Calories:#0 %d\n"
 					"#2Oval1 - Bites:#0 %d\n"
 					"#2Oval1 - Junk Obj:#0 %d\n", j->o.od.value[ 0 ], j->o.od.value[ 1 ], j->o.od.value[ 2 ] );
 			break;
