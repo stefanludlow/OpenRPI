@@ -9674,7 +9674,7 @@ output_categories_available (int player_level)
 }
 
 void
-do_help (CHAR_DATA * ch, char *argument, int cmd)
+do_help (CHAR_DATA * ch, char *argument, int cmd) // If cmd is greater than 99 the help function will not log a missing helpfile, or spit out partial matches. 0212142020 -Nimrod
 {
     MYSQL_RES *result = NULL;
     MYSQL_ROW row = NULL;
@@ -9898,7 +9898,7 @@ do_help (CHAR_DATA * ch, char *argument, int cmd)
         {
             if (GET_TRUST (ch) < atoi (row[4]))
                 continue;
-            if (header_needed)
+            if (header_needed && cmd < 99)
             {
                 if (!soundex)
                     sprintf (b_buf,
@@ -9908,11 +9908,11 @@ do_help (CHAR_DATA * ch, char *argument, int cmd)
                              "\nThe following entries most closely matched your spelling:\n\n   ");
                 header_needed = false;
             }
-            if (!category_list)
+            if (!category_list && cmd < 99)
                 sprintf (arg2, "%13s: %s", row[1], row[0]);
-            else
+            else if (cmd < 99)
                 sprintf (arg2, "%s", row[0]);
-            if (!category_list)
+            if (!category_list && cmd < 99)
             {
                 if (j == 1)
                 {
@@ -9930,16 +9930,17 @@ do_help (CHAR_DATA * ch, char *argument, int cmd)
                 else
                     sprintf (arg1, "\n   %3d. #6%s#0", j, arg2);
             }
-            else
+            else if (cmd < 99)
                 sprintf (arg1, "#6%-22.22s#0   ", arg2);
-            if (!(j % 3) && category_list)
+            if (!(j % 3) && category_list && cmd < 99)
                 strcat (arg1, "\n   ");
             j++;
+			if (cmd < 99)
             sprintf (b_buf + strlen (b_buf), "%s", arg1);
         }
         if ((((j - 1) % 3) && !header_needed) || !category_list)
             strcat (b_buf, "\n");
-        if (*example)
+        if (*example && cmd < 99)
             sprintf (b_buf + strlen (b_buf), "%s", example);
     }
 
@@ -9948,7 +9949,7 @@ do_help (CHAR_DATA * ch, char *argument, int cmd)
 
     if (*b_buf)
         page_string (ch->descr(), b_buf);
-    else
+    else if (cmd < 99)
     {
         send_to_char
         ("No helpfile matching that query was found in the database.\n\n#6Please see HELP HELP to ensure you are using the proper query syntax.#0\n",
