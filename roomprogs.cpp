@@ -5943,7 +5943,37 @@ void r_mftog( CHAR_DATA *ch, std::string argument ) {
 }
 
 char * room__get_description( ROOM_DATA * room );
-char *exits[] = { "north", "east", "south", "west", "up", "down", "outside", "inside" };
+    char *exits[] =
+    {
+        "North",
+        "East ",
+        "South",
+        "West ",
+        "Up   ",
+        "Down ",
+        "Outside",
+        "Inside",
+		"Northeast",
+		"Northwest",
+		"Southeast",
+		"Southwest",
+		"UpNorth",
+		"UpEast",
+		"UpSouth",
+		"UpWest",
+		"UpNortheast",
+		"UpNorthwest",
+		"UpSoutheast",
+		"UpSouthwest",
+		"DownNorth",
+		"DownEast",
+		"DownSouth",
+		"DownWest",
+		"DownNortheast",
+		"DownNorthwest",
+		"DownSoutheast",
+		"DownSouthwest"
+    };
 
 bool prog_object_properties( OBJ_DATA *obj, std::string argument, std::string& output ) {
 	std::string buf;
