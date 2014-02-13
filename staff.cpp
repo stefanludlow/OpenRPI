@@ -5200,6 +5200,14 @@ void objstat( CHAR_DATA * ch, char *name ) {
 		}
 		send_to_char( buf, ch );
 	}
+// Add note listing here -Nimrod
+// j->nVirtual is the object number
+// sprintf( buf, "\nCommand will be: help objects %d \n", j->nVirtual);
+// send_to_char (buf, ch);
+
+sprintf( buf, "objects %d", j->nVirtual);
+do_help (ch, buf, 100);
+
 
 }
 

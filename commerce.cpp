@@ -135,7 +135,7 @@ const char *econ_flags[] =
 // IMPORTANT - must have the same amount of entries in it as does econ flags,
 // because the resource system piggy-backs off of it. Got to love these shortcuts!
 
-const char *resources[] =
+const char *resources[] =  // 19 plus \n
 {
 	"coal",
 	"iron",
