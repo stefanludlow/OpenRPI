@@ -4190,7 +4190,7 @@ void objstat( CHAR_DATA * ch, char *name ) {
 		case ITEM_FLUID:
 			sprintf( buf, "#2Oval0 - Alcohol:#0 %d per sip\n"
 					"#2Oval1 - Water:#0   %d per sip\n"
-					"#2Oval2 - Food:#0    %d per sip\n", j->o.fluid.alcohol, j->o.fluid.water, j->o.fluid.food );
+					"#2Oval2 - Calories:#0    %d per sip\n", j->o.fluid.alcohol, j->o.fluid.water, j->o.fluid.food );
 			break;
 
 		case ITEM_LIGHT:
