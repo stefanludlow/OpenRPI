@@ -169,6 +169,9 @@ const char *materials[] =
 	"Stone", 
 	"Textile", 
 	"Wood", 
+	"Gemstone",
+	"Preciousmetal",
+	"Brick",
 	"Other",
     "\n"
 };

@@ -98,36 +98,41 @@ const char *sizes_named[] =
 
 const char *econ_flags[] =
 {
-	"earth",			// 1 << 0
-	"spaceship",			// 1 << 1
-	"futuristic",			// 1 << 2
-	"ruins",			// 1 << 3
-	"generic",			// 1 << 4
-	"junk",			// 1 << 5
-	"fine",			// 1 << 6
-	"poor",			// 1 << 7
-	"raw",			// 1 << 8
-	"cooked",			// 1 << 9
-	"admin",			// 1 << 10
-	"BUG",			// 1 << 11
-	"practice",			// 1 << 12
-	"used",			// 1 << 13
-	"nobarter",                   // 1 << 14
-	"alien",                      // 1 << 15
-	"mutant",                     // 1 << 16
-	"ordinary",                   // 1 << 17
-	"good",                       // 1 << 18
-	"superb",                     // 1 << 19
-	"epic",                       // 1 << 20
-	"trash",                      // 1 << 21
-	"antique",                    // 1 << 22
-	"cheap",                      // 1 << 23
-	"PCMake",
-	"Grungetown",
-	"Carthage",
-	"TramCity",
-	"Mandira",
-	"NoMansTown",
+	"Trash",			// 1 << 0
+	"Poor",			// 1 << 1
+	"Ordinary",
+    "Good",     	// 1 << 2
+	"Superb",			// 1 << 3
+	"Epic",			// 1 << 4
+	"Raw",			// 1 << 5
+	"Cooked",
+    "Artisan",	// 1 << 6
+	"PCMake",			// 1 << 7
+    "nobarter",
+	"Admin",
+	"Practice",
+	"1stAge",			// 1 << 8
+	"2ndAge",			// 1 << 9
+	"Elven",			// 1 << 10
+	"Dwarven",			// 1 << 11
+	"Orcish",			// 1 << 12
+	"Mordorian",			// 1 << 13
+	"Northman",
+    "Beorning",	// 1 << 14
+	"Rohan",                      // 1 << 15
+	"Gondor",                     // 1 << 16
+	"Shire",   
+    "Dorwinion",
+    "Rhun",	// 1 << 17
+	"StaffPlot",                       // 1 << 18
+	"Unique",                     // 1 << 19
+	"OOC",                       // 1 << 20
+	"Meat",                      // 1 << 21
+	"Grain",                    // 1 << 22
+	"Vegetable",                      // 1 << 23
+	"Dairy",
+	"Herb",
+	"Spice",
 	"\n"
 };
 
