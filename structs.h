@@ -4724,7 +4724,8 @@ struct craft_variable_data
     int from;                     // Which item will this go to?
     int to;                     // Which item will this go to?
     char *category;               // Which category to take
-    int pos;                      // Where to put it.
+    int pos; 	// Where to put it.
+	char *manual;  // Used when manually setting a variable in a craft. -Added 0213141746 -Nimrod
 };
 
 struct craft_oval_data

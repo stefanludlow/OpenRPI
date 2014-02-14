@@ -7815,6 +7815,7 @@ do_oset (CHAR_DATA * ch, char *argument, int cmd)
     int pot_power = 0;
     int rat_power = 0;
 
+
     TRAP_DATA *trap;
     bool changed = false;
 
@@ -10423,7 +10424,7 @@ update_crafts_file (void)
 
                     if (*vars->category)
                     {
-                        fprintf (fp, "      %d;  (%s %d %d %d)\n", i, vars->category, vars->from, vars->pos, vars->to);
+                        fprintf (fp, "      %d;  (%s %s %d %d %d)\n", i, vars->category, vars->manual, vars->from, vars->pos, vars->to);
                     }
                 }
             }
@@ -10470,6 +10471,8 @@ do_cset (CHAR_DATA * ch, char *argument, int cmd)
     CRAFT_VARIABLE_DATA *vars;
 	CRAFT_OVAL_DATA *ovals;
     DEFAULT_ITEM_DATA *fitems;
+	int from_color_number = 0;
+	char from_color_name[MAX_STRING_LENGTH];
 
 
     if (IS_NPC (ch))
@@ -11300,18 +11303,18 @@ do_cset (CHAR_DATA * ch, char *argument, int cmd)
         /** Phase Variables (normal)**/
         else if (!strn_cmp (subcmd, "varcat", 6))
         {
-            if (!isdigit (subcmd[6]))
+            if (!isdigit (subcmd[6])) // Checks for number at the end of the word 'varcat', i.e. varcat1
             {
                 send_to_char
                 ("A variable number must be specified, e.g. varcat6.\n", ch);
                 return;
             }
-            sprintf (buf, "%c", subcmd[6]);
+            sprintf (buf, "%c", subcmd[6]);  // sets buf equal to varcat number.
 
             if (isdigit (subcmd[7]))
-                sprintf (buf + strlen (buf), "%c", subcmd[7]);
+                sprintf (buf + strlen (buf), "%c", subcmd[7]); // looks for a second digit of varcat number
 
-            objnum = atoi (buf);
+            objnum = atoi (buf); // sets varcat # to an integer called objnum
 
             if (objnum < 1)
             {
@@ -11321,10 +11324,10 @@ do_cset (CHAR_DATA * ch, char *argument, int cmd)
                 return;
             }
 
-            argument = one_argument (argument, buf);
+            argument = one_argument (argument, buf); // Set buf equal to next word, should be a variable name, i.e. $furcolor
             if (!*buf)
             {
-                send_to_char ("What variable category did you wish to capture in this these?\n", ch);
+                send_to_char ("What variable category did you wish to capture?\n", ch);
                 return;
             }
 
@@ -11356,6 +11359,7 @@ do_cset (CHAR_DATA * ch, char *argument, int cmd)
                     if (vars->category)
                     {
                         mem_free(vars->category);
+						mem_free(vars->manual);
                     }
                     mem_free(vars);
                     vars = NULL;
@@ -11369,20 +11373,46 @@ do_cset (CHAR_DATA * ch, char *argument, int cmd)
                 }
             }
 
-            if (!vc_category(buf))
+            if (!vc_category(buf)) // Checks to make sure the variable category exists.
             {
                 send_to_char ("You need to specify a valid variable category: check variable list.\n", ch);
                 return;
             }
-            argument = one_argument(argument, buf2);
+            argument = one_argument(argument, buf2); // set buf2 equal to next word, should be a either a number or a variable value.
 
             if (!isdigit(*buf2) || atoi(buf2) > MAX_DEFAULT_ITEMS || atoi(buf2) < 0)
-            {
-                send_to_char ("You must specify an existing object set.\n", ch);
-                return;
+            { 
+			   // Adding functionality to manually set a variable value rather than inheriting it. 0212141729-Nimrod
+			   // If it's an actual variable value then set it.
+			   if (vc_exists(buf2, buf)  || (!str_cmp(buf2, "*")))  // first value is variable name, second is variable category
+                    {
+					  // If we're here, then the variable name does exist in the category.  We can set it manually now.
+					  // Allowing for the use of '*' to choose any variable name when the craft is run.
+					  sprintf(from_color_name, "%s", buf2);
+					  // from_color_name = str_dup(buf2);
+					  from_color_number = 99;
+                       
+                    }
+				else
+				  {
+				    send_to_char ("No such variable in that category.\n", ch);
+                    return;
+				  }
+			   
+                // send_to_char ("You must specify an existing object set.\n", ch);
+                // return;
             }
-
-            argument = one_argument(argument, buf3);
+            else
+			{
+			  // buf2 is a number, let's set our temporary variables to keep track of it temp_color_name[] was set already, so don't need to worry about it.
+              from_color_number = atoi(buf2);
+			  sprintf(from_color_name, "Notused:%d", from_color_number);
+			  // from_color_name = str_dup("xxdefaultxx");
+       			  
+			  
+			}
+            
+			argument = one_argument(argument, buf3);
             if (!isdigit(*buf3) || atoi(buf3) > MAX_DEFAULT_ITEMS || atoi(buf3) < 0)
             {
                 send_to_char ("You must specify an existing object set.\n", ch);
@@ -11397,12 +11427,21 @@ do_cset (CHAR_DATA * ch, char *argument, int cmd)
             }
 
             vars->category = str_dup(buf);
-            vars->from = atoi(buf2);
+            vars->from = from_color_number;// atoi(buf2);
+			vars->manual = str_dup(from_color_name);
             vars->to = atoi(buf3);
             vars->pos = atoi(buf4);
             vars->phase = phase;
-            sprintf(output, "Variable%d added, capturing category %s from Object%d to position %d in Object%d.\n", objnum, vars->category, vars->from, vars->pos, vars->to);
-            send_to_char(output, ch);
+			if (vars->from >= 99)
+			{
+			  sprintf(output, "Variable %d added, manually placing '%s' from category %s to position %d in Object%d.\n", objnum, vars->manual, vars->category, vars->pos, vars->to);
+			}
+			else
+			{
+              sprintf(output, "Variable %d added, capturing category %s from Object%d to position %d in Object%d.\n", objnum, vars->category, vars->from, vars->pos, vars->to);
+            }
+			
+			send_to_char(output, ch);
             return;
         }
         /** Phase Objects (normal)**/

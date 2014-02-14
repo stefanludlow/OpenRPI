@@ -1681,26 +1681,31 @@ void
 {
 	if (*flag_vnum == '(' || *flag_vnum == ')')
 		return;
-
-	if (vc_category(flag_vnum))
+	if (vc_category(flag_vnum)  && i < 1)  // Added check on i to bpypass possibility of vars->manual being equal to a vc_category 0213142228 -Nimrod
 	{
 		vars->category = str_dup(flag_vnum);
 		return;
 	}
-
-	if (i == 1)
+	
+	if (i == 1)  // Added new manual value 0213142229 -Nimrod
 	{
-		vars->from = atoi(flag_vnum);
+		vars->manual = str_dup(flag_vnum);
 		return;
 	}
 
 	if (i == 2)
 	{
-		vars->pos = atoi(flag_vnum);
+		vars->from = atoi(flag_vnum);
 		return;
 	}
 
 	if (i == 3)
+	{
+		vars->pos = atoi(flag_vnum);
+		return;
+	}
+
+	if (i == 4)
 	{
 		vars->to = atoi(flag_vnum);
 		return;
@@ -1910,7 +1915,7 @@ PHASE_DATA *
 }
 
 char *
-	read_extended_text (FILE * fp, char *first_line)
+	read_extended_text (FILE * fp, char *first_line)  //Mark
 {
 	int continues;
 	char line[MAX_STRING_LENGTH];
@@ -4641,7 +4646,7 @@ void
 	}
 
 	/* Deducts uses from a component-type item */
-	for (i = 0; i < MAX_DEFAULT_ITEMS; i++)
+	for (i = 0; i < MAX_DEFAULT_ITEMS + 1; i++) // Added + 1 to for statement to take care of manual varcats 02141400017 -Nimrod
 	{
 		item = af->a.craft->subcraft->obj_items[i];
 
@@ -4651,7 +4656,7 @@ void
 		if (item->phase != phase)
 			continue;
 
-		for (int j = 0; j < MAX_DEFAULT_ITEMS; j++)
+		for (int j = 0; j < MAX_DEFAULT_ITEMS; j++) //MAX_DEFAULT_ITEMS is currently 40
 		{
 			vars = subcraft->craft_variable[j];
 
@@ -4661,34 +4666,50 @@ void
 			if (vars->phase != phase)
 				continue;
 
-			if (vars->from != i)
+			if (vars->from != i && vars->from != 99)  // If it's 99 it is a manual varcat, we don't want to break here. -Nimrod
 				continue;
 
-			if (!obj_list[i])
+			if (!obj_list[i] && vars->from != 99) // If it's 99 then there is a manual varcat, we don't want to break here. -Nim
 				continue;
 
 			if (vars && *vars->category)
 			{
-				for (int h = 0; h < 10; h++)
+				for (int h = 0; h < 10; h++) // Setting up to 10 variables.
 				{
-					if (obj_list[i]->var_color[h] && str_cmp (obj_list[i]->var_color[h], "(null)") &&
+				  if (vars->from !=99)
+				  {
+				  
+				  	if (obj_list[i]->var_color[h] && str_cmp (obj_list[i]->var_color[h], "(null)") &&
 						obj_list[i]->var_cat[h] && str_cmp (obj_list[i]->var_cat[h], "(null)"))
 					{
 						if (!str_cmp(vars->category, obj_list[i]->var_cat[h]))
 						{
-							//sprintf(buf, "Vars->to: %d, Vars->pos: %d, Obj_list[i]->var_color[h]: %s, i: %d, j: %d, h: %d.", vars->to, vars->pos, obj_list[i]->var_color[h], i, j, h);
-							//send_to_gods(buf);
+							// sprintf(buf, "Vars->to: %d, Vars->pos: %d, Obj_list[i]->var_color[h]: %s, i: %d, j: %d, h: %d.", vars->to, vars->pos, obj_list[i]->var_color[h], i, j, h);
+							// send_to_gods(buf);
 							subcraft->load_color[vars->to][vars->pos] = str_dup(obj_list[i]->var_color[h]);
 							subcraft->load_cat[vars->to][vars->pos] = str_dup(vars->category);
-							//send_to_gods("subcraft->load_color[vars->to][vars->pos]");
-							//send_to_gods(subcraft->load_color[vars->to][vars->pos]);
-							//send_to_gods("obj_list[i]->var_color[h]");
-							//send_to_gods(obj_list[i]->var_color[h]);
-							//send_to_gods("vars->category");
-							//send_to_gods(vars->category);
+							// send_to_gods("subcraft->load_color[vars->to][vars->pos]");
+							// send_to_gods(subcraft->load_color[vars->to][vars->pos]);
+							// send_to_gods("obj_list[i]->var_color[h]");
+							// send_to_gods(obj_list[i]->var_color[h]);
+							// send_to_gods("vars->category");
+							// send_to_gods(vars->category);
 
 						}
 					}
+				  }
+				  else if (vars->to == h)
+				  {
+				    // Pass manual variable if it exists
+					
+					//  send_to_gods("It is a manual variable.");
+					//  send_to_gods(vars->category);
+					//  send_to_gods(vars->manual);
+					
+					  subcraft->load_color[vars->to][vars->pos] = str_dup(vars->manual);
+					  subcraft->load_cat[vars->to][vars->pos] = str_dup(vars->category);
+					
+				  } 
 				}
 			}
 		}
