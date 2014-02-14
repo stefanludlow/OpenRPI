@@ -9345,9 +9345,18 @@ void display_craft( CHAR_DATA * ch, SUBCRAFT_HEAD_DATA * craft ) {
 				vars = craft->craft_variable[ i ];
 				if ( vars->phase != phase )
 					continue;
-				if ( *vars->category ) {
+				if ( *vars->category ) 
+				{
+				  if (vars->from >= 99)
+				    {  // This is a manual varcat transfer, show it as such
+					  sprintf( b_buf + strlen( b_buf ), "      %d;  %s from %s to position %d on Object%d\n", i,
+							vars->manual, vars->category, vars->pos, vars->to );
+					}
+					else
+					{
 					sprintf( b_buf + strlen( b_buf ), "      %d;  %s from Object%d to position %d on Object%d\n", i,
 							vars->category, vars->from, vars->pos, vars->to );
+					}
 				}
 			}
 		}
