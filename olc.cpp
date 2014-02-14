@@ -11384,7 +11384,7 @@ do_cset (CHAR_DATA * ch, char *argument, int cmd)
             { 
 			   // Adding functionality to manually set a variable value rather than inheriting it. 0212141729-Nimrod
 			   // If it's an actual variable value then set it.
-			   if (vc_exists(buf2, buf)  || (!str_cmp(buf2, "*")))  // first value is variable name, second is variable category
+			   if (vc_exists(buf2, buf)) // removing wildcard -Nim  || (!str_cmp(buf2, "*")))  // buf2 is variable name, buf is variable category
                     {
 					  // If we're here, then the variable name does exist in the category.  We can set it manually now.
 					  // Allowing for the use of '*' to choose any variable name when the craft is run.
