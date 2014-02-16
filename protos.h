@@ -698,6 +698,7 @@ int foraged_all(int sector);
 
 void load_obj_variables (void);
 void save_obj_variables (void);
+void test_db_init(void);
 
 void load_mob_variables (void);
 void save_mob_variables (void);

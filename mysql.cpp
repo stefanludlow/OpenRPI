@@ -110,28 +110,28 @@ int
 	va_list argp;
 	int i = 0;
 	double j = 0;
-	char *s = 0, *out = 0, *p = 0;
+	char *s = 0, *out = 0, *p = 0; // Setting s, out and p to null
 	char safe[MAX_STRING_LENGTH];
 	char query[MAX_STRING_LENGTH];
 
-	*query = '\0';
+	*query = '\0'; // Strange that we use two ways to set null in the same function.
 	*safe = '\0';
 
-	va_start (argp, fmt);
+	va_start (argp, fmt);  // Initialize variable argument list
 
-	for (p = fmt, out = query; *p != '\0'; p++)
+	for (p = fmt, out = query; *p != '\0'; p++) // It seems we are performing a sprintf call manually here.  Why?
 	{
-		if (*p != '%')
+		if (*p != '%') // If character p is not '%', then concatenate to out and loop back to for loop. 
 		{
 			*out++ = *p;
 			continue;
 		}
 
-		switch (*++p)
+		switch (*++p)  // if p is '%' then increment p and start switch
 		{
 		case 'c':
 			i = va_arg (argp, int);
-			out += sprintf (out, "%c", i);;
+			out += sprintf (out, "%c", i);; // So we're actually calling sprintf in a manual function to replace sprintf.
 			break;
 		case 's':
 			s = va_arg (argp, char *);
@@ -171,6 +171,23 @@ int
 		*/
 	    }
 	return (result);
+}
+
+void test_db_init(void)  // Delete test call from load_obj_variables() ff
+{
+	int j = 0;
+	int i = 1;
+	MYSQL_RES *result;
+	MYSQL_ROW row;
+	char *category = '\0';
+// This doesn't seem like the absolute best method right now.
+// Need to find out how to look up to see if the table exists without sending a create command.
+
+// This is much better: mysql_list_tables() uses a regular expresion.
+// You must free the result set with mysql_free_result().
+// MYSQL_RES *mysql_list_tables(MYSQL *mysql, const char *wild)
+
+ mysql_safe_query ("CREATE TABLE IF NOT EXISTS rpi_engine.testjunkthis (PersonID int, LastName varchar(255), FirstName varchar(255), Address varchar(255), City varchar(255))");
 }
 
 void load_foraged_goods (void)

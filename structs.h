@@ -3534,7 +3534,10 @@ struct char_data
     char *d_feat2;
     char *d_feat3;
     char *d_feat4;
-
+	
+	char *mob_color_name[10];
+    char *mob_color_cat[10];
+	
     DESCRIPTOR_DATA *descriptor;
     DESCRIPTOR_DATA * descr ();
 

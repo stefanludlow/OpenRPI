@@ -838,6 +838,11 @@ insert_mobile_variables (CHAR_DATA * mob, CHAR_DATA * proto, char *string0, char
 
                     xcolor[round] = add_hash (tempcolor);
                     xcat[round] = add_hash (mob_vc_category(i));
+					mob->mob_color_name[round] = xcolor[round];  // Write var color data to mob so they can be passed later if needed.  0214141805 -Nimrod
+					mob->mob_color_cat[round] = xcat[round];
+					send_to_gods(mob->mob_color_name[round]);
+					send_to_gods(mob->mob_color_cat[round]);
+					
                 }
 
                 // Now, depending on the round, we add on to buf2 the color we just pulled, and then advance to the next round.

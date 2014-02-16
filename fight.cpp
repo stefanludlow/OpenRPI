@@ -1353,6 +1353,19 @@ make_corpse (CHAR_DATA * ch)
 
     bool lizard = false;
     bool lizard_found = false;
+	int j;
+	// Pass the mob variables to the corpse if they exist.
+	for (j=0 ; j < 10; j++)
+	  {
+	    if (ch->mob_color_cat[j])
+		{
+	      // sprintf( buf, "Variable%d: %s is set as: %s.\n", j, k->mob_color_cat[j], k->mob_color_name[j]);
+		  // send_to_char(buf, ch);
+		  corpse->var_color[j] = add_hash(ch->mob_color_name[j]);
+        corpse->var_cat[j] = add_hash(ch->mob_color_cat[j]);
+		}
+	  }
+/* Disabling the ugly race variable stuff 0216141423 -Nimrod
 
     if (!str_cmp(lookup_race_variable (ch->race, RACE_NAME), "small-feline"))
     {
@@ -1462,7 +1475,7 @@ make_corpse (CHAR_DATA * ch)
         corpse->var_color[0] = add_hash("natural-hued");
         corpse->var_cat[0] = add_hash("$leathercolor");
     }
-
+*/
     // If the dude died with the genetic_mutation bug, then we add a count_down timer until we turn in to... A MONSTER!
     
     if (ch->race != lookup_race_id("Hosted-Terror") && (af = get_soma_affect(ch, SOMA_GENETIC_MUTATION)))
