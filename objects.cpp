@@ -3872,8 +3872,9 @@ void
 	int poisoned = 0;
 	OBJ_DATA *tobj = NULL;
 	bool tasted = false;
-	int WEIGHT = get_weight (ch) / 100;
-
+	int WEIGHT = get_weight(ch) > 100 ? get_weight(ch)/100 : AVG_WEIGHT; 
+	
+   
 
 	argument = one_argument (argument, buf);
 
