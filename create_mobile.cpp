@@ -695,7 +695,6 @@ insert_mobile_variables (CHAR_DATA * mob, CHAR_DATA * proto, char *string0, char
 	char buf3[MAX_STRING_LENGTH];
     char temp[MAX_STRING_LENGTH];
     char original[MAX_STRING_LENGTH];
-
     char *xcolor[10];
     char *xcat[10];
     int xorder[10] = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};
@@ -707,6 +706,9 @@ insert_mobile_variables (CHAR_DATA * mob, CHAR_DATA * proto, char *string0, char
     }
 
     char tempcolor[AVG_STRING_LENGTH] = { '\0' };
+	char temp_name[MAX_STRING_LENGTH] = { '\0' };
+	bool invisible = false;
+	bool manual = false;
     char *point;
     int i = 0, j = 0, h = 0;
     bool modified = false;
@@ -784,7 +786,8 @@ insert_mobile_variables (CHAR_DATA * mob, CHAR_DATA * proto, char *string0, char
     // Find at what point we have our first "$".
     point = strpbrk (original, "$");
     int round = 0;
-
+    invisible = false;
+	
     // If we found point...
     if (point)
     {
@@ -804,7 +807,19 @@ insert_mobile_variables (CHAR_DATA * mob, CHAR_DATA * proto, char *string0, char
                 sprintf (temp, "$");
                 // ... and jump ahead a point (to get to the letter after the $
                 j = y + 1;
-
+               
+				if (original[j] == '$')  // Checking the character after the first $.  If it's another $, then this is an invisible variable.
+				{
+				  // it's invisible, now let's set the invisible flag and increment the pointer
+				  // send_to_gods("Found the second dollar sign.");
+				  invisible = true;
+				  j++;
+				}
+				else
+				{
+				  invisible = false;
+				}
+				
                 // Now, until we hit something that's not a alpha-numeric character.
                 while (isalpha (original[j]))
                 {
@@ -812,60 +827,81 @@ insert_mobile_variables (CHAR_DATA * mob, CHAR_DATA * proto, char *string0, char
                     sprintf (temp + strlen (temp), "%c", original[j]);
                     j++;
                 }
-
+				// temp is our category name
                 // If there's a number after our category, then we're going to round it all up - let's add it to our xorder list.
 
                 *buf = '\0';
 
-                sprintf(buf, "%c", original[j]);
+                sprintf(buf, "%c", original[j]); // buf is the variable number
 
                 if (isdigit(*buf))
                     xorder[round] = atoi(buf);
                 else
                     xorder[round] = -1;
+					
+				// send_to_gods("temp = ");
+				// send_to_gods(temp);
+					
+				// Now, if the char is an '=', then this is a manual variable, read the value of the variable and set
+				if (original[j] == '=')
+				{
+				// This is a manual variable.  Let's read the value.
+				// send_to_gods("Found the equal sign.  It's a manual variable.");
+				  j++; // increment to the letter after '='
+				  manual = true;
+				  while (isalpha (original[j]))
+                  {
+                    // set temp_name to our manual name
+                    sprintf (temp_name + strlen (temp_name), "%c", original[j]);
+                    j++;
+                  }
+				 // send_to_gods("temp_name =");
+				 // send_to_gods(temp_name);
+				}
+				
 
                 // Now, we figure out which colour we'e setting by seeing if we don't have the color of the present round...
                 if (!xcolor[round])
                 {
 
-                    if (!mob_vc_category(temp))
+                    if (!mob_vc_category(temp) && !invisible) // invisible variables don't need to exist in the vmob color list
                         return;
 
                     // Now that we know temp is from a proper category, we pull a random variable from that category and call it tempcolor.
-                    sprintf (tempcolor, "%s", mob_vc_rand(temp, &i));
+                    sprintf (tempcolor, "%s", manual ? temp_name : mob_vc_rand(temp, &i));
 
                     // Now, we check what round we are and assign tempcolor to that round, and do the same for the categories.
 
                     xcolor[round] = add_hash (tempcolor);
-                    xcat[round] = add_hash (mob_vc_category(i));
+                    xcat[round] = invisible ? add_hash (temp) : add_hash (mob_vc_category(i));
 					mob->mob_color_name[round] = xcolor[round];  // Write var color data to mob so they can be passed later if needed.  0214141805 -Nimrod
 					mob->mob_color_cat[round] = xcat[round];
-					send_to_gods(mob->mob_color_name[round]);
-					send_to_gods(mob->mob_color_cat[round]);
+					// send_to_gods(mob->mob_color_name[round]);
+					// send_to_gods(mob->mob_color_cat[round]);
 					
                 }
 
                 // Now, depending on the round, we add on to buf2 the color we just pulled, and then advance to the next round.
                 if (xcat[round])
-                    sprintf (buf2 + strlen (buf2), "%s", mob_vd_full(xcat[round], xcolor[round]));
+                    sprintf (buf2 + strlen (buf2), "%s", invisible ? "" : mob_vd_full(xcat[round], xcolor[round]));
                 else
-                    sprintf (buf2 + strlen (buf2), "%s", xcolor[round]);
+                    sprintf (buf2 + strlen (buf2), "%s", invisible ? "" : xcolor[round]);
 
-                // Now, we set our end point as where our category ends plus 1.
-                j = y + 1;
-
-                // We advance until we get to the new non-alpha-numeric character.
-                while (isalpha (original[j]))
-                    j++;
-
-                if (xorder[round] >= 0)
-                    j++;
-
+                // We advance until we get to the new space or #.
+                while (!original[j] == ' ' && !original[j] == '#')
+				  j++;
+			
                 if (round < 9)
                     round ++;
 
                 // And then set the point of our main loop to that point
                 y = j;
+				// Set invisible and manual flags to false
+				invisible = false;
+				manual = false;
+				
+				temp[0] = '\0';
+				temp_name[0] = '\0' ;
             }
             sprintf (buf2 + strlen (buf2), "%c", original[y]);
 
