@@ -710,7 +710,8 @@ insert_mobile_variables (CHAR_DATA * mob, CHAR_DATA * proto, char *string0, char
 	bool invisible = false;
 	bool manual = false;
     char *point;
-    int i = 0, j = 0, h = 0;
+    int i = 0, j = 0, h = 0; 
+	int placement = 0;
     bool modified = false;
 
     char buf[AVG_STRING_LENGTH] = { '\0' };
@@ -835,10 +836,16 @@ insert_mobile_variables (CHAR_DATA * mob, CHAR_DATA * proto, char *string0, char
                 sprintf(buf, "%c", original[j]); // buf is the variable number
 
                 if (isdigit(*buf))
-                    xorder[round] = atoi(buf);
+				{
+                  xorder[round] = atoi(buf);
+				  placement = xorder[round];
+				  j++;
+				}
                 else
-                    xorder[round] = -1;
-					
+				{
+                  xorder[round] = -1;
+				  placement = round;
+				}
 				// send_to_gods("temp = ");
 				// send_to_gods(temp);
 					
@@ -861,8 +868,8 @@ insert_mobile_variables (CHAR_DATA * mob, CHAR_DATA * proto, char *string0, char
 				
 
                 // Now, we figure out which colour we'e setting by seeing if we don't have the color of the present round...
-                if (!xcolor[round])
-                {
+                // if (!xcolor[round])
+                // {
 
                     if (!mob_vc_category(temp) && !invisible) // invisible variables don't need to exist in the vmob color list
                         return;
@@ -872,20 +879,20 @@ insert_mobile_variables (CHAR_DATA * mob, CHAR_DATA * proto, char *string0, char
 
                     // Now, we check what round we are and assign tempcolor to that round, and do the same for the categories.
 
-                    xcolor[round] = add_hash (tempcolor);
-                    xcat[round] = invisible ? add_hash (temp) : add_hash (mob_vc_category(i));
-					mob->mob_color_name[round] = xcolor[round];  // Write var color data to mob so they can be passed later if needed.  0214141805 -Nimrod
-					mob->mob_color_cat[round] = xcat[round];
+                    xcolor[placement] = add_hash (tempcolor);
+                    xcat[placement] = invisible ? add_hash (temp) : add_hash (mob_vc_category(i));
+					mob->mob_color_name[placement] = xcolor[placement];  // Write var color data to mob so they can be passed later if needed.  0214141805 -Nimrod
+					mob->mob_color_cat[placement] = xcat[placement];
 					// send_to_gods(mob->mob_color_name[round]);
 					// send_to_gods(mob->mob_color_cat[round]);
 					
-                }
+                // }
 
                 // Now, depending on the round, we add on to buf2 the color we just pulled, and then advance to the next round.
-                if (xcat[round])
-                    sprintf (buf2 + strlen (buf2), "%s", invisible ? "" : mob_vd_full(xcat[round], xcolor[round]));
+                if (xcat[placement])
+                    sprintf (buf2 + strlen (buf2), "%s", invisible ? "" : mob_vd_full(xcat[placement], xcolor[placement]));
                 else
-                    sprintf (buf2 + strlen (buf2), "%s", invisible ? "" : xcolor[round]);
+                    sprintf (buf2 + strlen (buf2), "%s", invisible ? "" : xcolor[placement]);
 
                 // We advance until we get to the new space or #.
                 while (!original[j] == ' ' && !original[j] == '#')
@@ -899,6 +906,7 @@ insert_mobile_variables (CHAR_DATA * mob, CHAR_DATA * proto, char *string0, char
 				// Set invisible and manual flags to false
 				invisible = false;
 				manual = false;
+				placement = 0;
 				
 				temp[0] = '\0';
 				temp_name[0] = '\0' ;
