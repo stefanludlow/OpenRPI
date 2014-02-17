@@ -7299,6 +7299,13 @@ void
 		//A corpse that is WILL_SKIN has a negative o.od.value[2], See make-corpse() for details . We must adjust to get a vnum we can load?
 		if (!(skin = LOAD_COLOR(corpse, corpse->o.od.value[2])))
 		{
+		   // tobj = load_colored_object(obj->o.food.junk, obj->var_color[0], 0, 0, 0, 0, 0, 0, 0, 0, 0);
+		   //	      corpse->var_color[j] = add_hash(ch->mob_color_name[j]);
+          // corpse->var_cat[j] = add_hash(ch->mob_color_cat[j]);
+		  
+		  // OBJ_DATA *j;
+		  // j = vtoo( number) - loads object data into j.
+          // staff.cpp line 4023 for information on reading variables for instances of objects.		  
 			if (!(skin = LOAD_COLOR(corpse, -corpse->o.od.value[2])))
 			{
 				send_to_char ("Problem...please contact an immortal.\n", ch);

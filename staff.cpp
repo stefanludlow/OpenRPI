@@ -2297,7 +2297,7 @@ void charstat( CHAR_DATA * ch, char *name, bool bPCsOnly ) {
 			send_to_char( buf, ch );
 		}
 	}
-	else // if (IS_NPC (k))
+	else if (IS_NPC (k))
 	{
 	  for (j=0 ; j < 10; j++)
 	  {
@@ -3938,7 +3938,19 @@ void objstat( CHAR_DATA * ch, char *name ) {
 		send_to_char( "Please specifiy an object name or vnum.\n", ch );
 		return;
 	}
+/*
+// Nimrod test
+char *var_list[10];
+var_list[0] = "one";
+var_list[1] = "two";
+var_list[2] = "three";
 
+fetch_variable_categories ( var_list, 999, 1);
+send_to_gods(var_list[0]);
+send_to_gods("Testing");
+*/	
+	
+	
 	if ( just_a_number( name ) && vtoo( atoi( name ) ) )
 		j = vtoo( atoi( name ) );
 
@@ -11893,3 +11905,104 @@ void do_scents( CHAR_DATA *ch, char *argument, int cmd ) {
 
 	page_string( ch->descr(), output.c_str() );
 }
+
+void fetch_variable_categories ( char **var_list, int target, int target_type) {
+// populates target array with list of variable categories used in prototype objects and mobiles
+// var_list is a string array taht will hold new list
+// target is vnumber of object prototype or mobile prototype
+// target_type specifies if it is an object or mobile 0 = object, 1 = mobile
+//  OBJ_DATA *obj;
+//  MOBDATA *mob;
+
+//  char original[ MAX_STRING_LENGTH ];
+//  char temp[ MAX_STRING_LENGTH ];
+//  char *point;
+//  int k = 0;
+  /*
+  switch (target_type)
+  {
+    case 0:  // Object Specified 
+	  if (!(obj = vtoo(target))) // Set obj to object 
+	    return;
+	  sprintf( original, "%s", obj->full_description );  // Read full description of object into original
+	  break;
+	case 1: // Mobile Specified
+      if (!(mob = vnum_to_mob(name))) // Set mob to called mobile
+	    return;
+	  sprintf( original, "%s", mob->description ); // Read full description of mobile into original
+	  break;
+  }
+  */
+  
+ send_to_gods("Testing1"); 
+ send_to_gods(var_list[0]);
+ 
+ //  printf("Option %d", 1, var_list[1]);
+ // sprintf( buf, "#2Variables:#0" );
+ var_list[0] = "zero.  This is some more stuff too just to see how long it can be.";
+  
+// sprintf(var_list[0], "zero");
+/*
+strcpy(var_list[1], "one");
+strcpy(var_list[2], "two");
+strcpy(var_list[3], "three");
+strcpy(var_list[4], "four");
+strcpy(var_list[5], "five");
+strcpy(var_list[6], "six");
+strcpy(var_list[7], "seven");
+strcpy(var_list[8], "eight");
+strcpy(var_list[9], "nine");
+*/				
+  return;
+  
+  
+  
+  
+  
+	/*	
+		
+		point = strpbrk( original, "$" );
+		// If we found point...
+		if ( point ) {
+			sprintf( buf, "#2Variables:#0" );
+			// Then for every character in the string...
+			// We run through the original, adding each bit of y to buf2.
+			// However, if we find a $, we see if that's a category of variables.
+			// If so, we add a random colour of those variables to buf2, and then skip ahead y to the end of that phrase, where we keep going on our merry way.
+
+			for ( size_t y = 0; y <= strlen( original ); y++ ) {
+				if ( original[ y ] == *point ) {
+					k = y + 1;
+					sprintf( temp, "$" );
+					// ... and jump ahead a point (to get to the letter after the $
+					k = y + 1;
+
+					// Now, until we hit something that's not a alpha-numeric character.
+					while ( isalpha( original[ k ] ) ) {
+						// add the word after the $ to our temporary marker.
+						sprintf( temp + strlen( temp ), "%c", original[ k ] );
+						k++;
+					}
+					// Now, we set our end point as where our category ends plus 1.
+					k = y + 1;
+
+					// We advance until we get to the new non-alpha-numeric character.
+					while ( isalpha( original[ k ] ) )
+						k++;
+
+					//while (!isalpha (original[k]))
+					//k++;
+
+					// And then set the point of our main loop to that point
+					y = k;
+					sprintf( buf + strlen( buf ), " %s", temp );
+				}
+			}
+			reformat_string( buf, &sp );
+			sprintf( buf, "%s", sp );
+			mem_free( sp );
+			sp = NULL;
+		
+		}
+		*/
+} 

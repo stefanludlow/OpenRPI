@@ -954,6 +954,7 @@ void do_zsave (CHAR_DATA * ch, char *argument, int cmd);
 void do_zset (CHAR_DATA * ch, char *argument, int cmd);
 void do_flist (CHAR_DATA * ch, char *argument, int cmd);
 void do_scents (CHAR_DATA * ch, char *argument, int cmd);
+void fetch_variable_categories ( char **var_list, int target, int target_type);
 
 
 /*
