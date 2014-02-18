@@ -2297,11 +2297,11 @@ void charstat( CHAR_DATA * ch, char *name, bool bPCsOnly ) {
 			send_to_char( buf, ch );
 		}
 	}
-	else if (IS_NPC (k))
+	else if (IS_NPC (k) && instance)
 	{
 	  for (j=0 ; j < 10; j++)
 	  {
-	    if (k->mob_color_cat[j])
+	    if (k->mob_color_cat[j] && k->mob_color_name[j])
 		{
 	      sprintf( buf, "Variable%d: %s is set as: %s.\n", j, k->mob_color_cat[j], k->mob_color_name[j]);
 		  send_to_char(buf, ch);
