@@ -2307,9 +2307,19 @@ void charstat( CHAR_DATA * ch, char *name, bool bPCsOnly ) {
 		  send_to_char(buf, ch);
 		}
 	  }
-	}
 
-	send_to_char( "\n", ch );
+	}
+		send_to_char( "\n", ch );
+		
+		  // Nimrod test
+char *var_list[10];
+var_list[0] = "one";
+var_list[1] = "two";
+var_list[2] = "three";
+	  
+	 fetch_variable_categories ( var_list, 62000, 1); // Testing -Nimrod
+
+
 
 	sprintf( buf, "#2Str:#0 %d/%d", GET_STR (k), k->str );
 	pad_buffer( buf, 25 );
@@ -3938,21 +3948,22 @@ void objstat( CHAR_DATA * ch, char *name ) {
 		send_to_char( "Please specifiy an object name or vnum.\n", ch );
 		return;
 	}
-/*
+
 // Nimrod test
 char *var_list[10];
 var_list[0] = "one";
 var_list[1] = "two";
 var_list[2] = "three";
 
-fetch_variable_categories ( var_list, 999, 1);
-send_to_gods(var_list[0]);
-send_to_gods("Testing");
-*/	
+
+	
 	
 	
 	if ( just_a_number( name ) && vtoo( atoi( name ) ) )
-		j = vtoo( atoi( name ) );
+	{
+	  j = vtoo( atoi( name ) );
+	  fetch_variable_categories ( var_list, atoi(name), 0);
+	}
 
 	else if ( ( j = get_obj_in_list_vis( ch, name, ch->right_hand ) )
 			|| ( j = get_obj_in_list_vis( ch, name, ch->left_hand ) )
@@ -11907,52 +11918,56 @@ void do_scents( CHAR_DATA *ch, char *argument, int cmd ) {
 }
 
 void fetch_variable_categories ( char **var_list, int target, int target_type) {
-// populates target array with list of variable categories used in prototype objects and mobiles
-// var_list is a string array taht will hold new list
-// target is vnumber of object prototype or mobile prototype
-// target_type specifies if it is an object or mobile 0 = object, 1 = mobile
-//  OBJ_DATA *obj;
-//  MOBDATA *mob;
-
-//  char original[ MAX_STRING_LENGTH ];
-//  char temp[ MAX_STRING_LENGTH ];
-//  char *point;
-//  int k = 0;
-  /*
+  // populates target array with list of variable categories used in PROTOTYPE objects and mobiles
+  // var_list is a string array taht will hold new list
+  // target is vnumber of object prototype or mobile prototype
+  // target_type specifies if it is an object or mobile 0 = object, 1 = mobile
+  OBJ_DATA *obj;
+  CHAR_DATA *mob;
+  // char original[ MAX_STRING_LENGTH ] = { 'line blah one two three four\0' };
+  char temp[100] = { '\0' };
+  char *point;
+  int k = 0;
+  char buf[ MAX_STRING_LENGTH ];
+ // char test = "test1 test2 test3";
+  
+  
   switch (target_type)
   {
     case 0:  // Object Specified 
 	  if (!(obj = vtoo(target))) // Set obj to object 
 	    return;
-	  sprintf( original, "%s", obj->full_description );  // Read full description of object into original
+	  point = obj->full_description; // Set point to address of obj description
 	  break;
 	case 1: // Mobile Specified
-      if (!(mob = vnum_to_mob(name))) // Set mob to called mobile
+      if (!(mob = vnum_to_mob(target))) // Set mob to called mobile
 	    return;
-	  sprintf( original, "%s", mob->description ); // Read full description of mobile into original
+	  point = mob->description; // Set point to address of mob description
 	  break;
+	default:
+	  return;
   }
-  */
-  
- send_to_gods("Testing1"); 
- send_to_gods(var_list[0]);
  
- //  printf("Option %d", 1, var_list[1]);
- // sprintf( buf, "#2Variables:#0" );
- var_list[0] = "zero.  This is some more stuff too just to see how long it can be.";
-  
-// sprintf(var_list[0], "zero");
-/*
-strcpy(var_list[1], "one");
-strcpy(var_list[2], "two");
-strcpy(var_list[3], "three");
-strcpy(var_list[4], "four");
-strcpy(var_list[5], "five");
-strcpy(var_list[6], "six");
-strcpy(var_list[7], "seven");
-strcpy(var_list[8], "eight");
-strcpy(var_list[9], "nine");
-*/				
+  while ( k < 10 ) // 10 is max number of variables on an obj or mob
+  { 
+    point = one_argument( point, temp ); // Read first word
+    if (!temp)
+      break;
+	  
+    if (temp[0] == '$')  // Check to see if word is a variable category
+    {
+      var_list[k] = temp; // set word to correct space in var_list array
+      sprintf( buf, "Variable # %d is: >>>%s<<<\n", k, var_list[k] ); // Just for testing purposes
+      send_to_gods(buf);
+	  k++;
+	}
+	if (strlen(temp) <= 0) // If there's no more words, break out of the while loop
+	{
+	  send_to_gods("Temp length is zero or less");
+	  break;
+	} 
+    
+  }
   return;
   
   

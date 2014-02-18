@@ -7246,6 +7246,8 @@ void
 	OBJ_DATA *carcass = NULL;
 	char buf[MAX_INPUT_LENGTH];
 	char *p;
+	int slot[10];
+	int j;
 
 	corpse = (OBJ_DATA *) ch->delay_info1;
 
@@ -7296,21 +7298,50 @@ void
 
 	if (skill_use (ch, SKILL_BUTCHERY, -50))
 	{
+	// Tasks to do:
+	// 1. Read variables from skin object (should be in proper order as used on skin object)
+	// 2. loop through each needed variable and set to matching variable from corpse object
+	// 3. Call load_colored_object function
+	// 4. Continue with setting weight as before
+	for (j = 0; j<10;j++)
+	{
+	  slot[j] = j;
+	}
 		//A corpse that is WILL_SKIN has a negative o.od.value[2], See make-corpse() for details . We must adjust to get a vnum we can load?
-		if (!(skin = LOAD_COLOR(corpse, corpse->o.od.value[2])))
+		// if (!(skin = LOAD_COLOR(corpse, corpse->o.od.value[2])))
+		// {
+		//  corpse = load_object (VNUM_CORPSE);  // This can be used to just load an object and set all the information on it manually after.  Then put the object in the room.
+		   // 
+		if (!(skin = load_colored_object(
+		    corpse->o.od.value[2], 
+		    corpse->var_color[slot[0]], 
+			corpse->var_color[slot[1]], 
+			corpse->var_color[slot[2]], 
+			corpse->var_color[slot[3]], 
+			corpse->var_color[slot[4]], 
+			corpse->var_color[slot[5]], 
+			corpse->var_color[slot[6]], 
+			corpse->var_color[slot[7]], 
+			corpse->var_color[slot[8]], 
+			corpse->var_color[slot[9]] 
+			)))
 		{
-		   // tobj = load_colored_object(obj->o.food.junk, obj->var_color[0], 0, 0, 0, 0, 0, 0, 0, 0, 0);
 		   //	      corpse->var_color[j] = add_hash(ch->mob_color_name[j]);
           // corpse->var_cat[j] = add_hash(ch->mob_color_cat[j]);
 		  
 		  // OBJ_DATA *j;
 		  // j = vtoo( number) - loads object data into j.
-          // staff.cpp line 4023 for information on reading variables for instances of objects.		  
-			if (!(skin = LOAD_COLOR(corpse, -corpse->o.od.value[2])))
-			{
+          // staff.cpp line 4023 for information on reading variables for instances of objects.	
+
+		  // info from fight.cpp, set when a mob dies
+         //corpse->o.od.value[2] = ch->mob->skinned_vnum;
+       // corpse->o.od.value[3] = ch->mob->carcass_vnum;		  
+		
+		// if (!(skin = LOAD_COLOR(corpse, -corpse->o.od.value[2])))
+			// {
 				send_to_char ("Problem...please contact an immortal.\n", ch);
 				return;
-			}
+			// }
 		}
 
 		obj_to_room (skin, ch->in_room);
