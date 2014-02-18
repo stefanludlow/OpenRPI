@@ -789,6 +789,14 @@ insert_mobile_variables (CHAR_DATA * mob, CHAR_DATA * proto, char *string0, char
     int round = 0;
     invisible = false;
 	
+	// Set all mob variable information to NULL 0217141825 -Nimrod
+	for (i = 0; i < 10; i++)
+	{
+	  mob->mob_color_name[i] = '\0'; 
+	  mob->mob_color_cat[i] = '\0';
+	}
+	i = 0; // Reset i
+	
     // If we found point...
     if (point)
     {
