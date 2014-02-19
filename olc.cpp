@@ -6274,6 +6274,7 @@ give_oset_help (CHAR_DATA * ch)
                  "     clock          month day hour	     How long until it morphs\n"
                  "     morphto        objnum               What it morphs to\n"
                  "\n"
+				 "     vcolor         oset vcolor <slot> <$category> <short>\n"
                  "NOTE:  object affects (apply-types) are not copied from prototype.\n");
 }
 
@@ -8970,13 +8971,13 @@ do_oset (CHAR_DATA * ch, char *argument, int cmd)
 				*/
                     if (!vc_category(buf))
                     {
-                        send_to_char ("No such variable category - format is oset vcolor $category short.\n", ch);
+                        send_to_char ("No such variable category - format is oset vcolor <slot> <$category> <short>.\n", ch);
                         return;
                     }
 
                     if (!vc_exists(buf2, buf))
                     {
-                        send_to_char ("No such variable in that category - format is oset vcolor $category short.\n", ch);
+                        send_to_char ("No such variable in that category - format is oset vcolor <slot> <$category> <short>.\n", ch);
                         return;
                     }
 

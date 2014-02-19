@@ -7120,8 +7120,8 @@ void
 
 	act (buf, false, ch, 0, 0, TO_ROOM | _ACT_FORMAT);
 
-	ch->delay_type = DEL_SKIN_1;
-	ch->delay = 3;
+	ch->delay_type = GET_TRUST(ch) ? DEL_SKIN_3 : DEL_SKIN_1;
+	ch->delay = GET_TRUST(ch) ? 1 : 3;
 
 	// Add time to the object timer so it doesn't decay while we're skinning it.  -Methuselah
 	if ((obj_corpse->obj_timer - time(0)) < 1000)
@@ -7172,7 +7172,7 @@ void
 		watched_action(ch, "skin a corpse.", 0, 0);
 
 		ch->delay_type = DEL_SKIN_2;
-		ch->delay = 7;
+		ch->delay = GET_TRUST(ch) ? 1 : 7;
 	}
 	else
 	{
@@ -7224,7 +7224,7 @@ void
 			ch, 0, 0, TO_ROOM | _ACT_FORMAT);
 
 		ch->delay_type = DEL_SKIN_3;
-		ch->delay = 10;
+		ch->delay = GET_TRUST(ch) ? 1 : 10;
 	}
 	else
 	{
@@ -7246,7 +7246,12 @@ void
 	OBJ_DATA *carcass = NULL;
 	char buf[MAX_INPUT_LENGTH];
 	char *p;
-
+	int slot[10];
+	int j;
+	int k;
+	char var_list[10][100];
+	char *vari_list[10];
+	 
 	corpse = (OBJ_DATA *) ch->delay_info1;
 
 	// is it really a corpse?
@@ -7296,22 +7301,70 @@ void
 
 	if (skill_use (ch, SKILL_BUTCHERY, -50))
 	{
-		//A corpse that is WILL_SKIN has a negative o.od.value[2], See make-corpse() for details . We must adjust to get a vnum we can load?
-		if (!(skin = LOAD_COLOR(corpse, corpse->o.od.value[2])))
+    
+
+	
+	// Initalize pointer array and slot
+	for (j = 0; j<10;j++)
+	{
+	  vari_list[j] = var_list[j];
+	  slot[j] = -1; 	// initialize slot
+	  *var_list[j] = '\0'; // Set these to null while we're at it.
+    }
+    // Get variables categoreis from prototype of item we are going to load
+    fetch_variable_categories ( vari_list, corpse->o.od.value[2], 0);
+	
+	/*  // Test output
+	for (j = 0; j<10;j++)
+	{
+	  sprintf( buf, "Variable from prototype location # %d is: >>>%s<<<\n", j, vari_list[j] ); // Just for testing purposes
+      send_to_gods(buf);
+	}    */
+	
+	// Figure out what variables from the corpse will be transfered to the target
+	for ( j = 0; j < 10; j++) // variables on corpse
+	{
+	  for ( k = 0; k < 10; k++) // variables on target
+	  {
+	    if (!(strcmp(var_list[k], corpse->var_cat[j])))
 		{
-		   // tobj = load_colored_object(obj->o.food.junk, obj->var_color[0], 0, 0, 0, 0, 0, 0, 0, 0, 0);
-		   //	      corpse->var_color[j] = add_hash(ch->mob_color_name[j]);
-          // corpse->var_cat[j] = add_hash(ch->mob_color_cat[j]);
-		  
-		  // OBJ_DATA *j;
-		  // j = vtoo( number) - loads object data into j.
-          // staff.cpp line 4023 for information on reading variables for instances of objects.		  
-			if (!(skin = LOAD_COLOR(corpse, -corpse->o.od.value[2])))
-			{
-				send_to_char ("Problem...please contact an immortal.\n", ch);
-				return;
-			}
+		  // match, set slot[k] = j
+		  slot[k] = j;
+		 // sprintf( buf, "Slot %d color from location %d on corpse is: >>>%s<<<", j, k, corpse->var_color[j]);
+         // send_to_gods(buf);		  
 		}
+	  }
+	}
+	
+	/* for (j = 0; j<10;j++)
+	{
+	  sprintf( buf, "Slot # %d is: >>>%d<<<\n", j, slot[j] ); // Just for testing purposes
+      send_to_gods(buf);
+	}  */
+		
+			
+	if (!(skin = load_colored_object( 
+	    corpse->o.od.value[2], 
+	    slot[0] >= 0 ? corpse->var_color[slot[0]] : 0, 
+		slot[1] >= 0 ? corpse->var_color[slot[1]] : 0, 
+		slot[2] >= 0 ? corpse->var_color[slot[2]] : 0, 
+		slot[3] >= 0 ? corpse->var_color[slot[3]] : 0, 
+		slot[4] >= 0 ? corpse->var_color[slot[4]] : 0, 
+		slot[5] >= 0 ? corpse->var_color[slot[5]] : 0, 
+		slot[6] >= 0 ? corpse->var_color[slot[6]] : 0, 
+		slot[7] >= 0 ? corpse->var_color[slot[7]] : 0, 
+		slot[8] >= 0 ? corpse->var_color[slot[8]] : 0, 
+		slot[9] >= 0 ? corpse->var_color[slot[9]] : 0 
+	    )))
+			
+	{
+		   			
+	// if (!(skin = LOAD_COLOR(corpse, -corpse->o.od.value[2])))
+	// {
+	  	  send_to_char ("Problem...please contact an immortal.\n", ch);
+		  return;
+	// }
+	}
 
 		obj_to_room (skin, ch->in_room);
 
@@ -7371,7 +7424,9 @@ void
 	ch->delay = 0;
 	ch->delay_info1 = 0;
 	ch->delay_info2 = 0;
-
+	
+// Start loading the carcass now
+/* Remarking out old load code -Nimrod
 	if (!(carcass = load_object (corpse->o.od.value[3])))
 	{
 		if (!(carcass = load_object (-corpse->o.od.value[3])))
@@ -7380,6 +7435,77 @@ void
 			return;
 		}
 	}
+*/
+// BEGIN NEW LOAD CODE FOR CARCASS
+
+	// Initalize pointer array and slot
+	for (j = 0; j<10;j++)
+	{
+	  vari_list[j] = var_list[j];
+	  slot[j] = -1; 	// initialize slot
+	  *var_list[j] = '\0'; // Set these to null while we're at it.
+    }
+    // Get variables categoreis from prototype of item we are going to load
+    fetch_variable_categories ( vari_list, corpse->o.od.value[3], 0);
+	
+	/*  // Test output
+	for (j = 0; j<10;j++)
+	{
+	  sprintf( buf, "Variable from prototype location # %d is: >>>%s<<<\n", j, vari_list[j] ); // Just for testing purposes
+      send_to_gods(buf);
+	}    */
+	
+	// Figure out what variables from the corpse will be transfered to the target
+	for ( j = 0; j < 10; j++) // variables on corpse
+	{
+	  for ( k = 0; k < 10; k++) // variables on target
+	  {
+	    if (!(strcmp(var_list[k], corpse->var_cat[j])))
+		{
+		  // match, set slot[k] = j
+		  slot[k] = j;
+		 // sprintf( buf, "Slot %d color from location %d on corpse is: >>>%s<<<", j, k, corpse->var_color[j]);
+         // send_to_gods(buf);		  
+		}
+	  }
+	}
+	
+	/* for (j = 0; j<10;j++)
+	{
+	  sprintf( buf, "Slot # %d is: >>>%d<<<\n", j, slot[j] ); // Just for testing purposes
+      send_to_gods(buf);
+	}  */
+		
+			
+	if (!(carcass = load_colored_object( 
+	    corpse->o.od.value[3], 
+	    slot[0] >= 0 ? corpse->var_color[slot[0]] : 0, 
+		slot[1] >= 0 ? corpse->var_color[slot[1]] : 0, 
+		slot[2] >= 0 ? corpse->var_color[slot[2]] : 0, 
+		slot[3] >= 0 ? corpse->var_color[slot[3]] : 0, 
+		slot[4] >= 0 ? corpse->var_color[slot[4]] : 0, 
+		slot[5] >= 0 ? corpse->var_color[slot[5]] : 0, 
+		slot[6] >= 0 ? corpse->var_color[slot[6]] : 0, 
+		slot[7] >= 0 ? corpse->var_color[slot[7]] : 0, 
+		slot[8] >= 0 ? corpse->var_color[slot[8]] : 0, 
+		slot[9] >= 0 ? corpse->var_color[slot[9]] : 0 
+	    )))
+			
+	{
+		   			
+	// if (!(skin = LOAD_COLOR(corpse, -corpse->o.od.value[2])))
+	// {
+	  	  send_to_char ("Problem...please contact an immortal.\n", ch);
+		  return;
+	// }
+	}
+
+
+
+
+
+
+// END NEW LOAD CODE FOR CARCASS
 
 	// Lose 10% of the weight for the head.
 	if (!IS_SET (corpse->o.container.flags, CONT_BEHEADED))
