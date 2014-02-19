@@ -2317,7 +2317,8 @@ var_list[0] = "one";
 var_list[1] = "two";
 var_list[2] = "three";
 	  
-	 fetch_variable_categories ( var_list, 62000, 1); // Testing -Nimrod
+	 fetch_variable_categories ( var_list, 62000, 9); // Disabled for now.
+	 send_to_gods(var_list[0]);
 
 
 
@@ -3951,18 +3952,11 @@ void objstat( CHAR_DATA * ch, char *name ) {
 
 // Nimrod test
 char *var_list[10];
-var_list[0] = "one";
-var_list[1] = "two";
-var_list[2] = "three";
-
-
-	
-	
 	
 	if ( just_a_number( name ) && vtoo( atoi( name ) ) )
 	{
 	  j = vtoo( atoi( name ) );
-	  fetch_variable_categories ( var_list, atoi(name), 0);
+	  fetch_variable_categories ( var_list, atoi(name), 9);
 	}
 
 	else if ( ( j = get_obj_in_list_vis( ch, name, ch->right_hand ) )
@@ -11956,14 +11950,14 @@ void fetch_variable_categories ( char **var_list, int target, int target_type) {
 	  
     if (temp[0] == '$')  // Check to see if word is a variable category
     {
-      var_list[k] = temp; // set word to correct space in var_list array
-      sprintf( buf, "Variable # %d is: >>>%s<<<\n", k, var_list[k] ); // Just for testing purposes
-      send_to_gods(buf);
+      strcpy(var_list[k], temp); // set word to correct space in var_list array
+      // sprintf( buf, "Variable # %d is: >>>%s<<<\n", k, var_list[k] ); // Just for testing purposes
+      // send_to_gods(buf);
 	  k++;
 	}
 	if (strlen(temp) <= 0) // If there's no more words, break out of the while loop
 	{
-	  send_to_gods("Temp length is zero or less");
+	  // send_to_gods("Temp length is zero or less");
 	  break;
 	} 
     
