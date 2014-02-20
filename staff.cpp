@@ -2311,16 +2311,6 @@ void charstat( CHAR_DATA * ch, char *name, bool bPCsOnly ) {
 	}
 		send_to_char( "\n", ch );
 		
-		  // Nimrod test
-char *var_list[10];
-var_list[0] = "one";
-var_list[1] = "two";
-var_list[2] = "three";
-	  
-	 fetch_variable_categories ( var_list, 62000, 9); // Disabled for now.
-	 send_to_gods(var_list[0]);
-
-
 
 	sprintf( buf, "#2Str:#0 %d/%d", GET_STR (k), k->str );
 	pad_buffer( buf, 25 );
@@ -11911,21 +11901,42 @@ void do_scents( CHAR_DATA *ch, char *argument, int cmd ) {
 	page_string( ch->descr(), output.c_str() );
 }
 
+/*
+fetch_variable_categories() - Added 0219141251 -Nimrod
+Used to read the variable categories on PROTOTYPE of mob or object
+   var_list is an array of pointers that will point to strings that will hold variable list
+   target is vnumber of object prototype or mobile prototype
+   target_type specifies if it is an object or mobile 0 = object, 1 = mobile
+   Note - array of strings and pointer array var_list must be initialized in calling function
+   Example of required elements prior to call:
+   
+   	char var_list[10][100];
+	char *var_list_pointers[10];
+   	// Initalize pointer array
+	for (j = 0; j<10;j++)
+	{
+	  var_list_pointers[j] = var_list[j];
+	  *var_list[j] = '\0'; // Set these to null while we're at it.
+	}
+    // Then call the function thus:
+    fetch_variable_categories ( var_list_pointers, vnum, 0);
+	
+	Variable categories are returned in the order they are read from the full description of mob or object.
+	
+	To-do:
+	  Check to see if mob and obj need to be freed prior to exit
+	  Move initialization of pointers and strings to function so we don't have to repeat it prior to calls
+	  Check out use of slot designations on from object will affect function
+	  Strip trailing digits from variable name prior to returning
+*/
 void fetch_variable_categories ( char **var_list, int target, int target_type) {
-  // populates target array with list of variable categories used in PROTOTYPE objects and mobiles
-  // var_list is a string array taht will hold new list
-  // target is vnumber of object prototype or mobile prototype
-  // target_type specifies if it is an object or mobile 0 = object, 1 = mobile
   OBJ_DATA *obj;
   CHAR_DATA *mob;
-  // char original[ MAX_STRING_LENGTH ] = { 'line blah one two three four\0' };
   char temp[100] = { '\0' };
   char *point;
   int k = 0;
-  char buf[ MAX_STRING_LENGTH ];
- // char test = "test1 test2 test3";
-  
-  
+//  char buf[ MAX_STRING_LENGTH ];
+   
   switch (target_type)
   {
     case 0:  // Object Specified 
@@ -11948,6 +11959,9 @@ void fetch_variable_categories ( char **var_list, int target, int target_type) {
     if (!temp)
       break;
 	  
+	// To account for hidden variables and possible punctuation we need to strip off all trailing non-alpha chars and replace $$ with $
+	// This needs to be done yet.
+	
     if (temp[0] == '$')  // Check to see if word is a variable category
     {
       strcpy(var_list[k], temp); // set word to correct space in var_list array
@@ -11963,55 +11977,4 @@ void fetch_variable_categories ( char **var_list, int target, int target_type) {
     
   }
   return;
-  
-  
-  
-  
-  
-	/*	
-		
-		point = strpbrk( original, "$" );
-		// If we found point...
-		if ( point ) {
-			sprintf( buf, "#2Variables:#0" );
-			// Then for every character in the string...
-			// We run through the original, adding each bit of y to buf2.
-			// However, if we find a $, we see if that's a category of variables.
-			// If so, we add a random colour of those variables to buf2, and then skip ahead y to the end of that phrase, where we keep going on our merry way.
-
-			for ( size_t y = 0; y <= strlen( original ); y++ ) {
-				if ( original[ y ] == *point ) {
-					k = y + 1;
-					sprintf( temp, "$" );
-					// ... and jump ahead a point (to get to the letter after the $
-					k = y + 1;
-
-					// Now, until we hit something that's not a alpha-numeric character.
-					while ( isalpha( original[ k ] ) ) {
-						// add the word after the $ to our temporary marker.
-						sprintf( temp + strlen( temp ), "%c", original[ k ] );
-						k++;
-					}
-					// Now, we set our end point as where our category ends plus 1.
-					k = y + 1;
-
-					// We advance until we get to the new non-alpha-numeric character.
-					while ( isalpha( original[ k ] ) )
-						k++;
-
-					//while (!isalpha (original[k]))
-					//k++;
-
-					// And then set the point of our main loop to that point
-					y = k;
-					sprintf( buf + strlen( buf ), " %s", temp );
-				}
-			}
-			reformat_string( buf, &sp );
-			sprintf( buf, "%s", sp );
-			mem_free( sp );
-			sp = NULL;
-		
-		}
-		*/
 } 

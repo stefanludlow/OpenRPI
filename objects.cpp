@@ -7307,11 +7307,11 @@ void
 	// Initalize pointer array and slot
 	for (j = 0; j<10;j++)
 	{
-	  vari_list[j] = var_list[j];
+	  vari_list[j] = var_list[j]; // initialize pointer
 	  slot[j] = -1; 	// initialize slot
 	  *var_list[j] = '\0'; // Set these to null while we're at it.
     }
-    // Get variables categoreis from prototype of item we are going to load
+    // Get variables categories from prototype of item we are going to load
     fetch_variable_categories ( vari_list, corpse->o.od.value[2], 0);
 	
 	/*  // Test output
@@ -7326,7 +7326,7 @@ void
 	{
 	  for ( k = 0; k < 10; k++) // variables on target
 	  {
-	    if (!(strcmp(var_list[k], corpse->var_cat[j])))
+	    if (!(strncmp(var_list[k], corpse->var_cat[j], strlen(corpse->var_cat[j]))))
 		{
 		  // match, set slot[k] = j
 		  slot[k] = j;
@@ -7460,8 +7460,8 @@ void
 	{
 	  for ( k = 0; k < 10; k++) // variables on target
 	  {
-	    if (!(strcmp(var_list[k], corpse->var_cat[j])))
-		{
+	    if (!(strncmp(var_list[k], corpse->var_cat[j], strlen(corpse->var_cat[j]))))
+	    {
 		  // match, set slot[k] = j
 		  slot[k] = j;
 		 // sprintf( buf, "Slot %d color from location %d on corpse is: >>>%s<<<", j, k, corpse->var_color[j]);
