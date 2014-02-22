@@ -1077,7 +1077,7 @@ fatigue_bar (CHAR_DATA * ch, bool prompt)
 		if (ch->move == 0)
 			sprintf (buf, "       ");
 	}
-
+ 
 
     return buf;
 }

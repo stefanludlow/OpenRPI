@@ -7515,6 +7515,8 @@ void
 
 	// Carcass becomes 85% of the weight
 	carcass->obj_flags.weight = corpse->obj_flags.weight * 0.85;
+	// Carcass oval 1 becomes 5% of carcass weight (Remember weight is stored as a multiple of 100.  10000 = 100 lbs.)
+	carcass->o.od.value[1] = carcass->obj_flags.weight * .05; 
 	// Skin becomes 15% of the weight
 	if (skin)
 		skin->obj_flags.weight = corpse->obj_flags.weight * 0.15;
