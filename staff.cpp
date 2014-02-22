@@ -3941,12 +3941,21 @@ void objstat( CHAR_DATA * ch, char *name ) {
 	}
 
 // Nimrod test
-char *var_list[10];
+char var_list[10][100];
+char *vari_list[10];
+
+// Initalize pointer array and slot
+	for (i = 0; i<10;i++)
+	{
+	  vari_list[i] = var_list[i]; // initialize pointer
+	  *var_list[i] = '\0'; // Set these to null while we're at it.
+    }
+	i = 0;
 	
 	if ( just_a_number( name ) && vtoo( atoi( name ) ) )
 	{
 	  j = vtoo( atoi( name ) );
-	  fetch_variable_categories ( var_list, atoi(name), 9);
+	  fetch_variable_categories ( vari_list, atoi(name), 0);
 	}
 
 	else if ( ( j = get_obj_in_list_vis( ch, name, ch->right_hand ) )
@@ -11935,7 +11944,7 @@ void fetch_variable_categories ( char **var_list, int target, int target_type) {
   char temp[100] = { '\0' };
   char *point;
   int k = 0;
-//  char buf[ MAX_STRING_LENGTH ];
+  char buf[ MAX_STRING_LENGTH ];
    
   switch (target_type)
   {
@@ -11965,8 +11974,8 @@ void fetch_variable_categories ( char **var_list, int target, int target_type) {
     if (temp[0] == '$')  // Check to see if word is a variable category
     {
       strcpy(var_list[k], temp); // set word to correct space in var_list array
-      // sprintf( buf, "Variable # %d is: >>>%s<<<\n", k, var_list[k] ); // Just for testing purposes
-      // send_to_gods(buf);
+      sprintf( buf, "Variable # %d is: >>>%s<<<\n", k, var_list[k] ); // Just for testing purposes
+      send_to_gods(buf);
 	  k++;
 	}
 	if (strlen(temp) <= 0) // If there's no more words, break out of the while loop
