@@ -11974,8 +11974,8 @@ void fetch_variable_categories ( char **var_list, int target, int target_type) {
     if (temp[0] == '$')  // Check to see if word is a variable category
     {
       strcpy(var_list[k], temp); // set word to correct space in var_list array
-      sprintf( buf, "Variable # %d is: >>>%s<<<\n", k, var_list[k] ); // Just for testing purposes
-      send_to_gods(buf);
+      // sprintf( buf, "Variable # %d is: >>>%s<<<\n", k, var_list[k] ); // Just for testing purposes
+      // send_to_gods(buf);
 	  k++;
 	}
 	if (strlen(temp) <= 0) // If there's no more words, break out of the while loop
