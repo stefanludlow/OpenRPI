@@ -709,6 +709,8 @@ insert_mobile_variables (CHAR_DATA * mob, CHAR_DATA * proto, char *string0, char
 	char temp_name[MAX_STRING_LENGTH] = { '\0' };
 	bool invisible = false;
 	bool manual = false;
+	bool inquotes = false;
+	int quotestart = 0;
     char *point;
     int i = 0, j = 0, h = 0; 
 	int placement = 0;
@@ -864,11 +866,27 @@ insert_mobile_variables (CHAR_DATA * mob, CHAR_DATA * proto, char *string0, char
 				// send_to_gods("Found the equal sign.  It's a manual variable.");
 				  j++; // increment to the letter after '='
 				  manual = true;
-				  while (isalpha (original[j]))
+				  // Check for a double quote
+				  if (original[j] == '"')
+				  {
+				    j++;
+					inquotes = true;
+					quotestart = j;
+				  }
+				  else
+				  {
+				    inquotes = false;
+				  }
+				  while (isalpha (original[j]) || inquotes)
                   {
                     // set temp_name to our manual name
                     sprintf (temp_name + strlen (temp_name), "%c", original[j]);
                     j++;
+					if (original[j] == '"' || j > quotestart + 40)
+					{
+					  inquotes = false;
+					  j++;
+					}
                   }
 				 // send_to_gods("temp_name =");
 				 // send_to_gods(temp_name);
