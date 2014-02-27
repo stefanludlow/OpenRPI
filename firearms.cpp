@@ -1902,7 +1902,7 @@ void
     else
     {
       if (amount)
-        sprintf (strBuf, "You begin (nimrod test 010920141557)  loading %d of #2%s#0 in to #2%s#0.", amount, obj_short_desc (ptrRound), obj_short_desc (ptrFirearm));
+        sprintf (strBuf, "You begin loading %d of #2%s#0 in to #2%s#0.", amount, obj_short_desc (ptrRound), obj_short_desc (ptrFirearm));
       else
         sprintf (strBuf, "You begin loading #2%s#0 in to #2%s#0.", obj_short_desc (ptrRound), obj_short_desc (ptrFirearm));
 
@@ -2345,8 +2345,7 @@ void
   int cap = 0;
   int size = 0;
   
-  send_to_char ("Starting delayed_load_firearm in firearms.cpp line 2348.\n",  ch);
-
+  
   if (!(((ptrFirearm = ch->right_hand) && GET_ITEM_TYPE (ptrFirearm) == ITEM_FIREARM)
     || ((ptrFirearm = ch->left_hand) && GET_ITEM_TYPE (ptrFirearm) == ITEM_FIREARM)))
   {
@@ -2363,10 +2362,10 @@ void
 
   if (IS_DIRECT(ptrFirearm))
   {
-  send_to_char ("Nimrod 0109141548.\n", ch);
+ 
     if (ch->delay_info1 < 0)
     {
-	send_to_char ("Nimrod 0109141549.\n", ch);
+	
       if (ch->right_hand && ch->right_hand->coldload_id == ch->delay_info2)
       {
         ptrRound = ch->right_hand;
@@ -2378,7 +2377,7 @@ void
     }
     else
     {
-	  send_to_char ("Nimrod 0109141550.\n", ch);
+	 
       if (ch->left_hand && ch->right_hand)
       {
         send_to_char ("Having taken another object in hand, you cease loading your firearm.\n",  ch);
@@ -2436,13 +2435,12 @@ void
     if (count > ptrRound->count)
       count = ptrRound->count;
 	  
-	send_to_char ("Nimrod 0109141551.\n", ch);
+	
 
     sprintf (buf, "You finish loading %d of #2%s#0 in to #2%s#0.\n", count, obj_short_desc(ptrRound), obj_short_desc (ptrFirearm));
     act(buf, false, ch, 0, 0, TO_CHAR | _ACT_FORMAT);
 	// Changed above from TRUE to FALSE - 9 Jan 14 for testing purposes.  -Nimrod  
-	send_to_char ("Nimrod 0109141602.\n", ch);
-	
+		
     *buf = '\0';
     sprintf (buf, "$n finishes loading %d of #2%s#0 with #2%s#0.", count, obj_short_desc(ptrRound), obj_short_desc (ptrFirearm));
     act (buf, true, ch, 0, 0, TO_ROOM | _ACT_FORMAT | _ACT_FIREFIGHT);
@@ -2658,10 +2656,8 @@ void
      if ( !strn_cmp( ptrRound->name, "arrow", 5 ))
 	   {
          unloadingarrow = true;
-	     send_to_char("We're unloading an arrow now.  Let's break aim first.  Nimrod 0109142056\n", ch);
-		 broke_aim(ch, 0);
-		 send_to_char("Aim should be broken now.  Nimrod 0129141720\n", ch);
-	   
+	     broke_aim(ch, 0);
+			   
 	   }
        // This is the output when unloading a bow.
       sprintf (buf, "You unload %s%s%s from $P.",
@@ -2750,7 +2746,7 @@ void
         obj_to_char(ptrRound, ch);
       }
 
-      sprintf (buf, "You unload (nimrod 0109142041) %s%s%s from $P.",
+      sprintf (buf, "You unload %s%s%s from $P.",
         (rounds > 1 ? "some BBs" : rounds == 1 ? "a BB" : ""),
         (rounds && casings ? " and " : ""),
         (casings > 1 ? "some casings" : casings == 1 ? "a casing" : ""));
@@ -2820,7 +2816,7 @@ void
 
       obj_from_obj (&ptrClip, 0);
       obj_to_char(ptrClip, ch);
-      sprintf (buf, "You unload (nimrod 0109142040) $p from $P.");
+      sprintf (buf, "You unload $p from $P.");
       sprintf (buf2, "$n unloads $p from $P.");
     }
     else
@@ -5084,7 +5080,7 @@ void
   bool usingarrow = false;
   bool usingbolt = false;
   char original[MAX_STRING_LENGTH];
-  bool testoutput = true; // Change this to false to bypass Nimrod's output text for testing purposes.
+  bool testoutput = false; // Change this to false to bypass Nimrod's output text for testing purposes.
 
   sprintf (original, "%s", argument);
 
@@ -5406,6 +5402,11 @@ void
 	{
       sprintf(buf, "Nimrod Checkpoint: Missile is: $p, END.");
         act (buf, false, ch, ammunition, 0, TO_CHAR | _ACT_FORMAT);
+		
+		 sprintf (buf, "Ammunition vnum: %d.\n", ammunition->nVirtual);
+		 send_to_char(buf, ch);
+		
+		//ammunition->nVirtual
       
       sprintf(buf, "Nimrod Checkpoint: Weapon is: $p, END.");
         act (buf, false, ch, firearm, 0, TO_CHAR | _ACT_FORMAT);
@@ -7666,6 +7667,7 @@ void
   {
     obj_from_obj(&ammo[0], 1);
     obj_to_room (ammo[0], target->in_room);
+//	return;
   }
   else
   {
@@ -7742,7 +7744,7 @@ void
         {
 		  // Removing 50/50 roll for arrow testing - Nimrod 022211252013
         //  if (number (0,1) && (bullet = load_colored_object(fBULLET, ammo[ind]->var_color[0], ammo[ind]->var_color[1], ammo[ind]->var_color[1], 0, 0, 0, 0, 0, 0, 0)))
-		send_to_char("Nimrod Test point 022611252013 - MISS - Should be an arrow dropped somewhere.  Check nearby rooms. \n", ch);
+		//send_to_char("Nimrod Test point 022611252013 - MISS - Should be an arrow dropped somewhere.  Check nearby rooms. \n", ch);
 		  if (bullet = load_colored_object(10, ammo[ind]->var_color[0], ammo[ind]->var_color[1], ammo[ind]->var_color[2], 0, 0, 0, 0, 0, 0, 0))
           {
             bullet->o.od.value[2] = ammo[ind]->o.od.value[2];
@@ -7787,19 +7789,40 @@ void
         //if (result == PUNCTURE_HIT)
         //  magic_add_affect (target, AFFECT_INTERNAL, -1, 2, 0, 0, 0);
       }
-      else if (res_result[ind] == CRITICAL_HIT || res_result[ind] == HIT || res_result[ind] == SHATTER_HIT)
+      else if (res_result[ind] == CRITICAL_HIT || res_result[ind] == HIT || res_result[ind] == SHATTER_HIT || res_result[ind] == CAUGHT)
       {
-	     send_to_char("Nimrod Test point 0232112513 Hit or Crit hit!!!!  This should produced a lodged arrow in the victim. \n", ch);
+	    // send_to_char("Nimrod Test point 0232112513 Hit or Crit hit!!!!  This should produced a lodged arrow in the victim. \n", ch);
+		 // ammo[0]->nVirtual
+		 // sprintf (buf, "Ammunition vnum of ammo[ind]: %d.\n", ammo[ind]->nVirtual);
+		 // send_to_char(buf, ch);
+		 
+		/* 
         if (res_result[ind] == SHATTER_HIT)
         {
 		  send_to_char("Nimrod Test point 0233112513 Shattered. Check for a lodged arrow. \n", ch);
          // if ((bullet = load_colored_object(fBULLET, ammo[ind]->var_color[0], "shattered", ammo[ind]->var_color[1], 0, 0, 0, 0, 0, 0, 0)))
-		   if ((bullet = load_colored_object(10, ammo[ind]->var_color[0], vd_short("$arrowtwo", 3), ammo[ind]->var_color[2], 0, 0, 0, 0, 0, 0, 0)))
-          {
+		 
+   		 if ((bullet = load_colored_object(
+		     ammo[ind]->nVirtual, 
+		     ammo[ind]->var_color[0], 
+			 ammo[ind]->var_color[1], 
+			 ammo[ind]->var_color[2], 
+			 ammo[ind]->var_color[3], 
+			 ammo[ind]->var_color[4], 
+			 ammo[ind]->var_color[5], 
+			 ammo[ind]->var_color[6], 
+			 ammo[ind]->var_color[7], 
+			 ammo[ind]->var_color[8], 
+			 ammo[ind]->var_color[9] )))
+          
+		   {
+		   
             bullet->o.od.value[2] = ammo[ind]->o.od.value[2];
             bullet->o.od.value[4] = ammo[ind]->o.od.value[4];
-            lodge_missile (target, bullet, location_table[ind], (res_result[ind] == SHATTER_HIT ? 3 : 1));
-          }
+           
+		   lodge_missile (target, ammo[ind], location_table[ind], (res_result[ind] == SHATTER_HIT ? 3 : 1));
+		//	 lodge_missile (target, bullet, location_table[ind], (res_result[ind] == SHATTER_HIT ? 3 : 1));
+          // }
 
         }
         else if (!number(0,2))
@@ -7824,16 +7847,19 @@ void
           }
         }
         else
-        {
-		  send_to_char("Nimrod Test point 44455 lodge one. \n", ch);
-          if ((bullet = load_colored_object(10, ammo[ind]->var_color[0], vd_short("$arrowtwo", 3), ammo[ind]->var_color[2], 0, 0, 0, 0, 0, 0, 0)))
-          {
-            bullet->o.od.value[2] = ammo[ind]->o.od.value[2];
-            bullet->o.od.value[4] = ammo[ind]->o.od.value[4];
-            lodge_missile (target, bullet, location_table[ind], 1);
-          }
-        }
-      }
+        { */
+		//  send_to_char("Nimrod Test point *********44455************** lodge one. \n", ch);
+         //  if ((bullet = load_colored_object(10, ammo[ind]->var_color[0], vd_short("$arrowtwo", 3), ammo[ind]->var_color[2], 0, 0, 0, 0, 0, 0, 0)))
+          // {
+          //  bullet->o.od.value[2] = ammo[ind]->o.od.value[2];
+           // bullet->o.od.value[4] = ammo[ind]->o.od.value[4];
+		   obj_from_obj(&ammo[ind], 1);
+             lodge_missile (target, ammo[ind], location_table[ind], 1);
+			// lodge_missile (target, bullet, location_table[ind], 1);
+          // }
+         }
+    }
+	  /* Disabling CAUGHT lodging for now.  0227140220 -Nimrod
       else if (res_result[ind] == CAUGHT)
       {
 	    send_to_char("Nimrod Test point CAUGHT 12398261 lodge one. \n", ch);
@@ -7877,20 +7903,21 @@ void
           }
         }
       }
+	  */
 
 
       if (!IS_DIRECT(firearm))
         clip->o.clip.amount -= 1;
 		
       // These next two lines need to be active, remarked out for testing.  -Nimrod
-       obj_from_obj(&ammo[ind], 1); // remove one object from another.  Removing bullet from firearm.
+     //  obj_from_obj(&ammo[ind], 1); // remove one object from another.  Removing bullet from firearm.
 
 	  
-	  send_to_char("Nimrod Test point 23456\n", ch);
+	 // send_to_char("Nimrod Test point 23456\n", ch);
 	  
-	  if (usingarrow)
-	  { 
-	    send_to_char("Nimrod Test point 23459 usingarrow is TRUE. \n", ch);
+	 // if (usingarrow)
+	 // { 
+	 //   send_to_char("Nimrod Test point 23459 usingarrow is TRUE. \n", ch);
 		
 		  // This is not setting the variable correctly yet. This is a test.
 		 // ammo[ind]->var_color[0] = "$chipped";
@@ -7902,13 +7929,14 @@ void
 	 //   send_to_char("Nimrod Test point 23479 Dropping Arrow. \n", ch);
 	   // obj_to_room (ammo[ind], ch->in_room);
 	   
-	    extract_obj(ammo[ind]);  // Destroy object from memory.
+	//    extract_obj(ammo[ind]);  // Destroy object from memory.
 				
-	  }
-	  else
-	  {
-	    extract_obj(ammo[ind]);  // Destroy object from memory.
-	  }
+	 // }
+	 // else
+	  //{
+	   // extract_obj(ammo[ind]);  // Destroy object from memory.
+	//  }
+/* Don't need to leave a shell for the time being. 0227140228 -Nimrod
 
       if ((shell = LOAD_COLOR(ammo[ind], fSHELL + ammo[ind]->o.bullet.size)))
       {
@@ -7935,9 +7963,11 @@ void
           }
         }
       }
+	  
+	  */
 
 
-    }
+  //  }
   }
 
   char *out1, *out2, *out3, *out4, *out5;
