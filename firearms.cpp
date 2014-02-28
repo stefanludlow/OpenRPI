@@ -1255,12 +1255,12 @@ void
   {
     if (amount)
     {
-      sprintf (strBuf, "You begin loading %d of #2%s#0 from #2%s#0 in to #2%s#0.", amount, obj_short_desc (ptrBullet), obj_short_desc (ptrBelt), obj_short_desc (ptrClip));
+      sprintf (strBuf, "You begin loading test one %d of #2%s#0 from #2%s#0 in to #2%s#0.", amount, obj_short_desc (ptrBullet), obj_short_desc (ptrBelt), obj_short_desc (ptrClip));
       sprintf (strBuf2, "$n begins loading %d of #2%s#0 from #2%s#0 in to #2%s#0.", amount, obj_short_desc (ptrBullet), obj_short_desc (ptrBelt), obj_short_desc (ptrClip));
     }
     else
     {
-      sprintf (strBuf, "You begin loading #2%s#0 from #2%s#0 in to #2%s#0.", obj_short_desc (ptrBullet), obj_short_desc (ptrBelt), obj_short_desc (ptrClip));
+      sprintf (strBuf, "You begin loading test two #2%s#0 from #2%s#0 in to #2%s#0.", obj_short_desc (ptrBullet), obj_short_desc (ptrBelt), obj_short_desc (ptrClip));
       sprintf (strBuf2, "$n begins loading #2%s#0 from #2%s#0 in to #2%s#0.", obj_short_desc (ptrBullet), obj_short_desc (ptrBelt), obj_short_desc (ptrClip));
     }
   }
@@ -1268,12 +1268,12 @@ void
   {
     if (amount)
     {
-      sprintf (strBuf, "You begin loading %d of #2%s#0 in to #2%s#0.", amount, obj_short_desc (ptrBullet), obj_short_desc (ptrClip));
+      sprintf (strBuf, "You begin loading test three %d of #2%s#0 in to #2%s#0.", amount, obj_short_desc (ptrBullet), obj_short_desc (ptrClip));
       sprintf (strBuf2, "$n begins loading %d of #2%s#0 in to #2%s#0.", amount, obj_short_desc (ptrBullet), obj_short_desc (ptrClip));
     }
     else
     {
-      sprintf (strBuf, "You begin loading #2%s#0 in to #2%s#0.", obj_short_desc (ptrBullet), obj_short_desc (ptrClip));
+      sprintf (strBuf, "You begin loading test four #2%s#0 in to #2%s#0.", obj_short_desc (ptrBullet), obj_short_desc (ptrClip));
       sprintf (strBuf2, "$n begins loading #2%s#0 in to #2%s#0.", obj_short_desc (ptrBullet), obj_short_desc (ptrClip));
     }
   }
@@ -1889,9 +1889,9 @@ void
 
     if (ptrBelt)
     {
-      if (amount)
+      if (amount > 1)
       {
-        sprintf (strBuf, "You begin loading %d of #2%s#0 from #2%s#0 in to #2%s#0.", amount, obj_short_desc (ptrRound), obj_short_desc (ptrBelt), obj_short_desc (ptrFirearm));
+        sprintf (strBuf, "You begin loading test five %d of #2%s#0 from #2%s#0 in to #2%s#0.", amount, obj_short_desc (ptrRound), obj_short_desc (ptrBelt), obj_short_desc (ptrFirearm));
       }
       else
       {
@@ -1901,8 +1901,8 @@ void
     }
     else
     {
-      if (amount)
-        sprintf (strBuf, "You begin loading %d of #2%s#0 in to #2%s#0.", amount, obj_short_desc (ptrRound), obj_short_desc (ptrFirearm));
+      if (amount > 1)
+        sprintf (strBuf, "You begin loading test seven %d of #2%s#0 in to #2%s#0.", amount, obj_short_desc (ptrRound), obj_short_desc (ptrFirearm));
       else
         sprintf (strBuf, "You begin loading #2%s#0 in to #2%s#0.", obj_short_desc (ptrRound), obj_short_desc (ptrFirearm));
 
@@ -2307,12 +2307,12 @@ void
 
     if (ptrBelt)
     {
-      sprintf (strBuf, "You begin loading #2%s#0 from #2%s#0 in to #2%s#0.", obj_short_desc (ptrClip), obj_short_desc (ptrBelt), obj_short_desc (ptrFirearm));
+      sprintf (strBuf, "You begin loading test nine #2%s#0 from #2%s#0 in to #2%s#0.", obj_short_desc (ptrClip), obj_short_desc (ptrBelt), obj_short_desc (ptrFirearm));
       sprintf (strBuf2, "$n begins loading #2%s#0 from #2%s#0 in to #2%s#0.", obj_short_desc (ptrClip), obj_short_desc (ptrBelt), obj_short_desc (ptrFirearm));
     }
     else
     {
-      sprintf (strBuf, "You begin loading #2%s#0 in to #2%s#0.", obj_short_desc (ptrClip), obj_short_desc (ptrFirearm));
+      sprintf (strBuf, "You begin loading test ten #2%s#0 in to #2%s#0.", obj_short_desc (ptrClip), obj_short_desc (ptrFirearm));
       sprintf (strBuf2, "$n begins loading #2%s#0 in to #2%s#0.", obj_short_desc (ptrClip), obj_short_desc (ptrFirearm));
     }
 
@@ -2437,12 +2437,14 @@ void
 	  
 	
 
-    sprintf (buf, "You finish loading %d of #2%s#0 in to #2%s#0.\n", count, obj_short_desc(ptrRound), obj_short_desc (ptrFirearm));
+    sprintf (buf, "You finish loading #2%s#0.\n", obj_short_desc (ptrFirearm));
+	// sprintf (buf, "You finish test one loading %d of #2%s#0 in to #2%s#0.\n", count, obj_short_desc(ptrRound), obj_short_desc (ptrFirearm));
     act(buf, false, ch, 0, 0, TO_CHAR | _ACT_FORMAT);
 	// Changed above from TRUE to FALSE - 9 Jan 14 for testing purposes.  -Nimrod  
 		
     *buf = '\0';
-    sprintf (buf, "$n finishes loading %d of #2%s#0 with #2%s#0.", count, obj_short_desc(ptrRound), obj_short_desc (ptrFirearm));
+    sprintf (buf, "$n finishes loading #2%s#0.", obj_short_desc (ptrFirearm));
+	// sprintf (buf, "$n finishes loading %d of #2%s#0 with #2%s#0.", count, obj_short_desc(ptrRound), obj_short_desc (ptrFirearm));
     act (buf, true, ch, 0, 0, TO_ROOM | _ACT_FORMAT | _ACT_FIREFIGHT);
 
 
@@ -2687,12 +2689,12 @@ void
       }
 
       sprintf (buf, "You unload $P, %s#2%s#0%s%s.",
-        (rounds > 1 ? "placing some rounds in " : rounds == 1 ? "placing a round in " : ""),
+        (rounds > 1 ? "placing some rounds in " : rounds == 1 ? "placing an arrow in " : ""),
         obj_short_desc(ptrBelt),
         (rounds && casings ? " and " : ""),
         (casings > 1 ? "unloading some casings" : casings == 1 ? "unloading a casing" : ""));
       sprintf (buf2, "$n unloads $P, %s#2%s#0%s%s.",
-        (rounds > 1 ? "placing some rounds in " : rounds == 1 ? "placing a round in " : ""),
+        (rounds > 1 ? "placing some rounds in " : rounds == 1 ? "placing an arrow in " : ""),
         obj_short_desc(ptrBelt),
         (rounds && casings ? " and " : ""),
         (casings > 1 ? "unloading some casings" : casings == 1 ? "unloading a casing" : ""));
@@ -7677,20 +7679,17 @@ void
       shell = NULL;
       bullet = NULL;
 
-      if (res_result[ind] == GLANCING_HIT || res_result[ind] == MISS || res_result[ind] == SHIELD_BLOCK || res_result[ind] == PUNCTURE_HIT || res_result[ind] == COVER_HIT)
+      if (res_result[ind] == SHIELD_BLOCK || res_result[ind] == PUNCTURE_HIT || res_result[ind] == COVER_HIT)
       {
         // If it's a glancing hit, 50% chance of striking scenery, 50% chance of flying somewhere.
-
-        if (res_result[ind] == GLANCING_HIT)
-        {
-          if (number(0,1))
-            res_result[ind] = COVER_HIT;
-          else
-            res_result[ind] = MISS;
-        }
+		send_to_gods("Shield block.  Arrow is lost forever.");
+		obj_from_obj(&ammo[ind], 1);
+		extract_obj(ammo[ind]);  // Destroy object from memory.
 
         // If it's a cover hit, 50% chance it shattered (and thus is gone), 50% chance it's flattened against terrain,
         // unless of course we have a cover object, in which case it's lodged in there.
+		
+		/* - Disabling cover hits for now.  0228140040 -Nimrod
         if (res_result[ind] == COVER_HIT)
         {
           if (number(0,1) && (bullet = load_colored_object(fBULLET, ammo[ind]->var_color[0], "flattened", ammo[ind]->var_color[1], 0, 0, 0, 0, 0, 0, 0)))
@@ -7738,70 +7737,44 @@ void
               obj_to_room (bullet, target->in_room);
             }
           }
+        } */
         }
-        // Again, 50% chance it then shattered, otherwise it's chipped.
-        else if (res_result[ind] == MISS || res_result[ind] == PUNCTURE_HIT)
+        else if (res_result[ind] == GLANCING_HIT || res_result[ind] == MISS || res_result[ind] == PUNCTURE_HIT)
         {
-		  // Removing 50/50 roll for arrow testing - Nimrod 022211252013
-        //  if (number (0,1) && (bullet = load_colored_object(fBULLET, ammo[ind]->var_color[0], ammo[ind]->var_color[1], ammo[ind]->var_color[1], 0, 0, 0, 0, 0, 0, 0)))
-		//send_to_char("Nimrod Test point 022611252013 - MISS - Should be an arrow dropped somewhere.  Check nearby rooms. \n", ch);
-		  if (bullet = load_colored_object(10, ammo[ind]->var_color[0], ammo[ind]->var_color[1], ammo[ind]->var_color[2], 0, 0, 0, 0, 0, 0, 0))
-          {
-            bullet->o.od.value[2] = ammo[ind]->o.od.value[2];
-            bullet->o.od.value[4] = ammo[ind]->o.od.value[4];
-            if (direction >= 0)
+		  obj_from_obj(&ammo[ind], 1);
+		  if (number(0,1))  // 50/50 chance arrow is forever lost
+		  {
+		    send_to_gods("Miss - Arrow should be around somewhere.");
+		    magic_add_obj_affect (ammo[ind], MAGIC_HIDDEN, -1, 0, 0, 0, 0);
+            ammo[ind]->omote_str = add_hash ("rests on the ground, hidden from view.");
+		    obj_to_room (ammo[ind], target->in_room);
+	  	  }
+		  else
+		  {
+		    send_to_gods("Miss - Arrow is forever lost");
+		    extract_obj(ammo[ind]);  // Destroy object from memory.
+		  }
+	
+	/*
+		  if (direction >= 0)
             {
               exit = EXIT (target, direction);
 
               // If there's not an exit to the next room, or 33% of the time, we strike here.
               if (!exit || !(next_room = vnum_to_room (exit->to_room)) || (IS_SET (exit->exit_info, EX_ISDOOR) && IS_SET (exit->exit_info, EX_CLOSED)) || !number(0,2))
-              {
-                magic_add_obj_affect (bullet, MAGIC_HIDDEN, -1, 0, 0, 0, 0);
-                bullet->omote_str = add_hash ("decorates the area.");
-                if (wild && room)
-                  obj_to_room (bullet, room->vnum);
-                else if (!wild)
-                  obj_to_room (bullet, target->in_room);
-              }
-              else
-              {
-                magic_add_obj_affect (bullet, MAGIC_HIDDEN, -1, 0, 0, 0, 0);
-                bullet->omote_str = add_hash ("decorates the area.");
-                if (wild && room)
-                  obj_to_room (bullet, room->vnum);
-                else if (!wild)
-                  obj_to_room (bullet, target->in_room);
-              }
-            }
-            else
-            {
-              magic_add_obj_affect (bullet, MAGIC_HIDDEN, -1, 0, 0, 0, 0);
-              bullet->omote_str = add_hash ("decorates the area.");
-              if (wild && room)
-                obj_to_room (bullet, room->vnum);
-              else if (!wild)
-                obj_to_room (bullet, target->in_room);
-            }
-          }
-        }
+             
+          } */
+       // }
         res_result[ind] = old_result;
 
-        //if (result == PUNCTURE_HIT)
-        //  magic_add_affect (target, AFFECT_INTERNAL, -1, 2, 0, 0, 0);
+        
       }
       else if (res_result[ind] == CRITICAL_HIT || res_result[ind] == HIT || res_result[ind] == SHATTER_HIT || res_result[ind] == CAUGHT)
       {
-	    // send_to_char("Nimrod Test point 0232112513 Hit or Crit hit!!!!  This should produced a lodged arrow in the victim. \n", ch);
-		 // ammo[0]->nVirtual
-		 // sprintf (buf, "Ammunition vnum of ammo[ind]: %d.\n", ammo[ind]->nVirtual);
-		 // send_to_char(buf, ch);
-		 
+	   		 
 		/* 
         if (res_result[ind] == SHATTER_HIT)
-        {
-		  send_to_char("Nimrod Test point 0233112513 Shattered. Check for a lodged arrow. \n", ch);
-         // if ((bullet = load_colored_object(fBULLET, ammo[ind]->var_color[0], "shattered", ammo[ind]->var_color[1], 0, 0, 0, 0, 0, 0, 0)))
-		 
+        {		 
    		 if ((bullet = load_colored_object(
 		     ammo[ind]->nVirtual, 
 		     ammo[ind]->var_color[0], 
@@ -7814,50 +7787,18 @@ void
 			 ammo[ind]->var_color[7], 
 			 ammo[ind]->var_color[8], 
 			 ammo[ind]->var_color[9] )))
-          
-		   {
-		   
-            bullet->o.od.value[2] = ammo[ind]->o.od.value[2];
-            bullet->o.od.value[4] = ammo[ind]->o.od.value[4];
-           
-		   lodge_missile (target, ammo[ind], location_table[ind], (res_result[ind] == SHATTER_HIT ? 3 : 1));
-		//	 lodge_missile (target, bullet, location_table[ind], (res_result[ind] == SHATTER_HIT ? 3 : 1));
-          // }
-
+           {
+		     bullet->o.od.value[2] = ammo[ind]->o.od.value[2];
+             bullet->o.od.value[4] = ammo[ind]->o.od.value[4];
+             lodge_missile (target, bullet, location_table[ind], (res_result[ind] == SHATTER_HIT ? 3 : 1));
+		   }
         }
-        else if (!number(0,2))
-        {
-		send_to_char("Nimrod Test point 43598 Hopefully this one will work. lodge one. \n", ch);
-          if ((bullet = load_colored_object(10, ammo[ind]->var_color[0], vd_short("$arrowtwo", 3), ammo[ind]->var_color[2], 0, 0, 0, 0, 0, 0, 0)))
-		  {
-            bullet->o.od.value[2] = ammo[ind]->o.od.value[2];
-            bullet->o.od.value[4] = ammo[ind]->o.od.value[4];
-            lodge_missile (target, bullet, location_table[ind], 1);
-          }
-        }
-        else if (!number(0,1))
-        {
-		  send_to_char("Nimrod Test point 43789 lodge one. \n", ch);
-         // if ((bullet = load_colored_object(fBULLET, ammo[ind]->var_color[0], vd_short("$arrowtwo", 3), ammo[ind]->var_color[1], 0, 0, 0, 0, 0, 0, 0)))
-		   if ((bullet = load_colored_object(10, ammo[ind]->var_color[0], vd_short("$arrowtwo", 3), ammo[ind]->var_color[2], 0, 0, 0, 0, 0, 0, 0)))
-          {
-            bullet->o.od.value[2] = ammo[ind]->o.od.value[2];
-            bullet->o.od.value[4] = ammo[ind]->o.od.value[4];
-            lodge_missile (target, bullet, location_table[ind], 1);
-          }
-        }
-        else
-        { */
-		//  send_to_char("Nimrod Test point *********44455************** lodge one. \n", ch);
-         //  if ((bullet = load_colored_object(10, ammo[ind]->var_color[0], vd_short("$arrowtwo", 3), ammo[ind]->var_color[2], 0, 0, 0, 0, 0, 0, 0)))
-          // {
-          //  bullet->o.od.value[2] = ammo[ind]->o.od.value[2];
-           // bullet->o.od.value[4] = ammo[ind]->o.od.value[4];
+        
+       */
+	   send_to_gods("Should be a lodged arrow.");
 		   obj_from_obj(&ammo[ind], 1);
              lodge_missile (target, ammo[ind], location_table[ind], 1);
-			// lodge_missile (target, bullet, location_table[ind], 1);
-          // }
-         }
+	  }
     }
 	  /* Disabling CAUGHT lodging for now.  0227140220 -Nimrod
       else if (res_result[ind] == CAUGHT)
