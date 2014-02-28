@@ -6527,7 +6527,7 @@ void
   }
 
   // Now we make some noise, people.
-  if (!IS_SET(firearm->o.firearm.bits, GUN_SILENT) && !IS_SLING(firearm)) // Need to add another qualifier to this for bows.  -Nimrod
+  if (!IS_SET(firearm->o.firearm.bits, GUN_SILENT) && !IS_SLING(firearm) && !usingarrow && !usingbolt) // Need to add another qualifier to this for bows.  -Nimrod
     firearm_bang (ch->room, fired, target->in_room);
 
   //obj_from_obj(&ammo, 0);
@@ -6717,7 +6717,7 @@ void
         !number(0,2) ? "" :
         !number(0,1) ? " barely" : " by a whisper"));
 
-      sprintf(buf2 + strlen(buf2), " (nimrod test 1131141) miss%s %s%s", (fired == 1 ? "es" : ""), HMHR(target),
+      sprintf(buf2 + strlen(buf2), " miss%s %s%s", (fired == 1 ? "es" : ""), HMHR(target),
         (!number(0,4) ? " completely" :
         !number(0,3) ? " broadly" :
         !number(0,2) ? "" :

@@ -4684,7 +4684,7 @@ void
 					{
 						if (!str_cmp(vars->category, obj_list[i]->var_cat[h]))
 						{
-							// sprintf(buf, "Vars->to: %d, Vars->pos: %d, Obj_list[i]->var_color[h]: %s, i: %d, j: %d, h: %d.", vars->to, vars->pos, obj_list[i]->var_color[h], i, j, h);
+						//	 sprintf(buf, "Vars->to: %d, Vars->pos: %d, Obj_list[i]->var_color[h]: %s, i: %d, j: %d, h: %d.", vars->to, vars->pos, obj_list[i]->var_color[h], i, j, h);
 							// send_to_gods(buf);
 							subcraft->load_color[vars->to][vars->pos] = str_dup(obj_list[i]->var_color[h]);
 							subcraft->load_cat[vars->to][vars->pos] = str_dup(vars->category);
@@ -4702,9 +4702,9 @@ void
 				  {
 				    // Pass manual variable if it exists
 					
-					//  send_to_gods("It is a manual variable.");
-					//  send_to_gods(vars->category);
-					//  send_to_gods(vars->manual);
+					  // send_to_gods("It is a manual variable.");
+					  // send_to_gods(vars->category);
+					  // send_to_gods(vars->manual);
 					
 					  subcraft->load_color[vars->to][vars->pos] = str_dup(vars->manual);
 					  subcraft->load_cat[vars->to][vars->pos] = str_dup(vars->category);
