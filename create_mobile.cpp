@@ -806,7 +806,13 @@ insert_mobile_variables (CHAR_DATA * mob, CHAR_DATA * proto, char *string0, char
         // We run through the original, adding each bit of y to buf2.
         // However, if we find a $, we see if that's a category of variables.
         // If so, we add a random colour of those variables to buf2, and then skip ahead y to the end of that phrase, where we keep going on our merry way.
-
+		
+		if (original[0] == '$' && original[1] == '$')
+		{
+		 send_to_gods ("Assigning an invisible variable at the beginning of a description is illegal. Aborting variable replacement");
+		 return;
+		}
+		
         for (size_t y = 0; y <= strlen (original); y++)
         {
             // If we're at the $...
@@ -856,14 +862,14 @@ insert_mobile_variables (CHAR_DATA * mob, CHAR_DATA * proto, char *string0, char
                   xorder[round] = -1;
 				  placement = round;
 				}
-				// send_to_gods("temp = ");
-				// send_to_gods(temp);
+				//  send_to_gods("category name = ");
+				//  send_to_gods(temp);
 					
 				// Now, if the char is an '=', then this is a manual variable, read the value of the variable and set
 				if (original[j] == '=')
 				{
 				// This is a manual variable.  Let's read the value.
-				// send_to_gods("Found the equal sign.  It's a manual variable.");
+				 // send_to_gods("Found the equal sign.  It's a manual variable.");
 				  j++; // increment to the letter after '='
 				  manual = true;
 				  // Check for a double quote
@@ -882,13 +888,13 @@ insert_mobile_variables (CHAR_DATA * mob, CHAR_DATA * proto, char *string0, char
                     // set temp_name to our manual name
                     sprintf (temp_name + strlen (temp_name), "%c", original[j]);
                     j++;
-					if (original[j] == '"' || j > quotestart + 40)
+					if (original[j] == '"' || (inquotes && j > quotestart + 40))
 					{
 					  inquotes = false;
 					  j++;
 					}
                   }
-				 // send_to_gods("temp_name =");
+				 // send_to_gods("color name is: =");
 				 // send_to_gods(temp_name);
 				}
 				

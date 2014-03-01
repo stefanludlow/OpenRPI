@@ -5159,25 +5159,11 @@ void
 
   if (IS_SET(ch->room->room_flags, PEACE))
   {
-    act ("Something prohibits you from taken such an action.", false, ch, 0, 0, TO_CHAR);
+    act ("Something prohibits you from taking such an action.", false, ch, 0, 0, TO_CHAR);
     return;
   }
 
-  /*
-  // Not sure if this is valid code, need to check out eventually -Nimrod
-  if (((bow = get_equip (ch, WEAR_PRIM)) && GET_ITEM_TYPE (bow) == ITEM_WEAPON
-  && bow->o.weapon.use_skill == SKILL_SLING)
-  || ((bow = get_equip (ch, WEAR_SEC))
-  && GET_ITEM_TYPE (bow) == ITEM_WEAPON
-  && bow->o.weapon.use_skill == SKILL_SLING))
-  {
-  skill_learn(ch, SKILL_SLING);
-  fire_sling (ch, bow, argument);
-  return;
-  }
-  */
-
-  // If we've got an object wielded in our right hand that is of type firearm, that's what we're looking for.
+    // If we've got an object wielded in our right hand that is of type firearm, that's what we're looking for.
   if (ch->right_hand && 
     (GET_ITEM_TYPE(ch->right_hand) == ITEM_FIREARM)
     &&
@@ -5250,10 +5236,13 @@ void
     send_to_char ("You need to aim and pull back on your sling before you can fire.\n", ch);
     return;
   }
-// Check to see if the word 'arrow' exists in ammunition.
+// Check to see if the word 'arrow' or 'bolt' exists in ammunition.
   
      if ( !strn_cmp( ammunition->name, "arrow", 5 ))
       usingarrow = true;
+	  
+	 if ( !strn_cmp( ammunition->name, "bolt", 4 ))
+      usingbolt = true;
             
 
   if (firearm->o.firearm.setting == 2)
@@ -5286,33 +5275,7 @@ void
     // If our arg1 is n, e, s, w, d or u, we're ranged baby.
 	 if(dir = lookup_dir(arg))
 	 {
-/*	
-    if (!strn_cmp ("east", arg, strlen (arg)) ||
-      !strn_cmp ("west", arg, strlen (arg)) ||
-      !strn_cmp ("north", arg, strlen (arg)) ||
-      !strn_cmp ("south", arg, strlen (arg)) ||
-      !strn_cmp ("up", arg, strlen (arg)) ||
-      !strn_cmp ("down", arg, strlen (arg)) ||
-      !str_cmp("ground", arg) ||
-      !str_cmp("floor", arg) ||
-      !str_cmp("sky", arg) ||
-      !str_cmp("air", arg))
-    {
-      if (!strn_cmp ("north", arg, strlen (arg)))
-        dir = 0;
-      else if (!strn_cmp ("east", arg, strlen (arg)))
-        dir = 1;
-      else if (!strn_cmp ("south", arg, strlen (arg)))
-        dir = 2;
-      else if (!strn_cmp ("west", arg, strlen (arg)))
-        dir = 3;
-      else if (!strn_cmp ("up", arg, strlen (arg)))
-        dir = 4;
-      else if (!strn_cmp ("down", arg, strlen (arg)))
-        dir = 5;
-      else
-        dir = 6;
-*/
+
       if (!EXIT (ch, dir) && dir != -1)
       {
         send_to_char ("There isn't an exit in that direction.\n", ch);
