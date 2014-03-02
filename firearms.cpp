@@ -1644,7 +1644,13 @@ void
     send_to_char ("You must first be holding a firearm.\n", ch);
     return;
   }
-
+  if (!(ptrFirearm->location == WEAR_BOTH || ptrFirearm->location == WEAR_PRIM || ptrFirearm->location == WEAR_SEC))
+  {
+    send_to_char ("You must be wielding that before you can load it.\n", ch);
+    return;
+  }
+ 
+ 
   if (IS_DIRECT(ptrFirearm))
   {
     if (IS_SET(ptrFirearm->o.firearm.bits, GUN_DIRECT_ONE))
