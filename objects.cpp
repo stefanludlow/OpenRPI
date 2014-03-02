@@ -2886,7 +2886,22 @@ void
 			extract_obj (obj->attached);
 			obj->attached = NULL;
 			obj_to_room (tobj, ch->in_room);
-			obj->attached = NULL;
+			obj->attached = NULL; // Not sure why we're setting this twice.
+		}
+		
+		if (obj->contains && GET_ITEM_TYPE (obj) == ITEM_FIREARM && obj->o.weapon.use_skill != SKILL_CROSSBOW)
+		{
+			sprintf (buffer, "%s#0 clatters to the ground!",
+				obj_short_desc (obj->contains));
+			*buffer = toupper (*buffer);
+			sprintf (buf, "#2%s", buffer);
+			act (buf, true, ch, 0, 0, TO_CHAR | _ACT_FORMAT);
+			act (buf, true, ch, 0, 0, TO_ROOM | _ACT_FORMAT);
+			tobj = load_object (obj->contains->nVirtual);
+			extract_obj (obj->contains);
+			obj->contains = NULL;
+			obj_to_room (tobj, ch->in_room);
+			obj->contains = NULL;
 		}
 
 		/*
@@ -3417,7 +3432,11 @@ void
 		send_to_char ("Give it to yourself? How generous...\n", ch);
 		return;
 	}
-
+    if (obj->location == WEAR_BOTH || obj->location == WEAR_PRIM || obj->location == WEAR_SEC)
+	{
+	  send_to_char("You must stop wielding that before you can give it to someone.\n", ch);
+	  return;
+	}
 
 	if (GET_ITEM_TYPE(obj) == ITEM_GRENADE && obj->o.grenade.status == 1)
 	{
@@ -4598,6 +4617,12 @@ void
 		"ten", "eleven", "twelve", "quite a few"
 	};
 	int hours;
+	
+	if (obj_object->contains && GET_ITEM_TYPE (obj_object) == ITEM_FIREARM && obj_object->o.weapon.use_skill != SKILL_CROSSBOW)
+	{
+	  send_to_char ("You must unload your weapon first.\n", ch);
+	  return;
+	}
 
 	if (IS_SET (obj_object->obj_flags.extra_flags, ITEM_MOUNT) &&
 		!IS_SET (ch->act, ACT_MOUNT))
@@ -5873,7 +5898,12 @@ void
 			ch);
 		return;
 	}
-
+	
+    if (obj->contains && GET_ITEM_TYPE (obj) == ITEM_FIREARM && obj->o.weapon.use_skill != SKILL_CROSSBOW)
+	{
+	  send_to_char ("You must unload your weapon first.\n", ch);
+	  return;
+	}
 
 	if (!obj && *arg1)
 	{
