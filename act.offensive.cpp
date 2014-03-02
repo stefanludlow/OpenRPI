@@ -252,7 +252,14 @@ do_throw (CHAR_DATA * ch, char *argument, int cmd)
         send_to_char ("You aren't holding that in either hand.\n", ch);
         return;
     }
-
+	if (tobj->contains && GET_ITEM_TYPE (tobj) == ITEM_FIREARM && tobj->o.weapon.use_skill != SKILL_CROSSBOW)
+	{
+	  send_to_char ("You must unload your weapon first.\n", ch);
+	  return;
+	}
+	
+	
+	
     argument = one_argument (argument, buf);
 
     if (!*buf)
