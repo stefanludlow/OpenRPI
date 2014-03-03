@@ -3106,9 +3106,6 @@ void
   char original[MAX_STRING_LENGTH];
   sprintf (original, "%s", argument);
 
-   // send_to_char ("Fire is temporarily disabled.  -Nimrod\n", ch);
-   //  return;
-  
   if (IS_SWIMMING (ch))
   {
     send_to_char ("You can't do that while swimming!\n", ch);
@@ -3165,26 +3162,8 @@ void
   }
   
 
-  // If our arg1 is n, e, s, w, d or u, we're ranged baby.
+  // If our arg1 is a direction, we're ranged baby.
   
-  // this can all be replaced with call to lookup_dir(arg1) - Nimrod
-    
-  /*
-  if ((!strn_cmp ("east", arg1, strlen (arg1)) ||
-    !strn_cmp ("west", arg1, strlen (arg1)) ||
-    !strn_cmp ("north", arg1, strlen (arg1)) ||
-    !strn_cmp ("south", arg1, strlen (arg1)) ||
-    !strn_cmp ("northeast", arg1, strlen (arg1)) ||
-    !strn_cmp ("northwest", arg1, strlen (arg1)) ||
-    !strn_cmp ("southeast", arg1, strlen (arg1)) ||
-    !strn_cmp ("southwest", arg1, strlen (arg1)) ||
-    !strn_cmp ("ne", arg1, strlen (arg1)) ||
-    !strn_cmp ("nw", arg1, strlen (arg1)) ||
-    !strn_cmp ("se", arg1, strlen (arg1)) ||
-    !strn_cmp ("sw", arg1, strlen (arg1)) ||
-    !strn_cmp ("up", arg1, strlen (arg1)) ||
-    !strn_cmp ("down", arg1, strlen (arg1))) && *arg2)
-  */
   if ((lookup_dir(arg1) > -1) && *arg2)
   {
     ranged = 1;
@@ -4183,12 +4162,19 @@ void
   {
     argument = one_argument(argument, arg2);
     // If our arg1 is n, e, s, w, d or u, we're ranged baby.  Need to update this.  -Nimrod
-    if ((!strn_cmp ("east", arg1, strlen (arg1)) ||
+    /*
+	if ((!strn_cmp ("east", arg1, strlen (arg1)) ||
       !strn_cmp ("west", arg1, strlen (arg1)) ||
       !strn_cmp ("north", arg1, strlen (arg1)) ||
       !strn_cmp ("south", arg1, strlen (arg1)) ||
       !strn_cmp ("up", arg1, strlen (arg1)) ||
       !strn_cmp ("down", arg1, strlen (arg1))) && *arg2)
+    {
+      ranged = 1;
+    }
+	*/
+	// Next if statement takes the place of the one above.
+	if ((lookup_dir(arg1) > -1) && *arg2)
     {
       ranged = 1;
     }
@@ -5277,8 +5263,7 @@ void
   // You can do "shoot person" to shoot at someone in the room, but it's a snap-shot so no aim bonus.
   if (*arg && str_cmp(arg, "!"))
   {
-      // This needs to be replaced by a lookupdir call - Nimrod
-    // If our arg1 is n, e, s, w, d or u, we're ranged baby.
+      // If our arg1 is a direction, we're ranged baby.
 	 if(dir = lookup_dir(arg))
 	 {
 
@@ -5516,7 +5501,6 @@ void
   // Modify our difficuly by weapon 10 for each level we've dropped -
   // need to take care of yo weapon, fool.
   
-  // remarking this next out for shortbow tests.  -Nimrod Need to put back if you want firearms to work properly.
   attack_mod += object__determine_condition(firearm) * 10;
 
    if (!wild)
@@ -5620,24 +5604,15 @@ void
     // Needs to be replaced with a lookupdir call -Nimrod
 	
 	dir = lookup_dir(ch->delay_who);
-/*	
-    if (!strn_cmp ("north", ch->delay_who, strlen (ch->delay_who)))
-      dir = 0;
-    else if (!strn_cmp ("east", ch->delay_who, strlen (ch->delay_who)))
-      dir = 1;
-    else if (!strn_cmp ("south", ch->delay_who, strlen (ch->delay_who)))
-      dir = 2;
-    else if (!strn_cmp ("west", ch->delay_who, strlen (ch->delay_who)))
-      dir = 3;
-    else if (!strn_cmp ("up", ch->delay_who, strlen (ch->delay_who)))
-      dir = 4;
-    else if (!strn_cmp ("down", ch->delay_who, strlen (ch->delay_who)))
-      dir = 5;
-*/
-  }
-//  else
-//    dir = 6;
-
+	/*
+	send_to_gods("dir direction is:");
+	send_to_gods(dirs[dir]);
+	send_to_gods("rev direction is:");
+	send_to_gods(rev_d[dir]);
+	send_to_gods("Secondary reverse direction lookup");
+	send_to_gods(dirs[rev_dir[dir]]);
+    */
+	}
 
   if (get_affect (ch, MAGIC_HIDDEN))
   {
@@ -5678,7 +5653,7 @@ void
   object__add_damage (firearm, 1, fired);
 
   // We also add scent.
-  if (!IS_SLING(firearm) && (!usingarrow))
+  if (!IS_SLING(firearm) && (!usingarrow) && (!usingbolt))
   {
     add_scent(firearm, scent_lookup("the acrid sting of cordite"), 1, (fired * 20), 1000, 0, 0);
     add_scent(ch->room, scent_lookup("the acrid sting of cordite"), 1, fired * 10, 1000, 0, 0);
@@ -6005,7 +5980,7 @@ void
     }
     else if (wild)
     {
-	  send_to_char ("It's a wild shot. -Nimrod723189923 ********************************************** \n", ch);
+	 // send_to_char ("It's a wild shot. -Nimrod723189923 ********************************************** \n", ch);
 	  
       res_result[ind] = MISS;
     }
@@ -6071,7 +6046,7 @@ void
     }
     else if (ranged)
     {
-      sprintf (buf, "You %sfire #2%s#0, #2%s %s%s#0 shooting %sward towards #5%s#0.",
+      sprintf (buf, "test123You %sfire #2%s#0, #2%s %s%s#0 shooting %sward towards #5%s#0.",
         (af ? "rise from cover and " : ""),
         obj_short_desc(firearm), buf6, shell_name[firearm->o.firearm.caliber], (fired == 1 ? "" : "s"),  ch->delay_who, char_short (original_target));
       sprintf (buf2, "%s#0 %sfires #2%s#0, #2%s %s%s#0 shooting %sward.",
@@ -6183,8 +6158,10 @@ void
     }
     else if (ranged)
     {
+	    
+	
       // Setup ranged message to character firing	
-      sprintf (buf, "You %s%s of #2%s#0, %s #2%s%s %s#0 %s towards #5%s#0.",
+      sprintf (buf, "Test124You %s%s of #2%s#0, %s #2%s%s %s#0 %s towards #5%s#0.",
         (af ? "rise from cover and " : ""),
 		(usingarrow ? "release the bowstring" : "squeeze the trigger018"),
         obj_short_desc(firearm), 
@@ -6211,9 +6188,7 @@ void
       sprintf (buf2, "%s", buffer);
       watched_action(ch, buf2, 0, 1);
 	  
-	    if ((usingarrow || usingbolt) && !get_trust( ch ))
-          broke_aim(ch, 0);
-      
+	        
 	  
     }
     else
@@ -6252,7 +6227,7 @@ void
       sprintf (buf3, "%s", buffer);
   
       // Setup message to character firing
-      sprintf (buf, "You %s%s of #2%s#0, #2%s %s%s#0 %s towards #5%s#0.",
+      sprintf (buf, "Test125You %s%s of #2%s#0, #2%s %s%s#0 %s towards #5%s#0.",
         (af ? "rise from cover and " : ""),
         (usingarrow ? "release the bowstring" : "squeeze the trigger002"),
         obj_short_desc(firearm), 
@@ -6262,10 +6237,9 @@ void
         (usingarrow ? "streaking" : "shooting"),
         char_short (original_target));
         
-        if (usingarrow || usingbolt)
-          broke_aim(ch, 0);
-      
+             
     }
+	    
   }
   else
   {
@@ -6298,8 +6272,26 @@ void
         act (buf2, false, ch, 0, tch, TO_VICT | _ACT_FORMAT);
       }
     }
+	/*
+	sprintf (buf, "You %s%s of #2%s#0, #2%s %s%s#0 %s towards #5%s#0.",
+        (af ? "rise from cover and " : ""),
+        (usingarrow ? "release the bowstring" : "squeeze the trigger002"),
+        obj_short_desc(firearm), 
+        ((usingarrow || usingbolt) ? "sending" : buf6), burst of, hail of, or 'a' from buf6.
+        ((usingarrow || usingbolt) ? obj_short_desc(ammunition) : shell_name[firearm->o.firearm.caliber]),
+        (fired == 1 ? "" : "s"),
+        (usingarrow ? "streaking" : "shooting"),
+        char_short (original_target));
+	
+	
+	
+	*/
     // Need to update -Nimrod
-    sprintf (buf3, "%s %s#0 rips through the area, streaking %sward.", buf6, shell_name[firearm->o.firearm.caliber], ch->delay_who);
+    sprintf (buf3, "%s %s#0 flies overhead, streaking %sward.", 
+	  ((usingarrow || usingbolt) ? "A" : buf6),
+	  ((usingarrow || usingbolt) ? obj_short_desc(ammunition) : shell_name[firearm->o.firearm.caliber]),
+	  ch->delay_who);
+	  
     *buf3 = toupper (*buf3);
     sprintf (buffer, "#2%s", buf3);
     sprintf (buf3, "%s", buffer);
@@ -6507,6 +6499,14 @@ void
 
   if (ranged && ch->delay_who)
   {
+   	
+	direction = rev_dir[dir];
+	from_direction = str_dup (rev_d[dir]);  // These two variables can be totally removed and just reference rev_dir[dir] and rev_d[dir]
+	
+	
+	
+	
+    /*	
     if (!str_cmp (ch->delay_who, "north"))
     {
       from_direction = str_dup ("the south");
@@ -6537,10 +6537,11 @@ void
       from_direction = str_dup ("above");
       direction = 5;
     }
+	
+	*/
   }
   else
     from_direction = add_hash ("an indeterminate direction");
-
 
   // Now we count up how much of each result we.
   // 4 is a flat out miss
@@ -8276,7 +8277,8 @@ void
     npc_ranged_response (target, retal_ch);
   }
 
-
+  if (usingarrow || usingbolt) 
+    broke_aim(ch, 0);
   return;
 }
 
