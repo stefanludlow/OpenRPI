@@ -1710,15 +1710,43 @@ void
       amount = -1;
   }
 
-  if (IS_SLING(ptrFirearm))
+   switch (ptrFirearm->o.firearm.use_skill) // Set the size of missile/round
+  {
+    case SKILL_RIFLE:
+	  size = 2;
+	  break;
+	case SKILL_SMG:
+	  size = 1;
+	  break;
+	case SKILL_GUNNERY:
+	  size = 1;
+	  break;
+	case SKILL_HANDGUN:
+	  size = 0;
+	  break;
+	case SKILL_SHORTBOW:
+	  size = 1;
+	  break;
+	case SKILL_LONGBOW:
+	  size = 2;
+	  break;
+	case SKILL_CROSSBOW:
+	  size = 1;
+	  break;
+    default:
+      size = 0;
+  }
+  
+ if (IS_SLING(ptrFirearm)) // Override if it's a sling
     size = 3;
+  /*
   else if (ptrFirearm->o.firearm.use_skill == SKILL_RIFLE)
     size = 2;
   else if (ptrFirearm->o.firearm.use_skill == SKILL_SMG || ptrFirearm->o.firearm.use_skill == SKILL_GUNNERY)
     size = 1;
   else
     size = 0;
-
+  */
   if (IS_DIRECT(ptrFirearm))
   {
     //send_to_gods(argument);
@@ -2359,12 +2387,41 @@ void
     return;
   }
 
-  if (ptrFirearm->o.firearm.use_skill == SKILL_RIFLE)
+  // Why the heck are we even setting 'size' - it's not even called again in this function!  0303141143 -Nimrod
+  switch (ptrFirearm->o.firearm.use_skill) // Set the size of missile/round
+  {
+    case SKILL_RIFLE:
+	  size = 2;
+	  break;
+	case SKILL_SMG:
+	  size = 1;
+	  break;
+	case SKILL_GUNNERY:
+	  size = 1;
+	  break;
+	case SKILL_HANDGUN:
+	  size = 0;
+	  break;
+	case SKILL_SHORTBOW:
+	  size = 1;
+	  break;
+	case SKILL_LONGBOW:
+	  size = 2;
+	  break;
+	case SKILL_CROSSBOW:
+	  size = 1;
+	  break;
+    default:
+      size = 0;
+  }
+  /*
+  if (ptrFirearm->o.firearm.use_skill == SKILL_RIFLE)  // Need to update this 0303141027 -Nimrod
     size = 2;
   else if (ptrFirearm->o.firearm.use_skill == SKILL_SMG || ptrFirearm->o.firearm.use_skill == SKILL_GUNNERY)
     size = 1;
   else
     size = 0;
+  */
 
   if (IS_DIRECT(ptrFirearm))
   {
@@ -4434,7 +4491,7 @@ int
     cover = 85;
   }
 
-  if (direction == 6 && cover > 20)
+  if (direction == 6 && cover > 20) // Accounting for the previous 'down' direction.
     cover = 20;
 
 
@@ -5156,9 +5213,7 @@ void
   }
 
     // If we've got an object wielded in our right hand that is of type firearm, that's what we're looking for.
-  if (ch->right_hand && 
-    (GET_ITEM_TYPE(ch->right_hand) == ITEM_FIREARM)
-    &&
+  if (ch->right_hand && (GET_ITEM_TYPE(ch->right_hand) == ITEM_FIREARM) &&
     (ch->right_hand->location == WEAR_BOTH || ch->right_hand->location == WEAR_PRIM || ch->right_hand->location == WEAR_SEC))
   {
     firearm = ch->right_hand;
@@ -5169,9 +5224,7 @@ void
   }
 
   // If we've got a firearm in our left hand...
-  if (ch->left_hand && 
-    (GET_ITEM_TYPE(ch->left_hand) == ITEM_FIREARM)
-    &&
+  if (ch->left_hand && (GET_ITEM_TYPE(ch->left_hand) == ITEM_FIREARM) &&
     (ch->left_hand->location == WEAR_BOTH || ch->left_hand->location == WEAR_PRIM || ch->left_hand->location == WEAR_SEC))
   {
     // ...and we've already got a firearm i.e. one in our right hand...
@@ -5180,10 +5233,7 @@ void
       // If our firearm in our right hand is wielded primary,
       if (firearm->location == WEAR_PRIM)
       {
-          if (testoutput)
-		    send_to_char ("Nimrod checkpoint: firearm wielded primarily wear_prim.\n", ch);
-        
-		// And our secondary delay is less than our primary delay
+        // And our secondary delay is less than our primary delay
         if (ch->secondary_delay < ch->primary_delay)
         {
           // Swap our firearm to our left hand.
@@ -5230,24 +5280,24 @@ void
   }
 // Check to see if the word 'arrow' or 'bolt' exists in ammunition.
   
-     if ( !strn_cmp( ammunition->name, "arrow", 5 ))
-      usingarrow = true;
+  if ( !strn_cmp( ammunition->name, "arrow", 5 ))
+    usingarrow = true;
 	  
-	 if ( !strn_cmp( ammunition->name, "bolt", 4 ))
-      usingbolt = true;
+  if ( !strn_cmp( ammunition->name, "bolt", 4 ))
+    usingbolt = true;
             
 
-  if (firearm->o.firearm.setting == 2)
+  if (firearm->o.firearm.setting == 2)  // Burst fire mode
   {
     fired = 3;
   }
-  else if (firearm->o.firearm.setting == 3)
+  else if (firearm->o.firearm.setting == 3)  // Full auto mode
   {
     fired = number(7,13);
   }
   else
   {
-    fired = 1;
+    fired = 1; // For single shot weapons
   }
 
   // Obviously, if we have less bullets in the gun we want to fire, we fail.
@@ -5273,7 +5323,7 @@ void
         return;
       }
 
-      if (dir <= 5 && dir >= 0) // Not sure what this is doing atm, -Nimrod
+      if (dir <= 5 && dir >= 0) // Need to update this to account for all directions., -Nimrod 0 through 27
       {
         room = vnum_to_room (EXIT (ch, dir)->to_room);
 
@@ -5368,7 +5418,6 @@ void
         act (buf, false, ch, firearm, 0, TO_CHAR | _ACT_FORMAT);
     }
 	
-      // Only do this if it's an actual firearm, not a bow
       for (tobj = firearm->contains; tobj; tobj = tobj->next_content)
       {
         if (GET_ITEM_TYPE(tobj) == ITEM_ROUND) 
@@ -5476,7 +5525,7 @@ void
     return;
   }
 
-  if (firearm->o.firearm.setting == 1 || firearm->o.firearm.setting < 0)
+  if (firearm->o.firearm.setting == 1 || firearm->o.firearm.setting < 0)  // Weapon on safe 'click'
   {
     sprintf(buf, "You %ssqueeze the trigger010 of $p, but nothing happens. Nimrod 5398", (af ? "rises from cover and " : ""));
     act (buf, false, ch, firearm, 0, TO_CHAR | _ACT_FORMAT);
@@ -5582,6 +5631,7 @@ void
   ch->primary_delay = MIN(ch->primary_delay, 60);
   ch->secondary_delay = MIN(ch->secondary_delay, 60);
 
+  // LOL.  So if they're aiming at an implementor they shoot themselves.
   if (!wild && IS_IMPLEMENTOR (target) && !IS_NPC (target) && !IS_NPC (ch))
     target = ch;
 
@@ -5601,8 +5651,7 @@ void
       broke_aim(ch, 0);
       return;
     }
-    // Needs to be replaced with a lookupdir call -Nimrod
-	
+   	
 	dir = lookup_dir(ch->delay_who);
 	/*
 	send_to_gods("dir direction is:");
@@ -6046,7 +6095,7 @@ void
     }
     else if (ranged)
     {
-      sprintf (buf, "test123You %sfire #2%s#0, #2%s %s%s#0 shooting %sward towards #5%s#0.",
+      sprintf (buf, "You %sfire #2%s#0, #2%s %s%s#0 shooting %sward towards #5%s#0.",
         (af ? "rise from cover and " : ""),
         obj_short_desc(firearm), buf6, shell_name[firearm->o.firearm.caliber], (fired == 1 ? "" : "s"),  ch->delay_who, char_short (original_target));
       sprintf (buf2, "%s#0 %sfires #2%s#0, #2%s %s%s#0 shooting %sward.",
@@ -6080,7 +6129,13 @@ void
         obj_short_desc(firearm), buf6, shell_name[firearm->o.firearm.caliber], (fired == 1 ? "" : "s"), char_short (original_target));
     }
   }
-  else if (firearm->o.firearm.use_skill >= SKILL_HANDGUN && firearm->o.firearm.use_skill <= SKILL_GUNNERY)
+  else if (firearm->o.firearm.use_skill == SKILL_HANDGUN ||
+    firearm->o.firearm.use_skill == SKILL_SMG ||
+    firearm->o.firearm.use_skill == SKILL_RIFLE ||
+    firearm->o.firearm.use_skill == SKILL_GUNNERY ||
+    firearm->o.firearm.use_skill == SKILL_SHORTBOW ||
+    firearm->o.firearm.use_skill == SKILL_LONGBOW ||
+    firearm->o.firearm.use_skill == SKILL_CROSSBOW )
   {
     if (jam == true && fired == 0)
     {
@@ -6158,10 +6213,8 @@ void
     }
     else if (ranged)
     {
-	    
-	
-      // Setup ranged message to character firing	
-      sprintf (buf, "Test124You %s%s of #2%s#0, %s #2%s%s %s#0 %s towards #5%s#0.",
+	  // Setup ranged message to character firing	
+      sprintf (buf, "You %s%s of #2%s#0, %s #2%s%s %s#0 %s towards #5%s#0.",
         (af ? "rise from cover and " : ""),
 		(usingarrow ? "release the bowstring" : "squeeze the trigger018"),
         obj_short_desc(firearm), 
@@ -6227,7 +6280,7 @@ void
       sprintf (buf3, "%s", buffer);
   
       // Setup message to character firing
-      sprintf (buf, "Test125You %s%s of #2%s#0, #2%s %s%s#0 %s towards #5%s#0.",
+      sprintf (buf, "You %s%s of #2%s#0, #2%s %s%s#0 %s towards #5%s#0.",
         (af ? "rise from cover and " : ""),
         (usingarrow ? "release the bowstring" : "squeeze the trigger002"),
         obj_short_desc(firearm), 
@@ -6243,6 +6296,7 @@ void
   }
   else
   {
+    send_to_gods("Firearm error.  Let Nimrod know you saw this.  Refrence: 0303140303");
     sprintf (buffer, "FIREARM BUG? %s fires (VNUM: %d) from (VNUM: %d)", ch->tname, ammo[0]->nVirtual, firearm->nVirtual);
     system_log (buffer, true);
   }
@@ -6272,21 +6326,7 @@ void
         act (buf2, false, ch, 0, tch, TO_VICT | _ACT_FORMAT);
       }
     }
-	/*
-	sprintf (buf, "You %s%s of #2%s#0, #2%s %s%s#0 %s towards #5%s#0.",
-        (af ? "rise from cover and " : ""),
-        (usingarrow ? "release the bowstring" : "squeeze the trigger002"),
-        obj_short_desc(firearm), 
-        ((usingarrow || usingbolt) ? "sending" : buf6), burst of, hail of, or 'a' from buf6.
-        ((usingarrow || usingbolt) ? obj_short_desc(ammunition) : shell_name[firearm->o.firearm.caliber]),
-        (fired == 1 ? "" : "s"),
-        (usingarrow ? "streaking" : "shooting"),
-        char_short (original_target));
 	
-	
-	
-	*/
-    // Need to update -Nimrod
     sprintf (buf3, "%s %s#0 flies overhead, streaking %sward.", 
 	  ((usingarrow || usingbolt) ? "A" : buf6),
 	  ((usingarrow || usingbolt) ? obj_short_desc(ammunition) : shell_name[firearm->o.firearm.caliber]),
@@ -6502,47 +6542,12 @@ void
    	
 	direction = rev_dir[dir];
 	from_direction = str_dup (rev_d[dir]);  // These two variables can be totally removed and just reference rev_dir[dir] and rev_d[dir]
-	
-	
-	
-	
-    /*	
-    if (!str_cmp (ch->delay_who, "north"))
-    {
-      from_direction = str_dup ("the south");
-      direction = 3;
-    }
-    else if (!str_cmp (ch->delay_who, "east"))
-    {
-      from_direction = str_dup ("the west");
-      direction = 4;
-    }
-    else if (!str_cmp (ch->delay_who, "south"))
-    {
-      from_direction = str_dup ("the north");
-      direction = 1;
-    }
-    else if (!str_cmp (ch->delay_who, "west"))
-    {
-      from_direction = str_dup ("the east");
-      direction = 2;
-    }
-    else if (!str_cmp (ch->delay_who, "up"))
-    {
-      from_direction = str_dup ("below");
-      direction = 6;
-    }
-    else if (!str_cmp (ch->delay_who, "down"))
-    {
-      from_direction = str_dup ("above");
-      direction = 5;
-    }
-	
-	*/
   }
   else
+  {
     from_direction = add_hash ("an indeterminate direction");
-
+  }
+  
   // Now we count up how much of each result we.
   // 4 is a flat out miss
   // 6 is the cover being hit.
@@ -6613,7 +6618,7 @@ void
     int rounds = 0;
     int marker = -1;
 
-    /*  REAMININGS TEST  */
+    /*  REAMININGS TEST 1 */
     marker++;
     remainings = 0;
     *buf6 = '\0';
@@ -6702,7 +6707,7 @@ void
         !number(0,1) ? " barely" : " by a whisper"));
     }
 
-    /*  REAMININGS TEST  */
+    /*  REAMININGS TEST 2 */
     marker++;
     remainings = 0;
     *buf6 = '\0';
@@ -6795,7 +6800,7 @@ void
       }
     }
 
-    /*  REAMININGS TEST  */
+    /*  REAMININGS TEST 3 */
     marker++;
     remainings = 0;
     *buf6 = '\0';
@@ -6885,7 +6890,7 @@ void
       *buffer = '\0';
     }
 
-    /*  REAMININGS TEST  */
+    /*  REAMININGS TEST  4*/
     marker++;
     remainings = 0;
     *buf6 = '\0';
@@ -7033,7 +7038,7 @@ void
         buf7);
     }
 
-    /*  REAMININGS TEST  */
+    /*  REAMININGS TEST 5 */
     marker++;
     remainings = 0;
     *buf6 = '\0';
@@ -7169,7 +7174,7 @@ void
 
     }
 
-    /*  REAMININGS TEST  */
+    /*  REAMININGS TEST 6 */
     marker++;
     remainings = 0;
     *buf6 = '\0';
@@ -7316,7 +7321,7 @@ void
       }
     }
 
-    /*  REAMININGS TEST  */
+    /*  REAMININGS TEST 7 */
     marker++;
     remainings = 0;
     *buf6 = '\0';
