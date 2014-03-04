@@ -4539,33 +4539,33 @@ char *vari_list[10];
         break;
 
     case ITEM_BULLET:
-        sprintf (buf,                "#2Oval0 - State    :#0 %d\n", j->o.od.value[0]);
-        sprintf (buf + strlen (buf), "#2Oval1 - Origin   :#0 %d\n", j->o.od.value[1]);
-        sprintf (buf + strlen (buf), "#2Oval2 - Caliber  :#0 %s [#2%d#0]\n", calibers[j->o.bullet.caliber], j->o.bullet.caliber);
-        sprintf (buf + strlen (buf), "#2Oval4 - Ammo Type:#0 %s [#2%d#0]\n", ammo_bits[j->o.bullet.type], j->o.bullet.type);
+        sprintf (buf,                "#2Oval0 - State     :#0 %d\n", j->o.od.value[0]);
+        sprintf (buf + strlen (buf), "#2Oval1 - Origin    :#0 %d\n", j->o.od.value[1]);
+        sprintf (buf + strlen (buf), "#2Oval2 - Ammo Size :#0 %s [#2%d#0]\n", calibers[j->o.bullet.caliber], j->o.bullet.caliber);
+        sprintf (buf + strlen (buf), "#2Oval4 - Ammo Type :#0 %s [#2%d#0]\n", ammo_bits[j->o.bullet.type], j->o.bullet.type);
         break;
 
     case ITEM_CASE:
-        sprintf (buf,                "#2Oval0 - State    :#0 %d\n", j->o.od.value[0]);
-        sprintf (buf + strlen (buf), "#2Oval1 - Origin   :#0 %d\n", j->o.od.value[1]);
-        sprintf (buf + strlen (buf), "#2Oval2 - Caliber  :#0 %s [#2%d#0]\n", calibers[j->o.bullet.caliber], j->o.bullet.caliber);
-        sprintf (buf + strlen (buf), "#2Oval4 - Ammo Type:#0 %s [#2%d#0]\n", ammo_bits[j->o.bullet.type], j->o.bullet.type);
+        sprintf (buf,                "#2Oval0 - State     :#0 %d\n", j->o.od.value[0]);
+        sprintf (buf + strlen (buf), "#2Oval1 - Origin    :#0 %d\n", j->o.od.value[1]);
+        sprintf (buf + strlen (buf), "#2Oval2 - Ammo Size :#0 %s [#2%d#0]\n", calibers[j->o.bullet.caliber], j->o.bullet.caliber);
+        sprintf (buf + strlen (buf), "#2Oval4 - Ammo Type :#0 %s [#2%d#0]\n", ammo_bits[j->o.bullet.type], j->o.bullet.type);
         break;
 
     case ITEM_ROUND:
-        sprintf (buf,                "#2Oval0 - Dam Bonus:#0 %d\n", j->o.bullet.damage);
-        sprintf (buf + strlen (buf), "#2Oval1 - Sides    :#0 %d\n", j->o.bullet.sides);
-        sprintf (buf + strlen (buf), "#2Oval2 - Caliber  :#0 %s [#2%d#0]\n", calibers[j->o.bullet.caliber], j->o.bullet.caliber);
-        sprintf (buf + strlen (buf), "#2Oval4 - Ammo Type:#0 %s [#2%d#0]\n", ammo_bits[j->o.bullet.type], j->o.bullet.type);
-        sprintf (buf + strlen (buf), "#2Oval5 - Size     :#0 %s [#2%d#0]\n", ammo_sizes[j->o.bullet.size], j->o.bullet.size);
+        sprintf (buf,                "#2Oval0 - Dam Bonus :#0 %d\n", j->o.bullet.damage);
+        sprintf (buf + strlen (buf), "#2Oval1 - Sides     :#0 %d\n", j->o.bullet.sides);
+        sprintf (buf + strlen (buf), "#2Oval2 - Ammo Size :#0 %s [#2%d#0]\n", calibers[j->o.bullet.caliber], j->o.bullet.caliber);
+        sprintf (buf + strlen (buf), "#2Oval4 - Ammo Type :#0 %s [#2%d#0]\n", ammo_bits[j->o.bullet.type], j->o.bullet.type);
+        sprintf (buf + strlen (buf), "#2Oval5 - Weapon    :#0 %s [#2%d#0]\n", ammo_sizes[j->o.bullet.size], j->o.bullet.size);
         break;
 
     case ITEM_CLIP:
-        sprintf (buf,                "#2Oval0 - Bullets :#0 %d\n", j->o.clip.amount);
-        sprintf (buf + strlen (buf), "#2Oval1 - Capacity:#0 %d\n", j->o.clip.max);
-        sprintf (buf + strlen (buf), "#2Oval2 - Caliber :#0 %s [#2%d#0]\n", calibers[j->o.clip.caliber], j->o.clip.caliber);
-        sprintf (buf + strlen (buf), "#2Oval3 - Type    :#0 %s [#2%d#0]\n", gun_bits[j->o.clip.type], j->o.clip.type);
-        sprintf (buf + strlen (buf), "#2Oval5 - Size    :#0 %s [#2%d#0]\n", ammo_sizes[j->o.clip.size], j->o.clip.size);
+        sprintf (buf,                "#2Oval0 - Bullets  :#0 %d\n", j->o.clip.amount);
+        sprintf (buf + strlen (buf), "#2Oval1 - Capacity :#0 %d\n", j->o.clip.max);
+        sprintf (buf + strlen (buf), "#2Oval2 - Ammo Size:#0 %s [#2%d#0]\n", calibers[j->o.clip.caliber], j->o.clip.caliber);
+        sprintf (buf + strlen (buf), "#2Oval3 - Type     :#0 %s [#2%d#0]\n", gun_bits[j->o.clip.type], j->o.clip.type);
+        sprintf (buf + strlen (buf), "#2Oval5 - Size     :#0 %s [#2%d#0]\n", ammo_sizes[j->o.clip.size], j->o.clip.size);
         break;
 
     case ITEM_FIREARM:
@@ -4580,12 +4580,12 @@ char *vari_list[10];
         if (!*buf2)
             sprintf (buf2, "None\n");
 
-        sprintf (buf,                "#2Oval0 - Hands:#0      %d\n", j->o.firearm.handedness);
-        sprintf (buf + strlen (buf), "#2Oval1 - Bits:#0       %s\n", buf2);
-        sprintf (buf + strlen (buf), "#2Oval2 - Caliber:#0    %s [#2%d#0]\n", calibers[j->o.firearm.caliber], j->o.firearm.caliber);
-        sprintf (buf + strlen (buf), "#2Oval3 - Skill Used:#0 %s [skill number %d]\n", skills[j->o.od.value[3]], j->o.od.value[3]);
-        sprintf (buf + strlen (buf), "#2Oval4 - Setting:#0    %s [#2%d#0]\n", (j->o.firearm.setting < 0 ? "jammed" : gun_set[j->o.firearm.setting]), j->o.firearm.setting);
-        sprintf (buf + strlen (buf), "#2Oval5 - Recoil:#0  %d\n", j->o.firearm.recoil);
+        sprintf (buf,                "#2Oval0 - Hands      :#0      %d\n", j->o.firearm.handedness);
+        sprintf (buf + strlen (buf), "#2Oval1 - Bits       :#0       %s\n", buf2);
+        sprintf (buf + strlen (buf), "#2Oval2 - Ammo Size  :#0    %s [#2%d#0]\n", calibers[j->o.firearm.caliber], j->o.firearm.caliber);
+        sprintf (buf + strlen (buf), "#2Oval3 - Skill Used :#0 %s [skill number %d]\n", skills[j->o.od.value[3]], j->o.od.value[3]);
+        sprintf (buf + strlen (buf), "#2Oval4 - Setting    :#0    %s [#2%d#0]\n", (j->o.firearm.setting < 0 ? "jammed" : gun_set[j->o.firearm.setting]), j->o.firearm.setting);
+        sprintf (buf + strlen (buf), "#2Oval5 - Recoil     :#0  %d\n", j->o.firearm.recoil);
         break;
 
     case ITEM_MISSILE:
