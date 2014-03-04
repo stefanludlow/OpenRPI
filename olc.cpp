@@ -668,6 +668,15 @@ const char *calibers[] =
     ".55",
     ".60",
 	"BB",
+	"dart",
+	"bolt",
+	"short-arrow",
+	"long-arrow",
+	"elven-arrow",
+	"balista-bolt",
+	"slingshot-stone",
+	"catapult-stone",
+	"trebuchet-boulder",
     "\n"
 };
 
@@ -683,6 +692,15 @@ const char *shell_name[] =
     "large bullet",
     "large bullet",
 	"ball bearing",
+	"dart",
+	"bolt",
+	"arrow",
+	"arrow",
+	"arrow",
+	"balista-bolt",
+	"small-rock",
+	"stone",
+	"boulder",
     "\n"
 };
 
@@ -693,6 +711,16 @@ const char *ammo_sizes[] =
     "rifle",
 	"sling",
     "heavy-gun",
+	"blowgun",
+	"thorn",
+	"crossbow",
+	"shortbow",
+	"longbow",
+	"elvenbow",
+	"balista",
+	"slingshot",
+	"catapult",
+	"trebuchet",
     "\n"
 };
 
@@ -704,6 +732,14 @@ const char *ammo_bits[] =
     "armor-piercing",
     "incendiary",
     "tracer",
+	"blunted",
+	"sharpened",
+	"bone",
+	"flint",
+	"metal-tipped",
+	"broadhead",
+	"bodkin",
+	"flaming",
     "\n"
 };
 
