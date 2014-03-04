@@ -712,7 +712,7 @@ const char *ammo_sizes[] =
 	"sling",
     "heavy-gun",
 	"blowgun",
-	"thorn",
+	"ray-gun",
 	"crossbow",
 	"shortbow",
 	"longbow",
@@ -865,6 +865,9 @@ const struct constant_data constant_info[] =
     {"g_bits", "OSET G_BITS flag                 ", (void **) gun_bits},
     {"e_bits", "OSET E_BITS flag           ", (void **) elec_bits},
     {"f_bits", "OSET F_BITS flag           ", (void **) foraged_bits},
+	{"ammo-size", "OSET oval           ", (void **) calibers},
+	{"ammo-type", "OSET oval           ", (void **) ammo_bits},
+	{"weapons", "OSET oval           ", (void **) ammo_sizes},
     {"", "", NULL}
 };
 

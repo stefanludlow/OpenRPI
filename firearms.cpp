@@ -6328,7 +6328,7 @@ void
     }
 	
     sprintf (buf3, "%s %s#0 flies overhead, streaking %sward.", 
-	  ((usingarrow || usingbolt) ? "A" : buf6),
+	  ((usingarrow || usingbolt) ? "" : buf6),
 	  ((usingarrow || usingbolt) ? obj_short_desc(ammunition) : shell_name[firearm->o.firearm.caliber]),
 	  ch->delay_who);
 	  
