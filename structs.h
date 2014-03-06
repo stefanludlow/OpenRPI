@@ -1418,6 +1418,57 @@ typedef signed char shortint;
 
 #define PSIONIC_TALENTS		1
 
+#define WEAPON_PISTOL     0
+#define WEAPON_SMG        1
+#define WEAPON_RIFLE      2
+#define WEAPON_SLING      3
+#define WEAPON_HEAVYGUN   4
+#define WEAPON_BLOWGUN    5
+#define WEAPON_RAYGUN     6
+#define WEAPON_CROSSBOW   7 
+#define WEAPON_SHORTBOW   8
+#define WEAPON_LONGBOW    9
+#define WEAPON_ELVENBOW   10
+#define WEAPON_BALISTA    11
+#define WEAPON_SLINGSHOT  12
+#define WEAPON_CATAPULT   13
+#define WEAPON_TREBUCHET  14
+
+#define AMMO_SIZE_20CAL             0
+#define AMMO_SIZE_25CAL             1
+#define AMMO_SIZE_30CAL             2
+#define AMMO_SIZE_35CAL             3
+#define AMMO_SIZE_40CAL             4
+#define AMMO_SIZE_45CAL             5
+#define AMMO_SIZE_50CAL             6
+#define AMMO_SIZE_55CAL             7
+#define AMMO_SIZE_60CAL             8
+#define AMMO_SIZE_BB                9
+#define AMMO_SIZE_DART              10
+#define AMMO_SIZE_BOLT              11
+#define AMMO_SIZE_SHORT_ARROW       12
+#define AMMO_SIZE_LONG_ARROW        13
+#define AMMO_SIZE_ELVEN_ARROW       14
+#define AMMO_SIZE_BALISTA_BOLT      15
+#define AMMO_SIZE_SLINGSHOT_STONE   16
+#define AMMO_SIZE_CATAPULT_STONE    17
+#define AMMO_SIZE_TREBUCHET_BOULDER 18
+
+#define AMMO_TYPE_JACKETED          0
+#define AMMO_TYPE_HOLLOW_TIPPED     1
+#define AMMO_TYPE_ARMOR_PIERCING    2
+#define AMMO_TYPE_INCENDIARY        3
+#define AMMO_TYPE_TRACER            4
+#define AMMO_TYPE_BLUNTED           5
+#define AMMO_TYPE_SHARPENED         6
+#define AMMO_TYPE_BONE              7
+#define AMMO_TYPE_FLINT             8
+#define AMMO_TYPE_METAL_TIPPED      9
+#define AMMO_TYPE_BROADHEAD         10
+#define AMMO_TYPE_BODKIN            11
+#define AMMO_TYPE_FLAMING           12
+
+
 #define MAX_CALORIES            2000
 #define AVG_WEIGHT				150
 #define MIN_CALORIES			-10000

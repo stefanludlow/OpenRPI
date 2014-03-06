@@ -1894,7 +1894,7 @@ void
 
     if (ptrFirearm->o.firearm.caliber != ptrRound->o.bullet.caliber)
     {
-      sprintf(buf, "%s#0 is not the right caliber for #2%s#0.\n", obj_short_desc(ptrRound), obj_short_desc(ptrFirearm));
+      sprintf(buf, "%s#0 cannot be loaded into #2%s#0.\n", obj_short_desc(ptrRound), obj_short_desc(ptrFirearm));
       *buf = toupper(*buf);
       sprintf(buffer, "#2%s", buf);
       send_to_char(buffer, ch);
@@ -1903,7 +1903,7 @@ void
 
     int i = 0;
 
-    for (i = 12; i <= 19; i++)
+    for (i = 12; i <= 19; i++)  // checks to see if weapon is loaded directly rather than with clip
     {
       if (IS_SET(ptrFirearm->o.firearm.bits, 1 << i))
         break;
@@ -4474,7 +4474,7 @@ int
   // resting is flat 30,
   // anything else not fighting is 85.
 
-  if (GET_POS(target) == POSITION_SITTING)
+  if (GET_POS(target) == POSITION_SITTING) // These should be switch statements again.
   {
     cover = 20;
   }
@@ -4491,8 +4491,8 @@ int
     cover = 85;
   }
 
-  if (direction == 6 && cover > 20) // Accounting for the previous 'down' direction.
-    cover = 20;
+ // if (direction == 6 && cover > 20) // Accounting for the previous 'down' direction. Disabling for now.  0305141746 -Nimrod
+ //   cover = 20;
 
 
   // light-cover is 85%
@@ -4506,14 +4506,14 @@ int
   {
     if (af->type == AFFECT_COVER)
     {
-      if (af->a.cover.direction == direction || direction == 6)
+      if (af->a.cover.direction == direction || direction == 6)  // Down direction again.
       {
         break;
       }
     }
   }
 
-  if (af)
+  if (af) // target has taken cover from the correct direction. Over rides basic cover defaults set before.
   {
     if (af->a.cover.value >= 3)
       cover = 125;
@@ -4534,10 +4534,10 @@ int
     }
 
     // Shooting someone from the same bit of cover negates all advantages.
-    if ((taf = get_affect(ch, AFFECT_COVER)))
+    if ((taf = get_affect(ch, AFFECT_COVER)))  // checks to see if shooter is covered.
     {
-      if (taf->a.cover.obj && af->a.cover.obj == taf->a.cover.obj)
-        cover = 0;
+      if (taf->a.cover.obj && af->a.cover.obj == taf->a.cover.obj) // checks to see if shooter and target are using same cover object.
+        cover = 0; // If they are, then there's zero cover.
     }
   }
 
@@ -4572,7 +4572,7 @@ int
       default:         // walking
         break;
       }
-      cover = 5;
+      cover = 5; 
     }
   }
 
@@ -4647,12 +4647,12 @@ int
       break;
     }
   }
-
+  // For success we want roll to be low and att_roll to be high.
   att_roll = (MAX(MIN(50, skill_level(ch, SKILL_AIM, 0)), skill_level(ch, ch_skill, 0)) + skill_level(ch, SKILL_AIM, 0)) / 2;
 
   if (roll > att_roll)
   {
-    if (roll % 5 == 0 || roll == 1)
+    if (roll % 5 == 0 || roll == 1)  // If roll is divisible by 5 we get critical failure?  This seems very dumb.
       assault = RESULT_CF;
     else
       assault = RESULT_MF;
@@ -4667,8 +4667,13 @@ int
 
   //std::string gods2 = "Att_roll: " + MAKE_STRING(att_roll) + " Roll: " + MAKE_STRING(roll - att_modifier) + " Modifier: " + MAKE_STRING(att_modifier) + " Result: " + MAKE_STRING(assault);
   //send_to_gods(gods2.c_str());
-
-  if (assault == RESULT_CS)
+/*
+#define RESULT_CS       1  // Critical Success
+#define RESULT_MS       2  // Moderate Success
+#define RESULT_MF       3  // Moderate Failure
+#define RESULT_CF       4  // Critical Failure
+*/
+  if (assault == RESULT_CS)  // should just be some switch statements again.  Gah.
   {
     if (defense == RESULT_CS)
     {
@@ -5132,6 +5137,7 @@ void
   bool usingbolt = false;
   char original[MAX_STRING_LENGTH];
   bool testoutput = false; // Change this to false to bypass Nimrod's output text for testing purposes.
+  int j = 0;
 
   sprintf (original, "%s", argument);
 
@@ -5285,7 +5291,69 @@ void
 	  
   if ( !strn_cmp( ammunition->name, "bolt", 4 ))
     usingbolt = true;
-            
+/*	
+sprintf (buf, "Bullet.damage: %d.\n", ammunition->o.bullet.damage); 
+		 send_to_char(buf, ch);
+sprintf (buf, "Bullet.sides: %d.\n", ammunition->o.bullet.sides);
+		 send_to_char(buf, ch);
+sprintf (buf, "Bullet.caliber: %d.\n", ammunition->o.bullet.caliber); 
+		 send_to_char(buf, ch);
+sprintf (buf, "Bullet.pierce: %d.\n", ammunition->o.bullet.pierce); 
+		 send_to_char(buf, ch);
+sprintf (buf, "Bullet.type: %d.\n", ammunition->o.bullet.type); 
+		 send_to_char(buf, ch);
+sprintf (buf, "Bullet.size: %d.\n", ammunition->o.bullet.size); 
+		 send_to_char(buf, ch);	
+
+if (ammunition->o.bullet.caliber == AMMO_SIZE_TREBUCHET_BOULDER)
+  {
+    send_to_gods("It's a trebuchet boulder.");
+  }  
+else
+  {
+    send_to_gods("It's NOT a trebuchet boulder.");
+  }
+  */
+// 12, 13, 14, 15 are arrows.
+	
+	// sprintf (buf, "Ammunition vnum: %d.\n", ammunition->nVirtual);
+	//	 send_to_char(buf, ch);
+	
+	/*
+
+	bullet_data
+	int damage;  // how much damage to we add?
+    int sides;   // how many sides do these dice have?
+    int caliber; // what caliber are these bullets?
+    int pierce;  // the effect it has on armour
+    int type;    // what type of bullet is it, e.g. copper-jacket, dum-dum, explosive, etc. etc. etc.
+    int size;    // pistol, smg, or rifle.
+	
+	firearm_data
+	
+	firearm->o.firearm.handedness // 
+	firearm->o.firearm.bits // 
+	firearm->o.firearm.caliber // 
+	firearm->o.firearm.use_skill // 
+	firearm->o.firearm.setting // 
+	firearm->o.firearm.recoil // 
+	
+	
+	
+	sprintf (buf, "firearm.handedness: %d.\n", firearm->o.firearm.handedness); 
+		 send_to_char(buf, ch);	
+	sprintf (buf, "firearm.bits: %d.\n", firearm->o.firearm.bits); 
+		 send_to_char(buf, ch);	
+	sprintf (buf, "firearm.caliber: %d.\n", firearm->o.firearm.caliber); 
+		 send_to_char(buf, ch);	
+	sprintf (buf, "firearm.use_skill: %d.\n", firearm->o.firearm.use_skill); 
+		 send_to_char(buf, ch);	
+	sprintf (buf, "firearm.setting: %d.\n", firearm->o.firearm.setting); 
+		 send_to_char(buf, ch);	
+	sprintf (buf, "firearm.recoil: %d.\n", firearm->o.firearm.recoil); 
+		 send_to_char(buf, ch);	
+	
+  */          
 
   if (firearm->o.firearm.setting == 2)  // Burst fire mode
   {
@@ -6080,63 +6148,18 @@ void
     sprintf(buf6, "a burst of");
   else if (fired >= 7)
     sprintf(buf6, "a hail of");
-
-
-  if (IS_SLING(firearm))
+	
+	if (ranged && ch->delay_who)
   {
-    if (jam == true && fired == 0)
-    {
-      sprintf(buf, "You %srelease the pocket of $p, but nothing happens.", (af ? "rises from cover and " : ""));
-      act (buf, false, ch, firearm, 0, TO_CHAR | _ACT_FORMAT);
-      sprintf(buf2, "$n %sreleases the pocket of $p, but nothing happens.", (af ? "rises from cover and " : ""));
-      act (buf2, false, ch, firearm, 0, TO_ROOM | _ACT_FORMAT);
-      broke_aim(ch, 0);
-      return;
-    }
-    else if (ranged)
-    {
-      sprintf (buf, "You %sfire #2%s#0, #2%s %s%s#0 shooting %sward towards #5%s#0.",
-        (af ? "rise from cover and " : ""),
-        obj_short_desc(firearm), buf6, shell_name[firearm->o.firearm.caliber], (fired == 1 ? "" : "s"),  ch->delay_who, char_short (original_target));
-      sprintf (buf2, "%s#0 %sfires #2%s#0, #2%s %s%s#0 shooting %sward.",
-        char_short(ch), (af ? "rise from cover and " : ""),
-        obj_short_desc(firearm), buf6, shell_name[firearm->o.firearm.caliber], (fired == 1 ? "" : "s"),  ch->delay_who);
-      *buf2 = toupper (*buf2);
-      sprintf (buffer, "#5%s", buf2);
-      sprintf (buf2, "%s", buffer);
-      watched_action(ch, buf2, 0, 1);
-    }
-    else
-    {
-      sprintf (buf2, "%s#0 %sfires #2%s#0, #2%s %s%s#0 shooting towards #5%s#0.",
-        char_short(ch), (af ? "rise from cover and " : ""),
-        obj_short_desc(firearm), buf6, shell_name[firearm->o.firearm.caliber], (fired == 1 ? "" : "s"), char_short (original_target));
-      *buf2 = toupper (*buf2);
-      sprintf (buffer, "#5%s", buf2);
-      sprintf (buf2, "%s", buffer);
-      watched_action(ch, buf2, 0, 1);
-
-      sprintf (buf3, "%s#0 %sfires #2%s#0, #2%s %s%s#0 shooting towards #5you#0!",
-        char_short(ch), (af ? "rise from cover and " : ""),
-        obj_short_desc(firearm), buf6, shell_name[firearm->o.firearm.caliber], (fired == 1 ? "" : "s"));
-      *buf3 = toupper (*buf3);
-      sprintf (buffer, "#5%s", buf3);
-      sprintf (buf3, "%s", buffer);
-
-
-      sprintf (buf, "You %srelease the pocket of #2%s#0, #2%s %s%s#0 shooting towards #5%s#0.",
-        (af ? "rise from cover and " : ""),
-        obj_short_desc(firearm), buf6, shell_name[firearm->o.firearm.caliber], (fired == 1 ? "" : "s"), char_short (original_target));
-    }
+   	
+	direction = rev_dir[dir];
+	from_direction = str_dup (rev_d[dir]);  // These two variables can be totally removed and just reference rev_dir[dir] and rev_d[dir]
   }
-  else if (firearm->o.firearm.use_skill == SKILL_HANDGUN ||
-    firearm->o.firearm.use_skill == SKILL_SMG ||
-    firearm->o.firearm.use_skill == SKILL_RIFLE ||
-    firearm->o.firearm.use_skill == SKILL_GUNNERY ||
-    firearm->o.firearm.use_skill == SKILL_SHORTBOW ||
-    firearm->o.firearm.use_skill == SKILL_LONGBOW ||
-    firearm->o.firearm.use_skill == SKILL_CROSSBOW )
+  else
   {
+    from_direction = add_hash ("an indeterminate direction");
+  }
+
     if (jam == true && fired == 0)
     {
       sprintf(buf, "You %ssqueeze the trigger012 of $p, but nothing happens. Nimrod 6002", (af ? "rises from cover and " : ""));
@@ -6174,381 +6197,144 @@ void
       sprintf (buf2, "%s", buffer);
       watched_action(ch, buf2, 0, 1);
     }
-    else if (pointblank)  // How do we gain pointblank status? By achieving an aim value of over 20.
+	else // if (ranged || pointblank)
     {
-      sprintf (buf2, "%s#0 %sfires #2%s#0, #2%s %s%s#0 ripping into #5%s#0.",
-        char_short(ch), 
-		(af ? "rises from cover and " : ""),
-        obj_short_desc(firearm), 
-		buf6, 
-		shell_name[firearm->o.firearm.caliber], 
-		(fired == 1 ? "" : "s"), 
-		(target == ch ? (GET_SEX(ch) == SEX_MALE ? "himself" : "herself") : char_short (target)));
+	   // Setup shooter echo
+	  sprintf (buf, "You %s%s #2%s#0 %s #2%s#0 %s %s%s towards #5%s#0.",
+		  (af ? "rise from cover and " : ""),
+		  trigger_text_first[firearm->o.firearm.caliber],
+		  obj_short_desc(firearm),
+		  echo_one[number(0, echo_one_qty)],
+		  obj_short_desc(ammunition),
+		  echo_two[number(0, echo_two_qty)],
+		  (ranged ? ch->delay_who : ""),
+		  (ranged ? "ward" : ""),
+		  (target == ch ? " yourself "  : char_short (target)),
+		  char_short(original_target));
+				
+		if (ranged)
+		{ // Setup message to ranged victim
+		sprintf (buf3, "%s#0 %s from %s %s straight towards #5you#0!",
+		  obj_short_desc(ammunition),
+		  echo_three[number(0, echo_three_qty)], // flies
+		  from_direction,
+		  echo_two[number(0, echo_two_qty)]);
+		  
+		  *buf3 = toupper (*buf3);         // These three lines are used to capitalize the first letter of the object's sdesc and then add
+          sprintf (buffer, "#2%s", buf3);  // color.  There is no good way to do this.  It's ugly, but it works.
+          sprintf (buf3, "%s", buffer);
+		 
+		 // Victim witness echo when ranged
+		  sprintf (buf4, "%s#0 %s from %s %s straight towards #5%s#0!",
+		  obj_short_desc(ammunition),
+		  echo_three[number(0, echo_three_qty)], // flies
+		  from_direction,
+		  echo_two[number(0, echo_two_qty)],
+		  char_short(original_target));
+		  
+		  *buf4 = toupper (*buf4);        // These three lines are used to capitalize the first letter of the object's sdesc and then add color.
+          sprintf (buffer, "#2%s", buf4);
+          sprintf (buf4, "%s", buffer);
+		  
+		  
+		  
+		  // Missile-only witness echo
+		   sprintf (buf5, "%s#0 %s %s, %s %sward.", 
+	       obj_short_desc(ammunition),
+		   echo_three[number(0, echo_three_qty)],
+		   echo_four[number(0, echo_four_qty)],
+		   echo_five[number(0, echo_five_qty)],
+		   ch->delay_who);
+	  
+	      *buf5 = toupper (*buf5);         // These three lines are used to capitalize the first letter of the object's sdesc and then add color.
+          sprintf (buffer, "#2%s", buf5);
+          sprintf (buf5, "%s", buffer);
+		}
+		else
+		{ // Setup message to non-ranged victim
+	      sprintf (buf3, "%s#0 %s%s #2%s#0 %s #2%s#0 %s towards #5you#0!",
+		  char_short(ch),
+		  (af ? "rises from cover and " : ""),
+		  trigger_text_third[firearm->o.firearm.caliber],
+		  obj_short_desc(firearm),
+		  echo_one[number(0, echo_one_qty)],
+		  obj_short_desc(ammunition),
+		  echo_two[number(0, echo_two_qty)]);
+		  
+		  *buf3 = toupper (*buf3);         // These three lines are used to capitalize the first letter of the mob sdesc and then add color.
+          sprintf (buffer, "#5%s", buf3);
+          sprintf (buf3, "%s", buffer);
+		} 
+		 
+	  // Setup message to shooter witnesses	
+	  sprintf (buf2, "%s#0 %s%s #2%s#0 %s #2%s#0 %s %s%s%s.",
+		  char_short(ch),
+		  (af ? "rises from cover and " : ""),
+		  trigger_text_third[firearm->o.firearm.caliber],
+		  obj_short_desc(firearm),
+		  echo_one[number(0, echo_one_qty)],
+		  obj_short_desc(ammunition),
+		  echo_two[number(0, echo_two_qty)],
+		  (ranged ? "" : " towards "),
+		  (ranged ? ch->delay_who : char_short(original_target)),
+		  (ranged ? "ward" : ""));
 		
-      *buf2 = toupper (*buf2);
+		//(target == ch ? (GET_SEX(ch) == SEX_MALE ? "himself" : "herself") : char_short (target)));
+		
+      *buf2 = toupper (*buf2);         // These three lines are used to capitalize the first letter of the mob sdesc and then add color.
       sprintf (buffer, "#5%s", buf2);
       sprintf (buf2, "%s", buffer);
       watched_action(ch, buf2, 0, 1);
-
-      sprintf (buf3, "%s#0 %sfires #2%s#0, #2%s %s%s#0 ripping into #5you#0!",
-        char_short(ch), 
-		(af ? "rises from cover and " : ""),
-        obj_short_desc(firearm), 
-		buf6, 
-		shell_name[firearm->o.firearm.caliber], 
-		(fired == 1 ? "" : "s"));
-		
-      *buf3 = toupper (*buf3);
-      sprintf (buffer, "#5%s", buf3);
-      sprintf (buf3, "%s", buffer);
-
-      sprintf (buf, "You %sfire #2%s#0, #2%s %s%s#0 ripping into #5%s#0.",
-        (af ? "rise from cover and " : ""),
-        obj_short_desc(firearm), 
-		buf6, 
-		shell_name[firearm->o.firearm.caliber], 
-		(fired == 1 ? "" : "s"), 
-		(target == ch ? "yourself" : 
-		char_short (target)));
-    }
-    else if (ranged)
-    {
-	  // Setup ranged message to character firing	
-      sprintf (buf, "You %s%s of #2%s#0, %s #2%s%s %s#0 %s towards #5%s#0.",
-        (af ? "rise from cover and " : ""),
-		(usingarrow ? "release the bowstring" : "squeeze the trigger018"),
-        obj_short_desc(firearm), 
-		((usingarrow || usingbolt) ? "sending" : buf6),  
-		((usingarrow || usingbolt) ? obj_short_desc(ammunition) : shell_name[firearm->o.firearm.caliber]), 
-		(fired == 1 ? "" : "s"),  
-		(usingarrow ? "flying" : "shooting"),
-		ch->delay_who,  // Need to make sure this can be in all directions yet. Need to findout where this is set -Nimrod
-		char_short (original_target));
-		
-	  // Setup ranged message to chars in room	
-      sprintf (buf2, "%s#0 %s%s of #2%s#0, %s #2%s%s %sward.",
-        char_short(ch), 
-		(af ? "rises from cover and " : ""),
-		(usingarrow ? "releases the bowstring" : "squeezes the trigger019"),
-		obj_short_desc(firearm),
-		((usingarrow || usingbolt) ? "sending" : buf6),  
-		((usingarrow || usingbolt) ? obj_short_desc(ammunition) : shell_name[firearm->o.firearm.caliber]), 
-		(fired == 1 ? "" : "s"),  
-		ch->delay_who);
-		
-      *buf2 = toupper (*buf2);
-      sprintf (buffer, "#5%s", buf2);
-      sprintf (buf2, "%s", buffer);
-      watched_action(ch, buf2, 0, 1);
+	  /*
+	   send_to_gods("Shooter echo:");
+       send_to_gods(buf);
+	   send_to_gods("Target echo:");
+       send_to_gods(buf3);
+	   send_to_gods("Shooter witness echo:");
+       send_to_gods(buf2);
+	   send_to_gods("Ranged victim witness echo:");
+       send_to_gods(buf4);
+	   send_to_gods("Missile only witness echo:");
+       send_to_gods(buf5);
+	   */
 	  
-	        
-	  
-    }
-    else
-    {
-      // Non-ranged and non-pointblank messages
-      // Setup message to chars in room
-      sprintf (buf2, "%s#0 %s%s of #2%s#0, %s #2%s%s#0 %s towards #5%s#0.",
-        char_short(ch), 
-		(af ? "rises from cover and " : ""),
-		(usingarrow ? "releases the bowstring" : "squeezes the trigger002"),
-        obj_short_desc(firearm), 
-		((usingarrow || usingbolt) ? "sending" : buf6), 
-		((usingarrow || usingbolt) ? obj_short_desc(ammunition) : shell_name[firearm->o.firearm.caliber]),
-		(fired == 1 ? "" : "s"), 
-		(usingarrow ? "flying" : "shooting"),
-		char_short (original_target));
-		
-      *buf2 = toupper (*buf2);
-      sprintf (buffer, "#5%s", buf2);
-      sprintf (buf2, "%s", buffer);
-      watched_action(ch, buf2, 0, 1);
-	  
-      // Setup message to targetted char
-      sprintf (buf3, "%s#0 %s%s of #2%s#0, %s #2%s%s#0 %s towards #5you!#0.",
-        char_short(ch), 
-		(af ? "rises from cover and " : ""),
-		(usingarrow ? "releases the bowstring" : "squeezes the trigger002"),
-        obj_short_desc(firearm), 
-		((usingarrow || usingbolt) ? "sending" : buf6), 
-		((usingarrow || usingbolt) ? obj_short_desc(ammunition) : shell_name[firearm->o.firearm.caliber]),
-		(fired == 1 ? "" : "s"), 
-		(usingarrow ? "flying" : "shooting"));
-		
-      *buf3 = toupper (*buf3);
-      sprintf (buffer, "#5%s", buf3);
-      sprintf (buf3, "%s", buffer);
-  
-      // Setup message to character firing
-      sprintf (buf, "You %s%s of #2%s#0, #2%s %s%s#0 %s towards #5%s#0.",
-        (af ? "rise from cover and " : ""),
-        (usingarrow ? "release the bowstring" : "squeeze the trigger002"),
-        obj_short_desc(firearm), 
-        ((usingarrow || usingbolt) ? "sending" : buf6), 
-        ((usingarrow || usingbolt) ? obj_short_desc(ammunition) : shell_name[firearm->o.firearm.caliber]),
-        (fired == 1 ? "" : "s"),
-        (usingarrow ? "streaking" : "shooting"),
-        char_short (original_target));
-        
-             
-    }
-	    
-  }
-  else
-  {
-    send_to_gods("Firearm error.  Let Nimrod know you saw this.  Refrence: 0303140303");
-    sprintf (buffer, "FIREARM BUG? %s fires (VNUM: %d) from (VNUM: %d)", ch->tname, ammo[0]->nVirtual, firearm->nVirtual);
-    system_log (buffer, true);
-  }
-
-  if (ranged)
-  {
-    act (buf, false, ch, 0, 0, TO_CHAR | _ACT_FORMAT);
-
-    for (tch = ch->room->people; tch; tch = tch->next_in_room)
-    {
-      if (tch == ch)
-        continue;
-
-      if (IS_SET(tch->plr_flags, FIREFIGHT_FILTER))
-      {
-        if (get_second_affect(tch, SA_ROOMFIRED, 0))
-        {
-          get_second_affect(tch, SA_ROOMFIRED, 0)->info2+= fired;
-        }
-        else
-        {
-          add_second_affect(SA_ROOMFIRED, 3, tch, 0, 0, fired);
-        }
-      }
-      else
-      {
-        act (buf2, false, ch, 0, tch, TO_VICT | _ACT_FORMAT);
-      }
     }
 	
-    sprintf (buf3, "%s %s#0 flies overhead, streaking %sward.", 
-	  ((usingarrow || usingbolt) ? "" : buf6),
-	  ((usingarrow || usingbolt) ? obj_short_desc(ammunition) : shell_name[firearm->o.firearm.caliber]),
-	  ch->delay_who);
-	  
-    *buf3 = toupper (*buf3);
-    sprintf (buffer, "#2%s", buf3);
-    sprintf (buf3, "%s", buffer);
-    reformat_string (buf3, &p);
-    if (EXIT (ch, dir))
-      room = vnum_to_room (EXIT (ch, dir)->to_room);
-    else
-      room = NULL;
-    if (room && target->room != room)
-    {
-      for (tch = room->people; tch; tch = tch->next_in_room)
-      {
-        //if (skill_use (tch, SKILL_SCAN, 0))
-        //send_to_char (p, tch);
+	// Send appropriate firing echoes
+	act (buf, false, ch, 0, target, TO_CHAR | _ACT_FORMAT);  // Send shooter echo
+    act (buf3, false, ch, 0, target, TO_VICT | _ACT_FORMAT); // Victim echo
+    act (buf2, false, ch, 0, target, TO_NOTVICT | _ACT_FORMAT); // Shooter witness echo
+	
+	if (ranged) // If ranged we need to send a different victim witness echo and missile-only witness echoes.
+	{
+	  act (buf4, false, target, 0, target, TO_NOTVICT | _ACT_FORMAT);  // Victim witness echo if ranged
 
-        if (IS_SET(tch->plr_flags, FIREFIGHT_FILTER))
-        {
-          if (get_second_affect(tch, SA_ROOMSHOTS, 0))
-          {
-            get_second_affect(tch, SA_ROOMSHOTS, 0)->info2+= fired;
-          }
-          else
-          {
-            add_second_affect(SA_ROOMSHOTS, 3, tch, 0, 0, fired);
-          }
-        }
+      room = ch->room;
+	
+	  for (j = 0; j < 5; j++) // Will span up to 5 rooms for missile only witness echo
+	  {
+	    if (room->dir_option[dir])  // Check to see if ther is an exit from the current room in the proper direction.
+          room = vnum_to_room (room->dir_option[dir]->to_room); // Set room to the adjacent room using the same direction the arrow is travelling.
         else
-        {
-          send_to_char(p, tch);
-        }
-      }
-
-      if (room->dir_option[dir])
-        room = vnum_to_room (room->dir_option[dir]->to_room);
-      else
-        room = NULL;
-
-      if (room && target->room != room)
-      {
-        for (tch = room->people; tch; tch = tch->next_in_room)
-        {
-          //if (skill_use (tch, SKILL_SCAN, 0))
-          //send_to_char (p, tch);
-          if (IS_SET(tch->plr_flags, FIREFIGHT_FILTER))
-          {
-            if (get_second_affect(tch, SA_ROOMSHOTS, 0))
-            {
-              get_second_affect(tch, SA_ROOMSHOTS, 0)->info2+= fired;
-            }
-            else
-            {
-              add_second_affect(SA_ROOMSHOTS, 3, tch, 0, 0, fired);
-            }
-          }
-          else
-          {
-            send_to_char(p, tch);
-          }
-        }
-        if (room->dir_option[dir])
-          room = vnum_to_room (room->dir_option[dir]->to_room);
-        else
-          room = NULL;
-        if (room && target->room != room)
-        {
-          for (tch = room->people; tch; tch = tch->next_in_room)
-          {
-            //if (skill_use (tch, SKILL_SCAN, 0))
-            send_to_char (p, tch);
-
-            if (IS_SET(tch->plr_flags, FIREFIGHT_FILTER))
-            {
-              if (get_second_affect(tch, SA_ROOMSHOTS, 0))
-              {
-                get_second_affect(tch, SA_ROOMSHOTS, 0)->info2+= fired;
-              }
-              else
-              {
-                add_second_affect(SA_ROOMSHOTS, 3, tch, 0, 0, fired);
-              }
-            }
-            else
-            {
-              send_to_char(p, tch);
-            }
-
-
-          }
-        }
-      }
+          break; // Theoretically we should never see this, but we have it just in case something is messed up.
+	
+        if (room && target->room != room) // Make sure this room is not where the target is.
+        {		
+	      act (buf5, false, room->people, 0, 0, TO_ROOM | _ACT_FORMAT);  // Missile only witness echo
+		}
+		else
+	      break; // Once it gets to the same room as the victim we don't check any further, quit the loop.
+	  }
     }
-    mem_free (p);
-  }
-  else if (wild == 1)
-  {
-    act (buf, false, ch, 0, 0, TO_CHAR | _ACT_FORMAT);
-    act (buf2, false, ch, 0, 0, TO_ROOM | _ACT_FORMAT);
-    sprintf (buf3, "%s %s#0 rips through the area, streaking %sward.", buf6, shell_name[firearm->o.firearm.caliber], arg);
-    *buf3 = toupper (*buf3);
-    sprintf (buffer, "#2%s", buf3);
-    sprintf (buf3, "%s", buffer);
-    reformat_string (buf3, &p);
-
-    if (room)
-    {
-      for (tch = room->people; tch; tch = tch->next_in_room)
-      {
-        //send_to_char (p, tch);
-
-        if (IS_SET(tch->plr_flags, FIREFIGHT_FILTER))
-        {
-          if (get_second_affect(tch, SA_ROOMSHOTS, 0))
-          {
-            get_second_affect(tch, SA_ROOMSHOTS, 0)->info2+= fired;
-          }
-          else
-          {
-            add_second_affect(SA_ROOMSHOTS, 3, tch, 0, 0, fired);
-          }
-        }
-        else
-        {
-          send_to_char(p, tch);
-        }
-      }
-      if (room->dir_option[dir])
-      {
-        room = vnum_to_room (room->dir_option[dir]->to_room);
-      }
-      else
-      {
-        room = NULL;
-      }
-
-      if (room)
-      {
-        for (tch = room->people; tch; tch = tch->next_in_room)
-        {
-          //send_to_char (p, tch);
-          if (IS_SET(tch->plr_flags, FIREFIGHT_FILTER))
-          {
-            if (get_second_affect(tch, SA_ROOMSHOTS, 0))
-            {
-              get_second_affect(tch, SA_ROOMSHOTS, 0)->info2+= fired;
-            }
-            else
-            {
-              add_second_affect(SA_ROOMSHOTS, 3, tch, 0, 0, fired);
-            }
-          }
-          else
-          {
-            send_to_char(p, tch);
-          }
-        }
-        if (room->dir_option[dir])
-        {
-          room = vnum_to_room (room->dir_option[dir]->to_room);
-        }
-        else
-        {
-          room = NULL;
-        }
-
-        if (room)
-        {
-          for (tch = room->people; tch; tch = tch->next_in_room)
-          {
-            //send_to_char (p, tch);
-            if (IS_SET(tch->plr_flags, FIREFIGHT_FILTER))
-            {
-              if (get_second_affect(tch, SA_ROOMSHOTS, 0))
-              {
-                get_second_affect(tch, SA_ROOMSHOTS, 0)->info2+= fired;
-              }
-              else
-              {
-                add_second_affect(SA_ROOMSHOTS, 3, tch, 0, 0, fired);
-              }
-            }
-            else
-            {
-              send_to_char(p, tch);
-            }
-          }
-        }
-      }
-    }
-    mem_free (p);
-  }
-  else if (!ranged)
-  {
-    act (buf, false, ch, 0, target, TO_CHAR | _ACT_FORMAT);
-    act (buf3, false, ch, 0, target, TO_VICT | _ACT_FORMAT);
-    act (buf2, false, ch, 0, target, TO_NOTVICT | _ACT_FORMAT);
-  }
 
   // Now we make some noise, people.
   if (!IS_SET(firearm->o.firearm.bits, GUN_SILENT) && !IS_SLING(firearm) && !usingarrow && !usingbolt) // Need to add another qualifier to this for bows.  -Nimrod
     firearm_bang (ch->room, fired, target->in_room);
 
-  //obj_from_obj(&ammo, 0);
+    
+  // Now we count up how much of each result we have. 
+  // Results are set by calculate_firearm_result() function.
   
-  // Needs to be updated.  -Nimrod
-
-  if (ranged && ch->delay_who)
-  {
-   	
-	direction = rev_dir[dir];
-	from_direction = str_dup (rev_d[dir]);  // These two variables can be totally removed and just reference rev_dir[dir] and rev_d[dir]
-  }
-  else
-  {
-    from_direction = add_hash ("an indeterminate direction");
-  }
-  
-  // Now we count up how much of each result we.
   // 4 is a flat out miss
   // 6 is the cover being hit.
   // 7 is shield-block
@@ -6556,11 +6342,26 @@ void
   // 10 is caught,
   // 2, 9 are lodgers
   // 8 is a puncture.
+  /*
+  #define GLANCING_HIT    1
+#define HIT             2
+#define CRITICAL_HIT    3
+#define MISS            4
+#define CRITICAL_MISS   5
+#define COVER_HIT       6
+#define SHIELD_BLOCK    7
+#define PUNCTURE_HIT    8
+#define SHATTER_HIT     9
+#define CAUGHT          10
+#define JAM             11
+ */ 
+  
+ // No 3 or 5?
   if (!wild)
   {
-    for (int ind = 0; ind < fired; ind++)
+    for (int ind = 0; ind < fired; ind++)  // result_table just lists how many of each type of hit there is.
     {
-      if (res_result[ind] == 4)
+      if (res_result[ind] == 4 || res_result[ind] == 5)  // these should be switch statements instead, need to re-write. - Nimrod
       {
         //std::string gods = "Miss ";
         //send_to_gods(gods.c_str());
@@ -6590,7 +6391,7 @@ void
         //send_to_gods(gods.c_str());
         result_table[4]++;
       }
-      else if (res_result[ind] == 2 || res_result[ind] == 9)
+      else if (res_result[ind] == 2 || res_result[ind] == 9 || res_result[ind] == 3)
       {
         //std::string gods = "Lodged " + MAKE_STRING(location_table[ind]);
         //send_to_gods(gods.c_str());
@@ -6617,17 +6418,19 @@ void
     int remainings = 0;
     int rounds = 0;
     int marker = -1;
+	
+	// Create echo for missle striking or missing.
 
-    /*  REAMININGS TEST 1 */
-    marker++;
+    /*  REAMININGS TEST 1 */ // MISSES
+    marker++;  // marker should be zero here.
     remainings = 0;
     *buf6 = '\0';
     for (int ind = marker; ind < 7; ind++)
     {
       if (result_table[ind] != JAM)
-        remainings++;
+        remainings++;  // Is set to the number of misses.
     }
-    if (result_table[marker])
+    if (result_table[marker]) // marker is set to zero here
     {
       if (IS_SLING(firearm))
       {
@@ -6635,16 +6438,17 @@ void
       }
       else
       {
-        if (fired == 1)
+        if (fired == 1)  // Fired will only equal one for SoI.
 		{
-		  if (usingarrow || usingbolt) // Updated 11 Oct 13 to allow for bows and crossbows -Nimrod 
-		    {
-			  sprintf(buf6, obj_short_desc(ammunition));
-			}
-			else
-			{
-              sprintf(buf6, "the bullet (test123)");
-			}
+		  // if (usingarrow || usingbolt) // Updated 11 Oct 13 to allow for bows and crossbows -Nimrod 
+		    // {
+			//  sprintf(buf6, obj_short_desc(ammunition));
+		//	}
+			//else
+		//	{
+			 // sprintf(buf6, "the bullet (test123)");
+              sprintf(buf6, "the %s", shell_name[ammunition->o.bullet.caliber] );
+			//}
 	    }
 		else
         {
@@ -6658,8 +6462,9 @@ void
             sprintf(buf6, "one of the bullets");
         }
       }
+	  
 
-      if (*buf)
+      if (*buf)  // buf should ALWAYS be null at this point because this is the first time we're adding to it.  This stuff doesn't need to be here.
       {
         if (remainings > 1)
         {
@@ -6707,8 +6512,8 @@ void
         !number(0,1) ? " barely" : " by a whisper"));
     }
 
-    /*  REAMININGS TEST 2 */
-    marker++;
+    /*  REAMININGS TEST 2 */  // Cover hit
+    marker++;  // marker is now 1
     remainings = 0;
     *buf6 = '\0';
     for (int ind = marker; ind < 7; ind++)
@@ -6726,6 +6531,9 @@ void
       {
 	  if (fired == 1)
 		{
+		
+		 sprintf(buf6, "the %s", shell_name[ammunition->o.bullet.caliber] );
+		 /*
 		  if (usingarrow || usingbolt) // Updated 11 Oct 13 to allow for bows and crossbows -Nimrod 
 		    {
 			  sprintf(buf6, obj_short_desc(ammunition));
@@ -6734,6 +6542,7 @@ void
 			{
               sprintf(buf6, "the bullet (test1243)");
 			}
+			*/
 	    }
 	    else
         {
@@ -6800,8 +6609,8 @@ void
       }
     }
 
-    /*  REAMININGS TEST 3 */
-    marker++;
+    /*  REAMININGS TEST 3 */  // Shield hit
+    marker++;  // marker should be equal to 2
     remainings = 0;
     *buf6 = '\0';
     for (int ind = marker; ind < 7; ind++)
@@ -6819,6 +6628,8 @@ void
       {
 	   if (fired == 1)
 		{
+		   sprintf(buf6, "the %s", shell_name[ammunition->o.bullet.caliber] );
+		  /*
 		  if (usingarrow || usingbolt) // Updated 11 Oct 13 to allow for bows and crossbows -Nimrod 
 		    {
 			  sprintf(buf6, obj_short_desc(ammunition));
@@ -6827,7 +6638,8 @@ void
 			{
               sprintf(buf6, "the bullet (test125)");
 			}
-	    }
+	    */
+		}
 	    else
         {
           if (result_table[marker] == fired)
@@ -6890,8 +6702,8 @@ void
       *buffer = '\0';
     }
 
-    /*  REAMININGS TEST  4*/
-    marker++;
+    /*  REAMININGS TEST  4*/ // Glancing hit
+    marker++;  // marker is now 3
     remainings = 0;
     *buf6 = '\0';
     for (int ind = marker; ind < 7; ind++)
@@ -6909,14 +6721,15 @@ void
       {
         if (fired == 1)
 		{
-		  if (usingarrow || usingbolt) // Updated 11 Oct 13 to allow for bows and crossbows -Nimrod 
+		   sprintf(buf6, "the %s", shell_name[ammunition->o.bullet.caliber] );
+		/*  if (usingarrow || usingbolt) // Updated 11 Oct 13 to allow for bows and crossbows -Nimrod 
 		    {
 			  sprintf(buf6, obj_short_desc(ammunition));
 			}
 			else
 			{
               sprintf(buf6, "the bullet (test65433)");
-			}
+			} */
 	    }
         else
         {
@@ -6966,7 +6779,7 @@ void
       {
         loop_skip = false;
         any_left = false;
-        if (res_result[ind] == 1)
+        if (res_result[ind] == 1)  // Check if it's a glancing hit
         {
           counts++;
           for (int xind = 0; xind < fired; xind++)
@@ -7038,8 +6851,8 @@ void
         buf7);
     }
 
-    /*  REAMININGS TEST 5 */
-    marker++;
+    /*  REAMININGS TEST 5 */  // Hit
+    marker++;  // marker is now 4
     remainings = 0;
     *buf6 = '\0';
     for (int ind = marker; ind < 7; ind++)
@@ -7057,14 +6870,15 @@ void
       {
          if (fired == 1)
 		{
-		  if (usingarrow || usingbolt) // Updated 11 Oct 13 to allow for bows and crossbows -Nimrod 
+		 sprintf(buf6, "the %s", shell_name[ammunition->o.bullet.caliber] );
+		  /* if (usingarrow || usingbolt) // Updated 11 Oct 13 to allow for bows and crossbows -Nimrod 
 		    {
 			  sprintf(buf6, obj_short_desc(ammunition));
 			}
 			else
 			{
               sprintf(buf6, "the bullet (test3323w6)");
-			}
+			} */
 	    }
         else
         {
@@ -7174,8 +6988,8 @@ void
 
     }
 
-    /*  REAMININGS TEST 6 */
-    marker++;
+    /*  REAMININGS TEST 6 */ // Lodging hit
+    marker++;  // marker is now 5
     remainings = 0;
     *buf6 = '\0';
     for (int ind = marker; ind < 7; ind++)
@@ -7193,14 +7007,15 @@ void
       {
         if (fired == 1)
 		{
-		  if (usingarrow || usingbolt) // Updated 11 Oct 13 to allow for bows and crossbows -Nimrod 
+		   sprintf(buf6, "the %s", shell_name[ammunition->o.bullet.caliber] );
+		  /* if (usingarrow || usingbolt) // Updated 11 Oct 13 to allow for bows and crossbows -Nimrod 
 		    {
 			  sprintf(buf6, obj_short_desc(ammunition));
 			}
 			else
 			{
               sprintf(buf6, "the bullet (test1233323)");
-			}
+			} */
 	    }
         else
         {
@@ -7321,8 +7136,8 @@ void
       }
     }
 
-    /*  REAMININGS TEST 7 */
-    marker++;
+    /*  REAMININGS TEST 7 */ // puncture hit
+    marker++;  // marker is now 6
     remainings = 0;
     *buf6 = '\0';
     for (int ind = marker; ind < 7; ind++)
@@ -7340,14 +7155,15 @@ void
       {
         if (fired == 1)
 		{
-		  if (usingarrow || usingbolt) // Updated 11 Oct 13 to allow for bows and crossbows -Nimrod 
+		 sprintf(buf6, "the %s", shell_name[ammunition->o.bullet.caliber] );
+		  /* if (usingarrow || usingbolt) // Updated 11 Oct 13 to allow for bows and crossbows -Nimrod 
 		    {
 			  sprintf(buf6, obj_short_desc(ammunition));
 			}
 			else
 			{
               sprintf(buf6, "the bullet (test973)");
-			}
+			} */
 	    }
         else
         {
@@ -7443,19 +7259,19 @@ void
       }
 
       sprintf(buf + strlen(buf), " %s your %s",
-        (!number(0,2) ? "perforates" :
-        !number(0,1) ? "rips clean through" : "penetrates through"),
+        (!number(0,2) ? "shoots through" :
+        !number(0,1) ? "stabs straight through" : "penetrates through"),
         buf7);
 
       sprintf(buf2 + strlen(buf2), " %s %s %s",
-        (!number(0,2) ? "perforates" :
-        !number(0,1) ? "rips clean through" : "penetrates through"),
+        (!number(0,2) ? "shoots through" :
+        !number(0,1) ? "stabs straight through" : "penetrates through"),
         HSHR(target),
         buf7);
 
       sprintf(buf3 + strlen(buf3), " %s %s %s",
-        (!number(0,2) ? "perforates" :
-        !number(0,1) ? "rips clean through" : "penetrates through"),
+        (!number(0,2) ? "shoots through" :
+        !number(0,1) ? "stabs straight through" : "penetrates through"),
         HSHR(target),
         buf7);
 
@@ -7503,6 +7319,8 @@ void
 
   bool only_miss = false;
 
+  // These new messages appear to be completely ignoring all the messages that were setup in all of the 'leavings' messages.
+  
   if (ranged)  // These will need to be updated.  -Nimrod
   { 
      // Why are we setting buffer with data and then turning right around and setting buf or buf2 with buffer?

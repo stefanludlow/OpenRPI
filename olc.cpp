@@ -667,7 +667,7 @@ const char *calibers[] =
     ".50",
     ".55",
     ".60",
-	"BB",
+	"BB", //9
 	"dart",
 	"bolt",
 	"short-arrow",
@@ -680,6 +680,7 @@ const char *calibers[] =
     "\n"
 };
 
+// Number of shell names must be same as calibers[]
 const char *shell_name[] =
 {
     "small bullet",
@@ -704,6 +705,31 @@ const char *shell_name[] =
     "\n"
 };
 
+// Number of plural shell names must be same as calibers[]
+const char *shell_name_plural[] =
+{
+    "small bullets",
+    "small bullets",
+    "small bullets",
+    "bullets",
+    "bullets",
+    "bullets",
+    "large bullets",
+    "large bullets",
+    "large bullets",
+	"ball bearings",
+	"darts",
+	"bolts",
+	"arrows",
+	"arrows",
+	"arrows",
+	"balista-bolts",
+	"small-rocks",
+	"stones",
+	"boulders",
+    "\n"
+};
+
 const char *ammo_sizes[] =
 {
     "pistol",
@@ -723,6 +749,113 @@ const char *ammo_sizes[] =
 	"trebuchet",
     "\n"
 };
+// Trigger text to match calibers[] for first person echo
+const char *trigger_text_first[] = {
+  " pull the trigger of ",  
+  " pull the trigger of ",    
+  " pull the trigger of ",
+  " pull the trigger of ",
+  " pull the trigger of ",  
+  " pull the trigger of ",
+  " pull the trigger of ",
+  " pull the trigger of ",  
+  " pull the trigger of ",
+  " release one end of ", // BB
+  " blow sharply into ",  // dart
+  " engage the trigger mechanism of ", //bolt
+  " release the bowstring of ", // short-arrow
+  " release the bowstring of ", // long-arrow
+  " loose the bowstring of ", // elven-arrow
+  " pull the trigger mechanism of ", // balista-bolt
+  " release the pocket of ", // slingshot-stone
+  " yank the trigger of ",  // catapult-stone
+  " trip the mechanism of ",  // trebuchet-boulder
+  " (error message 0304140206) ",
+  " (error message 0304140207) ",
+  " (error message 0304140208) ",
+  "\n"
+};
+
+// Trigger text to match ammo_sizes[] for observer/target echo
+const char *trigger_text_third[] = {
+  " pulls the trigger of ",  
+  " pulls the trigger of ",    
+  " pulls the trigger of ",
+  " pulls the trigger of ",
+  " pulls the trigger of ",  
+  " pulls the trigger of ",
+  " pulls the trigger of ",
+  " pulls the trigger of ",  
+  " pulls the trigger of ",
+  " releases one end of ", // BB
+  " blows sharply into ",  // dart
+  " engages the trigger mechanism of ", //bolt
+  " releases the bowstring of ", // short-arrow
+  " releases the bowstring of ", // long-arrow
+  " looses the bowstring of ", // elven-arrow
+  " pulls the trigger mechanism of ", // balista-bolt
+  " releases the pocket of ", // slingshot-stone
+  " yanks the trigger of ",  // catapult-stone
+  " trips the mechanism of ",  // trebuchet-boulder
+  " (error message 0304140206) ",
+  " (error message 0304140207) ",
+  " (error message 0304140208) ",
+
+  "\n"
+};
+
+// Text for firearm messages
+const char *echo_one[] = {
+  " sending ",
+  " sending ", // launching
+  " sending ", // shooting
+  "\n"
+};
+const int echo_one_qty = 2; // one less than number
+
+// Text for firearm messages
+const char *echo_two[] = {
+  " flying ",
+  " hurtling ",
+  " streaking ",
+  " soaring ",
+  " shooting ",
+  " racing ",
+  " speeding ",
+  " tearing ",
+  " rushing ",
+  " arcing ",
+  "\n"
+};
+const int echo_two_qty = 9;
+
+// Text for firearm messages
+const char *echo_three[] = {
+  " flies ",
+  " hurtles ",
+  " arcs ",
+  " streaks ",
+  "\n"
+};
+const int echo_three_qty = 3;
+
+// Text for firearm messages
+const char *echo_four[] = {
+  " overhead",
+  " high overhead",
+  " through the area",
+  "\n"
+};
+const int echo_four_qty = 2;
+
+// Text for firearm messages
+const char *echo_five[] = {
+  " heading ", 
+  " disappearing ",
+  " travelling ",
+  "\n"
+};
+const int echo_five_qty = 2;
 
 
 const char *ammo_bits[] =
