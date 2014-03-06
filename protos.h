@@ -284,10 +284,24 @@ void do_combine (CHAR_DATA *ch, char *argument, int cmd);
 extern const char *gun_bits[];
 extern const char *calibers[];
 extern const char *shell_name[];
+extern const char *shell_name_plural[];
 extern const char *ammo_bits[];
 extern const char *ammo_sizes[];
 extern const char *gun_set[];
 extern const char *grenade_bits[];
+extern const char *trigger_text_first[];
+extern const char *trigger_text_third[];
+extern const char *echo_one[];
+extern const char *echo_two[];
+extern const char *echo_three[];
+extern const char *echo_four[];
+extern const char *echo_five[];
+extern const int echo_one_qty;
+extern const int echo_two_qty;
+extern const int echo_three_qty;
+extern const int echo_four_qty;
+extern const int echo_five_qty;
+
 
 void do_load_clip (CHAR_DATA * ch, char *argument, int cmd);
 void delayed_load_clip (CHAR_DATA * ch);
