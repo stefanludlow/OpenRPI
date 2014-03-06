@@ -6483,10 +6483,13 @@ oset_cue (CHAR_DATA * builder, OBJ_DATA *obj, const char *ocue, const char *refl
     const char * ocues [] =
     {
         "none", "notes", "on_grab", "on_drop", "on_give", "on_receive", "on_strike", "on_mstrike", "on_block", "on_blocked", "on_hit",
-        "on_hour", "on_enter", "on_decay", "on_morph", "on_produced", "on_craft", "on_load", "on_five", "on_one", "on_reboot"
+        "on_hour", "on_enter", "on_decay", "on_morph", "on_produced", "on_craft", "on_load", "on_five", "on_one", "on_reboot",
+		 "\n"
     };
 
     int index =  index_lookup (ocues, ocue);
+	
+	
 
     OBJ_DATA *proto = vtoo(obj->nVirtual);
 
@@ -6555,6 +6558,10 @@ oset_cue (CHAR_DATA * builder, OBJ_DATA *obj, const char *ocue, const char *refl
             }
         }
     }
+	else
+	{
+	send_to_char("That is not a legal cue.", builder);
+	}
 }
 
 const int body_sneak_amount[MAX_HITLOC] =
@@ -11909,7 +11916,8 @@ mset_cue (CHAR_DATA * builder, MOB_DATA *mob, const char *cue, const char *refle
         "on_reboot", "mob_present", "obj_present",
 		"on_death",
 		"on_five", "on_one",
-		"blank_cue"
+		"blank_cue",
+		 "\n"
     };
 
     int index =  index_lookup (cues, cue);
@@ -11977,6 +11985,10 @@ mset_cue (CHAR_DATA * builder, MOB_DATA *mob, const char *cue, const char *refle
             }
         }
     }
+	else
+	{
+	send_to_char("That is not a legal cue.", builder);
+	}
 }
 
 void
