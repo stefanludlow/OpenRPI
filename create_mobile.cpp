@@ -1867,45 +1867,7 @@ create_description (CHAR_DATA * mob)
         else if (roll == 7)
             sprintf (buf, "%s sits here, unmoving.", mob->short_descr);
     }
-    else if (!str_cmp (lookup_race_variable (mob->race, RACE_NAME), "Hosted-Terror"))
-    {
-        roll = number (1, 7);
-        if (roll == 1)
-            sprintf (buf, "%s stands here hunched over.", mob->short_descr);
-        else if (roll == 2)
-            sprintf (buf, "%s stands here, stock still.", mob->short_descr);
-        else if (roll == 3)
-            sprintf (buf, "%s is here, jerking occasionally.", mob->short_descr);
-        else if (roll == 4)
-            sprintf (buf, "%s stands here, swaying from side to side.", mob->short_descr);
-        else if (roll == 5)
-            sprintf (buf, "%s is here, twitching spasmodically.", mob->short_descr);
-        else if (roll == 6)
-            sprintf (buf, "%s stands here.", mob->short_descr);
-        else if (roll == 7)
-            sprintf (buf, "%s is here.", mob->short_descr);
-
-        switch (number (1, 4))
-        {
-        case 1:
-            mob->speed = 2;
-            mob->travel_str = add_hash ("shambling forward");
-            break;
-        case 2:
-            mob->speed = 1;
-            mob->travel_str = add_hash ("in trudging, uneven steps");
-            break;
-        case 3:
-            mob->speed = 4;
-            mob->travel_str = add_hash ("with a loping, swaying run");
-            break;
-        case 4:
-            mob->speed = 0;
-            mob->travel_str = add_hash ("stumbling onwards");
-            break;
-        }
-
-    }
+   
 
     if (!*buf)
         sprintf (buf, "%s is here.", mob->short_descr);
@@ -1941,6 +1903,7 @@ create_description (CHAR_DATA * mob)
 void
 randomize_mobile (CHAR_DATA * mob)
 {
+/* - Disabling for Shadows of Isildur - 0306142035 -Nimrod
 
     if (mob->race == lookup_race_id("Survivor") || mob->race == lookup_race_id("Denizen") ||
             mob->race == lookup_race_id("Mutation") || mob->race == lookup_race_id("Cybernetic") ||
@@ -1949,7 +1912,7 @@ randomize_mobile (CHAR_DATA * mob)
 	    new_randomize_mobile(mob, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
         return;
     }
-
+*/
 	// return;
 
     CHAR_DATA *proto;
@@ -2075,17 +2038,19 @@ randomize_mobile (CHAR_DATA * mob)
         make_height (mob);
         make_frame (mob);
     }
-
-    mob->sex = number (1, 2);
-    if (IS_SET (mob->act, ACT_ENFORCER))
-    {
+    if ((mob->sex != 1) && (mob->sex !=2))  // Added to let mobs keep their sex should they be set already. 0306142045 -Nimrod
+    {	
+      mob->sex = number (1, 2);
+      if (IS_SET (mob->act, ACT_ENFORCER))
+      {
         roll = number (1, 10);
         if (roll == 10)
             mob->sex = SEX_FEMALE;
         else
             mob->sex = SEX_MALE;
+      }
     }
-
+	
     mob->max_move = calc_lookup (mob, REG_MISC, MISC_MAX_MOVE);
     mob->move_points = mob->max_move;
 
