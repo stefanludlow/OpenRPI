@@ -6169,7 +6169,7 @@ else
       broke_aim(ch, 0);
       return;
     }
-    else if (wild == 2)
+	else if (wild == 12) // added 10 to this to bypass for now.  -Nimrod
     {
       sprintf (buf2, "%s#0 %sfires #2%s#0, #2%s %s%s#0 shooting into #2the %s#0.",
         char_short(ch), (af ? "rises from cover and " : ""),
@@ -6184,7 +6184,7 @@ else
         obj_short_desc(firearm), buf6, shell_name[firearm->o.firearm.caliber], (fired == 1 ? "" : "s"), arg);
 
     }
-    else if (wild == 1)
+    else if (wild == 11) // added 10 to this to bypass for now.  -Nimrod
     {
       sprintf (buf, "You %sfire #2%s#0, #2%s %s%s#0 shooting %sward.",
         (af ? "rise from cover and " : ""),
