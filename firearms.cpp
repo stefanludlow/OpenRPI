@@ -3378,52 +3378,15 @@ void
   else if (ranged)
   {
    
-  
-  
-  dir = lookup_dir(arg1);
+    dir = lookup_dir(arg1);
    
-  // this can all be replaced with call to lookup_dir as added above - Nimrod
-  /*
-    if (!strn_cmp ("north", arg1, strlen (arg1)))
-      dir = 0;
-    else if (!strn_cmp ("east", arg1, strlen (arg1)))
-      dir = 1;
-    else if (!strn_cmp ("south", arg1, strlen (arg1)))
-      dir = 2;
-    else if (!strn_cmp ("west", arg1, strlen (arg1)))
-      dir = 3;
-    else if (!strn_cmp ("up", arg1, strlen (arg1)))
-      dir = 4;
-    else if (!strn_cmp ("down", arg1, strlen (arg1)))
-      dir = 5;
-    else if (!strn_cmp ("outside", arg1, strlen (arg1)))
-      dir = 6;
-    else if (!strn_cmp ("inside", arg1, strlen (arg1)))
-      dir = 7;
-    else if (!strn_cmp ("northeast", arg1, strlen (arg1)))
-      dir = 8;
-    else if (!strn_cmp ("northwest", arg1, strlen (arg1)))
-      dir = 9;
-    else if (!strn_cmp ("southeast", arg1, strlen (arg1)))
-      dir = 10;
-    else if (!strn_cmp ("southwest", arg1, strlen (arg1)))
-      dir = 11;
-    else if (!strn_cmp ("ne", arg1, strlen (arg1)))
-      dir = 8;
-    else if (!strn_cmp ("nw", arg1, strlen (arg1)))
-      dir = 9;
-    else if (!strn_cmp ("se", arg1, strlen (arg1)))
-      dir = 10;
-    else if (!strn_cmp ("sw", arg1, strlen (arg1)))
-      dir = 11;
-    */  
     if (!EXIT (ch, dir))
     {
       send_to_char ("There isn't an exit in that direction.\n", ch);
       return;
     }
 
-    ch->delay_who = str_dup (dirs[dir]);
+    ch->delay_who = str_dup (dirs[dir]);  // Set direction aiming into ch->delay_who - strange, but it works just fine.
 
     room = vnum_to_room (EXIT (ch, dir)->to_room);
 
@@ -5379,61 +5342,78 @@ else
   }
   
   // You can do "shoot person" to shoot at someone in the room, but it's a snap-shot so no aim bonus.
-  if (*arg && str_cmp(arg, "!"))
+  if (*arg && str_cmp(arg, "!"))  // I'm not certain what the ! is supposed to do.
   {
-      // If our arg1 is a direction, we're ranged baby.
-	 if(dir = lookup_dir(arg))
-	 {
-
+    // If our arg1 is a direction, we're ranged baby.
+    if((dir = lookup_dir(arg)) >= 0)
+	{
       if (!EXIT (ch, dir) && dir != -1)
       {
         send_to_char ("There isn't an exit in that direction.\n", ch);
         return;
       }
 
-      if (dir <= 5 && dir >= 0) // Need to update this to account for all directions., -Nimrod 0 through 27
+      if (dir <= LAST_DIR && dir >= 0) // Need to update this to account for all directions., -Nimrod 0 through 27 Not really needed, the lookup_dir function takes care of this, should be able to get rid of this.
       {
-        room = vnum_to_room (EXIT (ch, dir)->to_room);
+        argument = one_argument(argument, arg);
+		xch = ch->aiming_at;
+		room = ch->room;
 
-        if (room)
-        {
-          wild = 1;
-          target = ch;
-        }
-        else
-        {
-          send_to_char ("An error was found in trying to shoot in to the room - please let an admin know.\n", ch);
-          return;
-        }
+		for (j = 0; j < 5; j++) // Will span up to 5 rooms for missile only witness echo
+	    {
+	      if (!(room->dir_option[dir]))  // Check to see if ther is an exit from the current room in the proper direction.
+		    break;
+			
+		  if (!(room = vnum_to_room (room->dir_option[dir]->to_room)))
+            break;  
+			
+		  if (ch->room == room) // Make sure this room is not where the shooter is.
+            break; //  If this happens there's a loop link, it should be illegal
+		  		  
+  		  if (target = get_char_room_vis2 (ch, room->vnum, arg))
+		  {
+		    // We've found our target.
+			ranged = 1;
+		    ch->aiming_at = target;
+		    ch->delay_who = str_dup (dirs[dir]);
+		    add_targeted(ch->aiming_at, ch);
+			break;
+		  } 
+		}
+		
+		if(!target)
+		{
+		  send_to_char("You don't see that target in that direction.\n", ch);
+		  broke_aim(ch, 0);
+		  return;
+		}
       }
       else
       {
-        wild = 2;
-        target = ch;
+        send_to_char ("An error was found in trying to shoot in to the room - please let an admin know.\n", ch);
+        return;
       }
-      ranged = 0;
-      broke_aim(ch, 0);
     }
-    else
+ // }
+  else
+  {  // Target should be in same room as shooter.
+	xch = ch->aiming_at;
+    if (!(ch->aiming_at = get_char_room_vis (ch, arg)))
     {
-      xch = ch->aiming_at;
-      if (!(ch->aiming_at = get_char_room_vis (ch, arg)))
-      {
-        send_to_char ("You don't see that target here.\n", ch);
-        broke_aim(ch, 0);
-        return;
-      }
+      send_to_char ("You don't see that target here.\n", ch);
+      broke_aim(ch, 0);
+      return;
+    }
 
-      if (ch->aiming_at == ch)
-      {
-        send_to_char
-          ("Now, now, now... things can't be THAT bad, can they?\n", ch);
-        return;
-      }
+    if (ch->aiming_at == ch)
+    {
+      send_to_char ("Now, now, now... things can't be THAT bad, can they?\n", ch);
+      return;
+    }
 
-      add_targeted(ch->aiming_at, ch);
+    add_targeted(ch->aiming_at, ch);
 
-      // If we didn't change our aim, we don't need to recalculate our penalty.
+	// If we didn't change our aim, we don't need to recalculate our penalty.
       if (!(xch == ch->aiming_at))
       {
         ch->aim = aim_penalty(ch, firearm, ch->delay_info1);
@@ -6357,7 +6337,8 @@ else
  */ 
   
  // No 3 or 5?
-  if (!wild)
+ //  if (!wild)
+  if(1)
   {
     for (int ind = 0; ind < fired; ind++)  // result_table just lists how many of each type of hit there is.
     {
