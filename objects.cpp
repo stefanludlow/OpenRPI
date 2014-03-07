@@ -5899,11 +5899,7 @@ void
 		return;
 	}
 	
-    if (obj->contains && GET_ITEM_TYPE (obj) == ITEM_FIREARM && obj->o.weapon.use_skill != SKILL_CROSSBOW)
-	{
-	  send_to_char ("You must unload your weapon first.\n", ch);
-	  return;
-	}
+   
 
 	if (!obj && *arg1)
 	{
@@ -6133,6 +6129,12 @@ void
 			}
 		} //if (target_obj)
 	} //if (!obj && *arg1)
+	
+	 if (obj->contains && GET_ITEM_TYPE (obj) == ITEM_FIREARM && obj->o.weapon.use_skill != SKILL_CROSSBOW)
+	{
+	  send_to_char ("You must unload your weapon first.\n", ch);
+	  return;
+	}
 
 	if (!obj)
 	{
