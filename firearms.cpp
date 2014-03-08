@@ -6275,7 +6275,8 @@ else
 	
         if (room && target->room != room) // Make sure this room is not where the target is.
         {		
-	      act (buf5, false, room->people, 0, 0, 0);  // Missile only witness echo
+	      act (buf5, false, room->people, 0, 0, TO_ROOM | _ACT_FORMAT);  // Missile only witness echo
+		  act (buf5, false, room->people, 0, 0, TO_CHAR | _ACT_FORMAT);  // Missile only witness echo
 		}
 		else
 	      break; // Once it gets to the same room as the victim we don't check any further, quit the loop.
