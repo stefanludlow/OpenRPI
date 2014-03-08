@@ -5242,12 +5242,7 @@ void
     return;
   }
 
-  if (IS_SLING(firearm) && !ch->aiming_at)
-  {
-    send_to_char ("You need to aim and pull back on your sling before you can fire.\n", ch);
-    return;
-  }
-// Check to see if the word 'arrow' or 'bolt' exists in ammunition.
+  // Check to see if the word 'arrow' or 'bolt' exists in ammunition. This is no longer needed.
   
   if ( !strn_cmp( ammunition->name, "arrow", 5 ))
     usingarrow = true;
@@ -5359,7 +5354,7 @@ else
 		xch = ch->aiming_at;
 		room = ch->room;
 
-		for (j = 0; j < 5; j++) // Will span up to 5 rooms for missile only witness echo
+		for (j = 0; j < 5; j++) // Will span up to 5 rooms for now
 	    {
 	      if (!(room->dir_option[dir]))  // Check to see if ther is an exit from the current room in the proper direction.
 		    break;
@@ -5481,27 +5476,6 @@ else
       act (buf, false, ch, firearm, 0, TO_CHAR | _ACT_FORMAT);
       sprintf(buf2, "$n %ssqueezes the trigger005 of $p, but nothing happens.\n", (af ? "rises from cover and " : ""));
       act (buf2, false, ch, firearm, 0, TO_ROOM | _ACT_FORMAT | _ACT_FIREFIGHT);
-      broke_aim(ch, 0);
-      return;
-    }
-  }
-  else if (IS_SLING(firearm))
-  {
-    for (tobj = firearm->contains; tobj; tobj = tobj->next_content)
-    {
-      if (GET_ITEM_TYPE(tobj) == ITEM_ROUND)
-      {
-        ammo[0] = tobj;
-        break;
-      }
-    }
-
-    if ((ammo[0]) == NULL)
-    {
-      sprintf(buf, "You %srelease the pocket of $p, but nothing happens.", (af ? "rises from cover and " : ""));
-      act (buf, false, ch, firearm, 0, TO_CHAR | _ACT_FORMAT);
-      sprintf(buf2, "$n %sreleases the pocket of $p, but nothing happens.", (af ? "rises from cover and " : ""));
-      act (buf2, false, ch, firearm, 0, TO_ROOM | _ACT_FORMAT);
       broke_aim(ch, 0);
       return;
     }
@@ -5721,7 +5695,7 @@ else
   skill_learn(ch, firearm->o.firearm.use_skill);
   skill_learn(ch, SKILL_AIM);
 
-
+/*
   if (IS_SLING(firearm))
   {
     int skill_cap = ch->skills[SKILL_AIM];
@@ -5734,14 +5708,14 @@ else
     }
 
   }
-  else
-  {
+  else */
+ // {
     if (!wild && !pointblank)
       skill_use(ch, firearm->o.firearm.use_skill, 0);
     // Aiming happens less often as it's much more useful.
     if (!wild && !number(0,4) && !pointblank)
       skill_use(ch, SKILL_AIM, 0);
-  }
+ // }
   
   // Need to check on this.  -Nimrod
   /* ranged_projectile_echoes (ch, target, bow, ammo); */
@@ -5749,7 +5723,8 @@ else
   // We add the amount of bullets we fire.
   object__add_damage (firearm, 1, fired);
 
-  // We also add scent.
+  // We also add scent. Disabling for now - Nimrod 
+  /*
   if (!IS_SLING(firearm) && (!usingarrow) && (!usingbolt))
   {
     add_scent(firearm, scent_lookup("the acrid sting of cordite"), 1, (fired * 20), 1000, 0, 0);
@@ -5757,7 +5732,7 @@ else
     add_scent(get_equip(ch, WEAR_HANDS), scent_lookup("the acrid sting of cordite"), 1, fired * 10, 1000, 0, 0);
     add_scent(ch, scent_lookup("the acrid sting of cordite"), 1, fired * 10, 1000, 0, 0);
   }
-
+*/
   // Bonus modifier comes in skill rolls, not ovals.
   // Need to add modifiers for shortbow, longbow and crossbow.  -Nimrod
   if (!ranged)
@@ -6308,7 +6283,7 @@ else
     }
 
   // Now we make some noise, people.
-  if (!IS_SET(firearm->o.firearm.bits, GUN_SILENT) && !IS_SLING(firearm) && !usingarrow && !usingbolt) // Need to add another qualifier to this for bows.  -Nimrod
+  if (!IS_SET(firearm->o.firearm.bits, GUN_SILENT)) // Just set bows to silent.  Simple.  -Nimrod
     firearm_bang (ch->room, fired, target->in_room);
 
     
@@ -6413,12 +6388,12 @@ else
     }
     if (result_table[marker]) // marker is set to zero here
     {
-      if (IS_SLING(firearm))
-      {
-        sprintf(buf6, "the ball bearing");
-      }
-      else
-      {
+ //     if (IS_SLING(firearm))
+ //     {
+ //       sprintf(buf6, "the ball bearing");
+ //     }
+ //     else
+ //     {
         if (fired == 1)  // Fired will only equal one for SoI.
 		{
 		  // if (usingarrow || usingbolt) // Updated 11 Oct 13 to allow for bows and crossbows -Nimrod 
@@ -6442,7 +6417,7 @@ else
           else
             sprintf(buf6, "one of the bullets");
         }
-      }
+ //     }
 	  
 
       if (*buf)  // buf should ALWAYS be null at this point because this is the first time we're adding to it.  This stuff doesn't need to be here.
@@ -6504,12 +6479,12 @@ else
     }
     if (result_table[marker])
     {
-      if (IS_SLING(firearm))
-      {
-        sprintf(buf6, "the ball bearing");
-      }
-      else
-      {
+ //     if (IS_SLING(firearm))
+ //     {
+ //       sprintf(buf6, "the ball bearing");
+ //     }
+ //     else
+ //     {
 	  if (fired == 1)
 		{
 		
@@ -6536,7 +6511,7 @@ else
           else
             sprintf(buf6, "one of the bullets");
         }
-      }
+ //     }
       if (*buf)
       {
         if (remainings > 1)
@@ -6601,12 +6576,12 @@ else
     }
     if (result_table[marker])
     {
-      if (IS_SLING(firearm))
-      {
-        sprintf(buf6, "the ball bearing");
-      }
-      else
-      {
+//     if (IS_SLING(firearm))
+//     {
+ //       sprintf(buf6, "the ball bearing");
+ //     }
+ //     else
+//      {
 	   if (fired == 1)
 		{
 		   sprintf(buf6, "the %s", shell_name[ammunition->o.bullet.caliber] );
@@ -6632,7 +6607,7 @@ else
           else
             sprintf(buf6, "one of the bullets");
         }
-      }
+ //     }
       if (*buf)
       {
         if (remainings > 1)
@@ -6694,12 +6669,12 @@ else
     }
     if (result_table[marker])
     {
-      if (IS_SLING(firearm))
-      {
-        sprintf(buf6, "the ball bearing");
-      }
-      else
-      {
+ //     if (IS_SLING(firearm))
+ //     {
+ //       sprintf(buf6, "the ball bearing");
+ //     }
+ //     else
+ //     {
         if (fired == 1)
 		{
 		   sprintf(buf6, "the %s", shell_name[ammunition->o.bullet.caliber] );
@@ -6723,7 +6698,7 @@ else
           else
             sprintf(buf6, "one of the bullets");
         }
-      }
+ //     }
       if (*buf)
       {
         if (remainings > 1)
@@ -6843,12 +6818,12 @@ else
     }
     if (result_table[marker])
     {
-      if (IS_SLING(firearm))
-      {
-        sprintf(buf6, "the ball bearing");
-      }
-      else
-      {
+//      if (IS_SLING(firearm))
+ //     {
+ //       sprintf(buf6, "the ball bearing");
+//      }
+ //     else
+//      {
          if (fired == 1)
 		{
 		 sprintf(buf6, "the %s", shell_name[ammunition->o.bullet.caliber] );
@@ -6872,7 +6847,7 @@ else
           else
             sprintf(buf6, "one of the bullets");
         }
-      }
+ //     }
       if (*buf)
       {
         if (remainings > 1)
@@ -6980,12 +6955,12 @@ else
     }
     if (result_table[marker])
     {
-      if (IS_SLING(firearm))
-      {
-        sprintf(buf6, "the ball bearing");
-      }
-      else
-      {
+//      if (IS_SLING(firearm))
+ //     {
+//        sprintf(buf6, "the ball bearing");
+//      }
+//      else
+ //     {
         if (fired == 1)
 		{
 		   sprintf(buf6, "the %s", shell_name[ammunition->o.bullet.caliber] );
@@ -7009,7 +6984,7 @@ else
           else
             sprintf(buf6, "one of the bullets");
         }
-      }
+ //     }
       if (*buf)
       {
         if (remainings > 1)
@@ -7090,14 +7065,14 @@ else
         }
       }
 
-      if (IS_SLING(firearm))
-      {
-        sprintf(buf + strlen(buf), " strikes your %s", buf7);
-        sprintf(buf2 + strlen(buf2), " strikes %s %s", HSHR(target), buf7);
-        sprintf(buf3 + strlen(buf3), " strikes %s %s", HSHR(target), buf7);
-      }
-      else
-      {
+//      if (IS_SLING(firearm))
+//      {
+//        sprintf(buf + strlen(buf), " strikes your %s", buf7);
+//        sprintf(buf2 + strlen(buf2), " strikes %s %s", HSHR(target), buf7);
+//        sprintf(buf3 + strlen(buf3), " strikes %s %s", HSHR(target), buf7);
+//      }
+//      else
+ //     {
         sprintf(buf + strlen(buf), " %s your %s",
           (!number(0,2) ? "lodges in" :
           !number(0,1) ? "ruptures" : "punctures"),
@@ -7114,7 +7089,7 @@ else
           !number(0,1) ? "ruptures" : "punctures"),
           HSHR(target),
           buf7);
-      }
+//      }
     }
 
     /*  REAMININGS TEST 7 */ // puncture hit
@@ -7128,12 +7103,12 @@ else
     }
     if (result_table[marker])
     {
-      if (IS_SLING(firearm))
-      {
-        sprintf(buf6, "the ball bearing");
-      }
-      else
-      {
+ //     if (IS_SLING(firearm))
+ //     {
+ //       sprintf(buf6, "the ball bearing");
+ //     }
+ //     else
+ //     {
         if (fired == 1)
 		{
 		 sprintf(buf6, "the %s", shell_name[ammunition->o.bullet.caliber] );
@@ -7157,7 +7132,7 @@ else
           else
             sprintf(buf6, "one of the bullets");
         }
-      }
+   //   }
       if (*buf)
       {
         if (remainings > 1)
@@ -7257,7 +7232,9 @@ else
         buf7);
 
     }
-  }
+	
+	// END OF REMAININGS 7 TEST
+ // }
 
 
   // If we jammed, we'll need to append the message.
@@ -7301,7 +7278,7 @@ else
   bool only_miss = false;
 
   // These new messages appear to be completely ignoring all the messages that were setup in all of the 'leavings' messages.
-  
+  /* - All below to line 7439 no longer needs to be here. -Nimrod 
   if (ranged)  // These will need to be updated.  -Nimrod
   { 
      // Why are we setting buffer with data and then turning right around and setting buf or buf2 with buffer?
@@ -7383,7 +7360,7 @@ else
 	  *buffer = toupper(*buffer);
       sprintf(buf7, "#2%s", buffer);
 	  
-      only_miss = true;
+      only_miss = true;  // only used for multiple bullets?
     }
 
     if (switched_target)
@@ -7434,19 +7411,19 @@ else
       only_miss = true;
     }
   }
-
+*/ //- All above to line 7306 no longer needs to be here.  -Nimrod
   strcat(buf, ".\n");
   strcat(buf2, ".\n");
   strcat(buf3, ".\n");
 
-  if (IS_SLING(firearm))
-  {
-    obj_from_obj(&ammo[0], 1);
-    obj_to_room (ammo[0], target->in_room);
+ // if (IS_SLING(firearm))
+ // {
+ //   obj_from_obj(&ammo[0], 1);
+ //   obj_to_room (ammo[0], target->in_room);
 //	return;
-  }
-  else
-  {
+ // }
+ // else
+ // {
     for (int ind = 0; ind < fired; ind++) // loop through each bullet shot, determine where it goes (lodged, dropped in room, etc...)
     {
       old_result = res_result[ind];
@@ -7683,7 +7660,7 @@ else
 
 
   //  }
-  }
+ // }
 
   char *out1, *out2, *out3, *out4, *out5;
   CHAR_DATA* rch = 0;
@@ -7804,8 +7781,8 @@ else
   bool group_shocked = false;
   bool miss_shocked = false;
 
-  if (!IS_SLING(firearm))
-  {
+//  if (!IS_SLING(firearm))
+// { // Let's deal out some damage.
     for (int ind = 0; ind < fired; ind++)
     {
       if (res_damage[ind])
@@ -8054,7 +8031,7 @@ else
         }
       }
     }
-  }
+ // }
 
   add_overwatch(ch, target, 2, false);
   add_overwatch(target, ch, 2, false);
@@ -8084,6 +8061,7 @@ else
   if (usingarrow || usingbolt) 
     broke_aim(ch, 0);
   return;
+}
 }
 
 // Remove bullets from people.
