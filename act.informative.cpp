@@ -202,7 +202,7 @@ int loc_order[MAX_WEAR] =
 	WEAR_BLANK
 };
 
-/*
+
 static char *strTimeWord[] =
 {
     "twelve", "one", "two", "three", "four", "five", "six", "seven", "eight",
@@ -211,7 +211,7 @@ static char *strTimeWord[] =
     "nine", "ten", "eleven",
     "twelve"
 };
-*/
+
 
 const char *fog_states[] =
 {
@@ -8950,7 +8950,7 @@ do_time (CHAR_DATA * ch, char *argument, int cmd)
   
 // Leaving remarked out for the time being because we don't have astronomy skill and a few other
 // minor glitches.  -Nimrod 12 Sept 13 
-/*
+
 	if (ch->skills[SKILL_ASTRONOMY])
 	{
 
@@ -9108,7 +9108,7 @@ do_time (CHAR_DATA * ch, char *argument, int cmd)
 			}
 		}
 	}
-	*/
+
 	reformat_string (buf, &p);
 
 	send_to_char ("\n", ch);
@@ -9307,7 +9307,7 @@ void do_weather (CHAR_DATA * ch, char *argument, int cmd)
 
 		*buf = '\0';
 		*buf2 = '\0';
-
+/* - Commenting out info on earth phases.  This isn't the moon anymore.  0311140255 -Nimrod
 		switch (time_info.phaseEarth)
 		{
 		case PHASE_FULL_EARTH:
@@ -9341,8 +9341,9 @@ void do_weather (CHAR_DATA * ch, char *argument, int cmd)
 		sprintf (buf, "%s", p);
 		mem_free (p); // char*
 		send_to_char(buf, ch);
+*/
 
-        /*
+ /*       
         if (weather_info[ch->room->zone].fog
                 && !(weather_info[ch->room->zone].state >= LIGHT_RAIN
                      && weather_info[ch->room->zone].fog == THICK_FOG))
@@ -9361,7 +9362,7 @@ void do_weather (CHAR_DATA * ch, char *argument, int cmd)
             ("Looming black clouds cover the sky, blotting out the sun.\n",
              ch);
         }
-
+*/
         if (moon_light[ch->room->zone] >= 1)
         {
             if (!sun_light)
@@ -9373,7 +9374,7 @@ void do_weather (CHAR_DATA * ch, char *argument, int cmd)
                 ("The moon's ethereal silhouette is barely visible in the daylight.\n",
                  ch);
         }
-		*/
+		
 }
 
 HELP_DATA *
@@ -11586,7 +11587,7 @@ do_count (CHAR_DATA * ch, char *argument, int cmd)
 			&& !is_goggled(ch)
             && IS_MORTAL (ch) && !IS_SET (ch->affected_by, AFF_INFRAVIS))
     {
-        send_to_char ("It's too dark to count credits.\n", ch);
+        send_to_char ("It's too dark to count your coins.\n", ch);
         return;
     }
 
@@ -11601,18 +11602,18 @@ do_count (CHAR_DATA * ch, char *argument, int cmd)
         if (!(obj = get_obj_in_list_vis (ch, buf, ch->right_hand)) &&
                 !(obj = get_obj_in_list_vis (ch, buf, ch->left_hand)))
         {
-            send_to_char ("I don't see that group of credits.\n", ch);
+            send_to_char ("I don't see that group of coins.\n", ch);
             return;
         }
 
         if (GET_ITEM_TYPE (obj) != ITEM_MONEY)
         {
-            send_to_char ("That isn't a group of credits.\n", ch);
+            send_to_char ("That isn't a group of coins.\n", ch);
             return;
         }
 
         sprintf (buf,
-                 "After a moment of sorting, you determine that there are %d credits in the pile.",
+                 "After a moment of sorting, you determine that there are %d coins in the pile.",
                  obj->count);
         act (buf, false, ch, 0, 0, TO_CHAR | _ACT_FORMAT);
         return;
@@ -11626,88 +11627,29 @@ do_count (CHAR_DATA * ch, char *argument, int cmd)
 char *
 coin_sdesc (OBJ_DATA * coin)
 {
-    if (coin->nVirtual == 50093)
+    if (coin->nVirtual == 14011)
     {
         if (coin->count > 1)
-            return "'ten'-marked pieces of scrip";
+            return "copper coins";
         else
-            return "'ten'-marked piece of scrip";
-    }
-    else if (coin->nVirtual == 50092)
-    {
-        if (coin->count > 1)
-            return "'five'-marked pieces of scrip";
-        else
-            return "'five'-marked piece of scrip";
-    }
-    else if (coin->nVirtual == 50091)
-    {
-        if (coin->count > 1)
-            return "'three'-marked pieces of scrip";
-        else
-            return "'three-'-marked piece of scrip";
-    }
-    else if (coin->nVirtual == 50090)
-    {
-        if (coin->count > 1)
-            return "'one'-marked pieces of scrip";
-        else
-            return "'one'-marked piece of scrip";
-    }
-    else if (coin->nVirtual == 14011)
-    {
-        if (coin->count > 1)
-            return "white, circular chips";
-        else
-            return "white, circular chip";
-    }
-    else if (coin->nVirtual == 14012)
-    {
-        if (coin->count > 1)
-            return "red, circular chips";
-        else
-            return "red, circular chip";
+            return "copper coin";
     }
     else if (coin->nVirtual == 14013)
     {
         if (coin->count > 1)
-            return "blue, circular chips";
+            return "silver coins";
         else
-            return "blue, circular chip";
-    }
-    else if (coin->nVirtual == 14014)
-    {
-        if (coin->count > 1)
-            return "yellow, circular chips";
-        else
-            return "yellow, circular chip";
-    }
-    else if (coin->nVirtual == 14015)
-    {
-        if (coin->count > 1)
-            return "green, circular chips";
-        else
-            return "green, circular chip";
+            return "'silver coin";
     }
     else if (coin->nVirtual == 14016)
     {
         if (coin->count > 1)
-            return "black, circular chips";
+            return "gold coins";
         else
-            return "black, circular chip";
+            return "gold coin";
     }
-    else if (coin->nVirtual == 14017)
-    {
-        if (coin->count > 1)
-            return "gold-flecked, circular chips";
-        else
-            return "gold-flecked, circular chip";
-    }
-
-
-
-
-    return "ration";
+ 
+ //   return "ration";
 }
 
 void
@@ -11727,7 +11669,7 @@ delayed_count_coin (CHAR_DATA * ch)
             money += (int) ch->right_hand->farthings * ch->right_hand->count;
             tobj = ch->right_hand;
             sprintf (buf2 + strlen (buf2),
-                     "   #2%d %s#0 (#2right hand#0): %d credits\n", tobj->count,
+                     "   #2%d %s#0 (#2right hand#0): %d coppers\n", tobj->count,
                      coin_sdesc (tobj), (int) tobj->farthings * tobj->count);
         }
         else if (GET_ITEM_TYPE (ch->right_hand) == ITEM_CONTAINER)
@@ -11739,7 +11681,7 @@ delayed_count_coin (CHAR_DATA * ch)
                 {
                     money += (int) tobj->farthings * tobj->count;
                     sprintf (buf2 + strlen (buf2),
-                             "   #2%d %s#0 (#2%s#0): %d credits\n", tobj->count,
+                             "   #2%d %s#0 (#2%s#0): %d coppers\n", tobj->count,
                              coin_sdesc (tobj), obj_short_desc (tobj->in_obj),
                              (int) tobj->farthings * tobj->count);
                 }
@@ -11754,7 +11696,7 @@ delayed_count_coin (CHAR_DATA * ch)
             money += (int) ch->left_hand->farthings * ch->left_hand->count;
             tobj = ch->left_hand;
             sprintf (buf2 + strlen (buf2),
-                     "   #2%d %s#0 (#2left hand#0): %d credits\n", tobj->count,
+                     "   #2%d %s#0 (#2left hand#0): %d coppers\n", tobj->count,
                      coin_sdesc (tobj), (int) tobj->farthings * tobj->count);
         }
         else if (GET_ITEM_TYPE (ch->left_hand) == ITEM_CONTAINER)
@@ -11766,7 +11708,7 @@ delayed_count_coin (CHAR_DATA * ch)
                 {
                     money += (int) tobj->farthings * tobj->count;
                     sprintf (buf2 + strlen (buf2),
-                             "   #2%d %s#0 (#2%s#0): %d credits\n", tobj->count,
+                             "   #2%d %s#0 (#2%s#0): %d coppers\n", tobj->count,
                              coin_sdesc (tobj), obj_short_desc (tobj->in_obj),
                              (int) tobj->farthings * tobj->count);
                 }
@@ -11784,7 +11726,7 @@ delayed_count_coin (CHAR_DATA * ch)
             {
                 money += (int) tobj->farthings * tobj->count;
                 sprintf (buf2 + strlen (buf2),
-                         "   #2%d %s#0 (#2%s#0): %d credits\n", tobj->count,
+                         "   #2%d %s#0 (#2%s#0): %d coppers\n", tobj->count,
                          coin_sdesc (tobj), obj_short_desc (obj),
                          (int) tobj->farthings * tobj->count);
             }
@@ -11793,11 +11735,11 @@ delayed_count_coin (CHAR_DATA * ch)
 
     if (!money)
     {
-        send_to_char ("You don't seem to have any credits.\n", ch);
+        send_to_char ("You don't seem to have any coins.\n", ch);
         return;
     }
 
-    sprintf (buf, "By your count, you have %d credits' worth:", money);
+    sprintf (buf, "By your count, you have %d coppers:", money);
     act (buf, false, ch, 0, 0, TO_CHAR | _ACT_FORMAT);
     send_to_char ("\n", ch);
     send_to_char (buf2, ch);
