@@ -6271,7 +6271,7 @@ else
 	    if (room->dir_option[dir])  // Check to see if ther is an exit from the current room in the proper direction.
           room = vnum_to_room (room->dir_option[dir]->to_room); // Set room to the adjacent room using the same direction the arrow is travelling.
         else
-          break; // Theoretically we should never see this, but we have it just in case something is messed up.
+          break; 
 	
         if (room && target->room != room) // Make sure this room is not where the target is.
         {		

@@ -2744,85 +2744,28 @@ obj_short_desc (OBJ_DATA * obj)
         else			/* 5 - 20 coins */
             sprintf (coins, "a handful of");
 
-        if (obj->nVirtual == 50093)
-        {
-            if (obj->count == 1)
-                strcat (coins, " 'ten'-marked piece of scrip");
-            else
-                strcat (coins, " 'ten'-marked pieces of scrip");
-        }
-        else if (obj->nVirtual == 50092)
-        {
-            if (obj->count == 1)
-                strcat (coins, " 'five'-marked piece of scrip");
-            else
-                strcat (coins, " 'five'-marked pieces of scrip");
-        }
-
-        else if (obj->nVirtual == 50091)
-        {
-            if (obj->count == 1)
-                strcat (coins, " 'three'-marked piece of scrip");
-            else
-                strcat (coins, " 'three'-marked pieces of scrip");
-        }
-
-        else if (obj->nVirtual == 50090)
-        {
-            if (obj->count == 1)
-                strcat (coins, " 'one'-marked piece of scrip");
-            else
-                strcat (coins, " 'one'-marked pieces of scrip");
-        }
-        else if (obj->nVirtual == 14011)
+        if (obj->nVirtual == 14011)
         {
             if (obj->count > 1)
-                strcat (coins, " white, circular chips");
+                strcat (coins, " copper coins");
             else
-                strcat (coins, " white, circular chip");
-        }
-        else if (obj->nVirtual == 14012)
-        {
-            if (obj->count > 1)
-                strcat (coins, " red, circular chips");
-            else
-                strcat (coins, " red, circular chip");
+                strcat (coins, " copper coin");
         }
         else if (obj->nVirtual == 14013)
         {
             if (obj->count > 1)
-                strcat (coins, " blue, circular chips");
+                strcat (coins, " silver coins");
             else
-                strcat (coins, " blue, circular chip");
-        }
-        else if (obj->nVirtual == 14014)
-        {
-            if (obj->count > 1)
-                strcat (coins, " yellow, circular chips");
-            else
-                strcat (coins, " yellow, circular chip");
-        }
-        else if (obj->nVirtual == 14015)
-        {
-            if (obj->count > 1)
-                strcat (coins, " green, circular chips");
-            else
-                strcat (coins, " green, circular chip");
+                strcat (coins, " silver coin");
         }
         else if (obj->nVirtual == 14016)
         {
             if (obj->count > 1)
-                strcat (coins, " black, circular chips");
+                strcat (coins, " gold coins");
             else
-                strcat (coins, " black, circular chip");
+                strcat (coins, " gold coin");
         }
-        else if (obj->nVirtual == 14017)
-        {
-            if (obj->count > 1)
-                strcat (coins, " gold-flecked, circular chips");
-            else
-                strcat (coins, " gold-flecked, circular chip");
-        }
+       
         return coins;
     }
     else if (GET_ITEM_TYPE (obj) == ITEM_CARD)

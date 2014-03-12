@@ -5924,7 +5924,7 @@ do_escape (CHAR_DATA * ch, char *argument, int cmd)
     }
 
     chance = 20 + 2 * (GET_STR (ch) + GET_AGI (ch) - GET_STR (ch->subdue)
-                       - GET_DEX (ch->subdue));
+                       - GET_AGI (ch->subdue));
 
     if (chance > number (0, 100))
     {

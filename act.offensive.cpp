@@ -2787,6 +2787,7 @@ retreat (CHAR_DATA* ch, int direction, CHAR_DATA* leader)
     // base number of seconds
     int duration = 0;
     AFFECTED_TYPE *af;
+	char buf[MAX_STRING_LENGTH] = {'\0'};
 
     if ((af = get_affect (ch, AFFECT_GROUP_RETREAT)))
     {
@@ -2834,10 +2835,15 @@ retreat (CHAR_DATA* ch, int direction, CHAR_DATA* leader)
         act (message, false, ch, 0, 0, TO_ROOM);
     }
 
-    if (!ch->following || ch->fighting || leader)
+    if (!ch->following || ch->fighting || leader)  // Why are we checking !ch->following?
     {
-        duration = 40;
-
+        //duration = 40;
+      duration = 70 - GET_AUR(leader ? leader : ch) * 3; // Add modification to allow folks with higher AUR to be able to group retreat faster. 0309142344 -Nimrod
+	  duration = duration >= 10 ? duration : 10; // Limit lowest retreat time to 10. 
+	  
+	   sprintf (buf, "%s has ordered %s to retreat.  Time basis is %d.\n", char_short(leader), char_short(ch), duration);
+	   send_to_gods(buf);
+	  
         // Commenting out a lot of this stuff, as retreating piece-meal is counter to the point
         // of a retreat, as opposed to a whole-sale route. You retreat as a group, to help prevent
         // slaughter. If you want to flee in bits and drabs, then use the flee command.
