@@ -1914,7 +1914,13 @@ randomize_mobile (CHAR_DATA * mob)
     }
 */
 	// return;
-
+	
+	if ( mob->race == lookup_race_id("Human"))
+    {
+	    new_randomize_mobile(mob, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+        return;
+    }
+	
     CHAR_DATA *proto;
     int attr_starters[] = { 16, 15, 12, 12, 11, 10, 8 };
     int attr_priorities[] = { -1, -1, -1, -1, -1, -1, 1 };
