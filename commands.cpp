@@ -96,6 +96,7 @@ const struct command_data commands[] =
      C_DEL | C_SUB | C_HID | C_DOA | C_BLD | C_PAR | C_SPL
     },
     {"down", do_down, FIGHT, C_HID | C_DOA | C_BLD},
+	{"de", do_downeast, FIGHT, C_HID | C_DOA | C_BLD},
     {"decorate", do_decorate, SIT, C_WLK | C_DEL | C_HID | C_SUB | C_DOA},
     {"diagnose", do_diagnose, REST, C_DEL | C_SUB | C_HID | C_DOA | C_PAR},
     //{"destring", do_destring, STAND, C_WLK | C_HID | C_DOA}, //C_MNT
@@ -285,7 +286,7 @@ const struct command_data commands[] =
     {"south", do_south, FIGHT, C_HID | C_DOA | C_BLD},
     {"s", do_south, FIGHT, C_HID | C_DOA | C_BLD},
     {"southeast", do_southeast, FIGHT, C_HID | C_DOA | C_BLD},
-    {"southhwest", do_southwest, FIGHT, C_HID | C_DOA | C_BLD},
+    {"southwest", do_southwest, FIGHT, C_HID | C_DOA | C_BLD},
     {"seast", do_southeast, FIGHT, C_HID | C_DOA | C_BLD},
     {"se", do_southeast, FIGHT, C_HID | C_DOA | C_BLD},
     {"swest", do_southwest, FIGHT, C_HID | C_DOA | C_BLD},
