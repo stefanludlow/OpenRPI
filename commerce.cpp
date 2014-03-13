@@ -109,7 +109,6 @@ const char *econ_flags[] =
     "Artisan",	// 1 << 6
 	"PCMake",			// 1 << 7
     "nobarter",
-	"Admin",
 	"Practice",
 	"1stAge",			// 1 << 8
 	"2ndAge",			// 1 << 9
@@ -124,9 +123,7 @@ const char *econ_flags[] =
 	"Shire",   
     "Dorwinion",
     "Rhun",	// 1 << 17
-	"StaffPlot",                       // 1 << 18
 	"Unique",                     // 1 << 19
-	"OOC",                       // 1 << 20
 	"Meat",                      // 1 << 21
 	"Grain",                    // 1 << 22
 	"Vegetable",                      // 1 << 23

@@ -4864,12 +4864,12 @@ struct econ_data
     } obj_econ_info[ECON_ZONES];
 };
 
-#define QUALITY_TRASH		1 << 21
-#define QUALITY_POOR		1 << 7
-#define QUALITY_ORDINARY	1 << 17
-#define QUALITY_GOOD		1 << 18
-#define QUALITY_SUPERB		1 << 19
-#define QUALITY_EPIC		1 << 20
+#define QUALITY_TRASH		1 << 0
+#define QUALITY_POOR		1 << 1
+#define QUALITY_ORDINARY	1 << 2
+#define QUALITY_GOOD		1 << 3
+#define QUALITY_SUPERB		1 << 4
+#define QUALITY_EPIC		1 << 5
 
 
 #define AGE_BABY        0
