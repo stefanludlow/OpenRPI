@@ -1097,6 +1097,10 @@ void
 		{
 			room->tracks = track->next; // skip to the next track.
 		}
+		else
+		{
+		  room->tracks = NULL;  // Update to set null to avoid crashing on next room_tracks_update.  0315140228 -Nimrod
+		}
 
 		if (track->race < 1000000 && track->name)                      // die, track->name.
 		{
@@ -1148,12 +1152,14 @@ void
 	ROOM_DATA *room = NULL;
 	TRACK_DATA *track = NULL;
 	int limit;
+	
+	// send_to_gods("Starting update room tracks.");
 
 	for (room = full_room_list; room; room = room->lnext)
 	{
 		for (track = room->tracks; track;)
 		{
-			limit = 48;  // Changing to 1 for testing purposes, change back to 48 when done.
+			limit = 48;  // Tracks linger for 48 game hours.
 
 			//next_track = track->next;
 			track->hours_passed++;
@@ -1176,6 +1182,7 @@ void
 				TRACK_DATA *temp = track;
 				track = track->next;
 				track_from_room (room, temp);
+				// send_to_gods("Dropping a track.");
 			}
 			else
 			{
@@ -5044,7 +5051,7 @@ void
 void
 	do_upnortheast (CHAR_DATA * ch, char *argument, int cmd)
 {
-	do_move (ch, argument, UPNORTHEAST);
+ 	do_move (ch, argument, UPNORTHEAST);
 }
 
 void
