@@ -669,8 +669,7 @@ const struct command_data commands[] =
     {"zlock", do_zlock, DEAD, C_LV5},
     {"zmode", do_zmode, DEAD, C_LV5},
     {"zname", do_zname, DEAD, C_LV5},
- 
-    {"", NULL, 0, 0}
+	{"", NULL, 0, 0}
 };
 
 char *fill[] = { "in",

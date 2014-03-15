@@ -814,7 +814,13 @@ game_loop (int s)
             cleanup_the_dead (0);
             knockout = 0;
         }
-
+/*
+		if (!(pulse % (SECOND_PULSE * 240))) // Every four real life minutes
+		{
+		  send_to_gods("Calling update room tracks.");
+		   update_room_tracks ();
+		}
+		*/
         if (time (0) >= next_hour_update)
         {
             hourly_update ();
