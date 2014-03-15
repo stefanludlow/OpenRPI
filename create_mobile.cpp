@@ -1915,7 +1915,7 @@ randomize_mobile (CHAR_DATA * mob)
 */
 	// return;
 	
-	if ( mob->race == lookup_race_id("Human"))
+	if ( !IS_NPC(mob) && mob->race == lookup_race_id("Human"))
     {
 	    new_randomize_mobile(mob, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
         return;
