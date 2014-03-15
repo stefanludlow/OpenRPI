@@ -3209,7 +3209,7 @@ nanny_choose_pc (DESCRIPTOR_DATA * d, char *argument)
         equip_newbie (d->character);
     }
 
-    load_char_objs (d->character, GET_NAME (d->character));
+    load_char_objs (d->character, GET_NAME (d->character));  // This may call equip_newbie again.
 
     if ((!d->character->in_room || d->character->in_room == NOWHERE)
             || !vnum_to_room (d->character->in_room))

@@ -1153,7 +1153,7 @@ void
 	{
 		for (track = room->tracks; track;)
 		{
-			limit = 48;
+			limit = 1;  // Changing to 1 for testing purposes, change back to 48 when done.
 
 			//next_track = track->next;
 			track->hours_passed++;
@@ -1264,7 +1264,7 @@ void
 		if (i > TRACK_LIMIT_PER_ROOM)
 		{
 			TRACK_DATA *temp = rem_track;
-			rem_track = rem_track->next;
+			rem_track = rem_track->next; // This allows us to continue deleting tracks if there's more than a single one past TRACK_LIMIT_PER_ROOM
 			track_from_room (ch->room, temp);
 		}
 		else
