@@ -1153,7 +1153,7 @@ void
 	{
 		for (track = room->tracks; track;)
 		{
-			limit = 1;  // Changing to 1 for testing purposes, change back to 48 when done.
+			limit = 48;  // Changing to 1 for testing purposes, change back to 48 when done.
 
 			//next_track = track->next;
 			track->hours_passed++;
