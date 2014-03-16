@@ -332,7 +332,7 @@ wound_to_char (CHAR_DATA * ch, char *location, int impact, int type,
 	if (!str_cmp(lookup_race_variable(ch->race, RACE_NAME), "robot"))
 		type = 13;
 
-    if (type == 2 || type == 4)
+    if (type == 2 || type == 4) // chop or slash
         switch (number (1, 6))
         {
         case 1:
@@ -354,7 +354,7 @@ wound_to_char (CHAR_DATA * ch, char *location, int impact, int type,
             sprintf (name, "laceration");
             break;
         }
-    else if (type == 0 || type == 1)
+    else if (type == 0 || type == 1)  // stab or pierce
         switch (number (1, 5))
         {
         case 1:
@@ -373,7 +373,7 @@ wound_to_char (CHAR_DATA * ch, char *location, int impact, int type,
             sprintf (name, "perforation");
             break;
         }
-    else if (type == 3)
+    else if (type == 3) // crush
         switch (number (1, 5))
         {
         case 1:
@@ -392,7 +392,7 @@ wound_to_char (CHAR_DATA * ch, char *location, int impact, int type,
             sprintf (name, "crush");
             break;
         }
-    else if (type == 5)
+    else if (type == 5) // chill
         switch (number (1, 7))
         {
         case 1:
@@ -418,7 +418,7 @@ wound_to_char (CHAR_DATA * ch, char *location, int impact, int type,
             break;
         }
 
-    else if (type == 6)
+    else if (type == 6) // burn
         switch (number (1, 7))
         {
         case 1:
@@ -444,7 +444,7 @@ wound_to_char (CHAR_DATA * ch, char *location, int impact, int type,
             break;
         }
 
-    else if (type == 7)		// Natural attacks -- teeth.
+    else if (type == 7)		// Natural attacks -- teeth. BITE
         switch (number (1, 5))
         {
         case 1:

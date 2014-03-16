@@ -5019,7 +5019,7 @@ void r_pain( CHAR_DATA * ch, char *argument ) {
 	}
 	low = atoi( arg2 );
 	high = atoi( arg3 );
-	if ( ( type = index_lookup( damage_type, arg5 ) ) < 0 ) {
+	if ( ( type = index_lookup( damage_type, arg5 ) ) < 0 ) {  // This should probably use fight_damage as listed on line 30 in objects.cpp
 		type = 3;
 	}
 
