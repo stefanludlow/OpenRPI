@@ -10791,7 +10791,7 @@ OBJ_DATA *
 	
   for ( j = 0; j < 10; j++) // variables on from_obj
   {
-    send_to_gods("Loop Start From obj cat/color:");  
+    send_to_gods("Don't panic.  Loop Start From obj cat/color:");  
     send_to_gods(from_obj->var_cat[j]);
 	send_to_gods(from_obj->var_color[j]);
 	send_to_gods("to_obj_vnum variable:");
