@@ -10798,6 +10798,8 @@ OBJ_DATA *
 	  }
     }
   }
+  send_to_gods("Load color 0:");
+  send_to_gods(from_obj->var_color[0]);
 	
   return(load_colored_object( 
         to_obj_vnum, 
