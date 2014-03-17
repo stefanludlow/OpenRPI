@@ -10791,12 +10791,12 @@ OBJ_DATA *
 	
   for ( j = 0; j < 10; j++) // variables on from_obj
   {
-    send_to_gods("Don't panic.  Loop Start From obj cat/color:");  
-    send_to_gods(from_obj->var_cat[j]);
-	send_to_gods(from_obj->var_color[j]);
-	send_to_gods("to_obj_vnum variable:");
-	send_to_gods(var_list[j]);
-	send_to_gods("Loop End");
+  //  send_to_gods("Don't panic.  Loop Start From obj cat/color:");  
+  //  send_to_gods(from_obj->var_cat[j]);
+	//send_to_gods(from_obj->var_color[j]);
+	//send_to_gods("to_obj_vnum variable:");
+	//send_to_gods(var_list[j]);
+	//send_to_gods("Loop End");
     
 	
     for ( k = 0; k < 10; k++) // variables of obj we're going to load
@@ -10804,15 +10804,15 @@ OBJ_DATA *
       if (!(strcmp(var_list[k], from_obj->var_cat[j])) && strlen(var_list[k]) >= 2 )  // Make sure variable category is at least two chars long and they match
       {
         slot[k] = j;
-		sprintf(buf, "from slot: >>>%d<<< to slot: >>>%d<<<", j, k);
-		send_to_gods(buf);
+		//sprintf(buf, "from slot: >>>%d<<< to slot: >>>%d<<<", j, k);
+		//send_to_gods(buf);
 	  }
     }
   }
-  send_to_gods("Load color 0:");
-  send_to_gods(from_obj->var_color[0]);
-  send_to_gods("Load color for slot 0:");
-  send_to_gods(from_obj->var_color[slot[0]]);
+  //send_to_gods("Load color 0:");
+  //send_to_gods(from_obj->var_color[0]);
+  //send_to_gods("Load color for slot 0:");
+  //send_to_gods(from_obj->var_color[slot[0]]);
 	
   return(load_colored_object( 
         to_obj_vnum, 
