@@ -11944,6 +11944,7 @@ void fetch_variable_categories ( char **var_list, int target, int target_type) {
   char temp[100] = { '\0' };
   char *point;
   int k = 0;
+  int i = 0;
   char buf[ MAX_STRING_LENGTH ];
    
   switch (target_type)
@@ -11968,12 +11969,14 @@ void fetch_variable_categories ( char **var_list, int target, int target_type) {
     if (!temp)
       break;
 	  
-	// To account for hidden variables and possible punctuation we need to strip off all trailing non-alpha chars and replace $$ with $
-	// This needs to be done yet.
-	
     if (temp[0] == '$')  // Check to see if word is a variable category
     {
-      strcpy(var_list[k], temp); // set word to correct space in var_list array
+	  strcpy(var_list[k], "$");
+	  for ( i = 1; i < strlen( temp ); i++ ) 
+	  {
+		if (isalpha(temp[i]))  // Only copy alpha chars 0317140414 -Nimrod
+		  sprintf (var_list[k] + strlen (var_list[k]), "%c", temp[i]);
+	  }				
       // sprintf( buf, "Variable # %d is: >>>%s<<<\n", k, var_list[k] ); // Just for testing purposes
       // send_to_gods(buf);
 	  k++;
