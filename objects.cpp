@@ -6896,6 +6896,7 @@ void
 	OBJ_DATA *remains;
 	int i = 1;
 	int j = 0;
+	int k = 0;
 	bool failed = false;
 	char buf[MAX_STRING_LENGTH];
 
@@ -6984,15 +6985,15 @@ void
 					{
 					  obj1 = load_object(carcass->o.od.value[0]);
 					 // **********
-					  for (i = 0; i < 10; i++)  // Transfer vcolors from carcass to obj1
+					  for (k = 0; k < 10; k++)  // Transfer vcolors from carcass to obj1
 				      {
-				        if (!obj1->var_cat[i])  
+				        if (!obj1->var_cat[k])  
 				          break;
 					
 				        for (j = 0; j < 10; j++)  // 
 				        {
-				          if (obj1->var_cat[i] == carcass->var_cat[j])
-                            obj1->var_color[i] = carcass->var_color[j];					
+				          if (obj1->var_cat[k] == carcass->var_cat[j])
+                            obj1->var_color[k] = carcass->var_color[j];					
 				        }
 				      }
 					  // ***********
