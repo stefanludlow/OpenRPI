@@ -10772,6 +10772,7 @@ OBJ_DATA *
   int slot[10];
   char var_list[10][100];
   char *vari_list[10];	
+  char buf[200];
 
   // Initalize pointer array and slots
   for (j = 0; j<10;j++)
@@ -10790,11 +10791,21 @@ OBJ_DATA *
 	
   for ( j = 0; j < 10; j++) // variables on from_obj
   {
+    send_to_gods("Loop Start From obj cat/color:");  
+    send_to_gods(from_obj->var_cat[j]);
+	send_to_gods(from_obj->var_color[j]);
+	send_to_gods("to_obj_vnum variable:");
+	send_to_gods(var_list[j]);
+	send_to_gods("Loop End");
+    
+	
     for ( k = 0; k < 10; k++) // variables of obj we're going to load
     {
       if (!(strcmp(var_list[k], from_obj->var_cat[j])) && strlen(var_list[k]) >= 2 )  // Make sure variable category is at least two chars long and they match
       {
         slot[k] = j;
+		sprintf(buf, "from slot: >>>%d<<< to slot: >>>%d<<<", j, k);
+		send_to_gods(buf);
 	  }
     }
   }
