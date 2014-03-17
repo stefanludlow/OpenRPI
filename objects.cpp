@@ -6771,9 +6771,9 @@ void
 
 	watched_action(ch, "butcher a carcass", 0, 1);
 
-	ch->delay_type = DEL_BUTC_1;
-	ch->delay = 12;
-
+	ch->delay_type = GET_TRUST(ch) ? DEL_BUTC_3 : DEL_BUTC_1;
+	ch->delay = GET_TRUST(ch) ? 1 : 12;
+	
 	// Add time to the object timer so it doesn't decay while we're skinning it.  -Methuselah
 	if ((obj->obj_timer - time(0)) < 1000)
 		obj->obj_timer = time(0) + 1000;
@@ -6899,6 +6899,9 @@ void
 	int k = 0;
 	bool failed = false;
 	char buf[MAX_STRING_LENGTH];
+	int slot[10];
+	char var_list[10][100];
+	char *vari_list[10];
 
 
 	carcass = (OBJ_DATA *) ch->delay_info1;
@@ -6951,55 +6954,23 @@ void
 	{
 		if (carcass->o.od.value[0])
 		{
-			if (!(obj1 = load_object(carcass->o.od.value[0])))
-			{
+		if (!(obj1 = clone_colored_object(carcass, carcass->o.od.value[0], 0)))
+		{
 				send_to_char ("Problem...please contact an immortal.\n", ch);
 				return;
 			}
 			else
-			{
-
-				// Give them a piece of meat for free, otherwise,
+			{	// Give them a piece of meat for free, otherwise,
 				// they roll their skill for each piece of meat.
 				
-				// carcass->var_color[ ind ] 
-	            // carcass->var_cat[ ind ]
-				
-				for (i = 0; i < 10; i++)  // Transfer vcolors from carcass to obj1
-				{
-				  if (!obj1->var_cat[i])  
-				    break;
-					
-				  for (j = 0; j < 10; j++)  // 
-				  {
-				    if (obj1->var_cat[i] == carcass->var_cat[j])
-                      obj1->var_color[i] = carcass->var_color[j];					
-				  }
-				}
-
 				obj_to_room (obj1, ch->in_room);
 
 				for (i = 1; i < carcass->o.od.value[1]; i++)
 				{
 					if (skill_use(ch, SKILL_BUTCHERY, -40))
 					{
-					  obj1 = load_object(carcass->o.od.value[0]);
-					 // **********
-					  for (k = 0; k < 10; k++)  // Transfer vcolors from carcass to obj1
-				      {
-				        if (!obj1->var_cat[k])  
-				          break;
-					
-				        for (j = 0; j < 10; j++)  // 
-				        {
-				          if (obj1->var_cat[k] == carcass->var_cat[j])
-                            obj1->var_color[k] = carcass->var_color[j];					
-				        }
-				      }
-					  // ***********
-					
-					  obj_to_room (obj1, ch->in_room);
-					}
+					  obj1->count++;
+                    }
 				}
 
 				sprintf(buf, "You succeed in cutting #2%s#0 from the carcass.\n", obj_short_desc (obj1));
@@ -7020,7 +6991,8 @@ void
 	{
 		if (carcass->o.od.value[2])
 		{
-			if (!(obj2 = load_object(carcass->o.od.value[2])))
+			// if (!(obj2 = load_object(carcass->o.od.value[2])))
+			if (!(obj2 = clone_colored_object(carcass, carcass->o.od.value[2], 0)))
 			{
 				send_to_char ("Problem...please contact an immortal.\n", ch);
 				return;
@@ -7036,7 +7008,8 @@ void
 				for (i = 1; i < carcass->o.od.value[3]; i++)
 				{
 					if (skill_use(ch, SKILL_BUTCHERY, -20))
-						obj_to_room (load_object(carcass->o.od.value[2]), ch->in_room);
+					   obj2->count++;
+						//obj_to_room (load_object(carcass->o.od.value[2]), ch->in_room);
 				}
 
 				sprintf(buf, "You prevail in recovering #2%s#0 from the bones.\n", obj_short_desc (obj2));
@@ -7057,7 +7030,8 @@ void
 	{
 		if (carcass->o.od.value[4])
 		{
-			if (!(obj3 = load_object(carcass->o.od.value[4])))
+			// if (!(obj3 = load_object(carcass->o.od.value[4])))
+			if (!(obj3 = clone_colored_object(carcass, carcass->o.od.value[4], 0)))
 			{
 				send_to_char ("Problem...please contact an immortal.\n", ch);
 				return;
@@ -7073,7 +7047,8 @@ void
 				for (i = 1; i < carcass->o.od.value[5]; i++)
 				{
 					if (skill_use(ch, SKILL_BUTCHERY, 0))
-						obj_to_room (load_object(carcass->o.od.value[4]), ch->in_room);
+					  obj3->count++;
+					//	obj_to_room (load_object(carcass->o.od.value[4]), ch->in_room);
 				}
 
 				sprintf(buf, "With #2%s#0, you have stripped the carcass for all it has.\n", obj_short_desc (obj3));
@@ -7370,68 +7345,10 @@ void
 	if (skill_use (ch, SKILL_BUTCHERY, -50))
 	{
     
-
-	
-	// Initalize pointer array and slot
-	for (j = 0; j<10;j++)
-	{
-	  vari_list[j] = var_list[j]; // initialize pointer
-	  slot[j] = -1; 	// initialize slot
-	  *var_list[j] = '\0'; // Set these to null while we're at it.
-    }
-    // Get variables categories from prototype of item we are going to load
-    fetch_variable_categories ( vari_list, corpse->o.od.value[2], 0);
-	
-	/*  // Test output
-	for (j = 0; j<10;j++)
-	{
-	  sprintf( buf, "Variable from prototype location # %d is: >>>%s<<<\n", j, vari_list[j] ); // Just for testing purposes
-      send_to_gods(buf);
-	}    */
-	
-	// Figure out what variables from the corpse will be transfered to the target
-	for ( j = 0; j < 10; j++) // variables on corpse
-	{
-	  for ( k = 0; k < 10; k++) // variables on target
+	if (!(skin = clone_colored_object(corpse, corpse->o.od.value[2], 0)))
 	  {
-	    if (!(strncmp(var_list[k], corpse->var_cat[j], strlen(corpse->var_cat[j]))))
-		{
-		  // match, set slot[k] = j
-		  slot[k] = j;
-		 // sprintf( buf, "Slot %d color from location %d on corpse is: >>>%s<<<", j, k, corpse->var_color[j]);
-         // send_to_gods(buf);		  
-		}
-	  }
-	}
-	
-	/* for (j = 0; j<10;j++)
-	{
-	  sprintf( buf, "Slot # %d is: >>>%d<<<\n", j, slot[j] ); // Just for testing purposes
-      send_to_gods(buf);
-	}  */
-		
-			
-	if (!(skin = load_colored_object( 
-	    corpse->o.od.value[2], 
-	    slot[0] >= 0 ? corpse->var_color[slot[0]] : 0, 
-		slot[1] >= 0 ? corpse->var_color[slot[1]] : 0, 
-		slot[2] >= 0 ? corpse->var_color[slot[2]] : 0, 
-		slot[3] >= 0 ? corpse->var_color[slot[3]] : 0, 
-		slot[4] >= 0 ? corpse->var_color[slot[4]] : 0, 
-		slot[5] >= 0 ? corpse->var_color[slot[5]] : 0, 
-		slot[6] >= 0 ? corpse->var_color[slot[6]] : 0, 
-		slot[7] >= 0 ? corpse->var_color[slot[7]] : 0, 
-		slot[8] >= 0 ? corpse->var_color[slot[8]] : 0, 
-		slot[9] >= 0 ? corpse->var_color[slot[9]] : 0 
-	    )))
-			
-	{
-		   			
-	// if (!(skin = LOAD_COLOR(corpse, -corpse->o.od.value[2])))
-	// {
 	  	  send_to_char ("Problem...please contact an immortal.\n", ch);
 		  return;
-	// }
 	}
 
 		obj_to_room (skin, ch->in_room);
@@ -7494,86 +7411,12 @@ void
 	ch->delay_info2 = 0;
 	
 // Start loading the carcass now
-/* Remarking out old load code -Nimrod
-	if (!(carcass = load_object (corpse->o.od.value[3])))
-	{
-		if (!(carcass = load_object (-corpse->o.od.value[3])))
-		{
-			extract_obj (corpse);
-			return;
-		}
-	}
-*/
-// BEGIN NEW LOAD CODE FOR CARCASS
 
-	// Initalize pointer array and slot
-	for (j = 0; j<10;j++)
-	{
-	  vari_list[j] = var_list[j];
-	  slot[j] = -1; 	// initialize slot
-	  *var_list[j] = '\0'; // Set these to null while we're at it.
-    }
-    // Get variables categoreis from prototype of item we are going to load
-    fetch_variable_categories ( vari_list, corpse->o.od.value[3], 0);
-	
-	/*  // Test output
-	for (j = 0; j<10;j++)
-	{
-	  sprintf( buf, "Variable from prototype location # %d is: >>>%s<<<\n", j, vari_list[j] ); // Just for testing purposes
-      send_to_gods(buf);
-	}    */
-	
-	// Figure out what variables from the corpse will be transfered to the target
-	for ( j = 0; j < 10; j++) // variables on corpse
-	{
-	  for ( k = 0; k < 10; k++) // variables on target
-	  {
-	    if (!(strncmp(var_list[k], corpse->var_cat[j], strlen(corpse->var_cat[j]))))
-	    {
-		  // match, set slot[k] = j
-		  slot[k] = j;
-		 // sprintf( buf, "Slot %d color from location %d on corpse is: >>>%s<<<", j, k, corpse->var_color[j]);
-         // send_to_gods(buf);		  
-		}
-	  }
-	}
-	
-	/* for (j = 0; j<10;j++)
-	{
-	  sprintf( buf, "Slot # %d is: >>>%d<<<\n", j, slot[j] ); // Just for testing purposes
-      send_to_gods(buf);
-	}  */
-		
-			
-	if (!(carcass = load_colored_object( 
-	    corpse->o.od.value[3], 
-	    slot[0] >= 0 ? corpse->var_color[slot[0]] : 0, 
-		slot[1] >= 0 ? corpse->var_color[slot[1]] : 0, 
-		slot[2] >= 0 ? corpse->var_color[slot[2]] : 0, 
-		slot[3] >= 0 ? corpse->var_color[slot[3]] : 0, 
-		slot[4] >= 0 ? corpse->var_color[slot[4]] : 0, 
-		slot[5] >= 0 ? corpse->var_color[slot[5]] : 0, 
-		slot[6] >= 0 ? corpse->var_color[slot[6]] : 0, 
-		slot[7] >= 0 ? corpse->var_color[slot[7]] : 0, 
-		slot[8] >= 0 ? corpse->var_color[slot[8]] : 0, 
-		slot[9] >= 0 ? corpse->var_color[slot[9]] : 0 
-	    )))
-			
-	{
-		   			
-	// if (!(skin = LOAD_COLOR(corpse, -corpse->o.od.value[2])))
-	// {
+		if (!(carcass = clone_colored_object(corpse, corpse->o.od.value[3], 0)))
+		  {
 	  	  send_to_char ("Problem...please contact an immortal.\n", ch);
 		  return;
-	// }
 	}
-
-
-
-
-
-
-// END NEW LOAD CODE FOR CARCASS
 
 	// Lose 10% of the weight for the head.
 	if (!IS_SET (corpse->o.container.flags, CONT_BEHEADED))
@@ -10917,4 +10760,55 @@ void obj_data::partial_deep_copy (OBJ_DATA *proto)
 
 
 
+}
+// clone_colored_object() - added 0317140202 -Nimrod (Happy Birthday Grandpa Virgil!  Born 3-17-1900 R.I.P.  I miss you.)
+// Function will copy variables from from_obj and place them on returned object based solely on variable category.
+// Does not account for objects that may use the same variable multiple times.
+OBJ_DATA *
+	clone_colored_object (OBJ_DATA *from_obj, int to_obj_vnum, int cmd)
+{
+  int j = 0;
+  int k = 0;
+  int slot[10];
+  char var_list[10][100];
+  char *vari_list[10];	
+
+  // Initalize pointer array and slots
+  for (j = 0; j<10;j++)
+  {
+    vari_list[j] = var_list[j]; // initialize pointer
+    slot[j] = -1; 	// initialize slot
+    *var_list[j] = '\0'; // Set these to null while we're at it.
+  }
+  // Get variables categories from prototype of object we're going to load
+  fetch_variable_categories ( vari_list, to_obj_vnum, 0);
+	
+  // Figure out what variables from the from_obj will be transfered to new_obj
+  // This nested loop will make sure that if the variables aren't in the same order on both objects
+  // they will still be transferred correctly.  The only thing this does not account for is 
+  // objects that use the same variable more than once.
+	
+  for ( j = 0; j < 10; j++) // variables on from_obj
+  {
+    for ( k = 0; k < 10; k++) // variables of obj we're going to load
+    {
+      if (!(strcmp(var_list[k], from_obj->var_cat[j])) && strlen(var_list[k]) >= 2 )  // Make sure variable category is at least two chars long and they match
+      {
+        slot[k] = j;
+	  }
+    }
+  }
+	
+  return(load_colored_object( 
+        to_obj_vnum, 
+	    slot[0] >= 0 ? from_obj->var_color[slot[0]] : 0, 
+		slot[1] >= 0 ? from_obj->var_color[slot[1]] : 0, 
+		slot[2] >= 0 ? from_obj->var_color[slot[2]] : 0, 
+		slot[3] >= 0 ? from_obj->var_color[slot[3]] : 0, 
+		slot[4] >= 0 ? from_obj->var_color[slot[4]] : 0, 
+		slot[5] >= 0 ? from_obj->var_color[slot[5]] : 0, 
+		slot[6] >= 0 ? from_obj->var_color[slot[6]] : 0, 
+		slot[7] >= 0 ? from_obj->var_color[slot[7]] : 0, 
+		slot[8] >= 0 ? from_obj->var_color[slot[8]] : 0, 
+		slot[9] >= 0 ? from_obj->var_color[slot[9]] : 0 )); 
 }
