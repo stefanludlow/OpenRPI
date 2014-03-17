@@ -6895,6 +6895,7 @@ void
 	OBJ_DATA *carcass;
 	OBJ_DATA *remains;
 	int i = 1;
+	int j = 0;
 	bool failed = false;
 	char buf[MAX_STRING_LENGTH];
 
@@ -6942,6 +6943,8 @@ void
 	}
 
 	// First two ranks, easy to butcher.
+	
+	
 
 	if (skill_level (ch, SKILL_BUTCHERY, -40))
 	{
@@ -6957,13 +6960,45 @@ void
 
 				// Give them a piece of meat for free, otherwise,
 				// they roll their skill for each piece of meat.
+				
+				// carcass->var_color[ ind ] 
+	            // carcass->var_cat[ ind ]
+				
+				for (i = 0; i < 10; i++)  // Transfer vcolors from carcass to obj1
+				{
+				  if (!obj1->var_cat[i])  
+				    break;
+					
+				  for (j = 0; j < 10; j++)  // 
+				  {
+				    if (obj1->var_cat[i] == carcass->var_cat[j])
+                      obj1->var_color[i] = carcass->var_color[j];					
+				  }
+				}
 
 				obj_to_room (obj1, ch->in_room);
 
 				for (i = 1; i < carcass->o.od.value[1]; i++)
 				{
 					if (skill_use(ch, SKILL_BUTCHERY, -40))
-						obj_to_room (load_object(carcass->o.od.value[0]), ch->in_room);
+					{
+					  obj1 = load_object(carcass->o.od.value[0]);
+					 // **********
+					  for (i = 0; i < 10; i++)  // Transfer vcolors from carcass to obj1
+				      {
+				        if (!obj1->var_cat[i])  
+				          break;
+					
+				        for (j = 0; j < 10; j++)  // 
+				        {
+				          if (obj1->var_cat[i] == carcass->var_cat[j])
+                            obj1->var_color[i] = carcass->var_color[j];					
+				        }
+				      }
+					  // ***********
+					
+					  obj_to_room (obj1, ch->in_room);
+					}
 				}
 
 				sprintf(buf, "You succeed in cutting #2%s#0 from the carcass.\n", obj_short_desc (obj1));
