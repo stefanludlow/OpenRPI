@@ -2928,7 +2928,7 @@ do_flee (CHAR_DATA * ch, char *argument, int cmd)
         if (CAN_GO (ch, dir) && !isguarded (ch->room, dir))
             break;
 
-    if (dir == 6)
+    if (dir >= LAST_DIR) // This means a mob will NEVER flee in the last direction.
     {
         send_to_char ("THERE IS NOWHERE TO FLEE!!\n\r", ch);
         return;

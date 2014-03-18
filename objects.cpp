@@ -10774,7 +10774,7 @@ OBJ_DATA *
   char *vari_list[10];	
   char buf[200];
 
-  // Initalize pointer array and slots
+  // Initalize pointer array and slots used to hold variable categories on produced obj (to_obj_vnum)
   for (j = 0; j<10;j++)
   {
     vari_list[j] = var_list[j]; // initialize pointer
@@ -10791,29 +10791,18 @@ OBJ_DATA *
 	
   for ( j = 0; j < 10; j++) // variables on from_obj
   {
-  //  send_to_gods("Don't panic.  Loop Start From obj cat/color:");  
-  //  send_to_gods(from_obj->var_cat[j]);
-	//send_to_gods(from_obj->var_color[j]);
-	//send_to_gods("to_obj_vnum variable:");
-	//send_to_gods(var_list[j]);
-	//send_to_gods("Loop End");
-    
-	
-    for ( k = 0; k < 10; k++) // variables of obj we're going to load
+    for ( k = 0; k < 10; k++) // variables of obj we're going to load (to_obj_vnum)
     {
       if (!(strcmp(var_list[k], from_obj->var_cat[j])) && strlen(var_list[k]) >= 2 )  // Make sure variable category is at least two chars long and they match
       {
-        slot[k] = j;
+        if (slot[k] < 0)  // Only assign if slot[k] still has not been assigned already - Should allow for duplicate variables to pass through.
+		  slot[k] = j;
 		//sprintf(buf, "from slot: >>>%d<<< to slot: >>>%d<<<", j, k);
 		//send_to_gods(buf);
 	  }
     }
   }
-  //send_to_gods("Load color 0:");
-  //send_to_gods(from_obj->var_color[0]);
-  //send_to_gods("Load color for slot 0:");
-  //send_to_gods(from_obj->var_color[slot[0]]);
-	
+  	
   return(load_colored_object( 
         to_obj_vnum, 
 	    slot[0] >= 0 ? from_obj->var_color[slot[0]] : 0, 
