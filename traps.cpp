@@ -470,7 +470,8 @@ void
 		act ("Usage: trap assemble <object, 'room' or exit> <trigger> <components>", false, ch, 0, 0, TO_CHAR);
 		return;
 	}
-
+/*
+		
 	if (!strn_cmp ("north", arg, strlen (arg)))
 		dir = 0;
 	else if (!strn_cmp ("east", arg, strlen (arg)))
@@ -483,8 +484,8 @@ void
 		dir = 4;
 	else if (!strn_cmp ("down", arg, strlen (arg)))
 		dir = 5;
-
-	if (dir >= 0)
+*/
+	if (dir = lookup_dir(arg) >= 0) 
 	{
 		if (!EXIT (ch, dir))
 		{
