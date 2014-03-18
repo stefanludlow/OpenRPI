@@ -490,7 +490,7 @@ const struct command_data commands[] =
     {"rexitrm", do_rexitrm, DEAD, C_LV1},
     {"rflags", do_rflags, DEAD, C_LV1},
     {"rgate", do_rgate, DEAD, C_LV1},
-    {"rinit", do_rinit, DEAD, C_LV1},
+    {"rinit", do_rinit, DEAD, C_IMP},
     {"rkey", do_rkey, DEAD, C_LV1},
     {"rlink", do_rlink, DEAD, C_LV1},
     {"rlinkrm", do_rlinkrm, DEAD, C_LV1},
