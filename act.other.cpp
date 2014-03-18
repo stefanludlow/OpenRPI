@@ -2040,7 +2040,7 @@ do_sneak (CHAR_DATA * ch, char *argument, int cmd)
 
         if (IS_NPC (ch) && IS_SET (ch->affected_by, AFF_SNEAK))
         {
-		  sprintf(buf, dirs[cmd]); // replaces dozen lines below
+		  sprintf(buf, "%s", dirs[cmd]); // replaces dozen lines below
 		  /*
             if (cmd == 0)
                 sprintf (buf, "north");
