@@ -353,6 +353,7 @@ void
 	OBJ_DATA *target_obj = NULL;
 	SUBCRAFT_HEAD_DATA *subcraft;
 	AFFECTED_TYPE *af;
+	AFFECTED_TYPE *c_aff;
 	bool sectors = false;
 	bool pass = false;
 	bool seasonchk = false;
@@ -416,8 +417,11 @@ void
 	craft_affect->a.craft->target_ch = target_ch;
 	craft_affect->a.craft->target_obj = target_obj;
 
-	if (get_affect (ch, MAGIC_CRAFT_DELAY)
-		&& (craft_affect->a.craft->subcraft->delay || craft_affect->a.craft->subcraft->faildelay) && IS_MORTAL (ch) && !engine.in_test_mode ())
+	if ((c_aff = get_affect (ch, MAGIC_CRAFT_DELAY))
+		&& (craft_affect->a.craft->subcraft->delay || craft_affect->a.craft->subcraft->faildelay) 
+		&& IS_MORTAL (ch) 
+		&& !engine.in_test_mode ()
+		&& ((c_aff->a.spell.modifier - time (0)) > GAME_SECONDS_PER_DAY ))
 	{
 		act
 			("Sorry, but your OOC craft delay timer is still in place. You'll receive a notification when it expires and you're free to craft delayed items again.",
@@ -4261,7 +4265,7 @@ int
 	PHASE_DATA *phase;
 	int seconds = 0, skill = 0, numskills = 0;
 
-	seconds = craft->delay * 60 * 60;
+	seconds = craft->delay * 60; // * 60;
 
 	for (phase = craft->phases; phase; phase = phase->next)
 	{
@@ -4298,7 +4302,7 @@ int
 	PHASE_DATA *phase;
 	int seconds = 0, skill = 0, numskills = 0;
 
-	seconds = craft->faildelay * 60 * 60;
+	seconds = craft->faildelay * 60; // * 60;
 
 	for (phase = craft->phases; phase; phase = phase->next)
 	{
@@ -4366,6 +4370,7 @@ void
 	CRAFT_VARIABLE_DATA *vars = NULL;
 	int item_required[MAX_ITEMS_PER_SUBCRAFT];
 	char buf[MAX_STRING_LENGTH];
+	AFFECTED_TYPE *c_aff;
 
 	for (int i = 0; i < MAX_ITEMS_PER_SUBCRAFT; i++)
 	{
@@ -5586,7 +5591,7 @@ void
 
 		if (af->a.craft->subcraft->faildelay)
 		{
-			delay_time = time (0) + figure_craft_faildelay (ch, af->a.craft->subcraft);
+			delay_time = (((c_aff = get_affect (ch, MAGIC_CRAFT_DELAY)) ? c_aff->a.spell.modifier : time (0)) + figure_craft_faildelay (ch, af->a.craft->subcraft));
 			magic_add_affect (ch, MAGIC_CRAFT_DELAY, -1, delay_time, 0, 0, 0);
 		}
 
@@ -5762,7 +5767,8 @@ void
 
 	if (af->a.craft->subcraft->delay && !af->a.craft->phase)
 	{
-		delay_time = time (0) + figure_craft_delay (ch, af->a.craft->subcraft);
+	    delay_time = (((c_aff = get_affect (ch, MAGIC_CRAFT_DELAY)) ? c_aff->a.spell.modifier : time (0)) + figure_craft_delay (ch, af->a.craft->subcraft));
+		// delay_time = time (0) + figure_craft_delay (ch, af->a.craft->subcraft);
 		magic_add_affect (ch, MAGIC_CRAFT_DELAY, -1, delay_time, 0, 0, 0);
 	}
 
@@ -6353,7 +6359,7 @@ void
 	if (!*buf)
 	{
 		send_to_char
-			("How many OOC hours did you want to set the delay timer to?\nUse <cset delay X fail> for failure delay.\n",
+			("How many OOC minutes did you want to set the delay timer to?\nUse <cset delay X fail> for failure delay.\n",
 			ch);
 		return;
 	}
@@ -6361,7 +6367,7 @@ void
 	if (!isdigit (*buf))
 	{
 		send_to_char
-			("You must specify a number of RL hours to set the timer to.\n",
+			("You must specify a number of RL minutes to set the timer to.\n",
 			ch);
 		return;
 	}
