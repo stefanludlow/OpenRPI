@@ -848,13 +848,13 @@ void
 
 	if (craft->delay > 0)
 	{
-		sprintf (buf, "#6OOC Delay Timer:#0 %d RL Hours\n", craft->delay);
+		sprintf (buf, "#6OOC Delay Timer:#0 %d RL Minutes\n", craft->delay);
 		send_to_char (buf, ch);
 	}
 
 	if (craft->faildelay > 0)
 	{
-		sprintf (buf, "#6OOC Failure Timer:#0 %d RL Hours\n", craft->faildelay);
+		sprintf (buf, "#6OOC Failure Timer:#0 %d RL Minutes\n", craft->faildelay);
 		send_to_char (buf, ch);
 	}
 
@@ -5592,6 +5592,7 @@ void
 		if (af->a.craft->subcraft->faildelay)
 		{
 			delay_time = (((c_aff = get_affect (ch, MAGIC_CRAFT_DELAY)) ? c_aff->a.spell.modifier : time (0)) + figure_craft_faildelay (ch, af->a.craft->subcraft));
+			remove_affect_type (ch, MAGIC_CRAFT_DELAY);
 			magic_add_affect (ch, MAGIC_CRAFT_DELAY, -1, delay_time, 0, 0, 0);
 		}
 
@@ -5769,6 +5770,7 @@ void
 	{
 	    delay_time = (((c_aff = get_affect (ch, MAGIC_CRAFT_DELAY)) ? c_aff->a.spell.modifier : time (0)) + figure_craft_delay (ch, af->a.craft->subcraft));
 		// delay_time = time (0) + figure_craft_delay (ch, af->a.craft->subcraft);
+		remove_affect_type (ch, MAGIC_CRAFT_DELAY);
 		magic_add_affect (ch, MAGIC_CRAFT_DELAY, -1, delay_time, 0, 0, 0);
 	}
 
@@ -6766,11 +6768,11 @@ void
 
 	/** delay **/
 	if (craft->delay)
-		sprintf (b_buf + strlen (b_buf), "  #6OOC Delay Timer:#0 %d RL Hours\n",
+		sprintf (b_buf + strlen (b_buf), "  #6OOC Delay Timer:#0 %d RL Minutes\n",
 		craft->delay);
 
 	if (craft->faildelay)
-		sprintf (b_buf + strlen (b_buf), "  #6OOC Delay Timer:#0 %d RL Hours\n",
+		sprintf (b_buf + strlen (b_buf), "  #6OOC Delay Timer:#0 %d RL Minutes\n",
 		craft->faildelay);
 
 	if (craft->failure)
