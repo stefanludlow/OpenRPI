@@ -12180,7 +12180,7 @@ do_mset (CHAR_DATA * ch, char *argument, int cmd)
             }
             ind = atoi(buf);
 
-            if (ind < SOMA_FIRST || ind > SOMA_LAST)
+            if (ind < 900 || ind > SOMA_LAST)
             {
                 send_to_char ("I couldn't find that affect in the database.\n", ch);
                 return;
