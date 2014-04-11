@@ -5162,7 +5162,9 @@ int
 
 	if (*dir)			/* a direction was specified */
 	{
-		if ((door = search_block (dir, dirs, false)) == -1)	/* Partial Match */
+		door = lookup_dir( dir );
+//		if ((door = search_block (dir, dirs, false)) == -1)	/* Partial Match */
+		if( door == -1 )
 		{
 			send_to_char ("That's not a direction.\n", ch);
 			return (-1);
