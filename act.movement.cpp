@@ -1292,6 +1292,15 @@ void
 	}
 }
 
+void clear_status( CHAR_DATA *ch )
+{
+	if( ch->status_str )
+	{
+		mem_free( ch->status_str );
+		ch->status_str = NULL;
+	}
+}
+
 int
 	check_climb (CHAR_DATA * ch)
 {

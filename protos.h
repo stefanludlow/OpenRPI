@@ -1340,6 +1340,7 @@ int generic_find (char *arg, int bitvector, CHAR_DATA * ch,
 		  CHAR_DATA ** tar_ch, OBJ_DATA ** tar_obj);
 char *swap_xmote_target (CHAR_DATA * ch, char *argument, int cmd);
 void clear_pmote (CHAR_DATA * ch);
+void clear_status( CHAR_DATA * ch );
 void clear_voice (CHAR_DATA * ch);
 int suffocated (CHAR_DATA * ch);
 int drowned (CHAR_DATA * ch);

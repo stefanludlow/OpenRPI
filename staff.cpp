@@ -7666,7 +7666,30 @@ void do_set( CHAR_DATA * ch, char *argument, int cmd ) {
 		ch->plr_flags &= ~MENTOR;
 		return;
 	}
-
+	else if( ! str_cmp( subcmd, "status" ) )
+	{
+		if( ! *argument )
+		{
+			sprintf( buf, "Your current status string: (#2%s#0)\n", ( ch->status_str ) ? ch->status_str : "none" );
+			send_to_char( buf, ch );
+		}
+		else if( ! strcmp( argument, "normal" ) )
+		{
+			sprintf( buf, "Your current status string has been cleared." );
+			act( buf, false, ch, 0, 0, TO_CHAR );
+			clear_status( ch );
+		}
+		else if( ch && argument )
+		{
+			ch->status_str = str_dup( std::string( argument ).substr( 0, 20 ).c_str( ) );
+			if( ! IS_NPC( ch ) )
+			{
+				sprintf( buf, "Your status string is now: %s", argument );
+				act( buf, false, ch, 0, 0, TO_CHAR | _ACT_FORMAT );
+			}
+		}
+		return;
+	}
 	else if ( !str_cmp( subcmd, "prompt" ) ) {
 		if ( !GET_FLAG (ch, FLAG_NOPROMPT) ) {
 			ch->flags |= FLAG_NOPROMPT;
