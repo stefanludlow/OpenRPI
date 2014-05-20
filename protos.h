@@ -1340,6 +1340,7 @@ int generic_find (char *arg, int bitvector, CHAR_DATA * ch,
 		  CHAR_DATA ** tar_ch, OBJ_DATA ** tar_obj);
 char *swap_xmote_target (CHAR_DATA * ch, char *argument, int cmd);
 void clear_pmote (CHAR_DATA * ch);
+void clear_status( CHAR_DATA * ch );
 void clear_voice (CHAR_DATA * ch);
 int suffocated (CHAR_DATA * ch);
 int drowned (CHAR_DATA * ch);
@@ -1456,7 +1457,6 @@ load_exact_colored_object (int vnum, char *color0, char *color1, char *color2, c
 OBJ_DATA *fread_object (int vnum, int nZone, FILE * fp);
 OBJ_DATA *fread_obj (FILE * fp);
 void death_email (CHAR_DATA * ch);
-int index_lookup (const char* const* index, const char* lookup);
 int check_climb (CHAR_DATA * ch);
 int _filbuf ();
 int ungetc ();
@@ -1491,7 +1491,8 @@ int soma_add_affect (CHAR_DATA * ch, int type, int duration, int latency,
 
 int swimming_check (CHAR_DATA * ch);
 char *lookup_string (int value, int reg_index);
-int lookup_dir(char *value); // Nimrod added 7 Sept 13
+int index_lookup (const char* const* index, const char* lookup);
+int lookup_dir(const char *value); // Nimrod added 7 Sept 13
 
 //char* vc_rand(char *category);
 
