@@ -5718,6 +5718,7 @@ char_data::clear_char ()
     this->short_descr = NULL;
     this->long_descr = NULL;
     this->pmote_str = NULL;
+    this->status_str = NULL;
     this->voice_str = NULL;
     this->description = NULL;
     this->sex = 0;

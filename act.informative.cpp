@@ -7691,6 +7691,17 @@ do_info (CHAR_DATA * ch, char *argument, int cmd)
     }
 }
 
+void print_score_mote( CHAR_DATA* ch, const char* const field, const char* index )
+{
+	char buf[MAX_STRING_LENGTH] = { '\0' };
+	if( index )
+	{
+		sprintf( buf, "Your current %s string: (#2%s#0)\n", field, index );
+		send_to_char( buf, ch );
+	}
+}
+
+
 void
 do_score (CHAR_DATA * ch, char *argument, int cmd)
 {
@@ -8262,35 +8273,14 @@ do_score (CHAR_DATA * ch, char *argument, int cmd)
     if (IS_SET (ch->affected_by, AFF_HOODED))
         send_to_char ("You are currently cloaked and hooded.\n", ch);
 
-    if (ch->voice_str)
-    {
-        send_to_char ("\nYour current voice string: (#2", ch);
-        send_to_char (ch->voice_str, ch);
-        send_to_char ("#0)\n", ch);
-    }
-
-    if (ch->travel_str)
-    {
-        if (!ch->voice_str)
-            send_to_char ("\n", ch);
-        send_to_char ("Your current travel string: (#2", ch);
-        send_to_char (ch->travel_str, ch);
-        send_to_char ("#0)\n", ch);
-    }
-
-    if (ch->pmote_str)
-    {
-        if (!ch->voice_str && !ch->travel_str)
-            send_to_char ("\n", ch);
-        send_to_char ("Your current pmote: (#2", ch);
-        send_to_char (ch->pmote_str, ch);
-        send_to_char ("#0)\n", ch);
-    }
+	send_to_char( "\n", ch );
+	print_score_mote( ch, "voice", ch->voice_str );
+	print_score_mote( ch, "travel", ch->travel_str );
+	print_score_mote( ch, "pmote", ch->pmote_str );
+	print_score_mote( ch, "status", ch->status_str );
 
     if (ch->dmote_str)
     {
-        if (!ch->voice_str && !ch->travel_str && !ch->pmote_str)
-            send_to_char ("\n", ch);
         send_to_char ("Your current dmote:\n", ch);
         send_to_char (ch->dmote_str, ch);
         send_to_char ("\n", ch);
@@ -10563,24 +10553,26 @@ do_locate (CHAR_DATA * ch, char *argument, int cmd)
 void
 do_where (CHAR_DATA * ch, char *argument, int cmd)
 {
-    char clan[MAX_INPUT_LENGTH] = "";
-    char name[MAX_INPUT_LENGTH] = "";
-    char buf[MAX_STRING_LENGTH] = "";
-    char buf1[MAX_STRING_LENGTH] = "";
-    char strFmtName[AVG_STRING_LENGTH] = "#1No Name!#0";
-    char strFmtAnim[AVG_STRING_LENGTH] = "";
-    char strFmtRoom[AVG_STRING_LENGTH] = "";
-    unsigned short int nMaxFmtRoomLen = WHERE_LINE_LEN;
-    unsigned short int nDescriptors = 0, x = 0, y = 0;
-    int arrRoom[500], tmpRoom = 0, rpp = 0;
-    unsigned char bIsInWater = 0;
-    ROOM_DATA *ch_room = NULL;
-    register CHAR_DATA *i = NULL;
-    register OBJ_DATA *k = NULL;
-    struct descriptor_data *d = NULL;
-    char chrState = ' ';
-    bool check_aura = false;
-    bool check_clan = false;
+	char clan[MAX_INPUT_LENGTH] = "";
+	char name[MAX_INPUT_LENGTH] = "";
+	char buf[MAX_STRING_LENGTH] = "";
+	char buf1[MAX_STRING_LENGTH] = "";
+	char strFmtName[AVG_STRING_LENGTH] = "#1No Name!#0";
+	char strFmtAnim[AVG_STRING_LENGTH] = "";
+	char strFmtRoom[AVG_STRING_LENGTH] = "";
+	char strFmtStatus[AVG_STRING_LENGTH] = "";
+	unsigned short int nMaxFmtRoomLen = WHERE_LINE_LEN;
+	unsigned short int nDescriptors = 0, x = 0, y = 0;
+	int arrRoom[500], tmpRoom = 0, rpp = 0;
+	int status_strlen = 20;
+	unsigned char bIsInWater = 0;
+	ROOM_DATA *ch_room = NULL;
+	register CHAR_DATA *i = NULL;
+	register OBJ_DATA *k = NULL;
+	struct descriptor_data *d = NULL;
+	char chrState = ' ';
+	bool check_aura = false;
+	bool check_clan = false;
 
     one_argument (argument, name);
     if (strcmp (name,"aura") == 0)
@@ -10765,24 +10757,24 @@ do_where (CHAR_DATA * ch, char *argument, int cmd)
                         }
                         }
 
+			sprintf( strFmtStatus, "%20.20s", ch->status_str ? ch->status_str : "(none)" );
 
                         /* Put the room together */
-                        nMaxFmtRoomLen =
-                            (WHERE_LINE_LEN + 6 +
-                             ((strlen (strFmtAnim) >
-                               0) ? 4 : 0)) - (strlen (strFmtName) +
-                                               strlen (strFmtAnim));
+                        nMaxFmtRoomLen = (WHERE_LINE_LEN + 6 + ((strlen (strFmtAnim) >0) ? 4 : 0))
+				- strlen( strFmtName )
+				- strlen( strFmtAnim )
+				- strlen( strFmtStatus );
                         if (strlen (strFmtRoom) >= nMaxFmtRoomLen)
                         {
                             strcpy (strFmtRoom + (nMaxFmtRoomLen - 3), "...");
                         }
-                        sprintf (buf + strlen (buf), "%s#0 #%c%c#0 %s#0%s#0\n",
+                        sprintf (buf + strlen (buf), "%s#0 #%c%c#0 %s %s#0%s#0\n",
                                  strFmtName, (chrState <= 'Z'
                                               && chrState >=
                                               'A') ? '1' : ((chrState <= 'z'
                                                              && chrState >=
                                                              'a') ? '3' : '0'),
-                                 chrState, strFmtRoom, strFmtAnim);
+                                 chrState, strFmtStatus, strFmtRoom, strFmtAnim);
                     }
                 }
 
@@ -10817,15 +10809,9 @@ do_where (CHAR_DATA * ch, char *argument, int cmd)
             {
 
                 if (IS_NPC(i))
-                    sprintf (buf + strlen (buf),
-                             "#5%-20.20s#0 - #2[%5d]#0 #6%s#0\n", char_short (i),
-                             vnum_to_room (i->in_room)->vnum,
-                             vnum_to_room (i->in_room)->name);
+                    sprintf (buf + strlen (buf), "#5%-20.20s#0 - #2[%5d]#0 #6%s#0\n", char_short (i), vnum_to_room (i->in_room)->vnum, vnum_to_room (i->in_room)->name);
                 else
-                    sprintf (buf + strlen (buf),
-                             "#5%-20.20s#0 - #2[%5d]#0 #6%s#0\n", i->tname,
-                             vnum_to_room (i->in_room)->vnum,
-                             vnum_to_room (i->in_room)->name);
+                    sprintf (buf + strlen (buf), "#5%-20.20s#0 - #2[%5d]#0 #6%s#0\n", i->tname, vnum_to_room (i->in_room)->vnum, vnum_to_room (i->in_room)->name);
 
 
             }
