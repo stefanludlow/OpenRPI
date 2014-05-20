@@ -977,7 +977,7 @@ point_update (void)
                  ch);
                 remove_affect_type (ch, MAGIC_CRAFT_DELAY);
             }
-			if (time (0) - ACTIVITY_TIMER_MAX <= af->a.spell.modifier)
+			if ((abs(time (0) + ACTIVITY_TIMER_MAX - af->a.spell.modifier )) < 8)
 			{
 			 send_to_char
                 ("#6OOC: Your activity delay timer has dropped below maximum.#0\n",
