@@ -1229,7 +1229,7 @@ delayed_mend2 (CHAR_DATA * ch)
 			}
 		}
 
-		running_cost = cost;
+		running_cost = cost; 
 
 		if (GET_ITEM_TYPE(obj) == ITEM_FIREARM || GET_ITEM_TYPE(obj) == ITEM_WEAPON)
 		{

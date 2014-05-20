@@ -4544,11 +4544,11 @@ void
 		act ("You wear $p over your eyes.", true, ch, obj, 0, TO_CHAR | _ACT_FORMAT);
 		break;
 	case 29:
-		act ("$n slips $p up around $s hips!", true, ch, obj, 0, TO_ROOM | _ACT_FORMAT);
+		act ("$n slips $p up around $s hips.", true, ch, obj, 0, TO_ROOM | _ACT_FORMAT);
 		act ("You slip $p up around your hips.", true, ch, obj, 0, TO_CHAR | _ACT_FORMAT);
 		break;
 	case 13:
-		act ("$n wears $p around $s chest!", true, ch, obj, 0, TO_ROOM | _ACT_FORMAT);
+		act ("$n wears $p around $s chest.", true, ch, obj, 0, TO_ROOM | _ACT_FORMAT);
 		act ("You wear $p around your chest.", true, ch, obj, 0, TO_CHAR | _ACT_FORMAT);
 		break;
 	}
@@ -7489,7 +7489,7 @@ const int herbArray[HERB_NUMSECTORS * HERB_RARITIES][5] =
 
 
 
-
+// forage vcommon 3 (
 int
 	GetHerbPlant (int sector_type, int pos, int rarity)
 {
@@ -8923,6 +8923,7 @@ void
 	light (CHAR_DATA * ch, OBJ_DATA * obj, int on, int on_off_msg)
 {
 	/* Automatically correct any problems with on/off status */
+	// light()
 
 	if (obj->o.light.hours <= 0)
 		obj->o.light.on = 0;
@@ -9091,7 +9092,7 @@ void
 			return;
 		}
 
-		light (ch, obj, on, true);
+		light (ch, obj, on, true); // line 8922 search for light()
 	}
 }
 

@@ -2143,7 +2143,7 @@ nanny_read_message (DESCRIPTOR_DATA * d, char *argument)
     }
 }
 
-#define PFILE_QUERY	"SELECT name,create_state FROM %s.pfiles WHERE account = '%s' AND create_state != 4 ORDER BY birth ASC"
+#define PFILE_QUERY	"SELECT name,create_state FROM %s.pfiles WHERE account = '%s' AND create_state < 4 ORDER BY birth ASC"
 
 void
 nanny_connect_select (DESCRIPTOR_DATA * d, char *argument)
@@ -2386,10 +2386,11 @@ nanny_connect_select (DESCRIPTOR_DATA * d, char *argument)
                     sprintf (state, "#5(Suspended)#0");
                 else
                     sprintf (state, "#1(Deceased)#0");
-                sprintf (buf, "%2d. %-20s %s\n", i, row[0], state);
-                SEND_TO_Q (buf, d);
-                i++;
-            }
+				
+				sprintf (buf, "%2d. %-20s %s\n", i, row[0], state);
+                  SEND_TO_Q (buf, d);
+                  i++;
+		    }
             SEND_TO_Q ("\nYour Selection: ", d);
             d->connected = CON_CHOOSE_PC;
             if (result)

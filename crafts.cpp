@@ -421,10 +421,10 @@ void
 		&& (craft_affect->a.craft->subcraft->delay || craft_affect->a.craft->subcraft->faildelay) 
 		&& IS_MORTAL (ch) 
 		&& !engine.in_test_mode ()
-		&& ((c_aff->a.spell.modifier - time (0)) > GAME_SECONDS_PER_DAY ))
+		&& ((c_aff->a.spell.modifier - time (0)) > ACTIVITY_TIMER_MAX ))
 	{
 		act
-			("Sorry, but your OOC craft delay timer is still in place. You'll receive a notification when it expires and you're free to craft delayed items again.",
+			("Sorry, but your OOC activity timer is full. You'll receive a notification when it expires.",
 			false, ch, 0, 0, TO_CHAR | _ACT_FORMAT);
 		return;
 	}
