@@ -4161,6 +4161,8 @@ struct encumberance_info
 #define MOON_CYCLE 2881443 // 29 days, 12 hours, 44 minutes and 3 seconds)
 #define MOON_ORBIT 2388720 // 27.3days
 
+#define ACTIVITY_TIMER_MAX 172800
+
 
 #define MODE_COMMAND		(1 << 0)
 #define MODE_DONE_EDITING	(1 << 1)

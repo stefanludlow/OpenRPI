@@ -973,10 +973,16 @@ point_update (void)
             if (time (0) >= af->a.spell.modifier)
             {
                 send_to_char
-                ("#6OOC: Your craft delay timer has expired. You may resume crafting delayed items.#0\n",
+                ("#6OOC: Your activity delay timer has expired.#0\n",
                  ch);
                 remove_affect_type (ch, MAGIC_CRAFT_DELAY);
             }
+			if (time (0) - ACTIVITY_TIMER_MAX <= af->a.spell.modifier)
+			{
+			 send_to_char
+                ("#6OOC: Your activity delay timer has dropped below maximum.#0\n",
+                 ch);
+			}
         }
 
         if ((af = get_affect (ch, AFFECT_UPGRADE_DELAY)))

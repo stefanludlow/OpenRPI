@@ -7186,13 +7186,13 @@ get_stat_range (int score)
 {
     if (score <= 4)
         return 0;
-    if (score >= 7 && score <= 8)
+    if (score >= 5 && score <= 7)
         return 1;
-    if (score >= 9 && score <= 10)
+    if (score >= 8 && score <= 9)
         return 2;
-    if (score >= 11 && score <= 13)
+    if (score >= 10 && score <= 12)
         return 3;
-    if (score >= 14 && score <= 15)
+    if (score >= 13 && score <= 15)
         return 4;
     if (score >= 16 && score <= 17)
         return 5;
