@@ -10757,7 +10757,7 @@ do_where (CHAR_DATA * ch, char *argument, int cmd)
                         }
                         }
 
-			sprintf( strFmtStatus, "%20.20s", ch->status_str ? ch->status_str : "(none)" );
+			sprintf( strFmtStatus, "%20.20s", ch->status_str ? i->status_str : "(none)" );
 
                         /* Put the room together */
                         nMaxFmtRoomLen = (WHERE_LINE_LEN + 6 + ((strlen (strFmtAnim) >0) ? 4 : 0))
