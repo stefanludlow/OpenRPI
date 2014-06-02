@@ -6355,7 +6355,7 @@ void
 			else if ((currency_type == CURRENCY_PHOENIX
 				&& (obj->nVirtual >= 14011 && obj->nVirtual <= 14017)))
 				*/
-			if ( tobj->nVirtual == 14011 || tobj->nVirtual == 14013 || tobj->nVirtual == 14016 )
+			if ( obj->nVirtual == 14011 || obj->nVirtual == 14013 || obj->nVirtual == 14016 )
 			{
 				money += ((int) ch->right_hand->farthings) * ch->right_hand->count;
 				extract_obj (ch->right_hand);
@@ -6410,7 +6410,7 @@ void
 			else if ((currency_type == CURRENCY_PHOENIX
 				&& (obj->nVirtual >= 14011 && obj->nVirtual <= 14017)))
 				*/
-			if ( tobj->nVirtual == 14011 || tobj->nVirtual == 14013 || tobj->nVirtual == 14016 )
+			if ( obj->nVirtual == 14011 || obj->nVirtual == 14013 || obj->nVirtual == 14016 )
 			{
 				money += ((int)ch->left_hand->farthings * ch->left_hand->count);
 				extract_obj (ch->left_hand);
