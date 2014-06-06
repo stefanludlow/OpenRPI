@@ -1735,6 +1735,7 @@ create_description (CHAR_DATA * mob)
     char buf2[MAX_STRING_LENGTH];
     char buf3[MAX_STRING_LENGTH];
     int roll;
+	int i;
 
     /*
      for (i = 0; *variable_races[i] != '\n'; i++)
@@ -1747,7 +1748,14 @@ create_description (CHAR_DATA * mob)
        return;
      }
      */
-
+	// Set all mob variable information to NULL 0217141825 -Nimrod
+	for (i = 0; i < 10; i++)
+	{
+	  mob->mob_color_name[i] = '\0'; 
+	  mob->mob_color_cat[i] = '\0';
+	}
+	i = 0; // Reset i
+	
     if (IS_NPC(mob))
         insert_mobile_variables (mob, vnum_to_mob(mob->mob->vnum), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
     else
