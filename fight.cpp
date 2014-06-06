@@ -1357,7 +1357,8 @@ make_corpse (CHAR_DATA * ch)
 	// Pass the mob variables to the corpse if they exist.
 	for (j=0 ; j < 10; j++)
 	  {
-	    if (ch->mob_color_cat[j] && ch->mob_color_name[j] && IS_NPC(ch))
+	   //  if (ch->mob_color_cat[j] && ch->mob_color_name[j] && IS_NPC(ch))
+		if (ch->mob_color_cat[j] && ch->mob_color_name[j])
 		{
 	      // sprintf( buf, "Variable %d: %s is set as: %s.\n", j, k->mob_color_cat[j], k->mob_color_name[j]);
 		  // send_to_char(buf, ch);

@@ -66,6 +66,15 @@ create_guest_avatar (DESCRIPTOR_DATA * d, char *argument)
   d->character->descriptor = d;
   d->character->pc->owner = d;
   d->character->pc->load_count = 1;
+  
+  	// Set all mob variable information to NULL 1739060614 -Nimrod
+	for (i = 0; i < 10; i++)
+	{
+	  ch->mob_color_name[i] = '\0'; 
+	  ch->mob_color_cat[i] = '\0';
+	}
+	i = 0; // Reset i
+  
 
   roll = number (1, 11);
 
