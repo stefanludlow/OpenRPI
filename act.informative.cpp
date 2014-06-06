@@ -10938,11 +10938,11 @@ do_who (CHAR_DATA * ch, char *argument, int cmd)
 
     if (!mortals)
         sprintf (s_buf,
-                 "\nThe world is currently an empty wasteland, void of souls.\n");
+                 "\nThe world is currently a blank canvass.\n");
     else if (mortals == 1)
-        sprintf (s_buf, "\nThere is currently #21#0 poor sap being lonely.\n");
+        sprintf (s_buf, "\nThere is currently #21#0 soul braving the world all alone.\n");
     else
-        sprintf (s_buf, "\nThere are currently #2%d#0 grungy denizens roaming the world.\n",
+        sprintf (s_buf, "\nThere are currently #2%d#0 inhabitants of Middle-Earth.\n",
                  mortals);
 
     if (guests)

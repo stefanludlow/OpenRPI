@@ -4147,7 +4147,7 @@ struct encumberance_info
 #define TRIG_PRISONER	11
 #define TRIG_KNOCK		12
 
-#define GAME_BASE_YEAR		2697   // Battle of 5 armies was 2941  189
+#define GAME_BASE_YEAR		2731   // Battle of 5 armies was 2941  189
 #define GAME_SECONDS_BEGINNING  100	/* Subtr 10800 to ++gametime 12hr */
 #define GAME_SECONDS_PER_YEAR	31104000 // real life seconds in a year
 #define GAME_SECONDS_PER_MONTH	2592000 // real life seconds in a month
