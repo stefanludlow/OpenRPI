@@ -937,11 +937,11 @@ OBJ_DATA *
         continue;
       }
 
-      if (size && ptrBullet->o.bullet.size != size)
-      {
-        *error_msg = 1;
-        continue;
-      }
+     //  if (size && ptrBullet->o.bullet.size != size)
+     //  {
+     //    *error_msg = 1;
+     //    continue;
+     //  }
 
       ch->delay_info2 = ptrBullet->nVirtual;
       ch->delay_info1 = ptrBelt->nVirtual;
