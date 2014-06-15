@@ -4218,55 +4218,53 @@ void
 do_rlink (CHAR_DATA * ch, char *argument, int cmd)
 {
 
-    char buf1[2];
-    char buf2[MAX_INPUT_LENGTH];
-    int dir;
-    int cha_rnum;
-    ROOM_DATA *troom;
+	char buf1[MAX_INPUT_LENGTH];
+	char buf2[MAX_INPUT_LENGTH];
+	int dir;
+	int cha_rnum;
+	ROOM_DATA *troom;
 
-    argument = one_argument (argument, buf1);
-    argument = one_argument (argument, buf2);
+	argument = one_argument (argument, buf1);
+	argument = one_argument (argument, buf2);
 
-    if (!*buf2)
-    {
-        send_to_char ("Syntax:  rlink <direction> <room-number>\n", ch);
-        return;
-    }
-	send_to_char( ( std::string( "Raw input: " ) + buf1 + "\nSecondary arg" + buf2 ).c_str( ), ch );
+	if (!*buf2)
+	{
+		send_to_char ("Syntax:  rlink <direction> <room-number>\n", ch);
+		return;
+	}
 	dir = lookup_dir(buf1);
-    if (dir == -1)
-    {
-        send_to_char ("What direction is that?\n", ch);
-        return;
-    }
+	if (dir == -1)
+	{
+		send_to_char ("What direction is that?\n", ch);
+		return;
+	}
 
-    cha_rnum = ch->in_room;
+	cha_rnum = ch->in_room;
 
-    if (!(troom = vnum_to_room (atoi (buf2))))
-    {
-        send_to_char ("No room exists with that number.\n", ch);
-        return;
-    }
+	if (!(troom = vnum_to_room (atoi (buf2))))
+	{
+		send_to_char ("No room exists with that number.\n", ch);
+		return;
+	}
 
-    if (vnum_to_room (ch->in_room)->dir_option[dir])
-        vnum_to_room (vnum_to_room (ch->in_room)->dir_option[dir]->to_room)->
-        dir_option[rev_dir[dir]] = 0;
+	if (vnum_to_room (ch->in_room)->dir_option[dir])
+		vnum_to_room (vnum_to_room (ch->in_room)->dir_option[dir]->to_room)->dir_option[rev_dir[dir]] = 0;
 
-    CREATE (vnum_to_room (cha_rnum)->dir_option[dir], struct room_direction_data, 1);
-    vnum_to_room (cha_rnum)->dir_option[dir]->general_description = 0;
-    vnum_to_room (cha_rnum)->dir_option[dir]->keyword = 0;
-    vnum_to_room (cha_rnum)->dir_option[dir]->exit_info = 0;
-    vnum_to_room (cha_rnum)->dir_option[dir]->key = -1;
-    vnum_to_room (cha_rnum)->dir_option[dir]->to_room = troom->vnum;
+	CREATE (vnum_to_room (cha_rnum)->dir_option[dir], struct room_direction_data, 1);
+	vnum_to_room (cha_rnum)->dir_option[dir]->general_description = 0;
+	vnum_to_room (cha_rnum)->dir_option[dir]->keyword = 0;
+	vnum_to_room (cha_rnum)->dir_option[dir]->exit_info = 0;
+	vnum_to_room (cha_rnum)->dir_option[dir]->key = -1;
+	vnum_to_room (cha_rnum)->dir_option[dir]->to_room = troom->vnum;
 
-    CREATE (troom->dir_option[rev_dir[dir]], struct room_direction_data, 1);
-    troom->dir_option[rev_dir[dir]]->general_description = 0;
-    troom->dir_option[rev_dir[dir]]->keyword = 0;
-    troom->dir_option[rev_dir[dir]]->exit_info = 0;
-    troom->dir_option[rev_dir[dir]]->key = -1;
-    troom->dir_option[rev_dir[dir]]->to_room = cha_rnum;
+	CREATE (troom->dir_option[rev_dir[dir]], struct room_direction_data, 1);
+	troom->dir_option[rev_dir[dir]]->general_description = 0;
+	troom->dir_option[rev_dir[dir]]->keyword = 0;
+	troom->dir_option[rev_dir[dir]]->exit_info = 0;
+	troom->dir_option[rev_dir[dir]]->key = -1;
+	troom->dir_option[rev_dir[dir]]->to_room = cha_rnum;
 
-    send_to_char ("Done.\n", ch);
+	send_to_char ("Done.\n", ch);
 }
 
 void
@@ -5720,7 +5718,7 @@ index_lookup (const char* const* index, const char* const lookup)
 {
 	int i;
 	for (i = 0; *index[i] != '\n'; i++)
-		if (!strn_cmp (index[i], lookup, strlen (lookup)))
+		if( !strn_cmp (index[i], lookup, strlen (lookup)))
 			return i;
 	return -1;
 }
