@@ -1725,7 +1725,7 @@ void
 	  size = 0;
 	  break;
 	case SKILL_SHORTBOW:
-	  size = 1;
+	  size = 12;
 	  break;
 	case SKILL_LONGBOW:
 	  size = 2;

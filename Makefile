@@ -1,61 +1,56 @@
-#################################
-# Makefile for RPI Engine       #
-# Copyright (C) 2006            #
-# Shadows of Isildur            #
+# Makefile for RPI Engine, $Revision: 2.15 $
+# Copyright (C) 2006, Shadows of Isildur
 
-
-#################################
-# CONFIGURATION VARIABLES       #
-SRV_TYPE = tp
-
-
-#################################
-# INTERNAL VARIABLES            #
-#    STANDARD DEFS              #
 CC=g++ -Wno-write-strings 
+
+# SVN_VERS = -D'SVN_REV="$(shell svnversion -n engine/. && touch comm.cpp)"'
+# CFLAGS = $(SVN_VERS) -ggdb -DLINUX -Wall
 CFLAGS = -ggdb -DLINUX -Wall -w
-LIBS = -lcrypt -lmysqlclient -lpthread -lz -lm -lrt -ldl
-INCLUDE = -I/usr/include/mysql/ -I/usr/include/openssl/
-#    DIRECTORY TREE             #
-BASE_DIR = /home/LRPI/$(SRV_TYPE)
-BIN_DIR = $(BASE_DIR)/bin
-SOURCE_DIR = $(BASE_DIR)/src
-OBJ_DIR = .objects
-LIB_DIR = -L/usr/lib/i386-linux-gnu
-#    ACTIVE OBJECT LIST         #
-HEADERS = $(wildcard *.h)
-SOURCE = account act.comm act.informative act.movement act.offensive act.other arena auctions clan \
-comm commands commerce constants control crafts create_mobile creation db destruction dwellings edit \
-employment fight group guest guides handler hash item_card item_tossable limits magic mobact mobprogs \
-mysql nanny net_link object_damage objects olc perception psionics roles roomprogs save server somatics \
-staff transformation utility weather wounds turf traps electronic variables firearms BroadwaveClient
+LFLAGS = -lm -lmysqlclient -lcrypt -lnsl
 
+INSTALL_DIR = /home/LRPI/tp/src
 
-#################################
-# BUILD TARGETS                 #
-#    BINARY                     #
-/home/LRPI/tp/bin/server: $(addprefix $(OBJ_DIR)/,$(addsuffix .o,$(SOURCE)))
-	@echo Rebuilding Binary
-	@$(CC) $(INCLUDE) $(LIB_DIR) -o $@ $(CFLAGS) $(addprefix $(OBJ_DIR)/,$(addsuffix .o,$(SOURCE))) $(LIBS)
-#    COMPILED OBJECTS           #
-$(OBJ_DIR)/%.o: %.cpp $(HEADERS)
-	@echo "    Compiling $<"
-	@$(CC) -c $(CFLAGS) $< -o $@
-#    RECLAIMATION              #
+INCLUDE = -I/usr/local/mysql/include/ -I/usr/include/mysql/ -I/usr/include/openssl/ -I/usr/local/mysql/ -I/usr/local/include/mysql/ -I/usr/lib/mysql
+
+LIBDIRS = -L/usr/lib64/mysql -L/usr/lib/mysql -L/usr/local/mysql/lib -L/usr/include/mysql
+
+OBJS = \
+account.o act.comm.o act.informative.o act.movement.o \
+act.offensive.o act.other.o arena.o auctions.o clan.o comm.o \
+commands.o commerce.o constants.o control.o crafts.o \
+create_mobile.o creation.o db.o destruction.o \
+dwellings.o edit.o employment.o fight.o group.o guest.o \
+guides.o handler.o hash.o item_card.o item_tossable.o \
+limits.o magic.o mobact.o mobprogs.o mysql.o \
+nanny.o net_link.o object_damage.o objects.o olc.o \
+perception.o psionics.o roles.o roomprogs.o save.o \
+server.o somatics.o \
+staff.o transformation.o utility.o weather.o wounds.o \
+turf.o traps.o electronic.o variables.o firearms.o BroadwaveClient.o
+
+HEADERS = \
+account.h clan.h constants.h decl.h group.h net_link.h \
+object_damage.h protos.h server.h structs.h trigram.h utils.h  BroadwaveClient.h
+
+# default target
+/home/LRPI/tp/bin/server: $(OBJS)
+	if test -f ../bin || install -v -d ../bin; then \
+$(CC) $(INCLUDE) $(LIBDIRS) -o $@ $(LFLAGS) $(CFLAGS) $(OBJS) $(PFLAGS); fi
+
+%.o: %.cpp $(HEADERS)
+	$(CC) -c $(CFLAGS) $< $(PFLAGS)
+
+%.o: %.c $(HEADERS)
+	$(CC) -c $(CFLAGS) $< $(PFLAGS)
+
+tags:
+	ctags *.c *.h
+
 clean:
-	@echo Cleaning...
-	@echo "    all binaries"
-	@echo "    intermediary objects"
-	@rm -f $(OBJ_DIR)/*.o $(BIN_DIR)/server
-#    INITIALIZATION            #
-claim:
-	chmod 771 $(BIN_DIR)
-	chmod 771 $(BIN_DIR)/server
-	chown LRPI:LRPI $(BIN_DIR)
-	chown LRPI:LRPI $(BIN_DIR)/server
-.PHONY: clean
+	rm -f *.o $(INSTALL_DIR)/bin/server
 
-################################
-# REQUSITE COMMANDS            #
-#    DIRECTORY INITIALIZATION  #
-$(shell mkdir -p $(OBJDIR) $(BIN_DIR))
+claim:
+	chmod 771 $(INSTALL_DIR)/bin
+	chmod 771 $(INSTALL_DIR)/bin/server
+	chown LRPI:LRPI $(INSTALL_DIR)/bin
+	chown LRPI:LRPI $(INSTALL_DIR)/bin/server
