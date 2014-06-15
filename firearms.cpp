@@ -1724,7 +1724,7 @@ void
 	case SKILL_HANDGUN:
 	  size = 0;
 	  break;
-	case SKILL_SHORTBOW:
+	case 53:  // Shortbow skill
 	  size = 12;
 	  break;
 	case SKILL_LONGBOW:
