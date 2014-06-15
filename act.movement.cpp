@@ -4825,7 +4825,7 @@ void do_move (CHAR_DATA * ch, char *argument, int dir) {
 	AFFECTED_TYPE *af;
 	CHAR_DATA *tch;
 	char buf[AVG_STRING_LENGTH];
-	char command[12];
+	char command[32];
 
 	if (!can_move (ch))
 		return;
@@ -4850,22 +4850,7 @@ void do_move (CHAR_DATA * ch, char *argument, int dir) {
 		stop_tolls (ch);
 
 	// dir = lookup_dir(dir); use constant dirs[] instead of all this other crap
-		sprintf (command, dirs[dir]); // this should take the place of all the crap below. 0208142154 -Nimrod
-/*		
-	if (dir == UP)
-		sprintf (command, "up");
-	else if (dir == DOWN)
-		sprintf (command, "down");
-	else if (dir == EAST)
-		sprintf (command, "east");
-	else if (dir == WEST)
-		sprintf (command, "west");
-	else if (dir == NORTH)
-		sprintf (command, "north");
-	else
-		sprintf (command, "south");
-
-*/
+	sprintf (command, dirs[dir]); // this should take the place of all the crap below. 0208142154 -Nimrod
 
 	if (!is_mounted (ch) && GET_POS (ch) == POSITION_FIGHTING)
 	{
@@ -4921,8 +4906,6 @@ void do_move (CHAR_DATA * ch, char *argument, int dir) {
 		act (buf, false, ch, 0, 0, TO_CHAR | _ACT_FORMAT);
 		return;
 	}
-
-	
 
 	// Old Somatics Code - put in by Tiamat again
 

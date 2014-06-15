@@ -382,7 +382,6 @@ one_argument (char *argument, char *arg_first)
             *arg_first = tolower (*argument);
         else
             *arg_first = *argument;
-
         arg_first++;
         argument++;
     }
@@ -391,12 +390,6 @@ one_argument (char *argument, char *arg_first)
 
     while (isspace (*argument))
         argument++;
-		
-	//if (str_cmp(argument, "ne"))
-	//  return "northeast";
-	// if (str_cmp(argument) "nw"))
-	//  return "northwest";
-	  
 
     return argument;
 }
