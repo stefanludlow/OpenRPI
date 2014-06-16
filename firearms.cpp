@@ -1092,7 +1092,7 @@ void
     /* no Belt either */
     else
     {
-      send_to_char ("You don't seem to be holding rounds or wearing a bandolier.\n", ch);
+      send_to_char ("You don't seem to be holding an arrow or bolt, or wearing a quiver with arrows or bolts.\n", ch);
       return;
     }
   }
@@ -1207,7 +1207,7 @@ void
   /* Was there a missle? */
   if (!ptrBullet)
   {
-    send_to_char ("You don't seem to be holding rounds or wearing a bandolier containing rounds.\n", ch);
+    send_to_char ("You don't seem to be holding an arrow or bolt, or have a quiver containing arrow or bolts.\n", ch);
     return;
   }
 
@@ -1799,7 +1799,7 @@ void
       /* no Belt either */
       else
       {
-        send_to_char ("You don't seem to be either holding rounds or wearing a bandolier with rounds.\n", ch);
+        send_to_char ("You don't seem to be either holding an arrow or bolt, or have a quiver with arrow or bolts.\n", ch);
         return;
       }
     }
@@ -1878,15 +1878,15 @@ void
     {
       if (error_msg == 2)
       {
-        sprintf(buffer, "The rounds you have on you are the wrong caliber for #2%s#0.\n", obj_short_desc(ptrFirearm));
+        sprintf(buffer, "That cannot be loaded into #2%s#0.\n", obj_short_desc(ptrFirearm));
       }
       else if (error_msg == 1)
       {
-        sprintf(buffer, "The rounds you have on you are the wrong size for #2%s#0.\n", obj_short_desc(ptrFirearm));
+        sprintf(buffer, "That cannot be loaded into #2%s#0.\n", obj_short_desc(ptrFirearm));
       }
       else
       {
-        sprintf(buffer, "You need either rounds in your hand, or be wearing bandolier containing rounds.\n");
+        sprintf(buffer, "You need either an arrow or bolt in your hand, or within a quiver.\n");
       }
       send_to_char(buffer, ch);
       return;
