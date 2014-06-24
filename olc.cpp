@@ -7369,14 +7369,22 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
                     base_weight = 3000;
                     break;
                 case 3:
+				    sneak_mod = 1;
+                    obj->o.armor.armor_value = 3;
+                    base_quality = 130;
+                    base_cost = 450.0;
+                    base_weight = 3000;
+                    break;
                 case 4:
-                    obj->o.armor.armor_value = 8;
+					sneak_mod = 1;
+                    obj->o.armor.armor_value = 5;
                     base_quality = 240;
                     base_cost = 17600.0;
                     base_weight = 5000;
                     break;
                 default:
-                    obj->o.armor.armor_value = 6;
+					sneak_mod = 1;
+                    obj->o.armor.armor_value = 5;
                     base_quality = 200;
                     base_cost = 1650.0;
                     base_weight = 4000;
@@ -7390,20 +7398,23 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
                 {
                 case 1:
                 case 5:
-                    obj->o.armor.armor_value = 6;
+					sneak_mod = 1;
+                    obj->o.armor.armor_value = 4;
                     base_quality = 160;
                     base_cost = 1000.0;
                     base_weight = 5000;
                     break;
                 case 3:
                 case 4:
-                    obj->o.armor.armor_value = 10;
+					sneak_mod = 1;
+                    obj->o.armor.armor_value = 6;
                     base_quality = 240;
                     base_cost = 32000.0;
                     base_weight = 6000;
                     break;
                 default:
-                    obj->o.armor.armor_value = 8;
+					sneak_mod = 1;
+                    obj->o.armor.armor_value = 7;
                     base_quality = 200;
                     base_cost = 3000.0;
                     base_weight = 5000;
