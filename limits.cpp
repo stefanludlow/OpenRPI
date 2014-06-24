@@ -1857,8 +1857,8 @@ int combat_skill_use(CHAR_DATA *ch, int skill)
         returned = 1;
         
 	// Can't get above 60 if you're in the Arena.
-	if (vnum_to_room(ch->in_room)->zone == 75)
-		return 0;
+	//if (vnum_to_room(ch->in_room)->zone == 75)
+		//return 0;
 		
     if (value >= 50)
     {
