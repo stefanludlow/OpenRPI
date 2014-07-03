@@ -6848,42 +6848,47 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
             obj->o.od.value[0] = 2; // All small-blades are small weapons.
             switch (quality)
             {
+            // tquality 1d4
             case 5:
-                obj->o.od.value[1] = 2;
-                obj->o.od.value[2] = 3;
-                obj->o.od.value[5] = -1;
+                obj->o.od.value[1] = 1;
+                obj->o.od.value[2] = 4;
+                obj->o.od.value[5] = 0;
                 obj->quality = 500;
                 obj->farthings = 12.5;
                 obj->obj_flags.weight = 200;
                 break;
+            // pquality 1d4+2
             case 1:
-                obj->o.od.value[1] = 2;
-                obj->o.od.value[2] = 3;
-                obj->o.od.value[5] = 0;
+                obj->o.od.value[1] = 1;
+                obj->o.od.value[2] = 4;
+                obj->o.od.value[5] = 2;
                 obj->quality = 800;
                 obj->farthings = 25.0;
                 obj->obj_flags.weight = 175;
                 break;
+            // gquality 1d4+4
             case 3:
-                obj->o.od.value[1] = 2;
-                obj->o.od.value[2] = 3;
-                obj->o.od.value[5] = 2;
+                obj->o.od.value[1] = 1;
+                obj->o.od.value[2] = 4;
+                obj->o.od.value[5] = 4;
                 obj->quality = 1100;
                 obj->farthings = 225.0;
                 obj->obj_flags.weight = 125;
                 break;
+            //squality 1d4+5
             case 4:
-                obj->o.od.value[1] = 2;
-                obj->o.od.value[2] = 3;
-                obj->o.od.value[5] = 3;
+                obj->o.od.value[1] = 1;
+                obj->o.od.value[2] = 4;
+                obj->o.od.value[5] = 5;
                 obj->quality = 1300;
                 obj->farthings = 675.0;
                 obj->obj_flags.weight = 100;
                 break;
+            //1d4+3 oquality
             default:
-                obj->o.od.value[1] = 2;
-                obj->o.od.value[2] = 3;
-                obj->o.od.value[5] = 1;
+                obj->o.od.value[1] = 1;
+                obj->o.od.value[2] = 4;
+                obj->o.od.value[5] = 3;
                 obj->quality = 1000;
                 obj->farthings = 75.0;
                 obj->obj_flags.weight = 150;
@@ -6893,91 +6898,111 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
         case SKILL_BLUDGEON:
             switch (quality)
             {
+            // 1d5 tquality
             case 5:
-                obj->o.od.value[1] = 3;
-                obj->o.od.value[2] = 3;
-                obj->o.od.value[5] = -1;
+                obj->o.od.value[1] = 1;
+                obj->o.od.value[2] = 5;
+                obj->o.od.value[5] = 0;
                 obj->quality = 120;
                 obj->farthings = 17.5;
                 obj->obj_flags.weight = 500;
                 break;
+            // 1d5+2 pquality
             case 1:
-                obj->o.od.value[1] = 3;
-                obj->o.od.value[2] = 3;
-                obj->o.od.value[5] = 0;
+                obj->o.od.value[1] = 1;
+                obj->o.od.value[2] = 5;
+                obj->o.od.value[5] = 2;
                 obj->quality = 800;
                 obj->farthings = 35.0;
                 obj->obj_flags.weight = 450;
                 break;
+            // 1d5+4 gquality
             case 3:
-                obj->o.od.value[1] = 3;
-                obj->o.od.value[2] = 3;
-                obj->o.od.value[5] = 2;
+                obj->o.od.value[1] = 1;
+                obj->o.od.value[2] = 5;
+                obj->o.od.value[5] = 4;
                 obj->quality = 1100;
                 obj->farthings = 400.0;
                 obj->obj_flags.weight = 425;
                 break;
+            // 1d5+5 squality
             case 4:
-                obj->o.od.value[1] = 3;
-                obj->o.od.value[2] = 3;
-                obj->o.od.value[5] = 3;
+                obj->o.od.value[1] = 1;
+                obj->o.od.value[2] = 5;
+                obj->o.od.value[5] = 5;
                 obj->quality = 1300;
                 obj->farthings = 1600.0;
                 obj->obj_flags.weight = 400;
                 break;
+            // 1d5+3 oquality
             default:
-                obj->o.od.value[1] = 3;
-                obj->o.od.value[2] = 3;
-                obj->o.od.value[5] = 1;
+                obj->o.od.value[1] = 1;
+                obj->o.od.value[2] = 5;
+                obj->o.od.value[5] = 3;
                 obj->quality = 1000;
                 obj->farthings = 100.0;
                 obj->obj_flags.weight = 450;
                 break;
             }
+            // For bludgeons, we add +4 to Y where Xd(Y+4) if it's a two-hander.
+            if (obj->o.od.value[0] == 3)
+            {
+                obj->o.od.value[2] += 4;
+            }
             break;
         case SKILL_POLEARM:
             switch (quality)
             {
+            // 2d4-1 trash quality
             case 5:
                 obj->o.od.value[1] = 2;
-                obj->o.od.value[2] = 3;
-                obj->o.od.value[5] = 2;
+                obj->o.od.value[2] = 4;
+                obj->o.od.value[5] = -1;
                 obj->quality = 500;
                 obj->farthings = 17.5;
                 obj->obj_flags.weight = 800;
                 break;
+            // 2d4+1 poor quality
             case 1:
                 obj->o.od.value[1] = 2;
-                obj->o.od.value[2] = 3;
-                obj->o.od.value[5] = 3;
+                obj->o.od.value[2] = 4;
+                obj->o.od.value[5] = 1;
                 obj->quality = 800;
                 obj->farthings = 35.0;
                 obj->obj_flags.weight = 725;
                 break;
+            // 2d4+3 good quality
             case 3:
                 obj->o.od.value[1] = 2;
-                obj->o.od.value[2] = 3;
-                obj->o.od.value[5] = 5;
+                obj->o.od.value[2] = 4;
+                obj->o.od.value[5] = 3;
                 obj->quality = 1100;
                 obj->farthings = 400.0;
                 obj->obj_flags.weight = 675;
                 break;
+            // 2d4+4 superb quality
             case 4:
                 obj->o.od.value[1] = 2;
-                obj->o.od.value[2] = 3;
-                obj->o.od.value[5] = 6;
+                obj->o.od.value[2] = 4;
+                obj->o.od.value[5] = 4;
                 obj->quality = 1300;
                 obj->farthings = 1600.0;
                 obj->obj_flags.weight = 650;
                 break;
+            // 2d4+2 ordinary quality
             default:
                 obj->o.od.value[1] = 2;
-                obj->o.od.value[2] = 3;
-                obj->o.od.value[5] = 4;
+                obj->o.od.value[2] = 4;
+                obj->o.od.value[5] = 2;
                 obj->quality = 1000;
                 obj->farthings = 100.0;
                 obj->obj_flags.weight = 700;
                 break;
+            }
+            // For Polearms, we add +2 damage bonus for two-handed polearms.
+            if (obj->o.od.value[0] == 3)
+            {
+                obj->o.od.value[5] += 2;
             }
             break;
         default: // default to long-blade if nothing else.
@@ -6985,45 +7010,55 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
             switch (quality)
             {
             case 5:
-                obj->o.od.value[1] = 2;
-                obj->o.od.value[2] = 5;
-                obj->o.od.value[5] = 0;
+                // 3d3-2 tquality
+                obj->o.od.value[1] = 3;
+                obj->o.od.value[2] = 3;
+                obj->o.od.value[5] = -2;
                 obj->quality = 500;
                 obj->farthings = 32.5;
                 obj->obj_flags.weight = 425;
                 break;
+                // 3d3 pquality
             case 1:
-                obj->o.od.value[1] = 2;
-                obj->o.od.value[2] = 5;
-                obj->o.od.value[5] = 1;
+                obj->o.od.value[1] = 3;
+                obj->o.od.value[2] = 3;
+                obj->o.od.value[5] = 0;
                 obj->quality = 800;
                 obj->farthings = 65.0;
                 obj->obj_flags.weight = 375;
                 break;
+                // 3d3+2 gquality
             case 3:
-                obj->o.od.value[1] = 2;
-                obj->o.od.value[2] = 5;
-                obj->o.od.value[5] = 3;
+                obj->o.od.value[1] = 3;
+                obj->o.od.value[2] = 3;
+                obj->o.od.value[5] = 2;
                 obj->quality = 1100;
                 obj->farthings = 800.0;
                 obj->obj_flags.weight = 325;
                 break;
+                // 3d3+3 squality
             case 4:
-                obj->o.od.value[1] = 2;
-                obj->o.od.value[2] = 5;
-                obj->o.od.value[5] = 4;
+                obj->o.od.value[1] = 3;
+                obj->o.od.value[2] = 3;
+                obj->o.od.value[5] = 3;
                 obj->quality = 1300;
                 obj->farthings = 3200.0;
                 obj->obj_flags.weight = 300;
                 break;
+                // 3d3+1 oquality
             default:
-                obj->o.od.value[1] = 2;
-                obj->o.od.value[2] = 5;
-                obj->o.od.value[5] = 2;
+                obj->o.od.value[1] = 3;
+                obj->o.od.value[2] = 3;
+                obj->o.od.value[5] = 1;
                 obj->quality = 1000;
                 obj->farthings = 200.0;
                 obj->obj_flags.weight = 350;
                 break;
+            }
+            // For long-blades, we add +2 damage bonus for two-handed swords.
+            if (obj->o.od.value[0] == 3)
+            {
+                obj->o.od.value[5] += 2;
             }
             break;
         }
@@ -7068,7 +7103,8 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
             saf->next = NULL;
             affect_to_obj (obj, saf);
         }
-
+        // If the weapon is two-handed only, and is either a long-blade, polearm, or bludgeon ...
+        /*
         if (obj->o.od.value[0] == 3 &&
                 (obj->o.od.value[3] == SKILL_LONG_BLADE ||
                  obj->o.od.value[3] == SKILL_POLEARM ||
@@ -7076,27 +7112,30 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
         {
             obj->farthings = obj->farthings * 5 / 4;
             obj->obj_flags.weight = obj->obj_flags.weight * 6 / 4;
-
+            // If it's a bludgeon, add +1 damage to oval5.
             if (obj->o.od.value[3] == SKILL_BLUDGEON)
                 obj->o.od.value[5] += 1;
+            // Or just add one damage dice to anything else, where XdY, Y+1.
             else
                 obj->o.od.value[2] += 1;
         }
-
-        if (obj->o.od.value[0] == 2 &&
+        // If the weapon is one-handed only, and is either a long-blade, polearm, or bludgeon ...
+        if ((obj->o.od.value[0] == 2 || obj->o.od.value[0] == 1) &&
                 (obj->o.od.value[3] == SKILL_LONG_BLADE ||
                  obj->o.od.value[3] == SKILL_POLEARM ||
                  obj->o.od.value[3] == SKILL_BLUDGEON))
         {
             obj->farthings = obj->farthings * 3 / 4;
             obj->obj_flags.weight = obj->obj_flags.weight * 65 / 100;
-
+            // If it's a bludgeon, subtract -1 to the damage bonus in oval5.
             if (obj->o.od.value[3] == SKILL_BLUDGEON)
                 obj->o.od.value[5] -= 1;
+            // If it's not a bludgeon, then subtract 1 to the damage dice, where XdY
+            // and Xd(Y-1).
             else
                 obj->o.od.value[2] -= 1;
         }
-
+        */
         break;
     case ITEM_SHIELD:
         switch (quality)
@@ -7283,8 +7322,8 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
 
             switch (obj->o.armor.armor_type)
             {
-            case 1: // metal
-                sneak_mod = 2;
+            case 1: // leather
+                sneak_mod = 0;
 
                 switch (quality)
                 {
@@ -7292,30 +7331,30 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
                     obj->o.armor.armor_value = 3;
                     base_quality = 160;
                     base_cost = 250.0;
-                    base_weight = 2500;
+                    base_weight = 1700;
                     break;
                 case 5:
                     obj->o.armor.armor_value = 2;
                     base_quality = 130;
                     base_cost = 200.0;
-                    base_weight = 2500;
+                    base_weight = 1800;
                     break;
                 case 3:
                 case 4:
                     obj->o.armor.armor_value = 7;
                     obj->quality = 240;
                     base_cost = 8000.0;
-                    base_weight = 5000;
+                    base_weight = 1500;
                     break;
                 default:
                     obj->o.armor.armor_value = 5;
                     base_quality = 200;
                     base_cost = 750.0;
-                    base_weight = 4000;
+                    base_weight = 1600;
                     break;
                 }
                 break;
-            case 2: // Kevlar
+            case 2: // Hardened leather
                 sneak_mod = 1;
 
                 switch (quality)
@@ -7325,38 +7364,38 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
                     obj->o.armor.armor_value = 3;
                     base_quality = 160;
                     base_cost = 400.0;
-                    base_weight = 2500;
+                    base_weight = 2200;
                     break;
                 case 5:
                     sneak_mod = 0;
                     obj->o.armor.armor_value = 2;
                     base_quality = 130;
                     base_cost = 300.0;
-                    base_weight = 2500;
+                    base_weight = 2300;
                     break;
                 case 4:
                 case 3:
                     obj->o.armor.armor_value = 7;
                     base_quality = 240;
                     base_cost = 12800.0;
-                    base_weight = 4000;
+                    base_weight = 2000;
                     break;
                 default:
                     obj->o.armor.armor_value = 5;
                     base_quality = 200;
                     base_cost = 1200.0;
-                    base_weight = 3500;
+                    base_weight = 2100;
                     break;
                 }
                 break;
-            case 3: // Ceramic
+            case 3: // Mail
                 sneak_mod = 2;
 
                 switch (quality)
                 {
                 case 1:
                     sneak_mod = 1;
-                    obj->o.armor.armor_value = 3;
+                    obj->o.armor.armor_value = 4;
                     base_quality = 180;
                     base_cost = 550.0;
                     base_weight = 3000;
@@ -7370,14 +7409,14 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
                     break;
                 case 3:
 				    sneak_mod = 1;
-                    obj->o.armor.armor_value = 3;
+                    obj->o.armor.armor_value = 5;
                     base_quality = 130;
                     base_cost = 450.0;
                     base_weight = 3000;
                     break;
                 case 4:
 					sneak_mod = 1;
-                    obj->o.armor.armor_value = 5;
+                    obj->o.armor.armor_value = 7;
                     base_quality = 240;
                     base_cost = 17600.0;
                     base_weight = 5000;
@@ -7391,15 +7430,21 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
                     break;
                 }
                 break;
-            case 4: // Power
+            case 4: // Scale
                 sneak_mod = 3;
 
                 switch (quality)
                 {
                 case 1:
+                    sneak_mod = 1;
+                    obj->o.armor.armor_value = 4;
+                    base_quality = 180;
+                    base_cost = 2000.0;
+                    base_weight = 3000;
+                    break;
                 case 5:
 					sneak_mod = 1;
-                    obj->o.armor.armor_value = 4;
+                    obj->o.armor.armor_value = 3;
                     base_quality = 160;
                     base_cost = 1000.0;
                     base_weight = 5000;
@@ -7429,7 +7474,7 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
                     obj->o.armor.armor_type = 0;
 
                 case 1:
-                    obj->o.armor.armor_value = 1;
+                    obj->o.armor.armor_value = 2;
                     base_quality = 160;
                     base_cost = 150.0;
                     base_weight = 1500;
