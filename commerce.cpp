@@ -8186,7 +8186,7 @@ void
 #define SHORT_ON_RENT		"You haven't got enough for your rent. Don't bother talking to me again until you do."
 #define RENT_PROBLEM		"We're not open for business just now - come back later."
 #define RENT_COMMENCED		"A pleasure doing business with you. To see how much rent you have left, type #6rent balance#0. Here's your key. To visit your room, type #6rent access#0 - you'll need your key handy to do so."
-#define RENT_TOPPEDUP		"Ah, thank you very much. That's one more full Lunar day added to your rent balance."
+#define RENT_TOPPEDUP		"Ah, thank you very much. That's one more full month added to your rent balance."
 #define ALREADY_RENTING		"But you're already renting from us - one lease per tennant."
 #define NOT_RENTING			"But we don't have you on our records as renting here - just because you have the key doesn't prove anything."
 #define MISSING_KEY			"You'll need to show me some kind of key if you want to do that."
@@ -8488,14 +8488,14 @@ void
 
 		if (office_obj->o.od.value[4] > 0)
 		{
-			sprintf (buf,	"You can have the room for a full Lunar day #6[OOC: 7 Real-Life Days]#0 for #2%d credits#0."
-				"At any time, you can pay the same amount for another Lunar day. You fall behind, you'll need to pay your "
+			sprintf (buf,	"You can have the room for a full month #6[OOC: 7 Real-Life Days]#0 for #2%d coins#0."
+				"At any time, you can pay the same amount for another month. You fall behind, you'll need to pay your "
 				"back rent before I let you back in to your place. I'll allow you to take multiple people in to the room, but you will only get one key.", rent);
 		}
 		else
 		{
-			sprintf (buf,	"You can have the room for a full Lunar day #6[OOC: 7 Real-Life Days]#0 for #2%d credits#0."
-				"At any time, you can pay the same amount for another Lunar day. You fall behind, you'll need to pay your "
+			sprintf (buf,	"You can have the room for a full month #6[OOC: 7 Real-Life Days]#0 for #2%d coins#0."
+				"At any time, you can pay the same amount for another full month. You fall behind, you'll need to pay your "
 				"back rent before I let you back in to your place. This room has space enough for only one person at any time.", rent);
 		}
 
@@ -8554,7 +8554,7 @@ void
 		if ( result )
 			mysql_free_result (result);
 
-		sprintf (buf,	"You can have the room for another full Lunar day #6[OOC: 7 Real-Life Days]#0 for #2%d credits#0. "
+		sprintf (buf,	"You can have the room for another full month #6[OOC: 7 Real-Life Days]#0 for #2%d coins#0. "
 			"You fall behind, you'll need to pay your back rent before I let you back in to your place.", rent);
 
 		name_to_ident (ch, buf2);
@@ -8612,7 +8612,7 @@ void
 		if ( result )
 			mysql_free_result (result);
 
-		sprintf (buf,	"You can have a duplicate key produced for #2%d credits#0. Both keys will work, but only the original owner will be able to topup, replicate, and replace.", (rent / 2));
+		sprintf (buf,	"You can have a duplicate key produced for #2%d coins#0. Both keys will work, but only the original owner will be able to topup, replicate, and replace.", (rent / 2));
 
 		name_to_ident (ch, buf2);
 		sprintf (buf3, "%s %s", buf2, buf);
@@ -8652,7 +8652,7 @@ void
 		if ( result )
 			mysql_free_result (result);
 
-		sprintf (buf,	"You can have a replacement key for a half Lunar day's worth of rent, or, #2%d credits#0. "
+		sprintf (buf,	"You can have a replacement key for a half month's worth of rent, or, #2%d coins#0. "
 			"This doesn't increase your rent balance, and your old key will become invalid.", rent/2);
 
 		name_to_ident (ch, buf2);
@@ -8845,8 +8845,8 @@ void
 	else
 	{
 		sprintf(buf,               "rent usage: rent <commence|topup|balance|access>\n");
-		sprintf(buf + strlen(buf), "rent commence  - take out a Lunar day-to-day lease on a room\n");
-		sprintf(buf + strlen(buf), "rent topup     - add another Lunar day's worth of rent to your balance\n");
+		sprintf(buf + strlen(buf), "rent commence  - take out a month lease on a room\n");
+		sprintf(buf + strlen(buf), "rent topup     - add another month's worth of rent to your balance\n");
 		sprintf(buf + strlen(buf), "rent balance   - check how much balance you have owing\n");
 		sprintf(buf + strlen(buf), "rent access    - access your room\n");
 		sprintf(buf + strlen(buf), "rent replace   - replaces your key (your old key will no longer function)\n");
