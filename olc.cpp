@@ -6945,9 +6945,11 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
                 break;
             }
             // For bludgeons, we add +4 to Y where Xd(Y+4) if it's a two-hander.
+            // Also make it heavier.
             if (obj->o.od.value[0] == 3)
             {
                 obj->o.od.value[2] += 4;
+                obj->obj_flags.weight += 250;
             }
             break;
         case SKILL_POLEARM:
@@ -6960,7 +6962,7 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
                 obj->o.od.value[5] = -1;
                 obj->quality = 500;
                 obj->farthings = 17.5;
-                obj->obj_flags.weight = 800;
+                obj->obj_flags.weight = 600;
                 break;
             // 2d4+1 poor quality
             case 1:
@@ -6969,7 +6971,7 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
                 obj->o.od.value[5] = 1;
                 obj->quality = 800;
                 obj->farthings = 35.0;
-                obj->obj_flags.weight = 725;
+                obj->obj_flags.weight = 550;
                 break;
             // 2d4+3 good quality
             case 3:
@@ -6978,7 +6980,7 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
                 obj->o.od.value[5] = 3;
                 obj->quality = 1100;
                 obj->farthings = 400.0;
-                obj->obj_flags.weight = 675;
+                obj->obj_flags.weight = 525;
                 break;
             // 2d4+4 superb quality
             case 4:
@@ -6987,7 +6989,7 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
                 obj->o.od.value[5] = 4;
                 obj->quality = 1300;
                 obj->farthings = 1600.0;
-                obj->obj_flags.weight = 650;
+                obj->obj_flags.weight = 500;
                 break;
             // 2d4+2 ordinary quality
             default:
@@ -6996,13 +6998,15 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
                 obj->o.od.value[5] = 2;
                 obj->quality = 1000;
                 obj->farthings = 100.0;
-                obj->obj_flags.weight = 700;
+                obj->obj_flags.weight = 570;
                 break;
             }
             // For Polearms, we add +2 damage bonus for two-handed polearms.
+            // Also make it heavier.
             if (obj->o.od.value[0] == 3)
             {
                 obj->o.od.value[5] += 2;
+                obj->obj_flags.weight += 250;
             }
             break;
         default: // default to long-blade if nothing else.
@@ -7016,7 +7020,7 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
                 obj->o.od.value[5] = -2;
                 obj->quality = 500;
                 obj->farthings = 32.5;
-                obj->obj_flags.weight = 425;
+                obj->obj_flags.weight = 525;
                 break;
                 // 3d3 pquality
             case 1:
@@ -7025,7 +7029,7 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
                 obj->o.od.value[5] = 0;
                 obj->quality = 800;
                 obj->farthings = 65.0;
-                obj->obj_flags.weight = 375;
+                obj->obj_flags.weight = 500;
                 break;
                 // 3d3+2 gquality
             case 3:
@@ -7034,7 +7038,7 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
                 obj->o.od.value[5] = 2;
                 obj->quality = 1100;
                 obj->farthings = 800.0;
-                obj->obj_flags.weight = 325;
+                obj->obj_flags.weight = 450;
                 break;
                 // 3d3+3 squality
             case 4:
@@ -7043,7 +7047,7 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
                 obj->o.od.value[5] = 3;
                 obj->quality = 1300;
                 obj->farthings = 3200.0;
-                obj->obj_flags.weight = 300;
+                obj->obj_flags.weight = 400;
                 break;
                 // 3d3+1 oquality
             default:
@@ -7052,13 +7056,15 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
                 obj->o.od.value[5] = 1;
                 obj->quality = 1000;
                 obj->farthings = 200.0;
-                obj->obj_flags.weight = 350;
+                obj->obj_flags.weight = 475;
                 break;
             }
             // For long-blades, we add +2 damage bonus for two-handed swords.
+            // Also make it heavier.
             if (obj->o.od.value[0] == 3)
             {
                 obj->o.od.value[5] += 2;
+                obj->obj_flags.weight += 250;
             }
             break;
         }
