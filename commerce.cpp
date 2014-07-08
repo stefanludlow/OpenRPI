@@ -8845,8 +8845,8 @@ void
 	else
 	{
 		sprintf(buf,               "rent usage: rent <commence|topup|balance|access>\n");
-		sprintf(buf + strlen(buf), "rent commence  - take out a Lunar day-to-day lease on a room\n");
-		sprintf(buf + strlen(buf), "rent topup     - add another Lunar day's worth of rent to your balance\n");
+		sprintf(buf + strlen(buf), "rent commence  - take out a month lease on a room\n");
+		sprintf(buf + strlen(buf), "rent topup     - add another month's worth of rent to your balance\n");
 		sprintf(buf + strlen(buf), "rent balance   - check how much balance you have owing\n");
 		sprintf(buf + strlen(buf), "rent access    - access your room\n");
 		sprintf(buf + strlen(buf), "rent replace   - replaces your key (your old key will no longer function)\n");
