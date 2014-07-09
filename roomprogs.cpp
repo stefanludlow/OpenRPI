@@ -5249,7 +5249,7 @@ void r_purge( CHAR_DATA * ch, char *argument ) {
 			if ( GET_ITEM_TYPE (object) == ITEM_DWELLING && object->o.od.value[ 0 ] >= 100000 ) {
 				continue;
 			}
-			else if ( IS_SET (obj->obj_flags.extra_flags, ITEM_NOPURGE) ) {
+			else if ( IS_SET (object->obj_flags.extra_flags, ITEM_NOPURGE) ) {
 				continue;
 			}
 			extract_obj( object );
