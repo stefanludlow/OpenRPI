@@ -10133,6 +10133,7 @@ void
 			return;
 		}
 	}
+	send_to_gods("Entering the main part of the decorate function.");
 
 	if (argument[strlen(argument) - 1] == '!' || refresh)
 	{
@@ -10144,9 +10145,9 @@ void
 		}
 		*/
 		send_to_gods("Entering the OOC activity timer check.");
+
 		if ((c_aff = get_affect (ch, MAGIC_CRAFT_DELAY))
-		&& IS_MORTAL (ch)
-		&& !engine.in_test_mode()
+		&& (IS_MORTAL(ch))
 		&& ((c_aff->a.spell.modifier - time (0)) > ACTIVITY_TIMER_MAX ))
 		{
 			act
