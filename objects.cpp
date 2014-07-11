@@ -9902,6 +9902,7 @@ void
 	char buf3[MAX_STRING_LENGTH] = { '\0' };
 	char buf4[MAX_STRING_LENGTH] = { '\0' };
 	char buf5[MAX_STRING_LENGTH] = { '\0' };
+	AFFECTED_TYPE c_aff*;
 	OBJ_DATA *obj = NULL;
 	OBJ_DATA *tool = NULL;
 	OBJ_DATA *tool_leftover = NULL;
