@@ -9902,6 +9902,7 @@ void
 	char buf3[MAX_STRING_LENGTH] = { '\0' };
 	char buf4[MAX_STRING_LENGTH] = { '\0' };
 	char buf5[MAX_STRING_LENGTH] = { '\0' };
+	AFFECTED_TYPE *c_aff;
 	OBJ_DATA *obj = NULL;
 	OBJ_DATA *tool = NULL;
 	OBJ_DATA *tool_leftover = NULL;
@@ -10135,11 +10136,25 @@ void
 
 	if (argument[strlen(argument) - 1] == '!' || refresh)
 	{
+		/*
 		if (get_affect (ch, MAGIC_CRAFT_DELAY) && IS_MORTAL (ch))
 		{
 			act	("Sorry, but your OOC delay timer is still in place. You'll receive a notification when it expires and you're free to decorate once more.", false, ch, 0, 0, TO_CHAR | _ACT_FORMAT);
 			return;
 		}
+		*/
+
+		if ((c_aff = get_affect (ch, MAGIC_CRAFT_DELAY))
+		&& (IS_MORTAL(ch))
+		&& ((c_aff->a.spell.modifier - time (0)) > ACTIVITY_TIMER_MAX ))
+		{
+			act
+				("Sorry, but your OOC activity timer is full. You'll receive a notification when it expires.",
+				false, ch, 0, 0, TO_CHAR | _ACT_FORMAT);
+			return;
+		}
+
+
 
 		// Cull the last two degrees of our argument for the "!" part.
 		if (refresh)
@@ -10262,10 +10277,14 @@ void
 				}
 			}
 		}
-
 		skill_use(ch, SKILL_ARTISTRY, 0);
-		// Add a RL hour delay
-		magic_add_affect (ch, MAGIC_CRAFT_DELAY, -1, (time (0) + 60 * 60), 0, 0, 0);
+
+		int delay_time = (((c_aff = get_affect (ch, MAGIC_CRAFT_DELAY)) ? c_aff->a.spell.modifier + (60 * 60): (time(0) + 60 * 60)));
+		remove_affect_type (ch, MAGIC_CRAFT_DELAY);
+		magic_add_affect (ch, MAGIC_CRAFT_DELAY, -1, delay_time, 0, 0, 0);
+
+		// Add a RL hour delay - Defunct now that crafting timers stack.
+		// magic_add_affect (ch, MAGIC_CRAFT_DELAY, -1, (time (0) + 60 * 60), 0, 0, 0);
 	}
 	else
 	{
