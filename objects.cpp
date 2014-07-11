@@ -10143,13 +10143,19 @@ void
 			return;
 		}
 		*/
-		if 	((c_aff->a.spell.modifier - time (0)) > ACTIVITY_TIMER_MAX ))
+
+		if ((c_aff = get_affect (ch, MAGIC_CRAFT_DELAY))
+		&& IS_MORTAL (ch)
+		&& !engine.in_test_mode ()
+		&& ((c_aff->a.spell.modifier - time (0)) > ACTIVITY_TIMER_MAX ))
 		{
-		act
-			("Sorry, but your OOC activity timer is full. You'll receive a notification when it expires.",
-			false, ch, 0, 0, TO_CHAR | _ACT_FORMAT);
-		return;
+			act
+				("Sorry, but your OOC activity timer is full. You'll receive a notification when it expires.",
+				false, ch, 0, 0, TO_CHAR | _ACT_FORMAT);
+			return;
 		}
+
+
 
 		// Cull the last two degrees of our argument for the "!" part.
 		if (refresh)
