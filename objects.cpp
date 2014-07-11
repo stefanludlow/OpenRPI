@@ -10279,10 +10279,9 @@ void
 		}
 		skill_use(ch, SKILL_ARTISTRY, 0);
 
-		int delay_time = (((c_aff = get_affect (ch, MAGIC_CRAFT_DELAY)) ? c_aff->a.spell.modifier : (time (0) + 60 * 60)));
-		// delay_time = time (0) + figure_craft_delay (ch, af->a.craft->subcraft);
+		int delay_time = (((c_aff = get_affect (ch, MAGIC_CRAFT_DELAY)) ? c_aff->a.spell.modifier : time (0);
 		remove_affect_type (ch, MAGIC_CRAFT_DELAY);
-		magic_add_affect (ch, MAGIC_CRAFT_DELAY, -1, delay_time, 0, 0, 0);
+		magic_add_affect (ch, MAGIC_CRAFT_DELAY, -1, delay_time + (time(0) + 60 * 60), 0, 0, 0);
 
 		// Add a RL hour delay - Defunct now that crafting timers stack.
 		// magic_add_affect (ch, MAGIC_CRAFT_DELAY, -1, (time (0) + 60 * 60), 0, 0, 0);
