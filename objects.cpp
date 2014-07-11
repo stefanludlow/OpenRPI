@@ -10279,7 +10279,7 @@ void
 		}
 		skill_use(ch, SKILL_ARTISTRY, 0);
 
-		int delay_time = (((c_aff = get_affect (ch, MAGIC_CRAFT_DELAY)) ? c_aff->a.spell.modifier : time(0) + 60 * 60 * 60));
+		int delay_time = (((c_aff = get_affect (ch, MAGIC_CRAFT_DELAY)) ? c_aff->a.spell.modifier + (60 * 60): (time(0) + 60 * 60)));
 		remove_affect_type (ch, MAGIC_CRAFT_DELAY);
 		magic_add_affect (ch, MAGIC_CRAFT_DELAY, -1, delay_time, 0, 0, 0);
 
