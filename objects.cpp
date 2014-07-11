@@ -9902,7 +9902,7 @@ void
 	char buf3[MAX_STRING_LENGTH] = { '\0' };
 	char buf4[MAX_STRING_LENGTH] = { '\0' };
 	char buf5[MAX_STRING_LENGTH] = { '\0' };
-	AFFECTED_TYPE c_aff*;
+	AFFECTED_TYPE *c_aff;
 	OBJ_DATA *obj = NULL;
 	OBJ_DATA *tool = NULL;
 	OBJ_DATA *tool_leftover = NULL;
@@ -10281,7 +10281,7 @@ void
 
 		skill_use(ch, SKILL_ARTISTRY, 0);
 
-		delay_time = (((c_aff = get_affect (ch, MAGIC_CRAFT_DELAY)) ? c_aff->a.spell.modifier : time (0)) + figure_craft_delay (ch, af->a.craft->subcraft));
+		int delay_time = (((c_aff = get_affect (ch, MAGIC_CRAFT_DELAY)) ? c_aff->a.spell.modifier : time (0)));
 		// delay_time = time (0) + figure_craft_delay (ch, af->a.craft->subcraft);
 		remove_affect_type (ch, MAGIC_CRAFT_DELAY);
 		magic_add_affect (ch, MAGIC_CRAFT_DELAY, -1, delay_time, 0, 0, 0);
