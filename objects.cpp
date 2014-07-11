@@ -10135,10 +10135,19 @@ void
 
 	if (argument[strlen(argument) - 1] == '!' || refresh)
 	{
+		/*
 		if (get_affect (ch, MAGIC_CRAFT_DELAY) && IS_MORTAL (ch))
 		{
 			act	("Sorry, but your OOC delay timer is still in place. You'll receive a notification when it expires and you're free to decorate once more.", false, ch, 0, 0, TO_CHAR | _ACT_FORMAT);
 			return;
+		}
+		*/
+		if 	((c_aff->a.spell.modifier - time (0)) > ACTIVITY_TIMER_MAX ))
+		{
+		act
+			("Sorry, but your OOC activity timer is full. You'll receive a notification when it expires.",
+			false, ch, 0, 0, TO_CHAR | _ACT_FORMAT);
+		return;
 		}
 
 		// Cull the last two degrees of our argument for the "!" part.
@@ -10264,8 +10273,14 @@ void
 		}
 
 		skill_use(ch, SKILL_ARTISTRY, 0);
-		// Add a RL hour delay
-		magic_add_affect (ch, MAGIC_CRAFT_DELAY, -1, (time (0) + 60 * 60), 0, 0, 0);
+
+		delay_time = (((c_aff = get_affect (ch, MAGIC_CRAFT_DELAY)) ? c_aff->a.spell.modifier : time (0)) + figure_craft_delay (ch, af->a.craft->subcraft));
+		// delay_time = time (0) + figure_craft_delay (ch, af->a.craft->subcraft);
+		remove_affect_type (ch, MAGIC_CRAFT_DELAY);
+		magic_add_affect (ch, MAGIC_CRAFT_DELAY, -1, delay_time, 0, 0, 0);
+
+		// Add a RL hour delay - Defunct now that crafting timers stack.
+		// magic_add_affect (ch, MAGIC_CRAFT_DELAY, -1, (time (0) + 60 * 60), 0, 0, 0);
 	}
 	else
 	{
