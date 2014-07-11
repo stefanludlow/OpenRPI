@@ -10133,7 +10133,6 @@ void
 			return;
 		}
 	}
-	send_to_gods("Entering the main part of the decorate function.");
 
 	if (argument[strlen(argument) - 1] == '!' || refresh)
 	{
@@ -10144,7 +10143,6 @@ void
 			return;
 		}
 		*/
-		send_to_gods("Entering the OOC activity timer check.");
 
 		if ((c_aff = get_affect (ch, MAGIC_CRAFT_DELAY))
 		&& (IS_MORTAL(ch))
@@ -10279,10 +10277,9 @@ void
 				}
 			}
 		}
-		send_to_gods("Entering the OOC activity timer addition.");
 		skill_use(ch, SKILL_ARTISTRY, 0);
 
-		int delay_time = (((c_aff = get_affect (ch, MAGIC_CRAFT_DELAY)) ? c_aff->a.spell.modifier : time (0)));
+		int delay_time = (((c_aff = get_affect (ch, MAGIC_CRAFT_DELAY)) ? c_aff->a.spell.modifier : (time (0) + 60 * 60)));
 		// delay_time = time (0) + figure_craft_delay (ch, af->a.craft->subcraft);
 		remove_affect_type (ch, MAGIC_CRAFT_DELAY);
 		magic_add_affect (ch, MAGIC_CRAFT_DELAY, -1, delay_time, 0, 0, 0);
