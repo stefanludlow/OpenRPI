@@ -10143,10 +10143,10 @@ void
 			return;
 		}
 		*/
-
+		send_to_gods("Entering the OOC activity timer check.");
 		if ((c_aff = get_affect (ch, MAGIC_CRAFT_DELAY))
 		&& IS_MORTAL (ch)
-		&& !engine.in_test_mode ()
+		&& !engine.in_test_mode()
 		&& ((c_aff->a.spell.modifier - time (0)) > ACTIVITY_TIMER_MAX ))
 		{
 			act
@@ -10278,7 +10278,7 @@ void
 				}
 			}
 		}
-
+		send_to_gods("Entering the OOC activity timer addition.");
 		skill_use(ch, SKILL_ARTISTRY, 0);
 
 		int delay_time = (((c_aff = get_affect (ch, MAGIC_CRAFT_DELAY)) ? c_aff->a.spell.modifier : time (0)));
