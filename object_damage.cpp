@@ -37,20 +37,23 @@ const char *enviro_desc[COND_TYPE_MAX][6] = {
 };
 
 
-
+/*
 const char *damage_type[DAMAGE_TYPE_MAX + 1] = {
 	"pierce",
 	"blunt",
 	"slash",
-	"freeze",			/*  5 */
+	"freeze",		 
 	"burn",
 	"fist",
-	"blood",			/* 10 */
+	"blood",			
 	"water",
-	"permanent",			/* 13 */
+	"permanent",		
 	"repair",
 	"\n"
 };
+*/
+const char *damage_type[DAMAGE_TYPE_MAX + 1] =
+{ "stab", "pierce", "chop", "crush", "slash", "chill", "burn", "bite", "claw", "fist", "bullet", "\n" };
 
 const char *material_type[MATERIAL_TYPE_MAX + 1] = {
 	"undefined",
@@ -1226,7 +1229,7 @@ delayed_mend2 (CHAR_DATA * ch)
 			}
 		}
 
-		running_cost = cost;
+		running_cost = cost; 
 
 		if (GET_ITEM_TYPE(obj) == ITEM_FIREARM || GET_ITEM_TYPE(obj) == ITEM_WEAPON)
 		{

@@ -2984,7 +2984,8 @@ void
 	{
 		// row[2] is sdesc
 		// row[4] is rank
-		sprintf (buf2, "%4d. %-13s %s\n", index, row[4], row[2]);
+		// row 1 is name
+		sprintf (buf2, "%4d. %-13s %-12s %s\n", index, row[4], row[1], row[2]);
 
 		if (strlen (buf) + strlen (buf2) >= MAX_STRING_LENGTH)
 			break;

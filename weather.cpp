@@ -1196,9 +1196,14 @@ short_time_string (int day, int month)
     char buf[MAX_STRING_LENGTH] = { '\0' };
     char buf2[MAX_STRING_LENGTH] = { '\0' };
     char buf3[MAX_STRING_LENGTH] = { '\0' };
+	char buf4[MAX_STRING_LENGTH] = { '\0' };
     static char short_time_str[MAX_STRING_LENGTH] = { '\0' };
+	
+	
 
-    sprintf (buf, "%s-%d", abrev_earth_phase[day], month+1);
+	// sprintf (buf, "%s-%d", abrev_earth_phase[day], month+1);
+
+    sprintf (buf, "%s %d", short_month_name[month], day); // change to weekday instead of abrev_earth_phase and month_name[] instead of a number.
 
     sprintf (short_time_str, "%s", buf);
 

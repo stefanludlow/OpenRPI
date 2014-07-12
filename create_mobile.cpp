@@ -692,9 +692,9 @@ void
 insert_mobile_variables (CHAR_DATA * mob, CHAR_DATA * proto, char *string0, char *string1, char *string2, char *string3, char *string4, char *string5, char *string6, char *string7, char *string8, char *string9)
 {
     char buf2[MAX_STRING_LENGTH];
+	char buf3[MAX_STRING_LENGTH];
     char temp[MAX_STRING_LENGTH];
     char original[MAX_STRING_LENGTH];
-
     char *xcolor[10];
     char *xcat[10];
     int xorder[10] = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};
@@ -706,8 +706,14 @@ insert_mobile_variables (CHAR_DATA * mob, CHAR_DATA * proto, char *string0, char
     }
 
     char tempcolor[AVG_STRING_LENGTH] = { '\0' };
+	char temp_name[MAX_STRING_LENGTH] = { '\0' };
+	bool invisible = false;
+	bool manual = false;
+	bool inquotes = false;
+	int quotestart = 0;
     char *point;
-    int i = 0, j = 0, h = 0;
+    int i = 0, j = 0, h = 0; 
+	int placement = 0;
     bool modified = false;
 
     char buf[AVG_STRING_LENGTH] = { '\0' };
@@ -783,7 +789,16 @@ insert_mobile_variables (CHAR_DATA * mob, CHAR_DATA * proto, char *string0, char
     // Find at what point we have our first "$".
     point = strpbrk (original, "$");
     int round = 0;
-
+    invisible = false;
+	
+	// Set all mob variable information to NULL 0217141825 -Nimrod
+	for (i = 0; i < 10; i++)
+	{
+	  mob->mob_color_name[i] = '\0'; 
+	  mob->mob_color_cat[i] = '\0';
+	}
+	i = 0; // Reset i
+	
     // If we found point...
     if (point)
     {
@@ -791,7 +806,13 @@ insert_mobile_variables (CHAR_DATA * mob, CHAR_DATA * proto, char *string0, char
         // We run through the original, adding each bit of y to buf2.
         // However, if we find a $, we see if that's a category of variables.
         // If so, we add a random colour of those variables to buf2, and then skip ahead y to the end of that phrase, where we keep going on our merry way.
-
+		
+		if (original[0] == '$' && original[1] == '$')
+		{
+		 send_to_gods ("Assigning an invisible variable at the beginning of a description is illegal. Aborting variable replacement");
+		 return;
+		}
+		
         for (size_t y = 0; y <= strlen (original); y++)
         {
             // If we're at the $...
@@ -803,7 +824,19 @@ insert_mobile_variables (CHAR_DATA * mob, CHAR_DATA * proto, char *string0, char
                 sprintf (temp, "$");
                 // ... and jump ahead a point (to get to the letter after the $
                 j = y + 1;
-
+               
+				if (original[j] == '$')  // Checking the character after the first $.  If it's another $, then this is an invisible variable.
+				{
+				  // it's invisible, now let's set the invisible flag and increment the pointer
+				  // send_to_gods("Found the second dollar sign.");
+				  invisible = true;
+				  j++;
+				}
+				else
+				{
+				  invisible = false;
+				}
+				
                 // Now, until we hit something that's not a alpha-numeric character.
                 while (isalpha (original[j]))
                 {
@@ -811,55 +844,104 @@ insert_mobile_variables (CHAR_DATA * mob, CHAR_DATA * proto, char *string0, char
                     sprintf (temp + strlen (temp), "%c", original[j]);
                     j++;
                 }
-
+				// temp is our category name
                 // If there's a number after our category, then we're going to round it all up - let's add it to our xorder list.
 
                 *buf = '\0';
 
-                sprintf(buf, "%c", original[j]);
+                sprintf(buf, "%c", original[j]); // buf is the variable number
 
                 if (isdigit(*buf))
-                    xorder[round] = atoi(buf);
+				{
+                  xorder[round] = atoi(buf);
+				  placement = xorder[round];
+				  j++;
+				}
                 else
-                    xorder[round] = -1;
+				{
+                  xorder[round] = -1;
+				  placement = round;
+				}
+				//  send_to_gods("category name = ");
+				//  send_to_gods(temp);
+					
+				// Now, if the char is an '=', then this is a manual variable, read the value of the variable and set
+				if (original[j] == '=')
+				{
+				// This is a manual variable.  Let's read the value.
+				 // send_to_gods("Found the equal sign.  It's a manual variable.");
+				  j++; // increment to the letter after '='
+				  manual = true;
+				  // Check for a double quote
+				  if (original[j] == '"')
+				  {
+				    j++;
+					inquotes = true;
+					quotestart = j;
+				  }
+				  else
+				  {
+				    inquotes = false;
+				  }
+				  while (isalpha (original[j]) || inquotes)
+                  {
+                    // set temp_name to our manual name
+                    sprintf (temp_name + strlen (temp_name), "%c", original[j]);
+                    j++;
+					if (original[j] == '"' || (inquotes && j > quotestart + 40))
+					{
+					  inquotes = false;
+					  j++;
+					}
+                  }
+				 // send_to_gods("color name is: =");
+				 // send_to_gods(temp_name);
+				}
+				
 
                 // Now, we figure out which colour we'e setting by seeing if we don't have the color of the present round...
-                if (!xcolor[round])
-                {
+                // if (!xcolor[round])
+                // {
 
-                    if (!mob_vc_category(temp))
+                    if (!mob_vc_category(temp) && !invisible) // invisible variables don't need to exist in the vmob color list
                         return;
 
                     // Now that we know temp is from a proper category, we pull a random variable from that category and call it tempcolor.
-                    sprintf (tempcolor, "%s", mob_vc_rand(temp, &i));
+                    sprintf (tempcolor, "%s", manual ? temp_name : mob_vc_rand(temp, &i));
 
                     // Now, we check what round we are and assign tempcolor to that round, and do the same for the categories.
 
-                    xcolor[round] = add_hash (tempcolor);
-                    xcat[round] = add_hash (mob_vc_category(i));
-                }
+                    xcolor[placement] = add_hash (tempcolor);
+                    xcat[placement] = invisible ? add_hash (temp) : add_hash (mob_vc_category(i));
+					mob->mob_color_name[placement] = xcolor[placement];  // Write var color data to mob so they can be passed later if needed.  0214141805 -Nimrod
+					mob->mob_color_cat[placement] = xcat[placement];
+					// send_to_gods(mob->mob_color_name[round]);
+					// send_to_gods(mob->mob_color_cat[round]);
+					
+                // }
 
                 // Now, depending on the round, we add on to buf2 the color we just pulled, and then advance to the next round.
-                if (xcat[round])
-                    sprintf (buf2 + strlen (buf2), "%s", mob_vd_full(xcat[round], xcolor[round]));
+                if (xcat[placement])
+                    sprintf (buf2 + strlen (buf2), "%s", invisible ? "" : mob_vd_full(xcat[placement], xcolor[placement]));
                 else
-                    sprintf (buf2 + strlen (buf2), "%s", xcolor[round]);
+                    sprintf (buf2 + strlen (buf2), "%s", invisible ? "" : xcolor[placement]);
 
-                // Now, we set our end point as where our category ends plus 1.
-                j = y + 1;
-
-                // We advance until we get to the new non-alpha-numeric character.
-                while (isalpha (original[j]))
-                    j++;
-
-                if (xorder[round] >= 0)
-                    j++;
-
+                // We advance until we get to the new space or #.
+                while (!original[j] == ' ' && !original[j] == '#')
+				  j++;
+			
                 if (round < 9)
                     round ++;
 
                 // And then set the point of our main loop to that point
                 y = j;
+				// Set invisible and manual flags to false
+				invisible = false;
+				manual = false;
+				placement = 0;
+				
+				temp[0] = '\0';
+				temp_name[0] = '\0' ;
             }
             sprintf (buf2 + strlen (buf2), "%c", original[y]);
 
@@ -934,8 +1016,22 @@ insert_mobile_variables (CHAR_DATA * mob, CHAR_DATA * proto, char *string0, char
                 }
                 sprintf (buf2 + strlen (buf2), "%c", original[y]);
             }
+			/*
+		    // Change 'a' to 'an' if needed. 0209142340 -Nimrod
+			if ((buf2[0] == 'a') || (buf[0] == 'A')) // Check first letter for 'a'
+			{
+			  if ((buf2[1] == ' ') && (isvowel(buf2[2]))) // Check second letter for a space.
+			  {
+				strcpy(buf3, &buf2[2]); // Exclude 'a ' from buf3
+				sprintf (buf2, "an %s", buf3); // write 'an ' to buf3
+			  } 
+			}
+			*/
+	   			
             mem_free (mob->short_descr);
             mob->short_descr = add_hash (buf2);
+			
+			correct_grammar(mob->short_descr, &mob->short_descr);
         }
 
         /*
@@ -995,6 +1091,7 @@ insert_mobile_variables (CHAR_DATA * mob, CHAR_DATA * proto, char *string0, char
          */
 
         *buf2 = '\0';
+		*buf3 = '\0';
         sprintf (original, "%s", proto->name);
         point = strpbrk (original, "$");
         round = 0;
@@ -1638,6 +1735,7 @@ create_description (CHAR_DATA * mob)
     char buf2[MAX_STRING_LENGTH];
     char buf3[MAX_STRING_LENGTH];
     int roll;
+	int i;
 
     /*
      for (i = 0; *variable_races[i] != '\n'; i++)
@@ -1650,7 +1748,14 @@ create_description (CHAR_DATA * mob)
        return;
      }
      */
-
+	// Set all mob variable information to NULL 0217141825 -Nimrod
+	for (i = 0; i < 10; i++)
+	{
+	  mob->mob_color_name[i] = '\0'; 
+	  mob->mob_color_cat[i] = '\0';
+	}
+	i = 0; // Reset i
+	
     if (IS_NPC(mob))
         insert_mobile_variables (mob, vnum_to_mob(mob->mob->vnum), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
     else
@@ -1770,45 +1875,7 @@ create_description (CHAR_DATA * mob)
         else if (roll == 7)
             sprintf (buf, "%s sits here, unmoving.", mob->short_descr);
     }
-    else if (!str_cmp (lookup_race_variable (mob->race, RACE_NAME), "Hosted-Terror"))
-    {
-        roll = number (1, 7);
-        if (roll == 1)
-            sprintf (buf, "%s stands here hunched over.", mob->short_descr);
-        else if (roll == 2)
-            sprintf (buf, "%s stands here, stock still.", mob->short_descr);
-        else if (roll == 3)
-            sprintf (buf, "%s is here, jerking occasionally.", mob->short_descr);
-        else if (roll == 4)
-            sprintf (buf, "%s stands here, swaying from side to side.", mob->short_descr);
-        else if (roll == 5)
-            sprintf (buf, "%s is here, twitching spasmodically.", mob->short_descr);
-        else if (roll == 6)
-            sprintf (buf, "%s stands here.", mob->short_descr);
-        else if (roll == 7)
-            sprintf (buf, "%s is here.", mob->short_descr);
-
-        switch (number (1, 4))
-        {
-        case 1:
-            mob->speed = 2;
-            mob->travel_str = add_hash ("shambling forward");
-            break;
-        case 2:
-            mob->speed = 1;
-            mob->travel_str = add_hash ("in trudging, uneven steps");
-            break;
-        case 3:
-            mob->speed = 4;
-            mob->travel_str = add_hash ("with a loping, swaying run");
-            break;
-        case 4:
-            mob->speed = 0;
-            mob->travel_str = add_hash ("stumbling onwards");
-            break;
-        }
-
-    }
+   
 
     if (!*buf)
         sprintf (buf, "%s is here.", mob->short_descr);
@@ -1844,16 +1911,24 @@ create_description (CHAR_DATA * mob)
 void
 randomize_mobile (CHAR_DATA * mob)
 {
+/* - Disabling for Shadows of Isildur - 0306142035 -Nimrod
 
     if (mob->race == lookup_race_id("Survivor") || mob->race == lookup_race_id("Denizen") ||
             mob->race == lookup_race_id("Mutation") || mob->race == lookup_race_id("Cybernetic") ||
-            mob->race == lookup_race_id("Phoenixer"))
+            mob->race == lookup_race_id("Human"))
     {
-        new_randomize_mobile(mob, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+	    new_randomize_mobile(mob, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
         return;
     }
-
-
+*/
+	// return;
+	
+	if ( !IS_NPC(mob) && mob->race == lookup_race_id("Human"))
+    {
+	    new_randomize_mobile(mob, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+        return;
+    }
+	
     CHAR_DATA *proto;
     int attr_starters[] = { 16, 15, 12, 12, 11, 10, 8 };
     int attr_priorities[] = { -1, -1, -1, -1, -1, -1, 1 };
@@ -1977,17 +2052,19 @@ randomize_mobile (CHAR_DATA * mob)
         make_height (mob);
         make_frame (mob);
     }
-
-    mob->sex = number (1, 2);
-    if (IS_SET (mob->act, ACT_ENFORCER))
-    {
+    if ((mob->sex != 1) && (mob->sex !=2))  // Added to let mobs keep their sex should they be set already. 0306142045 -Nimrod
+    {	
+      mob->sex = number (1, 2);
+      if (IS_SET (mob->act, ACT_ENFORCER))
+      {
         roll = number (1, 10);
         if (roll == 10)
             mob->sex = SEX_FEMALE;
         else
             mob->sex = SEX_MALE;
+      }
     }
-
+	
     mob->max_move = calc_lookup (mob, REG_MISC, MISC_MAX_MOVE);
     mob->move_points = mob->max_move;
 
@@ -3867,12 +3944,14 @@ void new_create_description (CHAR_DATA * mob,
     mob->long_descr = add_hash (buf);
 
 
-    if (IS_NPC(mob))
-    {
+  //  if (IS_NPC(mob)) // Remarking out to test if it will add keywords to guest avatars.  -Nimrod 215001272014
+  //  {
         if (mob->name)
             mem_free (mob->name);
-
-        sprintf(buf3, "x%d%d%d%d%d-%s", number(1,9), number(0,9), number(0,9),number(0,9),number(0,9),mob->tname);
+			
+  // Need to get rid of this next line if it's a player.
+        if (IS_NPC(mob))
+          sprintf(buf3, "x%d%d%d%d%d-%s", number(1,9), number(0,9), number(0,9),number(0,9),number(0,9),mob->tname);
 
         if (mob->tname)
             mem_free (mob->tname);
@@ -3882,7 +3961,7 @@ void new_create_description (CHAR_DATA * mob,
         sprintf(buf3 + strlen(buf3), " %s %s %s", adj1, adj2, age);
 
         mob->name = add_hash (buf3);
-    }
+  //  }
 
     *buf3 = '\0';
     sprintf (buf3, "%s %s %s %s %s", buf2, sentence[0], sentence[1], sentence[2], sentence[3]);
@@ -4013,7 +4092,8 @@ new_randomize_mobile (CHAR_DATA * mob,
 
         make_height (mob);
         make_frame (mob);
-
+		
+       // This assumes weapon skills are all at the beginning of the skill lists
         for (i = 1; i <= LAST_WEAPON_SKILL; i++) //weapon skills
             mob->skills[i] = number (20, 30) + type_bonus;
 
@@ -4065,11 +4145,11 @@ new_randomize_mobile (CHAR_DATA * mob,
         fix_offense (mob);
         fix_offense (proto);
     }  //if (mob->race >= 0 && mob->race <= 11)
-    else
+    else  // *****************************************************************
     {
         make_height (mob);
         make_frame (mob);
-    }
+	}
 
     mob->sex = number (1, 2);
     if (IS_SET (mob->act, ACT_ENFORCER))

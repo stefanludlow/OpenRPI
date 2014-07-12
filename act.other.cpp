@@ -1468,7 +1468,7 @@ do_commence (CHAR_DATA * ch, char *argument, int cmd)
     }
 
     act
-    ("$n travels towards his destiny in the town of Rust...",
+    ("$n travels towards Middle-Earth...",
      true, ch, 0, 0, TO_ROOM | _ACT_FORMAT);
 
     sprintf (buf, "\n#6Welcome to %s!#0\n\n", MUD_NAME);
@@ -1501,7 +1501,7 @@ do_commence (CHAR_DATA * ch, char *argument, int cmd)
     char_from_room (ch);
     char_to_room (ch, MINAS_TIRITH_START_LOC);
     ch->was_in_room = 0;
-    add_clan (ch, "rustclan", CLAN_MEMBER);
+   // add_clan (ch, "rustclan", CLAN_MEMBER);
     if (!ch->skills[SKILL_COMMON]
             || ch->skills[SKILL_COMMON] < 30)
     {
@@ -2040,6 +2040,8 @@ do_sneak (CHAR_DATA * ch, char *argument, int cmd)
 
         if (IS_NPC (ch) && IS_SET (ch->affected_by, AFF_SNEAK))
         {
+		  sprintf(buf, "%s", dirs[cmd]); // replaces dozen lines below
+		  /*
             if (cmd == 0)
                 sprintf (buf, "north");
             if (cmd == 1)
@@ -2052,6 +2054,7 @@ do_sneak (CHAR_DATA * ch, char *argument, int cmd)
                 sprintf (buf, "up");
             if (cmd == 5)
                 sprintf (buf, "down");
+				*/
         }
         else
         {

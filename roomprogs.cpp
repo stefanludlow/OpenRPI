@@ -5019,7 +5019,7 @@ void r_pain( CHAR_DATA * ch, char *argument ) {
 	}
 	low = atoi( arg2 );
 	high = atoi( arg3 );
-	if ( ( type = index_lookup( damage_type, arg5 ) ) < 0 ) {
+	if ( ( type = index_lookup( damage_type, arg5 ) ) < 0 ) {  // This should probably use fight_damage as listed on line 30 in objects.cpp
 		type = 3;
 	}
 
@@ -5247,6 +5247,9 @@ void r_purge( CHAR_DATA * ch, char *argument ) {
 		for ( object = ptrRoom->contents; object; object = next_object ) {
 			next_object = object->next_content;
 			if ( GET_ITEM_TYPE (object) == ITEM_DWELLING && object->o.od.value[ 0 ] >= 100000 ) {
+				continue;
+			}
+			else if ( IS_SET (object->obj_flags.extra_flags, ITEM_NOPURGE) ) {
 				continue;
 			}
 			extract_obj( object );
@@ -5943,7 +5946,37 @@ void r_mftog( CHAR_DATA *ch, std::string argument ) {
 }
 
 char * room__get_description( ROOM_DATA * room );
-char *exits[] = { "north", "east", "south", "west", "up", "down", "outside", "inside" };
+    char *exits[] =
+    {
+        "North",
+        "East ",
+        "South",
+        "West ",
+        "Up   ",
+        "Down ",
+        "Outside",
+        "Inside",
+		"Northeast",
+		"Northwest",
+		"Southeast",
+		"Southwest",
+		"UpNorth",
+		"UpEast",
+		"UpSouth",
+		"UpWest",
+		"UpNortheast",
+		"UpNorthwest",
+		"UpSoutheast",
+		"UpSouthwest",
+		"DownNorth",
+		"DownEast",
+		"DownSouth",
+		"DownWest",
+		"DownNortheast",
+		"DownNorthwest",
+		"DownSoutheast",
+		"DownSouthwest"
+    };
 
 bool prog_object_properties( OBJ_DATA *obj, std::string argument, std::string& output ) {
 	std::string buf;

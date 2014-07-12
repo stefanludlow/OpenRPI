@@ -169,6 +169,9 @@ const char *materials[] =
 	"Stone", 
 	"Textile", 
 	"Wood", 
+	"Gemstone",
+	"Preciousmetal",
+	"Brick",
 	"Other",
     "\n"
 };
@@ -664,10 +667,20 @@ const char *calibers[] =
     ".50",
     ".55",
     ".60",
-	"BB",
+	"BB", //9
+	"dart",
+	"bolt",
+	"short-arrow",
+	"long-arrow",
+	"elven-arrow",
+	"balista-bolt",
+	"slingshot-stone",
+	"catapult-stone",
+	"trebuchet-boulder",
     "\n"
 };
 
+// Number of shell names must be same as calibers[]
 const char *shell_name[] =
 {
     "small bullet",
@@ -680,6 +693,40 @@ const char *shell_name[] =
     "large bullet",
     "large bullet",
 	"ball bearing",
+	"dart",
+	"bolt",
+	"arrow",
+	"arrow",
+	"arrow",
+	"balista-bolt",
+	"small-rock",
+	"stone",
+	"boulder",
+    "\n"
+};
+
+// Number of plural shell names must be same as calibers[]
+const char *shell_name_plural[] =
+{
+    "small bullets",
+    "small bullets",
+    "small bullets",
+    "bullets",
+    "bullets",
+    "bullets",
+    "large bullets",
+    "large bullets",
+    "large bullets",
+	"ball bearings",
+	"darts",
+	"bolts",
+	"arrows",
+	"arrows",
+	"arrows",
+	"balista-bolts",
+	"small-rocks",
+	"stones",
+	"boulders",
     "\n"
 };
 
@@ -690,8 +737,125 @@ const char *ammo_sizes[] =
     "rifle",
 	"sling",
     "heavy-gun",
+	"blowgun",
+	"ray-gun",
+	"crossbow",
+	"shortbow",
+	"longbow",
+	"elvenbow",
+	"balista",
+	"slingshot",
+	"catapult",
+	"trebuchet",
     "\n"
 };
+// Trigger text to match calibers[] for first person echo
+const char *trigger_text_first[] = {
+  " pull the trigger of ",  
+  " pull the trigger of ",    
+  " pull the trigger of ",
+  " pull the trigger of ",
+  " pull the trigger of ",  
+  " pull the trigger of ",
+  " pull the trigger of ",
+  " pull the trigger of ",  
+  " pull the trigger of ",
+  " release one end of ", // BB
+  " blow sharply into ",  // dart
+  " engage the trigger mechanism of ", //bolt
+  " release the bowstring of ", // short-arrow
+  " release the bowstring of ", // long-arrow
+  " loose the bowstring of ", // elven-arrow
+  " pull the trigger mechanism of ", // balista-bolt
+  " release the pocket of ", // slingshot-stone
+  " yank the trigger of ",  // catapult-stone
+  " trip the mechanism of ",  // trebuchet-boulder
+  " (error message 0304140206) ",
+  " (error message 0304140207) ",
+  " (error message 0304140208) ",
+  "\n"
+};
+
+// Trigger text to match ammo_sizes[] for observer/target echo
+const char *trigger_text_third[] = {
+  " pulls the trigger of ",  
+  " pulls the trigger of ",    
+  " pulls the trigger of ",
+  " pulls the trigger of ",
+  " pulls the trigger of ",  
+  " pulls the trigger of ",
+  " pulls the trigger of ",
+  " pulls the trigger of ",  
+  " pulls the trigger of ",
+  " releases one end of ", // BB
+  " blows sharply into ",  // dart
+  " engages the trigger mechanism of ", //bolt
+  " releases the bowstring of ", // short-arrow
+  " releases the bowstring of ", // long-arrow
+  " looses the bowstring of ", // elven-arrow
+  " pulls the trigger mechanism of ", // balista-bolt
+  " releases the pocket of ", // slingshot-stone
+  " yanks the trigger of ",  // catapult-stone
+  " trips the mechanism of ",  // trebuchet-boulder
+  " (error message 0304140206) ",
+  " (error message 0304140207) ",
+  " (error message 0304140208) ",
+
+  "\n"
+};
+
+// Text for firearm messages
+const char *echo_one[] = {
+  " sending ",
+  " sending ", // launching
+  " sending ", // shooting
+  "\n"
+};
+const int echo_one_qty = 2; // one less than number
+
+// Text for firearm messages
+const char *echo_two[] = {
+  " flying ",
+  " hurtling ",
+  " streaking ",
+  " soaring ",
+  " shooting ",
+  " racing ",
+  " speeding ",
+  " tearing ",
+  " rushing ",
+  " arcing ",
+  "\n"
+};
+const int echo_two_qty = 9;
+
+// Text for firearm messages
+const char *echo_three[] = {
+  " flies ",
+  " hurtles ",
+  " arcs ",
+  " streaks ",
+  "\n"
+};
+const int echo_three_qty = 3;
+
+// Text for firearm messages
+const char *echo_four[] = {
+  " overhead",
+  " high overhead",
+  " through the area",
+  "\n"
+};
+const int echo_four_qty = 2;
+
+// Text for firearm messages
+const char *echo_five[] = {
+  " heading ", 
+  " disappearing ",
+  " travelling ",
+  "\n"
+};
+const int echo_five_qty = 2;
 
 
 const char *ammo_bits[] =
@@ -701,6 +865,14 @@ const char *ammo_bits[] =
     "armor-piercing",
     "incendiary",
     "tracer",
+	"blunted",
+	"sharpened",
+	"bone",
+	"flint",
+	"metal-tipped",
+	"broadhead",
+	"bodkin",
+	"flaming",
     "\n"
 };
 
@@ -826,6 +998,9 @@ const struct constant_data constant_info[] =
     {"g_bits", "OSET G_BITS flag                 ", (void **) gun_bits},
     {"e_bits", "OSET E_BITS flag           ", (void **) elec_bits},
     {"f_bits", "OSET F_BITS flag           ", (void **) foraged_bits},
+	{"ammo-size", "OSET oval           ", (void **) calibers},
+	{"ammo-type", "OSET oval           ", (void **) ammo_bits},
+	{"weapons", "OSET oval           ", (void **) ammo_sizes},
     {"", "", NULL}
 };
 
@@ -2098,38 +2273,6 @@ do_rdoor (CHAR_DATA * ch, char *argument, int cmd)
     half_chop (argument, buf1, buf2);
 
 	dir = lookup_dir(buf1);
-	/* Replaced by lookup_dir call - Nimrod 7 Sept 13
-    switch (*buf1)
-    {
-    case 'n':
-        dir = 0;
-        break;
-    case 'e':
-        dir = 1;
-        break;
-    case 's':
-        dir = 2;
-        break;
-    case 'w':
-        dir = 3;
-        break;
-    case 'u':
-        dir = 4;
-        break;
-    case 'd':
-        dir = 5;
-        break;
-    case 'o':
-        dir = 6;
-        break;
-    case 'i':
-        dir = 7;
-        break;
-    default:
-        dir = -1;
-        break;
-    }
-*/
     if (dir == -1)
     {
         send_to_char ("What direction is that?\n", ch);
@@ -2162,41 +2305,7 @@ do_rgate (CHAR_DATA * ch, char *argument, int cmd)
     ROOM_DATA *room;
 
     half_chop (argument, buf1, buf2);
-	
 	dir = lookup_dir(buf1);
-	/* Replaced by lookup_dir call - Nimrod 7 Sept 13
-
-    switch (*buf1)
-    {
-    case 'n':
-        dir = 0;
-        break;
-    case 'e':
-        dir = 1;
-        break;
-    case 's':
-        dir = 2;
-        break;
-    case 'w':
-        dir = 3;
-        break;
-    case 'u':
-        dir = 4;
-        break;
-    case 'd':
-        dir = 5;
-        break;
-    case 'o':
-        dir = 6;
-        break;
-    case 'i':
-        dir = 7;
-        break;
-    default:
-        dir = -1;
-        break;
-    }
-*/
     if (dir == -1)
     {
         send_to_char ("What direction is that?\n", ch);
@@ -4109,130 +4218,53 @@ void
 do_rlink (CHAR_DATA * ch, char *argument, int cmd)
 {
 
-    char buf1[2];
-    char buf2[MAX_INPUT_LENGTH];
-    int dir;
-    int cha_rnum;
-    ROOM_DATA *troom;
+	char buf1[MAX_INPUT_LENGTH];
+	char buf2[MAX_INPUT_LENGTH];
+	int dir;
+	int cha_rnum;
+	ROOM_DATA *troom;
 
-    argument = one_argument (argument, buf1);
-    argument = one_argument (argument, buf2);
+	argument = one_argument (argument, buf1);
+	argument = one_argument (argument, buf2);
 
-    if (!*buf2)
-    {
-        send_to_char ("Syntax:  rlink <direction> <room-number>\n", ch);
-        return;
-    }
+	if (!*buf2)
+	{
+		send_to_char ("Syntax:  rlink <direction> <room-number>\n", ch);
+		return;
+	}
 	dir = lookup_dir(buf1);
-	/* Replaced by lookup_dir call - Nimrod 7 Sept 13
-	
-	if (!strncmp(buf1, "n", 2))
-		dir = 0;
-	else if (!strncmp(buf1, "e", 2))
-		dir = 1;
-	else if (!strncmp(buf1, "s", 2))
-		dir = 2;
-	else if (!strncmp(buf1, "w", 2))
-		dir = 3;
-	else if (!strncmp(buf1, "u", 2))
-		dir = 4;
-	else if (!strncmp(buf1, "d", 2))
-		dir = 5;
-	else if (!strncmp(buf1, "o", 2))
-		dir = 6;
-	else if (!strncmp(buf1, "i", 2))
-		dir = 7;
-	else if (!strncmp(buf1, "ne", 2))
-		dir = 8;
-	else if (!strncmp(buf1, "nw", 2))
-		dir = 9;
-	else if (!strncmp(buf1, "se", 2))
-		dir = 10;
-	else if (!strncmp(buf1, "sw", 2))
-		dir = 11;
-	
-	else
-		dir = -1;
-	*/	
-	
-	/* Can't switch on an array, so I changed them to strncmp commands above to allow for ordinal directions -Nimrod
-    switch (buf1[0])
-    {
+	if (dir == -1)
+	{
+		send_to_char ("What direction is that?\n", ch);
+		return;
+	}
 
-    case 'ne':
-        dir = 8;
-        break;
-    case 'e':
-        dir = 1;
-        break;
-    case 's':
-        dir = 2;
-        break;
-    case 'w':
-        dir = 3;
-        break;
-    case 'u':
-        dir = 4;
-        break;
-    case 'd':
-        dir = 5;
-        break;
-    case 'o':
-        dir = 6;
-        break;
-    case 'i':
-        dir = 7;
-        break;
-    case 'n':
-        dir = 0;
-        break;
-    case 'nw':
-        dir = 9;
-        break;
-    case 'se':
-        dir = 10;
-        break;
-    case 'sw':
-        dir = 11;
-        break;
-    default:
-        dir = -1;
-        break;
-    }
-   */
-    if (dir == -1)
-    {
-        send_to_char ("What direction is that?\n", ch);
-        return;
-    }
+	cha_rnum = ch->in_room;
 
-    cha_rnum = ch->in_room;
+	if (!(troom = vnum_to_room (atoi (buf2))))
+	{
+		send_to_char ("No room exists with that number.\n", ch);
+		return;
+	}
 
-    if (!(troom = vnum_to_room (atoi (buf2))))
-    {
-        send_to_char ("No room exists with that number.\n", ch);
-        return;
-    }
+	if (vnum_to_room (ch->in_room)->dir_option[dir])
+		vnum_to_room (vnum_to_room (ch->in_room)->dir_option[dir]->to_room)->dir_option[rev_dir[dir]] = 0;
 
-    if (vnum_to_room (ch->in_room)->dir_option[dir])
-        vnum_to_room (vnum_to_room (ch->in_room)->dir_option[dir]->to_room)->
-        dir_option[rev_dir[dir]] = 0;
+	CREATE (vnum_to_room (cha_rnum)->dir_option[dir], struct room_direction_data, 1);
+	vnum_to_room (cha_rnum)->dir_option[dir]->general_description = 0;
+	vnum_to_room (cha_rnum)->dir_option[dir]->keyword = 0;
+	vnum_to_room (cha_rnum)->dir_option[dir]->exit_info = 0;
+	vnum_to_room (cha_rnum)->dir_option[dir]->key = -1;
+	vnum_to_room (cha_rnum)->dir_option[dir]->to_room = troom->vnum;
 
-    CREATE (vnum_to_room (cha_rnum)->dir_option[dir], struct room_direction_data, 1);
-    vnum_to_room (cha_rnum)->dir_option[dir]->general_description = 0;
-    vnum_to_room (cha_rnum)->dir_option[dir]->keyword = 0;
-    vnum_to_room (cha_rnum)->dir_option[dir]->exit_info = 0;
-    vnum_to_room (cha_rnum)->dir_option[dir]->key = -1;
-    vnum_to_room (cha_rnum)->dir_option[dir]->to_room = troom->vnum;
+	CREATE (troom->dir_option[rev_dir[dir]], struct room_direction_data, 1);
+	troom->dir_option[rev_dir[dir]]->general_description = 0;
+	troom->dir_option[rev_dir[dir]]->keyword = 0;
+	troom->dir_option[rev_dir[dir]]->exit_info = 0;
+	troom->dir_option[rev_dir[dir]]->key = -1;
+	troom->dir_option[rev_dir[dir]]->to_room = cha_rnum;
 
-    CREATE (troom->dir_option[rev_dir[dir]], struct room_direction_data, 1);
-    troom->dir_option[rev_dir[dir]]->general_description = 0;
-    troom->dir_option[rev_dir[dir]]->keyword = 0;
-    troom->dir_option[rev_dir[dir]]->exit_info = 0;
-    troom->dir_option[rev_dir[dir]]->key = -1;
-    troom->dir_option[rev_dir[dir]]->to_room = cha_rnum;
-
-    send_to_char ("Done.\n", ch);
+	send_to_char ("Done.\n", ch);
 }
 
 void
@@ -4251,39 +4283,6 @@ do_rcret (CHAR_DATA * ch, char *argument, int cmd)
     dif = atoi (buf2);
 
 	dir = lookup_dir(buf1);
-	/* Replaced by lookup_dir call - Nimrod 7 Sept 13
-	
-    switch (*buf1)
-    {
-    case 'n':
-        dir = 0;
-        break;
-    case 'e':
-        dir = 1;
-        break;
-    case 's':
-        dir = 2;
-        break;
-    case 'w':
-        dir = 3;
-        break;
-    case 'u':
-        dir = 4;
-        break;
-    case 'd':
-        dir = 5;
-        break;
-    case 'o':
-        dir = 6;
-        break;
-    case 'i':
-        dir = 7;
-        break;
-    default:
-        dir = -1;
-        break;
-    }
-*/
     if (dir == -1)
     {
         send_to_char ("What direction is that?\n", ch);
@@ -4330,38 +4329,6 @@ do_rexit (CHAR_DATA * ch, char *argument, int cmd)
         return;
     }
 	dir = lookup_dir(buf1);
-	/* Replaced by lookup_dir call - Nimrod 7 Sept 13
-    switch (*buf1)
-    {
-    case 'n':
-        dir = 0;
-        break;
-    case 'e':
-        dir = 1;
-        break;
-    case 's':
-        dir = 2;
-        break;
-    case 'w':
-        dir = 3;
-        break;
-    case 'u':
-        dir = 4;
-        break;
-    case 'd':
-        dir = 5;
-        break;
-    case 'o':
-        dir = 6;
-        break;
-    case 'i':
-        dir = 7;
-        break;
-    default:
-        dir = -1;
-        break;
-    }
-*/
     if (dir == -1)
     {
         send_to_char ("What direction is that?\n", ch);
@@ -4717,69 +4684,6 @@ do_rlinkrm (CHAR_DATA * ch, char *argument, int cmd)
     one_argument (argument, buf);
 
 	dir = lookup_dir(buf);
-	/* Replaced by lookup_dir call - Nimrod 7 Sept 13
-	
-	if (!strncmp(buf, "n", 2))
-		dir = 0;
-	else if (!strncmp(buf, "e", 2))
-		dir = 1;
-	else if (!strncmp(buf, "s", 2))
-		dir = 2;
-	else if (!strncmp(buf, "w", 2))
-		dir = 3;
-	else if (!strncmp(buf, "u", 2))
-		dir = 4;
-	else if (!strncmp(buf, "d", 2))
-		dir = 5;
-	else if (!strncmp(buf, "o", 2))
-		dir = 6;
-	else if (!strncmp(buf, "i", 2))
-		dir = 7;
-	else if (!strncmp(buf, "ne", 2))
-		dir = 8;
-	else if (!strncmp(buf, "nw", 2))
-		dir = 9;
-	else if (!strncmp(buf, "se", 2))
-		dir = 10;
-	else if (!strncmp(buf, "sw", 2))
-		dir = 11;
-	
-	else
-		dir = -1;	
-*/
-		
-/* Swapping out the switch for strncmp to enable ordinal directions -Nimrod
-    switch (*buf)
-    {
-    case 'n':
-        dir = 0;
-        break;
-    case 'e':
-        dir = 1;
-        break;
-    case 's':
-        dir = 2;
-        break;
-    case 'w':
-        dir = 3;
-        break;
-    case 'u':
-        dir = 4;
-        break;
-    case 'd':
-        dir = 5;
-        break;
-    case 'o':
-        dir = 6;
-        break;
-    case 'i':
-        dir = 7;
-        break;
-    default:
-        dir = -1;
-        break;
-    }
-*/
     if (dir == -1)
     {
         send_to_char ("What direction is that?\n", ch);
@@ -4813,39 +4717,6 @@ do_rexitrm (CHAR_DATA * ch, char *argument, int cmd)
     one_argument (argument, buf);
 	
 	dir = lookup_dir(buf);
-	/* Replaced by lookup_dir call - Nimrod 7 Sept 13
-
-    switch (*buf)
-    {
-    case 'n':
-        dir = 0;
-        break;
-    case 'e':
-        dir = 1;
-        break;
-    case 's':
-        dir = 2;
-        break;
-    case 'w':
-        dir = 3;
-        break;
-    case 'u':
-        dir = 4;
-        break;
-    case 'd':
-        dir = 5;
-        break;
-    case 'o':
-        dir = 6;
-        break;
-    case 'i':
-        dir = 7;
-        break;
-    default:
-        dir = -1;
-        break;
-    }
-*/
     if (dir == -1)
     {
         send_to_char ("What direction is that?\n", ch);
@@ -5016,42 +4887,7 @@ do_rddesc (CHAR_DATA * ch, char *argument, int cmd)
     char buf[256];
 
     one_argument (argument, buf);
-	
 	dir = lookup_dir(buf);
-	/* Replaced by lookup_dir call - Nimrod 7 Sept 13
-
-    switch (*buf)
-    {
-    case 'n':
-        dir = 0;
-        break;
-    case 'e':
-        dir = 1;
-        break;
-    case 's':
-        dir = 2;
-        break;
-    case 'w':
-        dir = 3;
-        break;
-    case 'u':
-        dir = 4;
-        break;
-    case 'd':
-        dir = 5;
-        break;
-    case 'o':
-        dir = 6;
-        break;
-    case 'i':
-        dir = 7;
-        break;
-    default:
-        dir = -1;
-        break;
-    }
-*/
-	
     if (dir == -1)
     {
         send_to_char ("What direction is that?\n", ch);
@@ -5095,39 +4931,6 @@ do_rkey (CHAR_DATA * ch, char *argument, int cmd)
 		send_to_char ("What direction is that?\n", ch);
         return;
 	}
-	/* Replaced by lookup_dir call - Nimrod 7 Sept 13
-    switch (*buf)
-    {
-    case 'n':
-        dir = 0;
-        break;
-    case 'e':
-        dir = 1;
-        break;
-    case 's':
-        dir = 2;
-        break;
-    case 'w':
-        dir = 3;
-        break;
-    case 'u':
-        dir = 4;
-        break;
-    case 'd':
-        dir = 5;
-        break;
-    case 'o':
-        dir = 6;
-        break;
-    case 'i':
-        dir = 7;
-        break;
-
-    default:
-        send_to_char ("What direction is that?\n", ch);
-        return;
-    }
-*/
     room = vnum_to_room (ch->in_room);
 
     if (!room->dir_option[dir])
@@ -5913,34 +5716,22 @@ do_ounused (CHAR_DATA * ch, char *argument, int cmd)
 int
 index_lookup (const char* const* index, const char* const lookup)
 {
-    unsigned int i;
-
-    for (i = 0; *index[i] != '\n'; i++)
-        if (!strn_cmp (index[i], lookup, strlen (lookup)))
-            return i;
-
-    return -1;
+	int i;
+	for (i = 0; *index[i] != '\n'; i++)
+		if( !strn_cmp (index[i], lookup, strlen (lookup)))
+			return i;
+	return -1;
 }
 
 
 int
-lookup_dir(char *value) // Nimrod added 7 Sept 13 - Returns directional integer based on text in value.
+lookup_dir(const char *value) // Nimrod added 7 Sept 13 - Returns directional integer based on text in value.
 {
-	unsigned int i;
-	
-	for (i = 0; i <= LAST_DIR; i++)
-	{
-        if (!strncmp (dirs[i], value, strlen (value)))
-			return i;
-	}
-	// did not find in dirs, now look in short_dirs
-    for (i = 0; i <= LAST_DIR; i++)
-	{
-        if (!strncmp (short_dirs[i], value, strlen (value)))
-			return i;
-    }
-	// did not find at all
-    return -1; 
+	int i;
+	i = index_lookup( dirs, value );
+	if( i == -1 )
+		i = index_lookup( short_dirs, value );
+	return i;
 }
 
 extern std::multimap<int, variable_data> obj_variable_list;
@@ -6271,6 +6062,7 @@ give_oset_help (CHAR_DATA * ch)
                  "     clock          month day hour	     How long until it morphs\n"
                  "     morphto        objnum               What it morphs to\n"
                  "\n"
+				 "     vcolor         oset vcolor <slot> <$category> <short>\n"
                  "NOTE:  object affects (apply-types) are not copied from prototype.\n");
 }
 
@@ -6307,10 +6099,13 @@ oset_cue (CHAR_DATA * builder, OBJ_DATA *obj, const char *ocue, const char *refl
     const char * ocues [] =
     {
         "none", "notes", "on_grab", "on_drop", "on_give", "on_receive", "on_strike", "on_mstrike", "on_block", "on_blocked", "on_hit",
-        "on_hour", "on_enter", "on_decay", "on_morph", "on_produced", "on_craft", "on_load", "on_five", "on_one", "on_reboot"
+        "on_hour", "on_enter", "on_decay", "on_morph", "on_produced", "on_craft", "on_load", "on_five", "on_one", "on_reboot",
+		 "\n"
     };
 
     int index =  index_lookup (ocues, ocue);
+	
+	
 
     OBJ_DATA *proto = vtoo(obj->nVirtual);
 
@@ -6379,6 +6174,10 @@ oset_cue (CHAR_DATA * builder, OBJ_DATA *obj, const char *ocue, const char *refl
             }
         }
     }
+	else
+	{
+	send_to_char("That is not a legal cue.", builder);
+	}
 }
 
 const int body_sneak_amount[MAX_HITLOC] =
@@ -7049,42 +6848,47 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
             obj->o.od.value[0] = 2; // All small-blades are small weapons.
             switch (quality)
             {
+            // tquality 1d4
             case 5:
-                obj->o.od.value[1] = 2;
-                obj->o.od.value[2] = 3;
-                obj->o.od.value[5] = -1;
+                obj->o.od.value[1] = 1;
+                obj->o.od.value[2] = 4;
+                obj->o.od.value[5] = 0;
                 obj->quality = 500;
                 obj->farthings = 12.5;
                 obj->obj_flags.weight = 200;
                 break;
+            // pquality 1d4+2
             case 1:
-                obj->o.od.value[1] = 2;
-                obj->o.od.value[2] = 3;
-                obj->o.od.value[5] = 0;
+                obj->o.od.value[1] = 1;
+                obj->o.od.value[2] = 4;
+                obj->o.od.value[5] = 2;
                 obj->quality = 800;
                 obj->farthings = 25.0;
                 obj->obj_flags.weight = 175;
                 break;
+            // gquality 1d4+4
             case 3:
-                obj->o.od.value[1] = 2;
-                obj->o.od.value[2] = 3;
-                obj->o.od.value[5] = 2;
+                obj->o.od.value[1] = 1;
+                obj->o.od.value[2] = 4;
+                obj->o.od.value[5] = 4;
                 obj->quality = 1100;
                 obj->farthings = 225.0;
                 obj->obj_flags.weight = 125;
                 break;
+            //squality 1d4+5
             case 4:
-                obj->o.od.value[1] = 2;
-                obj->o.od.value[2] = 3;
-                obj->o.od.value[5] = 3;
+                obj->o.od.value[1] = 1;
+                obj->o.od.value[2] = 4;
+                obj->o.od.value[5] = 5;
                 obj->quality = 1300;
                 obj->farthings = 675.0;
                 obj->obj_flags.weight = 100;
                 break;
+            //1d4+3 oquality
             default:
-                obj->o.od.value[1] = 2;
-                obj->o.od.value[2] = 3;
-                obj->o.od.value[5] = 1;
+                obj->o.od.value[1] = 1;
+                obj->o.od.value[2] = 4;
+                obj->o.od.value[5] = 3;
                 obj->quality = 1000;
                 obj->farthings = 75.0;
                 obj->obj_flags.weight = 150;
@@ -7094,91 +6898,115 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
         case SKILL_BLUDGEON:
             switch (quality)
             {
+            // 1d5 tquality
             case 5:
-                obj->o.od.value[1] = 3;
-                obj->o.od.value[2] = 3;
-                obj->o.od.value[5] = -1;
+                obj->o.od.value[1] = 1;
+                obj->o.od.value[2] = 5;
+                obj->o.od.value[5] = 0;
                 obj->quality = 120;
                 obj->farthings = 17.5;
                 obj->obj_flags.weight = 500;
                 break;
+            // 1d5+2 pquality
             case 1:
-                obj->o.od.value[1] = 3;
-                obj->o.od.value[2] = 3;
-                obj->o.od.value[5] = 0;
+                obj->o.od.value[1] = 1;
+                obj->o.od.value[2] = 5;
+                obj->o.od.value[5] = 2;
                 obj->quality = 800;
                 obj->farthings = 35.0;
                 obj->obj_flags.weight = 450;
                 break;
+            // 1d5+4 gquality
             case 3:
-                obj->o.od.value[1] = 3;
-                obj->o.od.value[2] = 3;
-                obj->o.od.value[5] = 2;
+                obj->o.od.value[1] = 1;
+                obj->o.od.value[2] = 5;
+                obj->o.od.value[5] = 4;
                 obj->quality = 1100;
                 obj->farthings = 400.0;
                 obj->obj_flags.weight = 425;
                 break;
+            // 1d5+5 squality
             case 4:
-                obj->o.od.value[1] = 3;
-                obj->o.od.value[2] = 3;
-                obj->o.od.value[5] = 3;
+                obj->o.od.value[1] = 1;
+                obj->o.od.value[2] = 5;
+                obj->o.od.value[5] = 5;
                 obj->quality = 1300;
                 obj->farthings = 1600.0;
                 obj->obj_flags.weight = 400;
                 break;
+            // 1d5+3 oquality
             default:
-                obj->o.od.value[1] = 3;
-                obj->o.od.value[2] = 3;
-                obj->o.od.value[5] = 1;
+                obj->o.od.value[1] = 1;
+                obj->o.od.value[2] = 5;
+                obj->o.od.value[5] = 3;
                 obj->quality = 1000;
                 obj->farthings = 100.0;
                 obj->obj_flags.weight = 450;
                 break;
             }
+            // For bludgeons, we add +4 to Y where Xd(Y+4) if it's a two-hander.
+            // Also make it heavier.
+            if (obj->o.od.value[0] == 3)
+            {
+                obj->o.od.value[2] += 4;
+                obj->obj_flags.weight += 250;
+            }
             break;
         case SKILL_POLEARM:
             switch (quality)
             {
+            // 2d4-1 trash quality
             case 5:
                 obj->o.od.value[1] = 2;
-                obj->o.od.value[2] = 3;
-                obj->o.od.value[5] = 2;
+                obj->o.od.value[2] = 4;
+                obj->o.od.value[5] = -1;
                 obj->quality = 500;
                 obj->farthings = 17.5;
-                obj->obj_flags.weight = 800;
+                obj->obj_flags.weight = 600;
                 break;
+            // 2d4+1 poor quality
             case 1:
                 obj->o.od.value[1] = 2;
-                obj->o.od.value[2] = 3;
-                obj->o.od.value[5] = 3;
+                obj->o.od.value[2] = 4;
+                obj->o.od.value[5] = 1;
                 obj->quality = 800;
                 obj->farthings = 35.0;
-                obj->obj_flags.weight = 725;
+                obj->obj_flags.weight = 550;
                 break;
+            // 2d4+3 good quality
             case 3:
                 obj->o.od.value[1] = 2;
-                obj->o.od.value[2] = 3;
-                obj->o.od.value[5] = 5;
+                obj->o.od.value[2] = 4;
+                obj->o.od.value[5] = 3;
                 obj->quality = 1100;
                 obj->farthings = 400.0;
-                obj->obj_flags.weight = 675;
+                obj->obj_flags.weight = 525;
                 break;
+            // 2d4+4 superb quality
             case 4:
                 obj->o.od.value[1] = 2;
-                obj->o.od.value[2] = 3;
-                obj->o.od.value[5] = 6;
+                obj->o.od.value[2] = 4;
+                obj->o.od.value[5] = 4;
                 obj->quality = 1300;
                 obj->farthings = 1600.0;
-                obj->obj_flags.weight = 650;
+                obj->obj_flags.weight = 500;
                 break;
+            // 2d4+2 ordinary quality
             default:
                 obj->o.od.value[1] = 2;
-                obj->o.od.value[2] = 3;
-                obj->o.od.value[5] = 4;
+                obj->o.od.value[2] = 4;
+                obj->o.od.value[5] = 2;
                 obj->quality = 1000;
                 obj->farthings = 100.0;
-                obj->obj_flags.weight = 700;
+                obj->obj_flags.weight = 570;
                 break;
+            }
+            // For Polearms, we add +2 damage bonus for two-handed polearms.
+            // Also make it heavier.
+            if (obj->o.od.value[0] == 3)
+            {
+                obj->o.od.value[5] += 2;
+                obj->obj_flags.weight += 250;
             }
             break;
         default: // default to long-blade if nothing else.
@@ -7186,45 +7014,57 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
             switch (quality)
             {
             case 5:
-                obj->o.od.value[1] = 2;
-                obj->o.od.value[2] = 5;
-                obj->o.od.value[5] = 0;
+                // 3d3-2 tquality
+                obj->o.od.value[1] = 3;
+                obj->o.od.value[2] = 3;
+                obj->o.od.value[5] = -2;
                 obj->quality = 500;
                 obj->farthings = 32.5;
-                obj->obj_flags.weight = 425;
+                obj->obj_flags.weight = 525;
                 break;
+                // 3d3 pquality
             case 1:
-                obj->o.od.value[1] = 2;
-                obj->o.od.value[2] = 5;
-                obj->o.od.value[5] = 1;
+                obj->o.od.value[1] = 3;
+                obj->o.od.value[2] = 3;
+                obj->o.od.value[5] = 0;
                 obj->quality = 800;
                 obj->farthings = 65.0;
-                obj->obj_flags.weight = 375;
+                obj->obj_flags.weight = 500;
                 break;
+                // 3d3+2 gquality
             case 3:
-                obj->o.od.value[1] = 2;
-                obj->o.od.value[2] = 5;
-                obj->o.od.value[5] = 3;
+                obj->o.od.value[1] = 3;
+                obj->o.od.value[2] = 3;
+                obj->o.od.value[5] = 2;
                 obj->quality = 1100;
                 obj->farthings = 800.0;
-                obj->obj_flags.weight = 325;
+                obj->obj_flags.weight = 450;
                 break;
+                // 3d3+3 squality
             case 4:
-                obj->o.od.value[1] = 2;
-                obj->o.od.value[2] = 5;
-                obj->o.od.value[5] = 4;
+                obj->o.od.value[1] = 3;
+                obj->o.od.value[2] = 3;
+                obj->o.od.value[5] = 3;
                 obj->quality = 1300;
                 obj->farthings = 3200.0;
-                obj->obj_flags.weight = 300;
+                obj->obj_flags.weight = 400;
                 break;
+                // 3d3+1 oquality
             default:
-                obj->o.od.value[1] = 2;
-                obj->o.od.value[2] = 5;
-                obj->o.od.value[5] = 2;
+                obj->o.od.value[1] = 3;
+                obj->o.od.value[2] = 3;
+                obj->o.od.value[5] = 1;
                 obj->quality = 1000;
                 obj->farthings = 200.0;
-                obj->obj_flags.weight = 350;
+                obj->obj_flags.weight = 475;
                 break;
+            }
+            // For long-blades, we add +2 damage bonus for two-handed swords.
+            // Also make it heavier.
+            if (obj->o.od.value[0] == 3)
+            {
+                obj->o.od.value[5] += 2;
+                obj->obj_flags.weight += 250;
             }
             break;
         }
@@ -7269,7 +7109,8 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
             saf->next = NULL;
             affect_to_obj (obj, saf);
         }
-
+        // If the weapon is two-handed only, and is either a long-blade, polearm, or bludgeon ...
+        /*
         if (obj->o.od.value[0] == 3 &&
                 (obj->o.od.value[3] == SKILL_LONG_BLADE ||
                  obj->o.od.value[3] == SKILL_POLEARM ||
@@ -7277,27 +7118,30 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
         {
             obj->farthings = obj->farthings * 5 / 4;
             obj->obj_flags.weight = obj->obj_flags.weight * 6 / 4;
-
+            // If it's a bludgeon, add +1 damage to oval5.
             if (obj->o.od.value[3] == SKILL_BLUDGEON)
                 obj->o.od.value[5] += 1;
+            // Or just add one damage dice to anything else, where XdY, Y+1.
             else
                 obj->o.od.value[2] += 1;
         }
-
-        if (obj->o.od.value[0] == 2 &&
+        // If the weapon is one-handed only, and is either a long-blade, polearm, or bludgeon ...
+        if ((obj->o.od.value[0] == 2 || obj->o.od.value[0] == 1) &&
                 (obj->o.od.value[3] == SKILL_LONG_BLADE ||
                  obj->o.od.value[3] == SKILL_POLEARM ||
                  obj->o.od.value[3] == SKILL_BLUDGEON))
         {
             obj->farthings = obj->farthings * 3 / 4;
             obj->obj_flags.weight = obj->obj_flags.weight * 65 / 100;
-
+            // If it's a bludgeon, subtract -1 to the damage bonus in oval5.
             if (obj->o.od.value[3] == SKILL_BLUDGEON)
                 obj->o.od.value[5] -= 1;
+            // If it's not a bludgeon, then subtract 1 to the damage dice, where XdY
+            // and Xd(Y-1).
             else
                 obj->o.od.value[2] -= 1;
         }
-
+        */
         break;
     case ITEM_SHIELD:
         switch (quality)
@@ -7484,8 +7328,8 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
 
             switch (obj->o.armor.armor_type)
             {
-            case 1: // metal
-                sneak_mod = 2;
+            case 1: // leather
+                sneak_mod = 0;
 
                 switch (quality)
                 {
@@ -7493,30 +7337,30 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
                     obj->o.armor.armor_value = 3;
                     base_quality = 160;
                     base_cost = 250.0;
-                    base_weight = 2500;
+                    base_weight = 1700;
                     break;
                 case 5:
                     obj->o.armor.armor_value = 2;
                     base_quality = 130;
                     base_cost = 200.0;
-                    base_weight = 2500;
+                    base_weight = 1800;
                     break;
                 case 3:
                 case 4:
                     obj->o.armor.armor_value = 7;
                     obj->quality = 240;
                     base_cost = 8000.0;
-                    base_weight = 5000;
+                    base_weight = 1500;
                     break;
                 default:
                     obj->o.armor.armor_value = 5;
                     base_quality = 200;
                     base_cost = 750.0;
-                    base_weight = 4000;
+                    base_weight = 1600;
                     break;
                 }
                 break;
-            case 2: // Kevlar
+            case 2: // Hardened leather
                 sneak_mod = 1;
 
                 switch (quality)
@@ -7526,38 +7370,38 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
                     obj->o.armor.armor_value = 3;
                     base_quality = 160;
                     base_cost = 400.0;
-                    base_weight = 2500;
+                    base_weight = 2200;
                     break;
                 case 5:
                     sneak_mod = 0;
                     obj->o.armor.armor_value = 2;
                     base_quality = 130;
                     base_cost = 300.0;
-                    base_weight = 2500;
+                    base_weight = 2300;
                     break;
                 case 4:
                 case 3:
                     obj->o.armor.armor_value = 7;
                     base_quality = 240;
                     base_cost = 12800.0;
-                    base_weight = 4000;
+                    base_weight = 2000;
                     break;
                 default:
                     obj->o.armor.armor_value = 5;
                     base_quality = 200;
                     base_cost = 1200.0;
-                    base_weight = 3500;
+                    base_weight = 2100;
                     break;
                 }
                 break;
-            case 3: // Ceramic
+            case 3: // Mail
                 sneak_mod = 2;
 
                 switch (quality)
                 {
                 case 1:
                     sneak_mod = 1;
-                    obj->o.armor.armor_value = 3;
+                    obj->o.armor.armor_value = 4;
                     base_quality = 180;
                     base_cost = 550.0;
                     base_weight = 3000;
@@ -7570,41 +7414,58 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
                     base_weight = 3000;
                     break;
                 case 3:
+				    sneak_mod = 1;
+                    obj->o.armor.armor_value = 5;
+                    base_quality = 130;
+                    base_cost = 450.0;
+                    base_weight = 3000;
+                    break;
                 case 4:
-                    obj->o.armor.armor_value = 8;
+					sneak_mod = 1;
+                    obj->o.armor.armor_value = 7;
                     base_quality = 240;
                     base_cost = 17600.0;
                     base_weight = 5000;
                     break;
                 default:
-                    obj->o.armor.armor_value = 6;
+					sneak_mod = 1;
+                    obj->o.armor.armor_value = 5;
                     base_quality = 200;
                     base_cost = 1650.0;
                     base_weight = 4000;
                     break;
                 }
                 break;
-            case 4: // Power
+            case 4: // Scale
                 sneak_mod = 3;
 
                 switch (quality)
                 {
                 case 1:
+                    sneak_mod = 1;
+                    obj->o.armor.armor_value = 4;
+                    base_quality = 180;
+                    base_cost = 2000.0;
+                    base_weight = 3000;
+                    break;
                 case 5:
-                    obj->o.armor.armor_value = 6;
+					sneak_mod = 1;
+                    obj->o.armor.armor_value = 3;
                     base_quality = 160;
                     base_cost = 1000.0;
                     base_weight = 5000;
                     break;
                 case 3:
                 case 4:
-                    obj->o.armor.armor_value = 10;
+					sneak_mod = 1;
+                    obj->o.armor.armor_value = 6;
                     base_quality = 240;
                     base_cost = 32000.0;
                     base_weight = 6000;
                     break;
                 default:
-                    obj->o.armor.armor_value = 8;
+					sneak_mod = 1;
+                    obj->o.armor.armor_value = 7;
                     base_quality = 200;
                     base_cost = 3000.0;
                     base_weight = 5000;
@@ -7619,7 +7480,7 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
                     obj->o.armor.armor_type = 0;
 
                 case 1:
-                    obj->o.armor.armor_value = 1;
+                    obj->o.armor.armor_value = 2;
                     base_quality = 160;
                     base_cost = 150.0;
                     base_weight = 1500;
@@ -7811,6 +7672,7 @@ do_oset (CHAR_DATA * ch, char *argument, int cmd)
     int atm_power = 0;
     int pot_power = 0;
     int rat_power = 0;
+
 
     TRAP_DATA *trap;
     bool changed = false;
@@ -8966,13 +8828,13 @@ do_oset (CHAR_DATA * ch, char *argument, int cmd)
 				*/
                     if (!vc_category(buf))
                     {
-                        send_to_char ("No such variable category - format is oset vcolor $category short.\n", ch);
+                        send_to_char ("No such variable category - format is oset vcolor <slot> <$category> <short>.\n", ch);
                         return;
                     }
 
                     if (!vc_exists(buf2, buf))
                     {
-                        send_to_char ("No such variable in that category - format is oset vcolor $category short.\n", ch);
+                        send_to_char ("No such variable in that category - format is oset vcolor <slot> <$category> <short>.\n", ch);
                         return;
                     }
 
@@ -10420,7 +10282,7 @@ update_crafts_file (void)
 
                     if (*vars->category)
                     {
-                        fprintf (fp, "      %d;  (%s %d %d %d)\n", i, vars->category, vars->from, vars->pos, vars->to);
+                        fprintf (fp, "      %d;  (%s %s %d %d %d)\n", i, vars->category, vars->manual, vars->from, vars->pos, vars->to);
                     }
                 }
             }
@@ -10467,6 +10329,8 @@ do_cset (CHAR_DATA * ch, char *argument, int cmd)
     CRAFT_VARIABLE_DATA *vars;
 	CRAFT_OVAL_DATA *ovals;
     DEFAULT_ITEM_DATA *fitems;
+	int from_color_number = 0;
+	char from_color_name[MAX_STRING_LENGTH];
 
 
     if (IS_NPC (ch))
@@ -11297,18 +11161,18 @@ do_cset (CHAR_DATA * ch, char *argument, int cmd)
         /** Phase Variables (normal)**/
         else if (!strn_cmp (subcmd, "varcat", 6))
         {
-            if (!isdigit (subcmd[6]))
+            if (!isdigit (subcmd[6])) // Checks for number at the end of the word 'varcat', i.e. varcat1
             {
                 send_to_char
                 ("A variable number must be specified, e.g. varcat6.\n", ch);
                 return;
             }
-            sprintf (buf, "%c", subcmd[6]);
+            sprintf (buf, "%c", subcmd[6]);  // sets buf equal to varcat number.
 
             if (isdigit (subcmd[7]))
-                sprintf (buf + strlen (buf), "%c", subcmd[7]);
+                sprintf (buf + strlen (buf), "%c", subcmd[7]); // looks for a second digit of varcat number
 
-            objnum = atoi (buf);
+            objnum = atoi (buf); // sets varcat # to an integer called objnum
 
             if (objnum < 1)
             {
@@ -11318,10 +11182,10 @@ do_cset (CHAR_DATA * ch, char *argument, int cmd)
                 return;
             }
 
-            argument = one_argument (argument, buf);
+            argument = one_argument (argument, buf); // Set buf equal to next word, should be a variable name, i.e. $furcolor
             if (!*buf)
             {
-                send_to_char ("What variable category did you wish to capture in this these?\n", ch);
+                send_to_char ("What variable category did you wish to capture?\n", ch);
                 return;
             }
 
@@ -11353,6 +11217,7 @@ do_cset (CHAR_DATA * ch, char *argument, int cmd)
                     if (vars->category)
                     {
                         mem_free(vars->category);
+						mem_free(vars->manual);
                     }
                     mem_free(vars);
                     vars = NULL;
@@ -11366,20 +11231,46 @@ do_cset (CHAR_DATA * ch, char *argument, int cmd)
                 }
             }
 
-            if (!vc_category(buf))
+            if (!vc_category(buf)) // Checks to make sure the variable category exists.
             {
                 send_to_char ("You need to specify a valid variable category: check variable list.\n", ch);
                 return;
             }
-            argument = one_argument(argument, buf2);
+            argument = one_argument(argument, buf2); // set buf2 equal to next word, should be a either a number or a variable value.
 
             if (!isdigit(*buf2) || atoi(buf2) > MAX_DEFAULT_ITEMS || atoi(buf2) < 0)
-            {
-                send_to_char ("You must specify an existing object set.\n", ch);
-                return;
+            { 
+			   // Adding functionality to manually set a variable value rather than inheriting it. 0212141729-Nimrod
+			   // If it's an actual variable value then set it.
+			   if (vc_exists(buf2, buf)) // removing wildcard -Nim  || (!str_cmp(buf2, "*")))  // buf2 is variable name, buf is variable category
+                    {
+					  // If we're here, then the variable name does exist in the category.  We can set it manually now.
+					  // Allowing for the use of '*' to choose any variable name when the craft is run.
+					  sprintf(from_color_name, "%s", buf2);
+					  // from_color_name = str_dup(buf2);
+					  from_color_number = 99;
+                       
+                    }
+				else
+				  {
+				    send_to_char ("No such variable in that category.\n", ch);
+                    return;
+				  }
+			   
+                // send_to_char ("You must specify an existing object set.\n", ch);
+                // return;
             }
-
-            argument = one_argument(argument, buf3);
+            else
+			{
+			  // buf2 is a number, let's set our temporary variables to keep track of it temp_color_name[] was set already, so don't need to worry about it.
+              from_color_number = atoi(buf2);
+			  sprintf(from_color_name, "Notused:%d", from_color_number);
+			  // from_color_name = str_dup("xxdefaultxx");
+       			  
+			  
+			}
+            
+			argument = one_argument(argument, buf3);
             if (!isdigit(*buf3) || atoi(buf3) > MAX_DEFAULT_ITEMS || atoi(buf3) < 0)
             {
                 send_to_char ("You must specify an existing object set.\n", ch);
@@ -11394,12 +11285,21 @@ do_cset (CHAR_DATA * ch, char *argument, int cmd)
             }
 
             vars->category = str_dup(buf);
-            vars->from = atoi(buf2);
+            vars->from = from_color_number;// atoi(buf2);
+			vars->manual = str_dup(from_color_name);
             vars->to = atoi(buf3);
             vars->pos = atoi(buf4);
             vars->phase = phase;
-            sprintf(output, "Variable%d added, capturing category %s from Object%d to position %d in Object%d.\n", objnum, vars->category, vars->from, vars->pos, vars->to);
-            send_to_char(output, ch);
+			if (vars->from >= 99)
+			{
+			  sprintf(output, "Variable %d added, manually placing '%s' from category %s to position %d in Object%d.\n", objnum, vars->manual, vars->category, vars->pos, vars->to);
+			}
+			else
+			{
+              sprintf(output, "Variable %d added, capturing category %s from Object%d to position %d in Object%d.\n", objnum, vars->category, vars->from, vars->pos, vars->to);
+            }
+			
+			send_to_char(output, ch);
             return;
         }
         /** Phase Objects (normal)**/
@@ -11694,7 +11594,8 @@ mset_cue (CHAR_DATA * builder, MOB_DATA *mob, const char *cue, const char *refle
         "on_reboot", "mob_present", "obj_present",
 		"on_death",
 		"on_five", "on_one",
-		"blank_cue"
+		"blank_cue",
+		 "\n"
     };
 
     int index =  index_lookup (cues, cue);
@@ -11762,6 +11663,10 @@ mset_cue (CHAR_DATA * builder, MOB_DATA *mob, const char *cue, const char *refle
             }
         }
     }
+	else
+	{
+	send_to_char("That is not a legal cue.", builder);
+	}
 }
 
 void
@@ -11953,7 +11858,7 @@ do_mset (CHAR_DATA * ch, char *argument, int cmd)
             }
             ind = atoi(buf);
 
-            if (ind < SOMA_FIRST || ind > SOMA_LAST)
+            if (ind < 900 || ind > SOMA_LAST)
             {
                 send_to_char ("I couldn't find that affect in the database.\n", ch);
                 return;

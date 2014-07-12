@@ -119,6 +119,22 @@ const char *month_name[12] =
     "December, the Yuletide"
 };
 
+const char *short_month_name[12] =
+{
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+};
+
 const char *season_name[4] =
 {
     "Spring",
@@ -186,7 +202,7 @@ int loc_order[MAX_WEAR] =
 	WEAR_BLANK
 };
 
-/*
+
 static char *strTimeWord[] =
 {
     "twelve", "one", "two", "three", "four", "five", "six", "seven", "eight",
@@ -195,7 +211,7 @@ static char *strTimeWord[] =
     "nine", "ten", "eleven",
     "twelve"
 };
-*/
+
 
 const char *fog_states[] =
 {
@@ -340,7 +356,11 @@ do_point (CHAR_DATA * ch, char *argument, int cmd)
 
     argument = one_argument (argument, arg1);
     argument = one_argument (argument, arg2);
-
+	
+	
+	if((dir = lookup_dir(arg1)) == -1)
+	{
+    /* Line above replaces dozen below 0208142203 -Nimrod
     if (!strn_cmp ("north", arg1, strlen (arg1)))
         dir = 0;
     else if (!strn_cmp ("east", arg1, strlen (arg1)))
@@ -354,8 +374,10 @@ do_point (CHAR_DATA * ch, char *argument, int cmd)
     else if (!strn_cmp ("down", arg1, strlen (arg1)))
         dir = 5;
     else
-    {
-        send_to_char ("Usage: point <direction> <target>\n", ch);
+	{
+	*/
+    
+        send_to_char ("Usage format: point <direction> <target>\n", ch);
         return;
     }
 
@@ -672,6 +694,7 @@ do_timeconvert (CHAR_DATA * ch, char *argument, int cmd)
 
 		day = game_date.day + 1;
 
+		 // could just make a call to suffix() here rather than the next 12 lines.
 		if (day == 1)
 			strcpy (suf, "st");
 		else if (day == 2)
@@ -1054,7 +1077,7 @@ fatigue_bar (CHAR_DATA * ch, bool prompt)
 		if (ch->move == 0)
 			sprintf (buf, "       ");
 	}
-
+ 
 
     return buf;
 }
@@ -4017,25 +4040,56 @@ enter_exit_msg (CHAR_DATA * ch, char *buffer)
     bool isLeaving = false;
     char *e_dirs[] =
     {
-        "to the north",
-        "to the east",
-        "to the south",
-        "to the west",
-        "up",
-        "down",
-        "to the outside",
-        "to the inside"
+		"to the north", "to the east", "to the south",
+		"to the west", "above", "below", "outside", "inside", "to the northeast", "to the northwest", "to the southeast", "to the southwest",
+		"to the upper north",
+	"to the upper east",
+	"to the upper south",
+	"to the upper west",
+	"to the upper northeast",
+	"to the upper northwest",
+	"to the upper southeast",
+	"to the upper southwest",
+	"to the lower north",
+	"to the lower east",
+	"to the lower south",
+	"to the lower west",
+	"to the lower northeast",
+	"to the lower northwest",
+	"to the lower southeast",
+	"to the lower southwest"
     };
     char *a_dirs[] =
     {
-        "the south",
-        "the west",
-        "the north",
-        "the east",
-        "below",
-        "above",
-        "the outside",
-        "the inside"
+       "the south",
+	"the west",
+	"the north",
+	"the east",
+	"below",
+	"above",
+	"inside",
+	"outside",
+	"the southwest",
+	"the southeast",
+	"the northwest",
+	"the northeast",
+	"the upnorth",
+	"the upeast",
+	"the upsouth",
+	"the upwest",
+	"the upnortheast",
+	"the upnorthwest",
+	"the upsoutheast",
+	"the upsouthwest",
+	"the downnorth",
+	"the downeast",
+	"the downsouth",
+	"the downwest",
+	"the downnortheast",
+	"the downnorthwest",
+	"the downsoutheast",
+	"the downsouthwest",
+	"report this to nimrod"
     };
 
     extern QE_DATA *quarter_event_list;
@@ -5883,8 +5937,8 @@ void do_look (CHAR_DATA * ch, char *argument, int cmd)
     char arg1[MAX_STRING_LENGTH] = { '\0' };
     char buf[MAX_STRING_LENGTH] = { '\0' };
     char stink_buf[MAX_STRING_LENGTH] = { '\0' };
-    //int nRoomVnum = 0, nZone = 1, original_loc = 0;
-    //bool change = false, again = true, abrt = false,
+    int nRoomVnum = 0, nZone = 1, original_loc = 0;
+    bool change = false, again = true, abrt = false;
     bool found = false;
     bool eq = true;
     bool hands = true;
@@ -5934,19 +5988,20 @@ void do_look (CHAR_DATA * ch, char *argument, int cmd)
 
 
     /** Window **/
-    /*
-    if ((strcasecmp (arg1, "vortex") == STR_MATCH && ch->in_room == OOC_LOUNGE)
-        || (!strn_cmp (arg1, "vortex", 6)
+    
+    if ((strcasecmp (arg1, "window") == STR_MATCH && ch->in_room == OOC_LOUNGE)
+        || (!strn_cmp (arg1, "window", 6)
         && strcasecmp (ch->room->name, PREGAME_ROOM_NAME) == STR_MATCH))
       {
 
-        while (again)
+         while (again)  // This is really horrible.  There needs to be some sort of test to make sure it doesn't get caught in a loop.
       {
 
-        nZone = number (10, 19);
-        nRoomVnum = (nZone * 1000) + number (1, 999);
-
-        if (!(troom = vtor (nRoomVnum)))
+        // nZone = number (10, 19);
+		nZone = 75;
+         nRoomVnum = (nZone * 1000) + number (1, 999);
+         		 
+        if (!(troom = vnum_to_room (nRoomVnum)))
           continue;
 
         if (IS_SET (troom->room_flags, INDOORS))
@@ -5958,7 +6013,7 @@ void do_look (CHAR_DATA * ch, char *argument, int cmd)
         if (IS_SET (troom->room_flags, STORAGE))
           continue;
 
-        if (strlen (troom->description) < 256)
+        if (strlen (troom->description) < 180)
           continue;
 
         if (!strncmp (troom->description, "No Description Set", 17))
@@ -5985,7 +6040,7 @@ void do_look (CHAR_DATA * ch, char *argument, int cmd)
       }
         original_loc = ch->in_room;
         act
-      ("You peer in to the swirling vortex, a sudden lifelike picture forming before you. . .",
+      ("You press your face to the window, a sudden lifelike picture forming before you...",
        false, ch, 0, 0, TO_CHAR | _ACT_FORMAT);
         char_from_room (ch);
         char_to_room (ch, nRoomVnum);
@@ -5999,7 +6054,7 @@ void do_look (CHAR_DATA * ch, char *argument, int cmd)
       ch->affected_by &= ~AFF_INFRAVIS;
         return;
       }
-    */
+    
 
     /* LOOK IN A CERTAIN DIRECTION */
 
@@ -6864,7 +6919,7 @@ read_virtual_message (CHAR_DATA * ch, char *name, char *argument)
     sprintf (b_buf, "#6Date:#0     %s\n"
              "#6Author:#0   %s\n"
              "#6Subject:#0  %s\n"
-             "#6Context:#0  http://www.atonementrpi.com.org/staffportal.php?context=%ld&db=all##%ld\n\n%s",
+             "#6Context:#0  http://www.middle-earth.us/staffportal.php?context=%ld&db=all##%ld\n\n%s",
              message->date, message->poster, message->subject,
              message->nTimestamp, message->nTimestamp, message->message);
 
@@ -7131,13 +7186,13 @@ get_stat_range (int score)
 {
     if (score <= 4)
         return 0;
-    if (score >= 7 && score <= 8)
+    if (score >= 5 && score <= 7)
         return 1;
-    if (score >= 9 && score <= 10)
+    if (score >= 8 && score <= 9)
         return 2;
-    if (score >= 11 && score <= 13)
+    if (score >= 10 && score <= 12)
         return 3;
-    if (score >= 14 && score <= 15)
+    if (score >= 13 && score <= 15)
         return 4;
     if (score >= 16 && score <= 17)
         return 5;
@@ -7154,32 +7209,55 @@ get_stat_range (int score)
 
 
 int
-get_comestible_range (int num)
+get_comestible_range (int num)  // Thirst only?
 {
     if (num <= 0)
         return 0;
-    if (num >= 1 && num <= 24)
+    if (num >= 0 && num <= MAX_THIRST * .15)
         return 1;
-    if (num >= 25 && num <= 48)
+    if (num >= MAX_THIRST * .15 && num <= MAX_THIRST * .30) 
         return 2;
-    if (num >= 49 && num <= 72)
+    if (num >= MAX_THIRST * .30 && num <= MAX_THIRST * .45) 
         return 3;
-    if (num >= 73 && num <= 96)
+    if (num >= MAX_THIRST * .45 && num <= MAX_THIRST * .60) 
         return 4;
-    if (num >= 97 && num <= 200)
+    if (num >= MAX_THIRST * .60 && num <= MAX_THIRST * .70) 
         return 5;
-    if (num >= 201 && num <= 240)
+    if (num >= MAX_THIRST * .70 && num <= MAX_THIRST * .80) 
         return 6;
-    if (num >= 241 && num <= 280)
+    if (num >= MAX_THIRST * .80 && num <= MAX_THIRST * .90) 
         return 7;
-    if (num >= 281)
+    if (num >= MAX_THIRST * .90)
         return 8;
     return 0;
 }
 
 int
-get_hunger_comestible_range (int num)
+get_hunger_comestible_range (int num) // Changing to use MIN_CALORIE and MAX_CALORIE global values 0211141844 -Nimrod
 {
+    if (num <= MIN_CALORIES * .9)
+        return 0;
+    if (num >= MIN_CALORIES * .9 && num <= MIN_CALORIES * .75)
+        return 1;
+    if (num >= MIN_CALORIES * .75 && num <= MIN_CALORIES * .5)
+        return 2;
+    if (num >= MIN_CALORIES * .5 && num <= MIN_CALORIES * .25)
+        return 3;
+    if (num >= MIN_CALORIES * .25 && num <= 0)
+        return 4;
+    if (num >= 0 && num <= MAX_CALORIES * .25)
+        return 5;
+    if (num >= MAX_CALORIES * .25 && num <= MAX_CALORIES * .50)
+        return 6;
+    if (num >= MAX_CALORIES * .50 && num <= MAX_CALORIES * .75)
+        return 7;
+    if (num >= MAX_CALORIES * .75 && num <= MAX_CALORIES * .90)
+        return 8;
+    if (num >= MAX_CALORIES * .90)
+        return 9;
+    return 0;
+
+/* Old values - leaving just in case for now.  0211141655 -Nimrod
     if (num <= -145)
         return 0;
     if (num >= -144 && num <= -97)
@@ -7201,6 +7279,7 @@ get_hunger_comestible_range (int num)
     if (num >= 35)
         return 9;
     return 0;
+*/
 }
 
 
@@ -7244,21 +7323,22 @@ hunger_thirst_process (CHAR_DATA * ch)
     }
 
 
-    if (ch->hunger > -169)
-        ch->hunger--;
-    if (ch->thirst > 0)
-        ch->thirst-= 6;
+    if (ch->hunger > MIN_CALORIES)
+        ch->hunger-= HOURLY_CALORIES;
+    if (ch->thirst > MIN_THIRST)
+        ch->thirst-= HOURLY_THIRST;
 
 
-    if (ch->thirst < -1)
-        ch->thirst = 0;
-    if (ch->hunger < -169)
-        ch->hunger = -168;
+    if (ch->thirst < MIN_THIRST)
+        ch->thirst = MIN_THIRST;
+    if (ch->hunger < MIN_CALORIES)
+        ch->hunger = MIN_CALORIES;
 
-    if (GET_TRUST(ch) || IS_NPC(ch))
-        ch->hunger = 48;
+    // if (GET_TRUST(ch) || IS_NPC(ch)) Disabled for testing purposes 0212140024 -Nimrod
+	if (IS_NPC(ch))
+        ch->hunger = MAX_CALORIES;
 
-    if (ch->hunger <= -145)
+    if (ch->hunger <= MIN_CALORIES)
     {
         if ((af = get_affect(ch, MAGIC_STARVE_ONE)))
             remove_affect_type (ch, MAGIC_STARVE_ONE);
@@ -7274,7 +7354,7 @@ hunger_thirst_process (CHAR_DATA * ch)
 
         wound_to_char (ch, "bloodloss", 5, 0, 0, 0, 0);
     }
-    else if (ch->hunger >= -144 && ch->hunger <= -97)
+    else if (ch->hunger >= MIN_CALORIES && ch->hunger <= MIN_CALORIES * .75)
     {
         if ((af = get_affect(ch, MAGIC_STARVE_ONE)))
             remove_affect_type(ch, MAGIC_STARVE_ONE);
@@ -7288,7 +7368,7 @@ hunger_thirst_process (CHAR_DATA * ch)
         if (!(af = get_affect(ch, MAGIC_STARVE_THREE)))
             magic_add_affect (ch, MAGIC_STARVE_THREE, -1, 0, 0, 0, 0);
     }
-    else if (ch->hunger >= -96 && ch->hunger <= -49)
+    else if (ch->hunger >= MIN_CALORIES * .75 && ch->hunger <= MIN_CALORIES * .5)
     {
         if ((af = get_affect(ch, MAGIC_STARVE_ONE)))
             remove_affect_type(ch, MAGIC_STARVE_ONE);
@@ -7302,7 +7382,7 @@ hunger_thirst_process (CHAR_DATA * ch)
         if (!(af = get_affect(ch, MAGIC_STARVE_TWO)))
             magic_add_affect (ch, MAGIC_STARVE_TWO, -1, 0, 0, 0, 0);
     }
-    else if (ch->hunger >= -48 && ch->hunger <= -1)
+    else if (ch->hunger >= MIN_CALORIES * .5 && ch->hunger <= MIN_CALORIES * .25)
     {
         if ((af = get_affect(ch, MAGIC_STARVE_TWO)))
             remove_affect_type(ch, MAGIC_STARVE_TWO);
@@ -7611,6 +7691,17 @@ do_info (CHAR_DATA * ch, char *argument, int cmd)
     }
 }
 
+void print_score_mote( CHAR_DATA* ch, const char* const field, const char* index )
+{
+	char buf[MAX_STRING_LENGTH] = { '\0' };
+	if( index )
+	{
+		sprintf( buf, "Your current %s string: (#2%s#0)\n", field, index );
+		send_to_char( buf, ch );
+	}
+}
+
+
 void
 do_score (CHAR_DATA * ch, char *argument, int cmd)
 {
@@ -7689,7 +7780,7 @@ do_score (CHAR_DATA * ch, char *argument, int cmd)
                      verbal_stats[get_stat_range (GET_AGI (ch))]);
         else
             sprintf (buf,
-                     "Str[#2%d#0] Dex[#2%d#0] Con[#2%d#0] Int[#2%d#0] Wil[#2%d#0] Mut[#2%d#0] Agi[#2%d#0]\n",
+                     "Str[#2%d#0] Dex[#2%d#0] Con[#2%d#0] Int[#2%d#0] Wil[#2%d#0] Pre[#2%d#0] Agi[#2%d#0]\n",
                      GET_STR (ch), GET_DEX (ch), GET_CON (ch), GET_INT (ch),
                      GET_WIL (ch), GET_AUR (ch), GET_AGI (ch));
 
@@ -7727,7 +7818,7 @@ do_score (CHAR_DATA * ch, char *argument, int cmd)
     /* Add support for listing, hunger, thirst, and intox. */
     sprintf (buf, "You are #2%s#0, and #2%s#0.\n",
              ch->hunger >=
-             -169 ? verbal_hunger[get_hunger_comestible_range (ch->hunger)] : "full",
+             MIN_CALORIES ? verbal_hunger[get_hunger_comestible_range (ch->hunger)] : "full",
              ch->thirst >=
              0 ? verbal_thirst[get_comestible_range (ch->thirst)] : "quenched");
     send_to_char (buf, ch);
@@ -7757,9 +7848,10 @@ do_score (CHAR_DATA * ch, char *argument, int cmd)
         send_to_char ("If in combat, you will #2FLEE#0.\n", ch);
 
     // Until we have more than one language, why bother knowing?
+	// We have more than one now, modifying to show to mortals.  0206141924 - Nim
 
-    if (!IS_MORTAL(ch))
-    {
+   // if (!IS_MORTAL(ch))
+    // {
 
         sprintf (buf, "You are currently speaking #2%s#0.\n", skills[ch->speaks]);
         send_to_char (buf, ch);
@@ -7770,7 +7862,7 @@ do_score (CHAR_DATA * ch, char *argument, int cmd)
                      skills[ch->writes]);
             send_to_char (buf, ch);
         }
-    }
+    // }
 
     for (i = 0; i <= 3; i++)
         if (GET_STR (ch) * enc_tab[i].str_mult_wt >= IS_CARRYING_W (ch))
@@ -7802,11 +7894,11 @@ do_score (CHAR_DATA * ch, char *argument, int cmd)
     {
         if (birth_date.year > 0)
             sprintf (buf,
-                     "You were born on the #2%s#0, #2%d#0.\n",
-                     short_time_string(birth_date.day, birth_date.month), birth_date.year);
+                     "You were born on #2%s#0, #2%d#0.\n",
+                     short_time_string(birth_date.day, birth_date.month), birth_date.year); // can use call to suffix(birth_date.day) to show 'st', 'th', 'nd'
         else
             sprintf (buf,
-                     "You were born on the #2%s#0, many millenia past.\n",
+                     "You were born on #2%s#0, many millenia past.\n",
                      short_time_string(birth_date.day, birth_date.month));
         send_to_char (buf, ch);
     }
@@ -8181,35 +8273,14 @@ do_score (CHAR_DATA * ch, char *argument, int cmd)
     if (IS_SET (ch->affected_by, AFF_HOODED))
         send_to_char ("You are currently cloaked and hooded.\n", ch);
 
-    if (ch->voice_str)
-    {
-        send_to_char ("\nYour current voice string: (#2", ch);
-        send_to_char (ch->voice_str, ch);
-        send_to_char ("#0)\n", ch);
-    }
-
-    if (ch->travel_str)
-    {
-        if (!ch->voice_str)
-            send_to_char ("\n", ch);
-        send_to_char ("Your current travel string: (#2", ch);
-        send_to_char (ch->travel_str, ch);
-        send_to_char ("#0)\n", ch);
-    }
-
-    if (ch->pmote_str)
-    {
-        if (!ch->voice_str && !ch->travel_str)
-            send_to_char ("\n", ch);
-        send_to_char ("Your current pmote: (#2", ch);
-        send_to_char (ch->pmote_str, ch);
-        send_to_char ("#0)\n", ch);
-    }
+	send_to_char( "\n", ch );
+	print_score_mote( ch, "voice", ch->voice_str );
+	print_score_mote( ch, "travel", ch->travel_str );
+	print_score_mote( ch, "pmote", ch->pmote_str );
+	print_score_mote( ch, "status", ch->status_str );
 
     if (ch->dmote_str)
     {
-        if (!ch->voice_str && !ch->travel_str && !ch->pmote_str)
-            send_to_char ("\n", ch);
         send_to_char ("Your current dmote:\n", ch);
         send_to_char (ch->dmote_str, ch);
         send_to_char ("\n", ch);
@@ -8869,7 +8940,7 @@ do_time (CHAR_DATA * ch, char *argument, int cmd)
   
 // Leaving remarked out for the time being because we don't have astronomy skill and a few other
 // minor glitches.  -Nimrod 12 Sept 13 
-/*
+
 	if (ch->skills[SKILL_ASTRONOMY])
 	{
 
@@ -9027,7 +9098,7 @@ do_time (CHAR_DATA * ch, char *argument, int cmd)
 			}
 		}
 	}
-	*/
+
 	reformat_string (buf, &p);
 
 	send_to_char ("\n", ch);
@@ -9226,7 +9297,7 @@ void do_weather (CHAR_DATA * ch, char *argument, int cmd)
 
 		*buf = '\0';
 		*buf2 = '\0';
-
+/* - Commenting out info on earth phases.  This isn't the moon anymore.  0311140255 -Nimrod
 		switch (time_info.phaseEarth)
 		{
 		case PHASE_FULL_EARTH:
@@ -9260,8 +9331,9 @@ void do_weather (CHAR_DATA * ch, char *argument, int cmd)
 		sprintf (buf, "%s", p);
 		mem_free (p); // char*
 		send_to_char(buf, ch);
+*/
 
-        /*
+ /*       
         if (weather_info[ch->room->zone].fog
                 && !(weather_info[ch->room->zone].state >= LIGHT_RAIN
                      && weather_info[ch->room->zone].fog == THICK_FOG))
@@ -9280,7 +9352,7 @@ void do_weather (CHAR_DATA * ch, char *argument, int cmd)
             ("Looming black clouds cover the sky, blotting out the sun.\n",
              ch);
         }
-
+*/
         if (moon_light[ch->room->zone] >= 1)
         {
             if (!sun_light)
@@ -9292,7 +9364,7 @@ void do_weather (CHAR_DATA * ch, char *argument, int cmd)
                 ("The moon's ethereal silhouette is barely visible in the daylight.\n",
                  ch);
         }
-		*/
+		
 }
 
 HELP_DATA *
@@ -9593,7 +9665,7 @@ output_categories_available (int player_level)
 }
 
 void
-do_help (CHAR_DATA * ch, char *argument, int cmd)
+do_help (CHAR_DATA * ch, char *argument, int cmd) // If cmd is greater than 99 the help function will not log a missing helpfile, or spit out partial matches. 0212142020 -Nimrod
 {
     MYSQL_RES *result = NULL;
     MYSQL_ROW row = NULL;
@@ -9817,7 +9889,7 @@ do_help (CHAR_DATA * ch, char *argument, int cmd)
         {
             if (GET_TRUST (ch) < atoi (row[4]))
                 continue;
-            if (header_needed)
+            if (header_needed && cmd < 99)
             {
                 if (!soundex)
                     sprintf (b_buf,
@@ -9827,11 +9899,11 @@ do_help (CHAR_DATA * ch, char *argument, int cmd)
                              "\nThe following entries most closely matched your spelling:\n\n   ");
                 header_needed = false;
             }
-            if (!category_list)
+            if (!category_list && cmd < 99)
                 sprintf (arg2, "%13s: %s", row[1], row[0]);
-            else
+            else if (cmd < 99)
                 sprintf (arg2, "%s", row[0]);
-            if (!category_list)
+            if (!category_list && cmd < 99)
             {
                 if (j == 1)
                 {
@@ -9849,16 +9921,17 @@ do_help (CHAR_DATA * ch, char *argument, int cmd)
                 else
                     sprintf (arg1, "\n   %3d. #6%s#0", j, arg2);
             }
-            else
+            else if (cmd < 99)
                 sprintf (arg1, "#6%-22.22s#0   ", arg2);
-            if (!(j % 3) && category_list)
+            if (!(j % 3) && category_list && cmd < 99)
                 strcat (arg1, "\n   ");
             j++;
+			if (cmd < 99)
             sprintf (b_buf + strlen (b_buf), "%s", arg1);
         }
         if ((((j - 1) % 3) && !header_needed) || !category_list)
             strcat (b_buf, "\n");
-        if (*example)
+        if (*example && cmd < 99)
             sprintf (b_buf + strlen (b_buf), "%s", example);
     }
 
@@ -9867,7 +9940,7 @@ do_help (CHAR_DATA * ch, char *argument, int cmd)
 
     if (*b_buf)
         page_string (ch->descr(), b_buf);
-    else
+    else if (cmd < 99)
     {
         send_to_char
         ("No helpfile matching that query was found in the database.\n\n#6Please see HELP HELP to ensure you are using the proper query syntax.#0\n",
@@ -10480,24 +10553,26 @@ do_locate (CHAR_DATA * ch, char *argument, int cmd)
 void
 do_where (CHAR_DATA * ch, char *argument, int cmd)
 {
-    char clan[MAX_INPUT_LENGTH] = "";
-    char name[MAX_INPUT_LENGTH] = "";
-    char buf[MAX_STRING_LENGTH] = "";
-    char buf1[MAX_STRING_LENGTH] = "";
-    char strFmtName[AVG_STRING_LENGTH] = "#1No Name!#0";
-    char strFmtAnim[AVG_STRING_LENGTH] = "";
-    char strFmtRoom[AVG_STRING_LENGTH] = "";
-    unsigned short int nMaxFmtRoomLen = WHERE_LINE_LEN;
-    unsigned short int nDescriptors = 0, x = 0, y = 0;
-    int arrRoom[500], tmpRoom = 0, rpp = 0;
-    unsigned char bIsInWater = 0;
-    ROOM_DATA *ch_room = NULL;
-    register CHAR_DATA *i = NULL;
-    register OBJ_DATA *k = NULL;
-    struct descriptor_data *d = NULL;
-    char chrState = ' ';
-    bool check_aura = false;
-    bool check_clan = false;
+	char clan[MAX_INPUT_LENGTH] = "";
+	char name[MAX_INPUT_LENGTH] = "";
+	char buf[MAX_STRING_LENGTH] = "";
+	char buf1[MAX_STRING_LENGTH] = "";
+	char strFmtName[AVG_STRING_LENGTH] = "#1No Name!#0";
+	char strFmtAnim[AVG_STRING_LENGTH] = "";
+	char strFmtRoom[AVG_STRING_LENGTH] = "";
+	char strFmtStatus[AVG_STRING_LENGTH] = "";
+	unsigned short int nMaxFmtRoomLen = WHERE_LINE_LEN;
+	unsigned short int nDescriptors = 0, x = 0, y = 0;
+	int arrRoom[500], tmpRoom = 0, rpp = 0;
+	int status_strlen = 20;
+	unsigned char bIsInWater = 0;
+	ROOM_DATA *ch_room = NULL;
+	register CHAR_DATA *i = NULL;
+	register OBJ_DATA *k = NULL;
+	struct descriptor_data *d = NULL;
+	char chrState = ' ';
+	bool check_aura = false;
+	bool check_clan = false;
 
     one_argument (argument, name);
     if (strcmp (name,"aura") == 0)
@@ -10682,24 +10757,24 @@ do_where (CHAR_DATA * ch, char *argument, int cmd)
                         }
                         }
 
+			sprintf( strFmtStatus, "%20.20s", i->status_str ? i->status_str : "(none)" );
 
                         /* Put the room together */
-                        nMaxFmtRoomLen =
-                            (WHERE_LINE_LEN + 6 +
-                             ((strlen (strFmtAnim) >
-                               0) ? 4 : 0)) - (strlen (strFmtName) +
-                                               strlen (strFmtAnim));
+                        nMaxFmtRoomLen = (WHERE_LINE_LEN + 6 + ((strlen (strFmtAnim) >0) ? 4 : 0))
+				- strlen( strFmtName )
+				- strlen( strFmtAnim )
+				- strlen( strFmtStatus );
                         if (strlen (strFmtRoom) >= nMaxFmtRoomLen)
                         {
                             strcpy (strFmtRoom + (nMaxFmtRoomLen - 3), "...");
                         }
-                        sprintf (buf + strlen (buf), "%s#0 #%c%c#0 %s#0%s#0\n",
+                        sprintf (buf + strlen (buf), "%s#0 #%c%c#0 %s %s#0%s#0\n",
                                  strFmtName, (chrState <= 'Z'
                                               && chrState >=
                                               'A') ? '1' : ((chrState <= 'z'
                                                              && chrState >=
                                                              'a') ? '3' : '0'),
-                                 chrState, strFmtRoom, strFmtAnim);
+                                 chrState, strFmtStatus, strFmtRoom, strFmtAnim);
                     }
                 }
 
@@ -10734,15 +10809,9 @@ do_where (CHAR_DATA * ch, char *argument, int cmd)
             {
 
                 if (IS_NPC(i))
-                    sprintf (buf + strlen (buf),
-                             "#5%-20.20s#0 - #2[%5d]#0 #6%s#0\n", char_short (i),
-                             vnum_to_room (i->in_room)->vnum,
-                             vnum_to_room (i->in_room)->name);
+                    sprintf (buf + strlen (buf), "#5%-20.20s#0 - #2[%5d]#0 #6%s#0\n", char_short (i), vnum_to_room (i->in_room)->vnum, vnum_to_room (i->in_room)->name);
                 else
-                    sprintf (buf + strlen (buf),
-                             "#5%-20.20s#0 - #2[%5d]#0 #6%s#0\n", i->tname,
-                             vnum_to_room (i->in_room)->vnum,
-                             vnum_to_room (i->in_room)->name);
+                    sprintf (buf + strlen (buf), "#5%-20.20s#0 - #2[%5d]#0 #6%s#0\n", i->tname, vnum_to_room (i->in_room)->vnum, vnum_to_room (i->in_room)->name);
 
 
             }
@@ -10869,16 +10938,16 @@ do_who (CHAR_DATA * ch, char *argument, int cmd)
 
     if (!mortals)
         sprintf (s_buf,
-                 "\nThe world is currently an empty wasteland, void of souls.\n");
+                 "\nThe world is currently a blank canvas.\n");
     else if (mortals == 1)
-        sprintf (s_buf, "\nThere is currently #21#0 poor sap being lonely.\n");
+        sprintf (s_buf, "\nThere is currently #21#0 soul braving the world all alone.\n");
     else
-        sprintf (s_buf, "\nThere are currently #2%d#0 grungy denizens roaming the world.\n",
+        sprintf (s_buf, "\nThere are currently #2%d#0 inhabitants of Middle-Earth.\n",
                  mortals);
 
     if (guests)
         sprintf (s_buf + strlen (s_buf),
-                 "There %s currently #2%d#0 guest%s masquerading within the Graveyard.\n",
+                 "There %s currently #2%d#0 guest%s lingering in the Halls of Mandos.\n",
                  guests == 1 ? "is" : "are", guests, guests == 1 ? "" : "s");
 
     sprintf (s_buf + strlen (s_buf),
@@ -11504,14 +11573,14 @@ do_count (CHAR_DATA * ch, char *argument, int cmd)
 			&& !is_goggled(ch)
             && IS_MORTAL (ch) && !IS_SET (ch->affected_by, AFF_INFRAVIS))
     {
-        send_to_char ("It's too dark to count credits.\n", ch);
+        send_to_char ("It's too dark to count your coins.\n", ch);
         return;
     }
 
     if (!*buf)
     {
         sprintf (buf,
-                 "You begin searching through your belongings, taking a tally of your credit.\n");
+                 "You begin searching through your belongings, taking a tally of your coins.\n");
         send_to_char (buf, ch);
     }
     else
@@ -11519,18 +11588,18 @@ do_count (CHAR_DATA * ch, char *argument, int cmd)
         if (!(obj = get_obj_in_list_vis (ch, buf, ch->right_hand)) &&
                 !(obj = get_obj_in_list_vis (ch, buf, ch->left_hand)))
         {
-            send_to_char ("I don't see that group of credits.\n", ch);
+            send_to_char ("I don't see that group of coins.\n", ch);
             return;
         }
 
         if (GET_ITEM_TYPE (obj) != ITEM_MONEY)
         {
-            send_to_char ("That isn't a group of credits.\n", ch);
+            send_to_char ("That isn't a group of coins.\n", ch);
             return;
         }
 
         sprintf (buf,
-                 "After a moment of sorting, you determine that there are %d credits in the pile.",
+                 "After a moment of sorting, you determine that there are %d coins in the pile.",
                  obj->count);
         act (buf, false, ch, 0, 0, TO_CHAR | _ACT_FORMAT);
         return;
@@ -11544,88 +11613,29 @@ do_count (CHAR_DATA * ch, char *argument, int cmd)
 char *
 coin_sdesc (OBJ_DATA * coin)
 {
-    if (coin->nVirtual == 50093)
+    if (coin->nVirtual == 14011)
     {
         if (coin->count > 1)
-            return "'ten'-marked pieces of scrip";
+            return "copper coins";
         else
-            return "'ten'-marked piece of scrip";
-    }
-    else if (coin->nVirtual == 50092)
-    {
-        if (coin->count > 1)
-            return "'five'-marked pieces of scrip";
-        else
-            return "'five'-marked piece of scrip";
-    }
-    else if (coin->nVirtual == 50091)
-    {
-        if (coin->count > 1)
-            return "'three'-marked pieces of scrip";
-        else
-            return "'three-'-marked piece of scrip";
-    }
-    else if (coin->nVirtual == 50090)
-    {
-        if (coin->count > 1)
-            return "'one'-marked pieces of scrip";
-        else
-            return "'one'-marked piece of scrip";
-    }
-    else if (coin->nVirtual == 14011)
-    {
-        if (coin->count > 1)
-            return "white, circular chips";
-        else
-            return "white, circular chip";
-    }
-    else if (coin->nVirtual == 14012)
-    {
-        if (coin->count > 1)
-            return "red, circular chips";
-        else
-            return "red, circular chip";
+            return "copper coin";
     }
     else if (coin->nVirtual == 14013)
     {
         if (coin->count > 1)
-            return "blue, circular chips";
+            return "silver coins";
         else
-            return "blue, circular chip";
-    }
-    else if (coin->nVirtual == 14014)
-    {
-        if (coin->count > 1)
-            return "yellow, circular chips";
-        else
-            return "yellow, circular chip";
-    }
-    else if (coin->nVirtual == 14015)
-    {
-        if (coin->count > 1)
-            return "green, circular chips";
-        else
-            return "green, circular chip";
+            return "'silver coin";
     }
     else if (coin->nVirtual == 14016)
     {
         if (coin->count > 1)
-            return "black, circular chips";
+            return "gold coins";
         else
-            return "black, circular chip";
+            return "gold coin";
     }
-    else if (coin->nVirtual == 14017)
-    {
-        if (coin->count > 1)
-            return "gold-flecked, circular chips";
-        else
-            return "gold-flecked, circular chip";
-    }
-
-
-
-
-    return "ration";
+ 
+ //   return "ration";
 }
 
 void
@@ -11645,7 +11655,7 @@ delayed_count_coin (CHAR_DATA * ch)
             money += (int) ch->right_hand->farthings * ch->right_hand->count;
             tobj = ch->right_hand;
             sprintf (buf2 + strlen (buf2),
-                     "   #2%d %s#0 (#2right hand#0): %d credits\n", tobj->count,
+                     "   #2%d %s#0 (#2right hand#0): %d coppers\n", tobj->count,
                      coin_sdesc (tobj), (int) tobj->farthings * tobj->count);
         }
         else if (GET_ITEM_TYPE (ch->right_hand) == ITEM_CONTAINER)
@@ -11657,7 +11667,7 @@ delayed_count_coin (CHAR_DATA * ch)
                 {
                     money += (int) tobj->farthings * tobj->count;
                     sprintf (buf2 + strlen (buf2),
-                             "   #2%d %s#0 (#2%s#0): %d credits\n", tobj->count,
+                             "   #2%d %s#0 (#2%s#0): %d coppers\n", tobj->count,
                              coin_sdesc (tobj), obj_short_desc (tobj->in_obj),
                              (int) tobj->farthings * tobj->count);
                 }
@@ -11672,7 +11682,7 @@ delayed_count_coin (CHAR_DATA * ch)
             money += (int) ch->left_hand->farthings * ch->left_hand->count;
             tobj = ch->left_hand;
             sprintf (buf2 + strlen (buf2),
-                     "   #2%d %s#0 (#2left hand#0): %d credits\n", tobj->count,
+                     "   #2%d %s#0 (#2left hand#0): %d coppers\n", tobj->count,
                      coin_sdesc (tobj), (int) tobj->farthings * tobj->count);
         }
         else if (GET_ITEM_TYPE (ch->left_hand) == ITEM_CONTAINER)
@@ -11684,7 +11694,7 @@ delayed_count_coin (CHAR_DATA * ch)
                 {
                     money += (int) tobj->farthings * tobj->count;
                     sprintf (buf2 + strlen (buf2),
-                             "   #2%d %s#0 (#2%s#0): %d credits\n", tobj->count,
+                             "   #2%d %s#0 (#2%s#0): %d coppers\n", tobj->count,
                              coin_sdesc (tobj), obj_short_desc (tobj->in_obj),
                              (int) tobj->farthings * tobj->count);
                 }
@@ -11702,7 +11712,7 @@ delayed_count_coin (CHAR_DATA * ch)
             {
                 money += (int) tobj->farthings * tobj->count;
                 sprintf (buf2 + strlen (buf2),
-                         "   #2%d %s#0 (#2%s#0): %d credits\n", tobj->count,
+                         "   #2%d %s#0 (#2%s#0): %d coppers\n", tobj->count,
                          coin_sdesc (tobj), obj_short_desc (obj),
                          (int) tobj->farthings * tobj->count);
             }
@@ -11711,11 +11721,11 @@ delayed_count_coin (CHAR_DATA * ch)
 
     if (!money)
     {
-        send_to_char ("You don't seem to have any credits.\n", ch);
+        send_to_char ("You don't seem to have any coins.\n", ch);
         return;
     }
 
-    sprintf (buf, "By your count, you have %d credits' worth:", money);
+    sprintf (buf, "By your count, you have %d coppers:", money);
     act (buf, false, ch, 0, 0, TO_CHAR | _ACT_FORMAT);
     send_to_char ("\n", ch);
     send_to_char (buf2, ch);

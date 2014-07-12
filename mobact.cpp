@@ -300,7 +300,7 @@ mob_wander (CHAR_DATA * ch)
     ROOM_DATA *room;
     int room_exit_zone;
     int room_exit_virt;
-    int exit_tab[6];
+    int exit_tab[LAST_DIR + 1];
     int zone;
     int num_exits = 0;
     int to_exit;
@@ -989,6 +989,7 @@ shooter_routine (CHAR_DATA * ch)
     char buf[AVG_STRING_LENGTH] = {'\0'};
     int count = 0;
     int error_msg = 0;
+	int scan_dir = 0;
 
     // If we've got a firearm and it's ready to go, let's just check if we can't pocket
     // any other clips or rounds we're holding.
@@ -1028,7 +1029,20 @@ shooter_routine (CHAR_DATA * ch)
 		// Now we'll just do a scan to see if anyone we want to shoot is nearby.
 		if (ch->aiming_at)
 			return 0;
-
+        // for loop replacing manual scan commands 0317142159 -Nimrod
+        for (scan_dir = 0; scan_dir <= LAST_DIR; scan_dir++)
+        {
+          if (!ch->aiming_at)
+		  {
+		    sprintf(buf, "%s", dirs[scan_dir]);
+			do_scan(ch, buf, 0);
+		  }
+		  if (ch->aiming_at)
+			break;
+        }
+		if (ch->aiming_at)
+		  return 1;
+/*		  
 		if (!ch->aiming_at)
 			do_scan(ch, "north", 0);
 		if (ch->aiming_at)
@@ -1058,7 +1072,7 @@ shooter_routine (CHAR_DATA * ch)
 			do_scan(ch, "down", 0);
 		if (ch->aiming_at)
 			return 1;
-
+*/
 		if (!ch->aiming_at)
 		{
 			CHAR_DATA *tch = NULL;
@@ -3201,15 +3215,15 @@ npc_ranged_retaliation (CHAR_DATA * target, CHAR_DATA * ch)
 			add_overwatch(target, ch, 2, false);
 
 			// Then, we check to make sure we're taking cover from that direction - if we're not, we get in to cover.
-			const char *direct[] =
-			{ "north", "east", "south", "west", "up", "down", "area", "\n" };
+		//	const char *direct[] =
+		//	{ "north", "east", "south", "west", "up", "down", "area", "\n" };
 			bool in_cover = false;
 			AFFECTED_TYPE *af = NULL;
 			char buf[AVG_STRING_LENGTH] = {'\0'};
 
 			int dir = 0;
 			if (target->in_room == ch->in_room)
-				dir = 6;
+				dir = -1;  // Used for taking cover from the area.
 			else
 				dir = track (target, ch->in_room);
 
@@ -3217,7 +3231,7 @@ npc_ranged_retaliation (CHAR_DATA * target, CHAR_DATA * ch)
 			{
 				if (af->type == AFFECT_COVER)
 				{
-					if (af->a.cover.direction == dir || dir == 6)
+					if (af->a.cover.direction == dir || dir == -1)
 					{
 						in_cover = true;
 					}
@@ -3228,7 +3242,7 @@ npc_ranged_retaliation (CHAR_DATA * target, CHAR_DATA * ch)
 			{
 				if (target->delay_type != DEL_COVER)
 				{
-					sprintf(buf, "cover %s", direct[dir]);
+					sprintf(buf, "cover %s", (dir >= 0 ? dirs[dir] : "area")); // direct[dir]); // Updated 0317141337 -Nimrod
 					command_interpreter(target, buf);
 				}
 			}

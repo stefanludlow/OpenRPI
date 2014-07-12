@@ -415,7 +415,7 @@ const char *rev_d2[] =
 	"the southwest",
 	"the southeast",
 	"the northwest",
-	"the northeast"
+	"the northeast",
 	"the upnorth",
 	"the upeast",
 	"the upsouth",
@@ -432,6 +432,7 @@ const char *rev_d2[] =
 	"the downnorthwest",
 	"the downsoutheast",
 	"the downsouthwest",
+	"report this to nimrod"
 };
 
 const float move_speeds[] = { 1.00, 2.50, 1.60, 0.50, 0.33, 0.25, 1.60, 3.00 };
@@ -1096,6 +1097,10 @@ void
 		{
 			room->tracks = track->next; // skip to the next track.
 		}
+		else
+		{
+		  room->tracks = NULL;  // Update to set null to avoid crashing on next room_tracks_update.  0315140228 -Nimrod
+		}
 
 		if (track->race < 1000000 && track->name)                      // die, track->name.
 		{
@@ -1147,12 +1152,14 @@ void
 	ROOM_DATA *room = NULL;
 	TRACK_DATA *track = NULL;
 	int limit;
+	
+	// send_to_gods("Starting update room tracks.");
 
 	for (room = full_room_list; room; room = room->lnext)
 	{
 		for (track = room->tracks; track;)
 		{
-			limit = 48;
+			limit = 48;  // Tracks linger for 48 game hours.
 
 			//next_track = track->next;
 			track->hours_passed++;
@@ -1175,6 +1182,7 @@ void
 				TRACK_DATA *temp = track;
 				track = track->next;
 				track_from_room (room, temp);
+				// send_to_gods("Dropping a track.");
 			}
 			else
 			{
@@ -1263,7 +1271,7 @@ void
 		if (i > TRACK_LIMIT_PER_ROOM)
 		{
 			TRACK_DATA *temp = rem_track;
-			rem_track = rem_track->next;
+			rem_track = rem_track->next; // This allows us to continue deleting tracks if there's more than a single one past TRACK_LIMIT_PER_ROOM
 			track_from_room (ch->room, temp);
 		}
 		else
@@ -1281,6 +1289,15 @@ void
 	{
 		mem_free (ch->pmote_str); // char*
 		ch->pmote_str = (char *) NULL;
+	}
+}
+
+void clear_status( CHAR_DATA *ch )
+{
+	if( ch->status_str )
+	{
+		mem_free( ch->status_str );
+		ch->status_str = NULL;
 	}
 }
 
@@ -2495,7 +2512,10 @@ void enter_room (QE_DATA * qe)
 		send_to_gods("Error: char moved room but didn't keep ch->room. Let Kith know.");
 		ch->room = vnum_to_room(ch->in_room);
 	}
-
+	
+// Next dozen lines can be replaced by this 0208142142 -Nimrod
+	ch->from_dir = rev_dir[qe->dir];
+/*
 	if (qe->dir == 0)
 		from_dir = 2;
 	else if (qe->dir == 1)
@@ -2510,6 +2530,7 @@ void enter_room (QE_DATA * qe)
 		from_dir = 4;
 
 	ch->from_dir = from_dir;
+*/
 
 	if (!IS_NPC (ch) && !IS_SET (ch->act, ACT_VEHICLE))
 		weaken (ch, 0, qe->move_cost, NULL);
@@ -4804,7 +4825,7 @@ void do_move (CHAR_DATA * ch, char *argument, int dir) {
 	AFFECTED_TYPE *af;
 	CHAR_DATA *tch;
 	char buf[AVG_STRING_LENGTH];
-	char command[12];
+	char command[32];
 
 	if (!can_move (ch))
 		return;
@@ -4828,19 +4849,8 @@ void do_move (CHAR_DATA * ch, char *argument, int dir) {
 	if (get_affect (ch, MAGIC_TOLL))
 		stop_tolls (ch);
 
-	if (dir == UP)
-		sprintf (command, "up");
-	else if (dir == DOWN)
-		sprintf (command, "down");
-	else if (dir == EAST)
-		sprintf (command, "east");
-	else if (dir == WEST)
-		sprintf (command, "west");
-	else if (dir == NORTH)
-		sprintf (command, "north");
-	else
-		sprintf (command, "south");
-
+	// dir = lookup_dir(dir); use constant dirs[] instead of all this other crap
+	sprintf (command, dirs[dir]); // this should take the place of all the crap below. 0208142154 -Nimrod
 
 	if (!is_mounted (ch) && GET_POS (ch) == POSITION_FIGHTING)
 	{
@@ -4896,8 +4906,6 @@ void do_move (CHAR_DATA * ch, char *argument, int dir) {
 		act (buf, false, ch, 0, 0, TO_CHAR | _ACT_FORMAT);
 		return;
 	}
-
-	
 
 	// Old Somatics Code - put in by Tiamat again
 
@@ -5035,7 +5043,7 @@ void
 void
 	do_upnortheast (CHAR_DATA * ch, char *argument, int cmd)
 {
-	do_move (ch, argument, UPNORTHEAST);
+ 	do_move (ch, argument, UPNORTHEAST);
 }
 
 void
@@ -5146,7 +5154,9 @@ int
 
 	if (*dir)			/* a direction was specified */
 	{
-		if ((door = search_block (dir, dirs, false)) == -1)	/* Partial Match */
+		door = lookup_dir( dir );
+//		if ((door = search_block (dir, dirs, false)) == -1)	/* Partial Match */
+		if( door == -1 )
 		{
 			send_to_char ("That's not a direction.\n", ch);
 			return (-1);
@@ -9025,6 +9035,9 @@ void
 
 		if (IS_NPC (ch) && IS_SET (ch->affected_by, AFF_SNEAK))
 		{
+		sprintf (buf, dirs[cmd]);
+		/* Line above replaces dozen below 0208142156 -Nimrod
+		
 			if (cmd == 0)
 				sprintf (buf, "north");
 			if (cmd == 1)
@@ -9037,6 +9050,7 @@ void
 				sprintf (buf, "up");
 			if (cmd == 5)
 				sprintf (buf, "down");
+			*/
 		}
 		else
 		{

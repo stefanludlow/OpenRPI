@@ -239,6 +239,7 @@ extern const char *day_name[];
 extern const char *season_name[];
 
 extern const char *month_name[];
+extern const char *short_month_name[];
 
 extern struct room_direction_data *dir_options[];
 extern MYSQL *database;
@@ -283,10 +284,24 @@ void do_combine (CHAR_DATA *ch, char *argument, int cmd);
 extern const char *gun_bits[];
 extern const char *calibers[];
 extern const char *shell_name[];
+extern const char *shell_name_plural[];
 extern const char *ammo_bits[];
 extern const char *ammo_sizes[];
 extern const char *gun_set[];
 extern const char *grenade_bits[];
+extern const char *trigger_text_first[];
+extern const char *trigger_text_third[];
+extern const char *echo_one[];
+extern const char *echo_two[];
+extern const char *echo_three[];
+extern const char *echo_four[];
+extern const char *echo_five[];
+extern const int echo_one_qty;
+extern const int echo_two_qty;
+extern const int echo_three_qty;
+extern const int echo_four_qty;
+extern const int echo_five_qty;
+
 
 void do_load_clip (CHAR_DATA * ch, char *argument, int cmd);
 void delayed_load_clip (CHAR_DATA * ch);
@@ -697,6 +712,7 @@ int foraged_all(int sector);
 
 void load_obj_variables (void);
 void save_obj_variables (void);
+void test_db_init(void);
 
 void load_mob_variables (void);
 void save_mob_variables (void);
@@ -952,6 +968,8 @@ void do_zsave (CHAR_DATA * ch, char *argument, int cmd);
 void do_zset (CHAR_DATA * ch, char *argument, int cmd);
 void do_flist (CHAR_DATA * ch, char *argument, int cmd);
 void do_scents (CHAR_DATA * ch, char *argument, int cmd);
+void fetch_variable_categories ( char **var_list, int target, int target_type);
+OBJ_DATA *clone_colored_object (OBJ_DATA *from_obj, int to_obj_vnum, int cmd);
 
 
 /*
@@ -1322,6 +1340,7 @@ int generic_find (char *arg, int bitvector, CHAR_DATA * ch,
 		  CHAR_DATA ** tar_ch, OBJ_DATA ** tar_obj);
 char *swap_xmote_target (CHAR_DATA * ch, char *argument, int cmd);
 void clear_pmote (CHAR_DATA * ch);
+void clear_status( CHAR_DATA * ch );
 void clear_voice (CHAR_DATA * ch);
 int suffocated (CHAR_DATA * ch);
 int drowned (CHAR_DATA * ch);
@@ -1438,7 +1457,6 @@ load_exact_colored_object (int vnum, char *color0, char *color1, char *color2, c
 OBJ_DATA *fread_object (int vnum, int nZone, FILE * fp);
 OBJ_DATA *fread_obj (FILE * fp);
 void death_email (CHAR_DATA * ch);
-int index_lookup (const char* const* index, const char* lookup);
 int check_climb (CHAR_DATA * ch);
 int _filbuf ();
 int ungetc ();
@@ -1473,7 +1491,8 @@ int soma_add_affect (CHAR_DATA * ch, int type, int duration, int latency,
 
 int swimming_check (CHAR_DATA * ch);
 char *lookup_string (int value, int reg_index);
-int lookup_dir(char *value); // Nimrod added 7 Sept 13
+int index_lookup (const char* const* index, const char* lookup);
+int lookup_dir(const char *value); // Nimrod added 7 Sept 13
 
 //char* vc_rand(char *category);
 

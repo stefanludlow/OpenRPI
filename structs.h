@@ -1389,12 +1389,93 @@ typedef signed char shortint;
 #define SKILL_EDUCATION         38
 #define SKILL_VOODOO  	        39
 #define SKILL_COMMON            40
-#define SKILL_ASTRONOMY			41
+#define SKILL_METALCRAFT        41
+#define SKILL_LEATHERCRAFT      42
+#define SKILL_TEXTILECRAFT      43
+#define SKILL_WOODCRAFT         44
+#define SKILL_COOKING           45
+#define SKILL_BAKING            46
+#define SKILL_BREWING           47
+#define SKILL_FISHING           48
+#define SKILL_STONECRAFT        49
+#define SKILL_EARTHENCRAFT      50
+#define SKILL_GARDENING         51
+#define SKILL_FARMING           52
+#define SKILL_SHORTBOW          53
+#define SKILL_LONGBOW           54
+#define SKILL_CROSSBOW          55
+#define SKILL_MUSIC             56
+#define SKILL_ASTRONOMY			57
+#define SKILL_ORKISH			58
+#define SKILL_WARGISH			59
+#define SKILL_DALISH			60
+#define SKILL_SINDARIN			61
+#define SKILL_KHUZDUL			62
+#define SKILL_TENGWAR			63
+#define SKILL_CIRITH			64
 
-
-#define LAST_SKILL		SKILL_ASTRONOMY
+#define LAST_SKILL		SKILL_CIRITH
 
 #define PSIONIC_TALENTS		1
+
+#define WEAPON_PISTOL     0
+#define WEAPON_SMG        1
+#define WEAPON_RIFLE      2
+#define WEAPON_SLING      3
+#define WEAPON_HEAVYGUN   4
+#define WEAPON_BLOWGUN    5
+#define WEAPON_RAYGUN     6
+#define WEAPON_CROSSBOW   7 
+#define WEAPON_SHORTBOW   8
+#define WEAPON_LONGBOW    9
+#define WEAPON_ELVENBOW   10
+#define WEAPON_BALISTA    11
+#define WEAPON_SLINGSHOT  12
+#define WEAPON_CATAPULT   13
+#define WEAPON_TREBUCHET  14
+
+#define AMMO_SIZE_20CAL             0
+#define AMMO_SIZE_25CAL             1
+#define AMMO_SIZE_30CAL             2
+#define AMMO_SIZE_35CAL             3
+#define AMMO_SIZE_40CAL             4
+#define AMMO_SIZE_45CAL             5
+#define AMMO_SIZE_50CAL             6
+#define AMMO_SIZE_55CAL             7
+#define AMMO_SIZE_60CAL             8
+#define AMMO_SIZE_BB                9
+#define AMMO_SIZE_DART              10
+#define AMMO_SIZE_BOLT              11
+#define AMMO_SIZE_SHORT_ARROW       12
+#define AMMO_SIZE_LONG_ARROW        13
+#define AMMO_SIZE_ELVEN_ARROW       14
+#define AMMO_SIZE_BALISTA_BOLT      15
+#define AMMO_SIZE_SLINGSHOT_STONE   16
+#define AMMO_SIZE_CATAPULT_STONE    17
+#define AMMO_SIZE_TREBUCHET_BOULDER 18
+
+#define AMMO_TYPE_JACKETED          0
+#define AMMO_TYPE_HOLLOW_TIPPED     1
+#define AMMO_TYPE_ARMOR_PIERCING    2
+#define AMMO_TYPE_INCENDIARY        3
+#define AMMO_TYPE_TRACER            4
+#define AMMO_TYPE_BLUNTED           5
+#define AMMO_TYPE_SHARPENED         6
+#define AMMO_TYPE_BONE              7
+#define AMMO_TYPE_FLINT             8
+#define AMMO_TYPE_METAL_TIPPED      9
+#define AMMO_TYPE_BROADHEAD         10
+#define AMMO_TYPE_BODKIN            11
+#define AMMO_TYPE_FLAMING           12
+
+
+#define MAX_CALORIES            2000
+#define AVG_WEIGHT				150
+#define MIN_CALORIES			-10000
+#define MIN_THIRST				0
+#define MAX_THIRST				300
+#define HOURLY_CALORIES			30
+#define HOURLY_THIRST			6
 
 /* How much light is in the land ? */
 
@@ -2290,22 +2371,35 @@ Original - 30 Aug 13 - Nimrod
 */
 // New Materials added 30 Aug 13 -Nimrod
 #define MAT_NONE	0
-#define MAT_ORGANIC	8
-#define MAT_TEXTILE	11
-#define MAT_METAL	6
+#define MAT_BONE	1
 #define MAT_CERAMIC	2
 #define MAT_GLASS	3
-#define MAT_ELECTRONIC	15
-#define MAT_PLASTIC	14
-#define MAT_PAPER	8
-#define MAT_LIQUID	5
-#define MAT_OTHER	13
-
-#define MAT_BONE	1
-#define MAT_MINERAL	7
-#define MAT_STONE	10
-#define MAT_WOOD	12
 #define MAT_LEATHER	4
+#define MAT_LIQUID	5
+#define MAT_METAL	6
+#define MAT_MINERAL	7
+#define MAT_ORGANIC	8
+#define MAT_PAPER	9
+#define MAT_STONE	10
+#define MAT_TEXTILE	11
+#define MAT_WOOD	12
+#define MAT_GEMSTONE 13
+#define MAT_PRECIOUSMETAL 14
+#define MAT_BRICK 15
+#define MAT_OTHER	16
+#define MAT_PLASTIC	17
+#define MAT_ELECTRONIC	18
+
+
+
+
+
+
+
+
+
+
+
 
 
 struct room_extra_data
@@ -3452,6 +3546,7 @@ struct char_data
     int hire_storeroom;
     int hire_storeobj;
     char *dmote_str;
+	char *status_str;
     int cover_from_dir;
     int morph_type;
     int clock;
@@ -3491,6 +3586,9 @@ struct char_data
     char *d_feat2;
     char *d_feat3;
     char *d_feat4;
+
+	char *mob_color_name[10];
+    char *mob_color_cat[10];
 
     DESCRIPTOR_DATA *descriptor;
     DESCRIPTOR_DATA * descr ();
@@ -4049,7 +4147,7 @@ struct encumberance_info
 #define TRIG_PRISONER	11
 #define TRIG_KNOCK		12
 
-#define GAME_BASE_YEAR		2697   // Battle of 5 armies was 2941  189
+#define GAME_BASE_YEAR		2869   // Battle of 5 armies was 2941  189
 #define GAME_SECONDS_BEGINNING  100	/* Subtr 10800 to ++gametime 12hr */
 #define GAME_SECONDS_PER_YEAR	31104000 // real life seconds in a year
 #define GAME_SECONDS_PER_MONTH	2592000 // real life seconds in a month
@@ -4063,6 +4161,8 @@ struct encumberance_info
 
 #define MOON_CYCLE 2881443 // 29 days, 12 hours, 44 minutes and 3 seconds)
 #define MOON_ORBIT 2388720 // 27.3days
+
+#define ACTIVITY_TIMER_MAX 86400
 
 
 #define MODE_COMMAND		(1 << 0)
@@ -4681,7 +4781,8 @@ struct craft_variable_data
     int from;                     // Which item will this go to?
     int to;                     // Which item will this go to?
     char *category;               // Which category to take
-    int pos;                      // Where to put it.
+    int pos; 	// Where to put it.
+	char *manual;  // Used when manually setting a variable in a craft. -Added 0213141746 -Nimrod
 };
 
 struct craft_oval_data
@@ -4766,12 +4867,12 @@ struct econ_data
     } obj_econ_info[ECON_ZONES];
 };
 
-#define QUALITY_TRASH		1 << 21
-#define QUALITY_POOR		1 << 7
-#define QUALITY_ORDINARY	1 << 17
-#define QUALITY_GOOD		1 << 18
-#define QUALITY_SUPERB		1 << 19
-#define QUALITY_EPIC		1 << 20
+#define QUALITY_TRASH		1 << 0
+#define QUALITY_POOR		1 << 1
+#define QUALITY_ORDINARY	1 << 2
+#define QUALITY_GOOD		1 << 3
+#define QUALITY_SUPERB		1 << 4
+#define QUALITY_EPIC		1 << 5
 
 
 #define AGE_BABY        0

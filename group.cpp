@@ -10,7 +10,7 @@
 #include "protos.h"
 
 const char *race_describer[] =
-    {"humans", "humanoids", "insects", "automatons", "bots", "vehicles",
+    {"humans", "humanoids", "insects", "orcs", "goblins", "elves",
      "dogs", "lizards", "spiders", "rodents", "bats", "animals"
     };
 

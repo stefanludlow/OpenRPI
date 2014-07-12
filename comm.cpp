@@ -575,16 +575,16 @@ game_loop (int s)
                         prompt += " / ";
                         prompt += fatigue_bar (point->character, true);
 
-                        if (get_affect (point->character, AFFECT_HOLDING_BREATH))
+                       /* if (get_affect (point->character, AFFECT_HOLDING_BREATH))
                         {
                             prompt += " / ";
                             prompt += breath_bar (point->character, true);
                         }
-
+*/
                         if (get_affect (point->character, AFFECT_CHOKING))
                         {
                             prompt += " / ";
-                            prompt += breath_bar (point->character, true);
+                            prompt += choke_bar (point->character, true);
                         }
 
                         if (point->character->plr_flags & COMBAT_DISPLAY && point->character->fighting)
@@ -814,7 +814,13 @@ game_loop (int s)
             cleanup_the_dead (0);
             knockout = 0;
         }
-
+/*
+		if (!(pulse % (SECOND_PULSE * 240))) // Every four real life minutes
+		{
+		  send_to_gods("Calling update room tracks.");
+		   update_room_tracks ();
+		}
+		*/
         if (time (0) >= next_hour_update)
         {
             hourly_update ();
@@ -1568,7 +1574,7 @@ highlight (char *source)
 /* higher-level communication */
 
 //////////////////////////////////////////////////////////////////////////////
-// act()
+// act() act_function
 //////////////////////////////////////////////////////////////////////////////
 //
 /// \brief  Show an action relative to the actors and watchers.

@@ -66,6 +66,15 @@ create_guest_avatar (DESCRIPTOR_DATA * d, char *argument)
   d->character->descriptor = d;
   d->character->pc->owner = d;
   d->character->pc->load_count = 1;
+  
+  	// Set all mob variable information to NULL 1739060614 -Nimrod
+	for (i = 0; i < 10; i++)
+	{
+	  ch->mob_color_name[i] = '\0'; 
+	  ch->mob_color_cat[i] = '\0';
+	}
+	i = 0; // Reset i
+  
 
   roll = number (1, 11);
 
@@ -79,6 +88,8 @@ create_guest_avatar (DESCRIPTOR_DATA * d, char *argument)
   randomize_mobile (ch);
 
   ch->pc->account_name = str_dup (d->acct->name.c_str ());
+  
+  ch->time.logon = time (0);  // This may need to be changed eventually. 0206142224 -Nim
 
   if (d->acct->guide && ch->pc)
   {
@@ -112,11 +123,12 @@ create_guest_avatar (DESCRIPTOR_DATA * d, char *argument)
 
   for (i = 0; i <= MAX_SKILLS; i++)
   {
-	d->character->skills[i] = 0;
-	d->character->pc->skills[i] = 0;
+   	d->character->skills[i] = (i < 11 ? number(12,65) : 0);
+	d->character->pc->skills[i] = d->character->skills[i];
   }
-
-  d->character->nat_attack_type = 1;
+  
+  
+  d->character->nat_attack_type = 0; // Set to 0 (Punch) for guest lounge.  0201142149 -Nimrod
   d->character->skills[SKILL_COMMON] = 55;
   d->character->pc->skills[SKILL_COMMON] = 55;
   d->character->speaks = SKILL_COMMON;
@@ -149,8 +161,8 @@ create_guest_avatar (DESCRIPTOR_DATA * d, char *argument)
   //if (ch->race != 89 && ch->race != 69 && ch->race != 64)
     equip_newbie (ch);
 
-  ch->hunger = 48;
-  ch->thirst = 300;
+  ch->hunger = MAX_CALORIES;
+  ch->thirst = MAX_THIRST;
 
   // If we're recreating, we're either recovering from a reboot or returning a dead
   // guest to the lounge, in which case we can skip a lot of this.
@@ -163,7 +175,7 @@ create_guest_avatar (DESCRIPTOR_DATA * d, char *argument)
     {
       act ("$n is incarnated in a soft glimmer of light.", true, d->character,
 	   0, 0, TO_ROOM | _ACT_FORMAT);
-      sprintf (buf, "%s [%s] has entered the lounge.", ch->tname,
+      sprintf (buf, "%s [%s] has entered the halls of Mandos.", ch->tname,
 	       ch->descr()->strClientHostname);
       send_to_gods (buf);
       d->connected = CON_PLYNG;
@@ -184,7 +196,7 @@ create_guest_avatar (DESCRIPTOR_DATA * d, char *argument)
 	  ("$n appears in a sudden glimmer of light, looking slightly dazed.",
 	   true, ch, 0, 0, TO_ROOM | _ACT_FORMAT);
       act
-	("You feel your form briefly waver before it solidifies into yet another new guise, returned safely to the pleasant confines of Club Graveyard.",
+	("You feel your form briefly waver before it solidifies into yet another new guise, returned safely to the pleasant confines of the Halls of Mandos.",
 	 false, ch, 0, 0, TO_CHAR | _ACT_FORMAT);
     }
 }

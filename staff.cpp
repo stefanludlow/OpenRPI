@@ -37,7 +37,7 @@ char b_buf[ B_BUF_SIZE ];
 const char *player_bits[] = { "Brief", "NoShout", "Compact", "DONTSET", "Quiet", "Reboot", "Shutdown", "Build",
 		"Approval", "Outlaw", "\n" };
 
-const char* trap_attrs[ 8 ] = { "None", "Str", "Dex", "Con", "Int", "Wil", "Mut", "Agi" };
+const char* trap_attrs[ 8 ] = { "None", "Str", "Dex", "Con", "Int", "Wil", "Pre", "Agi" };
 
 extern rpie::server engine;
 extern const char *skills[];
@@ -2297,8 +2297,20 @@ void charstat( CHAR_DATA * ch, char *name, bool bPCsOnly ) {
 			send_to_char( buf, ch );
 		}
 	}
+	else if (IS_NPC (k) && instance)
+	{
+	  for (j=0 ; j < 10; j++)
+	  {
+	    if (k->mob_color_cat[j] && k->mob_color_name[j])
+		{
+	      sprintf( buf, "Variable%d: %s is set as: %s.\n", j, k->mob_color_cat[j], k->mob_color_name[j]);
+		  send_to_char(buf, ch);
+		}
+	  }
 
-	send_to_char( "\n", ch );
+	}
+		send_to_char( "\n", ch );
+		
 
 	sprintf( buf, "#2Str:#0 %d/%d", GET_STR (k), k->str );
 	pad_buffer( buf, 25 );
@@ -3928,8 +3940,23 @@ void objstat( CHAR_DATA * ch, char *name ) {
 		return;
 	}
 
+// Nimrod test
+char var_list[10][100];
+char *vari_list[10];
+
+// Initalize pointer array and slot
+	for (i = 0; i<10;i++)
+	{
+	  vari_list[i] = var_list[i]; // initialize pointer
+	  *var_list[i] = '\0'; // Set these to null while we're at it.
+    }
+	i = 0;
+	
 	if ( just_a_number( name ) && vtoo( atoi( name ) ) )
-		j = vtoo( atoi( name ) );
+	{
+	  j = vtoo( atoi( name ) );
+	  fetch_variable_categories ( vari_list, atoi(name), 0);
+	}
 
 	else if ( ( j = get_obj_in_list_vis( ch, name, ch->right_hand ) )
 			|| ( j = get_obj_in_list_vis( ch, name, ch->left_hand ) )
@@ -4190,7 +4217,7 @@ void objstat( CHAR_DATA * ch, char *name ) {
 		case ITEM_FLUID:
 			sprintf( buf, "#2Oval0 - Alcohol:#0 %d per sip\n"
 					"#2Oval1 - Water:#0   %d per sip\n"
-					"#2Oval2 - Food:#0    %d per sip\n", j->o.fluid.alcohol, j->o.fluid.water, j->o.fluid.food );
+					"#2Oval2 - Calories:#0    %d per sip\n", j->o.fluid.alcohol, j->o.fluid.water, j->o.fluid.food );
 			break;
 
 		case ITEM_LIGHT:
@@ -4219,7 +4246,7 @@ void objstat( CHAR_DATA * ch, char *name ) {
 			break;
 
 		case ITEM_FOOD:
-			sprintf( buf, "#2Oval0 - Food Value:#0 %d\n"
+			sprintf( buf, "#2Oval0 - Calories:#0 %d\n"
 					"#2Oval1 - Bites:#0 %d\n"
 					"#2Oval1 - Junk Obj:#0 %d\n", j->o.od.value[ 0 ], j->o.od.value[ 1 ], j->o.od.value[ 2 ] );
 			break;
@@ -4512,33 +4539,33 @@ void objstat( CHAR_DATA * ch, char *name ) {
         break;
 
     case ITEM_BULLET:
-        sprintf (buf,                "#2Oval0 - State    :#0 %d\n", j->o.od.value[0]);
-        sprintf (buf + strlen (buf), "#2Oval1 - Origin   :#0 %d\n", j->o.od.value[1]);
-        sprintf (buf + strlen (buf), "#2Oval2 - Caliber  :#0 %s [#2%d#0]\n", calibers[j->o.bullet.caliber], j->o.bullet.caliber);
-        sprintf (buf + strlen (buf), "#2Oval4 - Ammo Type:#0 %s [#2%d#0]\n", ammo_bits[j->o.bullet.type], j->o.bullet.type);
+        sprintf (buf,                "#2Oval0 - State     :#0 %d\n", j->o.od.value[0]);
+        sprintf (buf + strlen (buf), "#2Oval1 - Origin    :#0 %d\n", j->o.od.value[1]);
+        sprintf (buf + strlen (buf), "#2Oval2 - Ammo Size :#0 %s [#2%d#0]\n", calibers[j->o.bullet.caliber], j->o.bullet.caliber);
+        sprintf (buf + strlen (buf), "#2Oval4 - Ammo Type :#0 %s [#2%d#0]\n", ammo_bits[j->o.bullet.type], j->o.bullet.type);
         break;
 
     case ITEM_CASE:
-        sprintf (buf,                "#2Oval0 - State    :#0 %d\n", j->o.od.value[0]);
-        sprintf (buf + strlen (buf), "#2Oval1 - Origin   :#0 %d\n", j->o.od.value[1]);
-        sprintf (buf + strlen (buf), "#2Oval2 - Caliber  :#0 %s [#2%d#0]\n", calibers[j->o.bullet.caliber], j->o.bullet.caliber);
-        sprintf (buf + strlen (buf), "#2Oval4 - Ammo Type:#0 %s [#2%d#0]\n", ammo_bits[j->o.bullet.type], j->o.bullet.type);
+        sprintf (buf,                "#2Oval0 - State     :#0 %d\n", j->o.od.value[0]);
+        sprintf (buf + strlen (buf), "#2Oval1 - Origin    :#0 %d\n", j->o.od.value[1]);
+        sprintf (buf + strlen (buf), "#2Oval2 - Ammo Size :#0 %s [#2%d#0]\n", calibers[j->o.bullet.caliber], j->o.bullet.caliber);
+        sprintf (buf + strlen (buf), "#2Oval4 - Ammo Type :#0 %s [#2%d#0]\n", ammo_bits[j->o.bullet.type], j->o.bullet.type);
         break;
 
     case ITEM_ROUND:
-        sprintf (buf,                "#2Oval0 - Dam Bonus:#0 %d\n", j->o.bullet.damage);
-        sprintf (buf + strlen (buf), "#2Oval1 - Sides    :#0 %d\n", j->o.bullet.sides);
-        sprintf (buf + strlen (buf), "#2Oval2 - Caliber  :#0 %s [#2%d#0]\n", calibers[j->o.bullet.caliber], j->o.bullet.caliber);
-        sprintf (buf + strlen (buf), "#2Oval4 - Ammo Type:#0 %s [#2%d#0]\n", ammo_bits[j->o.bullet.type], j->o.bullet.type);
-        sprintf (buf + strlen (buf), "#2Oval5 - Size     :#0 %s [#2%d#0]\n", ammo_sizes[j->o.bullet.size], j->o.bullet.size);
+        sprintf (buf,                "#2Oval0 - Dam Bonus :#0 %d\n", j->o.bullet.damage);
+        sprintf (buf + strlen (buf), "#2Oval1 - Sides     :#0 %d\n", j->o.bullet.sides);
+        sprintf (buf + strlen (buf), "#2Oval2 - Ammo Size :#0 %s [#2%d#0]\n", calibers[j->o.bullet.caliber], j->o.bullet.caliber);
+        sprintf (buf + strlen (buf), "#2Oval4 - Ammo Type :#0 %s [#2%d#0]\n", ammo_bits[j->o.bullet.type], j->o.bullet.type);
+        sprintf (buf + strlen (buf), "#2Oval5 - Weapon    :#0 %s [#2%d#0]\n", ammo_sizes[j->o.bullet.size], j->o.bullet.size);
         break;
 
     case ITEM_CLIP:
-        sprintf (buf,                "#2Oval0 - Bullets :#0 %d\n", j->o.clip.amount);
-        sprintf (buf + strlen (buf), "#2Oval1 - Capacity:#0 %d\n", j->o.clip.max);
-        sprintf (buf + strlen (buf), "#2Oval2 - Caliber :#0 %s [#2%d#0]\n", calibers[j->o.clip.caliber], j->o.clip.caliber);
-        sprintf (buf + strlen (buf), "#2Oval3 - Type    :#0 %s [#2%d#0]\n", gun_bits[j->o.clip.type], j->o.clip.type);
-        sprintf (buf + strlen (buf), "#2Oval5 - Size    :#0 %s [#2%d#0]\n", ammo_sizes[j->o.clip.size], j->o.clip.size);
+        sprintf (buf,                "#2Oval0 - Bullets  :#0 %d\n", j->o.clip.amount);
+        sprintf (buf + strlen (buf), "#2Oval1 - Capacity :#0 %d\n", j->o.clip.max);
+        sprintf (buf + strlen (buf), "#2Oval2 - Ammo Size:#0 %s [#2%d#0]\n", calibers[j->o.clip.caliber], j->o.clip.caliber);
+        sprintf (buf + strlen (buf), "#2Oval3 - Type     :#0 %s [#2%d#0]\n", gun_bits[j->o.clip.type], j->o.clip.type);
+        sprintf (buf + strlen (buf), "#2Oval5 - Size     :#0 %s [#2%d#0]\n", ammo_sizes[j->o.clip.size], j->o.clip.size);
         break;
 
     case ITEM_FIREARM:
@@ -4553,12 +4580,12 @@ void objstat( CHAR_DATA * ch, char *name ) {
         if (!*buf2)
             sprintf (buf2, "None\n");
 
-        sprintf (buf,                "#2Oval0 - Hands:#0      %d\n", j->o.firearm.handedness);
-        sprintf (buf + strlen (buf), "#2Oval1 - Bits:#0       %s\n", buf2);
-        sprintf (buf + strlen (buf), "#2Oval2 - Caliber:#0    %s [#2%d#0]\n", calibers[j->o.firearm.caliber], j->o.firearm.caliber);
-        sprintf (buf + strlen (buf), "#2Oval3 - Skill Used:#0 %s [skill number %d]\n", skills[j->o.od.value[3]], j->o.od.value[3]);
-        sprintf (buf + strlen (buf), "#2Oval4 - Setting:#0    %s [#2%d#0]\n", (j->o.firearm.setting < 0 ? "jammed" : gun_set[j->o.firearm.setting]), j->o.firearm.setting);
-        sprintf (buf + strlen (buf), "#2Oval5 - Recoil:#0  %d\n", j->o.firearm.recoil);
+        sprintf (buf,                "#2Oval0 - Hands      :#0      %d\n", j->o.firearm.handedness);
+        sprintf (buf + strlen (buf), "#2Oval1 - Bits       :#0       %s\n", buf2);
+        sprintf (buf + strlen (buf), "#2Oval2 - Ammo Size  :#0    %s [#2%d#0]\n", calibers[j->o.firearm.caliber], j->o.firearm.caliber);
+        sprintf (buf + strlen (buf), "#2Oval3 - Skill Used :#0 %s [skill number %d]\n", skills[j->o.od.value[3]], j->o.od.value[3]);
+        sprintf (buf + strlen (buf), "#2Oval4 - Setting    :#0    %s [#2%d#0]\n", (j->o.firearm.setting < 0 ? "jammed" : gun_set[j->o.firearm.setting]), j->o.firearm.setting);
+        sprintf (buf + strlen (buf), "#2Oval5 - Recoil     :#0  %d\n", j->o.firearm.recoil);
         break;
 
     case ITEM_MISSILE:
@@ -5200,6 +5227,14 @@ void objstat( CHAR_DATA * ch, char *name ) {
 		}
 		send_to_char( buf, ch );
 	}
+// Add note listing here -Nimrod
+// j->nVirtual is the object number
+// sprintf( buf, "\nCommand will be: help objects %d \n", j->nVirtual);
+// send_to_char (buf, ch);
+
+sprintf( buf, "objects %d", j->nVirtual);
+do_help (ch, buf, 100);
+
 
 }
 
@@ -7631,7 +7666,30 @@ void do_set( CHAR_DATA * ch, char *argument, int cmd ) {
 		ch->plr_flags &= ~MENTOR;
 		return;
 	}
-
+	else if( ! str_cmp( subcmd, "status" ) )
+	{
+		if( ! *argument )
+		{
+			sprintf( buf, "Your current status string: (#2%s#0)\n", ( ch->status_str ) ? ch->status_str : "none" );
+			send_to_char( buf, ch );
+		}
+		else if( ! strcmp( argument, "normal" ) )
+		{
+			sprintf( buf, "Your current status string has been cleared." );
+			act( buf, false, ch, 0, 0, TO_CHAR );
+			clear_status( ch );
+		}
+		else if( ch && argument )
+		{
+			ch->status_str = str_dup( std::string( argument ).substr( 0, 20 ).c_str( ) );
+			if( ! IS_NPC( ch ) )
+			{
+				sprintf( buf, "Your status string is now: %s", argument );
+				act( buf, false, ch, 0, 0, TO_CHAR | _ACT_FORMAT );
+			}
+		}
+		return;
+	}
 	else if ( !str_cmp( subcmd, "prompt" ) ) {
 		if ( !GET_FLAG (ch, FLAG_NOPROMPT) ) {
 			ch->flags |= FLAG_NOPROMPT;
@@ -9337,9 +9395,18 @@ void display_craft( CHAR_DATA * ch, SUBCRAFT_HEAD_DATA * craft ) {
 				vars = craft->craft_variable[ i ];
 				if ( vars->phase != phase )
 					continue;
-				if ( *vars->category ) {
+				if ( *vars->category ) 
+				{
+				  if (vars->from >= 99)
+				    {  // This is a manual varcat transfer, show it as such
+					  sprintf( b_buf + strlen( b_buf ), "      %d;  %s from %s to position %d on Object%d\n", i,
+							vars->manual, vars->category, vars->pos, vars->to );
+					}
+					else
+					{
 					sprintf( b_buf + strlen( b_buf ), "      %d;  %s from Object%d to position %d on Object%d\n", i,
 							vars->category, vars->from, vars->pos, vars->to );
+					}
 				}
 			}
 		}
@@ -11865,3 +11932,84 @@ void do_scents( CHAR_DATA *ch, char *argument, int cmd ) {
 
 	page_string( ch->descr(), output.c_str() );
 }
+
+/*
+fetch_variable_categories() - Added 0219141251 -Nimrod
+Used to read the variable categories on PROTOTYPE of mob or object
+   var_list is an array of pointers that will point to strings that will hold variable list
+   target is vnumber of object prototype or mobile prototype
+   target_type specifies if it is an object or mobile 0 = object, 1 = mobile
+   Note - array of strings and pointer array var_list must be initialized in calling function
+   Example of required elements prior to call:
+   
+   	char var_list[10][100];
+	char *var_list_pointers[10];
+   	// Initalize pointer array
+	for (j = 0; j<10;j++)
+	{
+	  var_list_pointers[j] = var_list[j];
+	  *var_list[j] = '\0'; // Set these to null while we're at it.
+	}
+    // Then call the function thus:
+    fetch_variable_categories ( var_list_pointers, vnum, 0);
+	
+	Variable categories are returned in the order they are read from the full description of mob or object.
+	
+	To-do:
+	  Check to see if mob and obj need to be freed prior to exit
+	  Move initialization of pointers and strings to function so we don't have to repeat it prior to calls
+	  Check out use of slot designations on from object will affect function
+	  Strip trailing digits from variable name prior to returning
+*/
+void fetch_variable_categories ( char **var_list, int target, int target_type) {
+  OBJ_DATA *obj;
+  CHAR_DATA *mob;
+  char temp[100] = { '\0' };
+  char *point;
+  int k = 0;
+  int i = 0;
+  char buf[ MAX_STRING_LENGTH ];
+   
+  switch (target_type)
+  {
+    case 0:  // Object Specified 
+	  if (!(obj = vtoo(target))) // Set obj to object 
+	    return;
+	  point = obj->full_description; // Set point to address of obj description
+	  break;
+	case 1: // Mobile Specified
+      if (!(mob = vnum_to_mob(target))) // Set mob to called mobile
+	    return;
+	  point = mob->description; // Set point to address of mob description
+	  break;
+	default:
+	  return;
+  }
+ 
+  while ( k < 10 ) // 10 is max number of variables on an obj or mob
+  { 
+    point = one_argument( point, temp ); // Read first word
+    if (!temp)
+      break;
+	  
+    if (temp[0] == '$')  // Check to see if word is a variable category
+    {
+	  strcpy(var_list[k], "$");
+	  for ( i = 1; i < strlen( temp ); i++ ) 
+	  {
+		if (isalpha(temp[i]))  // Only copy alpha chars 0317140414 -Nimrod
+		  sprintf (var_list[k] + strlen (var_list[k]), "%c", temp[i]);
+	  }				
+      // sprintf( buf, "Variable # %d is: >>>%s<<<\n", k, var_list[k] ); // Just for testing purposes
+      // send_to_gods(buf);
+	  k++;
+	}
+	if (strlen(temp) <= 0) // If there's no more words, break out of the while loop
+	{
+	  // send_to_gods("Temp length is zero or less");
+	  break;
+	} 
+    
+  }
+  return;
+} 

@@ -152,11 +152,11 @@ const char *rs_name[] =
 const char *armor_types[] =
 {
     "Cloth", // general low-level armour.
-    "Metal", // hard-metal armours, v. good vs slashing, not much use against anything else
-    "Kevlar", // armour this is good vs. ballistics, not so good v. melee
-    "Ceramic", // armour that's both good against ballistics and melee
-    "Powered", // armour that simply rocks
-    "Neutral"  // No effects, used only by Kithrater for special things.
+    "Leather", // hard-metal armours, v. good vs slashing, not much use against anything else
+    "HardenedLeather", // armour this is good vs. ballistics, not so good v. melee
+    "Mail", // armour that's both good against ballistics and melee
+    "Scale", // armour that simply rocks
+    "Plate"  // No effects, used only by Kithrater for special things.
 };
 
 const struct body_info body_tab[NUM_TABLES][MAX_HITLOC] =
@@ -296,30 +296,36 @@ const char *break_def[] =
 
 const int weapon_armor_table[10][6] =
 {
-    //C   M   K   C   Pow
-    { 1, -1,  2, -1, -1,  0},		// stab -- small-blades, knives, daggers
-    { 0, -1,  2,  0,  0,  0},		// pierce -- polearms, arrows
-    { 1, -1,  1, -1,  0,  0},		// chop -- axes
-    {-1,  1,  0,  2,  1,  0},		// bludgeon -- clubs, flails
-    { 2, -2,  1, -1,  0,  0},		// slash -- swords
-    { 0,  0,  0,  0,  0,  0},	    // lash -- whips
-    { 0,  0,  0,  0,  0,  0},	    // burn - blowtorches, flamethrowers, etc.
-    { 0,  2, -2, -1, -3,  0},	    // jacketed gunshots
-    {-1,  0, -4, -3, -5,  0},	    // hollow-point gunshots - +2 armour to all, +4 bleed
-    { 1,  3,  0,  1, -1,  0}	        // armour-piercng gunshots - -2 armour to all, -4 bleed.
+//1 - Heavy and/or Padded Cloth & Similar
+//2 - Leather
+//3 - Hardened Leather
+//4 - Mail
+//5 - Scale
+//6 - Plate
+//1  2   3   4   5   6
+{ 0, 0, -1, -2, -1, -3}, // stab -- small-blades, knives, daggers
+{ 0, 0, -1, -2, -1, -3}, // pierce -- polearms, arrows
+{ 0, 0, -1, -2, -3, -3}, // chop -- axes
+{-1, 1, 0, 1, -2, -2}, // bludgeon -- clubs, flails
+{ 1, 1, 0, -2, -3, -3}, // slash -- swords
+{ 1, 0, 0, -2, -3, -4}, // lash -- whips
+{ 1, 0, 0, 2, 2, 2}, // burn - blowtorches, flamethrowers, etc.
+{ 0, 0, -2, -3, -4, -5}, // jacketed gunshots
+{ 1, 0, -1, -2, -5, -6}, // hollow-point gunshots - +2 armour to all, +4 bleed
+{ 0, 0, 0, 0, 0, 0} // armour-piercng gunshots - -2 armour to all,
 };
 
 const int weapon_nat_attack_table[8][6]=
 {
-    //C   M   K   C   P
-    { 0, -2, -1, -2, -2,  0}, // punch -- trying to punch-out a dude in armor will fail.
-    { 0, -1,  1,  0,  0,  0}, // bite  -- pierce
-    { 0, -1,  1,  0,  0,  0}, // claw  -- slash
-    { 0, -1,  1,  0,  0,  0}, // peck  -- pierce
-    { 0,  0,  0,  0,  0,  0}, // trample/feet -- crush
-    { 0, -1,  1,  0,  0,  0}, // gore/tusks -- pierce
-    { 0,  0,  0,  0,  0,  0}, // chill -- null
-    { 0,  0,  1,  0,  0,  0}  // sting -- pierce
+//1   2   3   4   5   6
+{-1, -2, -2, -2, -2, -3}, // punch -- trying to punch-out a dude in armor will fail.
+{ 0, 0, -1, -2, -1, -3}, // bite -- pierce
+{ 0, 0, -1, -2, -3, -3}, // claw -- slash
+{ 0, 0, -1, -2, -1, -3}, // peck -- pierce
+{ 0, 0, 0, 1, -2, -2}, // trample/feet -- crush
+{ 0, 0, -1, -2, -1, -3}, // gore/tusks -- pierce
+{ 0, 0, 0, 1, 2, 2}, // chill -- null
+{ 0, 0, -1, -2, -1, -3} // sting -- pierce
 };
 
 
@@ -1353,6 +1359,20 @@ make_corpse (CHAR_DATA * ch)
 
     bool lizard = false;
     bool lizard_found = false;
+	int j;
+	// Pass the mob variables to the corpse if they exist.
+	for (j=0 ; j < 10; j++)
+	  {
+	    if (ch->mob_color_cat[j] && ch->mob_color_name[j] && IS_NPC(ch))
+		// if (ch->mob_color_cat[j] && ch->mob_color_name[j])
+		{
+	      // sprintf( buf, "Variable %d: %s is set as: %s.\n", j, k->mob_color_cat[j], k->mob_color_name[j]);
+		  // send_to_char(buf, ch);
+		  corpse->var_color[j] = add_hash(ch->mob_color_name[j]);
+        corpse->var_cat[j] = add_hash(ch->mob_color_cat[j]);
+		}
+	  }
+/* Disabling the ugly race variable stuff 0216141423 -Nimrod
 
     if (!str_cmp(lookup_race_variable (ch->race, RACE_NAME), "small-feline"))
     {
@@ -1462,7 +1482,7 @@ make_corpse (CHAR_DATA * ch)
         corpse->var_color[0] = add_hash("natural-hued");
         corpse->var_cat[0] = add_hash("$leathercolor");
     }
-
+*/
     // If the dude died with the genetic_mutation bug, then we add a count_down timer until we turn in to... A MONSTER!
     
     if (ch->race != lookup_race_id("Hosted-Terror") && (af = get_soma_affect(ch, SOMA_GENETIC_MUTATION)))
@@ -5911,7 +5931,7 @@ do_escape (CHAR_DATA * ch, char *argument, int cmd)
     }
 
     chance = 20 + 2 * (GET_STR (ch) + GET_AGI (ch) - GET_STR (ch->subdue)
-                       - GET_DEX (ch->subdue));
+                       - GET_AGI (ch->subdue));
 
     if (chance > number (0, 100))
     {
