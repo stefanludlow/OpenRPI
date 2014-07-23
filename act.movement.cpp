@@ -383,7 +383,7 @@ const char *direction[] =
 	"southwest",
 	"southeast",
 	"northwest",
-	"northeast"
+	"northeast",
 	"upnorth",
 	"upeast",
 	"upsouth",
@@ -399,7 +399,8 @@ const char *direction[] =
 	"downnortheast",
 	"downnorthwest",
 	"downsoutheast",
-	"downsouthwest"
+	"downsouthwest",
+	"report_to_nimrod0257072314"
 };
 
 const char *rev_d2[] =
