@@ -34,7 +34,7 @@ extern const char *rev_d[] =
 	"the north,",
 	"the east,",
 	"below,",
-	"above,"
+	"above",
 	"inside",
 	"outside",
 	"the southwest",
@@ -56,7 +56,8 @@ extern const char *rev_d[] =
 	"the upsouthwest",
 	"the upsoutheast",
 	"the upnorthwest",
-	"the upnortheast"
+	"the upnortheast",
+	"report to nimrod"
 };
 
 
