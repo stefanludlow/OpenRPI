@@ -110,8 +110,8 @@ const char *econ_flags[] =
 	"PCMake",			// 1 << 7
     "nobarter",
 	"Practice",
-	"1stAge",			// 1 << 8
-	"2ndAge",			// 1 << 9
+	"Fish",			// 1 << 8
+	"Alcohol",			// 1 << 9
 	"Elven",			// 1 << 10
 	"Dwarven",			// 1 << 11
 	"Orcish",			// 1 << 12
