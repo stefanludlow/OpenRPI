@@ -1946,7 +1946,7 @@ do_hit (CHAR_DATA * ch, char *argument, int cmd)
 
     if (IS_SET(ch->room->room_flags, PEACE))
     {
-        act ("Something prohibits you from taken such an action.", false, ch, 0, 0, TO_CHAR);
+        act ("Something prohibits you from taking such an action.", false, ch, 0, 0, TO_CHAR);
         return;
     }
 
@@ -2523,7 +2523,7 @@ do_kill (CHAR_DATA * ch, char *argument, int cmd)
 
     if (IS_NPC (ch) || !GET_TRUST (ch))
     {
-        do_hit (ch, original, 1);
+        do_hit (ch, original, 0); // disabling kill command for mortals 202309022014 -Nimrod
         return;
     }
     else
