@@ -199,20 +199,39 @@ do_throw (CHAR_DATA * ch, char *argument, int cmd)
 
     const char *verbose_dirs[] =
     {
-        "the north",
-        "the east",
-        "the south",
-        "the west",
-        "above",
-        "below",
-        "outside",
-        "inside",
-        "the northeast",
-        "the northwest",
-        "the southeast",
-        "the southwest",
-        "\n"
-    };
+	 "the north",
+  "the east",
+  "the south",
+  "the west",
+  "above",
+  "below",
+  "outside",
+  "inside",
+  "the northeast",
+  "the northwest",
+  "the southeast",
+  "the southwest",
+  "the upper north",
+  "the upper east",
+  "the upper south",
+  "the upper west",
+  "the upper northeast",
+  "the upper northwest",
+  "the upper southeast",
+  "the upper southwest",
+  "the lower north",
+  "the lower east",
+  "the lower south",
+  "the lower west",
+  "the lower northeast",
+  "the lower northwest",
+  "the lower southeast",
+  "the lower southwest"
+  "\n"
+};
+	
+	
+	
 
     if (IS_SWIMMING (ch))
     {
