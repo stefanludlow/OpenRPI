@@ -7776,7 +7776,7 @@ do_score (CHAR_DATA * ch, char *argument, int cmd)
                      verbal_stats[get_stat_range (GET_INT (ch))],
                      verbal_stats[get_stat_range (GET_WIL (ch))],
                      verbal_stats[get_stat_range (GET_AGI (ch))],
-                     verbal_stats[get_stat_range (GET_AUR (ch)));
+                     verbal_stats[get_stat_range (GET_AUR (ch))]);
         else
             sprintf (buf,
                      "Str[#2%d#0] Dex[#2%d#0] Con[#2%d#0] Int[#2%d#0] Wil[#2%d#0] Pre[#2%d#0] Agi[#2%d#0]\n",
