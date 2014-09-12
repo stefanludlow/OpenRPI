@@ -199,20 +199,39 @@ do_throw (CHAR_DATA * ch, char *argument, int cmd)
 
     const char *verbose_dirs[] =
     {
-        "the north",
-        "the east",
-        "the south",
-        "the west",
-        "above",
-        "below",
-        "outside",
-        "inside",
-        "the northeast",
-        "the northwest",
-        "the southeast",
-        "the southwest",
-        "\n"
-    };
+	 "the north",
+  "the east",
+  "the south",
+  "the west",
+  "above",
+  "below",
+  "outside",
+  "inside",
+  "the northeast",
+  "the northwest",
+  "the southeast",
+  "the southwest",
+  "the upper north",
+  "the upper east",
+  "the upper south",
+  "the upper west",
+  "the upper northeast",
+  "the upper northwest",
+  "the upper southeast",
+  "the upper southwest",
+  "the lower north",
+  "the lower east",
+  "the lower south",
+  "the lower west",
+  "the lower northeast",
+  "the lower northwest",
+  "the lower southeast",
+  "the lower southwest"
+  "\n"
+};
+	
+	
+	
 
     if (IS_SWIMMING (ch))
     {
@@ -1927,7 +1946,7 @@ do_hit (CHAR_DATA * ch, char *argument, int cmd)
 
     if (IS_SET(ch->room->room_flags, PEACE))
     {
-        act ("Something prohibits you from taken such an action.", false, ch, 0, 0, TO_CHAR);
+        act ("Something prohibits you from taking such an action.", false, ch, 0, 0, TO_CHAR);
         return;
     }
 
@@ -2504,7 +2523,7 @@ do_kill (CHAR_DATA * ch, char *argument, int cmd)
 
     if (IS_NPC (ch) || !GET_TRUST (ch))
     {
-        do_hit (ch, original, 1);
+        do_hit (ch, original, 0); // disabling kill command for mortals 202309022014 -Nimrod
         return;
     }
     else
