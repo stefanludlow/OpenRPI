@@ -2140,10 +2140,10 @@ const char *fem_ages[8][2] =
     {"baby", "toddler"},
     {"girl", "lass"},
     {"female youth", "female teen"},
-    {"maiden", "young woman"},
-    {"woman", "female"},
-    {"middle-aged woman", "mature-aged woman"},
-    {"aged woman", "elderly woman"},
+    {"maiden", "young woman", "damsel", "maid"},
+    {"woman", "female", "lady"},
+    {"middle-aged woman", "mature-aged woman", "matron"},
+    {"aged woman", "elderly woman", "dowager"},
     {"crone", "old woman"}
 };
 
@@ -2153,9 +2153,9 @@ const char *male_ages[8][2] =
     {"boy", "lad"},
     {"male youth", "male teen"},
     {"young man", "youthful man"},
-    {"man", "male"},
+    {"man", "male", "fellow", "chap", "gent", "gentleman"},
     {"middle-aged man", "mature-aged man"},
-    {"aged man", "elderly man"},
+    {"aged man", "elderly man", "gaffer"},
     {"geezer", "old man"}
 };
 

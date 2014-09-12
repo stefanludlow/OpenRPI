@@ -966,9 +966,9 @@ void
 			{
 				char *p;
 
-				sprintf(buf, "#3Fail#0: #2%s#0 for #6%s#0 credits.", row[10], row[5]);
+				sprintf(buf, "#3Fail#0: #2%s#0 for #6%s#0 coins.", row[10], row[5]);
 
-				sprintf(buf3, "At this time, #2%s#0 #3failed to be bought#0 for #6%d#0 credits.\n\n"
+				sprintf(buf3, "At this time, #2%s#0 #3failed to be bought#0 for #6%d#0 coins.\n\n"
 					"The item was ordered for sale by #5%s#0.",
 					row[10], atoi(row[5]), row[7]);                                      
 
@@ -1080,7 +1080,7 @@ void
 		if (price <= 0)
 		{
 			name_to_ident (ch, buf2);			
-			sprintf(buf, "%s You need to nominate a price in chips you are willing to pay for this order.", buf2);
+			sprintf(buf, "%s You need to nominate a price in coins you are willing to pay for this order.", buf2);
 			do_whisper (keeper, buf, 83);
 			return;
 		}
@@ -1221,13 +1221,13 @@ void
 			if (!can_subtract_money (ch, fee + price, keeper->mob->currency_type))
 			{
 				name_to_ident (ch, buf2);
-				sprintf (buf, "%s You don't seem to have enough credits to place for that order.", buf2);
+				sprintf (buf, "%s You don't seem to have enough coins to place for that order.", buf2);
 				do_whisper (keeper, buf, 83);
 				return;
 			}
 
 			name_to_ident (ch, buf2);
-			sprintf(buf, "%s I will now pay #6%d#0 chips to the first person who can fill your order. In addition, I have taken #6%d#0 chips for my services. I will let you know when your order has been fulfilled - you will then be able to #6ORDER RETRIEVE#0 to receive your item. If no one fills your order in One Lunar Day, I will remove your order, allow you to retrieve your money, but keep my fee.\n", buf2, price, fee);
+			sprintf(buf, "%s I will now pay #6%d#0 chips to the first person who can fill your order. In addition, I have taken #6%d#0 coins for my services. I will let you know when your order has been fulfilled - you will then be able to #6ORDER RETRIEVE#0 to receive your item. If no one fills your order in One Lunar Day, I will remove your order, allow you to retrieve your money, but keep my fee.\n", buf2, price, fee);
 			do_whisper (keeper, buf, 83);
 			subtract_money(ch, fee + price, keeper->mob->currency_type);
 
@@ -1813,9 +1813,9 @@ void
 				char *p;
 
 				sprintf(buf, "The Auctioneer: #5%s#0", row[2]);
-				sprintf(buf2, "Purchase of #2%s#0 for #6%s#0 credits", obj_short_desc(obj), row[5]);
+				sprintf(buf2, "Purchase of #2%s#0 for #6%s#0 coins", obj_short_desc(obj), row[5]);
 				sprintf(buf3, "The item you had ordered for purchase with #5%s#0 has been bought.\n\n"
-					"After the auctioneers commission, you have spent #6%s#0 credits on the sale of #2%s#0.\n\n"
+					"After the auctioneers commission, you have spent #6%s#0 coins on the sale of #2%s#0.\n\n"
 					"Visit #5%s#0 to '#6retrieve#0' your item.\n", row[2], row[5], obj_short_desc(obj), row[2]);
 				reformat_string (buf3, &p);
 
@@ -1843,9 +1843,9 @@ void
 			{
 				char *p;
 
-				sprintf(buf, "#3Bought#0: #2%s#0 for #6%s#0 credits.", obj_short_desc(obj), row[5]);
+				sprintf(buf, "#3Bought#0: #2%s#0 for #6%s#0 coins.", obj_short_desc(obj), row[5]);
 
-				sprintf(buf3, "At this time, #2%s#0 was #3sold#0 for #6%d#0 credits by #5%s#0.\n\n"
+				sprintf(buf3, "At this time, #2%s#0 was #3sold#0 for #6%d#0 coins by #5%s#0.\n\n"
 					"The item was ordered for sale by #5%s#0.",
 					obj_short_desc(obj), atoi(row[5]), char_short(ch), row[7]);                                      
 
@@ -2112,7 +2112,7 @@ int
 #define NO_SUCH_ITEM1 "Don't seem to have that in my inventory. Would you like to buy something else?"
 #define NO_SUCH_ITEM2 "I don't see that particular item. Perhaps you misplaced it?"
 #define MISSING_CASH1 "A little too expensive for me now -- why don't you try back later?"
-#define MISSING_CASH2 "You're a little short on credits, I see; come back when you can afford it."
+#define MISSING_CASH2 "You're a little short on coins, I see; come back when you can afford it."
 #define DO_NOT_BUY    "I don't buy those sorts of things, I'm afraid."
 
 void
@@ -3683,7 +3683,7 @@ void
 			keepers_cost = calculate_sale_price (tobj, keeper, ch, buy_count, true, false);
 			keepers_cost = keepers_cost * (100 + discount) / 100;
 			keepers_cost = (int) keepers_cost;
-			sprintf (buf, "You have opted to purchase #2%s#0, for a total of %d credit%s. To confirm, please use the ACCEPT command.\n", obj_short_desc (tobj), (int) keepers_cost, (int) keepers_cost > 1 ? "s" : "");
+			sprintf (buf, "You have opted to purchase #2%s#0, for a total of %d coin%s. To confirm, please use the ACCEPT command.\n", obj_short_desc (tobj), (int) keepers_cost, (int) keepers_cost > 1 ? "s" : "");
 			sprintf(buf + strlen(buf), "\nThe long description of this object will be: #2%s#0\n", tobj->description);
 			sprintf(buf + strlen(buf), "\nThe full description of this object will be:");
 			sprintf(buf + strlen(buf), "\n#2%s#0\n", tobj->full_description);
@@ -3703,7 +3703,7 @@ void
 		}
 		else
 		{
-			sprintf (buf, "You have opted to purchase #2%s#0, for a total of %d credit%s. To confirm, please use the ACCEPT command.", obj_short_desc (obj), (int) keepers_cost, (int) keepers_cost > 1 ? "s" : "");
+			sprintf (buf, "You have opted to purchase #2%s#0, for a total of %d coin%s. To confirm, please use the ACCEPT command.", obj_short_desc (obj), (int) keepers_cost, (int) keepers_cost > 1 ? "s" : "");
 			ch->purchase_obj = obj;
 		}
 
@@ -3801,14 +3801,14 @@ void
 	if (ch->room->zone == 5 || ch->room->zone == 6)
 	{
 		sprintf (buf,
-			"%s You're lucky I gave it to you for %d credit%s, maggot.",
+			"%s You're lucky I gave it to you for %d coin%s, maggot.",
 			buf2, (int) keepers_cost, (int) keepers_cost > 1 ? "s" : "");
 	}
 	else
 	{
 		sprintf (buf, "%s A veritable steal at ", buf2);
 		sprintf (buf + strlen (buf),
-			"%d credit%s! Enjoy it, my friend.", (int) keepers_cost,
+			"%d coin%s! Enjoy it, my friend.", (int) keepers_cost,
 			(int) keepers_cost > 1 ? "s" : "");
 	}
 
@@ -4525,7 +4525,7 @@ void
 
 		keepers_cost = keepers_cost * (100 + discount) / 100;
 
-		sprintf (buf + strlen (buf), "%d credit%s", (int) keepers_cost,
+		sprintf (buf + strlen (buf), "%d coin%s", (int) keepers_cost,
 			(int) keepers_cost > 1 ? "s" : "");
 
 		strcat (buf, ".");
@@ -4551,7 +4551,7 @@ void
 	if (keepers_cost < 1)
 	{
 		name_to_ident (ch, buf2);
-		sprintf (buf, "%s Bah, that isn't even worth my time!", buf2);
+		sprintf (buf, "%s Pah, that's not even worth one coin! Don't you have any more?", buf2);
 		do_whisper (keeper, buf, 83);
 		return;
 	}
@@ -4723,7 +4723,7 @@ void
 
 	*buf3 = '\0';
 
-	sprintf (buf3, "%d credit%s", (int) keepers_cost,
+	sprintf (buf3, "%d coin%s", (int) keepers_cost,
 		(int) keepers_cost > 1 ? "s" : "");
 
 	keepers_cost = (int) keepers_cost;
@@ -4786,7 +4786,7 @@ void
 
 	if (coins->count < count)
 	{
-		send_to_char ("You don't have that many credits to exchange.\n", ch);
+		send_to_char ("You don't have that many coins to exchange.\n", ch);
 		return;
 	}
 
@@ -5098,7 +5098,7 @@ void
 		{
 			sprintf (buf + strlen (buf),
 				"\n    Total for #6%s %d#0: Sales #2%d cp#0, Purchases #2%d cp#0.\n\n"
-				"    Current credits on hand: #2%d cp#0.\n",
+				"    Current coins on hand: #2%d cp#0.\n",
 				month_short_name[(int) last_month], (int) last_year,
 				nAmtSold, nAmtBought, keeper_has_money (keeper, 0));
 		}
@@ -5107,7 +5107,7 @@ void
 			sprintf (buf + strlen (buf),
 				"\n    Total for #6%s %d#0: Sales #2%d cp#0, Purchases #2%d cp#0.\n\n"
 				"    Total for period:    Sales #2%d cp#0, Purchases #2%d cp#0.\n"
-				"    Current credits on hand:  #2%d cp#0.\n",
+				"    Current coins on hand:  #2%d cp#0.\n",
 				month_short_name[(int) last_month], (int) last_year,
 				nAmtSold, nAmtBought, nTAmtSold, nTAmtBought,
 				keeper_has_money (keeper, 0));
@@ -5238,7 +5238,7 @@ void
 		&& !can_subtract_money (ch, 20, keeper->mob->currency_type))
 	{
 		name_to_ident (ch, buf2);
-		sprintf (buf, "%s You seem to be a bit short on credits right now.", buf2);
+		sprintf (buf, "%s You seem to be a bit short on coins right now.", buf2);
 		do_whisper (keeper, buf, 83);
 		return;
 	}
@@ -5500,7 +5500,7 @@ void
 
 			seen_tollkeeper = 1;
 
-			sprintf (buf, "$n wants %d credit%s to cross %s.",
+			sprintf (buf, "$n wants %d coin%s to cross %s.",
 				af->a.toll.charge,
 				af->a.toll.charge == 1 ? "" : "s", dirs[af->a.toll.dir]);
 			act (buf, false, tch, 0, ch, TO_VICT);
@@ -5612,7 +5612,7 @@ void
 
 	if (!can_subtract_money (ch, af->a.toll.charge, tch->mob->currency_type))
 	{
-		send_to_char ("You don't have enough credits to pay the toll.\n", ch);
+		send_to_char ("You don't have enough coins to pay the toll.\n", ch);
 		return;
 	}
 
@@ -5681,7 +5681,7 @@ void
 
 	if (max_toll < af->a.toll.charge)
 	{
-		sprintf (buf, "$N wants a %d credit toll.", af->a.toll.charge);
+		sprintf (buf, "$N wants a %d coin toll.", af->a.toll.charge);
 		act (buf, false, ch, 0, tch, TO_CHAR);
 		return;
 	}
@@ -5689,7 +5689,7 @@ void
 	if (!can_subtract_money
 		(ch, af->a.toll.charge * tolls, tch->mob->currency_type))
 	{
-		send_to_char ("You don't have enough credits to pay the tolls.\n", ch);
+		send_to_char ("You don't have enough coins to pay the tolls.\n", ch);
 		return;
 	}
 
@@ -5960,7 +5960,7 @@ void
 
 	if (af_collector->a.toll.charge > max_pay)
 	{
-		sprintf (buf, "$N wants %d credit%s per toll.",
+		sprintf (buf, "$N wants %d coin%s per toll.",
 			af_collector->a.toll.charge,
 			af_collector->a.toll.charge == 1 ? "" : "s");
 		act (buf, false, ch, 0, collector, TO_CHAR);
@@ -5977,18 +5977,18 @@ void
 	if (!can_subtract_money
 		(ch, af_collector->a.toll.charge * num_payees, currency_type))
 	{
-		send_to_char ("You don't have enough credits to pay the toll.\n", ch);
+		send_to_char ("You don't have enough coins to pay the toll.\n", ch);
 		return;
 	}
 
 	act ("$n pays $N a toll for:", false, ch, 0, collector, TO_NOTVICT);
 
-	sprintf (buf, "$n pays you a toll of %d credit%s for:",
+	sprintf (buf, "$n pays you a toll of %d coin%s for:",
 		af_collector->a.toll.charge * num_payees,
 		af_collector->a.toll.charge * num_payees == 1 ? "" : "s");
 	act (buf, false, ch, 0, collector, TO_VICT);
 
-	sprintf (buf, "You pay $N a toll of %d credit%s for:",
+	sprintf (buf, "You pay $N a toll of %d coin%s for:",
 		af_collector->a.toll.charge * num_payees,
 		af_collector->a.toll.charge * num_payees == 1 ? "" : "s");
 	act (buf, false, ch, 0, collector, TO_CHAR);
@@ -6607,7 +6607,7 @@ void
 	{
 		if (container)
 			send_to_char
-			("\nRifling through your belongings, you retrieve your chips.\n", ch);
+			("\nRifling through your belongings, you retrieve your coins.\n", ch);
 		else
 			send_to_char ("\nYou offer up the specified amount.\n", ch);
 
@@ -7278,7 +7278,7 @@ void
 
 		payrollAmt += strtol (row[3], NULL, 10);
 
-		sprintf (buf + strlen (buf), " #5%s#0 was paid %ld credits.\n", row[2], strtol (row[3], NULL, 10));
+		sprintf (buf + strlen (buf), " #5%s#0 was paid %ld coins.\n", row[2], strtol (row[3], NULL, 10));
 
 		if (strlen (buf) > MAX_STRING_LENGTH - 512)
 		{
@@ -7296,7 +7296,7 @@ void
 		{
 			sprintf (buf + strlen (buf),
 				"\n    Total for #6%s %d#0: Payroll #2%d cp#0.\n\n"
-				"    Current credits on hand: #2%d cp#0.\n",
+				"    Current coins on hand: #2%d cp#0.\n",
 				month_short_name[(int) last_month],
 				(int) last_year,
 				payrollAmt,
@@ -7307,7 +7307,7 @@ void
 			sprintf (buf + strlen (buf),
 				"\n    Total for #6%s %d#0: Payroll #2%d cp#0.\n\n"
 				"    Total for period:      Payroll #2%d cp#0.\n"
-				"    Current credits on hand:  #2%d cp#0.\n",
+				"    Current coins on hand:  #2%d cp#0.\n",
 				month_short_name[(int) last_month],
 				(int) last_year,
 				payrollAmt,
