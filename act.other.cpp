@@ -1250,7 +1250,7 @@ do_upgrade (CHAR_DATA *ch, char *argument, int cmd)
 		"constitution",
 		"intelligence",
 		"willpower",
-		"mutations",
+		"presence",
 		"agility"
 	};
 
@@ -1341,6 +1341,16 @@ do_upgrade (CHAR_DATA *ch, char *argument, int cmd)
 			return;
 		}
 	}
+	else if (!str_cmp(arg1, "pre"))
+	{
+		raise = 5;
+
+		if (ch->aur + 1 > 18)
+		{
+			send_to_char ("There is no possibility of improving on your extreme presence.\n", ch);
+			return;
+		}
+	}
 	else if (!str_cmp(arg1, "agi"))
 	{
 		raise = 6;
@@ -1354,7 +1364,7 @@ do_upgrade (CHAR_DATA *ch, char *argument, int cmd)
 
 	if (raise == -1)
     {
-        send_to_char("You need to enter an attribute to raise - #6str, int, agi, dex, con, or wil#0.\n", ch);
+        send_to_char("You need to enter an attribute to raise - #6str, int, agi, dex, con, pre, or wil#0.\n", ch);
         return;
     }
 
@@ -1408,6 +1418,16 @@ do_upgrade (CHAR_DATA *ch, char *argument, int cmd)
 			return;
 		}
 	}
+	else if (!str_cmp(arg2, "pre"))
+	{
+		lower = 5;
+
+		if (ch->aur - 1 < 10)
+		{
+			send_to_char ("There is no possibility of further debasing your dismal presence.\n", ch);
+			return;
+		}
+	}
 	else if (!str_cmp(arg2, "agi"))
 	{
 		lower = 6;
@@ -1419,9 +1439,10 @@ do_upgrade (CHAR_DATA *ch, char *argument, int cmd)
 		}
 	}
 
+
 	if (lower == -1)
     {
-        send_to_char("You need to enter an attribute to decrease - #6str, int, agi, dex, con, or wil#0.\n", ch);
+        send_to_char("You need to enter an attribute to decrease - #6str, int, agi, dex, con, pre, or wil#0.\n", ch);
         return;
 	}
 
