@@ -1462,7 +1462,7 @@ do_upgrade (CHAR_DATA *ch, char *argument, int cmd)
 
 	magic_add_affect (ch, AFFECT_GAIN_POINT, 24, 0, 0, 0, raise);
 	magic_add_affect (ch, AFFECT_LOSE_POINT, 24, 0, 0, 0, lower);
-	magic_add_affect (ch, AFFECT_UPGRADE_DELAY, -1, (time (0) + 90 * 24 * 60 * 60), 0, 0, 0);
+	magic_add_affect (ch, AFFECT_UPGRADE_DELAY, -1, (time (0) + 30 * 24 * 60 * 60), 0, 0, 0);
 
 }
 
