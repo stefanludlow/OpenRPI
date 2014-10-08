@@ -2373,7 +2373,7 @@ extract_obj (OBJ_DATA * obj)
 void
 morph_obj (OBJ_DATA * obj)
 {
-
+    char nbuf[MAX_STRING_LENGTH] = {'\0'};
     char buf[MAX_STRING_LENGTH];
     OBJ_DATA *newObj;
 
@@ -2394,7 +2394,15 @@ morph_obj (OBJ_DATA * obj)
         else
         {
 			newObj = LOAD_COLOR(obj, obj->morphto);
-			fluid_object(newObj);
+			if (newObj)
+			{
+			  fluid_object(newObj);
+			}
+			else
+			{
+			  sprintf (nbuf, "Problem with morphing obj: %d - In room: %d\n", obj->nVirtual, obj->in_room);
+              send_to_gods(nbuf);
+			}
         }
     }
     else
