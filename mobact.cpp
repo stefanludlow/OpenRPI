@@ -2017,7 +2017,7 @@ remove_attacker (CHAR_DATA * victim, CHAR_DATA * threat)
 {
     ATTACKER_DATA *tmp, *targ_att = NULL;
 
-    send_to_gods("Starting remove_attacker");
+    // send_to_gods("Starting remove_attacker");
     if (victim->attackers && victim->attackers->attacker == threat)
     {
         send_to_gods("remove_attacker checkpoint 1.");
