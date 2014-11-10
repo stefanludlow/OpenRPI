@@ -1956,9 +1956,9 @@ reading_check (CHAR_DATA * ch, OBJ_DATA * obj, WRITING_DATA * writing,
                     sprintf( output, "A %s scribed %s, bearing a message in %s written with %s in the %s script",
 			 	writing_adj(writing->skill),   
                 obj->short_description,
-			    skills(writing->language),
+			    skills[writing->language],
                 writing->ink,
-			    skills(writing->script)
+			    skills[writing->script]
         
             // sprintf( output, "#2On %s, %s letters bear a message:",
             //    obj->short_description,
