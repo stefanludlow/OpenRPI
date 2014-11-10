@@ -1958,7 +1958,7 @@ reading_check (CHAR_DATA * ch, OBJ_DATA * obj, WRITING_DATA * writing,
 				writing_adj(writing-skill),
 				skills[writing-script],
 				writing->ink,
-			    skills(writing->language)
+			    skills[writing->language]
         
             // sprintf( output, "#2On %s, %s letters bear a message:",
             //    obj->short_description,
