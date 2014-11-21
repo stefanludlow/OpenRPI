@@ -1953,9 +1953,16 @@ reading_check (CHAR_DATA * ch, OBJ_DATA * obj, WRITING_DATA * writing,
         );
     else {
         if ( !page )
-            sprintf( output, "#2On %s, %s letters bear a message:",
+               sprintf( output, "%s with %s scribed %s sigils in %s bears a message in %s:",   
                 obj->short_description,
-                writing->ink
+				writing_adj(writing->skill),
+				skills[writing->script],
+				writing->ink,
+			    skills[writing->language]
+        
+            // sprintf( output, "#2On %s, %s letters bear a message:",
+            //    obj->short_description,
+            //    writing->ink
             );
         else
             sprintf( output, "On #2page %d#0, %s letters bear a message:", page - 1, writing->ink );

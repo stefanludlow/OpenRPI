@@ -298,13 +298,21 @@ is_involved (CHAR_DATA *ch, CHAR_DATA *tch, int cmd)
 
 void fluid_object(OBJ_DATA *obj)
 {
-		if ((GET_ITEM_TYPE(obj) == ITEM_DRINKCON || GET_ITEM_TYPE(obj) == ITEM_FOUNTAIN)
+  if (obj)
+  {
+    if ((GET_ITEM_TYPE(obj) == ITEM_DRINKCON || GET_ITEM_TYPE(obj) == ITEM_FOUNTAIN)
 			&& vtoo(obj->o.drinks.liquid) && obj->o.drinks.volume && !obj->contains)
-		{
+	{
 			OBJ_DATA *fluid = load_object(obj->o.drinks.liquid);
 			fluid->count = obj->o.drinks.volume;
 			obj_to_obj(fluid, obj);
-		}
+	}
+
+  }
+  else
+  {
+    send_to_gods("An illegal call to fluid_object has been made.  Let Nimrod know.");
+  }
 }
 
 // Corrects a/an in a string, strips our double blanks.

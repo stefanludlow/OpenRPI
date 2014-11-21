@@ -757,6 +757,7 @@ void save_craft_progs (void)
 {
 	//if (!engine.in_build_mode())
 	//   return;
+	mysql_safe_query ("DELETE FROM craft_progs_backup");
 	mysql_safe_query ("INSERT INTO craft_progs_backup SELECT * FROM craft_progs");
 	mysql_safe_query ("DELETE FROM craft_progs");
 	for (std::multimap<std::string, room_prog>::iterator it = craft_prog_list.begin(); it != craft_prog_list.end(); it++)

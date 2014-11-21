@@ -2017,18 +2017,23 @@ remove_attacker (CHAR_DATA * victim, CHAR_DATA * threat)
 {
     ATTACKER_DATA *tmp, *targ_att = NULL;
 
+    // send_to_gods("Starting remove_attacker");
     if (victim->attackers && victim->attackers->attacker == threat)
     {
+        
         targ_att = victim->attackers;
         victim->attackers = victim->attackers->next;
     }
     else if (victim->attackers)
     {
+        
         for (tmp = victim->attackers; tmp; tmp = tmp->next)
         {
+            
             if (tmp->next && tmp->next->attacker
                     && tmp->next->attacker == threat)
             {
+                send_to_gods("remove_attacker checkpoint 4 - Let Nimrod know if you see this.");
                 targ_att = tmp->next;
                 tmp->next = tmp->next->next;
             }

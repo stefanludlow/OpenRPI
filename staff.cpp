@@ -11263,7 +11263,14 @@ bool csv_obj( CHAR_DATA* ch ) {
 			fp << tobj->zone << ", " << tobj->nVirtual << ", " << '"'
 					<< item_types[ ( size_t ) tobj->obj_flags.type_flag ] << '"' << ", " << '"' << tobj->name << '"'
 					<< ", " << '"' << tobj->short_description << '"' << ", " << '"' << tobj->description << '"' << ", "
-					<< ( ( ( float ) tobj->obj_flags.weight ) * 0.01 ) << ", " << tobj->farthings << ';' << std::endl;
+					<< ( ( ( float ) tobj->obj_flags.weight ) * 0.01 ) << ", " << tobj->farthings << ", "
+					<< tobj->o.od.value[0] << ", "
+					<< tobj->o.od.value[1] << ", "
+					<< tobj->o.od.value[2] << ", "
+					<< tobj->o.od.value[3] << ", "
+					<< tobj->o.od.value[4] << ", "
+					<< tobj->o.od.value[5] << ", 99999"
+					<< ';' << std::endl;
 		}
 		fp.close();
 		success = true;
