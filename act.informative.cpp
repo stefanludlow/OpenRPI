@@ -11631,7 +11631,7 @@ coin_sdesc (OBJ_DATA * coin)
         if (coin->count > 1)
             return "silver coins";
         else
-            return "'silver coin";
+            return "silver coin";
     }
     else if (coin->nVirtual == 14016)
     {
