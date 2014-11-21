@@ -2222,7 +2222,7 @@ nanny_connect_select (DESCRIPTOR_DATA * d, char *argument)
             SEND_TO_Q ("ANSI color #2enabled#0.\n", d);
             SEND_TO_Q ("#1NOTE: For best results, "
                        "a default of #0white#1 or #0whitish-gray#1 text "
-                       "is recommended.\n", d);
+                       "is recommended.#0\n", d);
             d->color = 1;
         }
         else
