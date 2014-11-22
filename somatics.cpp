@@ -518,10 +518,10 @@ soma_ten_second_affect (CHAR_DATA * ch, AFFECTED_TYPE * af)
         switch (number(0,2))
         {
         case 0:
-            send_to_char("Your vision swims, and you struggle to remain upright.\n", ch);
+            send_to_char("Your vision swims, and you struggle to retain control of your senses.\n", ch);
             break;
         case 1:
-            send_to_char("Everything seems suddenly closer in your vision, and you stumble as you try to orientate yourself.\n",  ch);
+            send_to_char("Everything seems suddenly closer in your vision, and you struggle to maintain your senses.\n",  ch);
             break;
         default:
             send_to_char("Your ears ring and vision blackens for a moment.\n", ch);
