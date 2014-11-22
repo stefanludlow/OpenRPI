@@ -497,8 +497,16 @@ int
 	char buf3[MAX_STRING_LENGTH];
 	OBJ_DATA *saddle = NULL;
 
-	speed = rider->pc->mount_speed;
-
+	
+	if (IS_NPC(rider))
+	  {
+	    speed = 3;
+		return 1; // npcs never fail
+      }
+	  else
+	  {
+	    speed = rider->pc->mount_speed;
+	  }
 	// A small chance you might get a chance of boosting your skill whilst walking, a higher
 	// chance later on for more adventerous riding styles.
 
