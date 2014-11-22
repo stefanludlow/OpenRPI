@@ -1625,7 +1625,7 @@ void delayed_long_clean(CHAR_DATA *ch)
                 if (obj)
                 {
                     sprintf(buf, "You finish cleaning $p, and start cleaning $P.");
-                    sprintf(buf2, "$n finish cleaning $p, and start cleaning $P.");
+                    sprintf(buf2, "$n finishes cleaning $p, and starts cleaning $P.");
                     act (buf, false, ch, ch->delay_obj, obj, TO_CHAR | _ACT_FORMAT);
                     //act (buf2, false, ch, ch->delay_obj, obj, TO_ROOM | _ACT_FORMAT);
 
@@ -1640,7 +1640,7 @@ void delayed_long_clean(CHAR_DATA *ch)
                 else
                 {
                     sprintf(buf, "You finish cleaning $p, and have nothing more to clean.");
-                    sprintf(buf2, "$n finish cleaning $p, and have nothing more to clean.");
+                    sprintf(buf2, "$n finishes cleaning $p, and has nothing more to clean.");
                     act (buf, false, ch, ch->delay_obj, 0, TO_CHAR | _ACT_FORMAT);
                     act (buf2, false, ch, ch->delay_obj, 0, TO_ROOM | _ACT_FORMAT);
                     return;
