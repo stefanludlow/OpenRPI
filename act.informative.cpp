@@ -317,6 +317,13 @@ target_sighted (CHAR_DATA * ch, CHAR_DATA * target)
 
     if (!ch->sighted)
     {
+	   if (IS_SET (ch->act, ACT_SHOOTER) && !is_brother (ch, target))
+	  {
+	    // add to overwatch so archers will shoot non clan members
+		send_to_gods ("NPC Adding an enemy to their overwatch list, arrows will be fired shortly.");
+		add_overwatch(ch, target, 0, false);
+	  }
+	
         CREATE (ch->sighted, SIGHTED_DATA, 1);
         ch->sighted->target = target;
         return;

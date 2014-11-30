@@ -1166,6 +1166,14 @@ shooter_routine (CHAR_DATA * ch)
 
         if (is_direct)
         {
+		  if (!(firearm->location == WEAR_BOTH || firearm->location == WEAR_PRIM || firearm->location == WEAR_SEC))
+           {
+            //  send_to_gods ("NPC is not wielding the weapon, trying to force wield.");
+			 do_wield(ch, fname(firearm->name), 0);
+             return 1;
+           }
+		
+		
             // If we've got the right type of round in our right hand, then load from that.
             // Otherwise, pocket or drop it.
             if ((obj = ch->right_hand) && GET_ITEM_TYPE(obj) == ITEM_ROUND)
@@ -1226,6 +1234,8 @@ shooter_routine (CHAR_DATA * ch)
                 ch->delay += 2;
                 return 0;
             }
+			// send_to_gods("NPC Trying to wield a weapon.");
+			// do_wield(ch, fname(firearm->name), 0);
         }
         else
         {
