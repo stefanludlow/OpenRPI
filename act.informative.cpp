@@ -11747,7 +11747,7 @@ delayed_count_coin (CHAR_DATA * ch)
 void
 stop_counting (CHAR_DATA * ch)
 {
-    send_to_char ("You bore of counting credits.\n", ch);
+    send_to_char ("You bore of counting.\n", ch);
 
     ch->delay = 0;
 

@@ -5519,7 +5519,7 @@ payday (CHAR_DATA * ch, CHAR_DATA * employer, AFFECTED_TYPE * af)
 
                 sprintf (buf, "$N pays you for all your hard work.");
                 act (buf, true, ch, 0, employer, TO_CHAR | _ACT_FORMAT);
-                act ("$N pays $n some credits.", false, ch, 0, employer, 	       TO_NOTVICT | _ACT_FORMAT);
+                act ("$N pays $n some coins.", false, ch, 0, employer, 	       TO_NOTVICT | _ACT_FORMAT);
             } //employer/keeper has the credit
             else
             {
@@ -5533,7 +5533,7 @@ payday (CHAR_DATA * ch, CHAR_DATA * employer, AFFECTED_TYPE * af)
             obj = load_object (1542);
             obj->count = af->a.job.cash;
             obj_to_char (obj, ch);
-            sprintf (buf, "You are paid %d credits.\n", af->a.job.cash);
+            sprintf (buf, "You are paid %d coins.\n", af->a.job.cash);
             send_to_char (buf, ch);
         } // there is not an employer
     } //paid in cash
@@ -5630,7 +5630,7 @@ do_payday (CHAR_DATA * ch, char *argument, int cmd)
 
         if (af->a.job.cash)
         {
-            sprintf (buf + strlen (buf), "%d credits", af->a.job.cash);
+            sprintf (buf + strlen (buf), "%d coins", af->a.job.cash);
             if (af->a.job.count && vtoo (af->a.job.object_vnum))
                 strcat (buf, " and ");
         }

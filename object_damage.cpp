@@ -525,7 +525,7 @@ npc_repair (CHAR_DATA * ch, CHAR_DATA * mob, OBJ_DATA *obj, char *argument)
 		}
 
 		sprintf (buf,
-		         "whisper %s I'll get you taken care of for a total of %d credits.",
+		         "whisper %s I'll get you taken care of for a total of %d coppers.",
 		         buf3, (int) cost);
 		command_interpreter (mob, buf);
 		return;
@@ -607,7 +607,7 @@ npc_repair (CHAR_DATA * ch, CHAR_DATA * mob, OBJ_DATA *obj, char *argument)
 
 		if (!can_subtract_money (ch, (int) cost, mob->mob->currency_type))
 		{
-			sprintf (buf, "%s You seem to be a little short on credits to trade.", buf3);
+			sprintf (buf, "%s You seem to be a little short on coins to trade.", buf3);
 			do_whisper (mob, buf, 83);
 			return;
 		}
