@@ -5805,12 +5805,12 @@ hour_affect_update (void)
 				case 2:
 					ch->con += 1;
 					ch->tmp_con += 1;
-					send_to_char ("At last, you feel more hardy and constitutional.\n", ch);
+					send_to_char ("At last, you feel more hardy.\n", ch);
 					break;
 				case 3:
 					ch->intel += 1;
 					ch->tmp_intel += 1;
-					send_to_char ("At last, you feel more alert and intelligence.\n", ch);
+					send_to_char ("At last, you feel more alert and intelligent.\n", ch);
 					break;
 				case 4:
 					ch->wil += 1;
@@ -5847,12 +5847,12 @@ hour_affect_update (void)
 				case 2:
 					ch->con -= 1;
 					ch->tmp_con -= 1;
-					send_to_char ("Alas, you feel less hardy and constitutional.\n", ch);
+					send_to_char ("Alas, you feel less hardy.\n", ch);
 					break;
 				case 3:
 					ch->intel -= 1;
 					ch->tmp_intel -= 1;
-					send_to_char ("Alas, you feel less alert and intelligence.\n", ch);
+					send_to_char ("Alas, you feel less alert and intelligent.\n", ch);
 					break;
 				case 4:
 					ch->wil -= 1;
@@ -5867,7 +5867,7 @@ hour_affect_update (void)
 				case 6:
 					ch->agi -= 1;
 					ch->tmp_agi -= 1;
-					send_to_char ("Alas, you feel less agile and speedy.\n", ch);
+					send_to_char ("Alas, you feel less agile and quick.\n", ch);
 					break;
 				default:
 					ch->str -= 1;
