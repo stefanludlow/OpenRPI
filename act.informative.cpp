@@ -3734,7 +3734,7 @@ list_obj_to_char (OBJ_DATA * list, CHAR_DATA * ch, int mode, int show)
             {
 
                 for (obj = i; obj; obj = obj->next_content)
-                    if (IS_FURNISH(i))
+                    if (IS_FURNISH(obj))
                         looked_for_tables++;
 
                 if (looked_for_tables == 1)
