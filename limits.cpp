@@ -990,7 +990,7 @@ point_update (void)
             if (time (0) >= af->a.spell.modifier)
             {
                 send_to_char
-                ("#6OOC: Your upgrade delay timer has experied. You may now used the upgrade command again.#0\n",
+                ("#6OOC: Your upgrade delay timer has expired. You may now use the upgrade command again.#0\n",
                  ch);
                 remove_affect_type (ch, AFFECT_UPGRADE_DELAY);
             }

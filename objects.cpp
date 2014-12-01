@@ -7796,7 +7796,7 @@ void
 		{
 			obj_to_room (obj, ch->in_room);
 			act ("Your rummaging has revealed $p.", false, ch, obj, 0, TO_CHAR);
-			act ("$n's rummaging unconvers $p.", false, ch, obj, 0, TO_ROOM);
+			act ("$n's rummaging uncovers $p.", false, ch, obj, 0, TO_ROOM);
 
 			add_affect (ch, AFFECT_FORAGED, 60, 0, 0, 0, 0, ch->in_room);
 
@@ -7836,7 +7836,7 @@ void
 			{
 				obj_to_room (obj, ch->in_room);
 				act ("Your rummaging does not reveal what you want, but you do find $p.", false, ch, obj, 0, TO_CHAR);
-				act ("$n's rummaging unconvers $p.", false, ch, obj, 0, TO_ROOM);
+				act ("$n's rummaging uncovers $p.", false, ch, obj, 0, TO_ROOM);
 			}
 			else
 			{
