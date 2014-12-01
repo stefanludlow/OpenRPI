@@ -7683,10 +7683,7 @@ delayed_camp2 (CHAR_DATA * ch)
 	if (ch->room->zone == 55 || ch->room->zone == 56 || ch->room->zone == 75 || ch->room->zone == 67)
 	{
 		send_to_char
-		("The sounds of Rust surround you: somewhere in the distance there are\n"
-		"shouts, soft and sporadic gunfire, the lazy sound of a man's laughter and\n"
-		"the leering call of a tawdry whore, the nasally snivelling of a street punk\n"
-		"kid and the metal creak of machinery. \n", ch);
+		("After double checking the area, you curl up, your eyes eventually closing despite the occasional sounds of the Wilderness.\n", ch);
 	}
 	else
 	{
