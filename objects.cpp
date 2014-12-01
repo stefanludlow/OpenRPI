@@ -6426,7 +6426,7 @@ void
 	else if (GET_ITEM_TYPE(sheath) == ITEM_AMMO_BELT || GET_ITEM_TYPE(sheath) == ITEM_BANDOLIER)
 		first_person.assign("You pocket #2");
 	else
-		first_person.assign("You sheath #2");
+		first_person.assign("You sheathe #2");
 	first_person.append(obj_short_desc(obj));
 	first_person.append("#0 in #2");
 	first_person.append(obj_short_desc(sheath));
