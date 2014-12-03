@@ -1800,9 +1800,9 @@ skill_max (CHAR_DATA *ch, int skill, int mode)
     if (ch->intel > 20)
         skillmax = 1100;
     else if (ch-> intel < 10)
-        skillmax = 550;
+        skillmax = 725;
     else
-        skillmax = 550 + (40 * (ch->intel - 10));
+        skillmax = 725 + (40 * (ch->intel - 10));
 
     for (i = 0; i <= LAST_SKILL; i++)
     {
