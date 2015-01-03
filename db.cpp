@@ -317,9 +317,9 @@ void boot_db( void ) {
 		PERM_MEMORY_SIZE = 12000000;
 		MAX_OVERHEAD = 16000000;
 	} else {
-		MAX_MEMORY = 5000000;
-		PERM_MEMORY_SIZE = 3250000;
-		MAX_OVERHEAD = 4512000;
+		MAX_MEMORY = 20000000;
+		PERM_MEMORY_SIZE = 12000000;
+		MAX_OVERHEAD = 16000000;
 	}
 
 	system_log( "Initializing read-only memory.", false );
@@ -1219,7 +1219,7 @@ void load_rooms( void ) {
 
 						CREATE( room->extra, ROOM_EXTRA_DATA, 1 );
 
-						for ( i = 0; i < WR_DESCRIPTIONS; i++ ) {
+						for ( i = 0; i < 12; i++ ) { // WR_DESCRIPTIONS was replaced with 12 in this line to account for legacy files -Nim
 						
 							 room->extra->weather_desc[ i ] = fread_string( fl );
 							if ( !strlen( room->extra->weather_desc[ i ] ) )

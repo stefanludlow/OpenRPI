@@ -2483,7 +2483,7 @@ nanny_connect_select (DESCRIPTOR_DATA * d, char *argument)
     {
 		// Temporarily disabling this option 0207142051 - Nimrod
 		SEND_TO_Q
-			("Character Creation has been temporarily disabled.\n\n\n", d);
+			("\n\nPlease visit www.middle-earth.us/generator to create a character.\n\n\n", d);
         display_main_menu (d);
 		return;
 

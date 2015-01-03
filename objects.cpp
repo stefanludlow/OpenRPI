@@ -8535,6 +8535,8 @@ void do_empty (CHAR_DATA * ch, char *argument, int cmd)
 	//POISON_DATA *poison;
 
 	argument = one_argument (argument, buf);
+	
+   
 
 	if (IS_SET (ch->room->room_flags, OOC) && IS_MORTAL (ch)
 		&& str_cmp (ch->room->name, PREGAME_ROOM_NAME))
@@ -8552,6 +8554,12 @@ void do_empty (CHAR_DATA * ch, char *argument, int cmd)
 
 	if ( GET_ITEM_TYPE( container ) == ITEM_CONTAINER )
 	{
+	  if (IS_SET (container->o.container.flags, CONT_LOCKED))
+	  {
+		send_to_char ("You'll need to open it first.\n", ch);
+		return;
+	  }
+	
 	    char container_name[ MAX_STRING_LENGTH ];
 	    argument = one_argument( argument, container_name );
 

@@ -6865,7 +6865,12 @@ float
 	count = (obj->count) ? obj->count : 1;
 	cost = (obj->farthings + obj->silver * 4) * count;
 	sprintf(weights, ", %d.%02d lb", obj->obj_flags.weight / 100, obj->obj_flags.weight % 100);
-	*weight += obj->obj_flags.weight * count;
+	
+	if (weight != NULL)
+	{
+	  *weight += obj->obj_flags.weight * count;
+	}
+	
 	sprintf (format, "%% 10.02f cp%%s - %%%dc#2%%s#0", 2 * depth);
 	sprintf (buffer + strlen (buffer), format, cost, weights, ' ',
 		obj->short_description);

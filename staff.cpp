@@ -9389,7 +9389,16 @@ void display_craft( CHAR_DATA * ch, SUBCRAFT_HEAD_DATA * craft ) {
 
 		if ( phase->hit_cost )
 			sprintf( b_buf + strlen( b_buf ), "   Cost:  hits %d\n", phase->hit_cost );
+			
+		if (phase->phase_start_prog)
+		    sprintf (b_buf + strlen( b_buf ), "   Startprog: %s\n", phase->phase_start_prog);
+			
+		if (phase->phase_end_prog)
+		    sprintf (b_buf + strlen( b_buf ), "     Endprog: %s\n", phase->phase_end_prog);
 
+		if (phase->phase_fail_prog)
+		    sprintf (b_buf + strlen( b_buf ), "    Failprog: %s\n", phase->phase_fail_prog);			
+			
 		if ( craft->craft_variable ) {
 			for ( i = 1; craft->craft_variable[ i ]; i++ ) {
 				vars = craft->craft_variable[ i ];

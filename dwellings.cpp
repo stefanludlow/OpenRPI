@@ -558,6 +558,9 @@ save_dwelling_rooms ()
   int empty_rooms = 0;
   static int total_empty_rooms = 0;
 
+  // return 0; // adding 193512162014 for testing purposes -Nimrod
+  // send_to_gods ("Begin save_dwelling_rooms");
+  
   sprintf (buf, "Saving auto-genned temprooms to disk.");
   system_log (buf, false);
 
@@ -596,7 +599,7 @@ save_dwelling_rooms ()
 
   fprintf (fr, "$~\n");
   fclose (fr);
-
+  // send_to_gods ("End save_dwelling_rooms");
   return 0;
 }
 
