@@ -3739,8 +3739,15 @@ get_bite_value (OBJ_DATA * obj)
        bite.  The initial bites may yield more food than later bites.
        This depends on how even the ratio of bites to food value is.
      */
+	 
+	 // Modifying to return full value of food object as we are now setting up caloric values
+	 // on a per-bite basis rather than the whole object.  This allows us to more easily passed
+	 // values from variables. -Nimrod 2153011315
+	 
+    return obj->o.food.food_value;
+    // remove above line if you want to go back to old system. -Nim
 
-    bite_num = obj->o.food.bites;
+	bite_num = obj->o.food.bites;
     total_bites = vtoo (obj->nVirtual)->o.food.bites;
 
     if (total_bites <= 1)
