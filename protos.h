@@ -233,7 +233,7 @@ extern const char *dec_conditions[5];
 extern const char *dec_skills[9];
 extern const char *dec_short_skills[9];
 extern const char *dec_size[4];
-extern const char *dec_short[11];
+extern const char *dec_short[12];
 
 extern const char *day_name[];
 extern const char *season_name[];

@@ -87,7 +87,7 @@ const char *dec_size[4] =
     "all-encompassing"
 };
 
-const char *dec_short[11] =
+const char *dec_short[12] =
 {
     "(none)",
     "engraved",
@@ -99,7 +99,8 @@ const char *dec_short[11] =
     "enameled",
     "inked",
     "stenciled",
-	"sculpted"
+	"sculpted",
+	"sketched"
 };
 
 
