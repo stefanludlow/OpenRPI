@@ -2436,7 +2436,7 @@ void
 	{
 		{"common", SKILL_COMMON},
 		{"tengwar", SKILL_TENGWAR},
-		{"cirith", SKILL_CIRITH},
+		{"cirth", SKILL_CIRITH},
 		{"\0", 0}
 	};
 

@@ -5275,7 +5275,8 @@ setup_registry (void)
 	add_registry (REG_SKILLS, SKILL_SINDARIN, "Sindarin");
 	add_registry (REG_SKILLS, SKILL_KHUZDUL, "Khuzdul");
 	add_registry (REG_SKILLS, SKILL_TENGWAR, "Tengwar");
-	add_registry (REG_SKILLS, SKILL_CIRITH, "Cirith");
+	add_registry (REG_SKILLS, SKILL_CIRITH, "Cirth");
+	add_registry (REG_SKILLS, SKILL_WARCRAFT, "Warcraft");
 	
     add_registry (REG_MISC_NAMES, MISC_DELAY_OFFSET, "Delayoffset");
     add_registry (REG_MISC_NAMES, MISC_MAX_CARRY_N, "Maxcarry_n");

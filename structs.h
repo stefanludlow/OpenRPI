@@ -1413,8 +1413,9 @@ typedef signed char shortint;
 #define SKILL_KHUZDUL			62
 #define SKILL_TENGWAR			63
 #define SKILL_CIRITH			64
+#define SKILL_WARCRAFT			65
 
-#define LAST_SKILL		SKILL_CIRITH
+#define LAST_SKILL		SKILL_WARCRAFT
 
 #define PSIONIC_TALENTS		1
 

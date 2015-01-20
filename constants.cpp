@@ -284,7 +284,8 @@ const char *skills[] = {
   "Sindarin",
   "Khuzdul",
   "Tengwar",
-  "Cirith",
+  "Cirth",
+  "Warcraft",
   "\n"
 };
 
