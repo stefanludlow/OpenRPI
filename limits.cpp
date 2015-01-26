@@ -29,7 +29,7 @@
 int
 armor_penalty (CHAR_DATA * ch)
 {
-    /* Amour provides inherent restrictions to movement, not just added weight.
+    /* Armour provides inherent restrictions to movement, not just added weight.
      Measures armour on legs, body, arms, about and over.
 
      We add up all the spots covered, timesing the percent of the body covered
@@ -116,7 +116,7 @@ armor_penalty (CHAR_DATA * ch)
 int
 armor_descript (CHAR_DATA * ch)
 {
-    /* Amour provides inherent restrictions to movement, not just added weight.
+    /* Armour provides inherent restrictions to movement, not just added weight.
      Measures armour on legs, body, arms, about and over.
      Armour that covers multiple spots is deemed to be better proportioned to take
      the weight.
@@ -741,22 +741,30 @@ point_update (void)
         else
             reduceIntox++;
 
-        //Application RPP cost
+        //Application RPP cost - deduct points from account after character has played sufficient time
         if (!ch)
             continue;
 
-        if (!IS_NPC (ch) && ch->pc->app_cost && ch->descr())
+        if (!IS_NPC (ch))
         {
-            playing_time =
-                real_time_passed (time (0) - ch->time.logon + ch->time.played, 0);
-            if (playing_time.hour >= 10 && ch->descr()->acct)
-            {
+	  if (!ch->pc)
+	    {
+	      // ERROR. A mob should not be "not an NPC" while lacking a PC descriptor
+	      // Nimrod wants this error to stay silent, so no logging/announcement
 
-                ch->descr()->acct->pay_application_cost (ch->pc->app_cost);
-                ch->pc->app_cost = 0;
-                save_char (ch, true);
-            }
-        }
+	    }
+	  else if (ch->pc->app_cost && ch->descr()) // Otherwise require that the app cost points to begin a deduction and that a valid descriptor exists [i.e. has an online socket connection, IIRC]
+	    {
+	      
+	      playing_time = real_time_passed (time (0) - ch->time.logon + ch->time.played, 0);
+	      if (playing_time.hour >= 10 && ch->descr()->acct)
+		{
+		  ch->descr()->acct->pay_application_cost (ch->pc->app_cost);
+		  ch->pc->app_cost = 0;   // Set to 0 to cut out of this loop early on subsequent visits, besides not paying multiple times
+		  save_char (ch, true);
+		}
+	    }
+	}
 
         //Remove New Player Flag
         if (!IS_NPC (ch) && IS_SET (ch->plr_flags, NEW_PLAYER_TAG))
