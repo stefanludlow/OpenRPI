@@ -2432,8 +2432,7 @@ void charstat( CHAR_DATA * ch, char *name, bool bPCsOnly ) {
 		*buf = '\0';
 		sprintf( buf, "#2Sum:#0 %d", k->str + k->dex + k->con + k->intel + k->wil + k->aur + k->agi );
 		pad_buffer( buf, 25 );
-		sprintf( buf + strlen( buf ), "#2Skillcap:#0 %d/%d", skill_max( k, 0, 1 ),
-				( 740 + ( 40 * ( k->intel - 10 ) )) );
+		sprintf( buf + strlen( buf ), "#2Skillcap:#0 %d/%d", skill_max( k, 0, 1 ), skill_max(k,0,2));
 		pad_buffer( buf, 53 );
 		if ( k->pc->level > 5 ) {
 			strcat( buf, "#2Level:#0 Implementor" );

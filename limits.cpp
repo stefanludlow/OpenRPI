@@ -1796,7 +1796,10 @@ skill_learn (CHAR_DATA *ch, int skill)
 }
 
 
-// Tht.is function is called to determine whether a player has gone over their skill cap or not.
+// This function is called to determine whether a player has gone over their skill cap or not.
+// Mode 0 = bool reply about whether /skill/ more points can be added
+// Mode 1 = return current skill point usage
+// Mode 2 = return max skill points
 
 int
 skill_max (CHAR_DATA *ch, int skill, int mode)
@@ -1811,6 +1814,11 @@ skill_max (CHAR_DATA *ch, int skill, int mode)
         skillmax = 725;
     else
         skillmax = 725 + (40 * (ch->intel - 10));
+    
+    if (mode == 2)
+      {
+	return skillmax;
+      }
 
     for (i = 0; i <= LAST_SKILL; i++)
     {
