@@ -219,7 +219,7 @@ display_unread_messages (DESCRIPTOR_DATA * d)
         return;
 
     sprintf (buf,
-             "#6There %s %d unread MUD-Mail%s awaiting your attention!#0\n\n",
+             "#6There %s %d unread Hobbitmail%s awaiting your attention!#0\n\n",
              unread > 1 ? "are" : "is", unread, unread > 1 ? "s" : "");
     SEND_TO_Q (buf, d);
 }
@@ -1588,7 +1588,7 @@ display_hobbitmail_inbox (DESCRIPTOR_DATA * d, account  *acct)
     char imm_buf[MAX_STRING_LENGTH];
     int i, admin = 0;
 
-    sprintf (buf, "                              #6MUD-Mail: Main Menu#0\n"
+    sprintf (buf, "                              #6Hobbitmail: Main Menu#0\n"
              "                              #6----------------------#0\n\n");
 
     if (!acct || acct->name.empty ())
@@ -1712,7 +1712,7 @@ nanny_composing_message (DESCRIPTOR_DATA * d, char *argument)
     else
     {
         SEND_TO_Q
-        ("#2Thanks! Your MUD-Mail has been delivered to the specified account.#0\n\n",
+        ("#2Thanks! Your Hobbitmail has been delivered to the specified account.#0\n\n",
          d);
         for (td = descriptor_list; td; td = td->next)
         {
@@ -1721,7 +1721,7 @@ nanny_composing_message (DESCRIPTOR_DATA * d, char *argument)
                 continue;
             if (str_cmp (td->acct->name.c_str (), acct->name.c_str ()) == 0)
                 SEND_TO_Q
-                ("#6\nA new MUD-Mail has arrived for your account!#0\n", td);
+                ("#6\nA new Hobbitmail has arrived for your account!#0\n", td);
         }
     }
 
@@ -1760,7 +1760,7 @@ nanny_compose_message (DESCRIPTOR_DATA * d, char *argument)
     ("\n#2Enter message; terminate with an '@' when completed. Once finished,\n",
      d);
     SEND_TO_Q
-    ("hit ENTER again to send and return to the main MUD-Mail menu.#0\n\n",
+    ("hit ENTER again to send and return to the main Hobbitmail menu.#0\n\n",
      d);
 
     d->pending_message->message = NULL;
@@ -1900,7 +1900,7 @@ nanny_compose_mail_to (DESCRIPTOR_DATA * d, char *argument)
     if (str_cmp (acct->name.c_str (), "Guest") == 0)
     {
         SEND_TO_Q
-        ("#1\nSorry, but MUD-Mail cannot be sent to the guest account.#0\n",
+        ("#1\nSorry, but Hobbitmail cannot be sent to the guest account.#0\n",
          d);
         SEND_TO_Q ("\nTo which PC's player do you wish to send a message? ", d);
         unload_pc (tch);
@@ -2122,7 +2122,7 @@ nanny_read_message (DESCRIPTOR_DATA * d, char *argument)
         ("DELETE FROM hobbitmail WHERE account = '%s' AND id = %d",
          d->acct->name.c_str (), (long int) d->stored);
         sprintf (buf,
-                 "\n#1The specified MUD-Mail has been deleted from your account.#0\n\n");
+                 "\n#1The specified Hobbitmail has been deleted from your account.#0\n\n");
         SEND_TO_Q (buf, d);
 
         display_hobbitmail_inbox (d, d->acct);
@@ -2460,10 +2460,10 @@ nanny_connect_select (DESCRIPTOR_DATA * d, char *argument)
     else if (c == 'h' || argn == 9)
     {
 			// Temporarily disabling this option 0207142053 - Nimrod
-		SEND_TO_Q
-			("Hobbitmail has been temporarily disabled.\n\n\n", d);
-        display_main_menu (d);
-		return;
+      //SEND_TO_Q
+      //		("Hobbitmail has been temporarily disabled.\n\n\n", d);
+      // display_main_menu (d);
+      //		return;
 	
         if (strcasecmp ("Unknown", d->acct->name.c_str ()) == 0)
         {
