@@ -10197,7 +10197,7 @@ void
 			obj->dec_short = 0;
 		}
 
-		for (size_t y = 0; y < strlen (obj->full_description) - 1; y++)
+		for (size_t y = 0; y < strlen (obj->full_description); y++)
 		{
 			sprintf (buf4 + strlen (buf4), "%c", obj->full_description[y]);
 		}
@@ -10296,7 +10296,8 @@ void
 	}
 	else
 	{
-		for (size_t y = 0; y < strlen (obj->full_description) - 1; y++)
+	  
+		for (size_t y = 0; y < strlen (obj->full_description); y++)
 		{
 			sprintf (buf4 + strlen (buf4), "%c", obj->full_description[y]);
 		}
