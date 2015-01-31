@@ -23,9 +23,15 @@ sliced_array = lines.slice_before(/^craft/).collect { |craft| craft}
 # Sort by first line, which is craft [always same] then craft family then subcraft [always same] then subcraft name. Which is perfect.
 sorted_crafts = sliced_array.sort { |a,b| a[0] <=> b[0]}
 
-# Print sorted crafts -- with header and footer
-puts firstline
-sorted_crafts.each { |craft|
-  craft.each { |l| puts l }
-}
-puts lastline
+# Open crafts file for writing
+File.open(ARGV[0],'w') do |s|
+  # Write out sorted crafts -- with header and footer
+  s.puts firstline
+  sorted_crafts.each { |craft|
+    craft.each { |l| s.puts l }
+  }
+  s.puts lastline
+end
+
+# Notify of task completion
+puts "#{sorted_crafts.count} crafts sorted."
