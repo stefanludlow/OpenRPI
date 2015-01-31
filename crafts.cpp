@@ -2674,7 +2674,7 @@ void
 
 	if (!engine.in_play_mode ())
 	{
-		system ("./ordercrafts.pl ../regions/crafts");
+		system ("./ordercrafts.rb ../regions/crafts");
 	}
 
 	if (!(fp_crafts = fopen (CRAFTS_FILE, "r")))
