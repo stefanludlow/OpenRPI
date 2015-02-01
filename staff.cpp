@@ -7820,7 +7820,7 @@ void do_set( CHAR_DATA * ch, char *argument, int cmd ) {
 			ch->effort = 100;
 		} else {
 			ch->effort = atoi( buf );
-			sprintf( buf2, "You will now fight at #6%d percent#0 of your cabability.\n", atoi( buf ) );
+			sprintf( buf2, "You will now fight at #6%d percent#0 of your capability.\n", atoi( buf ) );
 			send_to_char( buf2, ch );
 		}
 	} else if ( !IS_MORTAL (ch) && !str_cmp( subcmd, "guardian" ) ) {
