@@ -519,9 +519,13 @@ point_update (void)
         if (!ch->room)
             continue;
 
-        if (!IS_NPC (ch) && ch->room)
-            zone_table[ch->room->zone].player_in_zone++;
-
+	if (!IS_NPC (ch) && ch->room)
+	  {
+	    int z = ch->room->zone;
+	    if (z>=0 && z<=99)
+	      zone_table[ch->room->zone].player_in_zone++;
+	  }
+	    
         room = ch->room;
 
         *ch->short_descr = tolower (*ch->short_descr);
