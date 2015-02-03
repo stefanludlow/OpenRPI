@@ -3164,9 +3164,13 @@ nanny_choose_pc (DESCRIPTOR_DATA * d, char *argument)
         d->prompt_mode = 1;
         d->connected = CON_PLYNG;
 
+	// Staff see unread messages on boards
         if (d->character->pc->level)
             show_unread_messages (d->character);
 
+	// Everyone sees unread messages on special 'news' board
+	show_unread_news_messages(d->character);
+	
         return;
     }
 
@@ -3407,8 +3411,12 @@ nanny_choose_pc (DESCRIPTOR_DATA * d, char *argument)
         d->character->shock = d->character->max_shock;	// in terms of wound-endurance.
     }
 
+    // Staff see unread posts to boards
     if (d->character->pc->level)
         show_unread_messages (d->character);
+    // Everyone sees messages to the special board 'news'
+    show_unread_news_messages (d->character);
+
 
     if (d->character->pc->creation_comment
             && strlen (d->character->pc->creation_comment) > 2

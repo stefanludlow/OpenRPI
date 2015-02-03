@@ -1881,6 +1881,7 @@ int is_mounted (CHAR_DATA * ch);
 void rl_minute_affect_update (void);
 void clear_watch (CHAR_DATA * ch);
 void show_unread_messages (CHAR_DATA * ch);
+void show_unread_news_messages (CHAR_DATA * ch);
 char *file_to_string (char *name);
 void check_memory ();
 int is_incantation (char *argument);

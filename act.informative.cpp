@@ -6931,16 +6931,21 @@ read_virtual_message (CHAR_DATA * ch, char *name, char *argument)
         return 1;
     }
 
-    sprintf (b_buf, "#6Date:#0     %s\n"
-             "#6Author:#0   %s\n"
-             "#6Subject:#0  %s\n"
-             "#6Context:#0  http://www.middle-earth.us/staffportal.php?context=%ld&db=all##%ld\n\n%s",
-             message->date, message->poster, message->subject,
-             message->nTimestamp, message->nTimestamp, message->message);
+    ostringstream oss;
+    oss << "#6Date:#0     " <<  message->date << "\n"
+	<< "#6Author:#0   " << message->poster << "\n"
+	<< "#6Subject:#0  " << message->subject << "\n";
 
-    send_to_char ("\n", ch);
-    page_string (ch->descr(), b_buf);
+    // Make link to staff portal log search only if you're not mortal
+    if (!IS_MORTAL(ch))
+      {
+	oss << "#6Context:#0  http://www.middle-earth.us/staffportal.php?context=" << message->nTimestamp << "&db=all##" << message->nTimestamp << "\n";
+      }
 
+    oss << "\n" << message->message << "\n";
+
+
+    page_string (ch->descr(), oss.str().c_str());
     unload_message (message);
 
     return 1;
@@ -6975,10 +6980,12 @@ void do_read (CHAR_DATA * ch, char *argument, int cmd)
                 !( ( board_obj = get_obj_in_dark (ch, buf, ch->room->contents ) )
                 && ( !USES_BOOK_CODE( board_obj ) || GET_ITEM_TYPE( board_obj ) != ITEM_BOARD ) )
             )
-        {
+	  {
+	    // Being mortal excludes you from even attempting to read a message on the board with the name of the PC as buf
             if (IS_MORTAL (ch) || !read_pc_message (ch, buf, argument))
             {
-                if (IS_MORTAL (ch) || !read_virtual_message (ch, buf, argument))
+	      // Being mortal excludes you from reading a virtual board [i.e. not present via a room obj], UNLESS that is the special onw named news, which is available for anyone, anywhere
+	      if ( (IS_MORTAL (ch) && (strncmp(buf,"news",4)!=0)) || !read_virtual_message (ch, buf, argument))
                 {
                     send_to_char ("You can't see that board.\n", ch);
                 }
@@ -10184,32 +10191,9 @@ do_equipment (CHAR_DATA * ch, char *argument, int cmd)
 void
 do_news (CHAR_DATA * ch, char *argument, int cmd)
 {
-
-    std::string msg_line;
-    std::string output;
-
-    std::ifstream fin( "MOTD" );
-
-    if ( !fin )
-    {
-        system_log ("The MOTD could not be found", true);
-        send_to_char("The MOTD could not be found", ch);
-        return;
-    }
-
-    while ( getline(fin, msg_line) )
-    {
-        output.append(msg_line);
-    }
-
-    fin.close();
-
-    if (!output.empty())
-    {
-        send_to_char (output.c_str(), ch);
-        send_to_char ("\n", ch);
-    }
-
+  // News command is now a player-level shortcut into the notes command to list all posts on a vboard. Normally they have no access to the command
+  // This reuses the code to give them special access to the news vboard. Read will also get a workaround as wel,l but not write.
+  do_notes(ch, "news", cmd);
 }
 
 void
@@ -12691,6 +12675,39 @@ show_unread_messages (CHAR_DATA * ch)
 
     mysql_free_result (result);
 }
+
+void
+show_unread_news_messages (CHAR_DATA * ch)
+{
+    MYSQL_RES *result = NULL;
+    MYSQL_ROW row = NULL;
+    std::ostringstream oss;
+
+    mysql_safe_query ("SELECT post_number, subject, date_posted FROM virtual_boards WHERE timestamp >= %d AND board_name=\"news\" ORDER BY post_number desc", (int) ch->pc->last_logon);
+    result = mysql_store_result (database);
+
+    // Exit early if no new news posts since their last login, otherwise print a header
+    int r_count = mysql_num_rows(result);
+    if (r_count > 0)
+      {
+	oss << "\nNew messages posted in #1NEWS#0 since you last logged in:\n\n";
+	
+	// Iterate all rows [that are new since the last login] and print their contents
+	while ((row = mysql_fetch_row (result)))
+	  {
+	    oss << "   #6" << row[0] << "#0 - " << row[2] << " :\t#6" << row[1] << "#0\n";
+	    
+	  }
+	// Send accumulated multi-line string to client
+	send_to_char(oss.str().c_str(), ch);
+      }
+	
+    // Clear result memory allocated by mysql_store_result.
+    // Unclear if necessary when 0 hits found, but freeing in either case to be safe;
+    mysql_free_result (result);
+    result=NULL;
+}
+
 
 void
 add_message (int new_message, const char *name, int nVirtual, const char *poster,
