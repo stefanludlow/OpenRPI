@@ -5123,84 +5123,71 @@ void
 
 
 
-int
-	find_door (CHAR_DATA * ch, char *type, char *dir) // Nimrod bookmark
+// Returns a direction index that corresponds to a specific keyword + dir
+// or to just a keyword [in which case it matches the first in direction array index order
+int find_door (CHAR_DATA * ch, char *type, char *dir)
 {
-	char buf[MAX_STRING_LENGTH];
-	int door;
-	char *dirs[] =
+  ostringstream oss;
+  int dir_index = -1;
+  struct room_direction_data *exit = NULL;
+  
+  // If the direction was specified, locate the direction first
+  if (*dir)
+    {
+      dir_index = lookup_dir( dir );
+      
+      if( dir_index == -1 )
 	{
-		"north",
-		"east",
-		"south",
-		"west",
-		"up",
-		"down",
-		"outside",
-		"inside",
-		"northeast",
-		"northwest",
-		"southeast",
-		"southwest",
-		"upnorth",
-		"upeast",
-		"upsouth",
-		"upwest",
-		"upnortheast",
-		"upnorthwest",
-		"upsoutheast",
-		"upsouthwest",
-		"downnorth",
-		"downeast",
-		"downsouth",
-		"downwest",
-		"downnortheast",
-		"downnorthwest",
-		"downsoutheast",
-		"downsouthwest",
-		"\n"
-	};
-
-	if (*dir)			/* a direction was specified */
-	{
-		door = lookup_dir( dir );
-//		if ((door = search_block (dir, dirs, false)) == -1)	/* Partial Match */
-		if( door == -1 )
-		{
-			send_to_char ("That's not a direction.\n", ch);
-			return (-1);
-		}
-
-		if (EXIT (ch, door))
-			if (EXIT (ch, door)->keyword && strlen (EXIT (ch, door)->keyword))
-				if (isname (type, EXIT (ch, door)->keyword))
-					return (door);
-				else
-				{
-					sprintf (buf, "I see no %s there.\n", type);
-					send_to_char (buf, ch);
-					return (-1);
-				}
-			else
-				return (door);
-		else
-		{
-			send_to_char ("There is nothing to open or close there.\n", ch);
-			return (-1);
-		}
+	  oss << "\"" << dir << "\" is not a valid direction.\n";
+	  send_to_char (oss.str().c_str(), ch);
+	  return -1;
 	}
-	else				/* try to locate the keyword */
+      
+      // Look up the exit information for this direction
+      exit = EXIT(ch, dir_index);
+      
+      // Verify that there is a door here at all
+      if (exit->keyword)
 	{
-		for (door = 0; door <= LAST_DIR; door++)
-			if (EXIT (ch, door))
-				if (EXIT (ch, door)->keyword && strlen (EXIT (ch, door)->keyword))
-					if (isname (type, EXIT (ch, door)->keyword))
-						return (door);
-
-		sprintf (buf, "I see no %s here.\n", type);
-		send_to_char (buf, ch);
-		return (-1);
+	  // Verify that the keyword specified is valid for this direction
+	  if (isname (type, exit->keyword))
+	    {
+	      return dir_index;
+	    }
+	  else
+	    {
+	      oss << "There is no \"" << type << "\" to the " << dir << ".\n";
+	      send_to_char (oss.str().c_str(), ch);
+	      return -1;
+	    }
 	}
+      // No doors or other special keywords in that direction
+      else
+	{
+	  send_to_char ("There is nothing to open or close there.\n", ch);
+	  return -1;
+	}
+    }
+  // No direction specified; search based on door keyword only
+  else	
+    {
+      for (dir_index = 0; dir_index <= LAST_DIR; dir_index++)
+	{
+	  // Look up the exit information for this direction
+	  exit = EXIT(ch, dir_index);
+	  
+	  // Return the index of the first exit that matches the keyword
+	  if (exit && exit->keyword && isname (type, exit->keyword))
+	    return dir_index;
+	}
+      
+      // Announce failure if loop completes without returning.
+      oss << "I see no " << type << " here.\n";
+      send_to_char (oss.str().c_str(), ch);
+      return -1;
+    }
+  // Code should never reach here
+  return -1;
 }
 
 void do_open (CHAR_DATA * ch, char *argument, int cmd)

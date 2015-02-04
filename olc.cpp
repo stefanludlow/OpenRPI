@@ -5724,14 +5724,14 @@ index_lookup (const char* const* index, const char* const lookup)
 }
 
 
-int
-lookup_dir(const char *value) // Nimrod added 7 Sept 13 - Returns directional integer based on text in value.
+int lookup_dir(const char *value) // Nimrod added 7 Sept 13 - Returns directional integer based on text in value.
 {
-	int i;
-	i = index_lookup( dirs, value );
-	if( i == -1 )
-		i = index_lookup( short_dirs, value );
-	return i;
+  // Attempt to find the indicated direction by matching the full name of the direction, e.g. northwest
+  int i = index_lookup( dirs, value );
+  // If there is no match, see if it's an abbreviation, e.g. nw
+  if( i == -1 )
+    i = index_lookup( short_dirs, value );
+  return i;
 }
 
 extern std::multimap<int, variable_data> obj_variable_list;

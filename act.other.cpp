@@ -7104,8 +7104,12 @@ do_knock (CHAR_DATA * ch, char *argument, int cmd)
     sprintf (buf, "You hear tapping from the %s.\n\r", dirs[rev_dir[door]]);
     send_to_room (buf, target_room);
 
-    act ("You rap on the door.", false, ch, 0, 0, TO_CHAR);
-    act ("$n raps on the door.", false, ch, 0, 0, TO_ROOM);
+
+    // Compose message using keywords for door
+    sprintf (buf, "You rap on the %s.", EXIT(ch,door)->keyword);
+    act (buf, false, ch, 0, 0, TO_CHAR);
+    sprintf (buf, "$n raps on the %s.", EXIT(ch,door)->keyword);
+    act (buf, false, ch, 0, 0, TO_ROOM);
 
     /* The trigger command is activated for mobs in the room that ch
        occupies.  So, we have to switch to the target_room to get the

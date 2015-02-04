@@ -1792,7 +1792,7 @@ act (char *action_message, int hide_invisible, CHAR_DATA * ch,
                     case 'N':
                         tch = (CHAR_DATA *) vict_obj;
                         i = PERS (tch, to);
-                        if (GET_TRUST (to) && is_hooded (tch))
+                        if (GET_TRUST (to) && tch && is_hooded (tch))
                         {
                             strcpy (immbuf2, i);
                             sprintf (immbuf2, "%s (%s)", i, tch->tname);
