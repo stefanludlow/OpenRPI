@@ -5145,9 +5145,10 @@ int find_door (CHAR_DATA * ch, char *type, char *dir)
       
       // Look up the exit information for this direction
       exit = EXIT(ch, dir_index);
-      
-      // Verify that there is a door here at all
-      if (exit->keyword)
+
+            
+      // Verify that there is even an exit in that direction and, if so, a door here at all
+      if (exit && exit->keyword)
 	{
 	  // Verify that the keyword specified is valid for this direction
 	  if (isname (type, exit->keyword))
@@ -5161,7 +5162,7 @@ int find_door (CHAR_DATA * ch, char *type, char *dir)
 	      return -1;
 	    }
 	}
-      // No doors or other special keywords in that direction
+      // No doors or other special keywords in that direction -- OR direction doesn't exist
       else
 	{
 	  send_to_char ("There is nothing to open or close there.\n", ch);
