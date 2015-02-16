@@ -4073,6 +4073,9 @@ struct encumberance_info
 #define MORALE_HELD		( 1 << 3 )
 #define FLAG_PETRIFIED		( 1 << 4 )
 #define NEW_PLAYER_TAG		( 1 << 5 )	/* Displays (new player) in their ldescs */
+
+#define NEW_PLAYER_TAG_DURATION_HOURS   36      /* Amount of hours player on a character after which the game auto-strips your newbie flag */
+
 #define MENTOR			( 1 << 6 )	/* PC Mentor flag */
 #define NOPETITION		( 1 << 7 )	/* No Petition */
 #define PRIVATE			( 1 << 8 )	/* Non-Guide-reviewable app */

@@ -775,7 +775,7 @@ point_update (void)
         {
             playing_time =
                 real_time_passed (time (0) - ch->time.logon + ch->time.played, 0);
-            if (playing_time.hour > 12)
+            if (playing_time.hour > NEW_PLAYER_TAG_DURATION_HOURS)
             {
                 ch->plr_flags &= ~NEW_PLAYER_TAG;
                 act
