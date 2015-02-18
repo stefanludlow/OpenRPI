@@ -5830,6 +5830,10 @@ char_data::clear_char ()
     this->d_feat3 = NULL;
     this->d_feat4 = NULL;
 
+    this->damnodice = 0;
+    this->damsizedice = 0;
+    this->damroll = 0;
+
     this->controlled_by = NULL;
     this->controlling = NULL;
 
@@ -6541,6 +6545,11 @@ void char_data::deep_copy (CHAR_DATA *copy_from)
     {
         this->d_feat4 = str_dup(copy_from->d_feat4);
     }
+
+    this->damnodice = copy_from->damnodice;
+    this->damsizedice = copy_from->damsizedice;
+    this->damroll = copy_from->damroll;
+
 
     if (copy_from->clans)
     {

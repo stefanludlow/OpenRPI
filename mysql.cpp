@@ -927,6 +927,12 @@ void
 		entry->nomad = atoi(row[RACE_NOMAD]);
 		entry->alert = atoi(row[RACE_ALERT]);
 		entry->movement = atoi(row[RACE_MOVEMENT]);
+		entry->nat_attack_type = atoi(row[RACE_NAT_ATTACK_TYPE]);
+		entry->damnodice = atoi(row[RACE_DAMNODICE]);
+		entry->damsizedice = atoi(row[RACE_DAMSIZEDICE]);
+		entry->damroll = atoi(row[RACE_DAMROLL]);
+		entry->natural_delay = atoi(row[RACE_NATURAL_DELAY]);
+
 
 		if (!race_table)
 			race_table = entry;
@@ -1092,6 +1098,18 @@ int
 			looked_up = entry->alert;
 		else if (which_var == RACE_MOVEMENT)
 			looked_up = entry->movement;
+		else if (which_var == RACE_NAT_ATTACK_TYPE)
+		  looked_up = entry->nat_attack_type;
+		else if (which_var == RACE_DAMNODICE)
+		  looked_up = entry->damnodice;
+		else if (which_var == RACE_DAMSIZEDICE)
+		  looked_up = entry->damsizedice;
+		else if (which_var == RACE_DAMROLL)
+		  looked_up = entry->damroll;
+		else if (which_var == RACE_NATURAL_DELAY)
+		  looked_up = entry->natural_delay;
+
+		  
 		if (looked_up)
 		{
 			return looked_up;
@@ -1192,6 +1210,17 @@ char *
 			looked_up = entry->alert;
 		else if (which_var == RACE_MOVEMENT)
 			looked_up = entry->movement;
+		else if (which_var == RACE_NAT_ATTACK_TYPE)
+		  looked_up = entry->nat_attack_type;
+		else if (which_var == RACE_DAMNODICE)
+		  looked_up = entry->damnodice;
+		else if (which_var == RACE_DAMSIZEDICE)
+		  looked_up = entry->damsizedice;
+		else if (which_var == RACE_DAMROLL)
+		  looked_up = entry->damroll;
+		else if (which_var == RACE_NATURAL_DELAY)
+		  looked_up = entry->natural_delay;
+
 		if (looked_up)
 		{
 			sprintf (value, "%d", looked_up);
@@ -3584,7 +3613,7 @@ CHAR_DATA *
 	ch->offense = atoi (row[39]);
 	ch->hit = atoi (row[40]);
 	ch->max_hit = atoi (row[41]);
-	ch->nat_attack_type = atoi (row[42]);
+	ch->nat_attack_type = lookup_race_int(ch->race, RACE_NAT_ATTACK_TYPE); /* turns row[42] into vestige by resetting attack type by race on load */
 	ch->move = atoi (row[43]);
 	ch->max_move = atoi (row[44]);
 	ch->circle = atoi (row[45]);
@@ -4017,7 +4046,16 @@ CHAR_DATA *
 
 	ch->max_hit = 40 + GET_CON (ch) * CONSTITUTION_MULTIPLIER;
 	ch->max_shock = 40 + GET_WIL(ch) * CONSTITUTION_MULTIPLIER;
-	ch->armor = 0;
+
+	// Set armor by race
+	ch->armor = lookup_race_int(ch->race, RACE_ARMOR);
+
+	// Set natural attack information by race
+	ch->damnodice = lookup_race_int(ch->race, RACE_DAMNODICE);
+	ch->damsizedice = lookup_race_int(ch->race, RACE_DAMSIZEDICE);
+	ch->damroll = lookup_race_int(ch->race, RACE_DAMROLL);
+	ch->natural_delay = lookup_race_int(ch->race, RACE_NATURAL_DELAY);
+
 
 	/*
 	if (!ch->max_mana

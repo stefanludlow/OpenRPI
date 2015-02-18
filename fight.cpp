@@ -4763,10 +4763,11 @@ combat_results (CHAR_DATA * src, CHAR_DATA * tar, OBJ_DATA * attack_weapon,
                 attack_delay -= 10;
         }
     }
-    else if (IS_NPC (src))
-    {
+    else
+      {
+	
         if (is_human(src))
-        {
+	  {
             attack_delay += use_table[SKILL_BRAWLING].delay;
         }
         else
@@ -4776,10 +4777,6 @@ combat_results (CHAR_DATA * src, CHAR_DATA * tar, OBJ_DATA * attack_weapon,
             // Slow mobiles have 70 (two-handed polearm)
             attack_delay += src->natural_delay;
         }
-    }
-    else
-    {
-        attack_delay += use_table[SKILL_BRAWLING].delay;
     }
 
     sprintf (AD, "AttDel %d ", attack_delay);
@@ -4942,10 +4939,15 @@ figure_damage (CHAR_DATA * src, CHAR_DATA * tar, OBJ_DATA * attack_weapon,
 
     }
     /* For bare handed PCs */
-    else if (shock)
-        dam += dice (2, 4);
+    //    else if (shock)               - Grommit: shock seems to be unused in this function 2/18/15. Consider removal.
+    //    dam += dice (2, 4);
     else
-        dam += number (0, 1);
+      {
+	/* Use PC values for natural attack damage. Default is currently 1d2 -1 to simulate the 0 or 1 point of damage as before */
+	dam += dice (src->damnodice, src->damsizedice);
+	dam += src->damroll;
+      }
+    
 
     // Ambush gets more damage.
     if (get_second_affect(src, SA_AMBUSH, NULL))
@@ -6947,11 +6949,12 @@ real_damage (CHAR_DATA *ch, int damage, int *location, int type, int source)
             break;
     }
 
-    // If we've got a NPC, we need to reduce the damage by their natural armour.
+    // General damage reduction. Only non-humans should have this > 0
+    damage = damage - ch->armor;
+   
+    // If we've got a NPC, further reduce damage based on special properties that modulate the ch->armor value 
     if (IS_NPC(ch))
     {
-        damage = damage - ch->armor;
-
         // We establish our boundaries by the source of damage...
 
         if (ch->mob->armortype)

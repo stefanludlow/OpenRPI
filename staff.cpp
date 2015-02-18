@@ -2441,6 +2441,17 @@ void charstat( CHAR_DATA * ch, char *name, bool bPCsOnly ) {
 		}
 		sprintf( ADD, "\n" );
 		send_to_char( buf, ch );
+
+		// Natural features copied from NPCs such as carcass and skin objects, natural attack info etc
+		// Carcass/skin to be completed [need to find that data outside of the mob struct]
+		*buf = '\0';
+		sprintf( buf + strlen( buf ), "#2Att:#0 %s", attack_names[ k->nat_attack_type ] );
+		pad_buffer( buf, 25 );
+		sprintf( ADD, "#2NDam:#0     %dd%d + %d", k->damnodice, k->damsizedice, k->damroll );
+		pad_buffer( buf, 53 );
+		sprintf( ADD, "#2NNatDelay:#0   %d", k->natural_delay );
+		sprintf( ADD, "\n" );
+		send_to_char( buf, ch );
 	}
 
 	sprintf( buf, "\n#2Clans:#0  [%s]\n", k->clans && *k->clans ? k->clans : "" );

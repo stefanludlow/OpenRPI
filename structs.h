@@ -3588,7 +3588,12 @@ struct char_data
     char *d_feat3;
     char *d_feat4;
 
-	char *mob_color_name[10];
+  // Grommit duplicate NPC only fields for natural attack damage to allow races to be customized for PC attack dmg too
+  int damnodice;
+  int damsizedice;
+  int damroll;
+
+  char *mob_color_name[10];
     char *mob_color_cat[10];
 
     DESCRIPTOR_DATA *descriptor;
@@ -3697,6 +3702,12 @@ struct race_data
     int nomad;
     int alert;
     int movement;
+  int nat_attack_type;
+  int damnodice;
+  int damsizedice;
+  int damroll;
+  int natural_delay;
+
 
     RACE_TABLE_ENTRY *next;
 };
@@ -3772,8 +3783,13 @@ struct race_data
 #define RACE_NOMAD			34
 #define RACE_ALERT			35
 #define RACE_MOVEMENT		36
+#define RACE_NAT_ATTACK_TYPE    37
+#define RACE_DAMNODICE          38
+#define RACE_DAMSIZEDICE        39
+#define RACE_DAMROLL            40
+#define RACE_NATURAL_DELAY      41
 
-#define LAST_RACE			36
+#define LAST_RACE			41
 
 #define RACE_TRACKS_SMALL    1	 // Only leave tracks if bleeding
 #define RACE_TRACKS_NEVER    2	 // Never, ever leave tracks.

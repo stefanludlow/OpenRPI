@@ -1930,6 +1930,11 @@ void clear_char( CHAR_DATA * ch ) {
 
 	ch->damage = 0;
 
+	ch->nat_attack_type = 0;
+	ch->damnodice = 0;
+	ch->damsizedice = 0;
+	ch->damroll = 0;
+
 	ch->room = NULL;
 	ch->in_room = NOWHERE;
 	ch->was_in_room = NOWHERE;
