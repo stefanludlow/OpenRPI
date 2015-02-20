@@ -3478,11 +3478,14 @@ strike (CHAR_DATA * src, CHAR_DATA * tar, int attack_num, int mode)
     src->combat_block = 3;
     tar->combat_block = 3;
 
+
+    // Scale attacker's offense by his effort
     if (src->effort >= 1 && src->effort <= 99)
         attack_modifier = (attack_modifier * src->effort) / 100;
 
+    // Scale defender's defense by his effort
     if (tar->effort >= 1 && tar->effort <= 99)
-        attack_modifier = (attack_modifier * src->effort) / 100;
+        defense_modifier = (defense_modifier * tar->effort) / 100;
 
 
 
