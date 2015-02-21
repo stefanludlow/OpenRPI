@@ -1885,7 +1885,7 @@ do_save (CHAR_DATA * ch, char *argument, int cmd)
 
     sprintf (buf, "Saving %s.\n\r", GET_NAME (ch));
     send_to_char (buf, ch);
-    //save_char (ch, true); -- lol wutz?
+    save_char (ch, true);
 }
 
 void
