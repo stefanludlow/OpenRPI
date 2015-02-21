@@ -3783,14 +3783,32 @@ strike (CHAR_DATA * src, CHAR_DATA * tar, int attack_num, int mode)
                     off_result,
                     def_result, attack_num, fd, off_success, def_success, off_style, def_style, location, att_diff, def_diff);
 
+    std::ostringstream oss;
+    oss << "SRC: " << src->tname <<  "[" << src->dameffort  << "]" << " TAR: " << tar->tname << "[" << tar->dameffort << "]" << endl;
+    send_to_all(oss.str().c_str());
+
     if (IS_SET (tar->flags, FLAG_COMPETE))
     {
-        if (attack_weapon)
-            return wound_to_char (tar, loc, damage,
-                                  attack_weapon->o.weapon.hit_type, 0, 0, 0);
-        else
-            return wound_to_char (tar, loc, damage, src->nat_attack_type, 0, 0,
-                                  0);
+      // Here the damage computation is complete and it is about to be applied to the target as a wound
+      // Scale down the damage linearly based on dameffort percentage.
+      // This is distinct from effort which affects whether you hit
+      if ((src->dameffort > 0) && (src->dameffort < 100))
+	{
+	  send_to_char("Scaling your damage\n", src);
+	  damage = (damage * src->dameffort) / 100;
+	}
+      else
+	{
+	  send_to_char("NOT scaling your damage\n", src);
+	}
+      
+      // Apply the same damage with the attack type proper to what was used to cause it, either the weapon or natural
+      if (attack_weapon)
+	return wound_to_char (tar, loc, damage,
+			      attack_weapon->o.weapon.hit_type, 0, 0, 0);
+      else
+	return wound_to_char (tar, loc, damage, src->nat_attack_type, 0, 0,
+			      0);
     }
     
     sprintf (AD, "---------------------------------------\n");

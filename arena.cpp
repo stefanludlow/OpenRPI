@@ -553,6 +553,7 @@ void
 			ch->position = STAND;
 			ch->fight_mode = 2;
 			ch->effort = 100;
+			ch->dameffort = 100;
 
 			if (is_clan_member(tch, "arena_blue"))
 			{
@@ -603,6 +604,7 @@ void
 			ch->position = STAND;
 			ch->fight_mode = 2;
 			ch->effort = 100;
+			ch->dameffort = 100;
 			command_interpreter(ch, "look");
 			return;
 		}
@@ -634,6 +636,7 @@ void
 			ch->position = STAND;
 			ch->fight_mode = 2;
 			ch->effort = 100;
+			ch->dameffort = 100;
 			command_interpreter(ch, "look");
 			return;
 		}

@@ -7711,7 +7711,16 @@ do_info (CHAR_DATA * ch, char *argument, int cmd)
         sprintf(buf, "\nYou are currently fighting at #6%d percent#0 of your capability.\n", ch->effort);
         send_to_char(buf, ch);
     }
+
+    if (ch->dameffort >= 1 && ch->dameffort <= 99)
+    {
+        sprintf(buf, "\nYou are currently delivering wounds that hurt at #6%d percent#0 of your capability.\n", ch->dameffort);
+        send_to_char(buf, ch);
+    }
+
+
 }
+
 
 void print_score_mote( CHAR_DATA* ch, const char* const field, const char* index )
 {
@@ -8312,6 +8321,13 @@ do_score (CHAR_DATA * ch, char *argument, int cmd)
         sprintf(buf, "\nYou are currently fighting at #6%d percent#0 of your capability.\n", ch->effort);
         send_to_char(buf, ch);
     }
+
+    if (ch->dameffort >= 1 && ch->dameffort <= 99)
+    {
+        sprintf(buf, "\nYou are currently delivering wounds that hurt at #6%d percent#0 of your capability.\n", ch->dameffort);
+        send_to_char(buf, ch);
+    }
+
 
     clan__do_score (ch);
 }

@@ -3398,6 +3398,7 @@ nanny_choose_pc (DESCRIPTOR_DATA * d, char *argument)
     show_waiting_prisoners (d->character);
     notify_captors (d->character);
     d->character->effort = 0;
+    d->character->dameffort = 0;
 
     if (d->character->max_hit != 40 + d->character->con * CONSTITUTION_MULTIPLIER)
     {

@@ -5814,6 +5814,7 @@ char_data::clear_char ()
     this->group = NULL;
     this->talents = 0;
     this->effort = 0;
+    this->dameffort = 0;
     this->combat_block = 0;
 
     // Variable descs.

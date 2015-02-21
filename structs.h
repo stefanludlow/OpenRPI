@@ -3566,6 +3566,7 @@ struct char_data
     int combat_counter[MAX_SKILLS];
     int compete_dam;
     int effort;
+  int dameffort;
     int combat_block;
 
     // Japh's mem fixing stuff

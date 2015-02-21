@@ -7834,6 +7834,21 @@ void do_set( CHAR_DATA * ch, char *argument, int cmd ) {
 			sprintf( buf2, "You will now fight at #6%d percent#0 of your capability.\n", atoi( buf ) );
 			send_to_char( buf2, ch );
 		}
+	} else if ( !str_cmp( subcmd, "dameffort" ) ) {
+		argument = one_argument( argument, buf );
+
+		if ( !*buf ) {
+			send_to_char( "You need to nominate a percentage between 1 and 100, or 0 to reset.\n", ch );
+			ch->dameffort = 100;
+		} else if ( !atoi( buf ) || atoi( buf ) > 100 || atoi( buf ) < 0 ) {
+			send_to_char( "You need to nominate a percentage between 1 and 100, or 0 to reset.\n", ch );
+			ch->dameffort = 100;
+		} else {
+			ch->dameffort = atoi( buf );
+			sprintf( buf2, "You will now deliver wounds that hurt at #6%d percent#0 of your capability.\n", atoi( buf ) );
+			send_to_char( buf2, ch );
+		}
+
 	} else if ( !IS_MORTAL (ch) && !str_cmp( subcmd, "guardian" ) ) {
 
 		argument = one_argument( argument, buf );
