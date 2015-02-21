@@ -98,39 +98,39 @@ const char *sizes_named[] =
 
 const char *econ_flags[] =
 {
-	"Trash",			// 1 << 0
-	"Poor",			// 1 << 1
-	"Ordinary",
-    "Good",     	// 1 << 2
-	"Superb",			// 1 << 3
-	"Epic",			// 1 << 4
-	"Raw",			// 1 << 5
-	"Cooked",
-    "Artisan",	// 1 << 6
-	"PCMake",			// 1 << 7
-    "nobarter",
-	"Practice",
-	"Fish",			// 1 << 8
-	"Alcohol",			// 1 << 9
-	"Elven",			// 1 << 10
-	"Dwarven",			// 1 << 11
-	"Orcish",			// 1 << 12
-	"Mordorian",			// 1 << 13
-	"Northman",
-    "Beorning",	// 1 << 14
-	"Rohan",                      // 1 << 15
-	"Gondor",                     // 1 << 16
-	"Shire",   
-    "Dorwinion",
-    "Rhun",	// 1 << 17
-	"Unique",                     // 1 << 19
-	"Meat",                      // 1 << 21
-	"Grain",                    // 1 << 22
-	"Vegetable",                      // 1 << 23
-	"Dairy",
-	"Herb",
-	"Spice",
-	"\n"
+  "Trash",			// 1 << 0
+  "Poor",			// 1 << 1
+  "Ordinary",                   // 1 << 2
+  "Good",     	                // 1 << 3
+  "Superb",			// 1 << 4
+  "Epic",			// 1 << 5
+  "Raw",			// 1 << 5
+  "Cooked",                     // 1 << 6
+  "Artisan",	                // 1 << 7
+  "PCMake",			// 1 << 8
+  "nobarter",                   // 1 << 9
+  "Practice",                   // 1 << 10
+  "Fish",			// 1 << 11
+  "Alcohol",			// 1 << 12
+  "Elven",			// 1 << 13
+  "Dwarven",			// 1 << 14
+  "Orcish",			// 1 << 15
+  "Mordorian",			// 1 << 16
+  "Northman",                   // 1 << 17
+  "Beorning",	                // 1 << 18
+  "Rohan",                      // 1 << 19
+  "Gondor",                     // 1 << 20
+  "Shire",                      // 1 << 21
+  "Dorwinion",                  // 1 << 22
+  "Rhun",	                // 1 << 23
+  "Unique",                     // 1 << 24
+  "Meat",                       // 1 << 25
+  "Grain",                      // 1 << 26
+  "Vegetable",                  // 1 << 27
+  "Dairy",                      // 1 << 28
+  "Herb",                       // 1 << 29
+  "Spice",                      // 1 << 30
+  "\n"
 };
 
 // Text of resource types.

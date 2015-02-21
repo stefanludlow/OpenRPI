@@ -7097,15 +7097,8 @@ real_damage (CHAR_DATA *ch, int damage, int *location, int type, int source)
     }
     else if (sec_eq && !prim_eq)
     {
-        // Because this is secondary armour, we lose a point of value.
-        sec_real = MAX(sec_eq->o.armor.armor_value - 1, 1);
-
-        if (!source)
-            sec_real = MAX(prim_real - object__determine_condition(sec_eq) - weapon_armor_table[type][sec_eq->o.armor.armor_type], 1);
-        else
-            sec_real = MAX(prim_real - object__determine_condition(sec_eq) - weapon_nat_attack_table[type][sec_eq->o.armor.armor_type], 1);
-
-        one_real = sec_real;
+      // Note: if restoring from git, there is a bug where prim_real is used in this function body in some locations.
+      send_to_gods("ERROR - character has secondary equipment but not primary, but the secondary should be used as primary with a penalty");
     }
     else if (sec_eq && prim_eq)
     {
@@ -7157,20 +7150,9 @@ real_damage (CHAR_DATA *ch, int damage, int *location, int type, int source)
         {
             two_real = 2;
         }
-        else if (IS_SET (armor2->econ_flags, (QUALITY_GOOD)) || (IS_SET (armor2->econ_flags, (QUALITY_SUPERB))))
+        else if (IS_SET (armor2->econ_flags, (QUALITY_GOOD)) ||  (IS_SET (armor2->econ_flags, (QUALITY_SUPERB))))
         {
             two_real = 3;
-        }
-
-        // Cloth armour never adds more than 1 - it sucks, sorry.
-        if (armor2->o.armor.armor_type == 0)
-        {
-            two_real = 1;
-        }
-        // And fine equality stuff counts as 1.5
-        else if (two_real == 1 && IS_SET(armor2->econ_flags, 1 << 6) && number(0,1))
-        {
-            two_real = 2;
         }
     }
 
