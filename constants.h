@@ -117,7 +117,11 @@
 
 #define AVG_STRING_LENGTH	256	/* more useful string len */
 #define ERR_STRING_LENGTH   512
+
+
+#ifndef MAX_NAME_LENGTH                 /* Conflicts with definition in server.h */
 #define MAX_NAME_LENGTH		15	/* player character name */
+#endif
 
 #define MAX_INPUT_LENGTH     8000
 #define MAX_MESSAGES          60

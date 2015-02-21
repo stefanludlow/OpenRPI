@@ -20,6 +20,9 @@
 
 #include <stdlib.h>
 
+#include "server.h"
+extern rpie::server engine;
+
 #include "structs.h"
 #include "utils.h"
 #include "utility.h"
@@ -54,6 +57,9 @@ void read_obj_list (int cur_wc,
                     OBJ_DATA * holder, FILE * fp, int room_num);
 OBJ_DATA *fread_obj (FILE * fp);
 void read_aliases (CHAR_DATA * ch, FILE * fp);
+
+
+
 
 char *
 unspace (char *s)
@@ -1681,6 +1687,14 @@ save_player_rooms ()
             unlink (buf);
         }
     }
+    // Commit character changes change to git
+    if (engine.in_play_mode())
+      {
+	std::ostringstream oss;
+	oss << "cd " << engine.get_base_path() << "/lib/save/; git commit -a -m \"Changes committed by save_player_rooms(rooms only)\"";
+	system(oss.str().c_str());
+      }
+
 }
 
 void

@@ -1610,6 +1610,14 @@ void autosave( void ) {
 			save_count++;
 		}
 	}
+	// Commit character changes change to git
+	
+	if (engine.in_play_mode())
+	  {
+	    std::ostringstream oss;
+	    oss << "cd " << engine.get_base_path() << "/lib/save/; git commit -a -m \"Changes committed by autosave (chars only)\"";
+	    system(oss.str().c_str());
+	  }
 }
 
 void autosave_stayputs( void ) {
