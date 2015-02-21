@@ -5037,6 +5037,8 @@ figure_damage (CHAR_DATA * src, CHAR_DATA * tar, OBJ_DATA * attack_weapon,
 
     /* Multiply in critical strike bonus */
 
+    // Feb 21 2015 - Grommit - this appears to be trying to make non-punch natural attacks always do at least RESULT_HIT3 type bonuses, but it seems to fail boolean
+    // Since it appears to be if A or (A and B) which would always pass the first check.
     if (off_result == RESULT_HIT
             || (off_result == RESULT_HIT
                 && (!attack_weapon && src->nat_attack_type == 0)))
