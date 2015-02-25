@@ -3783,9 +3783,9 @@ strike (CHAR_DATA * src, CHAR_DATA * tar, int attack_num, int mode)
                     off_result,
                     def_result, attack_num, fd, off_success, def_success, off_style, def_style, location, att_diff, def_diff);
 
-    std::ostringstream oss;
-    oss << "SRC: " << src->tname <<  "[" << src->dameffort  << "]" << " TAR: " << tar->tname << "[" << tar->dameffort << "]" << endl;
-    send_to_all(oss.str().c_str());
+    //std::ostringstream oss;
+    //oss << "SRC: " << src->tname <<  "[" << src->dameffort  << "]" << " TAR: " << tar->tname << "[" << tar->dameffort << "]" << endl;
+    //send_to_all(oss.str().c_str());
 
     if (IS_SET (tar->flags, FLAG_COMPETE))
     {
