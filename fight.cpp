@@ -4790,14 +4790,14 @@ combat_results (CHAR_DATA * src, CHAR_DATA * tar, OBJ_DATA * attack_weapon,
         if (is_human(src))
 	  {
             attack_delay += use_table[SKILL_BRAWLING].delay;
-        }
+	  }
         else
-        {
+	  {
             // Fast mobiles have 35 (small-blade)
             // Medium mobiles have 50 (long-blade)
             // Slow mobiles have 70 (two-handed polearm)
             attack_delay += src->natural_delay;
-        }
+	  }
     }
 
     sprintf (AD, "AttDel %d ", attack_delay);

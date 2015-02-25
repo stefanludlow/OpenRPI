@@ -3304,20 +3304,14 @@ mm (char *msg)
 #endif
 }
 
-int
-is_human (CHAR_DATA * ch)
+
+// A more accurate title would be is_humanoid. This is used for determing natural attack
+// So as long as orcs are punchers and not biters, we do want them and all humanoids included
+// here as users of Brawling rather than biters etc.
+
+int is_human (CHAR_DATA * ch)
 {
-    // Survivor, Human, Denizen, Mutation, Cybernetic, and Phoenixer.
-
-    if (ch->race == 1 ||
-        ch->race == 5 ||
-        ch->race == 6 ||
-        ch->race == 67 ||
-        ch->race == 68 ||
-        ch->race == 69)
-        return 1;
-
-    return 0;
+  return (lookup_race_variable (ch->race, RACE_BODY_PROTO)==PROTO_HUMANOID)
 }
 
 int
