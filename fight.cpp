@@ -4786,7 +4786,6 @@ combat_results (CHAR_DATA * src, CHAR_DATA * tar, OBJ_DATA * attack_weapon,
     }
     else
       {
-	
         if (is_human(src))
 	  {
             attack_delay += use_table[SKILL_BRAWLING].delay;

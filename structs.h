@@ -4111,7 +4111,9 @@ struct encumberance_info
 #define AUTOSCAN                ( 1 << 21 )     // Player will attempt to scan direction he is watching upon entering room.
 #define BRIEF_MODE              ( 1 << 22 )     // Players sees a lot less output, mostly for vision-impairment.
 #define FIREFIGHT_FILTER        ( 1 << 23 )     // Players sees a lot less firearm-related spam.
-#define AUTO_COVER				( 1 << 24 )     // Players toss themselves in to cover automatially
+#define AUTO_COVER		( 1 << 24 )     // Players toss themselves in to cover automatially
+#define DEBUG_PROMPT            ( 1 << 25 )     // Displays additional debug information on the prompt
+
 
 /* char_data.guardian_flags - controls notification of PC initiated attacks */
 #define GUARDIAN_PC		( 1 << 0 )	/* 01 */

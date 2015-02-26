@@ -7618,6 +7618,17 @@ void do_set( CHAR_DATA * ch, char *argument, int cmd ) {
 		}
 		return;
 	}
+	else if ( !str_cmp( subcmd, "debug" ) )
+	  {
+	  if ( !IS_SET (ch->plr_flags, DEBUG_PROMPT) ) {
+	    ch->plr_flags |= DEBUG_PROMPT;
+	    send_to_char( "You will now display extra debugging information on your prompt.\n", ch );
+	    return;
+	  }
+	  ch->plr_flags &= ~DEBUG_PROMPT;
+	  send_to_char( "You will now no longer display extra debugging information on your prompt.\n", ch );
+	  return;
+	  }
 
 	else if ( !str_cmp( subcmd, "ansi" ) ) {
 		if ( !IS_SET (ch->flags, FLAG_GUEST) ) {
@@ -8200,6 +8211,7 @@ void do_set( CHAR_DATA * ch, char *argument, int cmd ) {
 		s( "   Newbie     - Turn off your #2(new player)#0 ldesc tag" );
 		s( "   Prompt     - Toggle informative prompt on and off" );
 		s( "   Rp         - Toggle output of Reward total in SCORE" );
+		s( "   Debug      - Toggle output of extra debug information in your prompt");
 		//    s ("   Voting     - Toggle receipt of voting reminders at login");
 		if ( !IS_MORTAL (ch) ) {
 			s( "\n   #6Staff-Only Commands:#0" );
