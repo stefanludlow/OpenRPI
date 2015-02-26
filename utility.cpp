@@ -3311,7 +3311,7 @@ mm (char *msg)
 
 int is_human (CHAR_DATA * ch)
 {
-  return (lookup_race_variable (ch->race, RACE_BODY_PROTO)==PROTO_HUMANOID);
+  return (lookup_race_int (ch->race, RACE_BODY_PROTO)==PROTO_HUMANOID);
 }
 
 int
