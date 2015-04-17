@@ -7739,14 +7739,14 @@ do_oset (CHAR_DATA * ch, char *argument, int cmd)
 
     while (*subcmd)
     {
-//Commenting out briefly to fix the pp when trying to fix the editing of variables on the pp 04172015 icarus
-/*        if (engine.in_play_mode () && IS_SET (edit_obj->obj_flags.extra_flags, ITEM_VARIABLE))
+
+        if (engine.in_play_mode () && IS_SET (edit_obj->obj_flags.extra_flags, ITEM_VARIABLE))
         {
             send_to_char
             ("This object is variable, and you must change it on the Build Port to avoid overwriting all instances in play.\n",
              ch);
             return;
-        } */
+        }
 
         if (GET_TRUST (ch) < 5)
             edit_obj->obj_flags.extra_flags |= ITEM_OK;
