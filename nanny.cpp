@@ -2482,10 +2482,10 @@ nanny_connect_select (DESCRIPTOR_DATA * d, char *argument)
     else if (c == 'r' || argn == 3)
     {
 		// Temporarily disabling this option 0207142051 - Nimrod
-		SEND_TO_Q
-			("\n\nPlease visit www.middle-earth.us/generator to create a character.\n\n\n", d);
-        display_main_menu (d);
-		return;
+//		SEND_TO_Q
+//			("\n\nPlease visit www.middle-earth.us/generator to create a character.\n\n\n", d);
+//        display_main_menu (d);
+//		return;
 
         if (str_cmp ("Unknown", d->acct->name.c_str ()) == 0)
         {
