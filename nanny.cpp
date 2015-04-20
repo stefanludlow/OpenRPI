@@ -114,6 +114,7 @@ const char *color_skill[] =
 
     "#5",             /* Education */
     "#0",             /* Voodoo */
+    "#0",             /* Common */
     "#0",             /* Metalcraft */
     "#0",             /* Leathercraft */
     "#0",             /* Textilecraft */
