@@ -51,8 +51,8 @@ const int restricted_skills[] =
     0,				/* Sole Use */
     0,				/* Dual-Wield */
    -1,				/* Aim */
-    0,				/* Handgun */
-    0,				/* Rifle */
+   -2,				/* Handgun */
+   -2,				/* Rifle */
    -2,				/* SMG */
    -2,				/* Gunnery */
    -2,				/* Explosives */
