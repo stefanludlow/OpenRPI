@@ -1920,7 +1920,7 @@ randomize_mobile (CHAR_DATA * mob)
 	    new_randomize_mobile(mob, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
         return;
     }
-//removed an astrick slash here when testing. 
+//Removed astrix slash for testing
 	// return;
 	
 	if ( !IS_NPC(mob) && mob->race == lookup_race_id("Human"))
@@ -2052,6 +2052,7 @@ randomize_mobile (CHAR_DATA * mob)
         make_height (mob);
         make_frame (mob);
     }
+    */
     if ((mob->sex != 1) && (mob->sex !=2))  // Added to let mobs keep their sex should they be set already. 0306142045 -Nimrod
     {	
       mob->sex = number (1, 2);
@@ -2097,7 +2098,6 @@ randomize_mobile (CHAR_DATA * mob)
         mob->fight_mode = 3;
         break;
     }
-*/
 }
 
 const char *heights[5][5] =
