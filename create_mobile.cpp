@@ -1920,7 +1920,7 @@ randomize_mobile (CHAR_DATA * mob)
 	    new_randomize_mobile(mob, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
         return;
     }
-*/
+//removed an astrick slash here when testing. 
 	// return;
 	
 	if ( !IS_NPC(mob) && mob->race == lookup_race_id("Human"))
@@ -2097,6 +2097,7 @@ randomize_mobile (CHAR_DATA * mob)
         mob->fight_mode = 3;
         break;
     }
+*/
 }
 
 const char *heights[5][5] =
