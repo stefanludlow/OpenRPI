@@ -6937,6 +6937,7 @@ real_damage (CHAR_DATA *ch, int damage, int *location, int type, int source)
     int low_nat_check = 0;
     int high_nat_check = 0;
     bool sec_used_as_prim = false;
+    bool prim_used_as_sec = false;
 
     // First, we set our base damage - obviously, we can never do more damage than this.
     base_damage = damage;
