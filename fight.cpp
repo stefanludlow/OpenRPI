@@ -7161,7 +7161,9 @@ real_damage (CHAR_DATA *ch, int damage, int *location, int type, int source)
     // Now that we have an armor 1 and possibly 2, as well as our real values,
     // let's subtract them from damage, then make sure we're dealing a minimum
     // of 0 damage, and not a greater amount of damage than our base.
-    damage = damage - one_real - two_real;
+    //COMMENTED OUT BY ICARUS - Want us to just apply a flat -1 to all damage. Original function is damage = damage - one_real - two_real;
+    //damage = damage - one_real - two_real;
+    damage = damage - prim_real - 1; 
     damage = MAX(damage, 0);
     damage = MIN(damage, base_damage);
 
