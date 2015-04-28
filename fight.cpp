@@ -6963,14 +6963,34 @@ real_damage (CHAR_DATA *ch, int damage, int *location, int type, int source)
             }
         }
     }
-
+//Commenting out to implement primary to secondary bit - Icarus
     // Same for secondary eq, but we can't be using our primary object already.
-    for (sec_eq = ch->equip; sec_eq; sec_eq = sec_eq->next_content)
-    {
-        if (sec_eq != prim_eq && GET_ITEM_TYPE(sec_eq) == ITEM_ARMOR && IS_SET(sec_eq->o.od.value[3], 1 << *location))
-            break;
+//    for (sec_eq = ch->equip; sec_eq; sec_eq = sec_eq->next_content)
+//    {
+//        if (sec_eq != prim_eq && GET_ITEM_TYPE(sec_eq) == ITEM_ARMOR && IS_SET(sec_eq->o.od.value[3], 1 << *location))
+//            break;
+//    }
+   
+       for (sec_eq = ch->equip; sec_eq; sec_eq = sec_eq->next_content) 
+    { 
+        if (sec_eq != prim_eq && GET_ITEM_TYPE(sec_eq) == ITEM_ARMOR && IS_SET(sec_eq->o.od.value[2], 1 << *location)) 
+            break; 
+    } 
+ 
+    // If we didn't find any PRIMARY sec_eq on the first try, try again, this time looking for SECONDARY 
+    // armour - this way we can stack two bits of primary armour. 
+ 
+    if (!sec_eq) 
+    { 
+        for (sec_eq = ch->equip; sec_eq; sec_eq = sec_eq->next_content) 
+        { 
+            if (GET_ITEM_TYPE(sec_eq) == ITEM_ARMOR && IS_SET(sec_eq->o.od.value[3], 1 << *location)) 
+            { 
+                prim_used_as_sec = true; 
+                break; 
+            } 
+        } 
     }
-
     // General damage reduction. Only non-humans should have this > 0
     damage = damage - ch->armor;
    
