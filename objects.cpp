@@ -6513,8 +6513,8 @@ void
 
 	switch (obj->o.od.value[0])
 	{
-	case 1:	// Medium weapons.
-		if (ch->str < 18)
+	case 1:	// Medium weapons. //Increased minimum to 25, as we don't think just because you are strong you can dwield. 
+		if (ch->str < 25)
 		{
 			if (get_equip (ch, WEAR_PRIM))
 			{
