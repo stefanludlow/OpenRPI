@@ -2484,14 +2484,14 @@ hit_char (CHAR_DATA * ch, CHAR_DATA * victim, int strike_parm)
             act ("You ambush takes $N by utter surprise!", false, ch, 0, victim, TO_CHAR);
             act ("You are startled by $n's sudden attack!", false, ch, 0, victim, TO_VICT);
             if (!(get_second_affect (ch, SA_AMBUSH, NULL)))
-                add_second_affect (SA_AMBUSH, 20, ch, NULL, NULL, 250);
+                add_second_affect (SA_AMBUSH, 20, ch, NULL, NULL, 175);
         }
         else if (sneak || hide)
         {
             act ("You ambush takes $N by surprise!", false, ch, 0, victim, TO_CHAR);
             act ("$n ambushes you!", false, ch, 0, victim, TO_VICT);
             if (!(get_second_affect (ch, SA_AMBUSH, NULL)))
-                add_second_affect (SA_AMBUSH, 20, ch, NULL, NULL, 150);
+                add_second_affect (SA_AMBUSH, 20, ch, NULL, NULL, 125);
         }
         else
         {
