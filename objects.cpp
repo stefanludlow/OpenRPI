@@ -1217,7 +1217,7 @@ void
 
 		if (obj->o.od.value[0] != 1)
 		{
-			if (ch->str > 18 && (obj->o.od.value[0] == 3))
+			if (ch->str >= 25 && (obj->o.od.value[0] == 3))
 				;
 			else
 			{
@@ -6533,7 +6533,7 @@ void
 				obj_destination = WEAR_PRIM;
 			}
 			break;
-		}			// > 17 str wields ME in either hand.
+		}			
 	case 2:	// Light weapons.
 
 		if (get_equip (ch, WEAR_PRIM) && get_equip (ch, WEAR_SEC))
@@ -6566,7 +6566,7 @@ void
 		obj_destination = WEAR_BOTH;
 		break;
 	case 3: // HEAVY WEAPONS
-		if (ch->str >= 20)
+		if (ch->str >= 25)
 		{
 			// Extremely strong chars can wield two-handed weapons with one hand.
 			if (get_equip (ch, WEAR_PRIM))
