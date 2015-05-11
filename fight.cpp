@@ -2484,14 +2484,14 @@ hit_char (CHAR_DATA * ch, CHAR_DATA * victim, int strike_parm)
             act ("You ambush takes $N by utter surprise!", false, ch, 0, victim, TO_CHAR);
             act ("You are startled by $n's sudden attack!", false, ch, 0, victim, TO_VICT);
             if (!(get_second_affect (ch, SA_AMBUSH, NULL)))
-                add_second_affect (SA_AMBUSH, 20, ch, NULL, NULL, 250);
+                add_second_affect (SA_AMBUSH, 20, ch, NULL, NULL, 175);
         }
         else if (sneak || hide)
         {
             act ("You ambush takes $N by surprise!", false, ch, 0, victim, TO_CHAR);
             act ("$n ambushes you!", false, ch, 0, victim, TO_VICT);
             if (!(get_second_affect (ch, SA_AMBUSH, NULL)))
-                add_second_affect (SA_AMBUSH, 20, ch, NULL, NULL, 150);
+                add_second_affect (SA_AMBUSH, 20, ch, NULL, NULL, 125);
         }
         else
         {
@@ -6937,6 +6937,7 @@ real_damage (CHAR_DATA *ch, int damage, int *location, int type, int source)
     int low_nat_check = 0;
     int high_nat_check = 0;
     bool sec_used_as_prim = false;
+    bool prim_used_as_sec = false;
 
     // First, we set our base damage - obviously, we can never do more damage than this.
     base_damage = damage;
@@ -6963,14 +6964,34 @@ real_damage (CHAR_DATA *ch, int damage, int *location, int type, int source)
             }
         }
     }
-
+//Commenting out to implement primary to secondary bit - Icarus
     // Same for secondary eq, but we can't be using our primary object already.
-    for (sec_eq = ch->equip; sec_eq; sec_eq = sec_eq->next_content)
-    {
-        if (sec_eq != prim_eq && GET_ITEM_TYPE(sec_eq) == ITEM_ARMOR && IS_SET(sec_eq->o.od.value[3], 1 << *location))
-            break;
+//    for (sec_eq = ch->equip; sec_eq; sec_eq = sec_eq->next_content)
+//    {
+//        if (sec_eq != prim_eq && GET_ITEM_TYPE(sec_eq) == ITEM_ARMOR && IS_SET(sec_eq->o.od.value[3], 1 << *location))
+//            break;
+//    }
+   
+       for (sec_eq = ch->equip; sec_eq; sec_eq = sec_eq->next_content) 
+    { 
+        if (sec_eq != prim_eq && GET_ITEM_TYPE(sec_eq) == ITEM_ARMOR && IS_SET(sec_eq->o.od.value[2], 1 << *location)) 
+            break; 
+    } 
+ 
+    // If we didn't find any PRIMARY sec_eq on the first try, try again, this time looking for SECONDARY 
+    // armour - this way we can stack two bits of primary armour. 
+ 
+    if (!sec_eq) 
+    { 
+        for (sec_eq = ch->equip; sec_eq; sec_eq = sec_eq->next_content) 
+        { 
+            if (GET_ITEM_TYPE(sec_eq) == ITEM_ARMOR && IS_SET(sec_eq->o.od.value[3], 1 << *location)) 
+            { 
+                prim_used_as_sec = true; 
+                break; 
+            } 
+        } 
     }
-
     // General damage reduction. Only non-humans should have this > 0
     damage = damage - ch->armor;
    
@@ -7161,7 +7182,9 @@ real_damage (CHAR_DATA *ch, int damage, int *location, int type, int source)
     // Now that we have an armor 1 and possibly 2, as well as our real values,
     // let's subtract them from damage, then make sure we're dealing a minimum
     // of 0 damage, and not a greater amount of damage than our base.
-    damage = damage - one_real - two_real;
+    //COMMENTED OUT BY ICARUS - Want us to just apply a flat -1 to all damage. Original function is damage = damage - one_real - two_real;
+    //damage = damage - one_real - two_real;
+    damage = damage - prim_real - 1; 
     damage = MAX(damage, 0);
     damage = MIN(damage, base_damage);
 
