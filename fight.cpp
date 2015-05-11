@@ -6928,6 +6928,7 @@ real_damage (CHAR_DATA *ch, int damage, int *location, int type, int source)
     OBJ_DATA *cloth_eq = NULL;
     OBJ_DATA *armor1 = NULL;
     OBJ_DATA *armor2 = NULL;
+    CHAR_DATA *dch;
     char buf[MAX_STRING_LENGTH] = { '\0' };
     int prim_real = 0;
     int sec_real = 0;
