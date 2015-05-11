@@ -631,9 +631,10 @@ float
 	}
 
 
-	// If an object is damaged, then folks are going to be much less likely to want to purchase it.
+	// If an object is damaged, then folks are going to be much less likely to want to purchase it. 
+	// - Edited by Ceredir 2015/05/11 to change the multipliers from 100 to 1.00 and so on, as it should be
 
-	int damage_modifier[6] = {100, 75, 50, 25, 5, 0};
+	float damage_modifier[6] = {1.00, 0.75, 0.50, 0.25, 0.5, 0};
 
 	if (!engine.in_test_mode ())
 		if (obj->damage)
