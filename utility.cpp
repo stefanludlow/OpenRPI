@@ -51,8 +51,8 @@ const int restricted_skills[] =
     0,				/* Sole Use */
     0,				/* Dual-Wield */
    -1,				/* Aim */
-    0,				/* Handgun */
-    0,				/* Rifle */
+   -2,				/* Handgun */
+   -2,				/* Rifle */
    -2,				/* SMG */
    -2,				/* Gunnery */
    -2,				/* Explosives */
@@ -70,20 +70,46 @@ const int restricted_skills[] =
    -1,				/* Eavesdrop */
     0,				/* Butchery */
 
-    0,				/* Chemistry */
-    0,				/* Mechanics */
-    0,				/* Gunsmithery */
+   -2,				/* Chemistry */
+   -2,				/* Mechanics */
+   -2,				/* Gunsmithery */
    -2,				/* Computerology */
-    0,				/* Electronics */
-    0,				/* Biology */
+   -2,				/* Electronics */
+   -2,				/* Biology */
     0,				/* Weaponcraft */
     0,				/* Armorcraft */
-    0,				/* Handicraft */
+   -2,				/* Handicraft */
     0,				/* Artistry */
 
     0,             /* Education */
    -2,				/* Voodoo */
    -1,             // Common
+    0,             //Metalcraft
+    0,             //Leathercraft
+    0,             //Textilecraft
+    0,                //Woodcraft
+    0,                //Cooking
+    0,                //Baking
+    0,                //Brewing
+    0,                //Fishing
+    0,                //Stonecraft
+    0,                //Earthencraft
+    0,                //Gardening
+    0,                //Farming
+    0,                //Shortbow
+    0,                //Longbow
+    0,                //Crossbow
+    0,                //Music
+   -2,                //Astronomy
+   -3,                //Orkish
+   -3,                //Wargish
+   -3,                //Dalish
+   -3,                //Sindarin
+   -3,                //Khuzdul
+   -3,                //Tengwar
+   -3,                //Cirth
+   -3,                //Warcraft
+   
 
 };
 
