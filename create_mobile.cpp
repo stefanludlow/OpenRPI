@@ -1935,7 +1935,7 @@ randomize_mobile (CHAR_DATA * mob)
     int slots_taken[] = { 0, 0, 0, 0, 0, 0, 0 };
     int i, roll, bonus;
     int type_bonus = 0;
-
+/*
     if (is_name_in_list("elite", mob->name))
         type_bonus = 30;
 
@@ -2052,6 +2052,7 @@ randomize_mobile (CHAR_DATA * mob)
         make_height (mob);
         make_frame (mob);
     }
+*/
     if ((mob->sex != 1) && (mob->sex !=2))  // Added to let mobs keep their sex should they be set already. 0306142045 -Nimrod
     {	
       mob->sex = number (1, 2);

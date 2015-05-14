@@ -115,6 +115,33 @@ const char *color_skill[] =
     "#5",             /* Education */
     "#0",             /* Voodoo */
     "#0",             /* Common */
+    "#0",             /* Metalcraft */
+    "#0",             /* Leathercraft */
+    "#0",             /* Textilecraft */
+    "#0",             /* Woodcraft */
+    "#0",             /* Cooking */
+    "#0",             /* Baking */
+    "#0",             /* Brewing */
+    "#0",             /* Fishing */
+    "#0",             /* Stonecraft */
+    "#0",             /* Earthencraft */
+    "#0",             /* Gardening */
+    "#0",             /* Farming */
+    "#0",             /* Shortbow */
+    "#0",             /* Longbow */
+    "#0",             /* Crossbow */
+    "#0",             /* Music */
+    "#0",             /* Astronomy */
+    "#0",             /* Orkish */
+    "#0",             /* Wargish */
+    "#0",             /* Dalish */
+    "#0",             /* Sindarin */
+    "#0",             /* Khuzdul */
+    "#0",             /* Tengwar */
+    "#0",             /* Cirth */
+    "#0",             /* Warcraft */
+        
+    
 };
 
 
