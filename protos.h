@@ -774,7 +774,7 @@ extern const char *male_ages[8][2];
 extern const char *hair_lengths[7];
 extern const char *hair_styles[7][5];
 extern const char *hair_colors[5][10];
-extern const char *eye_colors[3][10];
+extern const char *eye_colors[6][10];
 
 
 void do_aiadd (CHAR_DATA * ch, char *argument, int cmd);
