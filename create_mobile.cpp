@@ -2191,15 +2191,14 @@ const char *hair_colors[5][10] =
     {"grey", "grey", "light-grey", "dark-grey", "dirty-grey", "salt-and-pepper", "white", "off-white", "white-streaked", "greying"} // 9
 };
 
-const char *eye_colors[3][10] =
+const char *eye_colors[6][10] =
 {	
-// Commented out Black and Grey and Mismatched - as they don't apply for our game. Removed the comma from the end of brown.
-//	{"black", "black", "midnight-black", "jet-black", "charcoal", "slightly-darker-black", "obsidian-black", "basalt", "matte-black", "pitch-black"},
+	{"amber", "amber", "light-amber", "dark-amber", "reddish-amber", "brown", "reddish-brown", "dark-amber", "ochre", "bronze"},
     {"blue", "blue", "sky-blue", "clear-blue", "light-blue", "dark-blue", "sea-blue", "crystal-blue", "cornflower-blue", "cerulean"},
     {"green", "green", "light-green", "dark-green", "sea-green", "olive-green", "snake-green", "forest-green", "bottle-green", "grass-green"},
-    {"brown", "brown", "light-amber", "dark-amber", "light-hazel", "dark-hazel", "light-brown", "dark-brown", "dusky-brown", "sienna"}
-//    {"grey", "grey", "dark-grey", "light-grey", "storm-grey", "steel-grey", "ash-grey", "pearl-grey", "sea-grey", "shell-grey"},
-//    {"mismatched", "blue-green", "blue-brown", "blue-grey",  "blue-hazel", "green-brown", "green-grey", "green-hazel", "brown-grey", "brown-hazel"}
+    {"brown", "brown", "light-amber", "dark-amber", "light-hazel", "dark-hazel", "light-brown", "dark-brown", "dusky-brown", "sienna"},
+    {"hazel", "hazel", "chestnut", "copper", "henna", "auburn", "light-hazel", "dark-hazel", "nut", "light-copper"},
+    {"mixed", "bluish-green", "bluish-brown", "bluish-grey",  "bluish-hazel", "greenish-brown", "greenish-grey", "greenish-hazel", "brownish-grey", "brownish-hazel"}
 };
 
 
