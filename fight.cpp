@@ -7170,7 +7170,7 @@ real_damage (CHAR_DATA *ch, int damage, int *location, int type, int source)
     damage = MAX(damage, 0);
     damage = MIN(damage, base_damage);
     
-    for (dch = src->room->people; dch; dch = dch->next_in_room)
+    for (dch = ch->room->people; dch; dch = dch->next_in_room)
         if (IS_SET (dch->debug_mode, DEBUG_FIGHT))
         {
             sprintf (buf, "Armor Layering: Prim %s Sec %s 1Real %d 2Real %d", prim_eq, sec_eq, one_real, two_real);
