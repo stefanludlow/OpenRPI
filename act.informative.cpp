@@ -2732,7 +2732,7 @@ show_obj_to_char (OBJ_DATA * obj, CHAR_DATA * ch, int mode)
 						}
 					}
 
-					sprintf(buf + strlen(buf), "This weapon takes #0%s%s#6 missiles%s%s.#0", buf4, calibers[obj->o.firearm.caliber]);
+					sprintf(buf + strlen(buf), "This weapon takes #0%s%s#6 missiles.#0", buf4, calibers[obj->o.firearm.caliber]);
 
 					reformat_string (buf, &p);
 					strcat (buffer, "\n");
