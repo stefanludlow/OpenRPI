@@ -5034,7 +5034,7 @@ void
 			{
 			case 1:	// primary weapons
 
-				if (ch->str < 18)
+				if (ch->str < 25)
 				{
 					if (get_equip (ch, WEAR_PRIM))
 					{
@@ -5056,7 +5056,7 @@ void
 						equip_char (ch, obj_object, WEAR_PRIM);
 					}
 					break;
-				}		// > 17 str or troll wields ME in either hand.
+				}		// >= 25 str wields ME in either hand.
 
 			case 2:	// Light weapons, and should include brawling weapons.
 				//case SKILL_SLING:
@@ -5096,7 +5096,7 @@ void
 				break;
 
 			case 3:	// Heavy weapons.
-				if (ch->str >= 20)
+				if (ch->str >= 25)
 				{
 					// Extremely strong chars can wield two-handed weapons with one hand.
 					if (get_equip (ch, WEAR_PRIM))
