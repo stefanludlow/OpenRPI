@@ -1456,18 +1456,18 @@ int
 	{
 		if (GET_ITEM_TYPE (obj) != ITEM_FIREARM)
 		{
-			sprintf (message, "Holsters are only for storing firearms.\n");
+			sprintf (message, "Holsters are only for storing ranged weapons.\n");
 			return 0;
 		}
 		if (container->contains)
 		{
-			sprintf (message, "This holster already contains a firearms.\n");
+			sprintf (message, "This holster already contains a ranged weapon.\n");
 			return 0;
 		}
 
 		if (obj->obj_flags.weight > container->o.od.value[0])
 		{
-			sprintf (message, "That firearm is too large for the holster.\n");
+			sprintf (message, "That ranged weapon is too large for the holster.\n");
 			return 0;
 		}
 		return 1;
@@ -1583,7 +1583,7 @@ int
 		if (GET_ITEM_TYPE(obj) != ITEM_ROUND)
 		{
 			sprintf (message,
-				"Bandoliers are only for storing rounds.\n");
+				"Quivers are only for storing arrows and bolts.\n");
 			return 0;
 		}
 
@@ -1591,7 +1591,7 @@ int
 			i += tobj->count;
 		if (i + count > container->o.od.value[0])
 		{
-			sprintf (message, "The bandolier can't hold that many rounds.\n");
+			sprintf (message, "The quiver can't hold that many missiles.\n");
 			return 0;
 		}
 		return 1;
@@ -6344,7 +6344,7 @@ void
 
 	if (!IS_SHEATHABLE (obj))
 	{
-		send_to_char ("You can only sheath a melee weapon, missile or firearm.\n", ch);
+		send_to_char ("You can only sheath a melee weapon, missile or a ranged weapon.\n", ch);
 		return;
 	}
 
