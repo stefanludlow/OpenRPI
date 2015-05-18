@@ -2667,16 +2667,17 @@ show_obj_to_char (OBJ_DATA * obj, CHAR_DATA * ch, int mode)
 				if (!IS_SLING(obj))
 				{
 
-					sprintf(buf, "#6You'd guess it to be a #0%s#6 type firearm that %s. ", skills[obj->o.firearm.use_skill],
+					sprintf(buf, "#6You'd guess it to be a #0%s#6 type ranged weapon that %s. ", skills[obj->o.firearm.use_skill],
 						(obj->o.firearm.handedness == 3 ? "is designed to be fired from #0both hands#6" : obj->o.firearm.handedness == 2 ? "is designed to be fired from #0one hand#6" : "is designed to be fired from either #0one or both hands#6"));
 
 
 					if (!IS_DIRECT(obj) && IS_SET(obj->o.firearm.bits, GUN_DISPLAY) && ((obj->equiped_by && obj->equiped_by == ch) || !obj->equiped_by))
 					{
 						if (count_bullets(obj))
-							sprintf(buf + strlen(buf), "There are #0%s#6 rounds currently loaded. ", verbal_number[count_bullets(obj)]);
+							sprintf(buf + strlen(buf), "It is currently loaded. ");
 					}
-
+                    
+                    /* We do not really need to see this - all our firearms should be silent, no safeties etc - 180520151055 Ceredir
 					*buf2 = '\0';
 
 
@@ -2689,7 +2690,7 @@ show_obj_to_char (OBJ_DATA * obj, CHAR_DATA * ch, int mode)
 
 					*buf3 = '\0';
 
-					for (i = 0; i <= 11; i++)
+                    for (i = 0; i <= 11; i++)
 					{
 						if (IS_SET (obj->o.firearm.bits, (1 << i)))
 						{
@@ -2701,6 +2702,7 @@ show_obj_to_char (OBJ_DATA * obj, CHAR_DATA * ch, int mode)
 								sprintf (buf3 + strlen (buf3), " and #0%s#6", gun_bits[i]);
 						}
 					}
+                    */
 
 					*buf4 = '\0';
 
@@ -2730,7 +2732,7 @@ show_obj_to_char (OBJ_DATA * obj, CHAR_DATA * ch, int mode)
 						}
 					}
 
-					sprintf(buf + strlen(buf), "This firearm takes #0%s%s#6 rounds%s%s.#0", buf4, calibers[obj->o.firearm.caliber], buf2, buf3);
+					sprintf(buf + strlen(buf), "This weapon takes #0%s%s#6 missiles%s%s.#0", buf4, calibers[obj->o.firearm.caliber]);
 
 					reformat_string (buf, &p);
 					strcat (buffer, "\n");
@@ -2743,18 +2745,18 @@ show_obj_to_char (OBJ_DATA * obj, CHAR_DATA * ch, int mode)
 						{
 							if (IS_DIRECT(obj))
 							{
-								sprintf (buf4, "%s#6%s firearm's chamber%s are full#0.\n", (cap == 1 ? "the" : count_all_bullets(obj) == cap ? "all" : verbal_number[count_all_bullets(obj)]), (cap > 1 ? " of" : ""), (cap > 1 ? "s" : ""));
+								sprintf (buf4, "It is loaded#0.\n");
 								*buf4 = toupper(*buf4);
 								strcat (buffer, "\n   #0");
 								strcat (buffer, buf4);
 							}
 							else
 							{
-								sprintf (buffer + strlen(buffer), "\n   This firearm is loaded with #2%s#0.\n", obj->contains->short_description);
+								sprintf (buffer + strlen(buffer), "\n   It is loaded with #2%s#0.\n", obj->contains->short_description);
 							}
 						}
 						else
-							sprintf (buffer + strlen(buffer), "\n   #6This firearm is unloaded.#0\n");
+							sprintf (buffer + strlen(buffer), "\n   #6It is unloaded.#0\n");
 					}
 				}
             }
@@ -2791,8 +2793,8 @@ show_obj_to_char (OBJ_DATA * obj, CHAR_DATA * ch, int mode)
             if (GET_ITEM_TYPE (obj) == ITEM_ROUND && mode == 15)
             {
 
-                sprintf(buf, "#6%s #0%s %s %s#6 round%s.#0",
-                        (obj->count > 1 ? "These are" : "This is a"), ammo_bits[obj->o.bullet.type], calibers[obj->o.bullet.caliber], ammo_sizes[obj->o.bullet.size], (obj->count > 1? "s" : ""));
+                sprintf(buf, "#6%s #0%s %s#6 missile%s.#0",
+                        (obj->count > 1 ? "These are" : "This is a"), ammo_bits[obj->o.bullet.type], calibers[obj->o.bullet.caliber], (obj->count > 1? "s" : ""));
 
                 reformat_string (buf, &p);
                 strcat (buffer, "\n");
