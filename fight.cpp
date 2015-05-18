@@ -3486,6 +3486,14 @@ strike (CHAR_DATA * src, CHAR_DATA * tar, int attack_num, int mode)
     // Scale defender's defense by his effort
     if (tar->effort >= 1 && tar->effort <= 99)
         defense_modifier = (defense_modifier * tar->effort) / 100;
+        
+    // Scale attacker's offense based on their armor_penalty - the heavier the armor, the more difficult to hit something
+    attack -= armor_penalty(src) * 3
+    
+    // Scale defender's defense based on their armor_penalty - the heavier the armor, the more difficult to dodge or parry, 
+    //but to a lesser degree than in case of attack
+    defense -= armor_penalty(tar) * 2
+    
 
 
 
