@@ -102,7 +102,7 @@ void
 
   if (!*arg)
   {
-    send_to_char ("Which bodypart do you want to put your firearm against?\n", ch);
+    send_to_char ("Which bodypart do you want to put your bow against?\n", ch);
     return;
   }
   if (!strcmp(arg, "body"))
@@ -151,7 +151,7 @@ void
 
   if (!((obj = get_equip (ch, WEAR_BOTH)) || (obj = get_equip (ch, WEAR_PRIM))  || (obj = get_equip (ch, WEAR_SEC))) || (GET_ITEM_TYPE(obj) != ITEM_FIREARM))
   {
-    send_to_char("You need to be wielding a firearm to do that.\n", ch);
+    send_to_char("You need to be wielding a bow to do that.\n", ch);
     return;
   }
 
@@ -239,7 +239,7 @@ void
 
   if (!((obj = get_equip (ch, WEAR_BOTH)) || (obj = get_equip (ch, WEAR_PRIM)) || (obj = get_equip (ch, WEAR_SEC))) || (GET_ITEM_TYPE(obj) != ITEM_FIREARM))
   {
-    send_to_char("You need to be wielding some type of firearm to do that.\n", ch);
+    send_to_char("You need to be wielding some type of bow or a crossbow to do that.\n", ch);
     return;
   }
 
@@ -1109,7 +1109,7 @@ void
       }
       else
       {
-        send_to_char("Your off-hand may contain rounds, otherwise it needs to be empty.\n", ch);
+        send_to_char("Your off-hand may contain arrows, otherwise it needs to be empty.\n", ch);
         return;
       }
     }
@@ -1158,7 +1158,7 @@ void
       }
       else
       {
-        send_to_char("Your off-hand may contain rounds, otherwise it needs to be empty.\n", ch);
+        send_to_char("Your off-hand may contain arrows, otherwise it needs to be empty.\n", ch);
         return;
       }
     }
@@ -1183,7 +1183,7 @@ void
       }
       else
       {
-        send_to_char("Your off-hand may contain rounds, otherwise it needs to be empty.\n", ch);
+        send_to_char("Your off-hand may contain arrows, otherwise it needs to be empty.\n", ch);
         return;
       }
     }
@@ -1213,13 +1213,13 @@ void
 
   if (ptrBullet->o.bullet.caliber != ptrClip->o.clip.caliber)
   {
-    send_to_char ("Those kind of rounds won't fit in to that kind of magazine.\n", ch);
+    send_to_char ("That won't fit there.\n", ch);
     return;
   }
 
   if (ptrBullet->o.bullet.size != ptrClip->o.clip.size)
   {
-    send_to_char ("Those kind of rounds won't fit in to that kind of magazine.\n", ch);
+    send_to_char ("That won't fit there.\n", ch);
     return;
   }
 
@@ -1317,7 +1317,7 @@ void
 
   if (!(count = ch->delay_info3))
   {
-    send_to_char ("You must have a round somewhere on you.\n", ch);
+    send_to_char ("You must have an arrow somewhere on you.\n", ch);
     return;
   }
 
@@ -1333,7 +1333,7 @@ void
     }
     else
     {
-      send_to_char ("You must be holding a firearm round.\n", ch);
+      send_to_char ("You must be holding a bolt or an arrow.\n", ch);
       return;
     }
   }
@@ -1341,7 +1341,7 @@ void
   {
     if (ch->left_hand && ch->right_hand)
     {
-      send_to_char ("Having taken another object in hand, you cease loading your magazine.\n",  ch);
+      send_to_char ("Having taken another object in hand, you cease loading.\n",  ch);
       return;
     }
     for (i = 0; i < MAX_WEAR; i++)
@@ -1776,7 +1776,7 @@ void
         }
         else
         {
-          send_to_char("Your off-hand may contain some rounds, otherwise it needs to be empty.\n", ch);
+          send_to_char("Your off-hand may contain some arrows, otherwise it needs to be empty.\n", ch);
           return;
         }
       }
@@ -2383,7 +2383,7 @@ void
   if (!(((ptrFirearm = ch->right_hand) && GET_ITEM_TYPE (ptrFirearm) == ITEM_FIREARM)
     || ((ptrFirearm = ch->left_hand) && GET_ITEM_TYPE (ptrFirearm) == ITEM_FIREARM)))
   {
-    send_to_char ("You must be holding a firearm.\n", ch);
+    send_to_char ("You must be holding a bow.\n", ch);
     return;
   }
 
@@ -2443,7 +2443,7 @@ void
 	 
       if (ch->left_hand && ch->right_hand)
       {
-        send_to_char ("Having taken another object in hand, you cease loading your firearm.\n",  ch);
+        send_to_char ("Having taken another object in hand, you cease loading your bow.\n",  ch);
         return;
       }
       for (i = 0; i < MAX_WEAR; i++)
@@ -2476,7 +2476,7 @@ void
     }
     if (!ptrRound)
     {
-      send_to_char("Having lost your rounds, you cease loading your firearm.\n", ch);
+      send_to_char("Having lost your arrows, you cease loading your bow.\n", ch);
       return;
     }
 
@@ -2553,7 +2553,7 @@ void
     {
       if (ch->left_hand && ch->right_hand)
       {
-        send_to_char ("Having taken another object in hand, you cease loading your firearm.\n",  ch);
+        send_to_char ("Having taken another object in hand, you cease loading your bow.\n",  ch);
         return;
       }
       for (i = 0; i < MAX_WEAR; i++)
@@ -2664,7 +2664,7 @@ void
   if (!(((ptrFirearm = ch->right_hand) && GET_ITEM_TYPE (ptrFirearm) == ITEM_FIREARM)
     || ((ptrFirearm = ch->left_hand) && GET_ITEM_TYPE (ptrFirearm) == ITEM_FIREARM)))
   {
-    send_to_char ("You must first be holding a loaded firearm.\n", ch);
+    send_to_char ("You must first be holding a loaded bow or a crossbow.\n", ch);
     return;
   }
 
