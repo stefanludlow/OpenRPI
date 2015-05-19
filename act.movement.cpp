@@ -70,7 +70,7 @@ bool
 const int movement_loss[] =
 {
 	1,				/* Inside */
-	2,				/* MoonPlain */
+	2,				/* MoonPlain test */
 	4,				/* MoonHill */
 	6,				/* MoonMountain */
 	6,				/* MoonSand */
