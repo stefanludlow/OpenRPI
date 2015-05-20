@@ -196,7 +196,9 @@ extern ROLE_DATA *role_list;
 extern OBJ_DATA *object_list;
 extern struct zone_data *zone_table;
 extern struct use_table_data use_table[];	// handler.c
-extern const int weapon_armor_table[10][6];
+extern const int weapon_armor_table[10][6]; // fight.cpp
+const int weapon_standards[5][4][7]; //olc.cpp
+const int armor_standards[5][6][5]; //olc.cpp
 extern const char *item_types[];
 extern const char *trap_bits[];
 

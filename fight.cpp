@@ -302,30 +302,30 @@ const int weapon_armor_table[10][6] =
 //4 - Mail
 //5 - Scale
 //6 - Plate
-//1  2   3   4   5   6
-{ 0, 0, -1, -2, -1, -3}, // stab -- small-blades, knives, daggers
-{ 0, 0, -1, -2, -1, -3}, // pierce -- polearms, arrows
-{ 0, 0, -1, -2, -3, -3}, // chop -- axes
-{-1, 1, 0, 1, -2, -2}, // bludgeon -- clubs, flails
-{ 1, 1, 0, -2, -3, -3}, // slash -- swords
-{ 1, 0, 0, -2, -3, -4}, // lash -- whips
-{ 1, 0, 0, 2, 2, 2}, // burn - blowtorches, flamethrowers, etc.
-{ 0, 0, -2, -3, -4, -5}, // jacketed gunshots
-{ 1, 0, -1, -2, -5, -6}, // hollow-point gunshots - +2 armour to all, +4 bleed
-{ 0, 0, 0, 0, 0, 0} // armour-piercng gunshots - -2 armour to all,
+// 1   2   3   4   5   6
+{  0,  0,  0, -1,  0, -1}, // stab -- small-blades, knives, daggers
+{  0,  0,  0,  0, -1, -1}, // pierce -- polearms, arrows
+{  1,  0, -1, -1, -1,  0}, // chop -- axes
+{ -1, -1, -1,  0,  0,  1}, // bludgeon -- clubs, flails
+{  0,  0,  0,  0,  0, -1}, // slash -- swords
+{  0, -1, -1, -2, -3, -4}, // lash -- whips
+{  1, -1, -1,  1,  1,  2}, // burn - blowtorches, flamethrowers, etc.
+{  0,  0,  0, -1, -1, -2}, // jacketed gunshots
+{ -1, -1, -1, -2, -2, -3}, // hollow-point gunshots - +2 armour to all, +4 bleed
+{  1,  1,  1,  0,  0,  0} // armour-piercng gunshots - -2 armour to all,
 };
 
 const int weapon_nat_attack_table[8][6]=
 {
-//1   2   3   4   5   6
-{-1, -2, -2, -2, -2, -3}, // punch -- trying to punch-out a dude in armor will fail.
-{ 0, 0, -1, -2, -1, -3}, // bite -- pierce
-{ 0, 0, -1, -2, -3, -3}, // claw -- slash
-{ 0, 0, -1, -2, -1, -3}, // peck -- pierce
-{ 0, 0, 0, 1, -2, -2}, // trample/feet -- crush
-{ 0, 0, -1, -2, -1, -3}, // gore/tusks -- pierce
-{ 0, 0, 0, 1, 2, 2}, // chill -- null
-{ 0, 0, -1, -2, -1, -3} // sting -- pierce
+// 1   2   3   4   5   6
+{ -1, -2, -2, -2, -2, -3}, // punch -- trying to punch-out a dude in armor will fail.
+{  0,  0,  0,  0, -1, -1}, // bite -- pierce
+{  0,  0,  0, -1,  0, -1}, // claw -- slash
+{  0,  0,  0,  0, -1, -1}, // peck -- pierce
+{ -1, -1, -1,  0,  0, -1}, // trample/feet -- crush
+{  0,  0, -1,  0,  0, -1}, // gore/tusks -- pierce
+{ -1, -1,  0,  1,  1,  1}, // chill -- null
+{  0,  0,  0, -1,  0, -1}  // sting -- pierce
 };
 
 
