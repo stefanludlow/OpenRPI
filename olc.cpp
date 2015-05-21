@@ -976,29 +976,29 @@ const int weapon_standards[5][4][7] =
 		{1, 4, 1, 500, 12, 200, -8}, //Small-Blade
 		{1, 5, 1, 120, 20, 550, -8}, //Bludgeon
 		{1, 7, 0, 500, 17, 600, -8}, //Polearms
-		{1, 7, 1, 500, 32, 500, -8}, //Long-Blade
+		{1, 7, 1, 500, 32, 500, -8} //Long-Blade
 	},
 	//Poor Quality
 	{
 		{1, 4, 2, 800, 25, 175, -4}, //Small-Blade
 		{1, 5, 2, 800, 40, 510, -4}, //Bludgeon
 		{1, 7, 1, 800, 35, 590, -4}, //Polearms
-		{1, 7, 2, 800, 65, 500, -4}, //Long-Blade
+		{1, 7, 2, 800, 65, 500, -4} //Long-Blade
 	},
 	//Ordinary Quality
 	{
 		{1, 4, 3, 1000, 75, 150, 0},  //Small-Blade
 		{1, 5, 3, 1000, 120, 490, 0}, //Bludgeon
 		{1, 7, 2, 1000, 100, 570, 0}, //Polearms
-		{1, 7, 3, 1000, 200, 475, 0}, //Long-Blade
+		{1, 7, 3, 1000, 200, 475, 0} //Long-Blade
 	},
 	//Good Quality
 	{
 		{1, 4, 4, 1100, 225, 125, 4}, //Small-Blade
 		{1, 5, 4, 1100, 450, 475, 4}, //Bludgeon
 		{1, 7, 3, 1100, 400, 525, 4}, //Polearms
-		{1, 7, 4, 1100, 800, 450, 4}, //Long-Blade
-	}
+		{1, 7, 4, 1100, 800, 450, 4} //Long-Blade
+	},
 	//Superb Quality
 	{
 		{1, 4, 4, 1300, 675, 100, 8},  //Small-Blade
@@ -1018,7 +1018,7 @@ const int armor_standards[5][6][5] =
 		{ 3, 310, 300, 2300, 1}, // Hardened Leather
 		{ 4, 410, 450, 3000, 2}, // Mail	
 		{ 4, 410, 450, 3000, 2}, // Scale
-		{ 5, 500, 900, 5000, 3}, // Plate
+		{ 5, 500, 900, 5000, 3} // Plate
 	},
 	// Poor Quality
 	{
@@ -1027,7 +1027,7 @@ const int armor_standards[5][6][5] =
 		{ 3, 340, 400, 2200, 1}, // Hardened Leather
 		{ 4, 440, 550, 3000, 2}, // Mail	
 		{ 4, 440, 550, 3000, 2}, // Scale
-		{ 5, 530, 1200, 4500, 3}, // Plate
+		{ 5, 530, 1200, 4500, 3} // Plate
 	},
 	// Ordinary Quality
 	{
@@ -1036,7 +1036,7 @@ const int armor_standards[5][6][5] =
 		{ 4, 370, 1200, 2100, 1}, // Hardened Leather
 		{ 5, 470, 1650, 4000, 2}, // Mail	
 		{ 5, 470, 1650, 4000, 2}, // Scale
-		{ 6, 560, 3000, 5500, 3}, // Plate
+		{ 6, 560, 3000, 5500, 3} // Plate
 	},
 	// Good Quality
 	{
@@ -1045,7 +1045,7 @@ const int armor_standards[5][6][5] =
 		{ 5, 410, 12800, 2000, 1}, // Hardened Leather
 		{ 6, 510, 17600, 5000, 2}, // Mail	
 		{ 6, 510, 17600, 5000, 2}, // Scale
-		{ 7, 590, 1200, 7500, 3}, // Plate
+		{ 7, 590, 1200, 7500, 3} // Plate
 	},
 	// Superb Quality
 	{
@@ -6670,7 +6670,7 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
     int quality = 2; // assume ordinary quality as a default.
     int sneak_mod = 0; // how much does this reduce our sneak?
     int base_weight = 0, base_cost = 0, base_quality = 0;
-	int weapon_type = 0
+	int weapon_type = 0;
 
     AFFECTED_TYPE *af = NULL;
     AFFECTED_TYPE *saf = NULL;
@@ -6941,11 +6941,11 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
 		weapon_type = (	obj->o.od.value[3] == SKILL_BLUDGEON 	? 1 : 
 						obj->o.od.value[3] == SKILL_POLEARM 	? 2 : 
 						obj->o.od.value[3] == SKILL_LONG_BLADE 	? 3 : 
-						0) // 0 means SKILL_SMALL_BLADE or any other skill
+						0); // 0 means SKILL_SMALL_BLADE or any other skill
 	
         // If this is a throwing weapon, then we reduce it to the quality below.
         if (IS_SET (obj->obj_flags.extra_flags, ITEM_THROWING))    
-			quality = MAX(0, quality - 1)
+			quality = MAX(0, quality - 1);
 
 		// Strip out any existing values folks might have entered in for weapon skills.
 		for (int xind = 1; xind <= LAST_WEAPON_SKILL; xind++)
@@ -7453,11 +7453,11 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
         else
 		{
 			// Set the standards according to the armor_standards table
-			obj->o.armor.armor_value = armor_standards[quality][obj->o.armor.armor_type][0]
-			base_quality = armor_standards[quality][obj->o.armor.armor_type][1]
-			base_cost = armor_standards[quality][obj->o.armor.armor_type][2]
-			base_weight = armor_standards[quality][obj->o.armor.armor_type][3]
-			sneak_mod = armor_standards[quality][obj->o.armor.armor_type][4]
+			obj->o.armor.armor_value = armor_standards[quality][obj->o.armor.armor_type][0];
+			base_quality = armor_standards[quality][obj->o.armor.armor_type][1];
+			base_cost = armor_standards[quality][obj->o.armor.armor_type][2];
+			base_weight = armor_standards[quality][obj->o.armor.armor_type][3];
+			sneak_mod = armor_standards[quality][obj->o.armor.armor_type][4];
 		}
     /*  {
 
