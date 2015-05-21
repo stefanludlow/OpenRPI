@@ -45,6 +45,7 @@ int load_char_objects;
 extern int fgetc (FILE * fp);
 extern int fread_number (FILE * fp);
 extern char *fread_word (FILE * fp);
+extern std::multimap<int, variable_data> obj_variable_list;
 
 void write_char_data (CHAR_DATA * ch, FILE * fp);
 void write_obj_data (OBJ_DATA * obj,
@@ -101,7 +102,7 @@ fwrite_a_obj (OBJ_DATA * obj, FILE * fp)
     OBJECT_DAMAGE *damage;
     LODGED_OBJECT_INFO *lodged;
     OBJ_DATA *proto = NULL;
-
+	
     proto = vtoo (obj->nVirtual);
 
     if (!proto)
@@ -347,6 +348,47 @@ fwrite_a_obj (OBJ_DATA * obj, FILE * fp)
     if (obj->room_pos)
         fprintf (fp, "position %d\n", obj->room_pos);
 
+	// Weapons revert to prototype ovals for damage
+	if (obj->obj_flags.type_flag == ITEM_WEAPON)
+	{
+		obj->o.od.value[1] = (proto->o.od.value[1]);
+		obj->o.od.value[2] = proto->o.od.value[2];
+		obj->o.od.value[5] = proto->o.od.value[5];
+		
+		int xcat[10];
+
+		for (int ind = 0; ind <= 9; ind++)
+			xcat[ind] = vc_category(obj->var_cat[ind]);
+
+		for (int ind = 0; ind <= 9; ind++)
+		{
+			if (xcat[ind] && obj->var_color[ind] && *obj->var_color[ind])
+			{
+				for (std::multimap<int, variable_data>::iterator it = obj_variable_list.begin(); it != obj_variable_list.end(); it++)
+				{
+					if (!str_cmp(it->second.shorts, obj->var_color[ind]))
+					{
+						if (it->second.category_id == xcat[ind])
+						{
+							// Now, if the item type matches, apply the oval modifications and the skill adjustments.
+							if (GET_ITEM_TYPE(obj) == it->second.item_type)
+							{
+								obj->o.od.value[1] += it->second.oval1;
+								obj->o.od.value[2] += it->second.oval2;
+								obj->o.od.value[5] += it->second.oval5;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	// Armor reverts to prototype oval for AC
+	if (obj->obj_flags.type_flag == ITEM_ARMOR)
+		obj->o.od.value[0] = proto->o.od.value[0];
+	
+
     fprintf (fp, "values %d %d %d %d %d %d\n", obj->o.od.value[0],
              obj->o.od.value[1], obj->o.od.value[2], obj->o.od.value[3],
              obj->o.od.value[4], obj->o.od.value[5]);
@@ -531,7 +573,7 @@ fread_obj (FILE * fp)
     int old_money = 0;
     long nFilePosition = 0;
     char *p = '\0';
-    OBJ_DATA *obj = NULL;
+	OBJ_DATA *obj = NULL;
     OBJ_DATA *tobj = NULL;
     WRITING_DATA *writing = NULL;
     AFFECTED_TYPE *af = NULL;
@@ -543,7 +585,7 @@ fread_obj (FILE * fp)
     LODGED_OBJECT_INFO *lodged = NULL;
     OBJ_CLAN_DATA *tclan = NULL;
     int writing_oval;
-
+	
 	if ((p = fread_word(fp)))
 	{
 	    if (strcmp (p, "Id"))

@@ -6954,7 +6954,7 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
 		        remove_obj_affect_location (obj, 10000 + xind);
 		}
 		
-		// Small-Blade gets a small bonus to Deflect
+		// Small weapons gets a small bonus to Deflect
         if (obj->o.od.value[0] == 2)
         {
             CREATE (af, AFFECTED_TYPE, 1);
@@ -7459,7 +7459,8 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
 			base_weight = armor_standards[quality][obj->o.armor.armor_type][3];
 			sneak_mod = armor_standards[quality][obj->o.armor.armor_type][4];
 		}
-    /*  {
+    /*  Commented out by Ceredir 201505201515
+		{  
 
             switch (obj->o.armor.armor_type)
             {
