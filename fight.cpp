@@ -6957,7 +6957,9 @@ real_damage (CHAR_DATA *ch, int damage, int *location, int type, int source)
     for (prim_eq = ch->equip; prim_eq; prim_eq = prim_eq->next_content)
     {
         if (GET_ITEM_TYPE(prim_eq) == ITEM_ARMOR && IS_SET(prim_eq->o.od.value[2], 1 << *location))
+		{
             break;
+		}
     }
 
     // If we didn't find any prim_eq on the first try, try again, this time looking for secondary
@@ -6983,12 +6985,12 @@ real_damage (CHAR_DATA *ch, int damage, int *location, int type, int source)
     
         for (sec_eq = ch->equip; sec_eq; sec_eq = sec_eq->next_content) 
         { 
-            if (sec_eq != prim_eq && GET_ITEM_TYPE(sec_eq) == ITEM_ARMOR && IS_SET(sec_eq->o.od.value[2], 1 << *location)) 
+            if (sec_eq != prim_eq && GET_ITEM_TYPE(sec_eq) == ITEM_ARMOR && IS_SET(sec_eq->o.od.value[2], 1 << *location)) 	
                 break; 
         } 
     }
     
-    // If we didn't find any primary sec_eq on the first try, try again, this time looking for secondary 
+    // If we didn't find any sec_eq on the first try, try again, this time looking for secondary 
     // armour - this will result in a case of primary + secondary, or secondary + secondary.
  
     if (!sec_eq) 
@@ -6997,6 +6999,7 @@ real_damage (CHAR_DATA *ch, int damage, int *location, int type, int source)
         { 
             if (GET_ITEM_TYPE(sec_eq) == ITEM_ARMOR && IS_SET(sec_eq->o.od.value[3], 1 << *location)) 
             { 
+				
                 prim_used_as_sec = true; 
                 break; 
             } 
@@ -7181,7 +7184,7 @@ real_damage (CHAR_DATA *ch, int damage, int *location, int type, int source)
     for (dch = ch->room->people; dch; dch = dch->next_in_room)
         if (IS_SET (dch->debug_mode, DEBUG_FIGHT))
         {
-            sprintf (buf, "Armor Layering: Prim %s Sec %s 1Real %d 2Real %d", prim_eq, sec_eq, one_real, two_real);
+            sprintf (buf, "Armor Layering: Prim AC: %d + Sec AC: %d Dam %d \n\r", one_real, two_real, damage);
             send_to_char(buf, dch);
         }
 
