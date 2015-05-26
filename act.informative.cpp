@@ -318,11 +318,26 @@ target_sighted (CHAR_DATA * ch, CHAR_DATA * target)
 
     if (!ch->sighted)
     {
-	   if (IS_SET (ch->act, ACT_SHOOTER) && !is_brother (ch, target))
+	   if (IS_SET (ch->act, ACT_SHOOTER) && !is_brother (ch, target) && (!IS_SET(ch->act, ACT_WILDLIFE) && !IS_SET(target->act, ACT_WILDLIFE)))
 	  {
 	    // add to overwatch so archers will shoot non clan members
 		send_to_gods ("NPC Adding an enemy to their overwatch list, arrows will be fired shortly.");
-		add_overwatch(ch, target, 0, false);
+		add_overwatch(ch, target, 0, false);	
+		
+		//trigger the on_scan cue
+		hook: cue_on_scan reflex
+			typedef std::multimap<mob_cue,std::string>::const_iterator N;
+			std::pair<N,N> range = ch->mob->cues->equal_range (cue_on_scan);
+            for (N n = range.first; n != range.second; n++)
+            {
+                std::string cue = n->second;
+                if (!cue.empty ())
+                {
+                    strcpy (buf, cue.c_str ());
+                    command_interpreter (ch, buf);
+                }
+            }
+		
 	  }
 	
         CREATE (ch->sighted, SIGHTED_DATA, 1);
