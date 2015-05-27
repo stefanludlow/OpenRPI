@@ -302,30 +302,30 @@ const int weapon_armor_table[10][6] =
 //4 - Mail
 //5 - Scale
 //6 - Plate
-//1  2   3   4   5   6
-{ 0, 0, -1, -2, -1, -3}, // stab -- small-blades, knives, daggers
-{ 0, 0, -1, -2, -1, -3}, // pierce -- polearms, arrows
-{ 0, 0, -1, -2, -3, -3}, // chop -- axes
-{-1, 1, 0, 1, -2, -2}, // bludgeon -- clubs, flails
-{ 1, 1, 0, -2, -3, -3}, // slash -- swords
-{ 1, 0, 0, -2, -3, -4}, // lash -- whips
-{ 1, 0, 0, 2, 2, 2}, // burn - blowtorches, flamethrowers, etc.
-{ 0, 0, -2, -3, -4, -5}, // jacketed gunshots
-{ 1, 0, -1, -2, -5, -6}, // hollow-point gunshots - +2 armour to all, +4 bleed
-{ 0, 0, 0, 0, 0, 0} // armour-piercng gunshots - -2 armour to all,
+// 1   2   3   4   5   6
+{  0,  0,  0, -1,  0, -1}, // stab -- small-blades, knives, daggers
+{  0,  0,  0,  0, -1, -1}, // pierce -- polearms, arrows
+{  1,  0, -1, -1, -1,  0}, // chop -- axes
+{ -1, -1, -1,  0,  0,  1}, // bludgeon -- clubs, flails
+{  0,  0,  0,  0,  0, -1}, // slash -- swords
+{  0, -1, -1, -2, -3, -4}, // lash -- whips
+{  1, -1, -1,  1,  1,  2}, // burn - blowtorches, flamethrowers, etc.
+{  0,  0,  0, -1, -1, -2}, // jacketed gunshots
+{ -1, -1, -1, -2, -2, -3}, // hollow-point gunshots - +2 armour to all, +4 bleed
+{  1,  1,  1,  0,  0,  0} // armour-piercng gunshots - -2 armour to all,
 };
 
 const int weapon_nat_attack_table[8][6]=
 {
-//1   2   3   4   5   6
-{-1, -2, -2, -2, -2, -3}, // punch -- trying to punch-out a dude in armor will fail.
-{ 0, 0, -1, -2, -1, -3}, // bite -- pierce
-{ 0, 0, -1, -2, -3, -3}, // claw -- slash
-{ 0, 0, -1, -2, -1, -3}, // peck -- pierce
-{ 0, 0, 0, 1, -2, -2}, // trample/feet -- crush
-{ 0, 0, -1, -2, -1, -3}, // gore/tusks -- pierce
-{ 0, 0, 0, 1, 2, 2}, // chill -- null
-{ 0, 0, -1, -2, -1, -3} // sting -- pierce
+// 1   2   3   4   5   6
+{ -1, -2, -2, -2, -2, -3}, // punch -- trying to punch-out a dude in armor will fail.
+{  0,  0,  0,  0, -1, -1}, // bite -- pierce
+{  0,  0,  0, -1,  0, -1}, // claw -- slash
+{  0,  0,  0,  0, -1, -1}, // peck -- pierce
+{ -1, -1, -1,  0,  0, -1}, // trample/feet -- crush
+{  0,  0, -1,  0,  0, -1}, // gore/tusks -- pierce
+{ -1, -1,  0,  1,  1,  1}, // chill -- null
+{  0,  0,  0, -1,  0, -1}  // sting -- pierce
 };
 
 
@@ -3486,6 +3486,14 @@ strike (CHAR_DATA * src, CHAR_DATA * tar, int attack_num, int mode)
     // Scale defender's defense by his effort
     if (tar->effort >= 1 && tar->effort <= 99)
         defense_modifier = (defense_modifier * tar->effort) / 100;
+        
+    // Scale attacker's offense based on their armor_penalty - the heavier the armor, the more difficult to hit something
+    attack -= armor_penalty(src) * 3;
+    
+    // Scale defender's defense based on their armor_penalty - the heavier the armor, the more difficult to dodge or parry, 
+    //but to a lesser degree than in case of attack
+    defense -= armor_penalty(tar) * 2;
+    
 
 
 
@@ -6923,11 +6931,13 @@ is_loc_covered(CHAR_DATA *ch, int location, int want, int mode)
 int
 real_damage (CHAR_DATA *ch, int damage, int *location, int type, int source)
 {
-    OBJ_DATA *prim_eq = NULL;
-    OBJ_DATA *sec_eq = NULL;
+    OBJ_DATA *prim_eq = NULL;   // the names of prim_eq and sec_eq are confusing, as they are not directly 
+    OBJ_DATA *sec_eq = NULL;    // related to primary and secondary armor.
     OBJ_DATA *cloth_eq = NULL;
     OBJ_DATA *armor1 = NULL;
     OBJ_DATA *armor2 = NULL;
+    CHAR_DATA *dch;
+    char buf[MAX_STRING_LENGTH];
     int prim_real = 0;
     int sec_real = 0;
     int one_real = 0;
@@ -6947,7 +6957,9 @@ real_damage (CHAR_DATA *ch, int damage, int *location, int type, int source)
     for (prim_eq = ch->equip; prim_eq; prim_eq = prim_eq->next_content)
     {
         if (GET_ITEM_TYPE(prim_eq) == ITEM_ARMOR && IS_SET(prim_eq->o.od.value[2], 1 << *location))
+		{
             break;
+		}
     }
 
     // If we didn't find any prim_eq on the first try, try again, this time looking for secondary
@@ -6964,22 +6976,22 @@ real_damage (CHAR_DATA *ch, int damage, int *location, int type, int source)
             }
         }
     }
-//Commenting out to implement primary to secondary bit - Icarus
-    // Same for secondary eq, but we can't be using our primary object already.
-//    for (sec_eq = ch->equip; sec_eq; sec_eq = sec_eq->next_content)
-//    {
-//        if (sec_eq != prim_eq && GET_ITEM_TYPE(sec_eq) == ITEM_ARMOR && IS_SET(sec_eq->o.od.value[3], 1 << *location))
-//            break;
-//    }
-   
-       for (sec_eq = ch->equip; sec_eq; sec_eq = sec_eq->next_content) 
-    { 
-        if (sec_eq != prim_eq && GET_ITEM_TYPE(sec_eq) == ITEM_ARMOR && IS_SET(sec_eq->o.od.value[2], 1 << *location)) 
-            break; 
-    } 
- 
-    // If we didn't find any PRIMARY sec_eq on the first try, try again, this time looking for SECONDARY 
-    // armour - this way we can stack two bits of primary armour. 
+    else
+    {
+
+        // Let's see if we have a second layer of primary armor on our location, so that we can stack 
+        // two pieces of primary armor. We only do this if we already found prim_eq, because if we didn't
+        // then we already know there is no primary armor.
+    
+        for (sec_eq = ch->equip; sec_eq; sec_eq = sec_eq->next_content) 
+        { 
+            if (sec_eq != prim_eq && GET_ITEM_TYPE(sec_eq) == ITEM_ARMOR && IS_SET(sec_eq->o.od.value[2], 1 << *location)) 	
+                break; 
+        } 
+    }
+    
+    // If we didn't find any sec_eq on the first try, try again, this time looking for secondary 
+    // armour - this will result in a case of primary + secondary, or secondary + secondary.
  
     if (!sec_eq) 
     { 
@@ -6987,6 +6999,7 @@ real_damage (CHAR_DATA *ch, int damage, int *location, int type, int source)
         { 
             if (GET_ITEM_TYPE(sec_eq) == ITEM_ARMOR && IS_SET(sec_eq->o.od.value[3], 1 << *location)) 
             { 
+				
                 prim_used_as_sec = true; 
                 break; 
             } 
@@ -7081,7 +7094,7 @@ real_damage (CHAR_DATA *ch, int damage, int *location, int type, int source)
     // any other factors. You're always better off wearing something instead
     // of nothing.
 
-    if (!prim_eq && !sec_eq)
+    if (!prim_eq && !sec_eq)    //No armor found
     {
         // Last ditch chance - do we have an item of clothing that covers this portion?
         // If so, we'll get at least 1 point of protection.
@@ -7093,21 +7106,13 @@ real_damage (CHAR_DATA *ch, int damage, int *location, int type, int source)
                 break;
             }
         }
-
-        damage = damage - one_real;
-        damage = MAX(damage, 0);
-        damage = MIN(damage, base_damage);
-
-        // Obviously, if we have neither, then there's no problem.
-        return damage;
     }
-    else if (prim_eq && !sec_eq)
+    else if (prim_eq && !sec_eq)    //Only 1 piece of armor found
     {
         prim_real = prim_eq->o.armor.armor_value;
 
-        // If this is a piece of secondary armour, we lose a point of protection.
-        if (sec_used_as_prim)
-            prim_real = MAX(prim_real - 1, 1);
+        if (sec_used_as_prim)    // If this is a piece of secondary armour, we lose two points of protection.
+            prim_real = MAX(prim_real - 2, 1);
 
         if (!source)
             prim_real = MAX(prim_real - object__determine_condition(prim_eq) - weapon_armor_table[type][prim_eq->o.armor.armor_type], 1);
@@ -7115,31 +7120,30 @@ real_damage (CHAR_DATA *ch, int damage, int *location, int type, int source)
             prim_real = MAX(prim_real - object__determine_condition(prim_eq) - weapon_nat_attack_table[type][prim_eq->o.armor.armor_type], 1);
 
         one_real = prim_real;
-
     }
-    else if (sec_eq && !prim_eq)
+    else if (sec_eq && !prim_eq)    //Something went wrong
     {
       // Note: if restoring from git, there is a bug where prim_real is used in this function body in some locations.
       send_to_gods("ERROR - character has secondary equipment but not primary, but the secondary should be used as primary with a penalty");
     }
-    else if (sec_eq && prim_eq)
+    else if (sec_eq && prim_eq)    //Found 2 pieces of armor
     {
         // We determine the "real" protection values of the armour by
         // subtracting the condition and adding the weapon-vs-type table, for a minimum of zero.
         // We also need to check whether we're using the weapon vs armour or nat attack vs armor table.
+        
         prim_real = prim_eq->o.armor.armor_value;
 
-        // If this is a piece of secondary armour, we lose a point of protection.
-        if (sec_used_as_prim)
-            prim_real = MAX(prim_real - 1, 1);
+        if (sec_used_as_prim)    // If this is a piece of secondary armour, we lose a two points of protection.
+            prim_real = MAX(prim_real - 2, 1);
 
         if (!source)
             prim_real = MAX(prim_real - object__determine_condition(prim_eq) - weapon_armor_table[type][prim_eq->o.armor.armor_type], 1);
         else
             prim_real = MAX(prim_real - object__determine_condition(prim_eq) - weapon_nat_attack_table[type][prim_eq->o.armor.armor_type], 1);
 
-        // We subtract an additional 1 points for secondary armour.
-        sec_real = MAX(sec_eq->o.armor.armor_value - 1, 1);
+        if (!prim_used_as_sec)    // We subtract an additional 2 points for secondary armour.
+            sec_real = MAX(sec_eq->o.armor.armor_value - 2, 1);
 
         if (!source)
             sec_real = MAX(sec_real - object__determine_condition(sec_eq) - weapon_armor_table[type][sec_eq->o.armor.armor_type], 1);
@@ -7160,33 +7164,29 @@ real_damage (CHAR_DATA *ch, int damage, int *location, int type, int source)
             armor1 = sec_eq;
         }
 
-        // We determine the impacts of underarmour a bit differently: we basically want to get the quality,
-        // and then slap on a value based on that. A bit cheesy, and nothing really taking in to account
-        // the armour at all, but it's the only way to avoid people needing double armour or dying, or
-        // being gods by always doubling-up.
-        if (IS_SET (armor2->econ_flags, (QUALITY_POOR)))
-        {
-            two_real = 1;
-        }
-        else if (IS_SET (armor2->econ_flags, (QUALITY_ORDINARY)))
-        {
-            two_real = 2;
-        }
-        else if (IS_SET (armor2->econ_flags, (QUALITY_GOOD)) ||  (IS_SET (armor2->econ_flags, (QUALITY_SUPERB))))
-        {
-            two_real = 3;
-        }
+        // We determine the impacts of underarmour a bit differently: we just add 1 point
+        // because they're already getting a big bonus by using the higher of the two armor
+        // values and thus being more durable towards a broader variety of damage
+        
+        two_real = 1;
+        
     }
 
 
     // Now that we have an armor 1 and possibly 2, as well as our real values,
     // let's subtract them from damage, then make sure we're dealing a minimum
     // of 0 damage, and not a greater amount of damage than our base.
-    //COMMENTED OUT BY ICARUS - Want us to just apply a flat -1 to all damage. Original function is damage = damage - one_real - two_real;
-    //damage = damage - one_real - two_real;
-    damage = damage - prim_real - 1; 
+
+    damage = damage - one_real - two_real; 
     damage = MAX(damage, 0);
     damage = MIN(damage, base_damage);
+    
+    for (dch = ch->room->people; dch; dch = dch->next_in_room)
+        if (IS_SET (dch->debug_mode, DEBUG_FIGHT))
+        {
+            sprintf (buf, "Armor Layering: Prim AC: %d + Sec AC: %d Dam %d \n\r", one_real, two_real, damage);
+            send_to_char(buf, dch);
+        }
 
     // And we're done.
     return damage;
