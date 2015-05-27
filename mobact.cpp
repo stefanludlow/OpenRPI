@@ -3082,6 +3082,25 @@ is_threat (CHAR_DATA * ch, CHAR_DATA * tch)
     return 0;
 }
 
+// Checks whether two mobs are both flagged wildlife. 
+// 0 if neither is wildlife
+// 1 if ch is wildlife
+// 2 if target is wildlife
+// 3 if both are wildlife
+int
+wildlife_check (CHAR_DATA * ch, CHAR_DATA * target) 
+{
+	int result = 0;
+	
+	if (IS_SET (ch->act, ACT_WILDLIFE)) 
+		result += 1;
+	
+	if (IS_SET (target->act, ACT_WILDLIFE))
+		result += 2;
+	
+	return result;
+}
+
 int
 would_attack (CHAR_DATA * ch, CHAR_DATA * tch)
 {
