@@ -1795,6 +1795,7 @@ do_variables (CHAR_DATA *ch, char *argument, int cmd)
                 std::ostringstream conversion4;
                 conversion4 << it->second.skill_mod;
 
+
                 for (i = 0, j = (3 - conversion4.str().length()); i < j; i++)
                     output.append(" ");
 
