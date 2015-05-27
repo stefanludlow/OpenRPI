@@ -364,8 +364,8 @@ target_sighted_reaction (CHAR_DATA * ch, CHAR_DATA * target)
 		if (IS_SET(ch->act, ACT_SHOOTER))			
 		{
 			// add to overwatch so archers will shoot non clan members
-			sprintf (buf2, "NPC %s in room %d Adding %s to their overwatch list, arrows will be fired shortly.", ch->tname, ch->in_room, target->tname);
-			send_to_gods (buf2);
+			sprintf (buf2, "#3[Guardian: %s]#0 Room %d - Adding %s to overwatch list, arrows will be fired shortly.", ch->tname, ch->in_room, target->tname);
+			send_to_guardians (buf2, 0xFF);
 			add_overwatch(ch, target, 0, false);	
 		}
 	}

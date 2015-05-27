@@ -420,7 +420,7 @@ mob_wander (CHAR_DATA * ch)
     ch->last_room = room_exit_virt;
 
     i = exit_tab[to_exit];
-    if (IS_SET (ch->room->dir_option[i]->exit_info, EX_CLOSED))
+    if (IS_SET (ch->room->dir_option[i]->exit_info, EX_CLOSED) && IS_SET(lookup_race_int(ch->race, RACE_DOOR_BITS), RACE_DOOR_OPEN))
     {
         one_argument (ch->room->dir_option[i]->keyword, buf2);
         sprintf (buf, "%s %s", buf2, dirs[i]);
