@@ -6681,6 +6681,10 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
 		!obj->trap)
         return;
 
+	// Practice weapons are always Trash quality
+if (isname ("practice", obj->name) && GET_ITEM_TYPE(obj) == ITEM_WEAPON)
+			obj->econ_flags = QUALITY_TRASH;
+			
     // Now we figure out what quality we have - if we don't have any, then we set it to ordinary.
 
     if (IS_SET(obj->econ_flags, QUALITY_POOR))
@@ -6979,11 +6983,11 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
         
 		// Set the ovals, price, weight and Quality (durability, not econ flag) according to weapon_standards
 		obj->o.od.value[1] = weapon_standards[quality][weapon_type][0];
-        obj->o.od.value[2] = weapon_standards[quality][weapon_type][1];
-        obj->o.od.value[5] = weapon_standards[quality][weapon_type][2];
-        obj->quality = weapon_standards[quality][weapon_type][3];
-        obj->farthings = weapon_standards[quality][weapon_type][4];
-        obj->obj_flags.weight = weapon_standards[quality][weapon_type][5];
+		obj->o.od.value[2] = weapon_standards[quality][weapon_type][1];
+		obj->o.od.value[5] = weapon_standards[quality][weapon_type][2];
+		obj->quality = weapon_standards[quality][weapon_type][3];
+		obj->farthings = weapon_standards[quality][weapon_type][4];
+		obj->obj_flags.weight = weapon_standards[quality][weapon_type][5];
 		
 		// Heavy weapons have higher damage and weight
 		if (obj->o.od.value[0] == 3)
@@ -7002,6 +7006,11 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
 		// We also make throwing items cost a bit extra.
         if (IS_SET (obj->obj_flags.extra_flags, ITEM_THROWING))
             obj->farthings = obj->farthings * 11 / 10;
+		
+		// Practice weapons deal half the damage (rounded down) - remember we autoreset quality to Trash earlier!
+		if (isname ("practice", obj->name))
+			obj->o.od.value[2] /= 2;
+					
 		
 		/* Commented out by Ceredir 201505201457
         switch (obj->o.od.value[3])
