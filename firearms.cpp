@@ -7434,7 +7434,7 @@ else
       if (res_result[ind] == SHIELD_BLOCK || res_result[ind] == PUNCTURE_HIT || res_result[ind] == COVER_HIT)
       {
         // If it's a glancing hit, 50% chance of striking scenery, 50% chance of flying somewhere.
-		send_to_gods("Shield block.  Arrow is lost forever.");
+		send_to_guardians("#3[Guardian: Archery]#0Shield block.  Arrow is lost forever.", 0xFF);
 		obj_from_obj(&ammo[ind], 1);
 		extract_obj(ammo[ind]);  // Destroy object from memory.
 
@@ -7496,14 +7496,14 @@ else
 		  obj_from_obj(&ammo[ind], 1);
 		  if (number(0,1))  // 50/50 chance arrow is forever lost
 		  {
-		    send_to_gods("Miss - Arrow should be around somewhere.");
+		    send_to_guardians("#3[Guardian: Archery]#0Miss - Arrow should be around somewhere.", 0xFF);
 		    magic_add_obj_affect (ammo[ind], MAGIC_HIDDEN, -1, 0, 0, 0, 0);
             ammo[ind]->omote_str = add_hash ("rests on the ground, hidden from view.");
 		    obj_to_room (ammo[ind], target->in_room);
 	  	  }
 		  else
 		  {
-		    send_to_gods("Miss - Arrow is forever lost");
+		    send_to_guardians("#3[Guardian: Archery]#0Miss - Arrow is forever lost", 0xFF);
 		    extract_obj(ammo[ind]);  // Destroy object from memory.
 		  }
 	
@@ -7547,7 +7547,7 @@ else
         }
         
        */
-	   send_to_gods("Should be a lodged arrow.");
+	   send_to_guardians("#3[Guardian: Archery]#0Hit - Should be a lodged arrow.", 0xFF);
 		   obj_from_obj(&ammo[ind], 1);
              lodge_missile (target, ammo[ind], location_table[ind], 1);
 	  }
