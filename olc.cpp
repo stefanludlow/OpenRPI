@@ -963,7 +963,95 @@ const char *mob_armors[] =
     "\n"
 };
 
+const int weapon_standards[5][4][7] =
+{	//Values in the table are as follows:
+	//Oval1 Oval2 Oval5 Quality Price Weight SkillAffect
+	//Trash Quality
+	{
+		{1, 4, 1, 500, 12, 200, -8}, //Small-Blade
+		{1, 5, 1, 120, 20, 550, -8}, //Bludgeon
+		{1, 7, 0, 500, 17, 600, -8}, //Polearms
+		{1, 7, 1, 500, 32, 500, -8} //Long-Blade
+	},
+	//Poor Quality
+	{
+		{1, 4, 2, 800, 25, 175, -4}, //Small-Blade
+		{1, 5, 2, 800, 40, 510, -4}, //Bludgeon
+		{1, 7, 1, 800, 35, 590, -4}, //Polearms
+		{1, 7, 2, 800, 65, 500, -4} //Long-Blade
+	},
+	//Ordinary Quality
+	{
+		{1, 4, 3, 1000, 75, 150, 0},  //Small-Blade
+		{1, 5, 3, 1000, 120, 490, 0}, //Bludgeon
+		{1, 7, 2, 1000, 100, 570, 0}, //Polearms
+		{1, 7, 3, 1000, 200, 475, 0} //Long-Blade
+	},
+	//Good Quality
+	{
+		{1, 4, 4, 1100, 225, 125, 4}, //Small-Blade
+		{1, 5, 4, 1100, 450, 475, 4}, //Bludgeon
+		{1, 7, 3, 1100, 400, 525, 4}, //Polearms
+		{1, 7, 4, 1100, 800, 450, 4} //Long-Blade
+	},
+	//Superb Quality
+	{
+		{1, 4, 4, 1300, 675, 100, 8},  //Small-Blade
+		{1, 5, 4, 1300, 2000, 450, 8}, //Bludgeon
+		{1, 7, 3, 1300, 1600, 500, 8}, //Polearms
+		{1, 7, 4, 1300, 3200, 400, 8}  //Long-Blade
+	}
+};
 
+const int armor_standards[5][6][5] =
+{	// Values in the table are as follows:
+	// AC Quality Price Weight Sneak_mod
+	// Trash Quality
+	{
+		{ 2, 130, 100, 1500, 0}, // Cloth
+		{ 2, 220, 200, 1800, 0}, // Leather
+		{ 3, 310, 300, 2300, 1}, // Hardened Leather
+		{ 4, 410, 450, 3000, 2}, // Mail	
+		{ 4, 410, 450, 3000, 2}, // Scale
+		{ 5, 500, 900, 5000, 3} // Plate
+	},
+	// Poor Quality
+	{
+		{ 2, 160, 150, 1500, 0}, // Cloth
+		{ 2, 250, 250, 1700, 0}, // Leather
+		{ 3, 340, 400, 2200, 1}, // Hardened Leather
+		{ 4, 440, 550, 3000, 2}, // Mail	
+		{ 4, 440, 550, 3000, 2}, // Scale
+		{ 5, 530, 1200, 4500, 3} // Plate
+	},
+	// Ordinary Quality
+	{
+		{ 3, 190, 450, 1500, 0}, // Cloth
+		{ 3, 280, 750, 1600, 0}, // Leather
+		{ 4, 370, 1200, 2100, 1}, // Hardened Leather
+		{ 5, 470, 1650, 4000, 2}, // Mail	
+		{ 5, 470, 1650, 4000, 2}, // Scale
+		{ 6, 560, 3000, 5500, 3} // Plate
+	},
+	// Good Quality
+	{
+		{ 4, 220, 4800, 2000, 0}, // Cloth
+		{ 4, 310, 8000, 1500, 0}, // Leather
+		{ 5, 410, 12800, 2000, 1}, // Hardened Leather
+		{ 6, 510, 17600, 5000, 2}, // Mail	
+		{ 6, 510, 17600, 5000, 2}, // Scale
+		{ 7, 590, 1200, 7500, 3} // Plate
+	},
+	// Superb Quality
+	{
+		{ 4, 190, 100, 1700, 0}, // Cloth
+		{ 4, 200, 200, 2000, 0}, // Leather
+		{ 5, 240, 250, 2500, 1}, // Hardened Leather
+		{ 6, 240, 600, 3500, 2}, // Mail	
+		{ 6, 240, 600, 3500, 2}, // Scale
+		{ 7, 260, 1200, 7000, 3} // Plate
+	}
+};
 
 const struct constant_data constant_info[] =
 {
@@ -6577,6 +6665,7 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
     int quality = 2; // assume ordinary quality as a default.
     int sneak_mod = 0; // how much does this reduce our sneak?
     int base_weight = 0, base_cost = 0, base_quality = 0;
+	int weapon_type = 0;
 
     AFFECTED_TYPE *af = NULL;
     AFFECTED_TYPE *saf = NULL;
@@ -6592,6 +6681,10 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
 		!obj->trap)
         return;
 
+	// Practice weapons are always Trash quality
+if (isname ("practice", obj->name) && GET_ITEM_TYPE(obj) == ITEM_WEAPON)
+			obj->econ_flags = QUALITY_TRASH;
+			
     // Now we figure out what quality we have - if we don't have any, then we set it to ordinary.
 
     if (IS_SET(obj->econ_flags, QUALITY_POOR))
@@ -6605,7 +6698,7 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
     else if (IS_SET(obj->econ_flags, QUALITY_TRASH))
     {
         if (GET_ITEM_TYPE(obj) == ITEM_WEAPON || GET_ITEM_TYPE(obj) == ITEM_ARMOR || GET_ITEM_TYPE(obj) == ITEM_SHIELD || obj->trap)
-            quality = 5;
+            quality = 0;
         else
             quality = 1;
     }
@@ -6635,10 +6728,6 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
 		if (obj->trap->dam1_dice && obj->trap->dam1_sides)
 		{
 			int trap_quality = quality + 2;
-			if (trap_quality >= 7)
-			{
-				trap_quality = 2;
-			}
 
 			if (obj->trap->com_target_dice == -2)
 			{
@@ -6702,10 +6791,6 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
 		if (obj->trap->dam2_dice && obj->trap->dam2_sides)
 		{
 			int trap_quality = quality + 2;
-			if (trap_quality == 7)
-			{
-				trap_quality = 1;
-			}
 
 			if (obj->trap->com_target_dice == -2)
 			{
@@ -6772,7 +6857,7 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
 
 		switch (quality)
 		{
-		case 5:
+		case 0:
 			obj->trap->com_diff = 0;
 			break;
 		case 1:
@@ -6800,7 +6885,7 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
 
         switch (quality)
         {
-        case 5:
+        case 0:
         case 1:
             obj->o.od.value[5] = 2;
             obj->quality = 900;
@@ -6826,10 +6911,11 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
         case SKILL_RIFLE:
             obj->obj_flags.weight = 700;
             break;
+			
         case SKILL_SMG:
             obj->obj_flags.weight = 900;
             break;
-
+			
         default:
             obj->obj_flags.weight = 400;
             break;
@@ -6844,22 +6930,89 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
         af->a.spell.modifier = (quality == 4 ? 10 : quality == 3 ? 5 : quality == 1 ? -5 : quality == 5 ? -10 : 0);
         af->next = NULL;
         affect_to_obj (obj, af);
-
         break;
-
-
-
+		
     case ITEM_WEAPON:
+		
+		if (obj->o.od.value[3] == SKILL_SMALL_BLADE)
+			obj->o.od.value[0] = 2; // All small-blades are small weapons.
+		
+		weapon_type = (	obj->o.od.value[3] == SKILL_BLUDGEON 	? 1 : 
+						obj->o.od.value[3] == SKILL_POLEARM 	? 2 : 
+						obj->o.od.value[3] == SKILL_LONG_BLADE 	? 3 : 
+						0); // 0 means SKILL_SMALL_BLADE or any other skill
+	
         // If this is a throwing weapon, then we reduce it to the quality below.
+        if (IS_SET (obj->obj_flags.extra_flags, ITEM_THROWING))    
+			quality = MAX(0, quality - 1);
 
-        if (IS_SET (obj->obj_flags.extra_flags, ITEM_THROWING))
+		// Strip out any existing values folks might have entered in for weapon skills.
+		for (int xind = 1; xind <= LAST_WEAPON_SKILL; xind++)
+		{
+	        if (get_obj_affect_location (obj, 10000 + xind))
+		        remove_obj_affect_location (obj, 10000 + xind);
+		}
+		
+		// Small weapons gets a small bonus to Deflect
+        if (obj->o.od.value[0] == 2)
         {
-            quality -= 1;
-
-            if (!quality || quality == 4)
-                quality = 5;
+            CREATE (af, AFFECTED_TYPE, 1);
+            af->type = 0;
+            af->a.spell.duration = -1;
+            af->a.spell.bitvector = 0;
+			af->a.spell.sn = 0;
+            af->a.spell.location = SKILL_DEFLECT + 10000;
+            af->a.spell.modifier = (quality == 4 ? 3 : // +3 to Deflect for Superb
+									quality == 3 ? 2 : // +2 to Deflect for Good
+									quality == 2 ? 1 : // +1 to Deflect for Ordinary
+												   0); // No bonus for Poor/Trash
+            af->next = NULL;
+            affect_to_obj (obj, af);
         }
-
+		
+		// All weapons get a bonus to appropriate weapon skill, as declared in weapon_standards
+        CREATE (saf, AFFECTED_TYPE, 1);
+        saf->type = 0;
+        saf->a.spell.duration = -1;
+        saf->a.spell.bitvector = 0;
+        saf->a.spell.sn = 0;
+        saf->a.spell.location = obj->o.od.value[3] + 10000;
+        saf->a.spell.modifier = weapon_standards[quality][weapon_type][6];
+        saf->next = NULL;
+        affect_to_obj (obj, saf);
+        
+		// Set the ovals, price, weight and Quality (durability, not econ flag) according to weapon_standards
+		obj->o.od.value[1] = weapon_standards[quality][weapon_type][0];
+		obj->o.od.value[2] = weapon_standards[quality][weapon_type][1];
+		obj->o.od.value[5] = weapon_standards[quality][weapon_type][2];
+		obj->quality = weapon_standards[quality][weapon_type][3];
+		obj->farthings = weapon_standards[quality][weapon_type][4];
+		obj->obj_flags.weight = weapon_standards[quality][weapon_type][5];
+		
+		// Heavy weapons have higher damage and weight
+		if (obj->o.od.value[0] == 3)
+            {
+                obj->o.od.value[5] += 2;
+                obj->obj_flags.weight += 250;
+            }
+			
+		// Light (offhand) weapons have lower damage and weight
+		if (obj->o.od.value[0] == 2)
+            {
+                obj->o.od.value[5] -= 2;
+                obj->obj_flags.weight -= 100;
+            }
+			
+		// We also make throwing items cost a bit extra.
+        if (IS_SET (obj->obj_flags.extra_flags, ITEM_THROWING))
+            obj->farthings = obj->farthings * 11 / 10;
+		
+		// Practice weapons deal half the damage (rounded down) - remember we autoreset quality to Trash earlier!
+		if (isname ("practice", obj->name))
+			obj->o.od.value[2] /= 2;
+					
+		
+		/* Commented out by Ceredir 201505201457
         switch (obj->o.od.value[3])
         {
         case SKILL_SMALL_BLADE:
@@ -7086,47 +7239,7 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
             }
             break;
         }
-
-        // We also make throwing items cost a bit extra.
-
-        if (IS_SET (obj->obj_flags.extra_flags, ITEM_THROWING))
-            obj->farthings = obj->farthings * 11 / 10;
-
-        // First we strip out any existing values folks might have entered in
-		// for weapon skills.
-		for (int xind = 1; xind <= LAST_WEAPON_SKILL; xind++)
-		{
-	        if (get_obj_affect_location (obj, 10000 + xind))
-		        remove_obj_affect_location (obj, 10000 + xind);
-		}
-
-        // Now we add the weapon qualities if they're sufficiently good.
-
-        if (quality != 2)
-        {
-            if (obj->o.od.value[0] == 2)
-            {
-                CREATE (af, AFFECTED_TYPE, 1);
-                af->type = 0;
-                af->a.spell.duration = -1;
-                af->a.spell.bitvector = 0;
-                af->a.spell.sn = 0;
-                af->a.spell.location = SKILL_DEFLECT + 10000;
-                af->a.spell.modifier = (quality == 4 ? 8 : quality == 3 ? 4 : quality == 1 ? -4 : quality == 5 ? -8 : 0);
-                af->next = NULL;
-                affect_to_obj (obj, af);
-            }
-
-            CREATE (saf, AFFECTED_TYPE, 1);
-            saf->type = 0;
-            saf->a.spell.duration = -1;
-            saf->a.spell.bitvector = 0;
-            saf->a.spell.sn = 0;
-            saf->a.spell.location = obj->o.od.value[3] + 10000;
-            saf->a.spell.modifier = (quality == 4 ? 8 : quality == 3 ? 4 : quality == 1 ? -4 : quality == 5 ? -8 : 0);
-            saf->next = NULL;
-            affect_to_obj (obj, saf);
-        }
+		*/              
         // If the weapon is two-handed only, and is either a long-blade, polearm, or bludgeon ...
         /*
         if (obj->o.od.value[0] == 3 &&
@@ -7342,7 +7455,16 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
             base_weight = 500;
         }
         else
-        {
+		{
+			// Set the standards according to the armor_standards table
+			obj->o.armor.armor_value = armor_standards[quality][obj->o.armor.armor_type][0];
+			base_quality = armor_standards[quality][obj->o.armor.armor_type][1];
+			base_cost = armor_standards[quality][obj->o.armor.armor_type][2];
+			base_weight = armor_standards[quality][obj->o.armor.armor_type][3];
+			sneak_mod = armor_standards[quality][obj->o.armor.armor_type][4];
+		}
+    /*  Commented out by Ceredir 201505201515
+		{  
 
             switch (obj->o.armor.armor_type)
             {
@@ -7525,7 +7647,7 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
                 }
                 break;
             }
-        }
+        }*/
 
         // Now, we set the weight and cost to the appropriate fraction of the type of thing we had -
         // we cycle through all the body parts its covers, and then set the cost and weight as appropriate.

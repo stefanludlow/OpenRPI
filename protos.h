@@ -196,7 +196,9 @@ extern ROLE_DATA *role_list;
 extern OBJ_DATA *object_list;
 extern struct zone_data *zone_table;
 extern struct use_table_data use_table[];	// handler.c
-extern const int weapon_armor_table[10][6];
+extern const int weapon_armor_table[10][6]; // fight.cpp
+extern const int weapon_standards[5][4][7]; //olc.cpp
+extern const int armor_standards[5][6][5]; //olc.cpp
 extern const char *item_types[];
 extern const char *trap_bits[];
 
@@ -1204,6 +1206,7 @@ void morph_mob (CHAR_DATA * ch);
 int can_learn (CHAR_DATA * ch);
 int mob_weather_reaction (CHAR_DATA * ch);
 int would_attack (CHAR_DATA * ch, CHAR_DATA * tch);
+int wildlife_check (CHAR_DATA * ch, CHAR_DATA * target);
 void ready_melee_weapons (CHAR_DATA * ch);
 int get_stat_range (int score);
 void reformat_say_string (char *source, char **target, CHAR_DATA * to);
@@ -1983,6 +1986,7 @@ void refresh_db_connection (void);
 void reload_sitebans (void);
 void reload_mob_resets (void);
 void target_sighted (CHAR_DATA * ch, CHAR_DATA * target);
+void target_sighted_reaction (CHAR_DATA * ch, CHAR_DATA * target);
 void system_log (const char *str, bool error);
 void player_log (CHAR_DATA * ch, char *command, char *str);
 void weather_and_time (int mode);
