@@ -4746,7 +4746,7 @@ void move( CHAR_DATA * ch, char * argument, int dir, int speed ) {
 	else
 	{
 		move->flags = 0;
-		if (!ch->mob || !IS_SET (ch->affected_by, AFF_SNEAK))
+	//	if (!ch->mob || !IS_SET (ch->affected_by, AFF_SNEAK)) - Commenting out because normal move should always strip hidden? Cer 201505271527
 			remove_affect_type (ch, MAGIC_HIDDEN);
 	}
 

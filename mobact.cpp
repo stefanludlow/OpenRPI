@@ -420,7 +420,7 @@ mob_wander (CHAR_DATA * ch)
     ch->last_room = room_exit_virt;
 
     i = exit_tab[to_exit];
-    if (IS_SET (ch->room->dir_option[i]->exit_info, EX_CLOSED))
+    if (IS_SET (ch->room->dir_option[i]->exit_info, EX_CLOSED) && IS_SET(lookup_race_int(ch->race, RACE_DOOR_BITS), RACE_DOOR_OPEN))
     {
         one_argument (ch->room->dir_option[i]->keyword, buf2);
         sprintf (buf, "%s %s", buf2, dirs[i]);
@@ -3080,6 +3080,25 @@ is_threat (CHAR_DATA * ch, CHAR_DATA * tch)
             return 1;
 
     return 0;
+}
+
+// Checks whether two mobs are both flagged wildlife. 
+// 0 if neither is wildlife
+// 1 if ch is wildlife
+// 2 if target is wildlife
+// 3 if both are wildlife
+int
+wildlife_check (CHAR_DATA * ch, CHAR_DATA * target) 
+{
+	int result = 0;
+	
+	if (IS_SET (ch->act, ACT_WILDLIFE)) 
+		result += 1;
+	
+	if (IS_SET (target->act, ACT_WILDLIFE))
+		result += 2;
+	
+	return result;
 }
 
 int
