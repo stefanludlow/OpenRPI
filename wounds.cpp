@@ -670,7 +670,7 @@ wound_to_char (CHAR_DATA * ch, char *location, int impact, int type,
                         send_to_char ("\n", ch);
                         send_to_char (p, ch);
                         mem_free (p);
-                        sprintf(buf, "$n's gasps for air as $s %s is struck.", expand_wound_loc (wound->location));
+                        sprintf(buf, "$n gasps for air as $s %s is struck.", expand_wound_loc (wound->location));
                         act(buf, false, ch, 0, 0, TO_ROOM | _ACT_FORMAT | _ACT_BLEED);
                         break;
                     case HITLOC_HILEGS:
@@ -783,7 +783,7 @@ wound_to_char (CHAR_DATA * ch, char *location, int impact, int type,
                         send_to_char (p, ch);
                         mem_free (p);
                         soma_add_affect(ch, SOMA_BLUNT_SEVBODY, 666, 0, 0, 250, 250, 250, 666, 666, 666, 666);
-                        sprintf(buf, "$n's gasps for air as $s %s is struck.", expand_wound_loc (wound->location));
+                        sprintf(buf, "$n gasps for air as $s %s is struck.", expand_wound_loc (wound->location));
                         act(buf, false, ch, 0, 0, TO_ROOM | _ACT_FORMAT | _ACT_BLEED);
                         fracture = SOMA_BLUNT_SEVBODY;
                         break;

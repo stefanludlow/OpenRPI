@@ -5820,7 +5820,7 @@ hour_affect_update (void)
 				case 5:
 					ch->aur += 1;
 					ch->tmp_aur += 1;
-					send_to_char ("At last, you feel more bestial and mutation-e.\n", ch);
+					send_to_char ("At last, your aura increases.\n", ch);
 					break;
 				case 6:
 					ch->agi += 1;
@@ -5862,7 +5862,7 @@ hour_affect_update (void)
 				case 5:
 					ch->aur -= 1;
 					ch->tmp_aur -= 1;
-					send_to_char ("Alas, you feel less bestial and mutation-e.\n", ch);
+					send_to_char ("Alas, you feel your aura weaken.\n", ch);
 					break;
 				case 6:
 					ch->agi -= 1;
