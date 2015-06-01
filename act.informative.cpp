@@ -1794,12 +1794,12 @@ do_compare(CHAR_DATA * ch, char *argument, int cmd)
 	*/
 		for (int j = 0; j < 5; ++j)
 		{
-			if 		(obj1->o.armor.armor_value - weapon_armor_table[j][obj1->o.armor.armor_type]  <
+			if 		(obj1->o.armor.armor_value - weapon_armor_table[j][obj1->o.armor.armor_type]  >
 					 obj2->o.armor.armor_value - weapon_armor_table[j][obj2->o.armor.armor_type])
 			{
 				sprintf (buffer + strlen(buffer), "\n   #6+#0 protects #2more#0 against %s damage", damage_types[j]);
 			}
-			else if (obj1->o.armor.armor_value - weapon_armor_table[j][obj1->o.armor.armor_type]  >
+			else if (obj1->o.armor.armor_value - weapon_armor_table[j][obj1->o.armor.armor_type]  <
 					 obj2->o.armor.armor_value - weapon_armor_table[j][obj2->o.armor.armor_type])
 			{
 				sprintf (buffer + strlen(buffer), "\n   #6+#0 protects #1less#0 against %s damage", damage_types[j]);
