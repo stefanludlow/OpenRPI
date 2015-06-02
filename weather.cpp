@@ -219,8 +219,8 @@ weather (int moon_setting, int moon_rise, int moon_set)
     // Temperatues go between 10 to 90 degrees fahrenheit: near ups these by ten, far drops these by ten.
     int temp_base = 20;
     int temp_max = 100;
-    int last_temp = 0, last_state = 0;
-    int roll = 0, last_fog = 0, i = 0;
+    int last_temp = 0, last_clouds = 0, last_state = 0;
+    int roll = 0, chance_of_rain = 0, last_fog = 0, i = 0;
     char buf[MAX_STRING_LENGTH];
     char storm[MAX_STRING_LENGTH];
 
@@ -228,8 +228,10 @@ weather (int moon_setting, int moon_rise, int moon_set)
     {
         if (Weather::weather_unification (i))
             continue;
-
+        chance_of_rain = 0; 
+        
         last_temp = weather_info[i].temperature;
+        last_clouds = weather_info[i].clouds;
         last_state = weather_info[i].state;
         last_fog = weather_info[i].fog;
 
