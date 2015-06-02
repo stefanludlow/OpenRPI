@@ -298,7 +298,7 @@ weather (int moon_setting, int moon_rise, int moon_set)
             weather_info[i].temperature -= 20;
         }
 
-        /*   Wind Chill - This is FAR from scientific, but I didnt want winds to totally take over temperatures. - Koldryn
+           Wind Chill - This is FAR from scientific, but I didnt want winds to totally take over temperatures. - Koldryn
         if (weather_info[i].wind_dir == NORTH_WIND)
         {
             weather_info[i].temperature -= weather_info[i].wind_speed * 2;
@@ -310,9 +310,9 @@ weather (int moon_setting, int moon_rise, int moon_set)
             weather_info[i].temperature += (5 - weather_info[i].wind_speed * 2);
             roll = 0 + (5 - weather_info[i].wind_speed * 2);
         }
-        */
+        
 
-        /*
+        
         if (weather_info[i].fog)
         {
             if (weather_info[i].wind_speed == WINDY)
@@ -344,9 +344,9 @@ weather (int moon_setting, int moon_rise, int moon_set)
             if (weather_info[i].fog == NO_FOG)
                 send_outside_zone ("The fog lifts.\n\r", i);
         }
-        */
+        
 
-        /*  If its after midnight, before dawn, within 3 hours of dawn, there is no fog, and there is no artificial sunlight....
+        //  If its after midnight, before dawn, within 3 hours of dawn, there is no fog, and there is no artificial sunlight....
         if ((sunrise[time_info.month] < (time_info.hour + 4))
                 && (sun_light == 0) && (time_info.hour < sunrise[time_info.month])
                 && (weather_info[i].fog == NO_FOG))
@@ -379,7 +379,7 @@ weather (int moon_setting, int moon_rise, int moon_set)
                 ("A thick fog begins to condense in the still air.\n\r", i);
             }
         }
-        */
+        
 
 
         //if (i == 10)
@@ -391,7 +391,7 @@ weather (int moon_setting, int moon_rise, int moon_set)
 
         desc_weather[i] = WR_NORMAL;
 
-        /*
+        
         if (weather_info[i].clouds > CLEAR_SKY)
             desc_weather[i] = WR_CLOUDY;
 
@@ -460,7 +460,7 @@ weather (int moon_setting, int moon_rise, int moon_set)
         {
             moon_light[i] = 0;
         }
-        */
+        
     }
 }
 
@@ -859,7 +859,7 @@ weather_object_exists(OBJ_DATA * list, int vnum)
 
 const int weather_objects[12] =
 {
-    500,
+    500, 
     501,
     502,
     503,
