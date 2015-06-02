@@ -298,7 +298,7 @@ weather (int moon_setting, int moon_rise, int moon_set)
             weather_info[i].temperature -= 20;
         }
 
-           Wind Chill - This is FAR from scientific, but I didnt want winds to totally take over temperatures. - Koldryn
+           // Wind Chill - This is FAR from scientific, but I didnt want winds to totally take over temperatures. - Koldryn
         if (weather_info[i].wind_dir == NORTH_WIND)
         {
             weather_info[i].temperature -= weather_info[i].wind_speed * 2;
