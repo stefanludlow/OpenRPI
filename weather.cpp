@@ -448,14 +448,14 @@ weather (int moon_setting, int moon_rise, int moon_set)
                 && weather_info[i].state < HEAVY_SNOW)
         {
             if (moon_setting)
-                send_outside_zone ("The Earth hangs low in the sky.\n\r", i);
+                send_outside_zone ("Ithil hangs low in the sky.\n\r", i);
             if (moon_set)
                 send_outside_zone
-                ("The Earth slowly sinks from the sky.\n\r",
+                ("Ithil slowly sinks from the sky.\n\r",
                  i);
             if (moon_rise)
                 send_outside_zone
-                ("The Earth rises with stately grace into the sky.\n\r", i);
+                ("Ithil rises with stately grace into the sky.\n\r", i);
             moon_light[i] = global_moon_light;
         }
         else
