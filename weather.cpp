@@ -930,3 +930,4 @@ weather_and_time (int mode)
     global_moon_light = 1;
 
   weather (moon_setting, moon_rising, moon_set);
+  }
