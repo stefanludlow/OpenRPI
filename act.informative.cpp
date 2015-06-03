@@ -9206,234 +9206,456 @@ do_time (CHAR_DATA * ch, char *argument, int cmd)
 }
 
 
-void do_weather (CHAR_DATA * ch, char *argument, int cmd)
+void
+do_weather (CHAR_DATA * ch, char *argument, int cmd)
 {
-    int ind = 0;
-    char w_phrase[50] = { '\0' };
-    char buf[MAX_STRING_LENGTH] = { '\0' };
-    char buf2[MAX_STRING_LENGTH] = { '\0' };
-    char imm_buf[MAX_STRING_LENGTH];
-    int wind_case = 0;
-    int temp_case = 0;
-    char wind[20] = { '\0' };
+  int sunrise[] = { 6, 6, 6, 6, 5, 5, 4, 4, 5, 6, 6, 7 };
+  int sunset[] = { 18, 18, 19, 19, 20, 21, 22, 22, 21, 20, 19, 18 };
+  int ind = 0;
+  char w_phrase[50] = { '\0' };
+  char buf[MAX_STRING_LENGTH] = { '\0' };
+  char buf2[MAX_STRING_LENGTH] = { '\0' };
+  char imm_buf[MAX_STRING_LENGTH];
+  int wind_case = 0;
+  int temp_case = 0;
+  char wind[20] = { '\0' };
+  int high_sun = 0;
+  AFFECTED_TYPE *room_af = NULL;
+  extern AFFECTED_TYPE *world_affects;
 
-    argument = one_argument (argument, buf);
+  argument = one_argument (argument, buf);
 
-    if (!IS_MORTAL (ch) && GET_TRUST (ch) > 4 && *buf)
+
+  if (!IS_MORTAL (ch) && GET_TRUST (ch) > 4 && *buf)
     {
-        if ((ind = index_lookup (weather_states, buf)) != -1)
-        {
-            sprintf (buf, "You have changed the weather state to #6%s#0.\n", weather_states[ind]);
-            send_to_char (buf, ch);
-            weather_info[ch->room->zone].state = ind;
-            return;
-        }
-        /*
-        else if ((ind = index_lookup (weather_clouds, buf)) != -1)
-        {
-            sprintf (buf, "You have changed cloud state to #6%s#0.\n",
-                     weather_clouds[ind]);
-            send_to_char (buf, ch);
-            weather_info[ch->room->zone].clouds = ind;
-            return;
-        }
-        */
-        else if ((ind = index_lookup (wind_speeds, buf)) != -1)
-        {
-            sprintf (buf, "You have changed wind speed to #6%s#0.\n",
-                     wind_speeds[ind]);
-            send_to_char (buf, ch);
-            weather_info[ch->room->zone].wind_speed = ind;
-            return;
-        }
-        else if ((ind = index_lookup (fog_states, buf)) != -1)
-        {
-            sprintf (buf, "You have changed the fog level to #6%s#0.\n",
-                     fog_states[ind]);
-            send_to_char (buf, ch);
-            weather_info[ch->room->zone].fog = ind;
-            return;
-        }
-
-        send_to_char ("That is not a recognized weather state.\n", ch);
-        return;
+      if ((ind = index_lookup (weather_states, buf)) != -1)
+	{
+	  sprintf (buf, "You have changed the weather state to #6%s#0.\n",
+		   weather_states[ind]);
+	  send_to_char (buf, ch);
+	  weather_info[ch->room->zone].state = ind;
+	  return;
+	}
+      else if ((ind = index_lookup (weather_clouds, buf)) != -1)
+	{
+	  sprintf (buf, "You have changed cloud state to #6%s#0.\n",
+		   weather_clouds[ind]);
+	  send_to_char (buf, ch);
+	  weather_info[ch->room->zone].clouds = ind;
+	  return;
+	}
+      else if ((ind = index_lookup (wind_speeds, buf)) != -1)
+	{
+	  sprintf (buf, "You have changed wind speed to #6%s#0.\n",
+		   wind_speeds[ind]);
+	  send_to_char (buf, ch);
+	  weather_info[ch->room->zone].wind_speed = ind;
+	  return;
+	}
+      else if ((ind = index_lookup (fog_states, buf)) != -1)
+	{
+	  sprintf (buf, "You have changed the fog level to #6%s#0.\n",
+		   fog_states[ind]);
+	  send_to_char (buf, ch);
+	  weather_info[ch->room->zone].fog = ind;
+	  return;
+	}
+      send_to_char ("That is not a recognized weather state.\n", ch);
+      return;
     }
 
-        if (weather_info[ch->room->zone].temperature < 120)
-        {
-            wind_case = 0;
-            temp_case = 1;
-        }
-        if (weather_info[ch->room->zone].temperature < 110)
-        {
-            temp_case = 2;
-            wind_case = 1;
-        }
-        if (weather_info[ch->room->zone].temperature < 100)
-        {
-            wind_case = 2;
-            temp_case = 3;
-        }
-        if (weather_info[ch->room->zone].temperature < 94)
-        {
-            wind_case = 3;
-            temp_case = 3;
-        }
-        if (weather_info[ch->room->zone].temperature < 90)
-            temp_case = 4;
-        if (weather_info[ch->room->zone].temperature < 80)
-        {
-            wind_case = 4;
-            temp_case = 5;
-        }
-        if (weather_info[ch->room->zone].temperature < 75)
-            temp_case = 5;
-        if (weather_info[ch->room->zone].temperature < 65)
-        {
-            wind_case = 5;
-            temp_case = 6;
-        }
-        if (weather_info[ch->room->zone].temperature < 55)
-        {
-            temp_case = 7;
-            wind_case = 6;
-        }
-        if (weather_info[ch->room->zone].temperature < 47)
-        {
-            wind_case = 7;
-            temp_case = 8;
-        }
-        if (weather_info[ch->room->zone].temperature < 38)
-            temp_case = 9;
-        if (weather_info[ch->room->zone].temperature < 33)
-        {
-            wind_case = 8;
-            temp_case = 10;
-        }
-        if (weather_info[ch->room->zone].temperature < 21)
-        {
-            wind_case = 9;
-            temp_case = 11;
-        }
-        if (weather_info[ch->room->zone].temperature < 11)
-            temp_case = 12;
-        if (weather_info[ch->room->zone].temperature < 1)
-        {
-            wind_case = 10;
-            temp_case = 13;
-        }
-        if (weather_info[ch->room->zone].temperature < -10)
-            temp_case = 14;
+  if (IS_OUTSIDE (ch))
+    {
 
-        *buf = '\0';
-        *buf2 = '\0';
+      if (weather_info[ch->room->zone].temperature < 120)
+	{
+	  wind_case = 0;
+	  temp_case = 1;
+	}
+      if (weather_info[ch->room->zone].temperature < 110)
+	{
+	  temp_case = 2;
+	  wind_case = 1;
+	}
+      if (weather_info[ch->room->zone].temperature < 100)
+	{
+	  wind_case = 2;
+	  temp_case = 3;
+	}
+      if (weather_info[ch->room->zone].temperature < 94)
+	{
+	  wind_case = 3;
+	  temp_case = 3;
+	}
+      if (weather_info[ch->room->zone].temperature < 90)
+	temp_case = 4;
+      if (weather_info[ch->room->zone].temperature < 80)
+	{
+	  wind_case = 4;
+	  temp_case = 5;
+	}
+      if (weather_info[ch->room->zone].temperature < 75)
+	temp_case = 5;
+      if (weather_info[ch->room->zone].temperature < 65)
+	{
+	  wind_case = 5;
+	  temp_case = 6;
+	}
+      if (weather_info[ch->room->zone].temperature < 55)
+	{
+	  temp_case = 7;
+	  wind_case = 6;
+	}
+      if (weather_info[ch->room->zone].temperature < 47)
+	{
+	  wind_case = 7;
+	  temp_case = 8;
+	}
+      if (weather_info[ch->room->zone].temperature < 38)
+	temp_case = 9;
+      if (weather_info[ch->room->zone].temperature < 33)
+	{
+	  wind_case = 8;
+	  temp_case = 10;
+	}
+      if (weather_info[ch->room->zone].temperature < 21)
+	{
+	  wind_case = 9;
+	  temp_case = 11;
+	}
+      if (weather_info[ch->room->zone].temperature < 11)
+	temp_case = 12;
+      if (weather_info[ch->room->zone].temperature < 1)
+	{
+	  wind_case = 10;
+	  temp_case = 13;
+	}
+      if (weather_info[ch->room->zone].temperature < -10)
+	temp_case = 14;
 
-        sprintf (w_phrase, "%s", sun_phase[time_info.phaseSun]);
+      *buf = '\0';
+      *buf2 = '\0';
 
-        *imm_buf = '\0';
+      high_sun = ((sunrise[time_info.month] + sunset[time_info.month]) / 2);
 
-        if (!IS_MORTAL (ch))
-            sprintf (imm_buf, " [%d F]",
-                     weather_info[ch->room->zone].temperature);
+      if (time_info.hour >= sunrise[time_info.month]
+	  && time_info.hour <= high_sun - 2)
+	sprintf (w_phrase, "morning");
+      else if (time_info.hour > high_sun - 2
+	       && time_info.hour <= high_sun + 1)
+	sprintf (w_phrase, "day");
+      else if (time_info.hour > high_sun + 1
+	       && time_info.hour < sunset[time_info.month])
+	sprintf (w_phrase, "afternoon");
+      else if (time_info.hour >= sunset[time_info.month]
+	       && time_info.hour < 21)
+	sprintf (w_phrase, "evening");
+      else
+	sprintf (w_phrase, "night");
 
+      if (time_info.season == SPRING)
+	sprintf (buf2, "spring");
+      if (time_info.season == SUMMER)
+	sprintf (buf2, "summer");
+      if (time_info.season == AUTUMN)
+	sprintf (buf2, "autumn");
+      if (time_info.season == WINTER)
+	sprintf (buf2, "winter");
 
-        sprintf(buf, "It is a %s %s%s, and ", temp_phrase[temp_case], w_phrase, imm_buf);
+      *imm_buf = '\0';
 
-        if (weather_info[ch->room->zone].wind_speed)
-        {
-            if (weather_info[ch->room->zone].wind_dir == NORTH_WIND)
-                wind_case++;
+      if (!IS_MORTAL (ch))
+	sprintf (imm_buf, " [%d F]",
+		 weather_info[ch->room->zone].temperature);
 
-            if (weather_info[ch->room->zone].wind_dir == NORTH_WIND)
-                sprintf (wind, "%s northerly", wind_temp_phrase[wind_case]);
-            else
-                sprintf (wind, "%s westerly", wind_temp_phrase[wind_case]);
-        }
+      switch (temp_case)
+	{
+	case 0:
+	  sprintf (buf, "It is a dangerously searing %s %s%s.\n", buf2,
+		   w_phrase, imm_buf);
+	  break;
+	case 1:
+	  sprintf (buf, "It is a painfully blazing %s %s%s.\n", buf2,
+		   w_phrase, imm_buf);
+	  break;
+	case 2:
+	  sprintf (buf, "It is a blistering %s %s%s.\n", buf2, w_phrase,
+		   imm_buf);
+	  break;
+	case 3:
+	  sprintf (buf, "It is a sweltering %s %s%s.\n", buf2, w_phrase,
+		   imm_buf);
+	  break;
+	case 4:
+	  sprintf (buf, "It is a hot %s %s%s.\n", buf2, w_phrase, imm_buf);
+	  break;
+	case 5:
+	  sprintf (buf, "It is a temperate %s %s%s.\n", buf2, w_phrase,
+		   imm_buf);
+	  break;
+	case 6:
+	  sprintf (buf, "It is a cool %s %s%s.\n", buf2, w_phrase, imm_buf);
+	  break;
+	case 7:
+	  sprintf (buf, "It is a chill %s %s%s.\n", buf2, w_phrase, imm_buf);
+	  break;
+	case 8:
+	  sprintf (buf, "It is a cold %s %s%s.\n", buf2, w_phrase, imm_buf);
+	  break;
+	case 9:
+	  sprintf (buf, "It is a very cold %s %s%s.\n", buf2, w_phrase,
+		   imm_buf);
+	  break;
+	case 10:
+	  sprintf (buf, "It is a frigid %s %s%s.\n", buf2, w_phrase, imm_buf);
+	  break;
+	case 11:
+	  sprintf (buf, "It is a freezing %s %s%s.\n", buf2, w_phrase,
+		   imm_buf);
+	  break;
+	case 12:
+	  sprintf (buf, "It is a numbingly frigid %s %s%s.\n", buf2, w_phrase,
+		   imm_buf);
+	  break;
+	case 13:
+	  sprintf (buf, "It is a painfully freezing %s %s%s.\n", buf2,
+		   w_phrase, imm_buf);
+	  break;
+	case 14:
+	  sprintf (buf, "It is a dangerously freezing %s %s%s.\n", buf2,
+		   w_phrase, imm_buf);
+	  break;
 
-        switch (weather_info[ch->room->zone].wind_speed)
-        {
-        case CALM:
-            sprintf (buf + strlen(buf), "the air is calm and quiet.\n\n");
-            break;
-        case BREEZE:
-            sprintf (buf + strlen(buf), "there is a %s breeze.\n\n", wind);
-            break;
-        case WINDY:
-            sprintf (buf + strlen(buf), "there is a %s wind.\n\n", wind);
-			break;
-		}
-		send_to_char (buf, ch);
+	default:
+	  sprintf (buf, "It is a cool %s %s%s.\n", buf2, w_phrase, imm_buf);
+	  break;
+	}
 
-		*buf = '\0';
-		*buf2 = '\0';
-/* - Commenting out info on earth phases.  This isn't the moon anymore.  0311140255 -Nimrod
-		switch (time_info.phaseEarth)
-		{
-		case PHASE_FULL_EARTH:
-			sprintf(buf, "Against the backdrop of a star-scattered eternal space, the massive form of the Earth is now in full view, its marred surface reflecting an eerie bright white glow upon the moonscape.");
-			break;
-		case PHASE_GIBBOUS_WANING:
-			sprintf(buf, "In the velvety, star-scattered night sky, the majestic Earth reflects an eerie white glow upon the surface of the Moon, though a thin sliver is overcome by darkness.");
-			break;
-		case PHASE_THREE_QUARTER:
-			sprintf(buf, "The golden rays of the Sun begin to kiss the Moon's surface as its giant fiery form ascends over the horizon. A large portion of the majestic Earth is plunged into darkness with only a moderate crescent of silvery white remaining.");
-			break;
-		case PHASE_CRESCENT_WANING:
-			sprintf(buf, "The Earth, now only a very thin sliver of silvery white, is plunged nearly entirely into darkness against an eternal backdrop of twinkling stars. The fiery giant that is the Sun now begins to mercilessly cast its intense heat and light upon the surface of the Moon.");
-			break;
-		case PHASE_NEW_EARTH:
-			sprintf(buf, "The Sun has now reached its highest point in the sky, its omnipresent form casting blistering heat and intense light mercilessly onto the surface of the Moon. The majestic earth is now cast entirely in darkness, barely visible.");
-			break;
-		case PHASE_CRESCENT_WAXING:
-			sprintf(buf, "The first signs of light have begun to creep over the surface of the Earth in the sky, giving it a silvery white glow in the form of a large sickle in the sky. The Sun's heat continues to beat mercilessly down upon the Moon, though its position in the sky has lowered.");
-			break;
-		case PHASE_FIRST_QUARTER:
-			sprintf(buf, "The fiery giant that is the sun has now begun its descent across the Moon sky, casting the surroundings in a golden dusk. A quarter of the majestic Earth is now cast in a silvery reflective light against a backdrop of eternal space and stars.");
-			break;
-		default:
-			sprintf(buf, "Against a backdrop of eternal space and glittering stars, the majestic Earth is now cast mostly in a silvery white, casting an eerie glow upon the surface of the cold Moon.");
-			break;
-		}
+      send_to_char (buf, ch);
 
-		char *p = '\0';
-		reformat_string (buf, &p);
-		sprintf (buf, "%s", p);
-		mem_free (p); // char*
-		send_to_char(buf, ch);
-*/
+      *buf = '\0';
+      *buf2 = '\0';
 
- /*       
-        if (weather_info[ch->room->zone].fog
-                && !(weather_info[ch->room->zone].state >= LIGHT_RAIN
-                     && weather_info[ch->room->zone].fog == THICK_FOG))
-        {
-            if (weather_info[ch->room->zone].fog == THIN_FOG)
-                send_to_char ("A patchy fog floats in the air.\n", ch);
-            else
-                send_to_char ("A thick fog lies heavy upon the land.\n", ch);
-        }
+      if (weather_info[ch->room->zone].state >= LIGHT_RAIN)
+	{
+	  if (weather_info[ch->room->zone].wind_speed == STORMY)
+	    sprintf (w_phrase, "rolling");
+	  else if (weather_info[ch->room->zone].wind_speed > BREEZE)
+	    sprintf (w_phrase, "flowing");
+	  else
+	    sprintf (w_phrase, "brooding");
 
+	  switch (weather_info[ch->room->zone].clouds)
+	    {
+	    case LIGHT_CLOUDS:
+	      sprintf (buf2, "a scattering of grey clouds.\n");
+	      break;
+	    case HEAVY_CLOUDS:
+	      sprintf (buf2, "dark, %s clouds.\n", w_phrase);
+	      break;
+	    case OVERCAST:
+	      sprintf (buf2, "a thick veil of %s storm clouds.\n", w_phrase);
+	      break;
+	    }
 
-        if ((room_af = is_room_affected (world_affects, MAGIC_WORLD_CLOUDS)) &&
-                (IS_OUTSIDE (ch) || !IS_MORTAL (ch)))
-        {
-            send_to_char
-            ("Looming black clouds cover the sky, blotting out the sun.\n",
-             ch);
-        }
-*/
-        if (moon_light[ch->room->zone] >= 1)
-        {
-            if (!sun_light)
-                send_to_char
-                ("A full and gleaming moon limns the area in ghostly argent radiance.\n",
-                 ch);
-            else
-                send_to_char
-                ("The moon's ethereal silhouette is barely visible in the daylight.\n",
-                 ch);
-        }
-		
+	  if (weather_info[ch->room->zone].fog == THICK_FOG)
+	    sprintf (buf2, " the fog-shrouded sky.\n");
+
+	  switch (weather_info[ch->room->zone].state)
+	    {
+	    case LIGHT_RAIN:
+	      sprintf (buf, "A light drizzle is falling from %s", buf2);
+	      break;
+	    case STEADY_RAIN:
+	      sprintf (buf, "A steady rain is falling from %s", buf2);
+	      break;
+	    case HEAVY_RAIN:
+	      sprintf (buf, "A shower of rain is pouring from %s", buf2);
+	      break;
+	    case LIGHT_SNOW:
+	      sprintf (buf, "A light snow is falling from %s", buf2);
+	      break;
+	    case STEADY_SNOW:
+	      sprintf (buf, "Snow is falling from %s", buf2);
+	      break;
+	    case HEAVY_SNOW:
+	      sprintf (buf,
+		       "Blinding snow swarms down from an obscured white sky.\n");
+	      break;
+	    }
+	  send_to_char (buf, ch);
+	}
+
+      *buf = '\0';
+      *buf2 = '\0';
+
+      if (weather_info[ch->room->zone].wind_speed)
+	{
+	  if (weather_info[ch->room->zone].wind_dir == NORTH_WIND)
+	    wind_case++;
+
+	  switch (wind_case)
+	    {
+
+	    case 0:
+	      sprintf (buf, "searing");
+	      break;
+	    case 1:
+	      sprintf (buf, "scorching");
+	      break;
+	    case 2:
+	      sprintf (buf, "sweltering");
+	      break;
+	    case 3:
+	      sprintf (buf, "hot");
+	      break;
+	    case 4:
+	      sprintf (buf, "warm");
+	      break;
+	    case 5:
+	      sprintf (buf, "cool");
+	      break;
+	    case 6:
+	      sprintf (buf, "chill");
+	      break;
+	    case 7:
+	      sprintf (buf, "cold");
+	      break;
+	    case 8:
+	      sprintf (buf, "frigid");
+	      break;
+	    case 9:
+	      sprintf (buf, "freezing");
+	      break;
+	    case 10:
+	      sprintf (buf, "arctic");
+	      break;
+
+	    default:
+	      sprintf (buf, "cool");
+	      break;
+	    }
+
+	  if (weather_info[ch->room->zone].wind_dir == NORTH_WIND)
+	    sprintf (wind, "%s northerly", buf);
+	  else
+	    sprintf (wind, "%s westerly", buf);
+	}
+
+      *buf = '\0';
+      *buf2 = '\0';
+
+      if (weather_info[ch->room->zone].state >= LIGHT_RAIN
+	  || !weather_info[ch->room->zone].clouds
+	  || weather_info[ch->room->zone].fog == THICK_FOG)
+	{
+	  switch (weather_info[ch->room->zone].wind_speed)
+	    {
+	    case CALM:
+	      sprintf (buf, "The air is calm and quiet.\n");
+	      break;
+	    case BREEZE:
+	      sprintf (buf, "There is a %s breeze.\n", wind);
+	      break;
+	    case WINDY:
+	      sprintf (buf, "There is a %s wind.\n", wind);
+	      break;
+	    case GALE:
+	      sprintf (buf, "A %s gale is blowing.\n", wind);
+	      break;
+	    case STORMY:
+	      sprintf (buf, "A %s wind whips and churns in a stormy fury.\n",
+		       wind);
+	      break;
+	    }
+	  send_to_char (buf, ch);
+	}
+
+      *buf = '\0';
+      *buf2 = '\0';
+
+      if (weather_info[ch->room->zone].state < LIGHT_RAIN
+	  && weather_info[ch->room->zone].clouds
+	  && weather_info[ch->room->zone].fog < THICK_FOG)
+	{
+	  if (weather_info[ch->room->zone].state == NO_RAIN)
+	    sprintf (w_phrase, "rain");
+	  else
+	    sprintf (w_phrase, "white");
+
+	  switch (weather_info[ch->room->zone].clouds)
+	    {
+	    case LIGHT_CLOUDS:
+	      sprintf (buf2, "Wispy %s clouds", w_phrase);
+	      break;
+	    case HEAVY_CLOUDS:
+	      sprintf (buf2, "Heavy %s clouds", w_phrase);
+	      break;
+	    case OVERCAST:
+	      sprintf (buf2, "A veil of thick %s clouds", w_phrase);
+	      break;
+	    }
+
+	  switch (weather_info[ch->room->zone].wind_speed)
+	    {
+	    case CALM:
+	      sprintf (buf, "%s hang motionless in the sky.\n", buf2);
+	      break;
+	    case BREEZE:
+	      sprintf (buf, "%s waft overhead upon a %s breeze.\n", buf2,
+		       wind);
+	      break;
+	    case WINDY:
+	      sprintf (buf, "%s waft overhead upon the %s winds.\n", buf2,
+		       wind);
+	      break;
+	    case GALE:
+	      sprintf (buf, "%s rush overhead upon a %s gale.\n", buf2, wind);
+	      break;
+	    case STORMY:
+	      sprintf (buf,
+		       "%s churn violently in the sky upon the %s winds.\n",
+		       buf2, wind);
+	      break;
+	    }
+	  send_to_char (buf, ch);
+	}
+
+      *buf = '\0';
+      *buf2 = '\0';
+      if (weather_info[ch->room->zone].fog
+	  && !(weather_info[ch->room->zone].state >= LIGHT_RAIN
+	       && weather_info[ch->room->zone].fog == THICK_FOG))
+	{
+	  if (weather_info[ch->room->zone].fog == THIN_FOG)
+	    send_to_char ("A patchy fog floats in the air.\n", ch);
+	  else
+	    send_to_char ("A thick fog lies heavy upon the land.\n", ch);
+	}
+
+      if ((room_af = is_room_affected (world_affects, MAGIC_WORLD_CLOUDS)) &&
+	  (IS_OUTSIDE (ch) || !IS_MORTAL (ch)))
+	{
+	  send_to_char
+	    ("Looming black clouds cover the sky, blotting out the sun.\n",
+	     ch);
+	}
+
+      if (moon_light[ch->room->zone] >= 1)
+	{
+	  if (!sun_light)
+	    send_to_char
+	      ("A full and gleaming Ithil limns the area in ghostly argent radiance.\n",
+	       ch);
+	  else
+	    send_to_char
+	      ("Ithil's ethereal silhouette is barely visible in the daylight.\n",
+	       ch);
+	}
+
+    }
+  else
+    send_to_char ("You can not see outside from here.\n", ch);
 }
 
 HELP_DATA *
