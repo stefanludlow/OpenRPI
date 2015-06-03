@@ -35,9 +35,10 @@ armor_penalty (CHAR_DATA * ch)
      We add up all the spots covered, timesing the percent of the body covered
      by an arbitrary "hinderance" value of that type of armour:
 
-     Cloth is 1.
-     Metal is 3.
-     Everything else is 2.
+     Cloth and leather is 1
+	 Hardened leather is 2
+	 Mail and scale is 3
+	 Plate is 4
 
      Secondary armour is only half as hindering.
 
@@ -54,62 +55,54 @@ armor_penalty (CHAR_DATA * ch)
      */
 
     OBJ_DATA *eq = NULL;
-
-    int prim_locs[MAX_HITLOC] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-    int sec_locs[MAX_HITLOC] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-
-    float i = 0;
+    float prim_locs = 0;
+    float sec_locs = 0;
+	float total = 0;
+	float water_adj = 0;
 
     for (eq = ch->equip; eq; eq = eq->next_content)
     {
+		// slight addition for waterlogged items
+		water_adj =	eq->enviro_conds[COND_WATER] > 75 ? 1.15 :
+					eq->enviro_conds[COND_WATER] > 50 ? 1.10 :
+					eq->enviro_conds[COND_WATER] > 25 ? 1.05 :
+														1;
+																
         for (int location = 0; location < MAX_HITLOC; location++)
         {
             if (GET_ITEM_TYPE(eq) == ITEM_ARMOR && IS_SET(eq->o.od.value[2], 1 << location))
             {
-                if (eq->o.armor.armor_type == 1)
-                    prim_locs[location] += 3 * body_tab[0][location].percent;
-                else if (eq->o.armor.armor_type == 0)
-                    prim_locs[location] += 1 * body_tab[0][location].percent;
-                else
-                    prim_locs[location] += 2 * body_tab[0][location].percent;
-            }
+																
+				total +=	eq->o.armor.armor_type == 0 	? 1 * body_tab[0][location].percent * water_adj : //Fur
+							eq->o.armor.armor_type == 1 	? 1 * body_tab[0][location].percent * water_adj : //Leather
+							eq->o.armor.armor_type == 2 	? 2 * body_tab[0][location].percent * water_adj : //Hardened leather
+							eq->o.armor.armor_type == 3 	? 3 * body_tab[0][location].percent * water_adj : //Mail
+							eq->o.armor.armor_type == 4 	? 3 * body_tab[0][location].percent * water_adj : //Scale
+															  4 * body_tab[0][location].percent * water_adj; //Plate								  
+		    }
 
             if (GET_ITEM_TYPE(eq) == ITEM_ARMOR && IS_SET(eq->o.od.value[3], 1 << location))
             {
-                if (eq->o.armor.armor_type == 1)
-                    sec_locs[location] += 0.75 * body_tab[0][location].percent;
-                else if (eq->o.armor.armor_type == 0)
-                    sec_locs[location] += 0.25 * body_tab[0][location].percent;
-                else
-                    sec_locs[location] += 0.50 * body_tab[0][location].percent;
-            }
-
-            // We add an extra 5~10% weight for water-logged items.
-            if (eq->enviro_conds[COND_WATER] > 25)
-            {
-                double enviro_tier = eq->enviro_conds[COND_WATER] > 75 ? 1.15 : eq->enviro_conds[COND_WATER] > 50 ? 1.10 : 1.05;
-                prim_locs[location] = sec_locs[location] * enviro_tier;
-                sec_locs[location] = sec_locs[location] * enviro_tier;
+				total += 	eq->o.armor.armor_type == 0 	? 0.50 * body_tab[0][location].percent * water_adj : //Fur
+							eq->o.armor.armor_type == 1 	? 0.50 * body_tab[0][location].percent * water_adj : //Leather
+							eq->o.armor.armor_type == 2 	? 1.00 * body_tab[0][location].percent * water_adj : //Hardened leather
+							eq->o.armor.armor_type == 3 	? 1.50 * body_tab[0][location].percent * water_adj : //Mail
+							eq->o.armor.armor_type == 4 	? 1.50 * body_tab[0][location].percent * water_adj : //Scale
+															  1.00 * body_tab[0][location].percent * water_adj; //Plate	
             }
         }
     }
 
-    for (int ind = 0; ind < MAX_HITLOC; ind++)
-    {
-        i += prim_locs[ind];
-        i += sec_locs[ind];
-    }
-
-    i = i / 105;
-
-    if (i >= 3) // full suit of chain or scale, with or without fur
-        return 3;
-    else if (i >= 2) // full suit of leather plus fur, or leather and chain + scale
-        return 2;
-    else if (i >= 1) // full suit of leather sans fur, only chain/scale hauberk, or quilted + fur
-        return 1;
-    else // incomplete leather, or full quilted.
-        return 0;
+    total /= 105;
+	
+	total = (	total >= 4 ? 4 :  // plate or full suit of scale/mail layered with leather
+				total >= 3 ? 3 :  // full suit of chain or scale
+				total >= 2 ? 2 :  // leather with a chain hauberk
+				total >= 1 ? 1 :  // full leather
+						     0 ); // nothing
+				
+	return total;
+        
 }
 
 // Determines a ch's armour word: what we'll use to describe them.
@@ -121,10 +114,11 @@ armor_descript (CHAR_DATA * ch)
      Armour that covers multiple spots is deemed to be better proportioned to take
      the weight.
 
-     Cloth is 1.
-     Metal and Kevlar is 2.
-     Ceramic is 3
-     Power is 4.
+	 Cloth and leather is 1
+	 Hardened leather is 2
+	 Mail and Scale is 3
+	 Plate is 4
+	 
 
      If the total is 4, return 1
      If the total is 6, return 2
@@ -132,7 +126,50 @@ armor_descript (CHAR_DATA * ch)
      If the total is 12, return 5.
      */
 
-    OBJ_DATA *eq = NULL;
+	 OBJ_DATA *eq = NULL;
+    float prim_locs = 0;
+    float sec_locs = 0;
+	float total = 0;
+	float water_adj = 0;
+
+    for (eq = ch->equip; eq; eq = eq->next_content)
+    {												
+        for (int location = 0; location < MAX_HITLOC; location++)
+        {
+            if (GET_ITEM_TYPE(eq) == ITEM_ARMOR && IS_SET(eq->o.od.value[2], 1 << location))
+            {
+																
+				total +=	eq->o.armor.armor_type == 0 	? 1 * body_tab[0][location].percent : //Fur
+							eq->o.armor.armor_type == 1 	? 1 * body_tab[0][location].percent : //Leather
+							eq->o.armor.armor_type == 2 	? 2 * body_tab[0][location].percent : //Hardened leather
+							eq->o.armor.armor_type == 3 	? 3 * body_tab[0][location].percent : //Mail
+							eq->o.armor.armor_type == 4 	? 3 * body_tab[0][location].percent : //Scale
+															  4 * body_tab[0][location].percent ; //Plate								  
+		    }
+
+            if (GET_ITEM_TYPE(eq) == ITEM_ARMOR && IS_SET(eq->o.od.value[3], 1 << location))
+            {
+				total += 	eq->o.armor.armor_type == 0 	? 0.50 * body_tab[0][location].percent : //Fur
+							eq->o.armor.armor_type == 1 	? 0.50 * body_tab[0][location].percent : //Leather
+							eq->o.armor.armor_type == 2 	? 1.00 * body_tab[0][location].percent : //Hardened leather
+							eq->o.armor.armor_type == 3 	? 1.50 * body_tab[0][location].percent : //Mail
+							eq->o.armor.armor_type == 4 	? 1.50 * body_tab[0][location].percent : //Scale
+															  1.00 * body_tab[0][location].percent ; //Plate	
+            }
+        }
+    }
+
+    total /= 100;
+	
+	total = (	total >= 4 ? 4 :  // plate or full suit of scale/mail layered with leather
+				total >= 3 ? 3 :  // full suit of chain or scale
+				total >= 2 ? 2 :  // leather with a chain hauberk
+				total >= 1 ? 1 :  // full leather
+						     0 ); // nothing
+				
+	return total;
+	 
+    /* OBJ_DATA *eq = NULL;
 
     int prim_locs[MAX_HITLOC] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
     int sec_locs[MAX_HITLOC] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
@@ -145,6 +182,8 @@ armor_descript (CHAR_DATA * ch)
         {
             if (GET_ITEM_TYPE(eq) == ITEM_ARMOR && IS_SET(eq->o.od.value[2], 1 << location))
             {
+				
+				
                 if (eq->o.armor.armor_type == 0)
                     prim_locs[location] += 1 * body_tab[0][location].percent;
                 else if (eq->o.armor.armor_type == 1 || eq->o.armor.armor_type == 2)
@@ -186,7 +225,7 @@ armor_descript (CHAR_DATA * ch)
     else if (i >= 1) // full suit of leather sans fur, only chain/scale hauberk, or quilted + fur
         return 1;
     else // incomplete leather, or full quilted.
-        return 0;
+        return 0; */
 }
 
 int
