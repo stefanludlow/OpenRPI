@@ -690,12 +690,18 @@ const char *sex_noun[] = {
 };
 
 const char *weather_room[] = {
-  "default",
   "foggy",
   "cloudy",
   "rainy",
   "stormy",
   "snowy",
   "blizzard",
-   "\n"
+  "night",
+  "nfoggy",
+  "nrainy",
+  "nstormy",
+  "nsnowy",
+  "nblizzard",
+  "day",
+  "\n"
 };
