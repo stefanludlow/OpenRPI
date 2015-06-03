@@ -1603,6 +1603,7 @@ do_compare (CHAR_DATA * ch, char *argument, int cmd)
 }
 */
 
+
 /* New version of the compare command to compare objects
 
 This function takes two object references as arguments
@@ -1618,6 +1619,7 @@ do_compare(CHAR_DATA * ch, char *argument, int cmd)
     OBJ_DATA	*obj1 = NULL;
     OBJ_DATA	*obj2 = NULL;
     char		buffer [MAX_STRING_LENGTH] = { '\0' };
+	char		buf  [MAX_STRING_LENGTH] = { '\0' };
 
     /*** CHECK FOR POSTIONS AND CONDITONS FIRST ***/
 
@@ -1727,7 +1729,7 @@ do_compare(CHAR_DATA * ch, char *argument, int cmd)
 						      (obj1->o.weapon.dice + obj1->o.od.value[5])) / 2.0;
 		double avg_dam_two = (((obj2->o.weapon.dice * obj2->o.weapon.sides) + obj2->o.od.value[5]) +
 						      (obj2->o.weapon.dice + obj2->o.od.value[5])) / 2.0;
-
+/* Commenting out because showing this tends to confuse players a whole lot.
 		if (avg_dam_one > avg_dam_two)
 		{
 			sprintf (buffer + strlen(buffer), "\n   #6+#0 would on average cause #2more#0 damage");
@@ -1740,7 +1742,7 @@ do_compare(CHAR_DATA * ch, char *argument, int cmd)
 		{
 			sprintf (buffer + strlen(buffer), "\n   #6+#0 would on average cause about the #3same#0 damage");
 		}
-
+*/
 		if (use_table[obj1->o.weapon.use_skill].delay <
 			use_table[obj2->o.weapon.use_skill].delay)
 		{
@@ -1755,54 +1757,28 @@ do_compare(CHAR_DATA * ch, char *argument, int cmd)
 		{
 			sprintf (buffer + strlen(buffer), "\n   #6+#0 strikes at about the #3same#0 speed");
 		}
-
-		if (avg_dam_one + weapon_armor_table[obj1->o.weapon.hit_type][0] >
-			avg_dam_two + weapon_armor_table[obj2->o.weapon.hit_type][0])
+		
+		// 201505301247 Ceredir: changed the block of ifs into a simple for loop, pulling the armor names
+		// off our armor_types table rather than having them hardcoded here. 
+		for (int j = 0; j < 6; ++j)
 		{
-			sprintf (buffer + strlen(buffer), "\n   #6+#0 cause #2more#0 damage against padded armours");
+			if 		(avg_dam_one + weapon_armor_table[obj1->o.weapon.hit_type][j] >
+					 avg_dam_two + weapon_armor_table[obj2->o.weapon.hit_type][j])
+			{
+				sprintf (buffer + strlen(buffer), "\n   #6+#0 cause #2more#0 damage against %s armours", armor_types[j]);
+			}
+			else if (avg_dam_one + weapon_armor_table[obj1->o.weapon.hit_type][j] <
+					 avg_dam_two + weapon_armor_table[obj2->o.weapon.hit_type][j])
+			{
+				sprintf (buffer + strlen(buffer), "\n   #6+#0 cause #1less#0 damage against %s armours", armor_types[j]);
+			}
 		}
-		else if (avg_dam_one + weapon_armor_table[obj1->o.weapon.hit_type][0] <
-			     avg_dam_two + weapon_armor_table[obj2->o.weapon.hit_type][0])
-		{
-			sprintf (buffer + strlen(buffer), "\n   #6+#0 cause #1less#0 damage against padded armours");
-		}
-
-		if (avg_dam_one + weapon_armor_table[obj1->o.weapon.hit_type][1] >
-			avg_dam_two + weapon_armor_table[obj2->o.weapon.hit_type][1])
-		{
-			sprintf (buffer + strlen(buffer), "\n   #6+#0 cause #2more#0 damage against hardened armours");
-		}
-		else if (avg_dam_one + weapon_armor_table[obj1->o.weapon.hit_type][1] <
-				 avg_dam_two + weapon_armor_table[obj2->o.weapon.hit_type][1])
-		{
-			sprintf (buffer + strlen(buffer), "\n   #6+#0 cause #1less#0 damage against hardened armours");
-		}
-
-		if (avg_dam_one + weapon_armor_table[obj1->o.weapon.hit_type][2] >
-			avg_dam_two + weapon_armor_table[obj2->o.weapon.hit_type][2])
-		{
-			sprintf (buffer + strlen(buffer), "\n   #6+#0 cause #2more#0 damage against mesh armours");
-		}
-		else if (avg_dam_one + weapon_armor_table[obj1->o.weapon.hit_type][2] <
-				 avg_dam_two + weapon_armor_table[obj2->o.weapon.hit_type][2])
-		{
-			sprintf (buffer + strlen(buffer), "\n   #6+#0 cause #1less#0 damage against mesh armours");
-		}
-
-		if (avg_dam_one + weapon_armor_table[obj1->o.weapon.hit_type][3] >
-			avg_dam_two + weapon_armor_table[obj2->o.weapon.hit_type][3])
-		{
-			sprintf (buffer + strlen(buffer), "\n   #6+#0 cause #2more#0 damage against composite armours");
-		}
-		else if (avg_dam_one + weapon_armor_table[obj1->o.weapon.hit_type][3] <
-				 avg_dam_two + weapon_armor_table[obj2->o.weapon.hit_type][3])
-		{
-			sprintf (buffer + strlen(buffer), "\n   #6+#0 cause #1less#0 damage against composite armours");
-		}
+		
 	}
 	else if (GET_ITEM_TYPE(obj1) == ITEM_ARMOR &&
 		     GET_ITEM_TYPE(obj2) == ITEM_ARMOR)
-	{
+	{	
+	/* Commenting out because showing this confuses players - Ceredir
 		if (obj1->o.armor.armor_value > obj2->o.armor.armor_value)
 		{
 			sprintf (buffer + strlen(buffer), "\n   #6+#0 provides #2more#0 overall protection");
@@ -1815,7 +1791,22 @@ do_compare(CHAR_DATA * ch, char *argument, int cmd)
 		{
 			sprintf (buffer + strlen(buffer), "\n   #6+#0 provides about the #3same#0 overall protection");
 		}
-
+	*/
+		for (int j = 0; j < 5; ++j)
+		{
+			if 		(obj1->o.armor.armor_value - weapon_armor_table[j][obj1->o.armor.armor_type]  >
+					 obj2->o.armor.armor_value - weapon_armor_table[j][obj2->o.armor.armor_type])
+			{
+				sprintf (buffer + strlen(buffer), "\n   #6+#0 protects #2more#0 against %s damage", damage_types[j]);
+			}
+			else if (obj1->o.armor.armor_value - weapon_armor_table[j][obj1->o.armor.armor_type]  <
+					 obj2->o.armor.armor_value - weapon_armor_table[j][obj2->o.armor.armor_type])
+			{
+				sprintf (buffer + strlen(buffer), "\n   #6+#0 protects #1less#0 against %s damage", damage_types[j]);
+			}
+		}
+		
+		/* Commenting out - the for loop above replaces this just fine
 		if (obj1->o.armor.armor_value - weapon_armor_table[1][obj1->o.armor.armor_type] >
 			obj2->o.armor.armor_value - weapon_armor_table[1][obj2->o.armor.armor_type])
 		{
@@ -1859,8 +1850,8 @@ do_compare(CHAR_DATA * ch, char *argument, int cmd)
 		{
 			sprintf (buffer + strlen(buffer), "\n   #6+#0 protects #1less#0 against gunshots");
 		}
+		*/
 	}
-
     /**** Compare capacity of containers ****/
 
     else if ((GET_ITEM_TYPE (obj1) == ITEM_CONTAINER)||
@@ -2695,16 +2686,17 @@ show_obj_to_char (OBJ_DATA * obj, CHAR_DATA * ch, int mode)
 				if (!IS_SLING(obj))
 				{
 
-					sprintf(buf, "#6You'd guess it to be a #0%s#6 type firearm that %s. ", skills[obj->o.firearm.use_skill],
+					sprintf(buf, "#6You'd guess it to be a #0%s#6 type ranged weapon that %s. ", skills[obj->o.firearm.use_skill],
 						(obj->o.firearm.handedness == 3 ? "is designed to be fired from #0both hands#6" : obj->o.firearm.handedness == 2 ? "is designed to be fired from #0one hand#6" : "is designed to be fired from either #0one or both hands#6"));
 
 
 					if (!IS_DIRECT(obj) && IS_SET(obj->o.firearm.bits, GUN_DISPLAY) && ((obj->equiped_by && obj->equiped_by == ch) || !obj->equiped_by))
 					{
 						if (count_bullets(obj))
-							sprintf(buf + strlen(buf), "There are #0%s#6 rounds currently loaded. ", verbal_number[count_bullets(obj)]);
+							sprintf(buf + strlen(buf), "It is currently loaded. ");
 					}
-
+                    
+                    /* We do not really need to see this - all our firearms should be silent, no safeties etc - 180520151055 Ceredir
 					*buf2 = '\0';
 
 
@@ -2717,7 +2709,7 @@ show_obj_to_char (OBJ_DATA * obj, CHAR_DATA * ch, int mode)
 
 					*buf3 = '\0';
 
-					for (i = 0; i <= 11; i++)
+                    for (i = 0; i <= 11; i++)
 					{
 						if (IS_SET (obj->o.firearm.bits, (1 << i)))
 						{
@@ -2729,6 +2721,7 @@ show_obj_to_char (OBJ_DATA * obj, CHAR_DATA * ch, int mode)
 								sprintf (buf3 + strlen (buf3), " and #0%s#6", gun_bits[i]);
 						}
 					}
+                    */
 
 					*buf4 = '\0';
 
@@ -2758,7 +2751,7 @@ show_obj_to_char (OBJ_DATA * obj, CHAR_DATA * ch, int mode)
 						}
 					}
 
-					sprintf(buf + strlen(buf), "This firearm takes #0%s%s#6 rounds%s%s.#0", buf4, calibers[obj->o.firearm.caliber], buf2, buf3);
+					sprintf(buf + strlen(buf), "This weapon takes #0%s%s#6 missiles.#0", buf4, calibers[obj->o.firearm.caliber]);
 
 					reformat_string (buf, &p);
 					strcat (buffer, "\n");
@@ -2771,18 +2764,18 @@ show_obj_to_char (OBJ_DATA * obj, CHAR_DATA * ch, int mode)
 						{
 							if (IS_DIRECT(obj))
 							{
-								sprintf (buf4, "%s#6%s firearm's chamber%s are full#0.\n", (cap == 1 ? "the" : count_all_bullets(obj) == cap ? "all" : verbal_number[count_all_bullets(obj)]), (cap > 1 ? " of" : ""), (cap > 1 ? "s" : ""));
+								sprintf (buf4, "It is loaded#0.\n");
 								*buf4 = toupper(*buf4);
 								strcat (buffer, "\n   #0");
 								strcat (buffer, buf4);
 							}
 							else
 							{
-								sprintf (buffer + strlen(buffer), "\n   This firearm is loaded with #2%s#0.\n", obj->contains->short_description);
+								sprintf (buffer + strlen(buffer), "\n   It is loaded with #2%s#0.\n", obj->contains->short_description);
 							}
 						}
 						else
-							sprintf (buffer + strlen(buffer), "\n   #6This firearm is unloaded.#0\n");
+							sprintf (buffer + strlen(buffer), "\n   #6It is unloaded.#0\n");
 					}
 				}
             }
@@ -2819,8 +2812,8 @@ show_obj_to_char (OBJ_DATA * obj, CHAR_DATA * ch, int mode)
             if (GET_ITEM_TYPE (obj) == ITEM_ROUND && mode == 15)
             {
 
-                sprintf(buf, "#6%s #0%s %s %s#6 round%s.#0",
-                        (obj->count > 1 ? "These are" : "This is a"), ammo_bits[obj->o.bullet.type], calibers[obj->o.bullet.caliber], ammo_sizes[obj->o.bullet.size], (obj->count > 1? "s" : ""));
+                sprintf(buf, "#6%s #0%s %s#6 missile%s.#0",
+                        (obj->count > 1 ? "These are" : "This is a"), ammo_bits[obj->o.bullet.type], calibers[obj->o.bullet.caliber], (obj->count > 1? "s" : ""));
 
                 reformat_string (buf, &p);
                 strcat (buffer, "\n");
@@ -7522,9 +7515,20 @@ do_info (CHAR_DATA * ch, char *argument, int cmd)
     int x = armor_penalty(ch);
 
     sprintf (buf, "By virtue of your equipment, you are #2%s#0 and your movement #2%s#0 hindered.\n",
-    (z >= 4 ? "extremely well armoured" : z == 3 ? "heavily armoured" : z == 2 ? "well armoured" : z == 1 ? "lightly armoured" : "unarmoured"),
-    (x == 3 ? "noticably" : z == 2 ? "lightly" : z == 1 ? "faintly" : "not at all"));
+															(z >= 4 ? "extremely well armoured" : 
+															 z == 3 ? "heavily armoured" : 
+															 z == 2 ? "well armoured" : 
+															 z == 1 ? "lightly armoured" : 
+																	  "unarmoured"),
+																	  
+															(x == 4 ? "rather" :
+															 x == 3 ? "noticably" : 
+															 x == 2 ? "lightly" : 
+															 x == 1 ? "faintly" : 
+																	  "not at all")); 
+																		  
     send_to_char (buf, ch);
+
 
     switch (GET_POS (ch))
     {

@@ -151,13 +151,29 @@ const char *rs_name[] =
 
 const char *armor_types[] =
 {
-    "Cloth", // general low-level armour.
-    "Leather", // hard-metal armours, v. good vs slashing, not much use against anything else
-    "HardenedLeather", // armour this is good vs. ballistics, not so good v. melee
-    "Mail", // armour that's both good against ballistics and melee
-    "Scale", // armour that simply rocks
-    "Plate"  // No effects, used only by Kithrater for special things.
+    "Cloth", 
+    "Leather",
+    "Hardened Leather", 
+    "Mail",
+    "Scale",
+    "Plate"  
 };
+
+const char *damage_types[] =
+{
+    "Stab", 	//0
+    "Pierce", 	//1
+    "Chop",  	//2
+    "Blunt", 	//3
+    "Slash", 	//4
+    "Frost",  	//5
+	"Fire", 	//6
+	"Bite",		//7
+	"Claw",		//8
+	"Fist",		//9
+	"Pierce"	//10
+};
+
 
 const struct body_info body_tab[NUM_TABLES][MAX_HITLOC] =
 {

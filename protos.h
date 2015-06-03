@@ -205,7 +205,8 @@ extern const char *trap_bits[];
 
 extern const char *drinks[];	// olc.c
 extern const char *holiday_short_names[];
-extern const char *armor_types[];
+extern const char *armor_types[]; //fight.cpp
+extern const char *damage_types[]; //fight.cpp
 extern const char *month_short_name[];
 extern const char *month_lkup[];
 extern const char *verbal_time[];
