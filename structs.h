@@ -342,31 +342,23 @@ typedef signed char shortint;
 
 /* Weather-room descrition constants - see weather_room in constants.c */
 
-#define WEATHER_TEMPERATE	0
-#define WEATHER_COOL		1
-#define WEATHER_COLD		2
-#define WEATHER_ARCTIC		3
-#define WEATHER_WARM		4
-#define WEATHER_HOT		5
-#define WEATHER_DESERT		6
+#define		WR_DESCRIPTIONS		7 // Used to be 12	 Update 21 Sept 13 -Nimrod Doesn't include WR_NORMAL 
 
-	/* Weather-room descrition constants - see weather_room in constants.c */
+#define		WR_NORMAL		0
+#define		WR_FOGGY		1
+#define		WR_CLOUDY		2
+#define		WR_RAINY		3
+#define		WR_STORMY		4
+#define		WR_SNOWY		5
+#define		WR_BLIZARD		6
 
-#define		WR_DESCRIPTIONS		12	/* Doesn't include WR_NORMAL */
+#define		WR_NIGHT		7
+#define		WR_NIGHT_FOGGY		8
+#define		WR_NIGHT_RAINY		9
+#define		WR_NIGHT_STORMY		10
+#define		WR_NIGHT_SNOWY		11
+#define		WR_NIGHT_BLIZARD	12
 
-#define		WR_FOGGY		0
-#define		WR_CLOUDY		1
-#define		WR_RAINY		2
-#define		WR_STORMY		3
-#define		WR_SNOWY		4
-#define		WR_BLIZARD		5
-#define		WR_NIGHT		6
-#define		WR_NIGHT_FOGGY		7
-#define		WR_NIGHT_RAINY		8
-#define		WR_NIGHT_STORMY		9
-#define		WR_NIGHT_SNOWY		10
-#define		WR_NIGHT_BLIZARD	11
-#define		WR_NORMAL		12
 
 /* For 'type_flag' */
 
