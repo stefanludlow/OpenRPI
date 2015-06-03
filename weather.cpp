@@ -150,7 +150,7 @@ bool Weather::weather_unification (int zone)
     return zone_updated;
 }
 
-
+/*
 int calcTemp(int zone)
 {
     float temp_base = 20;
@@ -212,6 +212,7 @@ int calcTemp(int zone)
     return (int) i;
 
 }
+*/
 
 void
 weather (int moon_setting, int moon_rise, int moon_set)
@@ -237,9 +238,6 @@ weather (int moon_setting, int moon_rise, int moon_set)
 
         weather_info[i].temperature = calcTemp(i);
         
-//            sprintf (buf,"%d:00 %d degrees F %d\n\r",time_info.hour, weather_info[i].temperature, time_info.month);
-            sprintf( buf, "   Current Gametime: %dH %dD %doW %dM %dY.", time_info.hour, time_info.day, time_info.dayofweek, time_info.month, time_info.year );
-            send_to_gods (buf);
 
         if ((weather_info[i].wind_speed <= WINDY) && (weather_info[i].wind_speed > CALM))
         {
