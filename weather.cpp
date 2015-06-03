@@ -236,7 +236,7 @@ weather (int moon_setting, int moon_rise, int moon_set)
         last_state = weather_info[i].state;
         last_fog = weather_info[i].fog;
 
-        weather_info[i].temperature = calcTemp(i);
+        weather_info[i].temperature = seasonal_temp[zone_table[i].weather_type][time_info.month];
         
 
         if ((weather_info[i].wind_speed <= WINDY) && (weather_info[i].wind_speed > CALM))
