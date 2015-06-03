@@ -237,7 +237,7 @@ weather (int moon_setting, int moon_rise, int moon_set)
 
         weather_info[i].temperature = calcTemp(i);
         
-            sprintf (buf,"%d:00 %d degrees F %d\n\r",time_info.hour, weather_info[i].temperature, time_info.season);
+            sprintf (buf,"%d:00 %d degrees F %d\n\r",time_info.hour, weather_info[i].temperature, time_info.month);
             send_to_gods (buf);
 
         if ((weather_info[i].wind_speed <= WINDY) && (weather_info[i].wind_speed > CALM))
