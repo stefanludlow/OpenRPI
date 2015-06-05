@@ -263,6 +263,222 @@ weather (int moon_setting, int moon_rise, int moon_set)
             }
         }
 
+      if (!number (0, 15) && weather_info[i].wind_speed)
+	{
+	  roll = number (0, 99);
+	  roll += weather_info[i].temperature / 3;
+
+	  if ((time_info.season == SPRING) || (time_info.season == AUTUMN))
+	    {
+	      if (roll < 20)
+		{
+		  if (last_clouds == OVERCAST)
+		    weather_info[i].clouds = HEAVY_CLOUDS;
+		  else
+		    weather_info[i].clouds = CLEAR_SKY;
+		}
+	      else if (roll < 45)
+		weather_info[i].clouds = LIGHT_CLOUDS;
+	      else if (roll < 80)
+		weather_info[i].clouds = HEAVY_CLOUDS;
+	      else
+		{
+		  if (last_clouds == CLEAR_SKY)
+		    weather_info[i].clouds = LIGHT_CLOUDS;
+		  else
+		    weather_info[i].clouds = OVERCAST;
+		}
+	    }
+	  else if (time_info.season == SUMMER)
+	    {
+	      if (roll < 50)
+		{
+		  if (last_clouds == OVERCAST)
+		    weather_info[i].clouds = HEAVY_CLOUDS;
+		  else
+		    weather_info[i].clouds = CLEAR_SKY;
+		}
+	      else if (roll < 80)
+		weather_info[i].clouds = LIGHT_CLOUDS;
+	      else if (roll < 90)
+		weather_info[i].clouds = HEAVY_CLOUDS;
+	      else
+		{
+		  if (last_clouds == CLEAR_SKY)
+		    weather_info[i].clouds = LIGHT_CLOUDS;
+		  else
+		    weather_info[i].clouds = OVERCAST;
+		}
+	    }
+	  else
+	    {
+	      if (roll < 10)
+		{
+		  if (last_clouds == OVERCAST)
+		    weather_info[i].clouds = HEAVY_CLOUDS;
+		  else
+		    weather_info[i].clouds = CLEAR_SKY;
+		}
+	      else if (roll < 25)
+		weather_info[i].clouds = LIGHT_CLOUDS;
+	      else if (roll < 75)
+		weather_info[i].clouds = HEAVY_CLOUDS;
+	      else
+		{
+		  if (last_clouds == CLEAR_SKY)
+		    weather_info[i].clouds = LIGHT_CLOUDS;
+		  else
+		    weather_info[i].clouds = OVERCAST;
+		}
+	    }
+	}
+
+      if (weather_info[i].fog < THICK_FOG)
+	{
+	  if ((weather_info[i].clouds == CLEAR_SKY)
+	      && (weather_info[i].clouds != last_clouds))
+	    {
+	      if (weather_info[i].wind_dir == WEST_WIND)
+		send_outside_zone
+		  ("The clouds are born away upon the prevailing winds and clear skies open up above.\n",
+		   i);
+	      if (weather_info[i].wind_dir == NORTH_WIND)
+		send_outside_zone
+		  ("The northern winds carry away the cloud cover, leaving the sky clear.\n\r",
+		   i);
+	    }
+
+	  if ((weather_info[i].clouds == LIGHT_CLOUDS)
+	      && (weather_info[i].clouds != last_clouds))
+	    {
+	      if (weather_info[i].wind_dir == WEST_WIND)
+		{
+		  if (last_clouds > weather_info[i].clouds)
+		    send_outside_zone
+		      ("The cloud cover begins to clear, carried eastward upon the prevailing winds.\n\r",
+		       i);
+		  if (last_clouds < weather_info[i].clouds)
+		    send_outside_zone
+		      ("Wisplike clouds drift out of the west upon the prevailing winds.\n\r",
+		       i);
+		}
+
+	      if (weather_info[i].wind_dir == NORTH_WIND)
+		{
+		  if (last_clouds > weather_info[i].clouds)
+		    send_outside_zone
+		      ("The cloud cover begins to clear, carried southward upon the chill northern winds.\n\r",
+		       i);
+		  if (last_clouds < weather_info[i].clouds)
+		    send_outside_zone
+		      ("Threadlike clouds begin to drift overhead upon the chill northern winds.\n\r",
+		       i);
+		}
+	    }
+
+	  if ((weather_info[i].clouds == HEAVY_CLOUDS)
+	      && (weather_info[i].clouds != last_clouds))
+	    {
+	      if (weather_info[i].wind_dir == WEST_WIND)
+		{
+		  if (last_clouds < weather_info[i].clouds)
+		    send_outside_zone
+		      ("A host of clouds marches out of the west upon the prevailing winds.\n\r",
+		       i);
+		  if (last_clouds > weather_info[i].clouds)
+		    send_outside_zone
+		      ("Small patches of sky open up as the storm clouds drift eastward.\n\r",
+		       i);
+		}
+
+	      if (weather_info[i].wind_dir == NORTH_WIND)
+		{
+		  if (last_clouds > weather_info[i].clouds)
+		    send_outside_zone
+		      ("Small patches of sky peek through the cloud cover as the storm clouds move southward.\n\r",
+		       i);
+		  if (last_clouds < weather_info[i].clouds)
+		    send_outside_zone
+		      ("The chill northerly winds bring heavy clouds in their wake.\n\r",
+		       i);
+		}
+	    }
+
+	  if ((weather_info[i].clouds == OVERCAST)
+	      && (weather_info[i].clouds != last_clouds))
+	    {
+	      if (weather_info[i].wind_dir == WEST_WIND)
+		{
+		  if (sun_light == 1)
+		    send_outside_zone
+		      ("The prevailing winds bring a blanket of thick storm clouds to obscure Anor.\n\r",
+		       i);
+		  else
+		    send_outside_zone
+		      ("The prevailing winds bring a blanket of thick storm clouds into the sky.\n\r",
+		       i);
+		}
+
+	      if (weather_info[i].wind_dir == NORTH_WIND)
+		{
+		  if (sun_light == 1)
+		    send_outside_zone
+		      ("A thick veil of storm clouds sweeps out of the north, plunging the land into twilight.\n\r",
+		       i);
+		  else
+		    send_outside_zone
+		      ("A thick veil of storm clouds sweeps out of the north.\n\r",
+		       i);
+		}
+	    }
+	}
+
+      if (weather_info[i].clouds != last_clouds)
+	{			/*   Is the new front a rain front?   */
+
+	  if (time_info.season == SPRING)	/*   Spring rains   */
+	    chance_of_rain = 20;
+
+	  if (weather_info[i].clouds == CLEAR_SKY)	/*   More clouds = Higher chance of rain   */
+	    chance_of_rain = 0;
+	  else
+	    chance_of_rain += (weather_info[i].clouds * 15);
+
+	  if (number (0, 99) < chance_of_rain)
+	    {
+	      weather_info[i].state = CHANCE_RAIN;
+	    }
+	  else if ((last_state > CHANCE_RAIN) && (last_state < LIGHT_SNOW))
+	    {
+	      weather_info[i].state = NO_RAIN;
+	      send_outside_zone ("The rain passes.\n\r", i);
+	    }
+	  else if (last_state > HEAVY_RAIN)
+	    {
+	      weather_info[i].state = NO_RAIN;
+	      send_outside ("It stops snowing.\n\r");
+	    }
+	}
+
+      /*   Lightning is more common the closer you get to midsummer. I wanted it to be more common   */
+      /*   with higher temperatures, but we haven't determined temp and we need to know now.   */
+
+      if ((weather_info[i].clouds > LIGHT_CLOUDS)
+	  && (weather_info[i].state > NO_RAIN))
+	{
+	  if (number (35, 350) <
+	      seasonal_temp[zone_table[i].weather_type][time_info.month])
+	    {
+	      if (number (1, 10) && number (1, 3) < weather_info[i].clouds)
+		{
+		  weather_info[i].lightning = 1;
+		  send_outside_zone
+		    ("Lightning flashes across the heavens.\n\r", i);
+		}
+	      else
+		weather_info[i].lightning = 0;
+	    }
+	}
 
         if (!number (0, 4))
         {
