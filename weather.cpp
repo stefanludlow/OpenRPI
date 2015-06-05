@@ -1316,8 +1316,6 @@ load_weather_obj(ROOM_DATA *troom)
             || IS_SET (troom->room_flags, FALL)
             || IS_SET (troom->room_flags, CLIMB)
             || troom->sector_type == SECT_RIVER
-            || troom->sector_type == SECT_LAKE-SHALLOW
-            || troom->sector_type == SECT_LAKE-DEEP
             || troom->sector_type == SECT_LAKE
             || troom->sector_type == SECT_OCEAN
             || troom->sector_type == SECT_REEF
