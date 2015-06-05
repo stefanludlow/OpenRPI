@@ -561,15 +561,65 @@ weather (int moon_setting, int moon_rise, int moon_set)
 	      break;
 	    }
 	}
+      /*   Angle of Sunlight   */
+      if (sun_light)
+	{
+	  roll = ((sunrise[time_info.month] + sunset[time_info.month]) / 2);
 
-        if (weather_info[i].wind_speed == BREEZE)
+	  if (time_info.hour > roll)
+	    roll =
+	      (sunset[time_info.month] -
+	       time_info.hour) * 100 / (sunset[time_info.month] -
+					roll) * 15 / 100;
+	  else if (time_info.hour == roll)
+	    roll = 15;
+	  else if (time_info.hour < roll)
+	    roll =
+	      (time_info.hour - sunrise[time_info.month]) * 100 / (roll -
+								   sunrise
+								   [time_info.
+								    month]) *
+	      15 / 100;
+
+	  weather_info[i].temperature += roll;
+	}
+
+      /*   Cloud Chill, which applies only in the daytime - This is not scientific.   */
+      if (sun_light)
+	{
+	  if (weather_info[i].clouds == LIGHT_CLOUDS)
+	    weather_info[i].temperature -= ((roll * 3) / 10);
+	  if (weather_info[i].clouds == HEAVY_CLOUDS)
+	    weather_info[i].temperature -= ((roll * 6) / 10);
+	  if (weather_info[i].clouds == OVERCAST)
+	    weather_info[i].temperature -= ((roll * 9) / 10);
+	  weather_info[i].temperature = ((weather_info[i].temperature + last_temp * 2) / 3);	/*   Limits Drastic Immediate Changes   */
+	}
+      else
+	{
+	  if ((time_info.season == SPRING) || (time_info.season == AUTUMN))	/*   Gradual Nighttime Cooling   */
+	    weather_info[i].temperature -= 10;
+	  else if (time_info.season == SUMMER)
+	    weather_info[i].temperature -= 15;
+	  else
+	    weather_info[i].temperature -= 5;
+	  roll = 0;
+	  if (time_info.hour != sunset[time_info.month])
+	    roll = 5;
+	  weather_info[i].temperature =
+	    ((weather_info[i].temperature + (last_temp + roll) * 4) / 5);
+	  weather_info[i].temperature -= 5;	/*   Immediate Nighttime Chill   */
+	}
+
+
+/*        if (weather_info[i].wind_speed == BREEZE)
         {
             weather_info[i].temperature -= 10;
         }
         else if (weather_info[i].wind_speed == WINDY)
         {
             weather_info[i].temperature -= 20;
-        }
+        } */
 
            // Wind Chill - This is FAR from scientific, but I didnt want winds to totally take over temperatures. - Koldryn
         if (weather_info[i].wind_dir == NORTH_WIND)
