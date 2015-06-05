@@ -1316,13 +1316,15 @@ load_weather_obj(ROOM_DATA *troom)
             || IS_SET (troom->room_flags, FALL)
             || IS_SET (troom->room_flags, CLIMB)
             || troom->sector_type == SECT_RIVER
+            || troom->sector_type == SECT_LAKE-SHALLOW
+            || troom->sector_type == SECT_LAKE-DEEP
             || troom->sector_type == SECT_LAKE
             || troom->sector_type == SECT_OCEAN
             || troom->sector_type == SECT_REEF
             || troom->sector_type == SECT_UNDERWATER)
         return;
 
-    /* If it is raining
+    /* If it is raining */
     if ((weather_info[troom->zone].state > CHANCE_RAIN)
             &&(weather_info[troom->zone].state < LIGHT_SNOW))
     {
@@ -1524,7 +1526,7 @@ load_weather_obj(ROOM_DATA *troom)
             }
         }
     }
-    */
+    
     /* If volcanic smoke is set */
 
     if (weather_info[troom->zone].special_effect == VOLCANIC_SMOKE)
