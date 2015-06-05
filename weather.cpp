@@ -480,39 +480,87 @@ weather (int moon_setting, int moon_rise, int moon_set)
 	    }
 	}
 
-        if (!number (0, 4))
-        {
-            roll = number (-1, 1);
-            switch (roll)
-            {
-            case -1:
-                if (weather_info[i].wind_speed == CALM)
-                    break;
-                if (weather_info[i].wind_speed == BREEZE && number (0, 1))
-                    break;
-                weather_info[i].wind_speed -= 1;
-                if (weather_info[i].wind_speed == CALM)
-                    send_outside_zone ("The winds die and the air stills.\n\r",  i);
-                if (weather_info[i].wind_speed == BREEZE)
-                    send_outside_zone ("The wind dies down to a mild breeze.\n\r", i);
-                break;
+      if (!number (0, 4))
+	{
+	  roll = number (-1, 1);
+	  switch (roll)
+	    {
+	    case -1:
+	      if (weather_info[i].wind_speed == CALM)
+		break;
+	      if (weather_info[i].wind_speed == BREEZE && number (0, 1))
+		break;
+	      weather_info[i].wind_speed -= 1;
+	      if (weather_info[i].wind_speed == CALM)
+		send_outside_zone ("The winds die and the air stills.\n\r",
+				   i);
+	      if (weather_info[i].wind_speed == BREEZE)
+		send_outside_zone ("The wind dies down to a mild breeze.\n\r",
+				   i);
+	      if (weather_info[i].wind_speed == WINDY)
+		send_outside_zone
+		  ("The gale winds die down to a steady current.\n\r", i);
+	      if (weather_info[i].wind_speed == GALE)
+		send_outside_zone
+		  ("The stormy winds slow to a steady gale.\n\r", i);
+	      break;
 
-            case 1:
-                if (weather_info[i].wind_speed == CALM)
-                {
-                    send_outside_zone ("A capricious breeze picks up.\n\r", i);
-                    weather_info[i].wind_speed += 1;
-                }
-                if (weather_info[i].wind_speed == BREEZE)
-                {
-                    if (number (0, 1))
-                        break;
-                    send_outside_zone ("The breeze strengthens into a steady wind.\n\r", i);
-                    weather_info[i].wind_speed += 1;
-                }
-                break;
-            }
-        }
+	    case 1:
+	      sprintf (storm, "wind storm");
+	      if (weather_info[i].state > CHANCE_RAIN)
+		sprintf (storm, "rain storm");
+	      if (weather_info[i].lightning)
+		sprintf (storm, "thunder storm");
+	      if (weather_info[i].state > HEAVY_RAIN)
+		sprintf (storm, "blizzard");
+	      if (weather_info[i].wind_speed == STORMY)
+		{
+		  send_outside_zone
+		    ("The storm winds slow, leaving a steady gale in their wake.\n\r",
+		     i);
+		  weather_info[i].wind_speed -= 1;
+		  break;
+		}
+	      if (weather_info[i].wind_speed == CALM)
+		send_outside_zone ("A capricious breeze picks up.\n\r", i);
+	      if (weather_info[i].wind_speed == BREEZE)
+		{
+		  if (number (0, 1))
+		    break;
+		  send_outside_zone
+		    ("The breeze strengthens into a steady wind.\n\r", i);
+		}
+	      if (weather_info[i].wind_speed == WINDY)
+		{
+		  if (!number (0, 3))
+		    break;
+		  if (weather_info[i].state < LIGHT_RAIN)
+		    send_outside_zone
+		      ("The winds grow fierce, building into a strong gale.\n\r",
+		       i);
+		  else
+		    {
+		      if (weather_info[i].state > HEAVY_RAIN)
+			sprintf (storm, "snow storm");
+		      sprintf (buf,
+			       "The winds grow fierce, building into a mild %s.\n\r",
+			       storm);
+		      send_outside_zone (buf, i);
+		    }
+		}
+	      if (weather_info[i].wind_speed == GALE)
+		{
+		  if (!number (0, 5))
+		    break;
+		  sprintf (buf,
+			   "The winds begin to rage, and a fierce %s is born.\n\r",
+			   storm);
+		  send_outside_zone (buf, i);
+		}
+	      weather_info[i].wind_speed += 1;
+	      break;
+	    }
+	}
 
         if (weather_info[i].wind_speed == BREEZE)
         {
