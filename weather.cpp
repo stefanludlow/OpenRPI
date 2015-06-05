@@ -238,8 +238,12 @@ weather (int moon_setting, int moon_rise, int moon_set)
 
         weather_info[i].temperature = seasonal_temp[zone_table[i].weather_type][time_info.month];
         
+      	if (time_info.hour == sunrise[time_info.month])
+			weather_info[i].trend = (weather_info[i].trend * 2 + number (0, 15)) / 3;
 
-        if ((weather_info[i].wind_speed <= WINDY) && (weather_info[i].wind_speed > CALM))
+      	weather_info[i].temperature += weather_info[i].trend;        
+
+        if ((weather_info[i].wind_speed < STORMY) && (weather_info[i].wind_speed > CALM))
         {
             if (weather_info[i].wind_dir == WEST_WIND)
             {
@@ -258,6 +262,7 @@ weather (int moon_setting, int moon_rise, int moon_set)
                 }
             }
         }
+
 
         if (!number (0, 4))
         {
