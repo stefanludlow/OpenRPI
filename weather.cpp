@@ -1351,7 +1351,7 @@ load_weather_obj(ROOM_DATA *troom)
 
             //load slush in room
             obj = load_object(weather_objects[2]);
-            obj_to_room (obj, troom->nVirtual);
+            obj_to_room (obj, troom->vnum);
         }
         else
         {
@@ -1369,7 +1369,7 @@ load_weather_obj(ROOM_DATA *troom)
                 if (!(obj = get_obj_in_list_num (weather_objects[0], troom->contents)))
                 {
                     obj = load_object(weather_objects[9]);
-                    obj_to_room (obj, troom->nVirtual);
+                    obj_to_room (obj, troom->vnum);
                 }
             }
             else
@@ -1383,7 +1383,7 @@ load_weather_obj(ROOM_DATA *troom)
 
                     //load fresh puddles in room
                     obj = load_object(weather_objects[3]);
-                    obj_to_room (obj, troom->nVirtual);
+                    obj_to_room (obj, troom->vnum);
                 }
                 else
                 {
@@ -1394,7 +1394,7 @@ load_weather_obj(ROOM_DATA *troom)
                     {
                         //load fresh puddles in room
                         obj = load_object(weather_objects[3]);
-                        obj_to_room (obj, troom->nVirtual);
+                        obj_to_room (obj, troom->vnum);
                     }
                 }
             }
@@ -1414,7 +1414,7 @@ load_weather_obj(ROOM_DATA *troom)
 
             //load slush in room
             obj = load_object(weather_objects[2]);
-            obj_to_room (obj, troom->nVirtual);
+            obj_to_room (obj, troom->vnum);
         }
         else
         {
@@ -1432,7 +1432,7 @@ load_weather_obj(ROOM_DATA *troom)
                 if (!(obj = get_obj_in_list_num (weather_objects[9], troom->contents)))
                 {
                     obj = load_object(weather_objects[9]);
-                    obj_to_room (obj, troom->nVirtual);
+                    obj_to_room (obj, troom->vnum);
                 }
             }
             else
@@ -1448,7 +1448,7 @@ load_weather_obj(ROOM_DATA *troom)
 
                         //load fresh snow in room
                         obj = load_object(weather_objects[0]);
-                        obj_to_room (obj, troom->nVirtual);
+                        obj_to_room (obj, troom->vnum);
                     }
 
                     // If there's a heavy blanket of snow, then top it up.
@@ -1464,7 +1464,7 @@ load_weather_obj(ROOM_DATA *troom)
                             extract_obj(obj);
 
                         obj = load_object(weather_objects[10]);
-                        obj_to_room (obj, troom->nVirtual);
+                        obj_to_room (obj, troom->vnum);
 
                     }
                     else
@@ -1476,7 +1476,7 @@ load_weather_obj(ROOM_DATA *troom)
                         {
                             //load fresh snow in room
                             obj = load_object(weather_objects[0]);
-                            obj_to_room (obj, troom->nVirtual);
+                            obj_to_room (obj, troom->vnum);
                         }
                     }
                 }
@@ -1517,7 +1517,7 @@ load_weather_obj(ROOM_DATA *troom)
                     if (!weather_object_exists(troom->contents, weather_objects[10]))
                     {
                         obj = load_object(weather_objects[10]);
-                        obj_to_room (obj, troom->nVirtual);
+                        obj_to_room (obj, troom->vnum);
                     }
 
                 }
