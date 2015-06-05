@@ -633,7 +633,104 @@ weather (int moon_setting, int moon_rise, int moon_set)
             weather_info[i].temperature += (5 - weather_info[i].wind_speed * 2);
             roll = 0 + (5 - weather_info[i].wind_speed * 2);
         }
-        
+
+      /*   Will it rain?   */
+      if (weather_info[i].state == CHANCE_RAIN)
+	{
+	  chance_of_rain = (weather_info[i].clouds * 15);
+	  if (time_info.season == SUMMER)
+	    chance_of_rain -= 20;
+	  if (time_info.season == AUTUMN)
+	    chance_of_rain -= 10;
+	  if (time_info.season == SPRING)
+	    chance_of_rain += 10;
+	  chance_of_rain = MAX (1, chance_of_rain);
+	  if (weather_info[i].lightning && number (0, 39))	/*   Its very rare for lightning not to cause rain   */
+	    chance_of_rain = 100;
+
+	  if (number (0, 99) < chance_of_rain)
+	    weather_info[i].state = weather_info[i].clouds + 1;
+	}
+
+      /*   If its going to rain, how hard?   */
+      if (weather_info[i].state > CHANCE_RAIN)
+	{
+	  if (weather_info[i].state > HEAVY_RAIN)
+	    weather_info[i].state -= 3;
+	  roll = number (0, 99);
+	  if (weather_info[i].clouds == LIGHT_CLOUDS)
+	    {
+	      if (roll < 40)
+		weather_info[i].state = CHANCE_RAIN;
+	      else if (roll < 85)
+		weather_info[i].state = LIGHT_RAIN;
+	      else
+		weather_info[i].state = STEADY_RAIN;
+	    }
+	  if (weather_info[i].clouds == HEAVY_CLOUDS)
+	    {
+	      if (roll < 30)
+		weather_info[i].state = CHANCE_RAIN;
+	      else if (roll < 60)
+		weather_info[i].state = LIGHT_RAIN;
+	      else if (roll < 90)
+		weather_info[i].state = STEADY_RAIN;
+	      else
+		weather_info[i].state = HEAVY_RAIN;
+	    }
+	  if (weather_info[i].clouds == OVERCAST)
+	    {
+	      if (roll < 20)
+		weather_info[i].state = CHANCE_RAIN;
+	      else if (roll < 50)
+		weather_info[i].state = LIGHT_RAIN;
+	      else if (roll < 80)
+		weather_info[i].state = STEADY_RAIN;
+	      else
+		weather_info[i].state = HEAVY_RAIN;
+	    }
+
+	  /*   Is it rain or snow?   */
+	  if ((weather_info[i].temperature < 32) 
+	      && (weather_info[i].state > CHANCE_RAIN))	
+	    {
+	      if ((weather_info[i].state += 3) == HEAVY_SNOW
+		  && (weather_info[i].temperature < 20))
+		weather_info[i].state--;
+	    }
+
+	  /*   Lightning should never allow existing rain to stop   */
+	  if (weather_info[i].lightning 
+	      && (weather_info[i].state == CHANCE_RAIN))
+	    weather_info[i].state = weather_info[i].clouds + 1;
+	}
+
+      /*   If the rain has changed, display a message.   */
+      if ((weather_info[i].state != last_state)
+	  && (weather_info[i].state != NO_RAIN))
+	{
+	  if ((weather_info[i].state == CHANCE_RAIN)
+	      && (last_state > CHANCE_RAIN) && (last_state < LIGHT_SNOW))
+	    send_outside_zone ("The rain fades and stops.\n\r", i);
+	  if ((weather_info[i].state == CHANCE_RAIN)
+	      && (last_state > HEAVY_RAIN))
+	    send_outside_zone ("It stops snowing.\n\r", i);
+	  if (weather_info[i].state == LIGHT_RAIN)
+	    send_outside_zone
+	      ("A light sprinkling of rain falls from the sky.\n\r", i);
+	  if (weather_info[i].state == STEADY_RAIN)
+	    send_outside_zone ("A steady rain falls from the sky.\n\r", i);
+	  if (weather_info[i].state == HEAVY_RAIN)
+	    send_outside_zone ("Pouring rain showers down upon the land.\n\r",
+			       i);
+	  if (weather_info[i].state == LIGHT_SNOW)
+	    send_outside_zone ("A light snow falls lazily from the sky.\n\r",
+			       i);
+	  if (weather_info[i].state == STEADY_SNOW)
+	    send_outside_zone ("Snow falls steadily from the sky.\n\r", i);
+	  if (weather_info[i].state == HEAVY_SNOW)
+	    send_outside_zone ("Blinding snows fall from the sky.\n\r", i);
+	}
 
         
         if (weather_info[i].fog)
