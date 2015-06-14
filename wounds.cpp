@@ -2255,7 +2255,7 @@ npc_treatment (CHAR_DATA * ch, CHAR_DATA * mob, char *argument)
         }
 
         sprintf (buf,
-                 "whisper %s I'll get you taken care of for a total of %d credits.",
+                 "whisper %s I'll get you taken care of for a total of %d coppers.",
                  buf2, (int) cost);
         command_interpreter (mob, buf);
         return;
@@ -2329,7 +2329,7 @@ npc_treatment (CHAR_DATA * ch, CHAR_DATA * mob, char *argument)
 
         if (!can_subtract_money (ch, (int) cost, mob->mob->currency_type))
         {
-            sprintf (buf, "%s You seem to be a little short on credits.", buf2);
+            sprintf (buf, "%s You seem to be a little short on coppers.", buf2);
             do_whisper (mob, buf, 83);
             return;
         }
