@@ -141,7 +141,7 @@ bool Weather::weather_unification (int zone)
     bool zone_updated = false;
 
     // Begin Japheth's "Weather zone unification" changes
-    if (zone >= 11 && zone <= 19)
+    if (zone >= 1 && zone <= 99)
     {
         weather_info[zone] = weather_info[10];
         zone_updated = true;
