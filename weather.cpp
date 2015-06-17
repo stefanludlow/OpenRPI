@@ -23,7 +23,7 @@ AFFECTED_TYPE *world_affects = NULL;
 const int sunrise[] = { 7, 6, 6, 6, 6, 5, 4, 4, 5, 5, 6, 6 };
 const int sunset[] = { 18, 18, 19, 19, 20, 21, 22, 22, 21, 20, 19, 18 };
 
-
+//test
 const char *earth_phase[] =
 {
     "Full Earth",
