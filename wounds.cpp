@@ -1873,7 +1873,7 @@ delayed_treatment (CHAR_DATA * ch)
 
 	if (ch->skills[SKILL_MEDICINE] >= 10)
 	{
-		roll = MAX(number(1, skill_level(ch, SKILL_FIRSTAID, 0)), number(((ch->skills[SKILL_EDUCATION] - 10 / 5) + 1), skill_level(ch, SKILL_MEDICINE, 0)));
+	  roll = MAX(number(1, skill_level(ch, SKILL_FIRSTAID, 0)), number((((ch->skills[SKILL_EDUCATION] - 10) / 5) + 1), skill_level(ch, SKILL_MEDICINE, 0)));
 	}
 	else
 	{
