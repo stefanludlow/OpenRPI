@@ -1080,10 +1080,34 @@ void
 			sprintf (command, "%s", buf);
 
 		CREATE (tcraft, SUBCRAFT_HEAD_DATA, 1);
+		//Ceredir's attempt begin
+		for (craft = crafts; craft; craft = craft->next)
+		{
+			if (!craft->next)
+			{
+				CREATE (craft->next, SUBCRAFT_HEAD_DATA, 1);
+				break;
+			}
+		}
 		memset (tcraft, 0, sizeof (SUBCRAFT_HEAD_DATA));
 		memcpy (tcraft, ch->pc->edit_craft, sizeof (SUBCRAFT_HEAD_DATA));
-
-		CREATE (tcraft->phases, PHASE_DATA, 1);
+		
+		tcraft->craft_name = add_hash (craft_name);
+		tcraft->subcraft_name = add_hash (subcraft);
+		tcraft->command = add_hash (command);
+		tcraft->next = NULL;
+		craft->next = tcraft;
+		ch->pc->edit_craft = tcraft;
+		send_to_char ("Craft cloned; new craft opened for editing.\n", ch);
+		if (!IS_SET (tcraft->subcraft_flags, SCF_OBSCURE))
+					mysql_safe_query ("INSERT INTO new_crafts VALUES ('%s', '%s', '%s', '%s')",
+					tcraft->command,
+					tcraft->subcraft_name,
+					tcraft->craft_name,
+					ch->tname);
+		return;
+		
+/*		CREATE (tcraft->phases, PHASE_DATA, 1);
 		memset (tcraft->phases, 0, sizeof (PHASE_DATA));
 		memcpy (tcraft->phases, ch->pc->edit_craft->phases, sizeof (PHASE_DATA));
 
@@ -1098,33 +1122,7 @@ void
 
 			memcpy (tcraft->obj_items, ch->pc->edit_craft->obj_items,
 				sizeof (DEFAULT_ITEM_DATA));
-		}
-
-		ch->pc->edit_craft = NULL;
-		tcraft->craft_name = add_hash (craft_name);
-		tcraft->subcraft_name = add_hash (subcraft);
-		tcraft->command = add_hash (command);
-		tcraft->next = NULL;
-
-		for (craft = crafts; craft; craft = craft->next)
-		{
-			if (!craft->next)
-			{
-				CREATE (craft->next, SUBCRAFT_HEAD_DATA, 1);
-				craft->next = tcraft;
-				ch->pc->edit_craft = tcraft;
-				send_to_char ("Craft cloned; new craft opened for editing.\n", ch);
-
-				if (!IS_SET (tcraft->subcraft_flags, SCF_OBSCURE))
-					mysql_safe_query ("INSERT INTO new_crafts VALUES 									('%s', '%s', '%s', '%s')",
-					tcraft->command,
-					tcraft->subcraft_name,
-					tcraft->craft_name,
-					ch->tname);
-
-				return;
-			}
-		}
+		} */
 	} //else if (!str_cmp (buf, "clone"))
 
 	//Immortal options - list by catagory
