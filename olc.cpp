@@ -6671,12 +6671,10 @@ do_object_standards (CHAR_DATA * ch, OBJ_DATA *obj, int cmd)
     AFFECTED_TYPE *saf = NULL;
 
     // If it's not something we apply standards to, kick it back.
-    // Or, it's clothing but got no prim_locs, then we're not going to bother setting any values.
-    // This allows us to make stuff like gems and necklaces be whatever values we need/want.
     if (GET_ITEM_TYPE(obj) != ITEM_WEAPON &&
         GET_ITEM_TYPE(obj) != ITEM_SHIELD &&
         GET_ITEM_TYPE(obj) != ITEM_FIREARM &&
-        (GET_ITEM_TYPE(obj) != ITEM_WORN || (GET_ITEM_TYPE(obj) == ITEM_WORN && obj->o.od.value[2] == 0)) &&
+        //(GET_ITEM_TYPE(obj) != ITEM_WORN || (GET_ITEM_TYPE(obj) == ITEM_WORN && obj->o.od.value[2] == 0)) &&
         GET_ITEM_TYPE(obj) != ITEM_ARMOR &&
 		!obj->trap)
         return;

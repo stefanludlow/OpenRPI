@@ -71,79 +71,77 @@ const int pregame_furnishings[] =
 
 const char *color_skill[] =
 {
-    "#0",				/* Unused */
-    "#3",				/* Brawling */
-    "#3",				/* Small-Blade */
-    "#3",				/* Long-Blade */
-    "#3",				/* Polearm */
-    "#3",				/* Bludgeon */
-    "#3",				/* Dodge */
-    "#3",				/* Deflect */
-    "#9#3",				/* Sole-Wield */
-    "#9#3",				/* Dual-Wield */
-    "#3",				/* Aim */
-    "#3",				/* Handgun */
-    "#3",				/* Rifle */
-    "#3",				/* SMG */
-    "#3",				/* Gunnery */
-    "#3",				/* Explosives */
-
-    "#9#6",			    /* Sneak */
-    "#6",				/* Hide */
-    "#9#6",			    /* Steal */
-    "#9#6",			    /* Picklock */
-    "#0",				/* Haggle */
-    "#0",				/* Handle */
-    "#0",				/* Hunting */
-    "#6",	    		/* First-Aid */
-    "#9#6",           // Medicine
-    "#0",				/* Scavenge */
-    "#0",				/* Eavesdrop */
+    "#0",                    /* Unused */
+    "#3",                    /* Brawling */
+    "#3",                    /* Small-Blade */
+    "#3",                    /* Long-Blade */
+    "#3",                    /* Polearm */
+    "#3",                    /* Bludgeon */
+    "#3",                    /* Dodge */
+    "#3",                    /* Deflect */
+    "#9#3",                    /* Sole-Wield */
+    "#9#3",                    /* Dual-Wield */
+    "#3",                    /* Aim */
+    "#3",                    /* Handgun */
+    "#3",                    /* Rifle */
+    "#3",                    /* SMG */
+    "#3",                    /* Gunnery */
+    "#3",                    /* Explosives */
+ 
+    "#9#0",                   /* Sneak */
+    "#0",                    /* Hide */
+    "#9#1",                   /* Steal */
+    "#9#0",                   /* Picklock */
+    "#0",                    /* Haggle */
+    "#0",                    /* Handle */
+    "#0",                    /* Hunting */
+    "#6",                   /* First-Aid */
+    "#9#1",           // Medicine
+    "#0",                    /* Scavenge */
+    "#0",                    /* Eavesdrop */
     "#0",             /* Butchery */
-
-    "#2",			    /* Chemistry */
-    "#2", 			    /* Mechanics */
-    "#2",				/* Gunsmithery */
-    "#2",	    		/* Computerology */
-    "#2",		    	/* Electronics */
-    "#2",			    /* Biology */
-    "#2",			    /* Weaponcraft */
-    "#2",			    /* Armorcraft */
-    "#2",			    /* Handicraft */
-    "#9#2",		        /* Artistry */
-
+ 
+    "#2",                   /* Chemistry */
+    "#2",                    /* Mechanics */
+    "#2",                    /* Gunsmithery */
+    "#2",                   /* Computerology */
+    "#2",                   /* Electronics */
+    "#2",                   /* Biology */
+    "#6",                   /* Weaponcraft */
+    "#6",                   /* Armorcraft */
+    "#6",                   /* Handicraft */
+    "#9#6",                  /* Artistry */
+ 
     "#5",             /* Education */
     "#0",             /* Voodoo */
     "#0",             /* Common */
-    "#0",             /* Metalcraft */
-    "#0",             /* Leathercraft */
-    "#0",             /* Textilecraft */
-    "#0",             /* Woodcraft */
-    "#0",             /* Cooking */
-    "#0",             /* Baking */
-    "#0",             /* Brewing */
-    "#0",             /* Fishing */
-    "#0",             /* Stonecraft */
-    "#0",             /* Earthencraft */
-    "#0",             /* Gardening */
-    "#0",             /* Farming */
-    "#0",             /* Shortbow */
-    "#0",             /* Longbow */
-    "#0",             /* Crossbow */
-    "#0",             /* Music */
+    "#6",             /* Metalcraft */
+    "#6",             /* Leathercraft */
+    "#6",             /* Textilecraft */
+    "#6",             /* Woodcraft */
+    "#6",             /* Cooking */
+    "#6",             /* Baking */
+    "#6",             /* Brewing */
+    "#6",             /* Fishing */
+    "#6",             /* Stonecraft */
+    "#6",             /* Earthencraft */
+    "#6",             /* Gardening */
+    "#6",             /* Farming */
+    "#3",             /* Shortbow */
+    "#3",             /* Longbow */
+    "#3",             /* Crossbow */
+    "#6",             /* Music */
     "#0",             /* Astronomy */
-    "#0",             /* Orkish */
-    "#0",             /* Wargish */
-    "#0",             /* Dalish */
-    "#0",             /* Sindarin */
-    "#0",             /* Khuzdul */
-    "#0",             /* Tengwar */
-    "#0",             /* Cirth */
-    "#0",             /* Warcraft */
-        
-    
+    "#2",             /* Orkish */
+    "#2",             /* Wargish */
+    "#2",             /* Dalish */
+    "#2",             /* Sindarin */
+    "#2",             /* Khuzdul */
+    "#2",             /* Tengwar */
+    "#2",             /* Cirth */
+    "#6",             /* Warcraft */
+   
 };
-
 
 
 
@@ -2509,10 +2507,10 @@ nanny_connect_select (DESCRIPTOR_DATA * d, char *argument)
     else if (c == 'r' || argn == 3)
     {
 		// Temporarily disabling this option 0207142051 - Nimrod
-		SEND_TO_Q
-			("\n\nPlease visit www.middle-earth.us/generator to create a character.\n\n\n", d);
-        display_main_menu (d);
-		return;
+//		SEND_TO_Q
+//			("\n\nPlease visit www.middle-earth.us/generator to create a character.\n\n\n", d);
+//        display_main_menu (d);
+//		return;
 
         if (str_cmp ("Unknown", d->acct->name.c_str ()) == 0)
         {
