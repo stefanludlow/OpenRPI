@@ -684,6 +684,13 @@ void
 		return;
 	}
 
+	if (!strncmp(argument,"normal",6))
+	{
+	  clear_omote(obj);
+	  send_to_char ("Omote cleared.\n",ch);
+	  return;
+	}
+
 	result = swap_xmote_target (ch, argument, 3);
 	if (!result)
 		return;
