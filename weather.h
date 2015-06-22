@@ -39,6 +39,8 @@
 
 enum fog_type {
   NO_FOG,
+  THIN_FOG,
+  THICK_FOG,
   FOG
 };
 
@@ -56,7 +58,27 @@ enum wind_dir_type {
 enum wind_str_type {
   CALM,
   BREEZE,
-  WINDY
+  WINDY, 
+  GALE,
+  STORMY,
+};
+
+enum cloud_type {
+  CLEAR_SKY,
+  LIGHT_CLOUDS,
+  HEAVY_CLOUDS,
+  OVERCAST
+};
+
+enum rain_type {
+  NO_RAIN,
+  CHANCE_RAIN,
+  LIGHT_RAIN,
+  STEADY_RAIN,
+  HEAVY_RAIN,
+  LIGHT_SNOW,
+  STEADY_SNOW,
+  HEAVY_SNOW
 };
 
 enum sun_phase
@@ -99,6 +121,8 @@ class Weather
   int trend;
   int temperature;
   int state;
+  int clouds;
+  int lightning;
   int wind_dir;
   int wind_speed;
   int special_effect;

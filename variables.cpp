@@ -2171,9 +2171,10 @@ do_variables (CHAR_DATA *ch, char *argument, int cmd)
                                     output += "\nNo such oval: enter a value between 0 and 5.\n";
                                     break;
                                 }
-                                else if (!IS_IMPLEMENTOR(ch))
+                                
+                                else if (GET_TRUST (ch) < 4)
                                 {
-                                    output += "\nOnly Kithrater is allowed to do this at the moment.\n";
+                                    output += "\nThis command is reserved for level 4 and higher.\n";
                                     break;
                                 }
 
