@@ -157,7 +157,7 @@ fname (char *namelist)
     if (!namelist)
         return "";
 
-    for (point = holder; isalpha (*namelist); namelist++, point++)
+    for (point = holder; isalpha (*namelist) || *namelist == '-'; namelist++, point++)
         *point = *namelist;
 
     *point = '\0';
