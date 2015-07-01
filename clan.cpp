@@ -3000,7 +3000,7 @@ void
 	return;
 }
 
-
+/*
 // Some code to get rid of all of these conflict clans.
 void
 	conflicting_clan_check(CHAR_DATA *ch)
@@ -3053,3 +3053,4 @@ void
 		send_to_char( "Your have shedded your conflicting loyalties - only the strongest remain.", ch );
 	}
 }
+*/
