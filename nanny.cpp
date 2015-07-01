@@ -4061,7 +4061,7 @@ attribute_priorities (DESCRIPTOR_DATA * d, char *arg)
     int attr;
     int i;
     CHAR_DATA *ch = d->character;
-    int attr_starters[] = { 16, 15, 12, 12, 11, 10, 8 };
+    int attr_starters[] = { 16, 15, 12, 12, 11, 8 }; // missing a 10, this gets auto-assigned to aur. Missing so it doesn't get a random boost
     int attr_averages[] = { 12, 12, 12, 12, 12, 10, 12 };
     int attr_priorities[] = { -1, -1, -1, -1, -1, -1, -1 };
     char buf[MAX_STRING_LENGTH];
@@ -4148,16 +4148,9 @@ attribute_priorities (DESCRIPTOR_DATA * d, char *arg)
     }
     else
     {
-
-        // Put aura dead last.
-        attr_priorities[5] = 7;
-
         for (bonus = 8; bonus;)
         {
-            attr = number (0, 6);
-
-            while (attr == 5)
-                attr = number (0, 6);
+            attr = number (0, 5);
 
             if (attr_starters[attr_priorities[attr]] < 18)
             {
@@ -4173,7 +4166,7 @@ attribute_priorities (DESCRIPTOR_DATA * d, char *arg)
         ch->wil = attr_starters[attr_priorities[3]];
         ch->intel = attr_starters[attr_priorities[4]];
         ch->aur = 10; // Give them a base rate of aura for now.
-        ch->agi = attr_starters[attr_priorities[6]];
+        ch->agi = attr_starters[attr_priorities[5]];
     }
 
     ch->pc->start_str = ch->str;
