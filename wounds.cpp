@@ -66,7 +66,7 @@ shock_to_char (CHAR_DATA * ch, CHAR_DATA * tch, int loc, int type, int impact, i
         return 0;
     }
 
-    // What's our current ratio?
+/*  unused  // What's our current ratio?
     int old_tier = 3;
     float old_ratio = static_cast<float>(ch->shock) / ch->max_shock;
     if (old_ratio >= 0.6667)
@@ -76,7 +76,7 @@ shock_to_char (CHAR_DATA * ch, CHAR_DATA * tch, int loc, int type, int impact, i
     else if (old_ratio >= 0.0001)
         old_tier = 1;
     else
-        old_tier = 0;
+        old_tier = 0;*/
 
     // Standard damage: equal to what we actually sustained.
     // If it's a punch from brawling (attack type 9), we do double shock,
@@ -142,7 +142,7 @@ shock_to_char (CHAR_DATA * ch, CHAR_DATA * tch, int loc, int type, int impact, i
     // knocked down to your knees and can't stand.
     if (new_tier <= 1)
     {
-        if (number(0,25) >= GET_WIL(ch))
+        if (number(0,25) > GET_WIL(ch))
         {
             if (GET_POS(ch) > SIT)
             {
@@ -1873,7 +1873,7 @@ delayed_treatment (CHAR_DATA * ch)
 
 	if (ch->skills[SKILL_MEDICINE] >= 10)
 	{
-		roll = MAX(number(1, skill_level(ch, SKILL_FIRSTAID, 0)), number(((ch->skills[SKILL_EDUCATION] - 10 / 5) + 1), skill_level(ch, SKILL_MEDICINE, 0)));
+	  roll = MAX(number(1, skill_level(ch, SKILL_FIRSTAID, 0)), number((((ch->skills[SKILL_EDUCATION] - 10) / 5) + 1), skill_level(ch, SKILL_MEDICINE, 0)));
 	}
 	else
 	{
@@ -4867,7 +4867,7 @@ delayed_long_bind(CHAR_DATA *thisPtr)
 void
 delayed_bind (CHAR_DATA * thisPtr)
 {
-    bool bIsTargetActorBound = 0;
+    //unused bool bIsTargetActorBound = 0;
     char buf[MAX_STRING_LENGTH] = {'\0'};
     CHAR_DATA *pTargetActor = NULL;
     WOUND_DATA *pWound = NULL;
@@ -4921,7 +4921,7 @@ delayed_bind (CHAR_DATA * thisPtr)
                             break;
                         default:
                             pWound->gunshot = 1;
-                            bIsTargetActorBound = 1;
+                            //unused bIsTargetActorBound = 1;
                             pWound->bleeding = 0;
                             pWound->lastbound = time (0);
 
@@ -4939,7 +4939,7 @@ delayed_bind (CHAR_DATA * thisPtr)
                     {
                         if (pWound->gunshot)
                             continue;
-                        bIsTargetActorBound = 1;
+                        //unused bIsTargetActorBound = 1;
                         pWound->bleeding = 0;
                         pWound->lastbound = time (0);
 
@@ -4975,7 +4975,7 @@ delayed_bind (CHAR_DATA * thisPtr)
                         break;
                     default:
                         pWound->gunshot = 1;
-                        bIsTargetActorBound = 1;
+                        //unused bIsTargetActorBound = 1;
                         pWound->bleeding = 0;
                         pWound->lastbound = time (0);
 
@@ -4993,7 +4993,7 @@ delayed_bind (CHAR_DATA * thisPtr)
                 {
                     if (pWound->gunshot)
                         continue;
-                    bIsTargetActorBound = 1;
+                    //unused bIsTargetActorBound = 1;
                     pWound->bleeding = 0;
                     pWound->lastbound = time (0);
 

@@ -52,5 +52,5 @@ clean:
 claim:
 	chmod 771 $(INSTALL_DIR)/bin
 	chmod 771 $(INSTALL_DIR)/bin/server
-	chown LRPI:LRPI $(INSTALL_DIR)/bin
-	chown LRPI:LRPI $(INSTALL_DIR)/bin/server
+	chown root:root $(INSTALL_DIR)/bin
+	chown root:root $(INSTALL_DIR)/bin/server
