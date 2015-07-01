@@ -35,7 +35,7 @@
 
 #define CREATE(result, type, number)  do {\
 	if (!((result) = (type *) alloc ((number) * sizeof(type), 16)))\
-		{ perror("CREATE: alloc failure"); abort(); } } while(0)
+			{ perror("CREATE: alloc failure"); abort(); } } while(0)
 #define IS_SET(flag,bit)  ((flag) & (bit))
 #define IS_AFFECTED(ch,skill) ( IS_SET((ch)->affected_by, (skill)) )
 
@@ -46,9 +46,9 @@
 #define TOGGLE_BIT(var,bit)  ((var) = (var) ^ (bit) )
 #define TOGGLE(flag, bit) { if ( IS_SET (flag, bit) ) \
                                flag &= ~bit; \
-                            else \
+							                            else \
                                flag |= bit; \
-			   }
+			   			   }
 
 // You can see if...
 
@@ -180,7 +180,7 @@
 
 /* #define OBJS(obj, vict) (CAN_SEE_OBJ((vict), (obj)) ? \
 	(obj)->short_description  : "something")
-*/
+	*/
 
 #define OBJS(obj, vict) (CAN_SEE_OBJ((vict), (obj)) ? \
 	obj_short_desc (obj) : "something")
