@@ -4061,7 +4061,7 @@ attribute_priorities (DESCRIPTOR_DATA * d, char *arg)
     int attr;
     int i;
     CHAR_DATA *ch = d->character;
-    int attr_starters[] = { 16, 14, 12, 12, 10, 10, 8 };
+    int attr_starters[] = { 16, 15, 12, 12, 11, 10, 8 };
     int attr_averages[] = { 12, 12, 12, 12, 12, 10, 12 };
     int attr_priorities[] = { -1, -1, -1, -1, -1, -1, -1 };
     char buf[MAX_STRING_LENGTH];
@@ -4122,7 +4122,7 @@ attribute_priorities (DESCRIPTOR_DATA * d, char *arg)
 
     if (average)
     {
-        for (bonus = 6; bonus;)
+        for (bonus = 10; bonus;)
         {
             attr = number (0, 6);
 
@@ -4152,7 +4152,7 @@ attribute_priorities (DESCRIPTOR_DATA * d, char *arg)
         // Put aura dead last.
         attr_priorities[5] = 7;
 
-        for (bonus = 4; bonus;)
+        for (bonus = 8; bonus;)
         {
             attr = number (0, 6);
 
