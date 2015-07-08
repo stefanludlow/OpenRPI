@@ -3975,47 +3975,47 @@ void new_create_description (CHAR_DATA * mob,
     // Now we write to the mobile.
     if (mob->d_age)
         mem_free (mob->d_age);
-    mob->d_age = str_dup(age);
+    mob->d_age = strdup(age);
 
     if (mob->d_eyes)
         mem_free (mob->d_eyes);
-    mob->d_eyes = str_dup(eyes);
+    mob->d_eyes = strdup(eyes);
 
     if (mob->d_hairlength)
         mem_free (mob->d_hairlength);
-    mob->d_hairlength = str_dup(hair_length);
+    mob->d_hairlength = strdup(hair_length);
 
     if (mob->d_haircolor)
         mem_free (mob->d_haircolor);
-    mob->d_haircolor = str_dup(hair_color);
+    mob->d_haircolor = strdup(hair_color);
 
     if (mob->d_hairstyle)
         mem_free (mob->d_hairstyle);
-    mob->d_hairstyle = str_dup(hair_style);
+    mob->d_hairstyle = strdup(hair_style);
 
     if (mob->d_height)
         mem_free (mob->d_height);
-    mob->d_height = str_dup(height);
+    mob->d_height = strdup(height);
 
     if (mob->d_frame)
         mem_free (mob->d_frame);
-    mob->d_frame = str_dup(frame);
+    mob->d_frame = strdup(frame);
 
     if (mob->d_feat1)
         mem_free (mob->d_feat1);
-    mob->d_feat1 = str_dup(feat[0]);
+    mob->d_feat1 = strdup(feat[0]);
 
     if (mob->d_feat2)
         mem_free (mob->d_feat2);
-    mob->d_feat2 = str_dup(feat[1]);
+    mob->d_feat2 = strdup(feat[1]);
 
     if (mob->d_feat3)
         mem_free (mob->d_feat3);
-    mob->d_feat3 = str_dup(feat[2]);
+    mob->d_feat3 = strdup(feat[2]);
 
     if (mob->d_feat4)
         mem_free (mob->d_feat4);
-    mob->d_feat4 = str_dup(feat[3]);
+    mob->d_feat4 = strdup(feat[3]);
 }
 
 

@@ -5708,7 +5708,7 @@ autodesc_end (DESCRIPTOR_DATA * d, char *argument)
     SEND_TO_Q (get_text_buffer (NULL, text_list, "autodesc_end"), d);
 
     SEND_TO_Q ("#0", d);
-    SEND_TO_Q("\nEnter your choice - #9#61)#0 Custom, #9#62)#0 Assisted, #9#63)#0 Redo: ", d);
+    SEND_TO_Q("\nEnter your choice - #9#61)#0 Custom, #9#62)#0 Redo: ", d);
 
     *buf = '\0';
     *buf2 = '\0';
@@ -5758,7 +5758,7 @@ autodesc_result (DESCRIPTOR_DATA * d, char *argument)
 
     ch = d->character;
 
-    max = 3;
+    max = 2;
 
     if (!*argument)
     {
@@ -5766,7 +5766,7 @@ autodesc_result (DESCRIPTOR_DATA * d, char *argument)
         SEND_TO_Q (buf, d);
         return;
     }
-    else if (!str_cmp(argument, "REDO") || !str_cmp(argument, "redo") || (atoi(argument) == 3))
+    else if (!str_cmp(argument, "REDO") || !str_cmp(argument, "redo") || (atoi(argument) == 2))
     {
         create_menu_actions (d, "HEIGHT");
         return;
@@ -5780,27 +5780,11 @@ autodesc_result (DESCRIPTOR_DATA * d, char *argument)
 
     j = atoi(argument);
 
-    if (j == 1 || ((d->character->race == lookup_race_id("Cybernetic") || d->character->race == lookup_race_id("Mutation")) && j != 2))
+    if (j == 1)
     {
         d->character->pc->nanny_state = STATE_SDESC;
         d->connected = CON_CREATION;
         create_menu_options(d);
-        return;
-    }
-	else if ((d->character->race == lookup_race_id("Cybernetic") || d->character->race == lookup_race_id("Mutation")) && j == 2)
-	{
-        create_menu_actions (d, "HEIGHT");
-        return;
-	}
-	else if (j == 2)
-	{
-		d->connected = CON_DESC_HEIGHT;
-		autodesc_height (d);
-		return;
-	}
-    else
-    {
-        create_menu_actions (d, "HEIGHT");
         return;
     }
     return;
