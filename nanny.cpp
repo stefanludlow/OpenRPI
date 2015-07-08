@@ -3537,7 +3537,7 @@ nanny_choose_pc (DESCRIPTOR_DATA * d, char *argument)
 
 	update_family_clanning (d);
 
-	conflicting_clan_check(d->character);
+	//conflicting_clan_check(d->character);
 
     return;
 
