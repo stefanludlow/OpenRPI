@@ -395,15 +395,15 @@ nanny_login_choice (DESCRIPTOR_DATA * d, char *argument)
         
 
 	// remarking out message that sends folks to Parallel website for account creation - Nimrod
-		SEND_TO_Q ("\n\nAll new accounts must be created through the Shadows of Isildur Web Portal.\n"
-				   "The following link will take you to the account creation page:\n"
-				   "http://www.middle-earth.us/generator/adduser.php\n\n", d);
-		SEND_TO_Q ("Your Selection: ", d);
+//		SEND_TO_Q ("\n\nAll new accounts must be created through the Shadows of Isildur Web Portal.\n"
+//				   "The following link will take you to the account creation page:\n"
+//				   "http://www.middle-earth.us/generator/adduser.php\n\n", d);
+//		SEND_TO_Q ("Your Selection: ", d);
 	// Remarking out the account application portion, next three lines. 0206141709 -Nimrod
 
-     //   SEND_TO_Q (get_text_buffer (NULL, text_list, "account_application"), d);
-     //   SEND_TO_Q ("What would you like to name your login account? ", d);
-     //   d->connected = CON_NEW_ACCT_NAME;
+        SEND_TO_Q (get_text_buffer (NULL, text_list, "account_application"), d);
+        SEND_TO_Q ("What would you like to name your login account? ", d);
+        d->connected = CON_NEW_ACCT_NAME;
         return;
     }
 
