@@ -6407,7 +6407,15 @@ void r_info( CHAR_DATA *ch, std::string argument, room_prog_var *& variable_list
 		char arg[ MAX_STRING_LENGTH ] = { '\0' };
 
 		one_argument( obj->name, arg );
-		value = retrieve_mysql_board_message( arg, i );
+		char * result = retrieve_mysql_board_message( arg, i );
+		if (result == NULL)
+			{
+			value = "";
+			}
+		else
+			{ 
+			value = result;
+			} 
 	}
 
 	else if ( buf.find( "list" ) != std::string::npos ) {
