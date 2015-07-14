@@ -389,8 +389,8 @@ nanny_login_choice (DESCRIPTOR_DATA * d, char *argument)
              "or you are unaware of any other accounts used over your connection, please\n"
              "contact the administrative staff at " STAFF_EMAIL
              " for assistance.\n\n", d);
-            // SEND_TO_Q ("Your Selection: ", d);
-            // return;
+             SEND_TO_Q ("Your Selection: ", d);
+             return;
          }
         
 
