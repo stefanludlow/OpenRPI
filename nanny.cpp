@@ -4458,8 +4458,8 @@ nanny_char_name_confirm (DESCRIPTOR_DATA * d, char *arg)
     d->character->affected_by = 0;
 
     d->character->intoxication = 0;
-    d->character->thirst = 300;
-    d->character->hunger = 40;
+    d->character->thirst = MAX_THIRST;
+    d->character->hunger = NEWBIE_CALORIES;
 
     d->character->pc->load_count = 1;
     save_char (d->character, false);
