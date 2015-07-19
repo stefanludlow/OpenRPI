@@ -372,7 +372,7 @@ const struct command_data commands[] =
     {"stand", do_stand, SLEEP, C_HID | C_DOA | C_BLD},
     {"stable", do_stable, STAND, C_MNT | C_WLK},
     {"steal", do_steal, STAND, C_WLK | C_MNT},
-    {"stop", do_stop, SIT, C_BLD | C_DEL | C_PAR | C_SPL},
+    {"stop", do_stop, REST, C_BLD | C_DEL | C_PAR | C_SPL},
     {"strike", do_aimstrike, FIGHT, C_WLK},
     //{"string", do_string, STAND, C_WLK | C_HID | C_DOA}, //C_MNT
     {"study", do_study, SIT, 0},
