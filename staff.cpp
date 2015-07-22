@@ -385,17 +385,24 @@ void do_roster( CHAR_DATA * ch, char *argument, int cmd ) {
 	if ( tch )
 		unload_pc( tch );
 
-	if ( !str_cmp( buf, "add" ) ) {
+	if (ch->pc && ch->pc->level >= 5)
+	  {
+	    if (!str_cmp( buf, "add" ) ) {
 		mysql_safe_query( "INSERT INTO staff_roster VALUES ('%s', '%s',  %d, '%s', %d)", admin, title,
 				( int ) time( 0 ), depart, weight );
 		send_to_char( "The specified individual has been added to the staff roster.\n", ch );
 		return;
-	} else if ( !str_cmp( buf, "remove" ) ) {
+	    } else if ( !str_cmp( buf, "remove" ) ) {
 		mysql_safe_query( "DELETE FROM staff_roster WHERE name = '%s'", admin );
 		mysql_safe_query( "DELETE FROM clan_assignments WHERE imm_name = '%s'", admin );
 		send_to_char( "The specified individual has been removed from the roster.\n", ch );
 		return;
-	}
+	    }
+	  }
+	else
+	  {
+	    send_to_char("You must be at least a level 5 staffer to manipulate the roster.\n", ch);
+	  }
 
 	send_to_char( "Usage: roster (add | remove) <admin name> (<title> <department>)\n Usage: roster list\n", ch );
 	return;
