@@ -6000,7 +6000,10 @@ char_data::~char_data ()
 
     clear_pmote(this);
     clear_dmote(this);
-    
+
+    /* Grommit - commented out because, as suspected, causes crashes. Need to assess where this
+     * field is getting set and use the proper freeing command, e.g. mem_free, etc.
+     * For now slow leak is better than crash so omitting.
     for (int i=0; i<10; i++)
       {
 	if (mob_color_name[i])
@@ -6014,6 +6017,7 @@ char_data::~char_data ()
 	    mob_color_cat[i]=NULL;
 	  }    
       }
+    */
     
     if (this->controlled_by)
     {
