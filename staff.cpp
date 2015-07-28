@@ -5491,7 +5491,7 @@ void do_shutdown( CHAR_DATA * ch, char *argument, int cmd ) {
 		sprintf( buf, "%s has cancelled the pending reboot.", ch->tname );
 		send_to_gods( buf );
 	} else if ( !str_cmp( arg, "reboot" ) ) {
-		if ( engine.in_play_mode() && GET_TRUST (ch) < 5 ) {
+		if ( engine.in_play_mode() && GET_TRUST (ch) < 4 ) {
 			send_to_char( "You'll need to wait for the 4 AM PST auto-reboot.\n", ch );
 			return;
 		}
