@@ -5,10 +5,10 @@ CC=g++ -Wno-write-strings
 
 # SVN_VERS = -D'SVN_REV="$(shell svnversion -n engine/. && touch comm.cpp)"'
 # CFLAGS = $(SVN_VERS) -ggdb -DLINUX -Wall
-CFLAGS = -march=native -m32 -ggdb -DLINUX -Wall 
+CFLAGS = -march=native -m32 -ggdb -DLINUX -Wall -w
 LFLAGS = -lm -lmysqlclient -lcrypt -lnsl
 
-INSTALL_DIR = /home/LRPI/tp/src
+INSTALL_DIR = /home/sanctuary/tp/src
 
 INCLUDE = -I/usr/local/mysql/include/ -I/usr/include/mysql/ -I/usr/include/openssl/ -I/usr/local/mysql/ -I/usr/local/include/mysql/ -I/usr/lib/mysql
 
@@ -33,9 +33,9 @@ account.h clan.h constants.h decl.h group.h net_link.h \
 object_damage.h protos.h server.h structs.h trigram.h utils.h  BroadwaveClient.h
 
 # default target
-/home/LRPI/tp/bin/server: $(OBJS)
+/home/sanctuary/tp/bin/server: $(OBJS)
 	if test -f ../bin || install -v -d ../bin; then \
-$(CC) $(INCLUDE) $(LIBDIRS) -o $@ $(LFLAGS) $(CFLAGS) $(OBJS) $(PFLAGS); fi
+$(CC) $(OBJS) -o $@ `mysql_config --cflags --libs` -lcrypt; fi
 
 %.o: %.cpp $(HEADERS)
 	$(CC) -c $(CFLAGS) $< $(PFLAGS)
