@@ -4150,11 +4150,15 @@ attribute_priorities (DESCRIPTOR_DATA * d, char *arg)
     {
         for (bonus = 8; bonus;)
         {
-            attr = number (0, 5);
+	  /* Rather than boosting a particular attr directly and doing the logic for a skip, this boosts one of the six
+	     starting point values as long as it's < 18. At the end, the six starting point values will be mapped onto
+	     attrs 0-4,6 (skipping aur:5) based on the priority array
+	  */
+            int slot = number (0, 5);
 
-            if (attr_starters[attr_priorities[attr]] < 18)
+            if (attr_starters[slot] < 18)
             {
-                attr_starters[attr_priorities[attr]]++;
+                attr_starters[slot]++;
                 bonus--;
             }
         }
@@ -4166,7 +4170,7 @@ attribute_priorities (DESCRIPTOR_DATA * d, char *arg)
         ch->wil = attr_starters[attr_priorities[3]];
         ch->intel = attr_starters[attr_priorities[4]];
         ch->aur = 10; // Give them a base rate of aura for now.
-        ch->agi = attr_starters[attr_priorities[5]];
+        ch->agi = attr_starters[attr_priorities[6]];
     }
 
     ch->pc->start_str = ch->str;
@@ -4454,8 +4458,8 @@ nanny_char_name_confirm (DESCRIPTOR_DATA * d, char *arg)
     d->character->affected_by = 0;
 
     d->character->intoxication = 0;
-    d->character->thirst = 300;
-    d->character->hunger = 40;
+    d->character->thirst = MAX_THIRST;
+    d->character->hunger = NEWBIE_CALORIES;
 
     d->character->pc->load_count = 1;
     save_char (d->character, false);

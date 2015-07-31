@@ -7001,8 +7001,13 @@ real_damage (CHAR_DATA *ch, int damage, int *location, int type, int source)
     
         for (sec_eq = ch->equip; sec_eq; sec_eq = sec_eq->next_content) 
         { 
-            if (sec_eq != prim_eq && GET_ITEM_TYPE(sec_eq) == ITEM_ARMOR && IS_SET(sec_eq->o.od.value[2], 1 << *location)) 	
-                break; 
+            if (sec_eq != prim_eq && GET_ITEM_TYPE(sec_eq) == ITEM_ARMOR && IS_SET(sec_eq->o.od.value[2], 1 << *location))
+	    {
+	      // Primary equipment used as secondary avoids an AC penalty later for using secondary coverage, which is explained to players on
+	      // "examine" as "partially covers"
+	      prim_used_as_sec = true; 
+	      break;
+	    }
         } 
     }
     
@@ -7013,10 +7018,8 @@ real_damage (CHAR_DATA *ch, int damage, int *location, int type, int source)
     { 
         for (sec_eq = ch->equip; sec_eq; sec_eq = sec_eq->next_content) 
         { 
-            if (GET_ITEM_TYPE(sec_eq) == ITEM_ARMOR && IS_SET(sec_eq->o.od.value[3], 1 << *location)) 
+            if (prim_eq != sec_eq && GET_ITEM_TYPE(sec_eq) == ITEM_ARMOR && IS_SET(sec_eq->o.od.value[3], 1 << *location)) 
             { 
-				
-                prim_used_as_sec = true; 
                 break; 
             } 
         } 

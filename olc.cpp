@@ -5205,8 +5205,8 @@ do_minit (CHAR_DATA * ch, char *argument, int cmd)
     newmob->mob->damnodice = 1;
     newmob->mob->damsizedice = 2;
     newmob->intoxication = 0;
-    newmob->hunger = 48;
-    newmob->thirst = 300;
+    newmob->hunger = MAX_CALORIES;
+    newmob->thirst = MAX_THIRST;
     newmob->equip = NULL;
 
     open_skill (newmob, SKILL_DEFLECT);

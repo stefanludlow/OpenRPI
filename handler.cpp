@@ -5835,6 +5835,13 @@ char_data::clear_char ()
     this->damsizedice = 0;
     this->damroll = 0;
 
+    for (int i=0; i<10; i++)
+      {
+	this->mob_color_name[i] = NULL;
+	this->mob_color_cat[i] = NULL;
+      }
+
+
     this->controlled_by = NULL;
     this->controlling = NULL;
 
@@ -5994,7 +6001,24 @@ char_data::~char_data ()
     clear_pmote(this);
     clear_dmote(this);
 
-
+    /* Grommit - commented out because, as suspected, causes crashes. Need to assess where this
+     * field is getting set and use the proper freeing command, e.g. mem_free, etc.
+     * For now slow leak is better than crash so omitting.
+    for (int i=0; i<10; i++)
+      {
+	if (mob_color_name[i])
+	  {
+	    delete mob_color_name[i];
+	    mob_color_name[i]=NULL;
+	  }
+	if (mob_color_cat[i])
+	  {
+	    delete mob_color_cat[i];
+	    mob_color_cat[i]=NULL;
+	  }    
+      }
+    */
+    
     if (this->controlled_by)
     {
         this->controlled_by->controlling = NULL;
