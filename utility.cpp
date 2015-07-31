@@ -59,7 +59,7 @@ const int restricted_skills[] =
 
     0,				/* Sneak */
     0,				/* Hide */
-    0,				/* Steal */
+   -6,				/* Steal */
    -2,				/* Picklock */
    -2,				/* Haggle */
    -2,				/* Handle */
@@ -81,7 +81,7 @@ const int restricted_skills[] =
    -2,				/* Handicraft */
     0,				/* Artistry */
 
-    0,             /* Education */
+   -6,             /* Education */
    -2,				/* Voodoo */
    -1,             // Common
     0,             //Metalcraft

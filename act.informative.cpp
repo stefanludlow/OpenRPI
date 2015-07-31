@@ -7377,9 +7377,11 @@ hunger_thirst_process (CHAR_DATA * ch)
     if (ch->hunger < MIN_CALORIES)
         ch->hunger = MIN_CALORIES;
 
-    // if (GET_TRUST(ch) || IS_NPC(ch)) Disabled for testing purposes 0212140024 -Nimrod
-	if (IS_NPC(ch))
-        ch->hunger = MAX_CALORIES;
+    if (GET_TRUST(ch) || IS_NPC(ch))
+    {
+      ch->hunger = MAX_CALORIES;
+      ch->thirst = MAX_THIRST;
+    }
 
     if (ch->hunger <= MIN_CALORIES)
     {
