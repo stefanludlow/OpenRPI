@@ -11,6 +11,7 @@
 #include <math.h>
 #include <stdio.h>
 #include <unistd.h>
+#include <mysql/mysql.h>
 
 #include "server.h"
 #include "structs.h"
