@@ -1705,7 +1705,7 @@ void
 				char *taste_buf;
 				taste_buf = vd_flavour(xcat[ind], xcolor[ind]);
 
-				if (taste_buf)
+				if (taste_buf && str_cmp(taste_buf, " "))
 				{
 					taste_change = true;
 					if (has_taste)
