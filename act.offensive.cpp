@@ -29,7 +29,7 @@
 int
 num_attackers(CHAR_DATA* ch)
 {
-	CHAR_DATA* tch = nullptr;
+	CHAR_DATA* tch = 0;
 	int i = 0;
 
 	for (tch = ch->room->people; tch; tch = tch->next_in_room)
@@ -46,13 +46,13 @@ num_attackers(CHAR_DATA* ch)
 CHAR_DATA*
 who_attackers(CHAR_DATA* ch)
 {
-	CHAR_DATA* rch = nullptr;
+	CHAR_DATA* rch = 0;
 	int j = 0;
 
 	j = num_attackers(ch);
 
 	if (!j)
-		return nullptr;
+		return 0;
 
 	for (rch = ch->room->people; rch; rch = rch->next_in_room)
 	{
@@ -66,7 +66,7 @@ who_attackers(CHAR_DATA* ch)
 		}
 	}
 
-	return nullptr;
+	return 0;
 }
 
 
@@ -169,10 +169,10 @@ notify_guardians(CHAR_DATA* ch, CHAR_DATA* tch, int cmd)
 void
 do_throw(CHAR_DATA* ch, char* argument, int cmd)
 {
-	OBJ_DATA *tobj, *armor1 = nullptr, *armor2 = nullptr;
-	ROOM_DATA* troom = nullptr;
-	ROOM_DIRECTION_DATA* exit = nullptr;
-	CHAR_DATA* tch = nullptr;
+	OBJ_DATA *tobj, *armor1 = 0, *armor2 = 0;
+	ROOM_DATA* troom = 0;
+	ROOM_DIRECTION_DATA* exit = 0;
+	CHAR_DATA* tch = 0;
 	AFFECTED_TYPE* af;
 	bool can_lodge = false, ranged = false;
 	int dir = 0, result = 0, location = 0;
@@ -361,7 +361,7 @@ do_throw(CHAR_DATA* ch, char* argument, int cmd)
 		{
 			tch = get_char_room_vis2(ch, troom->vnum, buf);
 			if (!has_been_sighted(ch, tch))
-				tch = nullptr;
+				tch = 0;
 			if (!tch)
 			{
 				send_to_char
@@ -388,7 +388,7 @@ do_throw(CHAR_DATA* ch, char* argument, int cmd)
 				int grenade_counter = 6;
 				grenade_counter = MAX(1, grenade_counter - ((ch->skills[SKILL_EXPLOSIVES] + 10) / 20));
 				tobj->o.grenade.status = 1;
-				add_second_affect(SA_GRENADE, grenade_counter, nullptr, tobj, 0, 0);
+				add_second_affect(SA_GRENADE, grenade_counter, 0, tobj, 0, 0);
 				sprintf(buf, "You arm $p before hurling it %sward.", dirs[dir]);
 				act(buf, false, ch, tobj, 0, TO_CHAR | _ACT_FORMAT);
 				sprintf(buf, "$n arms $p before hurling it %sward.", dirs[dir]);
@@ -466,7 +466,7 @@ do_throw(CHAR_DATA* ch, char* argument, int cmd)
 			range_mod = 5;
 
 
-		result = calculate_missile_result(ch, SKILL_AIM, ((ch->balance * -10) + range_mod), tch, 0, 0, tobj, nullptr, &location, &damage, &poison, rev_dir[dir]);
+		result = calculate_missile_result(ch, SKILL_AIM, ((ch->balance * -10) + range_mod), tch, 0, 0, tobj, 0, &location, &damage, &poison, rev_dir[dir]);
 
 
 		if (get_affect(ch, MAGIC_HIDDEN))
@@ -492,13 +492,13 @@ do_throw(CHAR_DATA* ch, char* argument, int cmd)
 		{
 			armor1 = get_equip(tch, wear_loc1);
 			if (armor1 && GET_ITEM_TYPE(armor1) != ITEM_ARMOR)
-				armor1 = nullptr;
+				armor1 = 0;
 		}
 		if (wear_loc2)
 		{
 			armor2 = get_equip(tch, wear_loc2);
 			if (armor2 && GET_ITEM_TYPE(armor2) != ITEM_ARMOR)
-				armor2 = nullptr;
+				armor2 = 0;
 		}
 
 		if (!ch->fighting && damage > 3)
@@ -776,14 +776,14 @@ do_throw(CHAR_DATA* ch, char* argument, int cmd)
 			obj_to_room(tobj, tch->in_room);
 			if (tch->fighting && ch->in_room == tch->in_room)
 			{
-				add_second_affect(SA_GET_OBJ, 15, ch, tobj, nullptr, 0);
+				add_second_affect(SA_GET_OBJ, 15, ch, tobj, 0, 0);
 				tobj->tmp_flags |= SA_DROPPED;
 			}
 
 			if (GET_ITEM_TYPE(tobj) == ITEM_GRENADE && tobj->o.grenade.status == 1)
 			{
 				send_to_gods("Grenade land-in-room test.");
-				add_second_affect(SA_GRENADE, 5, nullptr, tobj, 0, 0);
+				add_second_affect(SA_GRENADE, 5, 0, tobj, 0, 0);
 			}
 		}
 
@@ -805,12 +805,12 @@ do_throw(CHAR_DATA* ch, char* argument, int cmd)
 			{
 				if (ranged)
 					send_to_char("\nYour target collapses, dead.\n", ch);
-				ch->ranged_enemy = nullptr;
+				ch->ranged_enemy = 0;
 				return;
 			}
 			if (!IS_NPC(tch))
 			{
-				tch->delay_ch = nullptr;
+				tch->delay_ch = 0;
 				tch->delay_info1 = 0;
 			}
 		}
@@ -930,8 +930,8 @@ calculate_missile_result(CHAR_DATA* ch, int ch_skill, int att_modifier,
 	int roll = 0, defense = 0, assault = 0, result = 0;
 	int hit_type = 0;
 	int cover = 0;
-	AFFECTED_TYPE* af = nullptr;
-	AFFECTED_TYPE* taf = nullptr;
+	AFFECTED_TYPE* af = 0;
+	AFFECTED_TYPE* taf = 0;
 	//POISON_DATA *xpoison;
 
 	/* Determine result of hit attempt. */
@@ -1265,7 +1265,7 @@ calculate_missile_result(CHAR_DATA* ch, int ch_skill, int att_modifier,
 void
 lodge_missile(CHAR_DATA* target, OBJ_DATA* ammo, char* strike_location, int internal)
 {
-	LODGED_OBJECT_INFO* lodged = nullptr;
+	LODGED_OBJECT_INFO* lodged = 0;
 
 	if (!target->lodged)
 	{
@@ -1291,7 +1291,7 @@ lodge_missile(CHAR_DATA* target, OBJ_DATA* ammo, char* strike_location, int inte
 			target->lodged->var_color3 = "(none)";
 
 		target->lodged->short_description = ammo->short_description;
-		target->lodged->bleeding = nullptr;
+		target->lodged->bleeding = 0;
 
 		if (internal)
 		{
@@ -1339,7 +1339,7 @@ lodge_missile(CHAR_DATA* target, OBJ_DATA* ammo, char* strike_location, int inte
 					lodged->next->var_color3 = "(none)";
 
 				lodged->next->short_description = ammo->short_description;
-				target->lodged->bleeding = nullptr;
+				target->lodged->bleeding = 0;
 
 				if (internal)
 				{
@@ -1371,8 +1371,8 @@ lodge_missile(CHAR_DATA* target, OBJ_DATA* ammo, char* strike_location, int inte
 void
 fire_sling(CHAR_DATA* ch, OBJ_DATA* sling, char* argument)
 {
-	CHAR_DATA* tch = nullptr;
-	ROOM_DATA* troom = nullptr;
+	CHAR_DATA* tch = 0;
+	ROOM_DATA* troom = 0;
 	OBJ_DATA* ammo;
 	AFFECTED_TYPE* af;
 	char buf[MAX_STRING_LENGTH], strike_location[MAX_STRING_LENGTH];
@@ -1444,7 +1444,7 @@ fire_sling(CHAR_DATA* ch, OBJ_DATA* sling, char* argument)
 		{
 			tch = get_char_room_vis2(ch, troom->vnum, buf);
 			if (!has_been_sighted(ch, tch))
-				tch = nullptr;
+				tch = 0;
 			if (!tch)
 			{
 				send_to_char
@@ -1480,7 +1480,7 @@ fire_sling(CHAR_DATA* ch, OBJ_DATA* sling, char* argument)
 
 	result =
 		calculate_missile_result(ch, sling->o.weapon.use_skill, attack_mod, tch,
-		                         0, sling, sling->contains, nullptr, &location,
+		                         0, sling, sling->contains, 0, &location,
 		                         &damage, &poison, 0);
 	damage = (int)damage;
 
@@ -1630,12 +1630,12 @@ fire_sling(CHAR_DATA* ch, OBJ_DATA* sling, char* argument)
 		{
 			if (ranged)
 				send_to_char("\nYour target collapses, dead.\n", ch);
-			ch->ranged_enemy = nullptr;
+			ch->ranged_enemy = 0;
 			return;
 		}
 		if (!IS_NPC(tch))
 		{
-			tch->delay_ch = nullptr;
+			tch->delay_ch = 0;
 			tch->delay_info1 = 0;
 		}
 		if (!ch->fighting && damage > 3)
@@ -1768,7 +1768,7 @@ delayed_load(CHAR_DATA* ch)
 		((bow = get_equip(ch, WEAR_PRIM))
 			|| (bow = get_equip(ch, WEAR_BOTH))))
 	{
-		ch->delay_who = nullptr;
+		ch->delay_who = 0;
 		ch->delay = 0;
 		ch->delay_type = 0;
 		ch->delay_info1 = 0;
@@ -1780,7 +1780,7 @@ delayed_load(CHAR_DATA* ch)
 
 	if (bow->o.weapon.use_skill != SKILL_AIM)
 	{
-		ch->delay_who = nullptr;
+		ch->delay_who = 0;
 		ch->delay = 0;
 		ch->delay_type = 0;
 		ch->delay_info1 = 0;
@@ -1790,7 +1790,7 @@ delayed_load(CHAR_DATA* ch)
 		return;
 	}
 
-	ammo = nullptr;
+	ammo = 0;
 
 	if (ch->delay_info1 < 0)
 	{
@@ -1869,7 +1869,7 @@ delayed_load(CHAR_DATA* ch)
 		obj_from_char(&ammo, 0);
 		extract_obj(ammo);
 	}
-	ch->delay_who = nullptr;
+	ch->delay_who = 0;
 	ch->delay = 0;
 	ch->delay_info1 = 0;
 	ch->delay_info2 = 0;
@@ -1885,7 +1885,7 @@ do_hit(CHAR_DATA* ch, char* argument, int cmd)
 	int i, agi_diff = 0;
 	char buf[MAX_STRING_LENGTH];
 	char original[MAX_STRING_LENGTH];
-	SECOND_AFFECT* sa = nullptr;
+	SECOND_AFFECT* sa = 0;
 	bool found = false;
 
 	sprintf(original, "%s", argument);
@@ -2019,7 +2019,7 @@ do_hit(CHAR_DATA* ch, char* argument, int cmd)
 		return;
 	}
 
-	if ((sa = get_second_affect(ch, SA_WARDED, nullptr)))
+	if ((sa = get_second_affect(ch, SA_WARDED, 0)))
 	{
 		if ((CHAR_DATA *)sa->obj == victim)
 		{
@@ -2082,9 +2082,9 @@ do_hit(CHAR_DATA* ch, char* argument, int cmd)
 			npc_evasion(victim, -1);
 			add_threat(victim, ch, 7);
 			remove_affect_type(ch, MAGIC_HIDDEN);
-			if (get_second_affect(ch, SA_AIMSTRIKE, nullptr))
+			if (get_second_affect(ch, SA_AIMSTRIKE, 0))
 			{
-				remove_second_affect(get_second_affect(ch, SA_AIMSTRIKE, nullptr));
+				remove_second_affect(get_second_affect(ch, SA_AIMSTRIKE, 0));
 			}
 			return;
 		}
@@ -2154,8 +2154,8 @@ do_hit(CHAR_DATA* ch, char* argument, int cmd)
 			watched_action(ch, buf, 1, 0);
 		}
 
-		if (cmd != 2 && get_second_affect(ch, SA_AIMSTRIKE, nullptr))
-			remove_second_affect(get_second_affect(ch, SA_AIMSTRIKE, nullptr));
+		if (cmd != 2 && get_second_affect(ch, SA_AIMSTRIKE, 0))
+			remove_second_affect(get_second_affect(ch, SA_AIMSTRIKE, 0));
 
 		hit_char(ch, victim, 0);
 
@@ -2536,10 +2536,10 @@ void
 do_command(CHAR_DATA* ch, char* argument, int cmd)
 {
 	int everyone = 0;
-	CHAR_DATA* victim = nullptr;
-	CHAR_DATA* next_in_room = nullptr;
-	CHAR_DATA* tch = nullptr;
-	OBJ_DATA* obj = nullptr;
+	CHAR_DATA* victim = 0;
+	CHAR_DATA* next_in_room = 0;
+	CHAR_DATA* tch = 0;
+	OBJ_DATA* obj = 0;
 	char buf[MAX_STRING_LENGTH];
 	char command[MAX_STRING_LENGTH];
 	bool is_robot = !str_cmp(lookup_race_variable(ch->race, RACE_NAME), "robot");
@@ -3052,9 +3052,9 @@ guard_check(CHAR_DATA* victim)
 			continue;
 
 		if ((CHAR_DATA *)af->a.spell.t == victim &&
-			!get_second_affect(tch, SA_RESCUE, nullptr))
+			!get_second_affect(tch, SA_RESCUE, 0))
 		{
-			add_second_affect(SA_RESCUE, 1, tch, (OBJ_DATA *)victim, nullptr, 0);
+			add_second_affect(SA_RESCUE, 1, tch, (OBJ_DATA *)victim, 0, 0);
 
 
 			// If you're guarding and you've got three or more attackers, you lose the
@@ -3071,7 +3071,7 @@ guard_check(CHAR_DATA* victim)
 void
 do_guard(CHAR_DATA* ch, char* argument, int cmd)
 {
-	CHAR_DATA *target = nullptr, *tch = nullptr;
+	CHAR_DATA *target = 0, *tch = 0;
 	AFFECTED_TYPE* af;
 	char buf[MAX_STRING_LENGTH];
 	int dir;
@@ -3100,7 +3100,7 @@ do_guard(CHAR_DATA* ch, char* argument, int cmd)
 
 		af = get_affect(ch, AFFECT_GUARD_DIR);
 
-		af->a.shadow.shadow = nullptr;
+		af->a.shadow.shadow = 0;
 		af->a.shadow.edge = dir;
 
 		if (IS_SET(ch->room->room_flags, BIG_ROOM) ||
@@ -3132,7 +3132,7 @@ do_guard(CHAR_DATA* ch, char* argument, int cmd)
 			return;
 		}
 		else if ((af = get_affect(ch, MAGIC_GUARD))
-			&& (tch = (CHAR_DATA *)af->a.spell.t) != nullptr)
+			&& (tch = (CHAR_DATA *)af->a.spell.t) != 0)
 		{
 			act("You cease guarding $N.", true, ch, 0, tch,
 			    TO_CHAR | _ACT_FORMAT);
@@ -3200,11 +3200,11 @@ do_aide(CHAR_DATA* ch, char* argument, int cmd)
 {
 	char buf[AVG_STRING_LENGTH ] = {'\0'};
 	char original[MAX_STRING_LENGTH];
-	CHAR_DATA* tch = nullptr;
-	CHAR_DATA* victim = nullptr;
-	CHAR_DATA* ally = nullptr;
-	OBJ_DATA* obj = nullptr;
-	SECOND_AFFECT* sa = nullptr;
+	CHAR_DATA* tch = 0;
+	CHAR_DATA* victim = 0;
+	CHAR_DATA* ally = 0;
+	OBJ_DATA* obj = 0;
+	SECOND_AFFECT* sa = 0;
 	bool found = false;
 	int i;
 	int agi_diff = 0;
@@ -3341,7 +3341,7 @@ do_aide(CHAR_DATA* ch, char* argument, int cmd)
 		return;
 	}
 
-	if ((sa = get_second_affect(ch, SA_WARDED, nullptr)))
+	if ((sa = get_second_affect(ch, SA_WARDED, 0)))
 	{
 		if ((CHAR_DATA *)sa->obj == victim)
 		{
@@ -3472,8 +3472,8 @@ do_aide(CHAR_DATA* ch, char* argument, int cmd)
 			watched_action(ch, buf, 1, 0);
 		}
 
-		if (cmd != 2 && get_second_affect(ch, SA_AIMSTRIKE, nullptr))
-			remove_second_affect(get_second_affect(ch, SA_AIMSTRIKE, nullptr));
+		if (cmd != 2 && get_second_affect(ch, SA_AIMSTRIKE, 0))
+			remove_second_affect(get_second_affect(ch, SA_AIMSTRIKE, 0));
 
 		hit_char(ch, victim, 0);
 
