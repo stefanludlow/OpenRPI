@@ -1729,14 +1729,6 @@ save_player_rooms ()
             unlink (buf);
         }
     }
-    // Commit character changes change to git
-    if (engine.in_play_mode())
-      {
-	std::ostringstream oss;
-	oss << "cd " << engine.get_base_path() << "/lib/save/; git commit -a -m \"Changes committed by save_player_rooms(rooms only)\"";
-	system(oss.str().c_str());
-      }
-
 }
 
 void
