@@ -20,7 +20,7 @@
 #include "group.h"
 #include "utility.h"
 
-
+//test commit from visual studio
 #define s(a) send_to_char (a "\n", ch);
 
 extern rpie::server engine;
