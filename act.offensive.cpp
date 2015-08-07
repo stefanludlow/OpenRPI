@@ -27,10 +27,9 @@
 // ch, increase the counter.
 
 int
-num_attackers(CHAR_DATA * ch)
+num_attackers(CHAR_DATA* ch)
 {
-
-	CHAR_DATA * tch = NULL;
+	CHAR_DATA* tch = nullptr;
 	int i = 0;
 
 	for (tch = ch->room->people; tch; tch = tch->next_in_room)
@@ -44,16 +43,16 @@ num_attackers(CHAR_DATA * ch)
 	return i;
 }
 
-CHAR_DATA *
-who_attackers(CHAR_DATA * ch)
+CHAR_DATA*
+who_attackers(CHAR_DATA* ch)
 {
-	CHAR_DATA * rch = NULL;
+	CHAR_DATA* rch = nullptr;
 	int j = 0;
 
 	j = num_attackers(ch);
 
 	if (!j)
-		return NULL;
+		return nullptr;
 
 	for (rch = ch->room->people; rch; rch = rch->next_in_room)
 	{
@@ -67,36 +66,32 @@ who_attackers(CHAR_DATA * ch)
 		}
 	}
 
-	return NULL;
-
+	return nullptr;
 }
-
 
 
 /* ch here is the victim mob or PC */
 void
-notify_guardians(CHAR_DATA * ch, CHAR_DATA * tch, int cmd)
+notify_guardians(CHAR_DATA* ch, CHAR_DATA* tch, int cmd)
 {
 	unsigned short int flag = 0x00;
-	char buf[AVG_STRING_LENGTH];
-	char *strViolation[] =
-	{
-		"Hits to injure", "Hits to kill", "Hits to injure", "Took aim at",
-		"Slings at", "Throws at",
-		"Attempts to steal from", "Attempts to pick the lock of"
-	};
+	char buf[AVG_STRING_LENGTH ];
+	char* strViolation[] =
+		{
+			"Hits to injure", "Hits to kill", "Hits to injure", "Took aim at",
+			"Slings at", "Throws at",
+			"Attempts to steal from", "Attempts to pick the lock of"
+		};
 
 
-	if (!ch || !tch || IS_NPC(ch)	/* ignore attacks by npcs */
+	if (!ch || !tch || IS_NPC(ch) /* ignore attacks by npcs */
 		|| IS_SET(ch->flags, FLAG_GUEST)
 		|| (IS_SET(tch->act, ACT_PREY) && cmd >= 3)
-		|| GET_TRUST(ch)	/* ignore attacks by imms */
-		|| GET_TRUST(tch)	/* ignore attacks on imms */
-		)
+		|| GET_TRUST(ch) /* ignore attacks by imms */
+		|| GET_TRUST(tch) /* ignore attacks on imms */
+	)
 	{
-
 		return;
-
 	}
 
 	flag |= (!IS_NPC(tch)) ? (GUARDIAN_PC) : 0;
@@ -105,84 +100,80 @@ notify_guardians(CHAR_DATA * ch, CHAR_DATA * tch, int cmd)
 	flag |= (IS_SET(tch->act, ACT_SENTINEL)) ? (GUARDIAN_NPC_SENTINELS) : 0;
 	flag |= (IS_SET(tch->act, ACT_ENFORCER)) ? (GUARDIAN_NPC_ENFORCERS) : 0;
 	flag |= ((tch->right_hand && GET_ITEM_TYPE(tch->right_hand) == ITEM_KEY)
-		|| (tch->left_hand
-		&& GET_ITEM_TYPE(tch->left_hand) ==
-		ITEM_KEY)) ? (GUARDIAN_NPC_KEYHOLDER) : 0;
+		        || (tch->left_hand
+			        && GET_ITEM_TYPE(tch->left_hand) ==
+			        ITEM_KEY)) ? (GUARDIAN_NPC_KEYHOLDER) : 0;
 
 	if (ch->in_room == tch->in_room)
 	{
-
 		sprintf(buf, "#3[Guardian: %s%s]#0 %s %s%s in %d.",
-			GET_NAME(ch),
-			IS_SET(ch->plr_flags, NEW_PLAYER_TAG) ? " (new)" : "",
-			strViolation[cmd],
-			(!IS_NPC(tch)) ? GET_NAME(tch) : (tch->short_descr),
-			(!IS_NPC(tch)
-			&& IS_SET(tch->plr_flags,
-			NEW_PLAYER_TAG)) ? " (new)" : (IS_SET(flag,
-			GUARDIAN_NPC_KEYHOLDER)
-			? " (keyholder)"
-			: (IS_SET
-			(flag,
-			GUARDIAN_NPC_SHOPKEEPS)
-			? " (shopkeeper)"
-			: (IS_SET
-			(flag,
-			GUARDIAN_NPC_ENFORCERS)
-			?
-			" (enforcer)"
-			: (IS_SET
-			(flag,
-			GUARDIAN_NPC_SENTINELS)
-			?
-			" (sentinel)"
-			: "")))),
-			tch->in_room);
-
+		        GET_NAME(ch),
+		        IS_SET(ch->plr_flags, NEW_PLAYER_TAG) ? " (new)" : "",
+		        strViolation[cmd],
+		        (!IS_NPC(tch)) ? GET_NAME(tch) : (tch->short_descr),
+		        (!IS_NPC(tch)
+			        && IS_SET(tch->plr_flags,
+				        NEW_PLAYER_TAG)) ? " (new)" : (IS_SET(flag,
+			        GUARDIAN_NPC_KEYHOLDER)
+				                               ? " (keyholder)"
+				                               : (IS_SET
+					                               (flag,
+						                               GUARDIAN_NPC_SHOPKEEPS)
+							                                                      ? " (shopkeeper)"
+							                                                      : (IS_SET
+								                                                      (flag,
+									                                                      GUARDIAN_NPC_ENFORCERS)
+										                                                                             ?
+										                                                                             " (enforcer)"
+										                                                                             : (IS_SET
+											                                                                             (flag,
+												                                                                             GUARDIAN_NPC_SENTINELS)
+													                                                                                                    ?
+													                                                                                                    " (sentinel)"
+													                                                                                                    : "")))),
+		        tch->in_room);
 	}
 	else
 	{
-
 		sprintf(buf, "#3[Guardian: %s%s]#0 %s %s%s in %d, from %d.#0",
-			GET_NAME(ch),
-			IS_SET(ch->plr_flags, NEW_PLAYER_TAG) ? " (new)" : "",
-			strViolation[cmd],
-			(!IS_NPC(tch)) ? GET_NAME(tch) : (tch->short_descr),
-			(!IS_NPC(tch)
-			&& IS_SET(tch->plr_flags,
-			NEW_PLAYER_TAG)) ? " (new)" : (IS_SET(flag,
-			GUARDIAN_NPC_KEYHOLDER)
-			? " (keyholder)"
-			: (IS_SET
-			(flag,
-			GUARDIAN_NPC_SHOPKEEPS)
-			? " (shopkeeper)"
-			: (IS_SET
-			(flag,
-			GUARDIAN_NPC_ENFORCERS)
-			?
-			" (enforcer)"
-			: (IS_SET
-			(flag,
-			GUARDIAN_NPC_SENTINELS)
-			?
-			" (sentinel)"
-			: "")))),
-			tch->in_room, ch->in_room);
+		        GET_NAME(ch),
+		        IS_SET(ch->plr_flags, NEW_PLAYER_TAG) ? " (new)" : "",
+		        strViolation[cmd],
+		        (!IS_NPC(tch)) ? GET_NAME(tch) : (tch->short_descr),
+		        (!IS_NPC(tch)
+			        && IS_SET(tch->plr_flags,
+				        NEW_PLAYER_TAG)) ? " (new)" : (IS_SET(flag,
+			        GUARDIAN_NPC_KEYHOLDER)
+				                               ? " (keyholder)"
+				                               : (IS_SET
+					                               (flag,
+						                               GUARDIAN_NPC_SHOPKEEPS)
+							                                                      ? " (shopkeeper)"
+							                                                      : (IS_SET
+								                                                      (flag,
+									                                                      GUARDIAN_NPC_ENFORCERS)
+										                                                                             ?
+										                                                                             " (enforcer)"
+										                                                                             : (IS_SET
+											                                                                             (flag,
+												                                                                             GUARDIAN_NPC_SENTINELS)
+													                                                                                                    ?
+													                                                                                                    " (sentinel)"
+													                                                                                                    : "")))),
+		        tch->in_room, ch->in_room);
 	}
 	buf[11] = toupper(buf[11]);
 	send_to_guardians(buf, flag);
-
 }
 
 void
-do_throw(CHAR_DATA * ch, char *argument, int cmd)
+do_throw(CHAR_DATA* ch, char* argument, int cmd)
 {
-	OBJ_DATA *tobj, *armor1 = NULL, *armor2 = NULL;
-	ROOM_DATA *troom = NULL;
-	ROOM_DIRECTION_DATA *exit = NULL;
-	CHAR_DATA *tch = NULL;
-	AFFECTED_TYPE *af;
+	OBJ_DATA *tobj, *armor1 = nullptr, *armor2 = nullptr;
+	ROOM_DATA* troom = nullptr;
+	ROOM_DIRECTION_DATA* exit = nullptr;
+	CHAR_DATA* tch = nullptr;
+	AFFECTED_TYPE* af;
 	bool can_lodge = false, ranged = false;
 	int dir = 0, result = 0, location = 0;
 	int wear_loc1 = 0, wear_loc2 = 0, wound_type = 0;
@@ -197,40 +188,38 @@ do_throw(CHAR_DATA * ch, char *argument, int cmd)
 	int poison = 0;
 	bool aimed_room = false;
 
-	const char *verbose_dirs[] =
-	{
-		"the north",
-		"the east",
-		"the south",
-		"the west",
-		"above",
-		"below",
-		"outside",
-		"inside",
-		"the northeast",
-		"the northwest",
-		"the southeast",
-		"the southwest",
-		"the upper north",
-		"the upper east",
-		"the upper south",
-		"the upper west",
-		"the upper northeast",
-		"the upper northwest",
-		"the upper southeast",
-		"the upper southwest",
-		"the lower north",
-		"the lower east",
-		"the lower south",
-		"the lower west",
-		"the lower northeast",
-		"the lower northwest",
-		"the lower southeast",
-		"the lower southwest"
-		"\n"
-	};
-
-
+	const char* verbose_dirs[] =
+		{
+			"the north",
+			"the east",
+			"the south",
+			"the west",
+			"above",
+			"below",
+			"outside",
+			"inside",
+			"the northeast",
+			"the northwest",
+			"the southeast",
+			"the southwest",
+			"the upper north",
+			"the upper east",
+			"the upper south",
+			"the upper west",
+			"the upper northeast",
+			"the upper northwest",
+			"the upper southeast",
+			"the upper southwest",
+			"the lower north",
+			"the lower east",
+			"the lower south",
+			"the lower west",
+			"the lower northeast",
+			"the lower northwest",
+			"the lower southeast",
+			"the lower southwest"
+			"\n"
+		};
 
 
 	if (IS_SWIMMING(ch))
@@ -278,7 +267,6 @@ do_throw(CHAR_DATA * ch, char *argument, int cmd)
 	}
 
 
-
 	argument = one_argument(argument, buf);
 
 	if (!*buf)
@@ -292,7 +280,6 @@ do_throw(CHAR_DATA * ch, char *argument, int cmd)
 		if (!str_cmp(buf, "room"))
 		{
 			aimed_room = true;
-
 		}
 		else if (!(tch = get_char_room_vis(ch, buf)))
 		{
@@ -374,7 +361,7 @@ do_throw(CHAR_DATA * ch, char *argument, int cmd)
 		{
 			tch = get_char_room_vis2(ch, troom->vnum, buf);
 			if (!has_been_sighted(ch, tch))
-				tch = NULL;
+				tch = nullptr;
 			if (!tch)
 			{
 				send_to_char
@@ -393,7 +380,6 @@ do_throw(CHAR_DATA * ch, char *argument, int cmd)
 
 		if (!tch)
 		{
-
 			// If we're aiming a grenade at the room in general, we just toss it and go.
 			if (aimed_room && GET_ITEM_TYPE(tobj) == ITEM_GRENADE && tobj->o.grenade.status != 2)
 			{
@@ -402,7 +388,7 @@ do_throw(CHAR_DATA * ch, char *argument, int cmd)
 				int grenade_counter = 6;
 				grenade_counter = MAX(1, grenade_counter - ((ch->skills[SKILL_EXPLOSIVES] + 10) / 20));
 				tobj->o.grenade.status = 1;
-				add_second_affect(SA_GRENADE, grenade_counter, NULL, tobj, 0, 0);
+				add_second_affect(SA_GRENADE, grenade_counter, nullptr, tobj, 0, 0);
 				sprintf(buf, "You arm $p before hurling it %sward.", dirs[dir]);
 				act(buf, false, ch, tobj, 0, TO_CHAR | _ACT_FORMAT);
 				sprintf(buf, "$n arms $p before hurling it %sward.", dirs[dir]);
@@ -443,7 +429,7 @@ do_throw(CHAR_DATA * ch, char *argument, int cmd)
 		if (are_grouped(ch, tch) && *argument != '!')
 		{
 			sprintf(buf,
-				"#1You decide not to throw at $N #1who is a fellow group member!#0");
+			        "#1You decide not to throw at $N #1who is a fellow group member!#0");
 			act(buf, false, ch, 0, tch, TO_CHAR | _ACT_FORMAT);
 			return;
 		}
@@ -480,14 +466,14 @@ do_throw(CHAR_DATA * ch, char *argument, int cmd)
 			range_mod = 5;
 
 
-		result = calculate_missile_result(ch, SKILL_AIM, ((ch->balance * -10) + range_mod), tch, 0, 0, tobj, NULL, &location, &damage, &poison, rev_dir[dir]);
+		result = calculate_missile_result(ch, SKILL_AIM, ((ch->balance * -10) + range_mod), tch, 0, 0, tobj, nullptr, &location, &damage, &poison, rev_dir[dir]);
 
 
 		if (get_affect(ch, MAGIC_HIDDEN))
 		{
 			remove_affect_type(ch, MAGIC_HIDDEN);
 			send_to_char("You emerge from concealment and prepare to throw.\n\n",
-				ch);
+			             ch);
 		}
 
 		if ((result == CRITICAL_MISS || result == MISS) && tch->fighting
@@ -506,13 +492,13 @@ do_throw(CHAR_DATA * ch, char *argument, int cmd)
 		{
 			armor1 = get_equip(tch, wear_loc1);
 			if (armor1 && GET_ITEM_TYPE(armor1) != ITEM_ARMOR)
-				armor1 = NULL;
+				armor1 = nullptr;
 		}
 		if (wear_loc2)
 		{
 			armor2 = get_equip(tch, wear_loc2);
 			if (armor2 && GET_ITEM_TYPE(armor2) != ITEM_ARMOR)
-				armor2 = NULL;
+				armor2 = nullptr;
 		}
 
 		if (!ch->fighting && damage > 3)
@@ -521,11 +507,11 @@ do_throw(CHAR_DATA * ch, char *argument, int cmd)
 		if (ch->room != tch->room)
 		{
 			sprintf(buf, "You hurl #2%s#0 %s, toward #5%s#0.",
-				tobj->short_description, dirs[dir],
-				char_short(tch));
+			        tobj->short_description, dirs[dir],
+			        char_short(tch));
 			sprintf(buf2, "#5%s#0 hurls #2%s#0 %s, toward #5%s#0.",
-				char_short(ch), tobj->short_description,
-				dirs[dir], char_short(tch));
+			        char_short(ch), tobj->short_description,
+			        dirs[dir], char_short(tch));
 			buf2[2] = toupper(buf2[2]);
 			watched_action(ch, buf2, 0, 1);
 			act(buf, false, ch, 0, 0, TO_CHAR | _ACT_FORMAT);
@@ -534,14 +520,14 @@ do_throw(CHAR_DATA * ch, char *argument, int cmd)
 		else
 		{
 			sprintf(buf, "You hurl #2%s#0 forcefully at #5%s#0.",
-				tobj->short_description, char_short(tch));
+			        tobj->short_description, char_short(tch));
 			sprintf(buf2, "#5%s#0 hurls #2%s#0 forcefully at #5%s#0.",
-				char_short(ch), tobj->short_description,
-				char_short(tch));
+			        char_short(ch), tobj->short_description,
+			        char_short(tch));
 			buf2[2] = toupper(buf2[2]);
 			watched_action(ch, buf2, 0, 1);
 			sprintf(buf3, "#5%s#0 hurls #2%s#0 forcefully at you.",
-				char_short(ch), tobj->short_description);
+			        char_short(ch), tobj->short_description);
 			buf3[2] = toupper(buf3[2]);
 			act(buf, false, ch, 0, tch, TO_CHAR | _ACT_FORMAT);
 			act(buf2, false, ch, 0, tch, TO_NOTVICT | _ACT_FORMAT);
@@ -550,8 +536,8 @@ do_throw(CHAR_DATA * ch, char *argument, int cmd)
 
 		if (GET_ITEM_TYPE(tobj) == ITEM_WEAPON
 			&& (tobj->o.weapon.hit_type == 0 || tobj->o.weapon.hit_type == 1
-			|| tobj->o.weapon.hit_type == 2
-			|| tobj->o.weapon.hit_type == 4))
+				|| tobj->o.weapon.hit_type == 2
+				|| tobj->o.weapon.hit_type == 4))
 		{
 			if (result != CRITICAL_HIT && armor1
 				&& armor1->o.armor.armor_type >= 2)
@@ -572,7 +558,7 @@ do_throw(CHAR_DATA * ch, char *argument, int cmd)
 			sprintf(buf, "%s", spell_activity_echo(af->a.spell.sn, af->type));
 			if (!*buf)
 				sprintf(buf,
-				"\nThe projectile is deflected harmlessly aside by some invisible force.");
+				        "\nThe projectile is deflected harmlessly aside by some invisible force.");
 			sprintf(buf2, "\n%s", buf);
 			result = MISS;
 			damage = 0;
@@ -682,7 +668,6 @@ do_throw(CHAR_DATA * ch, char *argument, int cmd)
 			sprintf(buf2, "%s", buffer);
 
 			sprintf(buf4, "It grazes %s on the %s.", HMHR(tch), expand_wound_loc(strike_location));
-
 		}
 		else if (result == HIT)
 		{
@@ -791,14 +776,14 @@ do_throw(CHAR_DATA * ch, char *argument, int cmd)
 			obj_to_room(tobj, tch->in_room);
 			if (tch->fighting && ch->in_room == tch->in_room)
 			{
-				add_second_affect(SA_GET_OBJ, 15, ch, tobj, NULL, 0);
+				add_second_affect(SA_GET_OBJ, 15, ch, tobj, nullptr, 0);
 				tobj->tmp_flags |= SA_DROPPED;
 			}
 
 			if (GET_ITEM_TYPE(tobj) == ITEM_GRENADE && tobj->o.grenade.status == 1)
 			{
 				send_to_gods("Grenade land-in-room test.");
-				add_second_affect(SA_GRENADE, 5, NULL, tobj, 0, 0);
+				add_second_affect(SA_GRENADE, 5, nullptr, tobj, 0, 0);
 			}
 		}
 
@@ -820,12 +805,12 @@ do_throw(CHAR_DATA * ch, char *argument, int cmd)
 			{
 				if (ranged)
 					send_to_char("\nYour target collapses, dead.\n", ch);
-				ch->ranged_enemy = NULL;
+				ch->ranged_enemy = nullptr;
 				return;
 			}
 			if (!IS_NPC(tch))
 			{
-				tch->delay_ch = NULL;
+				tch->delay_ch = nullptr;
 				tch->delay_info1 = 0;
 			}
 		}
@@ -843,20 +828,20 @@ do_throw(CHAR_DATA * ch, char *argument, int cmd)
 
 		ch->balance = MAX(ch->balance, -25);
 
-		npc_ranged_response(tch, ch);	// do_throw
+		npc_ranged_response(tch, ch); // do_throw
 
 		return;
 	}
 
 	send_to_char
 		("There has been an error; please report your command syntax to the staff.\n",
-		ch);
+		 ch);
 }
 
 void
-do_whirl(CHAR_DATA * ch, char *argument, int cmd)
+do_whirl(CHAR_DATA* ch, char* argument, int cmd)
 {
-	OBJ_DATA *sling;
+	OBJ_DATA* sling;
 
 	if (IS_SWIMMING(ch))
 	{
@@ -898,9 +883,9 @@ do_whirl(CHAR_DATA * ch, char *argument, int cmd)
 	}
 
 	act("You begin whirling $p, gathering momentum for a shot.", false, ch,
-		sling, 0, TO_CHAR | _ACT_FORMAT);
+	    sling, 0, TO_CHAR | _ACT_FORMAT);
 	act("$n begins whirling $p, gathering momentum for a shot.", true, ch,
-		sling, 0, TO_ROOM | _ACT_FORMAT);
+	    sling, 0, TO_ROOM | _ACT_FORMAT);
 
 	ch->whirling = 1;
 }
@@ -910,9 +895,9 @@ do_whirl(CHAR_DATA * ch, char *argument, int cmd)
 ** If you are not under cover, then you have a chance to block missiles with your shield.
 **/
 int
-projectile_shield_block(CHAR_DATA * ch, int result)
+projectile_shield_block(CHAR_DATA* ch, int result)
 {
-	OBJ_DATA *shield_obj;
+	OBJ_DATA* shield_obj;
 	int roll, dir = 0;
 
 	if (result == CRITICAL_HIT)
@@ -937,16 +922,16 @@ projectile_shield_block(CHAR_DATA * ch, int result)
 }
 
 int
-calculate_missile_result(CHAR_DATA * ch, int ch_skill, int att_modifier,
-CHAR_DATA * target, int def_modifier,
-OBJ_DATA * weapon, OBJ_DATA * missile,
-AFFECTED_TYPE * spell, int *location, float *damage, int *poison, int direction)
+calculate_missile_result(CHAR_DATA* ch, int ch_skill, int att_modifier,
+                         CHAR_DATA* target, int def_modifier,
+                         OBJ_DATA* weapon, OBJ_DATA* missile,
+                         AFFECTED_TYPE* spell, int* location, float* damage, int* poison, int direction)
 {
 	int roll = 0, defense = 0, assault = 0, result = 0;
 	int hit_type = 0;
 	int cover = 0;
-	AFFECTED_TYPE *af = NULL;
-	AFFECTED_TYPE *taf = NULL;
+	AFFECTED_TYPE* af = nullptr;
+	AFFECTED_TYPE* taf = nullptr;
 	//POISON_DATA *xpoison;
 
 	/* Determine result of hit attempt. */
@@ -1042,18 +1027,18 @@ AFFECTED_TYPE * spell, int *location, float *damage, int *poison, int direction)
 		{
 			switch (target->speed)
 			{
-			case 3:         // jogging
+			case 3: // jogging
 				att_modifier += 10;
 				break;
-			case 4:         // running
+			case 4: // running
 				att_modifier += 15;
 				break;
-			case 5:         // sprinting
+			case 5: // sprinting
 				att_modifier += 20;
 				break;
-			case 0:         // crawling
+			case 0: // crawling
 				att_modifier += 5;
-			default:         // walking
+			default: // walking
 				break;
 			}
 			cover = 5;
@@ -1278,9 +1263,9 @@ AFFECTED_TYPE * spell, int *location, float *damage, int *poison, int direction)
 }
 
 void
-lodge_missile(CHAR_DATA * target, OBJ_DATA * ammo, char *strike_location, int internal)
+lodge_missile(CHAR_DATA* target, OBJ_DATA* ammo, char* strike_location, int internal)
 {
-	LODGED_OBJECT_INFO *lodged = NULL;
+	LODGED_OBJECT_INFO* lodged = nullptr;
 
 	if (!target->lodged)
 	{
@@ -1306,7 +1291,7 @@ lodge_missile(CHAR_DATA * target, OBJ_DATA * ammo, char *strike_location, int in
 			target->lodged->var_color3 = "(none)";
 
 		target->lodged->short_description = ammo->short_description;
-		target->lodged->bleeding = NULL;
+		target->lodged->bleeding = nullptr;
 
 		if (internal)
 		{
@@ -1354,7 +1339,7 @@ lodge_missile(CHAR_DATA * target, OBJ_DATA * ammo, char *strike_location, int in
 					lodged->next->var_color3 = "(none)";
 
 				lodged->next->short_description = ammo->short_description;
-				target->lodged->bleeding = NULL;
+				target->lodged->bleeding = nullptr;
 
 				if (internal)
 				{
@@ -1384,12 +1369,12 @@ lodge_missile(CHAR_DATA * target, OBJ_DATA * ammo, char *strike_location, int in
 }
 
 void
-fire_sling(CHAR_DATA * ch, OBJ_DATA * sling, char *argument)
+fire_sling(CHAR_DATA* ch, OBJ_DATA* sling, char* argument)
 {
-	CHAR_DATA *tch = NULL;
-	ROOM_DATA *troom = NULL;
-	OBJ_DATA *ammo;
-	AFFECTED_TYPE *af;
+	CHAR_DATA* tch = nullptr;
+	ROOM_DATA* troom = nullptr;
+	OBJ_DATA* ammo;
+	AFFECTED_TYPE* af;
 	char buf[MAX_STRING_LENGTH], strike_location[MAX_STRING_LENGTH];
 	char buf2[MAX_STRING_LENGTH], buf3[MAX_STRING_LENGTH];
 	float damage = 0;
@@ -1397,16 +1382,16 @@ fire_sling(CHAR_DATA * ch, OBJ_DATA * sling, char *argument)
 	bool ranged = false;
 	int poison = 0;
 
-	const char *fancy_dirs[] =
-	{
-		"northward",
-		"eastward",
-		"southward",
-		"westward",
-		"upward",
-		"downward",
-		"\n"
-	};
+	const char* fancy_dirs[] =
+		{
+			"northward",
+			"eastward",
+			"southward",
+			"westward",
+			"upward",
+			"downward",
+			"\n"
+		};
 
 	if (!ch || !sling)
 		return;
@@ -1421,7 +1406,7 @@ fire_sling(CHAR_DATA * ch, OBJ_DATA * sling, char *argument)
 	{
 		send_to_char
 			("You'll need to begin whirling your sling before you can fire.\n",
-			ch);
+			 ch);
 		return;
 	}
 
@@ -1459,7 +1444,7 @@ fire_sling(CHAR_DATA * ch, OBJ_DATA * sling, char *argument)
 		{
 			tch = get_char_room_vis2(ch, troom->vnum, buf);
 			if (!has_been_sighted(ch, tch))
-				tch = NULL;
+				tch = nullptr;
 			if (!tch)
 			{
 				send_to_char
@@ -1495,8 +1480,8 @@ fire_sling(CHAR_DATA * ch, OBJ_DATA * sling, char *argument)
 
 	result =
 		calculate_missile_result(ch, sling->o.weapon.use_skill, attack_mod, tch,
-		0, sling, sling->contains, NULL, &location,
-		&damage, &poison, 0);
+		                         0, sling, sling->contains, nullptr, &location,
+		                         &damage, &poison, 0);
 	damage = (int)damage;
 
 	sprintf(strike_location, "%s", figure_location(tch, location));
@@ -1504,11 +1489,11 @@ fire_sling(CHAR_DATA * ch, OBJ_DATA * sling, char *argument)
 	if (ch->room != tch->room)
 	{
 		sprintf(buf, "You sling #2%s#0 %s, toward #5%s#0.",
-			sling->contains->short_description, fancy_dirs[dir],
-			char_short(tch));
+		        sling->contains->short_description, fancy_dirs[dir],
+		        char_short(tch));
 		sprintf(buf2, "#5%s#0 slings #2%s#0 %s, toward #5%s#0.",
-			char_short(ch), sling->contains->short_description,
-			fancy_dirs[dir], char_short(tch));
+		        char_short(ch), sling->contains->short_description,
+		        fancy_dirs[dir], char_short(tch));
 		buf2[2] = toupper(buf2[2]);
 		watched_action(ch, buf2, 0, 1);
 		act(buf, false, ch, 0, 0, TO_CHAR | _ACT_FORMAT);
@@ -1517,12 +1502,12 @@ fire_sling(CHAR_DATA * ch, OBJ_DATA * sling, char *argument)
 	else
 	{
 		sprintf(buf, "You sling #2%s#0 forcefully at #5%s#0.",
-			sling->contains->short_description, char_short(tch));
+		        sling->contains->short_description, char_short(tch));
 		sprintf(buf2, "#5%s#0 slings #2%s#0 forcefully at #5%s#0.",
-			char_short(ch), sling->contains->short_description,
-			char_short(tch));
+		        char_short(ch), sling->contains->short_description,
+		        char_short(tch));
 		sprintf(buf3, "#5%s#0 slings #2%s#0 forcefully at you.",
-			char_short(ch), sling->contains->short_description);
+		        char_short(ch), sling->contains->short_description);
 		watched_action(ch, buf2, 0, 1);
 		act(buf, false, ch, 0, tch, TO_CHAR | _ACT_FORMAT);
 		act(buf, false, ch, 0, tch, TO_VICT | _ACT_FORMAT);
@@ -1534,7 +1519,7 @@ fire_sling(CHAR_DATA * ch, OBJ_DATA * sling, char *argument)
 		sprintf(buf, "%s", spell_activity_echo(af->a.spell.sn, af->type));
 		if (!*buf)
 			sprintf(buf,
-			"\nThe is deflected harmlessly aside by some invisible force.");
+			        "\nThe is deflected harmlessly aside by some invisible force.");
 		sprintf(buf2, "\n%s", buf);
 		result = MISS;
 		damage = 0;
@@ -1554,9 +1539,9 @@ fire_sling(CHAR_DATA * ch, OBJ_DATA * sling, char *argument)
 		if (obj_short_desc(get_equip(tch, WEAR_SHIELD)))
 		{
 			sprintf(buf, "It glances harmlessly off #2%s#0.",
-				obj_short_desc(get_equip(tch, WEAR_SHIELD)));
+			        obj_short_desc(get_equip(tch, WEAR_SHIELD)));
 			sprintf(buf2, "It glances harmlessly off #2%s#0.",
-				obj_short_desc(get_equip(tch, WEAR_SHIELD)));
+			        obj_short_desc(get_equip(tch, WEAR_SHIELD)));
 		}
 		else
 		{
@@ -1567,23 +1552,23 @@ fire_sling(CHAR_DATA * ch, OBJ_DATA * sling, char *argument)
 	else if (result == GLANCING_HIT)
 	{
 		sprintf(buf, "It grazes %s on the %s.", HMHR(tch),
-			expand_wound_loc(strike_location));
+		        expand_wound_loc(strike_location));
 		sprintf(buf2, "It grazes you on the %s.",
-			expand_wound_loc(strike_location));
+		        expand_wound_loc(strike_location));
 	}
 	else if (result == HIT)
 	{
 		sprintf(buf, "It strikes %s on the %s.", HMHR(tch),
-			expand_wound_loc(strike_location));
+		        expand_wound_loc(strike_location));
 		sprintf(buf2, "It strikes you on the %s.",
-			expand_wound_loc(strike_location));
+		        expand_wound_loc(strike_location));
 	}
 	else if (result == CRITICAL_HIT)
 	{
 		sprintf(buf, "It strikes %s solidly on the %s.", HMHR(tch),
-			expand_wound_loc(strike_location));
+		        expand_wound_loc(strike_location));
 		sprintf(buf2, "It strikes you solidly on the %s.",
-			expand_wound_loc(strike_location));
+		        expand_wound_loc(strike_location));
 	}
 
 	ammo = sling->contains;
@@ -1594,11 +1579,11 @@ fire_sling(CHAR_DATA * ch, OBJ_DATA * sling, char *argument)
 	if (result == CRITICAL_MISS && !number(0, 1))
 	{
 		sprintf(buf + strlen(buf),
-			"\n\nThe missile recedes hopelessly from sight.");
+		        "\n\nThe missile recedes hopelessly from sight.");
 		sprintf(buf2 + strlen(buf2),
-			"\n\nThe missile recedes hopelessly from sight.");
+		        "\n\nThe missile recedes hopelessly from sight.");
 		sprintf(buf3 + strlen(buf3),
-			"\n\nThe missile recedes hopelessly from sight.");
+		        "\n\nThe missile recedes hopelessly from sight.");
 		extract_obj(ammo);
 	}
 
@@ -1645,12 +1630,12 @@ fire_sling(CHAR_DATA * ch, OBJ_DATA * sling, char *argument)
 		{
 			if (ranged)
 				send_to_char("\nYour target collapses, dead.\n", ch);
-			ch->ranged_enemy = NULL;
+			ch->ranged_enemy = nullptr;
 			return;
 		}
 		if (!IS_NPC(tch))
 		{
-			tch->delay_ch = NULL;
+			tch->delay_ch = nullptr;
 			tch->delay_info1 = 0;
 		}
 		if (!ch->fighting && damage > 3)
@@ -1658,13 +1643,12 @@ fire_sling(CHAR_DATA * ch, OBJ_DATA * sling, char *argument)
 	}
 
 	npc_ranged_response(tch, ch);
-
 }
 
 int
-has_been_sighted(CHAR_DATA * ch, CHAR_DATA * target)
+has_been_sighted(CHAR_DATA* ch, CHAR_DATA* target)
 {
-	SIGHTED_DATA *sighted;
+	SIGHTED_DATA* sighted;
 
 	if (!ch || !target)
 		return 0;
@@ -1673,7 +1657,7 @@ has_been_sighted(CHAR_DATA * ch, CHAR_DATA * target)
 		return 1;
 
 	if (IS_NPC(ch) && !ch->descr())
-		return 1;			/* We know non-animated NPCs only acquire targets via SCANning; */
+		return 1; /* We know non-animated NPCs only acquire targets via SCANning; */
 	/* don't need anti-twink code for them. */
 
 	for (sighted = ch->sighted; sighted; sighted = sighted->next)
@@ -1686,7 +1670,7 @@ has_been_sighted(CHAR_DATA * ch, CHAR_DATA * target)
 }
 
 void
-do_unload_missile(CHAR_DATA * ch, char *argument, int cmd)
+do_unload_missile(CHAR_DATA* ch, char* argument, int cmd)
 {
 	//OBJ_DATA *bow = NULL, *arrow = NULL, *quiver = NULL;
 	//int i;
@@ -1772,31 +1756,31 @@ do_unload_missile(CHAR_DATA * ch, char *argument, int cmd)
 }
 
 void
-delayed_load(CHAR_DATA * ch)
+delayed_load(CHAR_DATA* ch)
 {
-	OBJ_DATA *bow;
-	OBJ_DATA *ammo;
-	OBJ_DATA *quiver;
+	OBJ_DATA* bow;
+	OBJ_DATA* ammo;
+	OBJ_DATA* quiver;
 	char buf[MAX_STRING_LENGTH];
 	int i;
 
 	if (!
 		((bow = get_equip(ch, WEAR_PRIM))
-		|| (bow = get_equip(ch, WEAR_BOTH))))
+			|| (bow = get_equip(ch, WEAR_BOTH))))
 	{
-		ch->delay_who = NULL;
+		ch->delay_who = nullptr;
 		ch->delay = 0;
 		ch->delay_type = 0;
 		ch->delay_info1 = 0;
 		ch->delay_info2 = 0;
 		send_to_char("Having removed your weapon, you cease loading it.\n",
-			ch);
+		             ch);
 		return;
 	}
 
 	if (bow->o.weapon.use_skill != SKILL_AIM)
 	{
-		ch->delay_who = NULL;
+		ch->delay_who = nullptr;
 		ch->delay = 0;
 		ch->delay_type = 0;
 		ch->delay_info1 = 0;
@@ -1806,11 +1790,10 @@ delayed_load(CHAR_DATA * ch)
 		return;
 	}
 
-	ammo = NULL;
+	ammo = nullptr;
 
 	if (ch->delay_info1 < 0)
 	{
-
 		if (ch->right_hand && ch->right_hand->nVirtual == ch->delay_info2)
 		{
 			ammo = ch->right_hand;
@@ -1826,47 +1809,39 @@ delayed_load(CHAR_DATA * ch)
 		{
 			send_to_char
 				("Having taken another object in hand, you cease loading your weapon.\n",
-				ch);
+				 ch);
 			return;
 		}
 
 		for (i = 0; i < MAX_WEAR; i++)
 		{
-
 			if (!(quiver = get_equip(ch, i)))
 			{
-
 				continue;
 			}
 
 			if (quiver->nVirtual != ch->delay_info1
 				|| !get_obj_in_list_num(ch->delay_info2, quiver->contains))
 			{
-
 				continue;
 			}
 
 			if (GET_ITEM_TYPE(quiver) == ITEM_QUIVER)
 			{
-
 				for (ammo = quiver->contains; ammo; ammo = ammo->next_content)
 				{
-
 					if (GET_ITEM_TYPE(ammo) == ITEM_MISSILE
 						&& ammo->nVirtual == ch->delay_info2)
 					{
-
 						break;
 					}
 				}
 				if (ammo)
 				{
-
 					break;
 				}
 			}
 		}
-
 	}
 	if (!ammo)
 	{
@@ -1894,24 +1869,23 @@ delayed_load(CHAR_DATA * ch)
 		obj_from_char(&ammo, 0);
 		extract_obj(ammo);
 	}
-	ch->delay_who = NULL;
+	ch->delay_who = nullptr;
 	ch->delay = 0;
 	ch->delay_info1 = 0;
 	ch->delay_info2 = 0;
 	ch->delay_type = 0;
-
 }
 
 
 void
-do_hit(CHAR_DATA * ch, char *argument, int cmd)
+do_hit(CHAR_DATA* ch, char* argument, int cmd)
 {
 	CHAR_DATA *victim, *tch;
-	OBJ_DATA *obj;
+	OBJ_DATA* obj;
 	int i, agi_diff = 0;
 	char buf[MAX_STRING_LENGTH];
 	char original[MAX_STRING_LENGTH];
-	SECOND_AFFECT *sa = NULL;
+	SECOND_AFFECT* sa = nullptr;
 	bool found = false;
 
 	sprintf(original, "%s", argument);
@@ -1940,7 +1914,7 @@ do_hit(CHAR_DATA * ch, char *argument, int cmd)
 	if (is_room_affected(ch->room->affects, MAGIC_ROOM_CALM))
 	{
 		act("Try as you might, you simply cannot muster the will to break "
-			"the peace that pervades the area.", false, ch, 0, 0, TO_CHAR);
+		    "the peace that pervades the area.", false, ch, 0, 0, TO_CHAR);
 		return;
 	}
 
@@ -1997,7 +1971,7 @@ do_hit(CHAR_DATA * ch, char *argument, int cmd)
 	if (IS_SUBDUER(ch))
 	{
 		act("You can't attack while you have $N subdued.",
-			false, ch, 0, ch->subdue, TO_CHAR);
+		    false, ch, 0, ch->subdue, TO_CHAR);
 		return;
 	}
 
@@ -2005,9 +1979,9 @@ do_hit(CHAR_DATA * ch, char *argument, int cmd)
 		&& IS_SET(ch->room->room_flags, LAWFUL) && *argument != '!')
 	{
 		sprintf(buf,
-			"You are in a lawful area; you would likely be flagged wanted for assault. "
-			"To confirm, type \'#6hit %s !#0\', without the quotes.",
-			original);
+		        "You are in a lawful area; you would likely be flagged wanted for assault. "
+		        "To confirm, type \'#6hit %s !#0\', without the quotes.",
+		        original);
 		act(buf, false, ch, 0, 0, TO_CHAR | _ACT_FORMAT);
 		return;
 	}
@@ -2022,11 +1996,10 @@ do_hit(CHAR_DATA * ch, char *argument, int cmd)
 
 	if (!*buf)
 	{
-
 		if (IS_SET(ch->flags, FLAG_FLEE))
 		{
 			send_to_char("You stop trying to flee.\n\r", ch);
-			ch->flags &= ~FLAG_FLEE;
+			ch->flags &= ~FLAG_FLEE ;
 			return;
 		}
 		send_to_char("Hit whom?\n\r", ch);
@@ -2046,7 +2019,7 @@ do_hit(CHAR_DATA * ch, char *argument, int cmd)
 		return;
 	}
 
-	if ((sa = get_second_affect(ch, SA_WARDED, NULL)))
+	if ((sa = get_second_affect(ch, SA_WARDED, nullptr)))
 	{
 		if ((CHAR_DATA *)sa->obj == victim)
 		{
@@ -2059,8 +2032,8 @@ do_hit(CHAR_DATA * ch, char *argument, int cmd)
 	if (are_grouped(ch, victim) && is_brother(ch, victim) && *argument != '!')
 	{
 		sprintf(buf,
-			"#1You are about to attack $N #1who is a fellow group member!#0 To confirm, type \'#6hit %s !#0\', without the quotes.",
-			original);
+		        "#1You are about to attack $N #1who is a fellow group member!#0 To confirm, type \'#6hit %s !#0\', without the quotes.",
+		        original);
 		act(buf, false, ch, 0, victim, TO_CHAR | _ACT_FORMAT);
 		return;
 	}
@@ -2079,7 +2052,7 @@ do_hit(CHAR_DATA * ch, char *argument, int cmd)
 	if (IS_SET(victim->act, ACT_VEHICLE) || IS_SET(victim->act, ACT_PASSIVE))
 	{
 		send_to_char("How do you propose to kill an inanimate object, hmm?\n",
-			ch);
+		             ch);
 		return;
 	}
 
@@ -2091,10 +2064,9 @@ do_hit(CHAR_DATA * ch, char *argument, int cmd)
 			if (++i >= 4)
 			{
 				act("You can't find an opening to attack $N.",
-					false, ch, 0, victim, TO_CHAR);
+				    false, ch, 0, victim, TO_CHAR);
 				return;
 			}
-
 		}
 	}
 
@@ -2104,21 +2076,21 @@ do_hit(CHAR_DATA * ch, char *argument, int cmd)
 		{
 			act
 				("As you approach, $N spots you and darts away! Try using a ranged weapon or an ambush from hiding instead.",
-				false, ch, 0, victim, TO_CHAR | _ACT_FORMAT);
+				 false, ch, 0, victim, TO_CHAR | _ACT_FORMAT);
 			act("As $n approaches, $N spots $m and darts away.", false, ch, 0,
-				victim, TO_ROOM | _ACT_FORMAT);
+			    victim, TO_ROOM | _ACT_FORMAT);
 			npc_evasion(victim, -1);
 			add_threat(victim, ch, 7);
 			remove_affect_type(ch, MAGIC_HIDDEN);
-			if (get_second_affect(ch, SA_AIMSTRIKE, NULL))
+			if (get_second_affect(ch, SA_AIMSTRIKE, nullptr))
 			{
-				remove_second_affect(get_second_affect(ch, SA_AIMSTRIKE, NULL));
+				remove_second_affect(get_second_affect(ch, SA_AIMSTRIKE, nullptr));
 			}
 			return;
 		}
 	}
 
-	ch->flags &= ~FLAG_FLEE;
+	ch->flags &= ~FLAG_FLEE ;
 	ch->act &= ~PLR_STOP;
 
 	if (GET_POS(ch) == POSITION_STANDING &&
@@ -2161,9 +2133,9 @@ do_hit(CHAR_DATA * ch, char *argument, int cmd)
 		}
 
 		if (cmd == 0)
-			ch->flags &= ~FLAG_KILL;
+			ch->flags &= ~FLAG_KILL ;
 		else
-			ch->flags |= FLAG_KILL;
+			ch->flags |= FLAG_KILL ;
 
 		if (GET_POS(ch) != POSITION_DEAD && GET_POS(victim) != POSITION_DEAD)
 		{
@@ -2176,14 +2148,14 @@ do_hit(CHAR_DATA * ch, char *argument, int cmd)
 			set_fighting(victim, ch);
 			notify_guardians(ch, victim, cmd);
 			act("$N engages $n in combat.", false,
-				victim, 0, ch, TO_NOTVICT | _ACT_FORMAT);
+			    victim, 0, ch, TO_NOTVICT | _ACT_FORMAT);
 
 			sprintf(buf, "engage #5%s#0 in combat.", char_short(victim));
 			watched_action(ch, buf, 1, 0);
 		}
 
-		if (cmd != 2 && get_second_affect(ch, SA_AIMSTRIKE, NULL))
-			remove_second_affect(get_second_affect(ch, SA_AIMSTRIKE, NULL));
+		if (cmd != 2 && get_second_affect(ch, SA_AIMSTRIKE, nullptr))
+			remove_second_affect(get_second_affect(ch, SA_AIMSTRIKE, nullptr));
 
 		hit_char(ch, victim, 0);
 
@@ -2208,21 +2180,20 @@ do_hit(CHAR_DATA * ch, char *argument, int cmd)
 		!IS_SET(ch->flags, FLAG_KILL) && AWAKE(ch) && cmd == 1)
 	{
 		act("You will try to kill $N.", false, ch, 0, victim, TO_CHAR);
-		ch->flags |= FLAG_KILL;
+		ch->flags |= FLAG_KILL ;
 	}
 
 	else if (ch->fighting == victim &&
 		IS_SET(ch->flags, FLAG_KILL) && AWAKE(ch) && cmd == 0)
 	{
 		act("You will try NOT to kill $N.", false, ch, 0, victim, TO_CHAR);
-		ch->flags &= ~FLAG_KILL;
+		ch->flags &= ~FLAG_KILL ;
 	}
 
 	else if (ch->fighting &&
 		(GET_POS(ch) == FIGHT ||
-		GET_POS(ch) == STAND) && victim != ch->fighting)
+			GET_POS(ch) == STAND) && victim != ch->fighting)
 	{
-
 		if (ch->agi <= 9)
 			ch->balance += -8;
 		else if (ch->agi > 9 && ch->agi <= 13)
@@ -2238,7 +2209,7 @@ do_hit(CHAR_DATA * ch, char *argument, int cmd)
 		if (ch->balance < -15)
 		{
 			act("You need more balance before you can try to attack $N!",
-				false, ch, 0, victim, TO_CHAR | _ACT_FORMAT);
+			    false, ch, 0, victim, TO_CHAR | _ACT_FORMAT);
 			return;
 		}
 
@@ -2270,24 +2241,21 @@ do_hit(CHAR_DATA * ch, char *argument, int cmd)
 
 		if (ch->fighting && !found)
 		{
-
 			if (ch->fighting->fighting == ch)
 			{
-
 				agi_diff = GET_AGI(ch) - GET_AGI(ch->fighting);
 
 				if (agi_diff > number(-10, 10) && (number(0, 19) != 0))
 				{
-
 					act("You fail to shift your attention away from $N.",
-						false, ch, 0, ch->fighting,
-						TO_CHAR | _ACT_FORMAT | _ACT_COMBAT);
+					    false, ch, 0, ch->fighting,
+					    TO_CHAR | _ACT_FORMAT | _ACT_COMBAT);
 					act("$N fails to shift their attention away from you.",
-						false, ch->fighting, 0, ch,
-						TO_CHAR | _ACT_FORMAT | _ACT_COMBAT);
+					    false, ch->fighting, 0, ch,
+					    TO_CHAR | _ACT_FORMAT | _ACT_COMBAT);
 					act("$N fails to shift their attention away from $n.",
-						false, ch->fighting, 0, ch,
-						TO_NOTVICT | _ACT_FORMAT | _ACT_COMBAT);
+					    false, ch->fighting, 0, ch,
+					    TO_NOTVICT | _ACT_FORMAT | _ACT_COMBAT);
 
 					return;
 				}
@@ -2295,14 +2263,13 @@ do_hit(CHAR_DATA * ch, char *argument, int cmd)
 
 			act("You stop fighting $N.", false, ch, 0, ch->fighting, TO_CHAR);
 			act("You ready yourself for battle with $N.",
-				false, ch, 0, victim, TO_CHAR);
+			    false, ch, 0, victim, TO_CHAR);
 			stop_fighting(ch);
-
 		}
 
 		if (!found)
 			act("You notice $N's attention shift toward you!",
-			false, victim, 0, ch, TO_CHAR);
+			    false, victim, 0, ch, TO_CHAR);
 
 		if ((is_area_enforcer(victim)) && IS_NPC(victim) && !get_affect(victim, MAGIC_ALERTED))
 		{
@@ -2316,15 +2283,14 @@ do_hit(CHAR_DATA * ch, char *argument, int cmd)
 		set_fighting(ch, victim);
 
 		if (cmd == 0)
-			ch->flags &= ~FLAG_KILL;
+			ch->flags &= ~FLAG_KILL ;
 		else
-			ch->flags |= FLAG_KILL;
+			ch->flags |= FLAG_KILL ;
 
 		if (IS_SET(victim->act, ACT_MEMORY) && IS_NPC(victim))
 			add_memory(ch, victim);
 
 		trigger(ch, argument, TRIG_HIT);
-
 	}
 
 	else
@@ -2332,10 +2298,10 @@ do_hit(CHAR_DATA * ch, char *argument, int cmd)
 }
 
 void
-do_strike(CHAR_DATA * ch, char *argument, int cmd)
+do_strike(CHAR_DATA* ch, char* argument, int cmd)
 {
 	CHAR_DATA *victim, *tch;
-	OBJ_DATA *obj;
+	OBJ_DATA* obj;
 	int i;
 	char buf[MAX_STRING_LENGTH];
 	char original[MAX_STRING_LENGTH];
@@ -2349,7 +2315,7 @@ do_strike(CHAR_DATA * ch, char *argument, int cmd)
 	if (is_room_affected(ch->room->affects, MAGIC_ROOM_CALM))
 	{
 		act("Try as you might, you simply cannot muster the will to break "
-			"the peace that pervades the area.", false, ch, 0, 0, TO_CHAR);
+		    "the peace that pervades the area.", false, ch, 0, 0, TO_CHAR);
 		return;
 	}
 
@@ -2400,7 +2366,7 @@ do_strike(CHAR_DATA * ch, char *argument, int cmd)
 	if (IS_SUBDUER(ch))
 	{
 		act("You can't attack while you have $N subdued.",
-			false, ch, 0, ch->subdue, TO_CHAR);
+		    false, ch, 0, ch->subdue, TO_CHAR);
 		return;
 	}
 
@@ -2408,20 +2374,19 @@ do_strike(CHAR_DATA * ch, char *argument, int cmd)
 		&& IS_SET(ch->room->room_flags, LAWFUL) && *argument != '!')
 	{
 		sprintf(buf,
-			"You are in a lawful area; you would likely be flagged wanted for assault. "
-			"To confirm, type \'#6strike %s !#0\', without the quotes.",
-			original);
+		        "You are in a lawful area; you would likely be flagged wanted for assault. "
+		        "To confirm, type \'#6strike %s !#0\', without the quotes.",
+		        original);
 		act(buf, false, ch, 0, 0, TO_CHAR | _ACT_FORMAT);
 		return;
 	}
 
 	if (!*buf)
 	{
-
 		if (IS_SET(ch->flags, FLAG_FLEE))
 		{
 			send_to_char("You stop trying to flee.\n\r", ch);
-			ch->flags &= ~FLAG_FLEE;
+			ch->flags &= ~FLAG_FLEE ;
 			return;
 		}
 
@@ -2458,19 +2423,17 @@ do_strike(CHAR_DATA * ch, char *argument, int cmd)
 			if (++i >= 4)
 			{
 				act("You can't find an opening to strike $N.",
-					false, ch, 0, victim, TO_CHAR);
+				    false, ch, 0, victim, TO_CHAR);
 				return;
 			}
-
 		}
 	}
 
-	ch->flags &= ~FLAG_FLEE;
+	ch->flags &= ~FLAG_FLEE ;
 	ch->act &= ~PLR_STOP;
 
 	if (GET_POS(ch) == POSITION_STANDING && !ch->fighting)
 	{
-
 		if (ch->delay && ch->delay_type != DEL_CAST)
 			break_delay(ch);
 
@@ -2499,24 +2462,24 @@ do_strike(CHAR_DATA * ch, char *argument, int cmd)
 	{
 		send_to_char
 			("You need to be standing and clear of combat to intiate a strike.\n",
-			ch);
+			 ch);
 	}
 }
 
 void
-do_nokill(CHAR_DATA * ch, char *argument, int cmd)
+do_nokill(CHAR_DATA* ch, char* argument, int cmd)
 {
 	send_to_char("Please spell out all of 'kill' to avoid any mistakes.\n",
-		ch);
+	             ch);
 }
 
 void
-do_kill(CHAR_DATA * ch, char *argument, int cmd)
+do_kill(CHAR_DATA* ch, char* argument, int cmd)
 {
 	char verify[MAX_STRING_LENGTH];
 	char buf[MAX_STRING_LENGTH];
 	char original[MAX_STRING_LENGTH];
-	CHAR_DATA *victim;
+	CHAR_DATA* victim;
 
 	sprintf(original, "%s", argument);
 	argument = one_argument(argument, buf);
@@ -2552,8 +2515,8 @@ do_kill(CHAR_DATA * ch, char *argument, int cmd)
 	if (!IS_NPC(victim) && *verify != '!')
 	{
 		send_to_char("Target is a player character.  Please use "
-			"'KILL <name> !' syntax if \n\ryou really mean it.'\n\r",
-			ch);
+		             "'KILL <name> !' syntax if \n\ryou really mean it.'\n\r",
+		             ch);
 		return;
 	}
 
@@ -2563,20 +2526,20 @@ do_kill(CHAR_DATA * ch, char *argument, int cmd)
 	}
 	act("$n stares at you, narrowing $s eyes. Shortly thereafter, your heart obediently ceases to beat, and you feel death upon you...", false, ch, 0, victim, TO_VICT | _ACT_FORMAT);
 	act("You narrow your eyes in concentration, and $N collapses, dead.",
-		false, ch, 0, victim, TO_CHAR | _ACT_FORMAT);
+	    false, ch, 0, victim, TO_CHAR | _ACT_FORMAT);
 	act("$n stares at $N, narrowing $s eyes. Suddenly, $N collapses, dead.",
-		false, ch, 0, victim, TO_NOTVICT | _ACT_FORMAT);
+	    false, ch, 0, victim, TO_NOTVICT | _ACT_FORMAT);
 	die(victim);
 }
 
 void
-do_command(CHAR_DATA * ch, char *argument, int cmd)
+do_command(CHAR_DATA* ch, char* argument, int cmd)
 {
 	int everyone = 0;
-	CHAR_DATA *victim = NULL;
-	CHAR_DATA *next_in_room = NULL;
-	CHAR_DATA *tch = NULL;
-	OBJ_DATA *obj = NULL;
+	CHAR_DATA* victim = nullptr;
+	CHAR_DATA* next_in_room = nullptr;
+	CHAR_DATA* tch = nullptr;
+	OBJ_DATA* obj = nullptr;
 	char buf[MAX_STRING_LENGTH];
 	char command[MAX_STRING_LENGTH];
 	bool is_robot = !str_cmp(lookup_race_variable(ch->race, RACE_NAME), "robot");
@@ -2675,7 +2638,6 @@ do_command(CHAR_DATA * ch, char *argument, int cmd)
 
 	if (victim)
 	{
-
 		if (!obj && !str_cmp(lookup_race_variable(victim->race, RACE_NAME), "robot"))
 		{
 			send_to_char("You need a synchronized remote to command a robot.", ch);
@@ -2685,7 +2647,7 @@ do_command(CHAR_DATA * ch, char *argument, int cmd)
 		if (!is_leader(ch, victim) && victim->following != ch && !obj)
 		{
 			act("You do not have the authority to command $N.", false, ch, 0,
-				victim, TO_CHAR);
+			    victim, TO_CHAR);
 			return;
 		}
 
@@ -2713,7 +2675,7 @@ do_command(CHAR_DATA * ch, char *argument, int cmd)
 		else
 		{
 			sprintf(buf, "You command #5%s#0 to '%s'.\n",
-				char_short(victim), command);
+			        char_short(victim), command);
 			send_to_char(buf, ch);
 		}
 
@@ -2733,7 +2695,7 @@ do_command(CHAR_DATA * ch, char *argument, int cmd)
 
 			if (!str_cmp(lookup_race_variable(tch->race, RACE_NAME), "robot"))
 			{
-				if (!is_robot)    // Only robots can command other robots.
+				if (!is_robot) // Only robots can command other robots.
 					continue;
 
 				if ((tch->d_feat1 && !str_cmp(tch->d_feat1, "comm")) ||
@@ -2748,7 +2710,8 @@ do_command(CHAR_DATA * ch, char *argument, int cmd)
 					continue;
 				}
 			}
-			else {
+			else
+			{
 				sprintf(buf, "#5%s#0 commands you to '%s'.\n", char_short(ch), command);
 			}
 
@@ -2773,7 +2736,7 @@ do_command(CHAR_DATA * ch, char *argument, int cmd)
 
 			if (!str_cmp(lookup_race_variable(tch->race, RACE_NAME), "robot"))
 			{
-				if (!is_robot)    // Only robots can command other robots.
+				if (!is_robot) // Only robots can command other robots.
 					continue;
 
 				if ((tch->d_feat1 && !str_cmp(tch->d_feat1, "comm")) ||
@@ -2788,7 +2751,8 @@ do_command(CHAR_DATA * ch, char *argument, int cmd)
 					continue;
 				}
 			}
-			else {
+			else
+			{
 				sprintf(buf, "#5%s#0 commands you to '%s'.\n", char_short(ch), command);
 			}
 
@@ -2809,8 +2773,8 @@ retreat(CHAR_DATA* ch, int direction, CHAR_DATA* leader)
 {
 	// base number of seconds
 	int duration = 0;
-	AFFECTED_TYPE *af;
-	char buf[MAX_STRING_LENGTH] = { '\0' };
+	AFFECTED_TYPE* af;
+	char buf[MAX_STRING_LENGTH] = {'\0'};
 
 	if ((af = get_affect(ch, AFFECT_GROUP_RETREAT)))
 	{
@@ -2825,40 +2789,40 @@ retreat(CHAR_DATA* ch, int direction, CHAR_DATA* leader)
 		}
 	}
 
-	char message[AVG_STRING_LENGTH];
+	char message[AVG_STRING_LENGTH ];
 	if (leader)
 	{
 		if (ch == leader)
 		{
 			sprintf(message,
-				"You command your group to retreat %sward.\n",
-				dirs[direction]);
+			        "You command your group to retreat %sward.\n",
+			        dirs[direction]);
 			send_to_char(message, ch);
 			sprintf(message, "$n's group begins to fall back to the %s.",
-				dirs[direction]);
+			        dirs[direction]);
 			act(message, false, ch, 0, 0, TO_ROOM);
 		}
 		else
 		{
 			sprintf(message,
-				"Your group begins to retreat %sward "
-				"at the command of #5%s#0.\n",
-				dirs[direction], char_short(leader));
+			        "Your group begins to retreat %sward "
+			        "at the command of #5%s#0.\n",
+			        dirs[direction], char_short(leader));
 			send_to_char(message, ch);
 		}
 	}
 	else
 	{
 		sprintf(message,
-			"You attempt to retreat %sward.\n",
-			dirs[direction]);
+		        "You attempt to retreat %sward.\n",
+		        dirs[direction]);
 		send_to_char(message, ch);
 		sprintf(message, "$n begins to fall back to the %s.",
-			dirs[direction]);
+		        dirs[direction]);
 		act(message, false, ch, 0, 0, TO_ROOM);
 	}
 
-	if (!ch->following || ch->fighting || leader)  // Why are we checking !ch->following?
+	if (!ch->following || ch->fighting || leader) // Why are we checking !ch->following?
 	{
 		//duration = 40;
 		duration = 70 - GET_AUR(leader ? leader : ch) * 3; // Add modification to allow folks with higher AUR to be able to group retreat faster. 0309142344 -Nimrod
@@ -2903,13 +2867,11 @@ retreat(CHAR_DATA* ch, int direction, CHAR_DATA* leader)
 	{
 		do_move(ch, "", direction);
 	}
-
-
 }
 
 
 void
-do_flee(CHAR_DATA * ch, char *argument, int cmd)
+do_flee(CHAR_DATA* ch, char* argument, int cmd)
 {
 	int dir;
 
@@ -2957,16 +2919,16 @@ do_flee(CHAR_DATA * ch, char *argument, int cmd)
 		return;
 	}
 
-	ch->flags |= FLAG_FLEE;
+	ch->flags |= FLAG_FLEE ;
 
 	send_to_char("You resolve to escape combat. . .\n\r", ch);
 
 	act("$n's eyes dart about looking for an escape path!",
-		false, ch, 0, 0, TO_ROOM);
+	    false, ch, 0, 0, TO_ROOM);
 }
 
 int
-flee_attempt(CHAR_DATA * ch)
+flee_attempt(CHAR_DATA* ch)
 {
 	int dir;
 	int enemies = 0;
@@ -2974,9 +2936,9 @@ flee_attempt(CHAR_DATA * ch)
 	int mobbed_count = 0;
 	int mobless_dirs[6];
 	int mobbed_dirs[6];
-	CHAR_DATA *tch;
+	CHAR_DATA* tch;
 	char buf[MAX_STRING_LENGTH];
-	ROOM_DATA *troom;
+	ROOM_DATA* troom;
 	/*
 		if ( IS_SET (ch->flags, FLAG_SUBDUING) ) {
 		ch->flags &= ~FLAG_FLEE;
@@ -2988,7 +2950,6 @@ flee_attempt(CHAR_DATA * ch)
 
 	for (tch = ch->room->people; tch; tch = tch->next_in_room)
 	{
-
 		if (tch->fighting != ch)
 			continue;
 
@@ -3003,7 +2964,6 @@ flee_attempt(CHAR_DATA * ch)
 
 	for (dir = 0; dir <= LAST_DIR; dir++)
 	{
-
 		if (!CAN_GO(ch, dir))
 			continue;
 
@@ -3016,8 +2976,8 @@ flee_attempt(CHAR_DATA * ch)
 	if (!mobbed_count && !mobless_count)
 	{
 		send_to_char("There is nowhere to go!  You continue fighting!\n\r",
-			ch);
-		ch->flags &= ~FLAG_FLEE;
+		             ch);
+		ch->flags &= ~FLAG_FLEE ;
 		return 0;
 	}
 
@@ -3073,7 +3033,7 @@ flee_attempt(CHAR_DATA * ch)
 	if (ch->room != troom)
 		send_to_char(buf, ch);
 
-	ch->flags &= ~FLAG_FLEE;
+	ch->flags &= ~FLAG_FLEE ;
 
 	return 1;
 }
@@ -3081,21 +3041,20 @@ flee_attempt(CHAR_DATA * ch)
 /* In case victim is being guarded, make sure rescue affects are active. */
 
 void
-guard_check(CHAR_DATA * victim)
+guard_check(CHAR_DATA* victim)
 {
-	CHAR_DATA *tch;
-	AFFECTED_TYPE *af;
+	CHAR_DATA* tch;
+	AFFECTED_TYPE* af;
 
 	for (tch = victim->room->people; tch; tch = tch->next_in_room)
 	{
-
 		if (!(af = get_affect(tch, MAGIC_GUARD)))
 			continue;
 
 		if ((CHAR_DATA *)af->a.spell.t == victim &&
-			!get_second_affect(tch, SA_RESCUE, NULL))
+			!get_second_affect(tch, SA_RESCUE, nullptr))
 		{
-			add_second_affect(SA_RESCUE, 1, tch, (OBJ_DATA *)victim, NULL, 0);
+			add_second_affect(SA_RESCUE, 1, tch, (OBJ_DATA *)victim, nullptr, 0);
 
 
 			// If you're guarding and you've got three or more attackers, you lose the
@@ -3106,15 +3065,14 @@ guard_check(CHAR_DATA * victim)
 				remove_affect_type(tch, MAGIC_GUARD);
 			}
 		}
-
 	}
 }
 
 void
-do_guard(CHAR_DATA * ch, char *argument, int cmd)
+do_guard(CHAR_DATA* ch, char* argument, int cmd)
 {
-	CHAR_DATA *target = NULL, *tch = NULL;
-	AFFECTED_TYPE *af;
+	CHAR_DATA *target = nullptr, *tch = nullptr;
+	AFFECTED_TYPE* af;
 	char buf[MAX_STRING_LENGTH];
 	int dir;
 
@@ -3142,7 +3100,7 @@ do_guard(CHAR_DATA * ch, char *argument, int cmd)
 
 		af = get_affect(ch, AFFECT_GUARD_DIR);
 
-		af->a.shadow.shadow = NULL;
+		af->a.shadow.shadow = nullptr;
 		af->a.shadow.edge = dir;
 
 		if (IS_SET(ch->room->room_flags, BIG_ROOM) ||
@@ -3160,11 +3118,9 @@ do_guard(CHAR_DATA * ch, char *argument, int cmd)
 		sprintf(buf, "$n moves to block the %s exit.", dirs[dir]);
 		act(buf, true, ch, 0, 0, TO_ROOM | _ACT_FORMAT);
 		return;
-
 	}
 	else if (cmd && !(target = (CHAR_DATA *)cmd))
 		return;
-
 
 
 	if ((!*buf || target == ch))
@@ -3176,14 +3132,14 @@ do_guard(CHAR_DATA * ch, char *argument, int cmd)
 			return;
 		}
 		else if ((af = get_affect(ch, MAGIC_GUARD))
-			&& (tch = (CHAR_DATA *)af->a.spell.t) != NULL)
+			&& (tch = (CHAR_DATA *)af->a.spell.t) != nullptr)
 		{
 			act("You cease guarding $N.", true, ch, 0, tch,
-				TO_CHAR | _ACT_FORMAT);
+			    TO_CHAR | _ACT_FORMAT);
 			act("$n ceases guarding you.", false, ch, 0, tch,
-				TO_VICT | _ACT_FORMAT);
+			    TO_VICT | _ACT_FORMAT);
 			act("$n ceases guarding $N.", false, ch, 0, tch,
-				TO_NOTVICT | _ACT_FORMAT);
+			    TO_NOTVICT | _ACT_FORMAT);
 			remove_affect_type(ch, MAGIC_GUARD);
 			return;
 		}
@@ -3206,7 +3162,7 @@ do_guard(CHAR_DATA * ch, char *argument, int cmd)
 		|| get_affect(target, AFFECT_GUARD_DIR))
 	{
 		send_to_char("They're already trying to guard something themselves!\n",
-			ch);
+		             ch);
 		return;
 	}
 
@@ -3225,7 +3181,7 @@ do_guard(CHAR_DATA * ch, char *argument, int cmd)
 	if (!(af = get_affect(ch, MAGIC_GUARD)))
 	{
 		send_to_char("There is a bug in guard.  Please let an admin "
-			"know.\n", ch);
+		             "know.\n", ch);
 		return;
 	}
 
@@ -3233,23 +3189,22 @@ do_guard(CHAR_DATA * ch, char *argument, int cmd)
 
 	act("You will now guard $N.", false, ch, 0, target, TO_CHAR | _ACT_FORMAT);
 	act("$n moves into position to guard you.", false, ch, 0, target,
-		TO_VICT | _ACT_FORMAT);
+	    TO_VICT | _ACT_FORMAT);
 	act("$n moves into position to guard $N.", false, ch, 0, target,
-		TO_NOTVICT | _ACT_FORMAT);
+	    TO_NOTVICT | _ACT_FORMAT);
 }
 
 
-
 void
-do_aide(CHAR_DATA *ch, char *argument, int cmd)
+do_aide(CHAR_DATA* ch, char* argument, int cmd)
 {
-	char buf[AVG_STRING_LENGTH] = { '\0' };
+	char buf[AVG_STRING_LENGTH ] = {'\0'};
 	char original[MAX_STRING_LENGTH];
-	CHAR_DATA *tch = NULL;
-	CHAR_DATA *victim = NULL;
-	CHAR_DATA *ally = NULL;
-	OBJ_DATA *obj = NULL;
-	SECOND_AFFECT *sa = NULL;
+	CHAR_DATA* tch = nullptr;
+	CHAR_DATA* victim = nullptr;
+	CHAR_DATA* ally = nullptr;
+	OBJ_DATA* obj = nullptr;
+	SECOND_AFFECT* sa = nullptr;
 	bool found = false;
 	int i;
 	int agi_diff = 0;
@@ -3301,7 +3256,7 @@ do_aide(CHAR_DATA *ch, char *argument, int cmd)
 	if (is_room_affected(ch->room->affects, MAGIC_ROOM_CALM))
 	{
 		act("Try as you might, you simply cannot muster the will to break "
-			"the peace that pervades the area.", false, ch, 0, 0, TO_CHAR);
+		    "the peace that pervades the area.", false, ch, 0, 0, TO_CHAR);
 		return;
 	}
 
@@ -3356,7 +3311,7 @@ do_aide(CHAR_DATA *ch, char *argument, int cmd)
 	if (IS_SUBDUER(ch))
 	{
 		act("You can't attack while you have $N subdued.",
-			false, ch, 0, ch->subdue, TO_CHAR);
+		    false, ch, 0, ch->subdue, TO_CHAR);
 		return;
 	}
 
@@ -3364,9 +3319,9 @@ do_aide(CHAR_DATA *ch, char *argument, int cmd)
 		&& IS_SET(ch->room->room_flags, LAWFUL) && *argument != '!')
 	{
 		sprintf(buf,
-			"You are in a lawful area; you would likely be flagged wanted for assault. "
-			"To confirm, type \'#6hit %s !#0\', without the quotes.",
-			original);
+		        "You are in a lawful area; you would likely be flagged wanted for assault. "
+		        "To confirm, type \'#6hit %s !#0\', without the quotes.",
+		        original);
 		act(buf, false, ch, 0, 0, TO_CHAR | _ACT_FORMAT);
 		return;
 	}
@@ -3386,7 +3341,7 @@ do_aide(CHAR_DATA *ch, char *argument, int cmd)
 		return;
 	}
 
-	if ((sa = get_second_affect(ch, SA_WARDED, NULL)))
+	if ((sa = get_second_affect(ch, SA_WARDED, nullptr)))
 	{
 		if ((CHAR_DATA *)sa->obj == victim)
 		{
@@ -3399,8 +3354,8 @@ do_aide(CHAR_DATA *ch, char *argument, int cmd)
 	if (are_grouped(ch, victim) && is_brother(ch, victim) && *argument != '!')
 	{
 		sprintf(buf,
-			"#1You are about to attack $N #1who is a fellow group member!#0 To confirm, type \'#6hit %s !#0\', without the quotes.",
-			original);
+		        "#1You are about to attack $N #1who is a fellow group member!#0 To confirm, type \'#6hit %s !#0\', without the quotes.",
+		        original);
 		act(buf, false, ch, 0, victim, TO_CHAR | _ACT_FORMAT);
 		return;
 	}
@@ -3419,7 +3374,7 @@ do_aide(CHAR_DATA *ch, char *argument, int cmd)
 	if (IS_SET(victim->act, ACT_VEHICLE) || IS_SET(victim->act, ACT_PASSIVE))
 	{
 		send_to_char("How do you propose to kill an inanimate object, hmm?\n",
-			ch);
+		             ch);
 		return;
 	}
 
@@ -3431,10 +3386,9 @@ do_aide(CHAR_DATA *ch, char *argument, int cmd)
 			if (++i >= 4)
 			{
 				act("You can't find an opening to attack $N.",
-					false, ch, 0, victim, TO_CHAR);
+				    false, ch, 0, victim, TO_CHAR);
 				return;
 			}
-
 		}
 	}
 
@@ -3444,9 +3398,9 @@ do_aide(CHAR_DATA *ch, char *argument, int cmd)
 		{
 			act
 				("As you approach, $N spots you and darts away! Try using a ranged weapon or an ambush from hiding instead.",
-				false, ch, 0, victim, TO_CHAR | _ACT_FORMAT);
+				 false, ch, 0, victim, TO_CHAR | _ACT_FORMAT);
 			act("As $n approaches, $N spots $m and darts away.", false, ch, 0,
-				victim, TO_ROOM | _ACT_FORMAT);
+			    victim, TO_ROOM | _ACT_FORMAT);
 			npc_evasion(victim, -1);
 			add_threat(victim, ch, 7);
 			remove_affect_type(ch, MAGIC_HIDDEN);
@@ -3454,13 +3408,12 @@ do_aide(CHAR_DATA *ch, char *argument, int cmd)
 		}
 	}
 
-	ch->flags &= ~FLAG_FLEE;
+	ch->flags &= ~FLAG_FLEE ;
 	ch->act &= ~PLR_STOP;
 
 	if (GET_POS(ch) == POSITION_STANDING &&
 		!ch->fighting && victim != ch->fighting)
 	{
-
 		if (ch->delay && ch->delay_type != DEL_CAST)
 			break_delay(ch);
 
@@ -3498,9 +3451,9 @@ do_aide(CHAR_DATA *ch, char *argument, int cmd)
 		}
 
 		if (cmd == 0)
-			ch->flags &= ~FLAG_KILL;
+			ch->flags &= ~FLAG_KILL ;
 		else
-			ch->flags |= FLAG_KILL;
+			ch->flags |= FLAG_KILL ;
 
 		if (GET_POS(ch) != POSITION_DEAD && GET_POS(victim) != POSITION_DEAD)
 		{
@@ -3513,14 +3466,14 @@ do_aide(CHAR_DATA *ch, char *argument, int cmd)
 			set_fighting(victim, ch);
 			notify_guardians(ch, victim, cmd);
 			act("$N engages $n in combat.", false,
-				victim, 0, ch, TO_NOTVICT | _ACT_FORMAT);
+			    victim, 0, ch, TO_NOTVICT | _ACT_FORMAT);
 
 			sprintf(buf, "engage #5%s#0 in combat.", char_short(victim));
 			watched_action(ch, buf, 1, 0);
 		}
 
-		if (cmd != 2 && get_second_affect(ch, SA_AIMSTRIKE, NULL))
-			remove_second_affect(get_second_affect(ch, SA_AIMSTRIKE, NULL));
+		if (cmd != 2 && get_second_affect(ch, SA_AIMSTRIKE, nullptr))
+			remove_second_affect(get_second_affect(ch, SA_AIMSTRIKE, nullptr));
 
 		hit_char(ch, victim, 0);
 
@@ -3545,21 +3498,20 @@ do_aide(CHAR_DATA *ch, char *argument, int cmd)
 		!IS_SET(ch->flags, FLAG_KILL) && AWAKE(ch) && cmd == 1)
 	{
 		act("You will try to kill $N.", false, ch, 0, victim, TO_CHAR);
-		ch->flags |= FLAG_KILL;
+		ch->flags |= FLAG_KILL ;
 	}
 
 	else if (ch->fighting == victim &&
 		IS_SET(ch->flags, FLAG_KILL) && AWAKE(ch) && cmd == 0)
 	{
 		act("You will try NOT to kill $N.", false, ch, 0, victim, TO_CHAR);
-		ch->flags &= ~FLAG_KILL;
+		ch->flags &= ~FLAG_KILL ;
 	}
 
 	else if (ch->fighting &&
 		(GET_POS(ch) == FIGHT ||
-		GET_POS(ch) == STAND) && victim != ch->fighting)
+			GET_POS(ch) == STAND) && victim != ch->fighting)
 	{
-
 		if (ch->agi <= 9)
 			ch->balance += -8;
 		else if (ch->agi > 9 && ch->agi <= 13)
@@ -3575,7 +3527,7 @@ do_aide(CHAR_DATA *ch, char *argument, int cmd)
 		if (ch->balance < -15)
 		{
 			act("You need more balance before you can try to attack $N!",
-				false, ch, 0, victim, TO_CHAR | _ACT_FORMAT);
+			    false, ch, 0, victim, TO_CHAR | _ACT_FORMAT);
 			return;
 		}
 
@@ -3607,24 +3559,21 @@ do_aide(CHAR_DATA *ch, char *argument, int cmd)
 
 		if (ch->fighting && !found)
 		{
-
 			if (ch->fighting->fighting == ch)
 			{
-
 				agi_diff = GET_AGI(ch) - GET_AGI(ch->fighting);
 
 				if (agi_diff > number(-10, 10) && (number(0, 19) != 0))
 				{
-
 					act("You fail to shift your attention away from $N.",
-						false, ch, 0, ch->fighting,
-						TO_CHAR | _ACT_FORMAT | _ACT_COMBAT);
+					    false, ch, 0, ch->fighting,
+					    TO_CHAR | _ACT_FORMAT | _ACT_COMBAT);
 					act("$N fails to shift their attention away from you.",
-						false, ch->fighting, 0, ch,
-						TO_CHAR | _ACT_FORMAT | _ACT_COMBAT);
+					    false, ch->fighting, 0, ch,
+					    TO_CHAR | _ACT_FORMAT | _ACT_COMBAT);
 					act("$N fails to shift their attention away from $n.",
-						false, ch->fighting, 0, ch,
-						TO_NOTVICT | _ACT_FORMAT | _ACT_COMBAT);
+					    false, ch->fighting, 0, ch,
+					    TO_NOTVICT | _ACT_FORMAT | _ACT_COMBAT);
 
 					return;
 				}
@@ -3632,14 +3581,13 @@ do_aide(CHAR_DATA *ch, char *argument, int cmd)
 
 			act("You stop fighting $N.", false, ch, 0, ch->fighting, TO_CHAR);
 			act("You ready yourself for battle with $N.",
-				false, ch, 0, victim, TO_CHAR);
+			    false, ch, 0, victim, TO_CHAR);
 			stop_fighting(ch);
-
 		}
 
 		if (!found)
 			act("You notice $N's attention shift toward you!",
-			false, victim, 0, ch, TO_CHAR);
+			    false, victim, 0, ch, TO_CHAR);
 
 		if ((is_area_enforcer(victim)) && IS_NPC(victim) && !get_affect(victim, MAGIC_ALERTED))
 		{
@@ -3653,15 +3601,14 @@ do_aide(CHAR_DATA *ch, char *argument, int cmd)
 		set_fighting(ch, victim);
 
 		if (cmd == 0)
-			ch->flags &= ~FLAG_KILL;
+			ch->flags &= ~FLAG_KILL ;
 		else
-			ch->flags |= FLAG_KILL;
+			ch->flags |= FLAG_KILL ;
 
 		if (IS_SET(victim->act, ACT_MEMORY) && IS_NPC(victim))
 			add_memory(ch, victim);
 
 		trigger(ch, argument, TRIG_HIT);
-
 	}
 
 	else
