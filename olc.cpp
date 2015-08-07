@@ -2069,7 +2069,7 @@ do_zsave (CHAR_DATA * ch, char *arg, int cmd)
         }
 		if (engine.in_build_mode())
 		{
-			system("../scripts/backup");
+			system("/home/sanctuary/bp/scripts/backup");
 		}
         save_mob_progs();
         save_obj_progs();
