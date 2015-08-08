@@ -293,6 +293,7 @@ do_prepare (CHAR_DATA * ch, char *argument, int cmd)
 
   sprintf (name, "%s", lookup_spell_variable (id, VAR_NAME));
 
+  
   if (caster_type (ch) == CASTER_WHITE)
     {
       sprintf (buf,
@@ -322,6 +323,7 @@ do_prepare (CHAR_DATA * ch, char *argument, int cmd)
 	       char_short (ch), HSHR (ch));
       buf2[2] = toupper (buf2[2]);
     }
+  
   else
     {
       send_to_char ("You aren't a spellcaster!\n", ch);
