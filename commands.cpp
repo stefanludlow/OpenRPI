@@ -646,6 +646,7 @@ const struct command_data commands[] =
 	/* HRPA Level 5 */
 	//{"*", do_fivenet, DEAD, C_LV5},
 	{"assign", do_assign, DEAD, C_LV5}, /* Assign to Roster */
+	{"xspells", do_spells , DEAD, C_LV5},
 	{"xcast", do_cast, FIGHT, C_LV5},
 	{"gecho", do_gecho, DEAD, C_LV5},
 	{"pfile", do_pfile, DEAD, C_LV5},
