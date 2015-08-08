@@ -1,3 +1,6 @@
+OpenRPI Project Sourcecode
+Please see https://github.com/Sebguer/OpenRPI for server setup. This project is the original OpenRPI after having been worked on for about 2 years. If you would like to utilize this engine, please contact me at ludlow.stefan@gmail.com and I'll happily provide a snapshot of the development server via DigitalOcean. 
+
 Copyright (c) 2015, Stefan Ludlow
 All rights reserved.
 
