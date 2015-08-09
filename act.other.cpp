@@ -42,9 +42,11 @@ do_test(CHAR_DATA* ch, char* argument, int cmd)
 	buf << "This is a test. \n"; //created the string
 	send_to_gods(buf.str().c_str()); //sends the string
 	buf.str(std::string()); //clears the string
+	buf.clear();
 	buf << "This is another test, line 1 \n";
 	buf << "This is another test, line 2 \n";
 	send_to_char(buf.str().c_str(),ch);
+	buf.str(std::string());
 //	sprintf(buf, "This is a sprintf test. \n");
 	//int dir = -1;
 	//int target_room = 53001;
