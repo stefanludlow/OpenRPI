@@ -9021,7 +9021,7 @@ do_time (CHAR_DATA * ch, char *argument, int cmd)
 		{
 
 			sprintf (buf + strlen (buf),
-				" #6Anor shall rise around %s o'clock this morning and will rest again around %s o'clock today.#0 ",
+				" #The sun shall rise around %s o'clock this morning and will rest again around %s o'clock today.#0 ",
 				strTimeWord[sunrise[time_info.month]],
 				strTimeWord[sunset[time_info.month]]);
 
@@ -9030,7 +9030,7 @@ do_time (CHAR_DATA * ch, char *argument, int cmd)
 		{
 
 			sprintf (buf + strlen (buf),
-				" #6Anor shall rise around %s o'clock this morning and will rest again around %s o'clock tomorrow.#0 ",
+				" #6The sun shall rise around %s o'clock this morning and will rest again around %s o'clock tomorrow.#0 ",
 				strTimeWord[sunrise[time_info.month]],
 				strTimeWord[sunset[time_info.month]]);
 
@@ -9038,7 +9038,7 @@ do_time (CHAR_DATA * ch, char *argument, int cmd)
 		else
 		{
 			sprintf (buf + strlen (buf),
-				" #6Anor shall rest around %s o'clock today and will rise again around %s o'clock tomorrow morning.#0 ",
+				" #6The sun shall rest around %s o'clock today and will rise again around %s o'clock tomorrow morning.#0 ",
 				strTimeWord[sunset[time_info.month]],
 				strTimeWord[sunrise[time_info.month]]);
 		}
@@ -9058,14 +9058,14 @@ do_time (CHAR_DATA * ch, char *argument, int cmd)
 			if (time_info.hour < moon_r)
 			{
 				sprintf (buf + strlen (buf),
-					" #6(1) Ithil shall rise around %s o'clock this %s and will rest again around %s o'clock this %s.#0 ",
+					" #6(1) The moon shall rise around %s o'clock this %s and will rest again around %s o'clock this %s.#0 ",
 					strTimeWord[moon_r], strRelativeTime[moon_r / 3],
 					strTimeWord[moon_s], strRelativeTime[moon_s / 3]);
 			}
 			else if (time_info.hour > moon_s)
 			{
 				sprintf (buf + strlen (buf),
-					" #6(2) Ithil shall rise around %s o'clock tomorrow %s and will rest again around %s o'clock tomorrow %s.#0 ",
+					" #6(2) The moon shall rise around %s o'clock tomorrow %s and will rest again around %s o'clock tomorrow %s.#0 ",
 					strTimeWord[moon_r], strRelativeTime[moon_r / 3],
 					strTimeWord[moon_s], strRelativeTime[moon_s / 3]);
 
@@ -9073,7 +9073,7 @@ do_time (CHAR_DATA * ch, char *argument, int cmd)
 			else
 			{
 				sprintf (buf + strlen (buf),
-					" #6(3) Ithil shall rest around %s o'clock this %s and will rise again around %s o'clock tomorrow %s.#0 ",
+					" #6(3) The moon shall rest around %s o'clock this %s and will rise again around %s o'clock tomorrow %s.#0 ",
 					strTimeWord[moon_s], strRelativeTime[moon_s / 3],
 					strTimeWord[moon_r], strRelativeTime[moon_r / 3]);
 
@@ -9086,14 +9086,14 @@ do_time (CHAR_DATA * ch, char *argument, int cmd)
 			if (time_info.hour < moon_s)
 			{
 				sprintf (buf + strlen (buf),
-					" #6(4) Ithil shall rest around %s o'clock this %s and will rise again around %s o'clock this %s.#0 ",
+					" #6(4) The moon shall rest around %s o'clock this %s and will rise again around %s o'clock this %s.#0 ",
 					strTimeWord[moon_s], strRelativeTime[moon_s / 3],
 					strTimeWord[moon_r], strRelativeTime[moon_r / 3]);
 			}
 			else if (time_info.hour > moon_r)
 			{
 				sprintf (buf + strlen (buf),
-					" #6(5) Ithil shall rest around %s o'clock tomorrow %s and will rise again around %s o'clock tomorrow %s.#0 ",
+					" #6(5) The moon shall rest around %s o'clock tomorrow %s and will rise again around %s o'clock tomorrow %s.#0 ",
 					strTimeWord[moon_s], strRelativeTime[moon_s / 3],
 					strTimeWord[moon_r], strRelativeTime[moon_r / 3]);
 
@@ -9101,7 +9101,7 @@ do_time (CHAR_DATA * ch, char *argument, int cmd)
 			else
 			{
 				sprintf (buf + strlen (buf),
-					" #6(6) Ithil shall rise around %s o'clock this %s and will rest again around %s o'clock tomorrow %s.#0 ",
+					" #6(6) The moon shall rise around %s o'clock this %s and will rest again around %s o'clock tomorrow %s.#0 ",
 					strTimeWord[moon_r], strRelativeTime[moon_r / 3],
 					strTimeWord[moon_s], strRelativeTime[moon_s / 3]);
 
@@ -9647,11 +9647,11 @@ do_weather (CHAR_DATA * ch, char *argument, int cmd)
 	{
 	  if (!sun_light)
 	    send_to_char
-	      ("A full and gleaming Ithil limns the area in ghostly argent radiance.\n",
+	      ("A full and gleaming moon limns the area in ghostly argent radiance.\n",
 	       ch);
 	  else
 	    send_to_char
-	      ("Ithil's ethereal silhouette is barely visible in the daylight.\n",
+	      ("The moon's ethereal silhouette is barely visible in the daylight.\n",
 	       ch);
 	}
 

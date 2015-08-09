@@ -411,7 +411,7 @@ weather (int moon_setting, int moon_rise, int moon_set)
 		{
 		  if (sun_light == 1)
 		    send_outside_zone
-		      ("The prevailing winds bring a blanket of thick storm clouds to obscure Anor.\n\r",
+		      ("The prevailing winds bring a blanket of thick storm clouds to obscure the sun.\n\r",
 		       i);
 		  else
 		    send_outside_zone
@@ -866,14 +866,14 @@ weather (int moon_setting, int moon_rise, int moon_set)
                 && weather_info[i].state < HEAVY_SNOW)
         {
             if (moon_setting)
-                send_outside_zone ("Ithil hangs low in the sky.\n\r", i);
+                send_outside_zone ("The moon hangs low in the sky.\n\r", i);
             if (moon_set)
                 send_outside_zone
-                ("Ithil slowly sinks from the sky.\n\r",
+                ("The moon slowly sinks from the sky.\n\r",
                  i);
             if (moon_rise)
                 send_outside_zone
-                ("Ithil rises with stately grace into the sky.\n\r", i);
+                ("The moon rises with stately grace into the sky.\n\r", i);
             moon_light[i] = global_moon_light;
         }
         else
@@ -1216,15 +1216,15 @@ weather_and_time (int mode)
 
 	if (sunrise[time_info.month] == time_info.hour)
 		send_outside
-		("Anor's fiery exterior slowly lifts itself up over the eastern horizon beneath Arien's unwavering guidance.\n\r");
+		("The sun's fiery exterior slowly lifts itself up over the eastern horizon beneath Arien's unwavering guidance.\n\r");
 
 	if (sunset[time_info.month] == time_info.hour + 1)
 		send_outside
-		("Anor begins dipping below the western horizon, guided to its respite by Arien.\n\r");
+		("The sun's begins dipping below the western horizon, guided to its respite by Arien.\n\r");
 
 	if (sunset[time_info.month] == time_info.hour)
 		send_outside
-		("Anor sets in a fiery cascade of brilliant color upon the western horizon.\n\r");
+		("The sun's sets in a fiery cascade of brilliant color upon the western horizon.\n\r");
 
 	d_day = (time_info.day + 15) % 30;
 	moon_q = d_day * 24 / 30;
