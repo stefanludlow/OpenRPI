@@ -40,7 +40,7 @@ do_test(CHAR_DATA* ch, char* argument, int cmd)
 	std::ostringstream buf;
 	buf << "This is a test. \n";
 	buf.str().c_str();
-	sprintf(buf, "This is a sprintf test. \n");
+//	sprintf(buf, "This is a sprintf test. \n");
 	//int dir = -1;
 	//int target_room = 53001;
 	//int num = 0;
