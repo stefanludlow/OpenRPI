@@ -4868,94 +4868,98 @@ height_frame_selection (DESCRIPTOR_DATA * d, char *argument)
     }
 
     d->character->frame = ind;
+	if (d->character->pc->nanny_state)
+		d->character->pc->nanny_state = STATE_SDESC;
 
-    int i;
-    CHAR_DATA *ch = NULL;
+	d->connected = CON_CREATION;
 
-    ch = d->character;
+    //int i;
+    //CHAR_DATA *ch = NULL;
 
-    // Because we go back here is we re-do it all, we need to clear out everything and start afresh.
-    if (ch->delay_who)
-        mem_free(ch->delay_who);
-    if (ch->delay_who2)
-        mem_free(ch->delay_who2);
-    if (ch->delay_who3)
-        mem_free(ch->delay_who3);
+    //ch = d->character;
 
-    if (ch->description)
-        mem_free(ch->description);
-    ch->description = 0;
-    if (ch->short_descr)
-        mem_free(ch->short_descr);
-    ch->short_descr = 0;
-    if (ch->long_descr)
-        mem_free(ch->long_descr);
-    ch->long_descr = 0;
+    //// Because we go back here is we re-do it all, we need to clear out everything and start afresh.
+    //if (ch->delay_who)
+    //    mem_free(ch->delay_who);
+    //if (ch->delay_who2)
+    //    mem_free(ch->delay_who2);
+    //if (ch->delay_who3)
+    //    mem_free(ch->delay_who3);
 
-    if (ch->d_age)
-        mem_free(ch->d_age);
-    if (ch->d_eyes)
-        mem_free(ch->d_eyes);
-    if (ch->d_hairlength)
-        mem_free(ch->d_hairlength);
-    if (ch->d_haircolor)
-        mem_free(ch->d_haircolor);
-    if (ch->d_hairstyle)
-        mem_free(ch->d_hairstyle);
-    if (ch->d_height)
-        mem_free(ch->d_height);
-    if (ch->d_frame)
-        mem_free(ch->d_frame);
-    if (ch->d_feat1)
-        mem_free(ch->d_feat1);
-    if (ch->d_feat1)
-        mem_free(ch->d_feat2);
-    if (ch->d_feat1)
-        mem_free(ch->d_feat3);
-    if (ch->d_feat1)
-        mem_free(ch->d_feat4);
+    //if (ch->description)
+    //    mem_free(ch->description);
+    //ch->description = 0;
+    //if (ch->short_descr)
+    //    mem_free(ch->short_descr);
+    //ch->short_descr = 0;
+    //if (ch->long_descr)
+    //    mem_free(ch->long_descr);
+    //ch->long_descr = 0;
 
-    ch->d_age = 0;
-    ch->d_eyes = 0;
-    ch->d_hairlength = 0;
-    ch->d_haircolor = 0;
-    ch->d_hairstyle = 0;
-    ch->d_height = 0;
-    ch->d_frame = 0;
-    ch->d_feat1 = 0;
-    ch->d_feat2 = 0;
-    ch->d_feat3 = 0;
-    ch->d_feat4 = 0;
+    //if (ch->d_age)
+    //    mem_free(ch->d_age);
+    //if (ch->d_eyes)
+    //    mem_free(ch->d_eyes);
+    //if (ch->d_hairlength)
+    //    mem_free(ch->d_hairlength);
+    //if (ch->d_haircolor)
+    //    mem_free(ch->d_haircolor);
+    //if (ch->d_hairstyle)
+    //    mem_free(ch->d_hairstyle);
+    //if (ch->d_height)
+    //    mem_free(ch->d_height);
+    //if (ch->d_frame)
+    //    mem_free(ch->d_frame);
+    //if (ch->d_feat1)
+    //    mem_free(ch->d_feat1);
+    //if (ch->d_feat1)
+    //    mem_free(ch->d_feat2);
+    //if (ch->d_feat1)
+    //    mem_free(ch->d_feat3);
+    //if (ch->d_feat1)
+    //    mem_free(ch->d_feat4);
 
-    ch->delay_info1 = 0;
-    ch->delay_info2 = 0;
-    ch->delay_info3 = 0;
-    ch->delay_info4 = 0;
-    ch->delay_info5 = 0;
+    //ch->d_age = 0;
+    //ch->d_eyes = 0;
+    //ch->d_hairlength = 0;
+    //ch->d_haircolor = 0;
+    //ch->d_hairstyle = 0;
+    //ch->d_height = 0;
+    //ch->d_frame = 0;
+    //ch->d_feat1 = 0;
+    //ch->d_feat2 = 0;
+    //ch->d_feat3 = 0;
+    //ch->d_feat4 = 0;
 
-    ch = d->character;
+    //ch->delay_info1 = 0;
+    //ch->delay_info2 = 0;
+    //ch->delay_info3 = 0;
+    //ch->delay_info4 = 0;
+    //ch->delay_info5 = 0;
 
-    if (ch->age >= 56)
-        ch->delay_info5 = AGE_AGED;
-    else if (ch->age >= 46)
-        ch->delay_info5 = AGE_MATURE;
-    else if (ch->age >= 26)
-        ch->delay_info5 = AGE_ADULT;
-    else if (ch->age >= 20)
-        ch->delay_info5 = AGE_YOUNG;
-    else if (ch->age >= 13)
-        ch->delay_info5 = AGE_TEEN;
-    else
-        ch->delay_info5 = AGE_CHILD;
+    //ch = d->character;
 
-    if (ch->sex == SEX_FEMALE)
-        ch->d_age = str_dup(fem_ages[ch->delay_info5][0]);
-    else
-        ch->d_age = str_dup(male_ages[ch->delay_info5][0]);
+    //if (ch->age >= 56)
+    //    ch->delay_info5 = AGE_AGED;
+    //else if (ch->age >= 46)
+    //    ch->delay_info5 = AGE_MATURE;
+    //else if (ch->age >= 26)
+    //    ch->delay_info5 = AGE_ADULT;
+    //else if (ch->age >= 20)
+    //    ch->delay_info5 = AGE_YOUNG;
+    //else if (ch->age >= 13)
+    //    ch->delay_info5 = AGE_TEEN;
+    //else
+    //    ch->delay_info5 = AGE_CHILD;
 
-    d->connected = CON_DESC_EYE;
-    d->character->pc->nanny_state = STATE_AUTO_DESC;
-    return;
+    //if (ch->sex == SEX_FEMALE)
+    //    ch->d_age = str_dup(fem_ages[ch->delay_info5][0]);
+    //else
+    //    ch->d_age = str_dup(male_ages[ch->delay_info5][0]);
+
+    //d->connected = CON_DESC_EYE;
+    //d->character->pc->nanny_state = STATE_AUTO_DESC;
+    //return;
 }
 
 int
