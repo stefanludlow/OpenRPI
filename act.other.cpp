@@ -38,9 +38,10 @@ extern std::vector<monitor_data*> monitor_list;
 void
 do_test(CHAR_DATA* ch, char* argument, int cmd)
 {
-	std::ostringstream buf;
-	buf << "This is a test. \n";
-	send_to_gods(buf.str().c_str());
+	std::ostringstream buf; //starts using buf for our string
+	buf << "This is a test. \n"; //created the string
+	send_to_gods(buf.str().c_str()); //sends the string
+	buf.str(std::string()); //clears the string
 	buf << "This is another test, line 1 \n";
 	buf << "This is another test, line 2 \n";
 	send_to_char(buf.str().c_str(),ch);
