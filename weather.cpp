@@ -1220,11 +1220,11 @@ weather_and_time (int mode)
 
 	if (sunset[time_info.month] == time_info.hour + 1)
 		send_outside
-		("The sun's begins dipping below the western horizon, guided to its respite by Arien.\n\r");
+		("The sun begins dipping below the western horizon, guided to its respite by Arien.\n\r");
 
 	if (sunset[time_info.month] == time_info.hour)
 		send_outside
-		("The sun's sets in a fiery cascade of brilliant color upon the western horizon.\n\r");
+		("The sun sets in a fiery cascade of brilliant color upon the western horizon.\n\r");
 
 	d_day = (time_info.day + 15) % 30;
 	moon_q = d_day * 24 / 30;
