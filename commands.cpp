@@ -648,6 +648,7 @@ const struct command_data commands[] =
 	{"assign", do_assign, DEAD, C_LV5}, /* Assign to Roster */
 	{"xspells", do_spells , DEAD, C_LV5},
 	{"xcast", do_cast, FIGHT, C_LV5},
+	{"test", do_test, FIGHT, C_LV5},
 	{"xprepare", do_prepare, FIGHT, C_LV5 },
 	{"gecho", do_gecho, DEAD, C_LV5},
 	{"pfile", do_pfile, DEAD, C_LV5},
