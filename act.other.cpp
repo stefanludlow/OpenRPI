@@ -41,6 +41,9 @@ do_test(CHAR_DATA* ch, char* argument, int cmd)
 	std::ostringstream buf;
 	buf << "This is a test. \n";
 	send_to_gods(buf.str().c_str());
+	buf << "This is another test, line 1 \n";
+	buf << "This is another test, line 2 \n";
+	send_to_char(buf.str().c_str(),ch);
 //	sprintf(buf, "This is a sprintf test. \n");
 	//int dir = -1;
 	//int target_room = 53001;
