@@ -3679,7 +3679,7 @@ spitstat (CHAR_DATA * ch, DESCRIPTOR_DATA * recipient)
     char buf4[MAX_STRING_LENGTH] = { '\0' };
     bool missing_info = false;
     int req = 0;
-    bool no_eyes = false;
+    bool no_eyes = true;
 
     sprintf (buf2, "%d inches", ch->height);
 
