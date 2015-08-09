@@ -3696,7 +3696,7 @@ spitstat (CHAR_DATA * ch, DESCRIPTOR_DATA * recipient)
     sprintf (ADDBUF, "Age: %d\n\n", ch->age);
     SEND_TO_Q (buf, recipient);
     *buf = '\0';
-
+	sprintf(ADDBUF, "Build: %s height and %s build\n\n", ch->height == 1 ? "tiny" : ch->height == 2 ? "short" : ch->height == 3 ? "average" : ch->height == 4 ? "tall" : ch->height == 5 ? "giant" : buf2, frames[ch->frame]);
     /*
     if (!ch->name || !*ch->name || !str_cmp (ch->name, "(null)"))
     {
@@ -3743,19 +3743,19 @@ spitstat (CHAR_DATA * ch, DESCRIPTOR_DATA * recipient)
         }
     }
 
-    if (!ch->d_eyes || !*ch->d_eyes || !str_cmp (ch->d_eyes, "(null)") || ch->height == 0)
-    {
-        sprintf(ADDBUF, "#1Build and Eyes: Type Features to assign a height, build, and eyecolor.#0\n\n");
-        missing_info = true;
-    }
-    else if (no_eyes)
-    {
-        sprintf(ADDBUF, "Build: %s height and %s build\n\n", ch->height == 1 ? "tiny" : ch->height == 2 ? "short" : ch->height == 3 ? "average" : ch->height == 4 ? "tall" : ch->height == 5 ? "giant" : buf2, frames[ch->frame]);
-    }
-    else
-    {
-        sprintf(ADDBUF, "Build and Eyes: %s height and %s build, with %s eyes\n\n", ch->height == 1 ? "tiny" : ch->height == 2 ? "short" : ch->height == 3 ? "average" : ch->height == 4 ? "tall" : ch->height == 5 ? "giant" : buf2, frames[ch->frame], ch->d_eyes);
-    }
+    //if (!ch->d_eyes || !*ch->d_eyes || !str_cmp (ch->d_eyes, "(null)") || ch->height == 0)
+    //{
+    //    sprintf(ADDBUF, "#1Build and Eyes: Type Features to assign a height, build, and eyecolor.#0\n\n");
+    //    missing_info = true;
+    //}
+    //else if (no_eyes)
+    //{
+    //    sprintf(ADDBUF, "Build: %s height and %s build\n\n", ch->height == 1 ? "tiny" : ch->height == 2 ? "short" : ch->height == 3 ? "average" : ch->height == 4 ? "tall" : ch->height == 5 ? "giant" : buf2, frames[ch->frame]);
+    //}
+    //else
+    //{
+    //    sprintf(ADDBUF, "Build and Eyes: %s height and %s build, with %s eyes\n\n", ch->height == 1 ? "tiny" : ch->height == 2 ? "short" : ch->height == 3 ? "average" : ch->height == 4 ? "tall" : ch->height == 5 ? "giant" : buf2, frames[ch->frame], ch->d_eyes);
+    //}
 
     if (!ch->short_descr || !*ch->short_descr
             || !str_cmp (ch->short_descr, "(null)"))
