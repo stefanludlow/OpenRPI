@@ -4953,7 +4953,7 @@ height_frame_selection (DESCRIPTOR_DATA * d, char *argument)
     else
         ch->d_age = str_dup(male_ages[ch->delay_info5][0]);
 
-    d->connected = CON_DESC_EYE;
+    d->connected = CON_DESC_END;
     d->character->pc->nanny_state = STATE_AUTO_DESC;
     return;
 }
