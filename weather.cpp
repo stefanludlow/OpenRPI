@@ -1216,11 +1216,11 @@ weather_and_time (int mode)
 
 	if (sunrise[time_info.month] == time_info.hour)
 		send_outside
-		("The sun's fiery exterior slowly lifts itself up over the eastern horizon beneath Arien's unwavering guidance.\n\r");
+		("The sun's fiery exterior slowly lifts itself up over the eastern horizon.\n\r");
 
 	if (sunset[time_info.month] == time_info.hour + 1)
 		send_outside
-		("The sun begins dipping below the western horizon, guided to its respite by Arien.\n\r");
+		("The sun begins dipping below the western horizon.\n\r");
 
 	if (sunset[time_info.month] == time_info.hour)
 		send_outside
