@@ -1,0 +1,150 @@
+\hypertarget{account_8h}{\section{account.\-h File Reference}
+\label{account_8h}\index{account.\-h@{account.\-h}}
+}
+{\ttfamily \#include $<$sstream$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$time.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}structs.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}protos.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}net\-\_\-link.\-h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classaccount}{account}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{account_8h_a56c5c56d5e146288adc26a6fa31be83d}{A\-C\-C\-O\-U\-N\-T\-\_\-\-N\-O\-P\-E\-T\-I\-T\-I\-O\-N}~( 1 $<$$<$ 0 )
+\item 
+\#define \hyperlink{account_8h_af082b04b63e79684e95629bcaa076451}{A\-C\-C\-O\-U\-N\-T\-\_\-\-N\-O\-B\-A\-N}~( 1 $<$$<$ 1 )
+\item 
+\#define \hyperlink{account_8h_aac369e95ea9145bc4d670706cf65638f}{A\-C\-C\-O\-U\-N\-T\-\_\-\-N\-O\-G\-U\-E\-S\-T}~( 1 $<$$<$ 2 )
+\item 
+\#define \hyperlink{account_8h_a8617c91b66eca275b1bbec7d31151384}{A\-C\-C\-O\-U\-N\-T\-\_\-\-N\-O\-P\-S\-I}~( 1 $<$$<$ 3 )
+\item 
+\#define \hyperlink{account_8h_a172dd0e285f932048f25d92ef3f64265}{A\-C\-C\-O\-U\-N\-T\-\_\-\-N\-O\-R\-E\-T\-I\-R\-E}~( 1 $<$$<$ 4 )
+\item 
+\#define \hyperlink{account_8h_ace762cce939554b198c891f3f45a8c4d}{A\-C\-C\-O\-U\-N\-T\-\_\-\-N\-O\-V\-O\-T\-E}~( 1 $<$$<$ 5 )
+\item 
+\#define \hyperlink{account_8h_ab4199adaa62b96e58fcc8da21173da85}{A\-C\-C\-O\-U\-N\-T\-\_\-\-I\-P\-S\-H\-A\-R\-E\-R}~( 1 $<$$<$ 6 )
+\item 
+\#define \hyperlink{account_8h_a139feca8bbbdb406119d4d623afa4336}{A\-C\-C\-O\-U\-N\-T\-\_\-\-R\-P\-P\-D\-I\-S\-P\-L\-A\-Y}~( 1 $<$$<$ 7 )
+\item 
+\#define \hyperlink{account_8h_abca8252d58af31b418a53f269cc2e719}{A\-C\-C\-O\-U\-N\-T\-\_\-\-N\-O\-\_\-\-O\-O\-C}~( 1 $<$$<$ 8 )
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{account_8h_a26102c7a0825b71c64a525ed4be0d8c7}{A\-C\-C\-E\-S\-S\-\_\-\-P\-E\-R\-M\-I\-S\-S\-I\-O\-N} \{ \hyperlink{account_8h_a26102c7a0825b71c64a525ed4be0d8c7a31969cc16cec3f525b8b70ba2e12d85f}{A\-C\-C\-E\-S\-S\-\_\-\-N\-O\-R\-M\-A\-L} = 0, 
+\hyperlink{account_8h_a26102c7a0825b71c64a525ed4be0d8c7aa3d37d87d9b3887abc5466afb368cb8a}{A\-C\-C\-E\-S\-S\-\_\-\-A\-L\-L\-O\-W\-E\-D}, 
+\hyperlink{account_8h_a26102c7a0825b71c64a525ed4be0d8c7acb1335a9cba24f0405498811765792b6}{A\-C\-C\-E\-S\-S\-\_\-\-R\-E\-S\-T\-R\-I\-C\-T\-E\-D}, 
+\hyperlink{account_8h_a26102c7a0825b71c64a525ed4be0d8c7ae903b4139bd4bbb75690b0a78e2653fa}{A\-C\-C\-E\-S\-S\-\_\-\-B\-A\-N\-N\-E\-D}
+ \}
+\begin{DoxyCompactList}\small\item\em \hyperlink{account_8h}{account.\-h} -\/ Account Class Structures and Routines \end{DoxyCompactList}\item 
+enum \hyperlink{account_8h_aa082c000e4eff6ed512714ea0a33d27b}{D\-A\-T\-A\-\_\-\-T\-Y\-P\-E} \{ \hyperlink{account_8h_aa082c000e4eff6ed512714ea0a33d27ba8a3805360740624c2b104f7733097b65}{S\-T\-R\-U\-C\-T\-\_\-\-A\-C\-C\-O\-U\-N\-T}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{account_8h_a936533fc0f21f930967a7a3d58bbfe3a}{setup\-\_\-new\-\_\-account} (\hyperlink{classaccount}{account} $\ast$acct)
+\item 
+void \hyperlink{account_8h_ad3ba2add4c3eedbb7fee7e7c64568d28}{send\-\_\-email} (\hyperlink{classaccount}{account} $\ast$acct, const char $\ast$cc, char $\ast$from, char $\ast$subject, char $\ast$message)
+\item 
+void \hyperlink{account_8h_a263f0dead3574dd9d58f2dcfce826e8e}{save\-\_\-hobbitmail\-\_\-message} (\hyperlink{classaccount}{account} $\ast$acct, \hyperlink{structs_8h_a7bddf45d6afddee3794ae45b18620e5f}{M\-U\-D\-M\-A\-I\-L\-\_\-\-D\-A\-T\-A} $\ast$message)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{account_8h_ab4199adaa62b96e58fcc8da21173da85}{\index{account.\-h@{account.\-h}!A\-C\-C\-O\-U\-N\-T\-\_\-\-I\-P\-S\-H\-A\-R\-E\-R@{A\-C\-C\-O\-U\-N\-T\-\_\-\-I\-P\-S\-H\-A\-R\-E\-R}}
+\index{A\-C\-C\-O\-U\-N\-T\-\_\-\-I\-P\-S\-H\-A\-R\-E\-R@{A\-C\-C\-O\-U\-N\-T\-\_\-\-I\-P\-S\-H\-A\-R\-E\-R}!account.h@{account.\-h}}
+\subsubsection[{A\-C\-C\-O\-U\-N\-T\-\_\-\-I\-P\-S\-H\-A\-R\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-C\-C\-O\-U\-N\-T\-\_\-\-I\-P\-S\-H\-A\-R\-E\-R~( 1 $<$$<$ 6 )}}\label{account_8h_ab4199adaa62b96e58fcc8da21173da85}
+\hypertarget{account_8h_abca8252d58af31b418a53f269cc2e719}{\index{account.\-h@{account.\-h}!A\-C\-C\-O\-U\-N\-T\-\_\-\-N\-O\-\_\-\-O\-O\-C@{A\-C\-C\-O\-U\-N\-T\-\_\-\-N\-O\-\_\-\-O\-O\-C}}
+\index{A\-C\-C\-O\-U\-N\-T\-\_\-\-N\-O\-\_\-\-O\-O\-C@{A\-C\-C\-O\-U\-N\-T\-\_\-\-N\-O\-\_\-\-O\-O\-C}!account.h@{account.\-h}}
+\subsubsection[{A\-C\-C\-O\-U\-N\-T\-\_\-\-N\-O\-\_\-\-O\-O\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-C\-C\-O\-U\-N\-T\-\_\-\-N\-O\-\_\-\-O\-O\-C~( 1 $<$$<$ 8 )}}\label{account_8h_abca8252d58af31b418a53f269cc2e719}
+\hypertarget{account_8h_af082b04b63e79684e95629bcaa076451}{\index{account.\-h@{account.\-h}!A\-C\-C\-O\-U\-N\-T\-\_\-\-N\-O\-B\-A\-N@{A\-C\-C\-O\-U\-N\-T\-\_\-\-N\-O\-B\-A\-N}}
+\index{A\-C\-C\-O\-U\-N\-T\-\_\-\-N\-O\-B\-A\-N@{A\-C\-C\-O\-U\-N\-T\-\_\-\-N\-O\-B\-A\-N}!account.h@{account.\-h}}
+\subsubsection[{A\-C\-C\-O\-U\-N\-T\-\_\-\-N\-O\-B\-A\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-C\-C\-O\-U\-N\-T\-\_\-\-N\-O\-B\-A\-N~( 1 $<$$<$ 1 )}}\label{account_8h_af082b04b63e79684e95629bcaa076451}
+\hypertarget{account_8h_aac369e95ea9145bc4d670706cf65638f}{\index{account.\-h@{account.\-h}!A\-C\-C\-O\-U\-N\-T\-\_\-\-N\-O\-G\-U\-E\-S\-T@{A\-C\-C\-O\-U\-N\-T\-\_\-\-N\-O\-G\-U\-E\-S\-T}}
+\index{A\-C\-C\-O\-U\-N\-T\-\_\-\-N\-O\-G\-U\-E\-S\-T@{A\-C\-C\-O\-U\-N\-T\-\_\-\-N\-O\-G\-U\-E\-S\-T}!account.h@{account.\-h}}
+\subsubsection[{A\-C\-C\-O\-U\-N\-T\-\_\-\-N\-O\-G\-U\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-C\-C\-O\-U\-N\-T\-\_\-\-N\-O\-G\-U\-E\-S\-T~( 1 $<$$<$ 2 )}}\label{account_8h_aac369e95ea9145bc4d670706cf65638f}
+\hypertarget{account_8h_a56c5c56d5e146288adc26a6fa31be83d}{\index{account.\-h@{account.\-h}!A\-C\-C\-O\-U\-N\-T\-\_\-\-N\-O\-P\-E\-T\-I\-T\-I\-O\-N@{A\-C\-C\-O\-U\-N\-T\-\_\-\-N\-O\-P\-E\-T\-I\-T\-I\-O\-N}}
+\index{A\-C\-C\-O\-U\-N\-T\-\_\-\-N\-O\-P\-E\-T\-I\-T\-I\-O\-N@{A\-C\-C\-O\-U\-N\-T\-\_\-\-N\-O\-P\-E\-T\-I\-T\-I\-O\-N}!account.h@{account.\-h}}
+\subsubsection[{A\-C\-C\-O\-U\-N\-T\-\_\-\-N\-O\-P\-E\-T\-I\-T\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-C\-C\-O\-U\-N\-T\-\_\-\-N\-O\-P\-E\-T\-I\-T\-I\-O\-N~( 1 $<$$<$ 0 )}}\label{account_8h_a56c5c56d5e146288adc26a6fa31be83d}
+\hypertarget{account_8h_a8617c91b66eca275b1bbec7d31151384}{\index{account.\-h@{account.\-h}!A\-C\-C\-O\-U\-N\-T\-\_\-\-N\-O\-P\-S\-I@{A\-C\-C\-O\-U\-N\-T\-\_\-\-N\-O\-P\-S\-I}}
+\index{A\-C\-C\-O\-U\-N\-T\-\_\-\-N\-O\-P\-S\-I@{A\-C\-C\-O\-U\-N\-T\-\_\-\-N\-O\-P\-S\-I}!account.h@{account.\-h}}
+\subsubsection[{A\-C\-C\-O\-U\-N\-T\-\_\-\-N\-O\-P\-S\-I}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-C\-C\-O\-U\-N\-T\-\_\-\-N\-O\-P\-S\-I~( 1 $<$$<$ 3 )}}\label{account_8h_a8617c91b66eca275b1bbec7d31151384}
+\hypertarget{account_8h_a172dd0e285f932048f25d92ef3f64265}{\index{account.\-h@{account.\-h}!A\-C\-C\-O\-U\-N\-T\-\_\-\-N\-O\-R\-E\-T\-I\-R\-E@{A\-C\-C\-O\-U\-N\-T\-\_\-\-N\-O\-R\-E\-T\-I\-R\-E}}
+\index{A\-C\-C\-O\-U\-N\-T\-\_\-\-N\-O\-R\-E\-T\-I\-R\-E@{A\-C\-C\-O\-U\-N\-T\-\_\-\-N\-O\-R\-E\-T\-I\-R\-E}!account.h@{account.\-h}}
+\subsubsection[{A\-C\-C\-O\-U\-N\-T\-\_\-\-N\-O\-R\-E\-T\-I\-R\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-C\-C\-O\-U\-N\-T\-\_\-\-N\-O\-R\-E\-T\-I\-R\-E~( 1 $<$$<$ 4 )}}\label{account_8h_a172dd0e285f932048f25d92ef3f64265}
+\hypertarget{account_8h_ace762cce939554b198c891f3f45a8c4d}{\index{account.\-h@{account.\-h}!A\-C\-C\-O\-U\-N\-T\-\_\-\-N\-O\-V\-O\-T\-E@{A\-C\-C\-O\-U\-N\-T\-\_\-\-N\-O\-V\-O\-T\-E}}
+\index{A\-C\-C\-O\-U\-N\-T\-\_\-\-N\-O\-V\-O\-T\-E@{A\-C\-C\-O\-U\-N\-T\-\_\-\-N\-O\-V\-O\-T\-E}!account.h@{account.\-h}}
+\subsubsection[{A\-C\-C\-O\-U\-N\-T\-\_\-\-N\-O\-V\-O\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-C\-C\-O\-U\-N\-T\-\_\-\-N\-O\-V\-O\-T\-E~( 1 $<$$<$ 5 )}}\label{account_8h_ace762cce939554b198c891f3f45a8c4d}
+\hypertarget{account_8h_a139feca8bbbdb406119d4d623afa4336}{\index{account.\-h@{account.\-h}!A\-C\-C\-O\-U\-N\-T\-\_\-\-R\-P\-P\-D\-I\-S\-P\-L\-A\-Y@{A\-C\-C\-O\-U\-N\-T\-\_\-\-R\-P\-P\-D\-I\-S\-P\-L\-A\-Y}}
+\index{A\-C\-C\-O\-U\-N\-T\-\_\-\-R\-P\-P\-D\-I\-S\-P\-L\-A\-Y@{A\-C\-C\-O\-U\-N\-T\-\_\-\-R\-P\-P\-D\-I\-S\-P\-L\-A\-Y}!account.h@{account.\-h}}
+\subsubsection[{A\-C\-C\-O\-U\-N\-T\-\_\-\-R\-P\-P\-D\-I\-S\-P\-L\-A\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-C\-C\-O\-U\-N\-T\-\_\-\-R\-P\-P\-D\-I\-S\-P\-L\-A\-Y~( 1 $<$$<$ 7 )}}\label{account_8h_a139feca8bbbdb406119d4d623afa4336}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{account_8h_a26102c7a0825b71c64a525ed4be0d8c7}{\index{account.\-h@{account.\-h}!A\-C\-C\-E\-S\-S\-\_\-\-P\-E\-R\-M\-I\-S\-S\-I\-O\-N@{A\-C\-C\-E\-S\-S\-\_\-\-P\-E\-R\-M\-I\-S\-S\-I\-O\-N}}
+\index{A\-C\-C\-E\-S\-S\-\_\-\-P\-E\-R\-M\-I\-S\-S\-I\-O\-N@{A\-C\-C\-E\-S\-S\-\_\-\-P\-E\-R\-M\-I\-S\-S\-I\-O\-N}!account.h@{account.\-h}}
+\subsubsection[{A\-C\-C\-E\-S\-S\-\_\-\-P\-E\-R\-M\-I\-S\-S\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf A\-C\-C\-E\-S\-S\-\_\-\-P\-E\-R\-M\-I\-S\-S\-I\-O\-N}}}\label{account_8h_a26102c7a0825b71c64a525ed4be0d8c7}
+
+
+\hyperlink{account_8h}{account.\-h} -\/ Account Class Structures and Routines 
+
+Shadows of Isildur R\-P\-I Engine++ Copyright (C) 2005-\/2006 C. W. Mc\-Henry Authors\-: C. W. Mc\-Henry (\href{mailto:traithe@middle-earth.us}{\tt traithe@middle-\/earth.\-us}) Jonathan W. Webb (\href{mailto:sighentist@middle-earth.us}{\tt sighentist@middle-\/earth.\-us}) U\-R\-L\-: \href{http://www.middle-earth.us}{\tt http\-://www.\-middle-\/earth.\-us} May includes portions derived from Harshlands Authors\-: Charles Rand (Rassilon) U\-R\-L\-: \href{http://www.harshlands.net}{\tt http\-://www.\-harshlands.\-net} May include portions derived under license from Diku\-M\-U\-D Gamma (0.\-0) which are Copyright (C) 1990, 1991 D\-I\-K\-U Authors\-: Hans Henrik Staerfeldt (\href{mailto:bombman@freja.diku.dk}{\tt bombman@freja.\-diku.\-dk}) Tom Madson (\href{mailto:noop@freja.diku.dk}{\tt noop@freja.\-diku.\-dk}) Katja Nyboe (\href{mailto:katz@freja.diku.dk}{\tt katz@freja.\-diku.\-dk}) Michael Seifert (\href{mailto:seifert@freja.diku.dk}{\tt seifert@freja.\-diku.\-dk}) Sebastian Hammer (\href{mailto:quinn@freja.diku.dk}{\tt quinn@freja.\-diku.\-dk}) \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{A\-C\-C\-E\-S\-S\-\_\-\-N\-O\-R\-M\-A\-L@{A\-C\-C\-E\-S\-S\-\_\-\-N\-O\-R\-M\-A\-L}!account.\-h@{account.\-h}}\index{account.\-h@{account.\-h}!A\-C\-C\-E\-S\-S\-\_\-\-N\-O\-R\-M\-A\-L@{A\-C\-C\-E\-S\-S\-\_\-\-N\-O\-R\-M\-A\-L}}\item[{\em 
+\hypertarget{account_8h_a26102c7a0825b71c64a525ed4be0d8c7a31969cc16cec3f525b8b70ba2e12d85f}{A\-C\-C\-E\-S\-S\-\_\-\-N\-O\-R\-M\-A\-L}\label{account_8h_a26102c7a0825b71c64a525ed4be0d8c7a31969cc16cec3f525b8b70ba2e12d85f}
+}]Default\-: Allowed unless I\-P Banned. \index{A\-C\-C\-E\-S\-S\-\_\-\-A\-L\-L\-O\-W\-E\-D@{A\-C\-C\-E\-S\-S\-\_\-\-A\-L\-L\-O\-W\-E\-D}!account.\-h@{account.\-h}}\index{account.\-h@{account.\-h}!A\-C\-C\-E\-S\-S\-\_\-\-A\-L\-L\-O\-W\-E\-D@{A\-C\-C\-E\-S\-S\-\_\-\-A\-L\-L\-O\-W\-E\-D}}\item[{\em 
+\hypertarget{account_8h_a26102c7a0825b71c64a525ed4be0d8c7aa3d37d87d9b3887abc5466afb368cb8a}{A\-C\-C\-E\-S\-S\-\_\-\-A\-L\-L\-O\-W\-E\-D}\label{account_8h_a26102c7a0825b71c64a525ed4be0d8c7aa3d37d87d9b3887abc5466afb368cb8a}
+}]Exempt from I\-P Bans (use sparingly) \index{A\-C\-C\-E\-S\-S\-\_\-\-R\-E\-S\-T\-R\-I\-C\-T\-E\-D@{A\-C\-C\-E\-S\-S\-\_\-\-R\-E\-S\-T\-R\-I\-C\-T\-E\-D}!account.\-h@{account.\-h}}\index{account.\-h@{account.\-h}!A\-C\-C\-E\-S\-S\-\_\-\-R\-E\-S\-T\-R\-I\-C\-T\-E\-D@{A\-C\-C\-E\-S\-S\-\_\-\-R\-E\-S\-T\-R\-I\-C\-T\-E\-D}}\item[{\em 
+\hypertarget{account_8h_a26102c7a0825b71c64a525ed4be0d8c7acb1335a9cba24f0405498811765792b6}{A\-C\-C\-E\-S\-S\-\_\-\-R\-E\-S\-T\-R\-I\-C\-T\-E\-D}\label{account_8h_a26102c7a0825b71c64a525ed4be0d8c7acb1335a9cba24f0405498811765792b6}
+}]Allowed under certain conditions. \index{A\-C\-C\-E\-S\-S\-\_\-\-B\-A\-N\-N\-E\-D@{A\-C\-C\-E\-S\-S\-\_\-\-B\-A\-N\-N\-E\-D}!account.\-h@{account.\-h}}\index{account.\-h@{account.\-h}!A\-C\-C\-E\-S\-S\-\_\-\-B\-A\-N\-N\-E\-D@{A\-C\-C\-E\-S\-S\-\_\-\-B\-A\-N\-N\-E\-D}}\item[{\em 
+\hypertarget{account_8h_a26102c7a0825b71c64a525ed4be0d8c7ae903b4139bd4bbb75690b0a78e2653fa}{A\-C\-C\-E\-S\-S\-\_\-\-B\-A\-N\-N\-E\-D}\label{account_8h_a26102c7a0825b71c64a525ed4be0d8c7ae903b4139bd4bbb75690b0a78e2653fa}
+}]Not allowed to connect. \end{description}
+\end{Desc}
+\hypertarget{account_8h_aa082c000e4eff6ed512714ea0a33d27b}{\index{account.\-h@{account.\-h}!D\-A\-T\-A\-\_\-\-T\-Y\-P\-E@{D\-A\-T\-A\-\_\-\-T\-Y\-P\-E}}
+\index{D\-A\-T\-A\-\_\-\-T\-Y\-P\-E@{D\-A\-T\-A\-\_\-\-T\-Y\-P\-E}!account.h@{account.\-h}}
+\subsubsection[{D\-A\-T\-A\-\_\-\-T\-Y\-P\-E}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf D\-A\-T\-A\-\_\-\-T\-Y\-P\-E}}}\label{account_8h_aa082c000e4eff6ed512714ea0a33d27b}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{S\-T\-R\-U\-C\-T\-\_\-\-A\-C\-C\-O\-U\-N\-T@{S\-T\-R\-U\-C\-T\-\_\-\-A\-C\-C\-O\-U\-N\-T}!account.\-h@{account.\-h}}\index{account.\-h@{account.\-h}!S\-T\-R\-U\-C\-T\-\_\-\-A\-C\-C\-O\-U\-N\-T@{S\-T\-R\-U\-C\-T\-\_\-\-A\-C\-C\-O\-U\-N\-T}}\item[{\em 
+\hypertarget{account_8h_aa082c000e4eff6ed512714ea0a33d27ba8a3805360740624c2b104f7733097b65}{S\-T\-R\-U\-C\-T\-\_\-\-A\-C\-C\-O\-U\-N\-T}\label{account_8h_aa082c000e4eff6ed512714ea0a33d27ba8a3805360740624c2b104f7733097b65}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{account_8h_a263f0dead3574dd9d58f2dcfce826e8e}{\index{account.\-h@{account.\-h}!save\-\_\-hobbitmail\-\_\-message@{save\-\_\-hobbitmail\-\_\-message}}
+\index{save\-\_\-hobbitmail\-\_\-message@{save\-\_\-hobbitmail\-\_\-message}!account.h@{account.\-h}}
+\subsubsection[{save\-\_\-hobbitmail\-\_\-message}]{\setlength{\rightskip}{0pt plus 5cm}void save\-\_\-hobbitmail\-\_\-message (
+\begin{DoxyParamCaption}
+\item[{{\bf account} $\ast$}]{acct, }
+\item[{{\bf M\-U\-D\-M\-A\-I\-L\-\_\-\-D\-A\-T\-A} $\ast$}]{message}
+\end{DoxyParamCaption}
+)}}\label{account_8h_a263f0dead3574dd9d58f2dcfce826e8e}
+\hypertarget{account_8h_ad3ba2add4c3eedbb7fee7e7c64568d28}{\index{account.\-h@{account.\-h}!send\-\_\-email@{send\-\_\-email}}
+\index{send\-\_\-email@{send\-\_\-email}!account.h@{account.\-h}}
+\subsubsection[{send\-\_\-email}]{\setlength{\rightskip}{0pt plus 5cm}void send\-\_\-email (
+\begin{DoxyParamCaption}
+\item[{{\bf account} $\ast$}]{acct, }
+\item[{const char $\ast$}]{cc, }
+\item[{char $\ast$}]{from, }
+\item[{char $\ast$}]{subject, }
+\item[{char $\ast$}]{message}
+\end{DoxyParamCaption}
+)}}\label{account_8h_ad3ba2add4c3eedbb7fee7e7c64568d28}
+\hypertarget{account_8h_a936533fc0f21f930967a7a3d58bbfe3a}{\index{account.\-h@{account.\-h}!setup\-\_\-new\-\_\-account@{setup\-\_\-new\-\_\-account}}
+\index{setup\-\_\-new\-\_\-account@{setup\-\_\-new\-\_\-account}!account.h@{account.\-h}}
+\subsubsection[{setup\-\_\-new\-\_\-account}]{\setlength{\rightskip}{0pt plus 5cm}void setup\-\_\-new\-\_\-account (
+\begin{DoxyParamCaption}
+\item[{{\bf account} $\ast$}]{acct}
+\end{DoxyParamCaption}
+)}}\label{account_8h_a936533fc0f21f930967a7a3d58bbfe3a}

@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['damage_5fblood',['DAMAGE_BLOOD',['../object__damage_8h.html#aec13eb452f5adf9bf2356bef65b6e632a358319045e2f2baf6040787a3b4ea551',1,'object_damage.h']]],
+  ['damage_5fblunt',['DAMAGE_BLUNT',['../object__damage_8h.html#aec13eb452f5adf9bf2356bef65b6e632ab89716f0998e7975718073cdd01ce248',1,'object_damage.h']]],
+  ['damage_5fbullet',['DAMAGE_BULLET',['../object__damage_8h.html#aec13eb452f5adf9bf2356bef65b6e632afa926892fd30ee15bf4c74ec1d0914f4',1,'object_damage.h']]],
+  ['damage_5fburn',['DAMAGE_BURN',['../object__damage_8h.html#aec13eb452f5adf9bf2356bef65b6e632ad599d960978aecb28116818f09f8ef7c',1,'object_damage.h']]],
+  ['damage_5ffist',['DAMAGE_FIST',['../object__damage_8h.html#aec13eb452f5adf9bf2356bef65b6e632acf291e5e50b5752387ea3ed593abd1a4',1,'object_damage.h']]],
+  ['damage_5ffreeze',['DAMAGE_FREEZE',['../object__damage_8h.html#aec13eb452f5adf9bf2356bef65b6e632aea02ee8a360fcb1d8e9c0b4fecd3148e',1,'object_damage.h']]],
+  ['damage_5fhuge',['DAMAGE_HUGE',['../object__damage_8h.html#ae57f65faa21c70ac0ffdd4449edfb5daaa70cb353d3930663209aa1998b3ef71b',1,'object_damage.h']]],
+  ['damage_5flarge',['DAMAGE_LARGE',['../object__damage_8h.html#ae57f65faa21c70ac0ffdd4449edfb5daae901e31af4a6081e408f042840dce01b',1,'object_damage.h']]],
+  ['damage_5fmassive',['DAMAGE_MASSIVE',['../object__damage_8h.html#ae57f65faa21c70ac0ffdd4449edfb5daabad8f9984c415d6f10a1b1a81aea32ba',1,'object_damage.h']]],
+  ['damage_5fminor',['DAMAGE_MINOR',['../object__damage_8h.html#ae57f65faa21c70ac0ffdd4449edfb5daae9ef9ec9760d9541f906884d6b4f2ddf',1,'object_damage.h']]],
+  ['damage_5fmoderate',['DAMAGE_MODERATE',['../object__damage_8h.html#ae57f65faa21c70ac0ffdd4449edfb5daa93073e3a81beccbb190bfcc156670394',1,'object_damage.h']]],
+  ['damage_5fpermanent',['DAMAGE_PERMANENT',['../object__damage_8h.html#aec13eb452f5adf9bf2356bef65b6e632ab5c13502f9da1938cd45f09bbf7248b4',1,'object_damage.h']]],
+  ['damage_5fpierce',['DAMAGE_PIERCE',['../object__damage_8h.html#aec13eb452f5adf9bf2356bef65b6e632a8a08ceb4f611908dcbaed234d665fe36',1,'object_damage.h']]],
+  ['damage_5frepair',['DAMAGE_REPAIR',['../object__damage_8h.html#aec13eb452f5adf9bf2356bef65b6e632a6ec6c8a8674f30c4d6cbecd8f88c4a45',1,'object_damage.h']]],
+  ['damage_5fseverity_5fmax',['DAMAGE_SEVERITY_MAX',['../object__damage_8h.html#ae57f65faa21c70ac0ffdd4449edfb5daa6b91668fb2e51f375310a41dd10490cb',1,'object_damage.h']]],
+  ['damage_5fslash',['DAMAGE_SLASH',['../object__damage_8h.html#aec13eb452f5adf9bf2356bef65b6e632adab8c27054b6aa10039676228c734975',1,'object_damage.h']]],
+  ['damage_5fsmall',['DAMAGE_SMALL',['../object__damage_8h.html#ae57f65faa21c70ac0ffdd4449edfb5daa189ac0aa7b06673f07a87eefa0902afb',1,'object_damage.h']]],
+  ['damage_5ftype_5fmax',['DAMAGE_TYPE_MAX',['../object__damage_8h.html#aec13eb452f5adf9bf2356bef65b6e632a96ab3cbac60e7c4befa7c4445e2fe4bd',1,'object_damage.h']]],
+  ['damage_5fwater',['DAMAGE_WATER',['../object__damage_8h.html#aec13eb452f5adf9bf2356bef65b6e632a11980f4e28f1a5b740bd7669435b2ade',1,'object_damage.h']]]
+];

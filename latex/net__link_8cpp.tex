@@ -1,0 +1,225 @@
+\hypertarget{net__link_8cpp}{\section{net\-\_\-link.\-cpp File Reference}
+\label{net__link_8cpp}\index{net\-\_\-link.\-cpp@{net\-\_\-link.\-cpp}}
+}
+{\ttfamily \#include $<$time.\-h$>$}\\*
+{\ttfamily \#include $<$errno.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$ctype.\-h$>$}\\*
+{\ttfamily \#include $<$sys/types.\-h$>$}\\*
+{\ttfamily \#include $<$sys/wait.\-h$>$}\\*
+{\ttfamily \#include $<$netinet/in.\-h$>$}\\*
+{\ttfamily \#include $<$arpa/inet.\-h$>$}\\*
+{\ttfamily \#include $<$netdb.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$sys/time.\-h$>$}\\*
+{\ttfamily \#include $<$fcntl.\-h$>$}\\*
+{\ttfamily \#include $<$signal.\-h$>$}\\*
+{\ttfamily \#include $<$unistd.\-h$>$}\\*
+{\ttfamily \#include $<$sys/file.\-h$>$}\\*
+{\ttfamily \#include $<$sys/resource.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}protos.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}account.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}net\-\_\-link.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utils.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{net__link_8cpp_a6396c68b54ebbd2b0092053ead2a79b8}{get\-\_\-from\-\_\-q} (struct \hyperlink{structtxt__q}{txt\-\_\-q} $\ast$queue, char $\ast$dest)
+\item 
+int \hyperlink{net__link_8cpp_ab6b04f279c845d0013246d7e8bd92b71}{new\-\_\-descriptor} (int \hyperlink{staff_8cpp_a1b3d0481a7741b1fed73df389c9990c6}{s})
+\item 
+void \hyperlink{net__link_8cpp_a3fc5fde904db1d9237a2c45dddf70f02}{init\-\_\-descriptor} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$newd, int desc)
+\item 
+void \hyperlink{net__link_8cpp_a85729f2a9c776a43ff2f5e1d7ccb7c68}{free\-\_\-descriptor} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d)
+\item 
+void \hyperlink{net__link_8cpp_a7d47b5af04016695693a745ac6375611}{flush\-\_\-queues} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d)
+\item 
+int \hyperlink{net__link_8cpp_aedd3eb71bbca2d48016513d2fb45665b}{init\-\_\-socket} (int \hyperlink{protos_8h_a63c89c04d1feae07ca35558055155ffb}{port})
+\item 
+void \hyperlink{net__link_8cpp_ae1d64497c8a45274d24c0b5afe6b8db6}{close\-\_\-sockets} (int \hyperlink{staff_8cpp_a1b3d0481a7741b1fed73df389c9990c6}{s})
+\item 
+void \hyperlink{net__link_8cpp_afce1335d8c768c4a1f924a8b6e2d467e}{close\-\_\-socket} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d)
+\item 
+\hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} \hyperlink{net__link_8cpp_a41bc6051c78b748431cb04f36e79e0af}{get\-\_\-from\-\_\-q} (struct \hyperlink{structtxt__q}{txt\-\_\-q} $\ast$queue, std\-::string \&dest)
+\item 
+struct timeval \hyperlink{net__link_8cpp_a7fad38d41a939cfbbb19cb0eb628476c}{timediff} (struct timeval $\ast$a, struct timeval $\ast$b)
+\item 
+int \hyperlink{net__link_8cpp_a03faaea680415c9e14f16792e0aa6b5a}{process\-\_\-output} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$t)
+\item 
+int \hyperlink{net__link_8cpp_acbe03fc984ddd49da6e122838fb15fb3}{write\-\_\-to\-\_\-descriptor} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, const char $\ast$txt)
+\item 
+int \hyperlink{net__link_8cpp_a6be97faf61ce6828534656cdc3406531}{process\-\_\-input} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$t)
+\item 
+void \hyperlink{net__link_8cpp_acc44ea98c2cb1f168d014f3837d12aec}{descriptor\-\_\-\-\_\-drop\-\_\-connections} (fd\-\_\-set $\ast$readfds, fd\-\_\-set $\ast$writefds, fd\-\_\-set $\ast$exceptfds)
+\item 
+void \hyperlink{net__link_8cpp_ac66fd5300357cea4fd41afd3731227fe}{nonblock} (int \hyperlink{staff_8cpp_a1b3d0481a7741b1fed73df389c9990c6}{s})
+\item 
+void \hyperlink{net__link_8cpp_ab781381afb5e666f321fe2381c1d6193}{write\-\_\-to\-\_\-q} (const char $\ast$txt, struct \hyperlink{structtxt__q}{txt\-\_\-q} $\ast$queue)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{net__link_8cpp_a342e4e9537104972573c8d5297099fbf}{descriptor\-\_\-list} = N\-U\-L\-L
+\item 
+\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{net__link_8cpp_a708574cee786a46ca950cd7ad3367599}{next\-\_\-to\-\_\-process} = N\-U\-L\-L
+\item 
+int \hyperlink{net__link_8cpp_a8f5d44cf3abfbd2563be5c5825d88032}{maxdesc}
+\item 
+int \hyperlink{net__link_8cpp_ae3cf9ad27309ceb8983b0289fcd1132c}{avail\-\_\-descs}
+\item 
+\hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} \hyperlink{net__link_8cpp_ad73f341e47efd963501ec62bcd3a34a7}{socket\-\_\-closed} = false
+\item 
+int \hyperlink{net__link_8cpp_a9709aefe4930807392898aecb0cb8a79}{connected} = 0
+\item 
+int \hyperlink{net__link_8cpp_a73f2f113bdd99a98a1db19b23c4b33ad}{n\-Total\-Connections} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{net__link_8cpp_afce1335d8c768c4a1f924a8b6e2d467e}{\index{net\-\_\-link.\-cpp@{net\-\_\-link.\-cpp}!close\-\_\-socket@{close\-\_\-socket}}
+\index{close\-\_\-socket@{close\-\_\-socket}!net_link.cpp@{net\-\_\-link.\-cpp}}
+\subsubsection[{close\-\_\-socket}]{\setlength{\rightskip}{0pt plus 5cm}void close\-\_\-socket (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d}
+\end{DoxyParamCaption}
+)}}\label{net__link_8cpp_afce1335d8c768c4a1f924a8b6e2d467e}
+\hypertarget{net__link_8cpp_ae1d64497c8a45274d24c0b5afe6b8db6}{\index{net\-\_\-link.\-cpp@{net\-\_\-link.\-cpp}!close\-\_\-sockets@{close\-\_\-sockets}}
+\index{close\-\_\-sockets@{close\-\_\-sockets}!net_link.cpp@{net\-\_\-link.\-cpp}}
+\subsubsection[{close\-\_\-sockets}]{\setlength{\rightskip}{0pt plus 5cm}void close\-\_\-sockets (
+\begin{DoxyParamCaption}
+\item[{int}]{s}
+\end{DoxyParamCaption}
+)}}\label{net__link_8cpp_ae1d64497c8a45274d24c0b5afe6b8db6}
+\hypertarget{net__link_8cpp_acc44ea98c2cb1f168d014f3837d12aec}{\index{net\-\_\-link.\-cpp@{net\-\_\-link.\-cpp}!descriptor\-\_\-\-\_\-drop\-\_\-connections@{descriptor\-\_\-\-\_\-drop\-\_\-connections}}
+\index{descriptor\-\_\-\-\_\-drop\-\_\-connections@{descriptor\-\_\-\-\_\-drop\-\_\-connections}!net_link.cpp@{net\-\_\-link.\-cpp}}
+\subsubsection[{descriptor\-\_\-\-\_\-drop\-\_\-connections}]{\setlength{\rightskip}{0pt plus 5cm}void descriptor\-\_\-\-\_\-drop\-\_\-connections (
+\begin{DoxyParamCaption}
+\item[{fd\-\_\-set $\ast$}]{readfds, }
+\item[{fd\-\_\-set $\ast$}]{writefds, }
+\item[{fd\-\_\-set $\ast$}]{exceptfds}
+\end{DoxyParamCaption}
+)}}\label{net__link_8cpp_acc44ea98c2cb1f168d014f3837d12aec}
+\hypertarget{net__link_8cpp_a7d47b5af04016695693a745ac6375611}{\index{net\-\_\-link.\-cpp@{net\-\_\-link.\-cpp}!flush\-\_\-queues@{flush\-\_\-queues}}
+\index{flush\-\_\-queues@{flush\-\_\-queues}!net_link.cpp@{net\-\_\-link.\-cpp}}
+\subsubsection[{flush\-\_\-queues}]{\setlength{\rightskip}{0pt plus 5cm}void flush\-\_\-queues (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d}
+\end{DoxyParamCaption}
+)}}\label{net__link_8cpp_a7d47b5af04016695693a745ac6375611}
+\hypertarget{net__link_8cpp_a85729f2a9c776a43ff2f5e1d7ccb7c68}{\index{net\-\_\-link.\-cpp@{net\-\_\-link.\-cpp}!free\-\_\-descriptor@{free\-\_\-descriptor}}
+\index{free\-\_\-descriptor@{free\-\_\-descriptor}!net_link.cpp@{net\-\_\-link.\-cpp}}
+\subsubsection[{free\-\_\-descriptor}]{\setlength{\rightskip}{0pt plus 5cm}void free\-\_\-descriptor (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d}
+\end{DoxyParamCaption}
+)}}\label{net__link_8cpp_a85729f2a9c776a43ff2f5e1d7ccb7c68}
+\hypertarget{net__link_8cpp_a6396c68b54ebbd2b0092053ead2a79b8}{\index{net\-\_\-link.\-cpp@{net\-\_\-link.\-cpp}!get\-\_\-from\-\_\-q@{get\-\_\-from\-\_\-q}}
+\index{get\-\_\-from\-\_\-q@{get\-\_\-from\-\_\-q}!net_link.cpp@{net\-\_\-link.\-cpp}}
+\subsubsection[{get\-\_\-from\-\_\-q}]{\setlength{\rightskip}{0pt plus 5cm}int get\-\_\-from\-\_\-q (
+\begin{DoxyParamCaption}
+\item[{struct {\bf txt\-\_\-q} $\ast$}]{queue, }
+\item[{char $\ast$}]{dest}
+\end{DoxyParamCaption}
+)}}\label{net__link_8cpp_a6396c68b54ebbd2b0092053ead2a79b8}
+\hypertarget{net__link_8cpp_a41bc6051c78b748431cb04f36e79e0af}{\index{net\-\_\-link.\-cpp@{net\-\_\-link.\-cpp}!get\-\_\-from\-\_\-q@{get\-\_\-from\-\_\-q}}
+\index{get\-\_\-from\-\_\-q@{get\-\_\-from\-\_\-q}!net_link.cpp@{net\-\_\-link.\-cpp}}
+\subsubsection[{get\-\_\-from\-\_\-q}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} get\-\_\-from\-\_\-q (
+\begin{DoxyParamCaption}
+\item[{struct {\bf txt\-\_\-q} $\ast$}]{queue, }
+\item[{std\-::string \&}]{dest}
+\end{DoxyParamCaption}
+)}}\label{net__link_8cpp_a41bc6051c78b748431cb04f36e79e0af}
+\hypertarget{net__link_8cpp_a3fc5fde904db1d9237a2c45dddf70f02}{\index{net\-\_\-link.\-cpp@{net\-\_\-link.\-cpp}!init\-\_\-descriptor@{init\-\_\-descriptor}}
+\index{init\-\_\-descriptor@{init\-\_\-descriptor}!net_link.cpp@{net\-\_\-link.\-cpp}}
+\subsubsection[{init\-\_\-descriptor}]{\setlength{\rightskip}{0pt plus 5cm}void init\-\_\-descriptor (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{newd, }
+\item[{int}]{desc}
+\end{DoxyParamCaption}
+)}}\label{net__link_8cpp_a3fc5fde904db1d9237a2c45dddf70f02}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000020}{Todo}]carry over from preboot time \end{DoxyRefDesc}
+\hypertarget{net__link_8cpp_aedd3eb71bbca2d48016513d2fb45665b}{\index{net\-\_\-link.\-cpp@{net\-\_\-link.\-cpp}!init\-\_\-socket@{init\-\_\-socket}}
+\index{init\-\_\-socket@{init\-\_\-socket}!net_link.cpp@{net\-\_\-link.\-cpp}}
+\subsubsection[{init\-\_\-socket}]{\setlength{\rightskip}{0pt plus 5cm}int init\-\_\-socket (
+\begin{DoxyParamCaption}
+\item[{int}]{port}
+\end{DoxyParamCaption}
+)}}\label{net__link_8cpp_aedd3eb71bbca2d48016513d2fb45665b}
+\hypertarget{net__link_8cpp_ab6b04f279c845d0013246d7e8bd92b71}{\index{net\-\_\-link.\-cpp@{net\-\_\-link.\-cpp}!new\-\_\-descriptor@{new\-\_\-descriptor}}
+\index{new\-\_\-descriptor@{new\-\_\-descriptor}!net_link.cpp@{net\-\_\-link.\-cpp}}
+\subsubsection[{new\-\_\-descriptor}]{\setlength{\rightskip}{0pt plus 5cm}int new\-\_\-descriptor (
+\begin{DoxyParamCaption}
+\item[{int}]{s}
+\end{DoxyParamCaption}
+)}}\label{net__link_8cpp_ab6b04f279c845d0013246d7e8bd92b71}
+\hypertarget{net__link_8cpp_ac66fd5300357cea4fd41afd3731227fe}{\index{net\-\_\-link.\-cpp@{net\-\_\-link.\-cpp}!nonblock@{nonblock}}
+\index{nonblock@{nonblock}!net_link.cpp@{net\-\_\-link.\-cpp}}
+\subsubsection[{nonblock}]{\setlength{\rightskip}{0pt plus 5cm}void nonblock (
+\begin{DoxyParamCaption}
+\item[{int}]{s}
+\end{DoxyParamCaption}
+)}}\label{net__link_8cpp_ac66fd5300357cea4fd41afd3731227fe}
+\hypertarget{net__link_8cpp_a6be97faf61ce6828534656cdc3406531}{\index{net\-\_\-link.\-cpp@{net\-\_\-link.\-cpp}!process\-\_\-input@{process\-\_\-input}}
+\index{process\-\_\-input@{process\-\_\-input}!net_link.cpp@{net\-\_\-link.\-cpp}}
+\subsubsection[{process\-\_\-input}]{\setlength{\rightskip}{0pt plus 5cm}int process\-\_\-input (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{t}
+\end{DoxyParamCaption}
+)}}\label{net__link_8cpp_a6be97faf61ce6828534656cdc3406531}
+\hypertarget{net__link_8cpp_a03faaea680415c9e14f16792e0aa6b5a}{\index{net\-\_\-link.\-cpp@{net\-\_\-link.\-cpp}!process\-\_\-output@{process\-\_\-output}}
+\index{process\-\_\-output@{process\-\_\-output}!net_link.cpp@{net\-\_\-link.\-cpp}}
+\subsubsection[{process\-\_\-output}]{\setlength{\rightskip}{0pt plus 5cm}int process\-\_\-output (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{t}
+\end{DoxyParamCaption}
+)}}\label{net__link_8cpp_a03faaea680415c9e14f16792e0aa6b5a}
+\hypertarget{net__link_8cpp_a7fad38d41a939cfbbb19cb0eb628476c}{\index{net\-\_\-link.\-cpp@{net\-\_\-link.\-cpp}!timediff@{timediff}}
+\index{timediff@{timediff}!net_link.cpp@{net\-\_\-link.\-cpp}}
+\subsubsection[{timediff}]{\setlength{\rightskip}{0pt plus 5cm}struct timeval timediff (
+\begin{DoxyParamCaption}
+\item[{struct timeval $\ast$}]{a, }
+\item[{struct timeval $\ast$}]{b}
+\end{DoxyParamCaption}
+)}}\label{net__link_8cpp_a7fad38d41a939cfbbb19cb0eb628476c}
+\hypertarget{net__link_8cpp_acbe03fc984ddd49da6e122838fb15fb3}{\index{net\-\_\-link.\-cpp@{net\-\_\-link.\-cpp}!write\-\_\-to\-\_\-descriptor@{write\-\_\-to\-\_\-descriptor}}
+\index{write\-\_\-to\-\_\-descriptor@{write\-\_\-to\-\_\-descriptor}!net_link.cpp@{net\-\_\-link.\-cpp}}
+\subsubsection[{write\-\_\-to\-\_\-descriptor}]{\setlength{\rightskip}{0pt plus 5cm}int write\-\_\-to\-\_\-descriptor (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{const char $\ast$}]{txt}
+\end{DoxyParamCaption}
+)}}\label{net__link_8cpp_acbe03fc984ddd49da6e122838fb15fb3}
+\hypertarget{net__link_8cpp_ab781381afb5e666f321fe2381c1d6193}{\index{net\-\_\-link.\-cpp@{net\-\_\-link.\-cpp}!write\-\_\-to\-\_\-q@{write\-\_\-to\-\_\-q}}
+\index{write\-\_\-to\-\_\-q@{write\-\_\-to\-\_\-q}!net_link.cpp@{net\-\_\-link.\-cpp}}
+\subsubsection[{write\-\_\-to\-\_\-q}]{\setlength{\rightskip}{0pt plus 5cm}void write\-\_\-to\-\_\-q (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{txt, }
+\item[{struct {\bf txt\-\_\-q} $\ast$}]{queue}
+\end{DoxyParamCaption}
+)}}\label{net__link_8cpp_ab781381afb5e666f321fe2381c1d6193}
+
+
+\subsection{Variable Documentation}
+\hypertarget{net__link_8cpp_ae3cf9ad27309ceb8983b0289fcd1132c}{\index{net\-\_\-link.\-cpp@{net\-\_\-link.\-cpp}!avail\-\_\-descs@{avail\-\_\-descs}}
+\index{avail\-\_\-descs@{avail\-\_\-descs}!net_link.cpp@{net\-\_\-link.\-cpp}}
+\subsubsection[{avail\-\_\-descs}]{\setlength{\rightskip}{0pt plus 5cm}int avail\-\_\-descs}}\label{net__link_8cpp_ae3cf9ad27309ceb8983b0289fcd1132c}
+\hypertarget{net__link_8cpp_a9709aefe4930807392898aecb0cb8a79}{\index{net\-\_\-link.\-cpp@{net\-\_\-link.\-cpp}!connected@{connected}}
+\index{connected@{connected}!net_link.cpp@{net\-\_\-link.\-cpp}}
+\subsubsection[{connected}]{\setlength{\rightskip}{0pt plus 5cm}int connected = 0}}\label{net__link_8cpp_a9709aefe4930807392898aecb0cb8a79}
+\hypertarget{net__link_8cpp_a342e4e9537104972573c8d5297099fbf}{\index{net\-\_\-link.\-cpp@{net\-\_\-link.\-cpp}!descriptor\-\_\-list@{descriptor\-\_\-list}}
+\index{descriptor\-\_\-list@{descriptor\-\_\-list}!net_link.cpp@{net\-\_\-link.\-cpp}}
+\subsubsection[{descriptor\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A}$\ast$ descriptor\-\_\-list = N\-U\-L\-L}}\label{net__link_8cpp_a342e4e9537104972573c8d5297099fbf}
+\hypertarget{net__link_8cpp_a8f5d44cf3abfbd2563be5c5825d88032}{\index{net\-\_\-link.\-cpp@{net\-\_\-link.\-cpp}!maxdesc@{maxdesc}}
+\index{maxdesc@{maxdesc}!net_link.cpp@{net\-\_\-link.\-cpp}}
+\subsubsection[{maxdesc}]{\setlength{\rightskip}{0pt plus 5cm}int maxdesc}}\label{net__link_8cpp_a8f5d44cf3abfbd2563be5c5825d88032}
+\hypertarget{net__link_8cpp_a708574cee786a46ca950cd7ad3367599}{\index{net\-\_\-link.\-cpp@{net\-\_\-link.\-cpp}!next\-\_\-to\-\_\-process@{next\-\_\-to\-\_\-process}}
+\index{next\-\_\-to\-\_\-process@{next\-\_\-to\-\_\-process}!net_link.cpp@{net\-\_\-link.\-cpp}}
+\subsubsection[{next\-\_\-to\-\_\-process}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A}$\ast$ next\-\_\-to\-\_\-process = N\-U\-L\-L}}\label{net__link_8cpp_a708574cee786a46ca950cd7ad3367599}
+\hypertarget{net__link_8cpp_a73f2f113bdd99a98a1db19b23c4b33ad}{\index{net\-\_\-link.\-cpp@{net\-\_\-link.\-cpp}!n\-Total\-Connections@{n\-Total\-Connections}}
+\index{n\-Total\-Connections@{n\-Total\-Connections}!net_link.cpp@{net\-\_\-link.\-cpp}}
+\subsubsection[{n\-Total\-Connections}]{\setlength{\rightskip}{0pt plus 5cm}int n\-Total\-Connections = 0}}\label{net__link_8cpp_a73f2f113bdd99a98a1db19b23c4b33ad}
+\hypertarget{net__link_8cpp_ad73f341e47efd963501ec62bcd3a34a7}{\index{net\-\_\-link.\-cpp@{net\-\_\-link.\-cpp}!socket\-\_\-closed@{socket\-\_\-closed}}
+\index{socket\-\_\-closed@{socket\-\_\-closed}!net_link.cpp@{net\-\_\-link.\-cpp}}
+\subsubsection[{socket\-\_\-closed}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} socket\-\_\-closed = false}}\label{net__link_8cpp_ad73f341e47efd963501ec62bcd3a34a7}

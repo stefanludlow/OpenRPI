@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -90,69 +90,334 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">TurfSystem Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="structs_8h_source.html">structs.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af3977efc93b3e570b8b97a1aa6adb3e4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af3977efc93b3e570b8b97a1aa6adb3e4"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>initalize</b> (void)</td></tr>
+<tr class="memitem:a3e827914ebf7414a6ff27c0371e33700"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurfSystem.html#a3e827914ebf7414a6ff27c0371e33700">TurfSystem</a> (void)</td></tr>
+<tr class="separator:a3e827914ebf7414a6ff27c0371e33700"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3977efc93b3e570b8b97a1aa6adb3e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurfSystem.html#af3977efc93b3e570b8b97a1aa6adb3e4">initalize</a> (void)</td></tr>
 <tr class="separator:af3977efc93b3e570b8b97a1aa6adb3e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace8f70946b1af7935824a2ba0d0b86d7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ace8f70946b1af7935824a2ba0d0b86d7"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_clanName</b> (int i, const char *name)</td></tr>
+<tr class="memitem:ace8f70946b1af7935824a2ba0d0b86d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurfSystem.html#ace8f70946b1af7935824a2ba0d0b86d7">set_clanName</a> (int i, const char *name)</td></tr>
 <tr class="separator:ace8f70946b1af7935824a2ba0d0b86d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc1d992b8e40303531d08c65d0ea7ea6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adc1d992b8e40303531d08c65d0ea7ea6"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>clanPosition</b> (const char *name)</td></tr>
+<tr class="memitem:adc1d992b8e40303531d08c65d0ea7ea6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurfSystem.html#adc1d992b8e40303531d08c65d0ea7ea6">clanPosition</a> (const char *name)</td></tr>
 <tr class="separator:adc1d992b8e40303531d08c65d0ea7ea6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3abfed2c71441d5d63cb57a23ef0956c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3abfed2c71441d5d63cb57a23ef0956c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>saveSystem</b> (void)</td></tr>
+<tr class="memitem:a3abfed2c71441d5d63cb57a23ef0956c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurfSystem.html#a3abfed2c71441d5d63cb57a23ef0956c">saveSystem</a> (void)</td></tr>
 <tr class="separator:a3abfed2c71441d5d63cb57a23ef0956c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f881654e02c9224834ec040300f5256"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8f881654e02c9224834ec040300f5256"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>beatReport</b> (void)</td></tr>
+<tr class="memitem:a8f881654e02c9224834ec040300f5256"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurfSystem.html#a8f881654e02c9224834ec040300f5256">beatReport</a> (void)</td></tr>
 <tr class="separator:a8f881654e02c9224834ec040300f5256"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a734bb47ddd51a3376b48d18d88d4514b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a734bb47ddd51a3376b48d18d88d4514b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>turnReport</b> (void)</td></tr>
+<tr class="memitem:a734bb47ddd51a3376b48d18d88d4514b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurfSystem.html#a734bb47ddd51a3376b48d18d88d4514b">turnReport</a> (void)</td></tr>
 <tr class="separator:a734bb47ddd51a3376b48d18d88d4514b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:aa5746034cee0ced8cba900b27e0ec09a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa5746034cee0ced8cba900b27e0ec09a"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>systemId</b></td></tr>
+<tr class="memitem:aa5746034cee0ced8cba900b27e0ec09a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurfSystem.html#aa5746034cee0ced8cba900b27e0ec09a">systemId</a></td></tr>
 <tr class="separator:aa5746034cee0ced8cba900b27e0ec09a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2cef1b445a81d345ccae67689fe2f7ab"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2cef1b445a81d345ccae67689fe2f7ab"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>clanName</b> [TURF_CLANS]</td></tr>
+<tr class="memitem:a2cef1b445a81d345ccae67689fe2f7ab"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurfSystem.html#a2cef1b445a81d345ccae67689fe2f7ab">clanName</a> [<a class="el" href="structs_8h.html#acfd70c8e304a61f3865e64234b2993f7">TURF_CLANS</a>]</td></tr>
 <tr class="separator:a2cef1b445a81d345ccae67689fe2f7ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa073cc7f204f5a1e60e495f3086eaa02"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa073cc7f204f5a1e60e495f3086eaa02"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>boardVnum</b></td></tr>
+<tr class="memitem:aa073cc7f204f5a1e60e495f3086eaa02"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurfSystem.html#aa073cc7f204f5a1e60e495f3086eaa02">boardVnum</a></td></tr>
 <tr class="separator:aa073cc7f204f5a1e60e495f3086eaa02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab110656e923b1e05ceff952b9a53e006"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab110656e923b1e05ceff952b9a53e006"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>dumpVnum1</b></td></tr>
+<tr class="memitem:ab110656e923b1e05ceff952b9a53e006"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurfSystem.html#ab110656e923b1e05ceff952b9a53e006">dumpVnum1</a></td></tr>
 <tr class="separator:ab110656e923b1e05ceff952b9a53e006"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6bdfdb3fc68c426054cc3f632249345c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6bdfdb3fc68c426054cc3f632249345c"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>dumpVnum2</b></td></tr>
+<tr class="memitem:a6bdfdb3fc68c426054cc3f632249345c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurfSystem.html#a6bdfdb3fc68c426054cc3f632249345c">dumpVnum2</a></td></tr>
 <tr class="separator:a6bdfdb3fc68c426054cc3f632249345c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3161f2d2bd6af42575f033a73681cb0e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3161f2d2bd6af42575f033a73681cb0e"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>enforceMob</b></td></tr>
+<tr class="memitem:a3161f2d2bd6af42575f033a73681cb0e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurfSystem.html#a3161f2d2bd6af42575f033a73681cb0e">enforceMob</a></td></tr>
 <tr class="separator:a3161f2d2bd6af42575f033a73681cb0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abcafdb36f781eb1e8e67e8e3543a7e3e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abcafdb36f781eb1e8e67e8e3543a7e3e"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>shopkeepMob</b></td></tr>
+<tr class="memitem:abcafdb36f781eb1e8e67e8e3543a7e3e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurfSystem.html#abcafdb36f781eb1e8e67e8e3543a7e3e">shopkeepMob</a></td></tr>
 <tr class="separator:abcafdb36f781eb1e8e67e8e3543a7e3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a033e759d856e32306f5331b5dd418c5c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a033e759d856e32306f5331b5dd418c5c"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>soldierMob</b></td></tr>
+<tr class="memitem:a033e759d856e32306f5331b5dd418c5c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurfSystem.html#a033e759d856e32306f5331b5dd418c5c">soldierMob</a></td></tr>
 <tr class="separator:a033e759d856e32306f5331b5dd418c5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07d7f9ef716c90576e025f2aa723a34d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a07d7f9ef716c90576e025f2aa723a34d"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>shopkeepFee</b></td></tr>
+<tr class="memitem:a07d7f9ef716c90576e025f2aa723a34d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurfSystem.html#a07d7f9ef716c90576e025f2aa723a34d">shopkeepFee</a></td></tr>
 <tr class="separator:a07d7f9ef716c90576e025f2aa723a34d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab6ce40d3de05363ce523dea3e60e021d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab6ce40d3de05363ce523dea3e60e021d"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>soldierFee</b></td></tr>
+<tr class="memitem:ab6ce40d3de05363ce523dea3e60e021d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurfSystem.html#ab6ce40d3de05363ce523dea3e60e021d">soldierFee</a></td></tr>
 <tr class="separator:ab6ce40d3de05363ce523dea3e60e021d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a3e827914ebf7414a6ff27c0371e33700"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TurfSystem::TurfSystem </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a8f881654e02c9224834ec040300f5256"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TurfSystem::beatReport </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="adc1d992b8e40303531d08c65d0ea7ea6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TurfSystem::clanPosition </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af3977efc93b3e570b8b97a1aa6adb3e4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TurfSystem::initalize </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3abfed2c71441d5d63cb57a23ef0956c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TurfSystem::saveSystem </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ace8f70946b1af7935824a2ba0d0b86d7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TurfSystem::set_clanName </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a734bb47ddd51a3376b48d18d88d4514b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TurfSystem::turnReport </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="aa073cc7f204f5a1e60e495f3086eaa02"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TurfSystem::boardVnum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2cef1b445a81d345ccae67689fe2f7ab"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string TurfSystem::clanName[<a class="el" href="structs_8h.html#acfd70c8e304a61f3865e64234b2993f7">TURF_CLANS</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab110656e923b1e05ceff952b9a53e006"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TurfSystem::dumpVnum1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6bdfdb3fc68c426054cc3f632249345c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TurfSystem::dumpVnum2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3161f2d2bd6af42575f033a73681cb0e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TurfSystem::enforceMob</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a07d7f9ef716c90576e025f2aa723a34d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TurfSystem::shopkeepFee</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abcafdb36f781eb1e8e67e8e3543a7e3e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TurfSystem::shopkeepMob</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab6ce40d3de05363ce523dea3e60e021d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TurfSystem::soldierFee</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a033e759d856e32306f5331b5dd418c5c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TurfSystem::soldierMob</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa5746034cee0ced8cba900b27e0ec09a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TurfSystem::systemId</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="structs_8h_source.html">structs.h</a></li>
-<li>turf.cpp</li>
+<li><a class="el" href="turf_8cpp.html">turf.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 17 2015 21:26:48 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 17 2015 22:02:23 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -1,0 +1,138 @@
+\hypertarget{utility_8h}{\section{utility.\-h File Reference}
+\label{utility_8h}\index{utility.\-h@{utility.\-h}}
+}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename \-\_\-bit\-\_\-flags $>$ }\\\-\_\-bit\-\_\-flags \hyperlink{utility_8h_ae0088ae7aba8b92c874c93f7768063f1}{set\-\_\-flags} (\-\_\-bit\-\_\-flags \&\-\_\-\-\_\-stored\-\_\-flags, \-\_\-bit\-\_\-flags \-\_\-\-\_\-new\-\_\-flags)
+\begin{DoxyCompactList}\small\item\em \hyperlink{utility_8h}{utility.\-h} -\/ Inline Utility Functions \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename \-\_\-bit\-\_\-flags $>$ }\\\-\_\-bit\-\_\-flags \hyperlink{utility_8h_aa35fc9a0c289811b246b1e8209f9997d}{clear\-\_\-flags} (\-\_\-bit\-\_\-flags \&\-\_\-\-\_\-stored\-\_\-flags, \-\_\-bit\-\_\-flags \-\_\-\-\_\-old\-\_\-flags)
+\begin{DoxyCompactList}\small\item\em Mnumonic function for clearing bits to 0. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename \-\_\-bit\-\_\-flags $>$ }\\\-\_\-bit\-\_\-flags \hyperlink{utility_8h_af633696b8818f224e06faf796a4a2ffb}{toggle\-\_\-flags} (\-\_\-bit\-\_\-flags \&\-\_\-\-\_\-stored\-\_\-flags, \-\_\-bit\-\_\-flags \-\_\-\-\_\-toggled\-\_\-flags)
+\begin{DoxyCompactList}\small\item\em Mnumonic function for toggling bits. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename \-\_\-value $>$ }\\\-\_\-value \hyperlink{utility_8h_a67785fb20d6db0b36dc4a193bf2ed4d0}{M\-I\-N} (const \-\_\-value \-\_\-\-\_\-x, const \-\_\-value \-\_\-\-\_\-y)
+\item 
+{\footnotesize template$<$typename \-\_\-value $>$ }\\\-\_\-value \hyperlink{utility_8h_a9284c9836d4fb4542dee3196c2869469}{M\-A\-X} (const \-\_\-value \-\_\-\-\_\-x, const \-\_\-value \-\_\-\-\_\-y)
+\item 
+char $\ast$ \hyperlink{utility_8h_a218f671ecb86d7ac0d18f0ef597b9478}{one\-\_\-argument} (char $\ast$argument, char $\ast$arg\-\_\-first)
+\item 
+std\-::string \hyperlink{utility_8h_ace57bbaa6ccc1ceb79ebe191610abccd}{one\-\_\-argument} (std\-::string \&argument, std\-::string \&arg\-\_\-first)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{utility_8h_aa35fc9a0c289811b246b1e8209f9997d}{\index{utility.\-h@{utility.\-h}!clear\-\_\-flags@{clear\-\_\-flags}}
+\index{clear\-\_\-flags@{clear\-\_\-flags}!utility.h@{utility.\-h}}
+\subsubsection[{clear\-\_\-flags}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \-\_\-bit\-\_\-flags $>$ \-\_\-bit\-\_\-flags clear\-\_\-flags (
+\begin{DoxyParamCaption}
+\item[{\-\_\-bit\-\_\-flags \&}]{\-\_\-\-\_\-stored\-\_\-flags, }
+\item[{\-\_\-bit\-\_\-flags}]{\-\_\-\-\_\-old\-\_\-flags}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{utility_8h_aa35fc9a0c289811b246b1e8209f9997d}
+
+
+Mnumonic function for clearing bits to 0. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \-\_\-\-\_\-stored\-\_\-flags} & Existing flags to receive new flags \\
+\hline
+\mbox{\tt in}  & {\em \-\_\-\-\_\-old\-\_\-flags} & Old flags to clear \\
+\hline
+\mbox{\tt out}  & {\em Value} & of updated flags \\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{Note on Usage\-: Use of the bitwise A\-N\-D assignment operator \char`\"{}\&=\char`\"{} of the old\-\_\-flags}
+complement \char`\"{}$\sim$\char`\"{} is preferred. This function template therefore is vestigial, acting for the most part as a reminder to use the builtin C/\-C++ operations. This function replaces the R\-E\-M\-O\-V\-E\-\_\-\-B\-I\-T macro under the old implementation. 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Example\-: stored\-\_\-flags \&= $\sim$old\-\_\-flags}
+stored\-\_\-flags \&= $\sim$(old\-\_\-flags $\vert$ other\-\_\-flag\-\_\-to\-\_\-clear) 
+\end{DoxyParagraph}
+\hypertarget{utility_8h_a9284c9836d4fb4542dee3196c2869469}{\index{utility.\-h@{utility.\-h}!M\-A\-X@{M\-A\-X}}
+\index{M\-A\-X@{M\-A\-X}!utility.h@{utility.\-h}}
+\subsubsection[{M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \-\_\-value $>$ \-\_\-value M\-A\-X (
+\begin{DoxyParamCaption}
+\item[{const \-\_\-value}]{\-\_\-\-\_\-x, }
+\item[{const \-\_\-value}]{\-\_\-\-\_\-y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{utility_8h_a9284c9836d4fb4542dee3196c2869469}
+\hypertarget{utility_8h_a67785fb20d6db0b36dc4a193bf2ed4d0}{\index{utility.\-h@{utility.\-h}!M\-I\-N@{M\-I\-N}}
+\index{M\-I\-N@{M\-I\-N}!utility.h@{utility.\-h}}
+\subsubsection[{M\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \-\_\-value $>$ \-\_\-value M\-I\-N (
+\begin{DoxyParamCaption}
+\item[{const \-\_\-value}]{\-\_\-\-\_\-x, }
+\item[{const \-\_\-value}]{\-\_\-\-\_\-y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{utility_8h_a67785fb20d6db0b36dc4a193bf2ed4d0}
+\hypertarget{utility_8h_a218f671ecb86d7ac0d18f0ef597b9478}{\index{utility.\-h@{utility.\-h}!one\-\_\-argument@{one\-\_\-argument}}
+\index{one\-\_\-argument@{one\-\_\-argument}!utility.h@{utility.\-h}}
+\subsubsection[{one\-\_\-argument}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ one\-\_\-argument (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{argument, }
+\item[{char $\ast$}]{arg\-\_\-first}
+\end{DoxyParamCaption}
+)}}\label{utility_8h_a218f671ecb86d7ac0d18f0ef597b9478}
+\hypertarget{utility_8h_ace57bbaa6ccc1ceb79ebe191610abccd}{\index{utility.\-h@{utility.\-h}!one\-\_\-argument@{one\-\_\-argument}}
+\index{one\-\_\-argument@{one\-\_\-argument}!utility.h@{utility.\-h}}
+\subsubsection[{one\-\_\-argument}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string one\-\_\-argument (
+\begin{DoxyParamCaption}
+\item[{std\-::string \&}]{argument, }
+\item[{std\-::string \&}]{arg\-\_\-first}
+\end{DoxyParamCaption}
+)}}\label{utility_8h_ace57bbaa6ccc1ceb79ebe191610abccd}
+\hypertarget{utility_8h_ae0088ae7aba8b92c874c93f7768063f1}{\index{utility.\-h@{utility.\-h}!set\-\_\-flags@{set\-\_\-flags}}
+\index{set\-\_\-flags@{set\-\_\-flags}!utility.h@{utility.\-h}}
+\subsubsection[{set\-\_\-flags}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \-\_\-bit\-\_\-flags $>$ \-\_\-bit\-\_\-flags set\-\_\-flags (
+\begin{DoxyParamCaption}
+\item[{\-\_\-bit\-\_\-flags \&}]{\-\_\-\-\_\-stored\-\_\-flags, }
+\item[{\-\_\-bit\-\_\-flags}]{\-\_\-\-\_\-new\-\_\-flags}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{utility_8h_ae0088ae7aba8b92c874c93f7768063f1}
+
+
+\hyperlink{utility_8h}{utility.\-h} -\/ Inline Utility Functions 
+
+Shadows of Isildur R\-P\-I Engine++ Copyright (C) 2005-\/2006 C. W. Mc\-Henry Authors\-: C. W. Mc\-Henry (\href{mailto:traithe@middle-earth.us}{\tt traithe@middle-\/earth.\-us}) Jonathan W. Webb (\href{mailto:sighentist@middle-earth.us}{\tt sighentist@middle-\/earth.\-us}) U\-R\-L\-: \href{http://www.middle-earth.us}{\tt http\-://www.\-middle-\/earth.\-us} May includes portions derived from Harshlands Authors\-: Charles Rand (Rassilon) U\-R\-L\-: \href{http://www.harshlands.net}{\tt http\-://www.\-harshlands.\-net} May include portions derived under license from Diku\-M\-U\-D Gamma (0.\-0) which are Copyright (C) 1990, 1991 D\-I\-K\-U Authors\-: Hans Henrik Staerfeldt (\href{mailto:bombman@freja.diku.dk}{\tt bombman@freja.\-diku.\-dk}) Tom Madson (\href{mailto:noop@freja.diku.dk}{\tt noop@freja.\-diku.\-dk}) Katja Nyboe (\href{mailto:katz@freja.diku.dk}{\tt katz@freja.\-diku.\-dk}) Michael Seifert (\href{mailto:seifert@freja.diku.dk}{\tt seifert@freja.\-diku.\-dk}) Sebastian Hammer (\href{mailto:quinn@freja.diku.dk}{\tt quinn@freja.\-diku.\-dk}) Mnumonic function for setting bits to 1
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \-\_\-\-\_\-stored\-\_\-flags} & Existing flags to receive new flags \\
+\hline
+\mbox{\tt in}  & {\em \-\_\-\-\_\-new\-\_\-flags} & New flags to assign \\
+\hline
+\mbox{\tt out}  & {\em Value} & of updated flags \\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{Note on Usage\-: Use of the bitwise O\-R assignment operator \char`\"{}$\vert$=\char`\"{} is preferred. This }
+function template therefore is vestigial, acting for the most part as a reminder to use the builtin C/\-C++ operator. This function replaces the S\-E\-T\-\_\-\-B\-I\-T macro under old implementations. 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Examples\-: stored\-\_\-flags $\vert$= new\-\_\-flag}
+stored\-\_\-flags $\vert$= (new\-\_\-flag $\vert$ other\-\_\-new\-\_\-flag) 
+\end{DoxyParagraph}
+\hypertarget{utility_8h_af633696b8818f224e06faf796a4a2ffb}{\index{utility.\-h@{utility.\-h}!toggle\-\_\-flags@{toggle\-\_\-flags}}
+\index{toggle\-\_\-flags@{toggle\-\_\-flags}!utility.h@{utility.\-h}}
+\subsubsection[{toggle\-\_\-flags}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \-\_\-bit\-\_\-flags $>$ \-\_\-bit\-\_\-flags toggle\-\_\-flags (
+\begin{DoxyParamCaption}
+\item[{\-\_\-bit\-\_\-flags \&}]{\-\_\-\-\_\-stored\-\_\-flags, }
+\item[{\-\_\-bit\-\_\-flags}]{\-\_\-\-\_\-toggled\-\_\-flags}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{utility_8h_af633696b8818f224e06faf796a4a2ffb}
+
+
+Mnumonic function for toggling bits. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \-\_\-\-\_\-stored\-\_\-flags} & Existing flags to receive new flags \\
+\hline
+\mbox{\tt in}  & {\em \-\_\-\-\_\-toggled\-\_\-flags} & Flags to toggle \\
+\hline
+\mbox{\tt out}  & {\em Value} & of updated flags \\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{Note on Usage\-: Use of the bitwise X\-O\-R assignment operator \char`\"{}$^\wedge$=\char`\"{} of the toggled\-\_\-flags}
+is preferred. This function template therefore is vestigial, acting for the most part as a reminder to use the builtin C/\-C++ operation. This function replaces the T\-O\-G\-G\-L\-E\-\_\-\-B\-I\-T and T\-O\-G\-G\-L\-E macros under the old implementation. 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Example\-: stored\-\_\-flags $^\wedge$= toggled\-\_\-flags }
+
+\end{DoxyParagraph}

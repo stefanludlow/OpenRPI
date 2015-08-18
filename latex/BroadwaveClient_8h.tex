@@ -1,0 +1,57 @@
+\hypertarget{BroadwaveClient_8h}{\section{Broadwave\-Client.\-h File Reference}
+\label{BroadwaveClient_8h}\index{Broadwave\-Client.\-h@{Broadwave\-Client.\-h}}
+}
+{\ttfamily \#include $<$fcntl.\-h$>$}\\*
+{\ttfamily \#include $<$signal.\-h$>$}\\*
+{\ttfamily \#include $<$time.\-h$>$}\\*
+{\ttfamily \#include $<$errno.\-h$>$}\\*
+{\ttfamily \#include $<$ctime$>$}\\*
+{\ttfamily \#include $<$cstdlib$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$list$>$}\\*
+{\ttfamily \#include $<$map$>$}\\*
+{\ttfamily \#include $<$set$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$stdexcept$>$}\\*
+{\ttfamily \#include $<$fstream$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$sstream$>$}\\*
+{\ttfamily \#include $<$ios$>$}\\*
+{\ttfamily \#include $<$iterator$>$}\\*
+{\ttfamily \#include $<$algorithm$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classtBroadwave}{t\-Broadwave}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{BroadwaveClient_8h_aefbaabfe76731941f769f0d7a1c27ccf}{B\-R\-O\-A\-D\-W\-A\-V\-E\-\_\-\-I\-P}~\char`\"{}149.\-106.\-192.\-52\char`\"{}
+\item 
+\#define \hyperlink{BroadwaveClient_8h_a762da26cab7104a17aa24a1c2886ce36}{B\-R\-O\-A\-D\-W\-A\-V\-E\-\_\-\-P\-O\-R\-T}~4242
+\item 
+\#define \hyperlink{BroadwaveClient_8h_acbda98d731a2e29da1c3f86d3b23681b}{B\-R\-O\-A\-D\-W\-A\-V\-E\-\_\-\-U\-S\-E\-R\-N\-A\-M\-E}~\char`\"{}Atonement\char`\"{}
+\item 
+\#define \hyperlink{BroadwaveClient_8h_a34d4e65de321746232496212a974e6a7}{B\-R\-O\-A\-D\-W\-A\-V\-E\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D}~\char`\"{}testing1234\char`\"{}
+\item 
+\#define \hyperlink{BroadwaveClient_8h_a913876b679e97eb100d43b2168ca4cb7}{T\-H\-I\-S\-\_\-\-R\-E\-A\-L\-M}~\char`\"{}Atonement\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{BroadwaveClient_8h_aefbaabfe76731941f769f0d7a1c27ccf}{\index{Broadwave\-Client.\-h@{Broadwave\-Client.\-h}!B\-R\-O\-A\-D\-W\-A\-V\-E\-\_\-\-I\-P@{B\-R\-O\-A\-D\-W\-A\-V\-E\-\_\-\-I\-P}}
+\index{B\-R\-O\-A\-D\-W\-A\-V\-E\-\_\-\-I\-P@{B\-R\-O\-A\-D\-W\-A\-V\-E\-\_\-\-I\-P}!BroadwaveClient.h@{Broadwave\-Client.\-h}}
+\subsubsection[{B\-R\-O\-A\-D\-W\-A\-V\-E\-\_\-\-I\-P}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-R\-O\-A\-D\-W\-A\-V\-E\-\_\-\-I\-P~\char`\"{}149.\-106.\-192.\-52\char`\"{}}}\label{BroadwaveClient_8h_aefbaabfe76731941f769f0d7a1c27ccf}
+\hypertarget{BroadwaveClient_8h_a34d4e65de321746232496212a974e6a7}{\index{Broadwave\-Client.\-h@{Broadwave\-Client.\-h}!B\-R\-O\-A\-D\-W\-A\-V\-E\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D@{B\-R\-O\-A\-D\-W\-A\-V\-E\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D}}
+\index{B\-R\-O\-A\-D\-W\-A\-V\-E\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D@{B\-R\-O\-A\-D\-W\-A\-V\-E\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D}!BroadwaveClient.h@{Broadwave\-Client.\-h}}
+\subsubsection[{B\-R\-O\-A\-D\-W\-A\-V\-E\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-R\-O\-A\-D\-W\-A\-V\-E\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D~\char`\"{}testing1234\char`\"{}}}\label{BroadwaveClient_8h_a34d4e65de321746232496212a974e6a7}
+\hypertarget{BroadwaveClient_8h_a762da26cab7104a17aa24a1c2886ce36}{\index{Broadwave\-Client.\-h@{Broadwave\-Client.\-h}!B\-R\-O\-A\-D\-W\-A\-V\-E\-\_\-\-P\-O\-R\-T@{B\-R\-O\-A\-D\-W\-A\-V\-E\-\_\-\-P\-O\-R\-T}}
+\index{B\-R\-O\-A\-D\-W\-A\-V\-E\-\_\-\-P\-O\-R\-T@{B\-R\-O\-A\-D\-W\-A\-V\-E\-\_\-\-P\-O\-R\-T}!BroadwaveClient.h@{Broadwave\-Client.\-h}}
+\subsubsection[{B\-R\-O\-A\-D\-W\-A\-V\-E\-\_\-\-P\-O\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-R\-O\-A\-D\-W\-A\-V\-E\-\_\-\-P\-O\-R\-T~4242}}\label{BroadwaveClient_8h_a762da26cab7104a17aa24a1c2886ce36}
+\hypertarget{BroadwaveClient_8h_acbda98d731a2e29da1c3f86d3b23681b}{\index{Broadwave\-Client.\-h@{Broadwave\-Client.\-h}!B\-R\-O\-A\-D\-W\-A\-V\-E\-\_\-\-U\-S\-E\-R\-N\-A\-M\-E@{B\-R\-O\-A\-D\-W\-A\-V\-E\-\_\-\-U\-S\-E\-R\-N\-A\-M\-E}}
+\index{B\-R\-O\-A\-D\-W\-A\-V\-E\-\_\-\-U\-S\-E\-R\-N\-A\-M\-E@{B\-R\-O\-A\-D\-W\-A\-V\-E\-\_\-\-U\-S\-E\-R\-N\-A\-M\-E}!BroadwaveClient.h@{Broadwave\-Client.\-h}}
+\subsubsection[{B\-R\-O\-A\-D\-W\-A\-V\-E\-\_\-\-U\-S\-E\-R\-N\-A\-M\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-R\-O\-A\-D\-W\-A\-V\-E\-\_\-\-U\-S\-E\-R\-N\-A\-M\-E~\char`\"{}Atonement\char`\"{}}}\label{BroadwaveClient_8h_acbda98d731a2e29da1c3f86d3b23681b}
+\hypertarget{BroadwaveClient_8h_a913876b679e97eb100d43b2168ca4cb7}{\index{Broadwave\-Client.\-h@{Broadwave\-Client.\-h}!T\-H\-I\-S\-\_\-\-R\-E\-A\-L\-M@{T\-H\-I\-S\-\_\-\-R\-E\-A\-L\-M}}
+\index{T\-H\-I\-S\-\_\-\-R\-E\-A\-L\-M@{T\-H\-I\-S\-\_\-\-R\-E\-A\-L\-M}!BroadwaveClient.h@{Broadwave\-Client.\-h}}
+\subsubsection[{T\-H\-I\-S\-\_\-\-R\-E\-A\-L\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-H\-I\-S\-\_\-\-R\-E\-A\-L\-M~\char`\"{}Atonement\char`\"{}}}\label{BroadwaveClient_8h_a913876b679e97eb100d43b2168ca4cb7}

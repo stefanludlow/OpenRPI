@@ -1,154 +1,470 @@
 \hypertarget{classStringstack}{\section{Stringstack Class Reference}
 \label{classStringstack}\index{Stringstack@{Stringstack}}
 }
+
+
+{\ttfamily \#include $<$stringstack.\-h$>$}
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classStringstack_aad1e45b6c7f4992135b1eff99c4fb96b}{{\bfseries Stringstack} (std\-::string input)}\label{classStringstack_aad1e45b6c7f4992135b1eff99c4fb96b}
-
+\hyperlink{classStringstack_afab20605ad4777f27403444335a958a6}{Stringstack} ()
 \item 
-\hypertarget{classStringstack_a6951276915a18f6581fa2fe1f233130f}{{\bfseries Stringstack} (const char $\ast$input)}\label{classStringstack_a6951276915a18f6581fa2fe1f233130f}
-
+\hyperlink{classStringstack_aad1e45b6c7f4992135b1eff99c4fb96b}{Stringstack} (std\-::string input)
 \item 
-\hypertarget{classStringstack_a340cb8b0e983570d65548a6c49736569}{{\bfseries Stringstack} (std\-::istream \&input)}\label{classStringstack_a340cb8b0e983570d65548a6c49736569}
-
+\hyperlink{classStringstack_a6951276915a18f6581fa2fe1f233130f}{Stringstack} (const char $\ast$input)
 \item 
-\hypertarget{classStringstack_a964c8db56fa0bc1337fbde2c11456fdc}{{\bfseries Stringstack} (std\-::string input, bool remove\-Spaces)}\label{classStringstack_a964c8db56fa0bc1337fbde2c11456fdc}
-
+\hyperlink{classStringstack_a340cb8b0e983570d65548a6c49736569}{Stringstack} (std\-::istream \&input)
 \item 
-\hypertarget{classStringstack_af26bb77483c372e9c27d145e1cfe4f8d}{{\bfseries Stringstack} (const char $\ast$input, bool remove\-Spaces)}\label{classStringstack_af26bb77483c372e9c27d145e1cfe4f8d}
-
+\hyperlink{classStringstack_a964c8db56fa0bc1337fbde2c11456fdc}{Stringstack} (std\-::string input, \hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} remove\-Spaces)
 \item 
-\hypertarget{classStringstack_a60d383777a7789d2a3d7f6b901a755da}{{\bfseries Stringstack} (std\-::istream \&input, bool remove\-Spaces)}\label{classStringstack_a60d383777a7789d2a3d7f6b901a755da}
-
+\hyperlink{classStringstack_af26bb77483c372e9c27d145e1cfe4f8d}{Stringstack} (const char $\ast$input, \hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} remove\-Spaces)
 \item 
-\hypertarget{classStringstack_a2197bda2738d2f687f4b90575b1bf7e1}{\hyperlink{classStringstack}{Stringstack} \& {\bfseries operator=} (const std\-::string \&new\-String)}\label{classStringstack_a2197bda2738d2f687f4b90575b1bf7e1}
-
+\hyperlink{classStringstack_a60d383777a7789d2a3d7f6b901a755da}{Stringstack} (std\-::istream \&input, \hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} remove\-Spaces)
 \item 
-\hypertarget{classStringstack_ab46ad119cb84606eaed0654bde436542}{\hyperlink{classStringstack}{Stringstack} \& {\bfseries operator=} (const char $\ast$new\-String)}\label{classStringstack_ab46ad119cb84606eaed0654bde436542}
-
+\hyperlink{classStringstack}{Stringstack} \& \hyperlink{classStringstack_a2197bda2738d2f687f4b90575b1bf7e1}{operator=} (const std\-::string \&new\-String)
 \item 
-\hypertarget{classStringstack_a8afc987bc55cf92fcf9eadcbb8c978b8}{bool {\bfseries operator==} (const std\-::string compare) const }\label{classStringstack_a8afc987bc55cf92fcf9eadcbb8c978b8}
-
+\hyperlink{classStringstack}{Stringstack} \& \hyperlink{classStringstack_ab46ad119cb84606eaed0654bde436542}{operator=} (const char $\ast$new\-String)
 \item 
-\hypertarget{classStringstack_a53a36a2da20ea60f2c9df67506f3748b}{std\-::string \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (const int index)}\label{classStringstack_a53a36a2da20ea60f2c9df67506f3748b}
-
+\hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} \hyperlink{classStringstack_a8afc987bc55cf92fcf9eadcbb8c978b8}{operator==} (const std\-::string \hyperlink{classStringstack_a3a92a82a838b77bedc268372e8fe7a41}{compare}) const 
 \item 
-\hypertarget{classStringstack_a8a9777f29361b6e493108a234f89b81d}{std\-::string {\bfseries pop} ()}\label{classStringstack_a8a9777f29361b6e493108a234f89b81d}
-
+std\-::string \& \hyperlink{classStringstack_a53a36a2da20ea60f2c9df67506f3748b}{operator\mbox{[}$\,$\mbox{]}} (const int index)
 \item 
-\hypertarget{classStringstack_a991eff1393a30e44e8b327501c10c417}{std\-::string {\bfseries pop} (std\-::string first\-Delimit, std\-::string second\-Delimit)}\label{classStringstack_a991eff1393a30e44e8b327501c10c417}
-
+std\-::string \hyperlink{classStringstack_a8a9777f29361b6e493108a234f89b81d}{pop} ()
 \item 
-\hypertarget{classStringstack_afa99c109a0b5c1632a6402780dbcc97d}{std\-::string {\bfseries pop} (std\-::string first\-Delimit, std\-::string second\-Delimit, bool erase\-Delimits, bool delimits\-Match)}\label{classStringstack_afa99c109a0b5c1632a6402780dbcc97d}
-
+std\-::string \hyperlink{classStringstack_a991eff1393a30e44e8b327501c10c417}{pop} (std\-::string first\-Delimit, std\-::string second\-Delimit)
 \item 
-\hypertarget{classStringstack_a71b03b6b0c5d15074abde46944d71864}{std\-::string {\bfseries find\-Pop} (std\-::string first\-Delimit, std\-::string second\-Delimit)}\label{classStringstack_a71b03b6b0c5d15074abde46944d71864}
-
+std\-::string \hyperlink{classStringstack_afa99c109a0b5c1632a6402780dbcc97d}{pop} (std\-::string first\-Delimit, std\-::string second\-Delimit, \hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} erase\-Delimits, \hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} delimits\-Match)
 \item 
-\hypertarget{classStringstack_ad378b6dd8a9d55605d3c17b452fd5dda}{std\-::string {\bfseries find\-Pop} (std\-::string first\-Delimit, std\-::string second\-Delimit, bool erase\-Delimits)}\label{classStringstack_ad378b6dd8a9d55605d3c17b452fd5dda}
-
+std\-::string \hyperlink{classStringstack_a71b03b6b0c5d15074abde46944d71864}{find\-Pop} (std\-::string first\-Delimit, std\-::string second\-Delimit)
 \item 
-\hypertarget{classStringstack_ab1db05c3fe40c98493b6e02134eb8d64}{std\-::string {\bfseries pop\-Speech} ()}\label{classStringstack_ab1db05c3fe40c98493b6e02134eb8d64}
-
+std\-::string \hyperlink{classStringstack_ad378b6dd8a9d55605d3c17b452fd5dda}{find\-Pop} (std\-::string first\-Delimit, std\-::string second\-Delimit, \hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} erase\-Delimits)
 \item 
-\hypertarget{classStringstack_afd03c9d391bfd931ffb35e544230b402}{std\-::string {\bfseries pop\-Until} (std\-::string delimit)}\label{classStringstack_afd03c9d391bfd931ffb35e544230b402}
-
+std\-::string \hyperlink{classStringstack_ab1db05c3fe40c98493b6e02134eb8d64}{pop\-Speech} ()
 \item 
-\hypertarget{classStringstack_aaad2f5dc1df9ef88da1c2e2fc676f5dd}{std\-::string {\bfseries pop\-Until} (std\-::string delimit, bool erase\-Delimit)}\label{classStringstack_aaad2f5dc1df9ef88da1c2e2fc676f5dd}
-
+std\-::string \hyperlink{classStringstack_afd03c9d391bfd931ffb35e544230b402}{pop\-Until} (std\-::string delimit)
 \item 
-\hypertarget{classStringstack_ab657ed4278c068f32715c8b0b4d03312}{bool {\bfseries find} (std\-::string specifier)}\label{classStringstack_ab657ed4278c068f32715c8b0b4d03312}
-
+std\-::string \hyperlink{classStringstack_aaad2f5dc1df9ef88da1c2e2fc676f5dd}{pop\-Until} (std\-::string delimit, \hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} erase\-Delimit)
 \item 
-\hypertarget{classStringstack_ab3b7b4445b0ea898feaea34657e00c92}{int {\bfseries arg\-Count} (std\-::string specifier)}\label{classStringstack_ab3b7b4445b0ea898feaea34657e00c92}
-
+\hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} \hyperlink{classStringstack_ab657ed4278c068f32715c8b0b4d03312}{find} (std\-::string specifier)
 \item 
-\hypertarget{classStringstack_a6e9d7a9a8909e5699f935575bf15fb5c}{std\-::vector$<$ std\-::string $>$ {\bfseries arg\-Batch\-Find} (const std\-::vector$<$ std\-::string $>$ \&strings)}\label{classStringstack_a6e9d7a9a8909e5699f935575bf15fb5c}
-
+int \hyperlink{classStringstack_ab3b7b4445b0ea898feaea34657e00c92}{arg\-Count} (std\-::string specifier)
 \item 
-\hypertarget{classStringstack_a807cfc6a9e73c3614e1ccec547721092}{std\-::vector$<$ std\-::pair\\*
-$<$ std\-::string, int $>$ $>$ {\bfseries arg\-Batch\-Count} (const std\-::vector$<$ std\-::string $>$ \&strings)}\label{classStringstack_a807cfc6a9e73c3614e1ccec547721092}
-
+std\-::vector$<$ std\-::string $>$ \hyperlink{classStringstack_a6e9d7a9a8909e5699f935575bf15fb5c}{arg\-Batch\-Find} (const std\-::vector$<$ std\-::string $>$ \&strings)
 \item 
-\hypertarget{classStringstack_a73332f209b954e23d6486a7439a1d74a}{void {\bfseries arg\-Replace} (std\-::string specifier, std\-::string replacement)}\label{classStringstack_a73332f209b954e23d6486a7439a1d74a}
-
+std\-::vector$<$ std\-::pair\\*
+$<$ std\-::string, int $>$ $>$ \hyperlink{classStringstack_a807cfc6a9e73c3614e1ccec547721092}{arg\-Batch\-Count} (const std\-::vector$<$ std\-::string $>$ \&strings)
 \item 
-\hypertarget{classStringstack_af30cd5b798f448c0d4f73b013ab62eb7}{void {\bfseries arg\-Replace} (std\-::string specifier, std\-::string replacement, bool replace\-All, bool replace\-Reverse\-Order)}\label{classStringstack_af30cd5b798f448c0d4f73b013ab62eb7}
-
+void \hyperlink{classStringstack_a73332f209b954e23d6486a7439a1d74a}{arg\-Replace} (std\-::string specifier, std\-::string replacement)
 \item 
-\hypertarget{classStringstack_a405bd0c49154f672b01474697a2dac45}{void {\bfseries arg\-Replace\-Once} (std\-::string specifier, std\-::string replacement)}\label{classStringstack_a405bd0c49154f672b01474697a2dac45}
-
+void \hyperlink{classStringstack_af30cd5b798f448c0d4f73b013ab62eb7}{arg\-Replace} (std\-::string specifier, std\-::string replacement, \hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} replace\-All, \hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} replace\-Reverse\-Order)
 \item 
-\hypertarget{classStringstack_aa1082f1a7d5d0669b2249dae76ac3a06}{void {\bfseries arg\-Replace\-Once} (std\-::string specifier, std\-::string replacement, bool replace\-Reverse\-Order)}\label{classStringstack_aa1082f1a7d5d0669b2249dae76ac3a06}
-
+void \hyperlink{classStringstack_a405bd0c49154f672b01474697a2dac45}{arg\-Replace\-Once} (std\-::string specifier, std\-::string replacement)
 \item 
-\hypertarget{classStringstack_a1ffee5cf0fac3be196cb6a2da5248c68}{std\-::string {\bfseries recall} (size\-\_\-t index\-Arg)}\label{classStringstack_a1ffee5cf0fac3be196cb6a2da5248c68}
-
+void \hyperlink{classStringstack_aa1082f1a7d5d0669b2249dae76ac3a06}{arg\-Replace\-Once} (std\-::string specifier, std\-::string replacement, \hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} replace\-Reverse\-Order)
 \item 
-\hypertarget{classStringstack_a6451d4ae727082e186bc1e823787cfcd}{std\-::string {\bfseries last} ()}\label{classStringstack_a6451d4ae727082e186bc1e823787cfcd}
-
+std\-::string \hyperlink{classStringstack_a1ffee5cf0fac3be196cb6a2da5248c68}{recall} (size\-\_\-t index\-Arg)
 \item 
-\hypertarget{classStringstack_a8e8b15949b4e1a48c0b64f7631a17e5b}{int {\bfseries to\-Int} ()}\label{classStringstack_a8e8b15949b4e1a48c0b64f7631a17e5b}
-
+std\-::string \hyperlink{classStringstack_a6451d4ae727082e186bc1e823787cfcd}{last} ()
 \item 
-\hypertarget{classStringstack_a225f2ec993cdc23513eddc64eec914b8}{int {\bfseries to\-Int} (std\-::string integer\-String)}\label{classStringstack_a225f2ec993cdc23513eddc64eec914b8}
-
+int \hyperlink{classStringstack_a8e8b15949b4e1a48c0b64f7631a17e5b}{to\-Int} ()
 \item 
-\hypertarget{classStringstack_a2bf7ea8186405b71cf4c401bd9593708}{int {\bfseries to\-Int} (size\-\_\-t index\-Arg)}\label{classStringstack_a2bf7ea8186405b71cf4c401bd9593708}
-
+int \hyperlink{classStringstack_a225f2ec993cdc23513eddc64eec914b8}{to\-Int} (std\-::string integer\-String)
 \item 
-\hypertarget{classStringstack_a3ba9b3e887c482b2dab3fe3f4010fa2d}{double {\bfseries to\-Double} ()}\label{classStringstack_a3ba9b3e887c482b2dab3fe3f4010fa2d}
-
+int \hyperlink{classStringstack_a2bf7ea8186405b71cf4c401bd9593708}{to\-Int} (size\-\_\-t index\-Arg)
 \item 
-\hypertarget{classStringstack_a743b4fca4f2dde9b593cc4d4cb8d3a3d}{double {\bfseries to\-Double} (std\-::string double\-String)}\label{classStringstack_a743b4fca4f2dde9b593cc4d4cb8d3a3d}
-
+double \hyperlink{classStringstack_a3ba9b3e887c482b2dab3fe3f4010fa2d}{to\-Double} ()
 \item 
-\hypertarget{classStringstack_a3b4ee6ffffd6b0686854e20d4c126c8d}{double {\bfseries to\-Double} (size\-\_\-t index\-Arg)}\label{classStringstack_a3b4ee6ffffd6b0686854e20d4c126c8d}
-
+double \hyperlink{classStringstack_a743b4fca4f2dde9b593cc4d4cb8d3a3d}{to\-Double} (std\-::string double\-String)
 \item 
-\hypertarget{classStringstack_aac6c5200c1210f181f9c84885e85dc75}{std\-::string {\bfseries recall\-Partial\-String} (size\-\_\-t begin)}\label{classStringstack_aac6c5200c1210f181f9c84885e85dc75}
-
+double \hyperlink{classStringstack_a3b4ee6ffffd6b0686854e20d4c126c8d}{to\-Double} (size\-\_\-t index\-Arg)
 \item 
-\hypertarget{classStringstack_abd25b981a984a4bfc23eaff79fa6006e}{std\-::string {\bfseries recall\-Partial\-String} (size\-\_\-t begin, size\-\_\-t arguments)}\label{classStringstack_abd25b981a984a4bfc23eaff79fa6006e}
-
+std\-::string \hyperlink{classStringstack_aac6c5200c1210f181f9c84885e85dc75}{recall\-Partial\-String} (size\-\_\-t begin)
 \item 
-\hypertarget{classStringstack_aaf7895e4f440740cc8170980c1140be3}{std\-::string {\bfseries recall\-String} ()}\label{classStringstack_aaf7895e4f440740cc8170980c1140be3}
-
+std\-::string \hyperlink{classStringstack_abd25b981a984a4bfc23eaff79fa6006e}{recall\-Partial\-String} (size\-\_\-t begin, size\-\_\-t arguments)
 \item 
-\hypertarget{classStringstack_a787094ae6c979c8d1f81498b0743f4ad}{void {\bfseries pop\-All} ()}\label{classStringstack_a787094ae6c979c8d1f81498b0743f4ad}
-
+std\-::string \hyperlink{classStringstack_aaf7895e4f440740cc8170980c1140be3}{recall\-String} ()
 \item 
-\hypertarget{classStringstack_a867ab3e162e7ae1012d105b8a210df50}{void {\bfseries pop\-All\-Speech} ()}\label{classStringstack_a867ab3e162e7ae1012d105b8a210df50}
-
+void \hyperlink{classStringstack_a787094ae6c979c8d1f81498b0743f4ad}{pop\-All} ()
 \item 
-\hypertarget{classStringstack_afe0023a8e89792617fd595d400571faa}{bool {\bfseries is\-Finished} ()}\label{classStringstack_afe0023a8e89792617fd595d400571faa}
-
+void \hyperlink{classStringstack_a867ab3e162e7ae1012d105b8a210df50}{pop\-All\-Speech} ()
 \item 
-\hypertarget{classStringstack_a97dbddf508815857bf97c7310b70c913}{std\-::string {\bfseries get\-Arg} ()}\label{classStringstack_a97dbddf508815857bf97c7310b70c913}
-
+\hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} \hyperlink{classStringstack_afe0023a8e89792617fd595d400571faa}{is\-Finished} ()
 \item 
-\hypertarget{classStringstack_a246ba7090b700205b9e8321902fa6e5c}{const char $\ast$ {\bfseries get\-C\-Arg} ()}\label{classStringstack_a246ba7090b700205b9e8321902fa6e5c}
-
+std\-::string \hyperlink{classStringstack_a97dbddf508815857bf97c7310b70c913}{get\-Arg} ()
 \item 
-\hypertarget{classStringstack_aaeea1c99e035be5237e18477f5a00afd}{const char $\ast$ {\bfseries get\-C\-Arg} (const std\-::string input)}\label{classStringstack_aaeea1c99e035be5237e18477f5a00afd}
-
+const char $\ast$ \hyperlink{classStringstack_a246ba7090b700205b9e8321902fa6e5c}{get\-C\-Arg} ()
+\item 
+const char $\ast$ \hyperlink{classStringstack_aaeea1c99e035be5237e18477f5a00afd}{get\-C\-Arg} (const std\-::string input)
 \end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classStringstack_a3a92a82a838b77bedc268372e8fe7a41}{static bool {\bfseries compare} (const std\-::string compare, const std\-::string compare2)}\label{classStringstack_a3a92a82a838b77bedc268372e8fe7a41}
-
+static \hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} \hyperlink{classStringstack_a3a92a82a838b77bedc268372e8fe7a41}{compare} (const std\-::string compare, const std\-::string compare2)
 \item 
-\hypertarget{classStringstack_a8d8758c37734f6f45d6f5177dcc1a922}{static bool {\bfseries compare} (const char $\ast$compare, const char $\ast$compare2)}\label{classStringstack_a8d8758c37734f6f45d6f5177dcc1a922}
-
+static \hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} \hyperlink{classStringstack_a8d8758c37734f6f45d6f5177dcc1a922}{compare} (const char $\ast$compare, const char $\ast$compare2)
 \item 
-\hypertarget{classStringstack_ad7a1dcd59e92618fc6a52bba41e5854c}{static std\-::string {\bfseries trim} (std\-::string \&input)}\label{classStringstack_ad7a1dcd59e92618fc6a52bba41e5854c}
-
+static std\-::string \hyperlink{classStringstack_ad7a1dcd59e92618fc6a52bba41e5854c}{trim} (std\-::string \&input)
 \end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classStringstack_afab20605ad4777f27403444335a958a6}{\index{Stringstack@{Stringstack}!Stringstack@{Stringstack}}
+\index{Stringstack@{Stringstack}!Stringstack@{Stringstack}}
+\subsubsection[{Stringstack}]{\setlength{\rightskip}{0pt plus 5cm}Stringstack\-::\-Stringstack (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classStringstack_afab20605ad4777f27403444335a958a6}
+\hypertarget{classStringstack_aad1e45b6c7f4992135b1eff99c4fb96b}{\index{Stringstack@{Stringstack}!Stringstack@{Stringstack}}
+\index{Stringstack@{Stringstack}!Stringstack@{Stringstack}}
+\subsubsection[{Stringstack}]{\setlength{\rightskip}{0pt plus 5cm}Stringstack\-::\-Stringstack (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{input}
+\end{DoxyParamCaption}
+)}}\label{classStringstack_aad1e45b6c7f4992135b1eff99c4fb96b}
+\hypertarget{classStringstack_a6951276915a18f6581fa2fe1f233130f}{\index{Stringstack@{Stringstack}!Stringstack@{Stringstack}}
+\index{Stringstack@{Stringstack}!Stringstack@{Stringstack}}
+\subsubsection[{Stringstack}]{\setlength{\rightskip}{0pt plus 5cm}Stringstack\-::\-Stringstack (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{input}
+\end{DoxyParamCaption}
+)}}\label{classStringstack_a6951276915a18f6581fa2fe1f233130f}
+\hypertarget{classStringstack_a340cb8b0e983570d65548a6c49736569}{\index{Stringstack@{Stringstack}!Stringstack@{Stringstack}}
+\index{Stringstack@{Stringstack}!Stringstack@{Stringstack}}
+\subsubsection[{Stringstack}]{\setlength{\rightskip}{0pt plus 5cm}Stringstack\-::\-Stringstack (
+\begin{DoxyParamCaption}
+\item[{std\-::istream \&}]{input}
+\end{DoxyParamCaption}
+)}}\label{classStringstack_a340cb8b0e983570d65548a6c49736569}
+\hypertarget{classStringstack_a964c8db56fa0bc1337fbde2c11456fdc}{\index{Stringstack@{Stringstack}!Stringstack@{Stringstack}}
+\index{Stringstack@{Stringstack}!Stringstack@{Stringstack}}
+\subsubsection[{Stringstack}]{\setlength{\rightskip}{0pt plus 5cm}Stringstack\-::\-Stringstack (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{input, }
+\item[{{\bf bool}}]{remove\-Spaces}
+\end{DoxyParamCaption}
+)}}\label{classStringstack_a964c8db56fa0bc1337fbde2c11456fdc}
+\hypertarget{classStringstack_af26bb77483c372e9c27d145e1cfe4f8d}{\index{Stringstack@{Stringstack}!Stringstack@{Stringstack}}
+\index{Stringstack@{Stringstack}!Stringstack@{Stringstack}}
+\subsubsection[{Stringstack}]{\setlength{\rightskip}{0pt plus 5cm}Stringstack\-::\-Stringstack (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{input, }
+\item[{{\bf bool}}]{remove\-Spaces}
+\end{DoxyParamCaption}
+)}}\label{classStringstack_af26bb77483c372e9c27d145e1cfe4f8d}
+\hypertarget{classStringstack_a60d383777a7789d2a3d7f6b901a755da}{\index{Stringstack@{Stringstack}!Stringstack@{Stringstack}}
+\index{Stringstack@{Stringstack}!Stringstack@{Stringstack}}
+\subsubsection[{Stringstack}]{\setlength{\rightskip}{0pt plus 5cm}Stringstack\-::\-Stringstack (
+\begin{DoxyParamCaption}
+\item[{std\-::istream \&}]{input, }
+\item[{{\bf bool}}]{remove\-Spaces}
+\end{DoxyParamCaption}
+)}}\label{classStringstack_a60d383777a7789d2a3d7f6b901a755da}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classStringstack_a807cfc6a9e73c3614e1ccec547721092}{\index{Stringstack@{Stringstack}!arg\-Batch\-Count@{arg\-Batch\-Count}}
+\index{arg\-Batch\-Count@{arg\-Batch\-Count}!Stringstack@{Stringstack}}
+\subsubsection[{arg\-Batch\-Count}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ std\-::pair$<$ std\-::string, int $>$ $>$ Stringstack\-::arg\-Batch\-Count (
+\begin{DoxyParamCaption}
+\item[{const std\-::vector$<$ std\-::string $>$ \&}]{strings}
+\end{DoxyParamCaption}
+)}}\label{classStringstack_a807cfc6a9e73c3614e1ccec547721092}
+\hypertarget{classStringstack_a6e9d7a9a8909e5699f935575bf15fb5c}{\index{Stringstack@{Stringstack}!arg\-Batch\-Find@{arg\-Batch\-Find}}
+\index{arg\-Batch\-Find@{arg\-Batch\-Find}!Stringstack@{Stringstack}}
+\subsubsection[{arg\-Batch\-Find}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ std\-::string $>$ Stringstack\-::arg\-Batch\-Find (
+\begin{DoxyParamCaption}
+\item[{const std\-::vector$<$ std\-::string $>$ \&}]{strings}
+\end{DoxyParamCaption}
+)}}\label{classStringstack_a6e9d7a9a8909e5699f935575bf15fb5c}
+\hypertarget{classStringstack_ab3b7b4445b0ea898feaea34657e00c92}{\index{Stringstack@{Stringstack}!arg\-Count@{arg\-Count}}
+\index{arg\-Count@{arg\-Count}!Stringstack@{Stringstack}}
+\subsubsection[{arg\-Count}]{\setlength{\rightskip}{0pt plus 5cm}int Stringstack\-::arg\-Count (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{specifier}
+\end{DoxyParamCaption}
+)}}\label{classStringstack_ab3b7b4445b0ea898feaea34657e00c92}
+\hypertarget{classStringstack_a73332f209b954e23d6486a7439a1d74a}{\index{Stringstack@{Stringstack}!arg\-Replace@{arg\-Replace}}
+\index{arg\-Replace@{arg\-Replace}!Stringstack@{Stringstack}}
+\subsubsection[{arg\-Replace}]{\setlength{\rightskip}{0pt plus 5cm}void Stringstack\-::arg\-Replace (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{specifier, }
+\item[{std\-::string}]{replacement}
+\end{DoxyParamCaption}
+)}}\label{classStringstack_a73332f209b954e23d6486a7439a1d74a}
+\hypertarget{classStringstack_af30cd5b798f448c0d4f73b013ab62eb7}{\index{Stringstack@{Stringstack}!arg\-Replace@{arg\-Replace}}
+\index{arg\-Replace@{arg\-Replace}!Stringstack@{Stringstack}}
+\subsubsection[{arg\-Replace}]{\setlength{\rightskip}{0pt plus 5cm}void Stringstack\-::arg\-Replace (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{specifier, }
+\item[{std\-::string}]{replacement, }
+\item[{{\bf bool}}]{replace\-All, }
+\item[{{\bf bool}}]{replace\-Reverse\-Order}
+\end{DoxyParamCaption}
+)}}\label{classStringstack_af30cd5b798f448c0d4f73b013ab62eb7}
+\hypertarget{classStringstack_a405bd0c49154f672b01474697a2dac45}{\index{Stringstack@{Stringstack}!arg\-Replace\-Once@{arg\-Replace\-Once}}
+\index{arg\-Replace\-Once@{arg\-Replace\-Once}!Stringstack@{Stringstack}}
+\subsubsection[{arg\-Replace\-Once}]{\setlength{\rightskip}{0pt plus 5cm}void Stringstack\-::arg\-Replace\-Once (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{specifier, }
+\item[{std\-::string}]{replacement}
+\end{DoxyParamCaption}
+)}}\label{classStringstack_a405bd0c49154f672b01474697a2dac45}
+\hypertarget{classStringstack_aa1082f1a7d5d0669b2249dae76ac3a06}{\index{Stringstack@{Stringstack}!arg\-Replace\-Once@{arg\-Replace\-Once}}
+\index{arg\-Replace\-Once@{arg\-Replace\-Once}!Stringstack@{Stringstack}}
+\subsubsection[{arg\-Replace\-Once}]{\setlength{\rightskip}{0pt plus 5cm}void Stringstack\-::arg\-Replace\-Once (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{specifier, }
+\item[{std\-::string}]{replacement, }
+\item[{{\bf bool}}]{replace\-Reverse\-Order}
+\end{DoxyParamCaption}
+)}}\label{classStringstack_aa1082f1a7d5d0669b2249dae76ac3a06}
+\hypertarget{classStringstack_a3a92a82a838b77bedc268372e8fe7a41}{\index{Stringstack@{Stringstack}!compare@{compare}}
+\index{compare@{compare}!Stringstack@{Stringstack}}
+\subsubsection[{compare}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf bool} Stringstack\-::compare (
+\begin{DoxyParamCaption}
+\item[{const std\-::string}]{compare, }
+\item[{const std\-::string}]{compare2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classStringstack_a3a92a82a838b77bedc268372e8fe7a41}
+\hypertarget{classStringstack_a8d8758c37734f6f45d6f5177dcc1a922}{\index{Stringstack@{Stringstack}!compare@{compare}}
+\index{compare@{compare}!Stringstack@{Stringstack}}
+\subsubsection[{compare}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf bool} Stringstack\-::compare (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{compare, }
+\item[{const char $\ast$}]{compare2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classStringstack_a8d8758c37734f6f45d6f5177dcc1a922}
+\hypertarget{classStringstack_ab657ed4278c068f32715c8b0b4d03312}{\index{Stringstack@{Stringstack}!find@{find}}
+\index{find@{find}!Stringstack@{Stringstack}}
+\subsubsection[{find}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Stringstack\-::find (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{specifier}
+\end{DoxyParamCaption}
+)}}\label{classStringstack_ab657ed4278c068f32715c8b0b4d03312}
+\hypertarget{classStringstack_a71b03b6b0c5d15074abde46944d71864}{\index{Stringstack@{Stringstack}!find\-Pop@{find\-Pop}}
+\index{find\-Pop@{find\-Pop}!Stringstack@{Stringstack}}
+\subsubsection[{find\-Pop}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Stringstack\-::find\-Pop (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{first\-Delimit, }
+\item[{std\-::string}]{second\-Delimit}
+\end{DoxyParamCaption}
+)}}\label{classStringstack_a71b03b6b0c5d15074abde46944d71864}
+\hypertarget{classStringstack_ad378b6dd8a9d55605d3c17b452fd5dda}{\index{Stringstack@{Stringstack}!find\-Pop@{find\-Pop}}
+\index{find\-Pop@{find\-Pop}!Stringstack@{Stringstack}}
+\subsubsection[{find\-Pop}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Stringstack\-::find\-Pop (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{first\-Delimit, }
+\item[{std\-::string}]{second\-Delimit, }
+\item[{{\bf bool}}]{erase\-Delimits}
+\end{DoxyParamCaption}
+)}}\label{classStringstack_ad378b6dd8a9d55605d3c17b452fd5dda}
+\hypertarget{classStringstack_a97dbddf508815857bf97c7310b70c913}{\index{Stringstack@{Stringstack}!get\-Arg@{get\-Arg}}
+\index{get\-Arg@{get\-Arg}!Stringstack@{Stringstack}}
+\subsubsection[{get\-Arg}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Stringstack\-::get\-Arg (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classStringstack_a97dbddf508815857bf97c7310b70c913}
+\hypertarget{classStringstack_a246ba7090b700205b9e8321902fa6e5c}{\index{Stringstack@{Stringstack}!get\-C\-Arg@{get\-C\-Arg}}
+\index{get\-C\-Arg@{get\-C\-Arg}!Stringstack@{Stringstack}}
+\subsubsection[{get\-C\-Arg}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ Stringstack\-::get\-C\-Arg (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classStringstack_a246ba7090b700205b9e8321902fa6e5c}
+\hypertarget{classStringstack_aaeea1c99e035be5237e18477f5a00afd}{\index{Stringstack@{Stringstack}!get\-C\-Arg@{get\-C\-Arg}}
+\index{get\-C\-Arg@{get\-C\-Arg}!Stringstack@{Stringstack}}
+\subsubsection[{get\-C\-Arg}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ Stringstack\-::get\-C\-Arg (
+\begin{DoxyParamCaption}
+\item[{const std\-::string}]{input}
+\end{DoxyParamCaption}
+)}}\label{classStringstack_aaeea1c99e035be5237e18477f5a00afd}
+\hypertarget{classStringstack_afe0023a8e89792617fd595d400571faa}{\index{Stringstack@{Stringstack}!is\-Finished@{is\-Finished}}
+\index{is\-Finished@{is\-Finished}!Stringstack@{Stringstack}}
+\subsubsection[{is\-Finished}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Stringstack\-::is\-Finished (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classStringstack_afe0023a8e89792617fd595d400571faa}
+\hypertarget{classStringstack_a6451d4ae727082e186bc1e823787cfcd}{\index{Stringstack@{Stringstack}!last@{last}}
+\index{last@{last}!Stringstack@{Stringstack}}
+\subsubsection[{last}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Stringstack\-::last (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classStringstack_a6451d4ae727082e186bc1e823787cfcd}
+\hypertarget{classStringstack_a2197bda2738d2f687f4b90575b1bf7e1}{\index{Stringstack@{Stringstack}!operator=@{operator=}}
+\index{operator=@{operator=}!Stringstack@{Stringstack}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Stringstack} \& Stringstack\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{new\-String}
+\end{DoxyParamCaption}
+)}}\label{classStringstack_a2197bda2738d2f687f4b90575b1bf7e1}
+\hypertarget{classStringstack_ab46ad119cb84606eaed0654bde436542}{\index{Stringstack@{Stringstack}!operator=@{operator=}}
+\index{operator=@{operator=}!Stringstack@{Stringstack}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Stringstack} \& Stringstack\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{new\-String}
+\end{DoxyParamCaption}
+)}}\label{classStringstack_ab46ad119cb84606eaed0654bde436542}
+\hypertarget{classStringstack_a8afc987bc55cf92fcf9eadcbb8c978b8}{\index{Stringstack@{Stringstack}!operator==@{operator==}}
+\index{operator==@{operator==}!Stringstack@{Stringstack}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} Stringstack\-::operator== (
+\begin{DoxyParamCaption}
+\item[{const std\-::string}]{compare}
+\end{DoxyParamCaption}
+) const}}\label{classStringstack_a8afc987bc55cf92fcf9eadcbb8c978b8}
+\hypertarget{classStringstack_a53a36a2da20ea60f2c9df67506f3748b}{\index{Stringstack@{Stringstack}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!Stringstack@{Stringstack}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string \& Stringstack\-::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{const int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classStringstack_a53a36a2da20ea60f2c9df67506f3748b}
+\hypertarget{classStringstack_a8a9777f29361b6e493108a234f89b81d}{\index{Stringstack@{Stringstack}!pop@{pop}}
+\index{pop@{pop}!Stringstack@{Stringstack}}
+\subsubsection[{pop}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Stringstack\-::pop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classStringstack_a8a9777f29361b6e493108a234f89b81d}
+\hypertarget{classStringstack_a991eff1393a30e44e8b327501c10c417}{\index{Stringstack@{Stringstack}!pop@{pop}}
+\index{pop@{pop}!Stringstack@{Stringstack}}
+\subsubsection[{pop}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Stringstack\-::pop (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{first\-Delimit, }
+\item[{std\-::string}]{second\-Delimit}
+\end{DoxyParamCaption}
+)}}\label{classStringstack_a991eff1393a30e44e8b327501c10c417}
+\hypertarget{classStringstack_afa99c109a0b5c1632a6402780dbcc97d}{\index{Stringstack@{Stringstack}!pop@{pop}}
+\index{pop@{pop}!Stringstack@{Stringstack}}
+\subsubsection[{pop}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Stringstack\-::pop (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{first\-Delimit, }
+\item[{std\-::string}]{second\-Delimit, }
+\item[{{\bf bool}}]{erase\-Delimits, }
+\item[{{\bf bool}}]{delimits\-Match}
+\end{DoxyParamCaption}
+)}}\label{classStringstack_afa99c109a0b5c1632a6402780dbcc97d}
+\hypertarget{classStringstack_a787094ae6c979c8d1f81498b0743f4ad}{\index{Stringstack@{Stringstack}!pop\-All@{pop\-All}}
+\index{pop\-All@{pop\-All}!Stringstack@{Stringstack}}
+\subsubsection[{pop\-All}]{\setlength{\rightskip}{0pt plus 5cm}void Stringstack\-::pop\-All (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classStringstack_a787094ae6c979c8d1f81498b0743f4ad}
+\hypertarget{classStringstack_a867ab3e162e7ae1012d105b8a210df50}{\index{Stringstack@{Stringstack}!pop\-All\-Speech@{pop\-All\-Speech}}
+\index{pop\-All\-Speech@{pop\-All\-Speech}!Stringstack@{Stringstack}}
+\subsubsection[{pop\-All\-Speech}]{\setlength{\rightskip}{0pt plus 5cm}void Stringstack\-::pop\-All\-Speech (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classStringstack_a867ab3e162e7ae1012d105b8a210df50}
+\hypertarget{classStringstack_ab1db05c3fe40c98493b6e02134eb8d64}{\index{Stringstack@{Stringstack}!pop\-Speech@{pop\-Speech}}
+\index{pop\-Speech@{pop\-Speech}!Stringstack@{Stringstack}}
+\subsubsection[{pop\-Speech}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Stringstack\-::pop\-Speech (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classStringstack_ab1db05c3fe40c98493b6e02134eb8d64}
+\hypertarget{classStringstack_afd03c9d391bfd931ffb35e544230b402}{\index{Stringstack@{Stringstack}!pop\-Until@{pop\-Until}}
+\index{pop\-Until@{pop\-Until}!Stringstack@{Stringstack}}
+\subsubsection[{pop\-Until}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Stringstack\-::pop\-Until (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{delimit}
+\end{DoxyParamCaption}
+)}}\label{classStringstack_afd03c9d391bfd931ffb35e544230b402}
+\hypertarget{classStringstack_aaad2f5dc1df9ef88da1c2e2fc676f5dd}{\index{Stringstack@{Stringstack}!pop\-Until@{pop\-Until}}
+\index{pop\-Until@{pop\-Until}!Stringstack@{Stringstack}}
+\subsubsection[{pop\-Until}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Stringstack\-::pop\-Until (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{delimit, }
+\item[{{\bf bool}}]{erase\-Delimit}
+\end{DoxyParamCaption}
+)}}\label{classStringstack_aaad2f5dc1df9ef88da1c2e2fc676f5dd}
+\hypertarget{classStringstack_a1ffee5cf0fac3be196cb6a2da5248c68}{\index{Stringstack@{Stringstack}!recall@{recall}}
+\index{recall@{recall}!Stringstack@{Stringstack}}
+\subsubsection[{recall}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Stringstack\-::recall (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{index\-Arg}
+\end{DoxyParamCaption}
+)}}\label{classStringstack_a1ffee5cf0fac3be196cb6a2da5248c68}
+\hypertarget{classStringstack_aac6c5200c1210f181f9c84885e85dc75}{\index{Stringstack@{Stringstack}!recall\-Partial\-String@{recall\-Partial\-String}}
+\index{recall\-Partial\-String@{recall\-Partial\-String}!Stringstack@{Stringstack}}
+\subsubsection[{recall\-Partial\-String}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Stringstack\-::recall\-Partial\-String (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{begin}
+\end{DoxyParamCaption}
+)}}\label{classStringstack_aac6c5200c1210f181f9c84885e85dc75}
+\hypertarget{classStringstack_abd25b981a984a4bfc23eaff79fa6006e}{\index{Stringstack@{Stringstack}!recall\-Partial\-String@{recall\-Partial\-String}}
+\index{recall\-Partial\-String@{recall\-Partial\-String}!Stringstack@{Stringstack}}
+\subsubsection[{recall\-Partial\-String}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Stringstack\-::recall\-Partial\-String (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{begin, }
+\item[{size\-\_\-t}]{arguments}
+\end{DoxyParamCaption}
+)}}\label{classStringstack_abd25b981a984a4bfc23eaff79fa6006e}
+\hypertarget{classStringstack_aaf7895e4f440740cc8170980c1140be3}{\index{Stringstack@{Stringstack}!recall\-String@{recall\-String}}
+\index{recall\-String@{recall\-String}!Stringstack@{Stringstack}}
+\subsubsection[{recall\-String}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Stringstack\-::recall\-String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classStringstack_aaf7895e4f440740cc8170980c1140be3}
+\hypertarget{classStringstack_a3ba9b3e887c482b2dab3fe3f4010fa2d}{\index{Stringstack@{Stringstack}!to\-Double@{to\-Double}}
+\index{to\-Double@{to\-Double}!Stringstack@{Stringstack}}
+\subsubsection[{to\-Double}]{\setlength{\rightskip}{0pt plus 5cm}double Stringstack\-::to\-Double (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classStringstack_a3ba9b3e887c482b2dab3fe3f4010fa2d}
+\hypertarget{classStringstack_a743b4fca4f2dde9b593cc4d4cb8d3a3d}{\index{Stringstack@{Stringstack}!to\-Double@{to\-Double}}
+\index{to\-Double@{to\-Double}!Stringstack@{Stringstack}}
+\subsubsection[{to\-Double}]{\setlength{\rightskip}{0pt plus 5cm}double Stringstack\-::to\-Double (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{double\-String}
+\end{DoxyParamCaption}
+)}}\label{classStringstack_a743b4fca4f2dde9b593cc4d4cb8d3a3d}
+\hypertarget{classStringstack_a3b4ee6ffffd6b0686854e20d4c126c8d}{\index{Stringstack@{Stringstack}!to\-Double@{to\-Double}}
+\index{to\-Double@{to\-Double}!Stringstack@{Stringstack}}
+\subsubsection[{to\-Double}]{\setlength{\rightskip}{0pt plus 5cm}double Stringstack\-::to\-Double (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{index\-Arg}
+\end{DoxyParamCaption}
+)}}\label{classStringstack_a3b4ee6ffffd6b0686854e20d4c126c8d}
+\hypertarget{classStringstack_a8e8b15949b4e1a48c0b64f7631a17e5b}{\index{Stringstack@{Stringstack}!to\-Int@{to\-Int}}
+\index{to\-Int@{to\-Int}!Stringstack@{Stringstack}}
+\subsubsection[{to\-Int}]{\setlength{\rightskip}{0pt plus 5cm}int Stringstack\-::to\-Int (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classStringstack_a8e8b15949b4e1a48c0b64f7631a17e5b}
+\hypertarget{classStringstack_a225f2ec993cdc23513eddc64eec914b8}{\index{Stringstack@{Stringstack}!to\-Int@{to\-Int}}
+\index{to\-Int@{to\-Int}!Stringstack@{Stringstack}}
+\subsubsection[{to\-Int}]{\setlength{\rightskip}{0pt plus 5cm}int Stringstack\-::to\-Int (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{integer\-String}
+\end{DoxyParamCaption}
+)}}\label{classStringstack_a225f2ec993cdc23513eddc64eec914b8}
+\hypertarget{classStringstack_a2bf7ea8186405b71cf4c401bd9593708}{\index{Stringstack@{Stringstack}!to\-Int@{to\-Int}}
+\index{to\-Int@{to\-Int}!Stringstack@{Stringstack}}
+\subsubsection[{to\-Int}]{\setlength{\rightskip}{0pt plus 5cm}int Stringstack\-::to\-Int (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{index\-Arg}
+\end{DoxyParamCaption}
+)}}\label{classStringstack_a2bf7ea8186405b71cf4c401bd9593708}
+\hypertarget{classStringstack_ad7a1dcd59e92618fc6a52bba41e5854c}{\index{Stringstack@{Stringstack}!trim@{trim}}
+\index{trim@{trim}!Stringstack@{Stringstack}}
+\subsubsection[{trim}]{\setlength{\rightskip}{0pt plus 5cm}static std\-::string Stringstack\-::trim (
+\begin{DoxyParamCaption}
+\item[{std\-::string \&}]{input}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classStringstack_ad7a1dcd59e92618fc6a52bba41e5854c}
 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-stringstack.\-h\item 
-stringstack.\-cpp\end{DoxyCompactItemize}
+\hyperlink{stringstack_8h}{stringstack.\-h}\item 
+\hyperlink{stringstack_8cpp}{stringstack.\-cpp}\end{DoxyCompactItemize}

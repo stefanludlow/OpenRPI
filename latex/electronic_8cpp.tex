@@ -1,0 +1,118 @@
+\hypertarget{electronic_8cpp}{\section{electronic.\-cpp File Reference}
+\label{electronic_8cpp}\index{electronic.\-cpp@{electronic.\-cpp}}
+}
+{\ttfamily \#include $<$time.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$ctype.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}server.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}structs.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}net\-\_\-link.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}account.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}protos.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}decl.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}group.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utility.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}constants.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}object\-\_\-damage.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{electronic_8cpp_ab09424b67419aac350a2fb72b5631ccf}{is\-\_\-electric} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj)
+\item 
+int \hyperlink{electronic_8cpp_a1edc35d9ca32894738bd0aae06017980}{electrical\-\_\-water\-\_\-damage} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj, int mode)
+\item 
+void \hyperlink{electronic_8cpp_a38f0952c8c335f3dc6255006220b65ce}{do\-\_\-shine} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int mode)
+\item 
+\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{electronic_8cpp_a956b01df25a0690650246c8223ca162b}{robot\-\_\-deconstructor} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$robot, \hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} death)
+\item 
+\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{electronic_8cpp_a70ab6c642aabe71597349b6a40291f5b}{robot\-\_\-constructor} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$robot)
+\item 
+void \hyperlink{electronic_8cpp_ab8e4429ea90ac2b64d062f86f298e722}{robot\-\_\-switch\-\_\-on} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj, int mode)
+\item 
+void \hyperlink{electronic_8cpp_ad7bced8f00e064a25f12bc97ab9bde5f}{electronic\-\_\-hourly} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj)
+\item 
+void \hyperlink{electronic_8cpp_a211938664dc0df5e7ad856eb46bc8ed5}{modify\-\_\-electric} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj)
+\item 
+void \hyperlink{electronic_8cpp_aa94fda7a9a76d354f09ac8f16ef1504d}{do\-\_\-deactivate} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{electronic_8cpp_aa94fda7a9a76d354f09ac8f16ef1504d}{\index{electronic.\-cpp@{electronic.\-cpp}!do\-\_\-deactivate@{do\-\_\-deactivate}}
+\index{do\-\_\-deactivate@{do\-\_\-deactivate}!electronic.cpp@{electronic.\-cpp}}
+\subsubsection[{do\-\_\-deactivate}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-deactivate (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{electronic_8cpp_aa94fda7a9a76d354f09ac8f16ef1504d}
+\hypertarget{electronic_8cpp_a38f0952c8c335f3dc6255006220b65ce}{\index{electronic.\-cpp@{electronic.\-cpp}!do\-\_\-shine@{do\-\_\-shine}}
+\index{do\-\_\-shine@{do\-\_\-shine}!electronic.cpp@{electronic.\-cpp}}
+\subsubsection[{do\-\_\-shine}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-shine (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{mode}
+\end{DoxyParamCaption}
+)}}\label{electronic_8cpp_a38f0952c8c335f3dc6255006220b65ce}
+\hypertarget{electronic_8cpp_a1edc35d9ca32894738bd0aae06017980}{\index{electronic.\-cpp@{electronic.\-cpp}!electrical\-\_\-water\-\_\-damage@{electrical\-\_\-water\-\_\-damage}}
+\index{electrical\-\_\-water\-\_\-damage@{electrical\-\_\-water\-\_\-damage}!electronic.cpp@{electronic.\-cpp}}
+\subsubsection[{electrical\-\_\-water\-\_\-damage}]{\setlength{\rightskip}{0pt plus 5cm}int electrical\-\_\-water\-\_\-damage (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj, }
+\item[{int}]{mode}
+\end{DoxyParamCaption}
+)}}\label{electronic_8cpp_a1edc35d9ca32894738bd0aae06017980}
+\hypertarget{electronic_8cpp_ad7bced8f00e064a25f12bc97ab9bde5f}{\index{electronic.\-cpp@{electronic.\-cpp}!electronic\-\_\-hourly@{electronic\-\_\-hourly}}
+\index{electronic\-\_\-hourly@{electronic\-\_\-hourly}!electronic.cpp@{electronic.\-cpp}}
+\subsubsection[{electronic\-\_\-hourly}]{\setlength{\rightskip}{0pt plus 5cm}void electronic\-\_\-hourly (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj}
+\end{DoxyParamCaption}
+)}}\label{electronic_8cpp_ad7bced8f00e064a25f12bc97ab9bde5f}
+\hypertarget{electronic_8cpp_ab09424b67419aac350a2fb72b5631ccf}{\index{electronic.\-cpp@{electronic.\-cpp}!is\-\_\-electric@{is\-\_\-electric}}
+\index{is\-\_\-electric@{is\-\_\-electric}!electronic.cpp@{electronic.\-cpp}}
+\subsubsection[{is\-\_\-electric}]{\setlength{\rightskip}{0pt plus 5cm}int is\-\_\-electric (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj}
+\end{DoxyParamCaption}
+)}}\label{electronic_8cpp_ab09424b67419aac350a2fb72b5631ccf}
+\hypertarget{electronic_8cpp_a211938664dc0df5e7ad856eb46bc8ed5}{\index{electronic.\-cpp@{electronic.\-cpp}!modify\-\_\-electric@{modify\-\_\-electric}}
+\index{modify\-\_\-electric@{modify\-\_\-electric}!electronic.cpp@{electronic.\-cpp}}
+\subsubsection[{modify\-\_\-electric}]{\setlength{\rightskip}{0pt plus 5cm}void modify\-\_\-electric (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj}
+\end{DoxyParamCaption}
+)}}\label{electronic_8cpp_a211938664dc0df5e7ad856eb46bc8ed5}
+\hypertarget{electronic_8cpp_a70ab6c642aabe71597349b6a40291f5b}{\index{electronic.\-cpp@{electronic.\-cpp}!robot\-\_\-constructor@{robot\-\_\-constructor}}
+\index{robot\-\_\-constructor@{robot\-\_\-constructor}!electronic.cpp@{electronic.\-cpp}}
+\subsubsection[{robot\-\_\-constructor}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A}$\ast$ robot\-\_\-constructor (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{robot}
+\end{DoxyParamCaption}
+)}}\label{electronic_8cpp_a70ab6c642aabe71597349b6a40291f5b}
+\hypertarget{electronic_8cpp_a956b01df25a0690650246c8223ca162b}{\index{electronic.\-cpp@{electronic.\-cpp}!robot\-\_\-deconstructor@{robot\-\_\-deconstructor}}
+\index{robot\-\_\-deconstructor@{robot\-\_\-deconstructor}!electronic.cpp@{electronic.\-cpp}}
+\subsubsection[{robot\-\_\-deconstructor}]{\setlength{\rightskip}{0pt plus 5cm}{\bf O\-B\-J\-\_\-\-D\-A\-T\-A}$\ast$ robot\-\_\-deconstructor (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{robot, }
+\item[{{\bf bool}}]{death}
+\end{DoxyParamCaption}
+)}}\label{electronic_8cpp_a956b01df25a0690650246c8223ca162b}
+\hypertarget{electronic_8cpp_ab8e4429ea90ac2b64d062f86f298e722}{\index{electronic.\-cpp@{electronic.\-cpp}!robot\-\_\-switch\-\_\-on@{robot\-\_\-switch\-\_\-on}}
+\index{robot\-\_\-switch\-\_\-on@{robot\-\_\-switch\-\_\-on}!electronic.cpp@{electronic.\-cpp}}
+\subsubsection[{robot\-\_\-switch\-\_\-on}]{\setlength{\rightskip}{0pt plus 5cm}void robot\-\_\-switch\-\_\-on (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj, }
+\item[{int}]{mode}
+\end{DoxyParamCaption}
+)}}\label{electronic_8cpp_ab8e4429ea90ac2b64d062f86f298e722}

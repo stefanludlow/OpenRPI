@@ -1,0 +1,1823 @@
+\hypertarget{roomprogs_8cpp}{\section{roomprogs.\-cpp File Reference}
+\label{roomprogs_8cpp}\index{roomprogs.\-cpp@{roomprogs.\-cpp}}
+}
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$sstream$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$ctype.\-h$>$}\\*
+{\ttfamily \#include $<$math.\-h$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$exception$>$}\\*
+{\ttfamily \#include \char`\"{}server.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}structs.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}net\-\_\-link.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}protos.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utility.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}decl.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}clan.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}group.\-h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structroom__prog__var}{room\-\_\-prog\-\_\-var}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{roomprogs_8cpp_a032450e6fd79c8453df024ab08445bcf}{R\-P\-\_\-\-A\-T\-E\-C\-H\-O}~0
+\item 
+\#define \hyperlink{roomprogs_8cpp_affb4e19ed13c8c1318667cc4d8736e3d}{R\-P\-\_\-\-G\-I\-V\-E}~1
+\item 
+\#define \hyperlink{roomprogs_8cpp_aa00a0c12443fcbb7c3fa2893bf9d7b86}{R\-P\-\_\-\-T\-A\-K\-E}~2
+\item 
+\#define \hyperlink{roomprogs_8cpp_abb4be461436b367ad3e6ef4a1cc3703a}{R\-P\-\_\-\-T\-R\-A\-N\-S}~3
+\item 
+\#define \hyperlink{roomprogs_8cpp_a62b26e23fe55937f9b0e5f977f49822d}{R\-P\-\_\-\-L\-O\-A\-D}~4
+\item 
+\#define \hyperlink{roomprogs_8cpp_af0683398794a20ff7f634c2efa18902a}{R\-P\-\_\-\-F\-O\-R\-C\-E}~5
+\item 
+\#define \hyperlink{roomprogs_8cpp_ac55c25b7c3b6aac03711598c7c14cc15}{R\-P\-\_\-\-L\-I\-N\-K}~6
+\item 
+\#define \hyperlink{roomprogs_8cpp_ae52a84af4f207b94ccf76bf3476839ce}{R\-P\-\_\-\-E\-X\-I\-T}~7
+\item 
+\#define \hyperlink{roomprogs_8cpp_a76381addb05c2649a0645edd86577f89}{R\-P\-\_\-\-U\-N\-L\-O\-C\-K}~8
+\item 
+\#define \hyperlink{roomprogs_8cpp_aac802f15e2d1f4e5b3ce32950901d056}{R\-P\-\_\-\-A\-T\-L\-O\-O\-K}~9
+\item 
+\#define \hyperlink{roomprogs_8cpp_a076824ad21bd31687dfff1b9b04fba0e}{R\-P\-\_\-\-V\-S\-T\-R}~10
+\item 
+\#define \hyperlink{roomprogs_8cpp_a733b9f06a4af763874edb494fa216283}{R\-P\-\_\-\-O\-S\-T\-R}~11
+\item 
+\#define \hyperlink{roomprogs_8cpp_af91ad8b805cdb295ae8f7f0610ad4d9f}{R\-P\-\_\-\-U\-N\-L\-I\-N\-K}~12
+\item 
+\#define \hyperlink{roomprogs_8cpp_a3bbd208b26b0d060f8ca00597a78fec1}{R\-P\-\_\-\-U\-N\-E\-X\-I\-T}~13
+\item 
+\#define \hyperlink{roomprogs_8cpp_aad3ace7964ef45da03cb55521e048089}{R\-P\-\_\-\-P\-U\-T}~14
+\item 
+\#define \hyperlink{roomprogs_8cpp_a96bac0d63b3c19e59ac2a9d000b8a0ca}{R\-P\-\_\-\-G\-E\-T}~15
+\item 
+\#define \hyperlink{roomprogs_8cpp_a5adfe6b81a17a4d06a1d00149001475c}{R\-P\-\_\-\-L\-O\-C\-K}~16
+\item 
+\#define \hyperlink{roomprogs_8cpp_a6c984bf50b9fbf8bd484d9f56c27ccda}{R\-P\-\_\-\-G\-E\-T\-C\-A\-S\-H}~17
+\item 
+\#define \hyperlink{roomprogs_8cpp_a48fe3cbc0c77974c0e27d76812ae03f1}{R\-P\-\_\-\-G\-I\-V\-E\-C\-A\-S\-H}~18
+\item 
+\#define \hyperlink{roomprogs_8cpp_a78d55573d8991685581513f1c1d3f048}{R\-P\-\_\-\-L\-O\-A\-D\-M\-O\-B}~19
+\item 
+\#define \hyperlink{roomprogs_8cpp_a1d5f53401cee066c95f6ae686920afe0}{R\-P\-\_\-\-E\-X\-M\-O\-B}~20
+\item 
+\#define \hyperlink{roomprogs_8cpp_aae56010346c08953abd792a677ac5831}{R\-P\-\_\-\-I\-F}~21
+\item 
+\#define \hyperlink{roomprogs_8cpp_a1a7c4c807da1c0b12687c9ec73f5d021}{R\-P\-\_\-\-F\-I}~22
+\item 
+\#define \hyperlink{roomprogs_8cpp_af3df43d73ea66421673cb916cdf823e9}{R\-P\-\_\-\-E\-L\-S\-E}~23
+\item 
+\#define \hyperlink{roomprogs_8cpp_a19c40de2a7e088db2cead6d80e1d26e2}{R\-P\-\_\-\-R\-F\-T\-O\-G}~24
+\item 
+\#define \hyperlink{roomprogs_8cpp_a14d7563d8da0690deb226218191e3c19}{R\-P\-\_\-\-P\-A\-I\-N}~25
+\item 
+\#define \hyperlink{roomprogs_8cpp_ac9577047740a6f993837c70fe7c54172}{R\-P\-\_\-\-V\-B\-R}~26	/$\ast$ Force line break to char $\ast$/
+\item 
+\#define \hyperlink{roomprogs_8cpp_a1c4870a124d7af8dcc138b1d9304b8bd}{R\-P\-\_\-\-T\-R\-A\-N\-S\-M\-O\-B}~27
+\item 
+\#define \hyperlink{roomprogs_8cpp_a4a24807b774262eed1ff62ae10669f0c}{R\-P\-\_\-\-A\-T\-R\-E\-A\-D}~28
+\item 
+\#define \hyperlink{roomprogs_8cpp_adddd1331228be474a50c2414b0fffe5a}{R\-P\-\_\-\-H\-A\-L\-T}~29
+\item 
+\#define \hyperlink{roomprogs_8cpp_a889384f962c54d51e42ed364546d12e4}{R\-P\-\_\-\-P\-U\-R\-G\-E}~30
+\item 
+\#define \hyperlink{roomprogs_8cpp_ac8536f88ca65440439c00d09f0676b44}{R\-P\-\_\-\-L\-O\-A\-D\-\_\-\-C\-L\-O\-N\-E}~31
+\item 
+\#define \hyperlink{roomprogs_8cpp_ae0bf0a27e01304773a40e9fc82d1edec}{R\-P\-\_\-\-L\-O\-A\-D\-O\-B\-J}~32
+\item 
+\#define \hyperlink{roomprogs_8cpp_aea379f525a00bd9eaca220a015eb6b2b}{R\-P\-\_\-\-S\-T\-A\-Y\-P\-U\-T}~33	/$\ast$ flag a mob stayput $\ast$/
+\item 
+\#define \hyperlink{roomprogs_8cpp_a0462cf398dbe865d7be175e141cd93d0}{R\-P\-\_\-\-Z\-O\-N\-E\-\_\-\-E\-C\-H\-O}~34	/$\ast$ echo to a zone (indoor and/or outdoor) $\ast$/
+\item 
+\#define \hyperlink{roomprogs_8cpp_a0dd0fd823427018d524b372b7f5b6859}{R\-P\-\_\-\-A\-T\-W\-R\-I\-T\-E}~35	/$\ast$ leave a board message $\ast$/
+\item 
+\#define \hyperlink{roomprogs_8cpp_a5e4bb267196ccda827a89ab9a6603de3}{R\-P\-\_\-\-S\-Y\-S\-T\-E\-M}~36	/$\ast$ submit a system message $\ast$/
+\item 
+\#define \hyperlink{roomprogs_8cpp_aa65c47147673e3ffe4eb165ec0debc64}{R\-P\-\_\-\-C\-L\-A\-N\-\_\-\-E\-C\-H\-O}~37	/$\ast$ send a message to clan members $\ast$/
+\item 
+\#define \hyperlink{roomprogs_8cpp_a9c0502c156f79d9e426bf08b1f48faae}{R\-P\-\_\-\-T\-R\-A\-N\-S\-\_\-\-G\-R\-O\-U\-P}~38	/$\ast$ send a message to clan members $\ast$/
+\item 
+\#define \hyperlink{roomprogs_8cpp_a52b52abd94ca13861d38caecd39f92cb}{R\-P\-\_\-\-S\-E\-T}~39
+\item 
+\#define \hyperlink{roomprogs_8cpp_a48f2d778c6523b96088543ebae0ea1f2}{R\-P\-\_\-\-C\-R\-I\-M\-I\-N\-A\-L\-I\-Z\-E}~40      /$\ast$ \hyperlink{protos_8h_a3019ff3dc55e04af639c9a8d46bb3749}{criminalize} a person or room $\ast$/
+\item 
+\#define \hyperlink{roomprogs_8cpp_acd0b0d937230e1dd7902a2efdba1070b}{R\-P\-\_\-\-S\-T\-R\-I\-P}~41      /$\ast$ takes a person'\hyperlink{staff_8cpp_a1b3d0481a7741b1fed73df389c9990c6}{s} equipment and puts it all neatly in a bag $\ast$/
+\item 
+\#define \hyperlink{roomprogs_8cpp_ab584e9e26742ddeae1a5b911f2b27719}{R\-P\-\_\-\-C\-L\-A\-N}~42      /$\ast$ adds people to a clan at a certain rank $\ast$/
+\item 
+\#define \hyperlink{roomprogs_8cpp_ab60312e9604f2ca86633bbe2720c2563}{R\-P\-\_\-\-T\-A\-K\-E\-M\-O\-N\-E\-Y}~43 /$\ast$ Take money from a player'\hyperlink{staff_8cpp_a1b3d0481a7741b1fed73df389c9990c6}{s} inventory T\-B\-A\-: Take money from room too $\ast$/
+\item 
+\#define \hyperlink{roomprogs_8cpp_ade310e3e54bc46d87cc09abe4b1bb445}{R\-P\-\_\-\-D\-E\-L\-A\-Y}~44 /$\ast$ Delayed command just like scommand $\ast$/
+\item 
+\#define \hyperlink{roomprogs_8cpp_a52f11e0fc3527f94657643ec16d4ff45}{R\-P\-\_\-\-T\-E\-A\-C\-H}~45 /$\ast$ Teach character skill $\ast$/
+\item 
+\#define \hyperlink{roomprogs_8cpp_af1b204cd8b9dca9032a61d860a64054b}{R\-P\-\_\-\-D\-O\-I\-T\-A\-N\-Y\-W\-A\-Y}~46
+\item 
+\#define \hyperlink{roomprogs_8cpp_ac02047bfbb2c8930766f968a8f36d013}{R\-P\-\_\-\-D\-O\-O\-R}~47
+\item 
+\#define \hyperlink{roomprogs_8cpp_aa80dc26e7494c789471f8705a7beb1ed}{R\-P\-\_\-\-M\-A\-T\-H}~48
+\item 
+\#define \hyperlink{roomprogs_8cpp_a91b21c77883efeaa6470ece1265225a3}{R\-P\-\_\-\-N\-O\-O\-P}~49 /$\ast$ Do nothing -\/ i.\-e. for comments $\ast$/
+\item 
+\#define \hyperlink{roomprogs_8cpp_a92213664466a493930de224c4e3b3774}{R\-P\-\_\-\-T\-R\-A\-N\-S\-O\-B\-J}~50
+\item 
+\#define \hyperlink{roomprogs_8cpp_a7d6dcc0715a6343ff918a85d4709958a}{R\-P\-\_\-\-O\-B\-R}~51
+\item 
+\#define \hyperlink{roomprogs_8cpp_a5eec7d5361216fac0caa5c18e87bc58f}{R\-P\-\_\-\-T\-A\-L\-L\-Y}~52
+\item 
+\#define \hyperlink{roomprogs_8cpp_a6068d52536539fb27f3a9a8cad375f6c}{R\-P\-\_\-\-O\-B\-J\-V\-N\-U\-M}~53
+\item 
+\#define \hyperlink{roomprogs_8cpp_ad9c4ed1bc402cb88e732b36a1d9eeb45}{R\-P\-\_\-\-R\-A\-N\-D\-O\-M\-O\-B\-J}~54
+\item 
+\#define \hyperlink{roomprogs_8cpp_a0258bd4ddbe924ad0ede01731edd8895}{R\-P\-\_\-\-I\-N\-F\-O}~55
+\item 
+\#define \hyperlink{roomprogs_8cpp_add0db5da336f32e17215c5bb82aa0f20}{R\-P\-\_\-\-S\-E\-T\-V\-A\-L}~56
+\item 
+\#define \hyperlink{roomprogs_8cpp_a7a06488426258515a864f0e11deb524a}{R\-P\-\_\-\-C\-O\-N\-C\-A\-T}~57
+\item 
+\#define \hyperlink{roomprogs_8cpp_a5fe5adc55eedc6b3350cbdeb0d8cc192}{R\-P\-\_\-\-M\-F\-T\-O\-G}~58
+\item 
+\#define \hyperlink{roomprogs_8cpp_af3c6b90be93c6d8e90b3fe51377e825f}{R\-P\-\_\-\-N\-O\-O\-P2}~59
+\item 
+\#define \hyperlink{roomprogs_8cpp_a0c85d613cedb4289e15a9e5f4a42956f}{R\-P\-\_\-\-C\-O\-P\-P\-E\-R\-\_\-\-T\-O\-\_\-\-S\-H\-I\-L\-L\-I\-N\-G\-S}~60
+\item 
+\#define \hyperlink{roomprogs_8cpp_aa1af58cb7396ab1c60cca681b91abe6e}{R\-P\-\_\-\-M\-C\-O\-P\-Y}~61
+\item 
+\#define \hyperlink{roomprogs_8cpp_a58e96facd43c03e12e08df8aeb1266f5}{R\-P\-\_\-\-O\-W\-N\-E\-R}~62
+\item 
+\#define \hyperlink{roomprogs_8cpp_adb77d8e8482ba4d0f6f6df959f06d991}{R\-P\-\_\-\-S\-K\-I\-L\-L\-U\-S\-E}~63
+\item 
+\#define \hyperlink{roomprogs_8cpp_af7a6cbb43d5e715714718511dd4381b9}{R\-P\-\_\-\-R\-E\-N\-D}~64
+\item 
+\#define \hyperlink{roomprogs_8cpp_a7ba7982cd68b960898ef3bb048464435}{R\-P\-\_\-\-S\-T\-U\-N}~65
+\item 
+\#define \hyperlink{roomprogs_8cpp_af1bcaa954cb3bf7928e5b81a28a61ce0}{R\-P\-\_\-\-F\-A\-T\-I\-G\-U\-E}~66
+\item 
+\#define \hyperlink{roomprogs_8cpp_aaf1e8f2e833c909f7ad3caa173a90952}{R\-P\-\_\-\-H\-E\-A\-L}~67
+\item 
+\#define \hyperlink{roomprogs_8cpp_a01b4be2a674857515078ddc58759b976}{R\-P\-\_\-\-S\-O\-U\-N\-D}~68
+\item 
+\#define \hyperlink{roomprogs_8cpp_a8535bb113acf4d0227b2b409f108f67f}{R\-P\-\_\-\-M\-U\-S\-I\-C}~69
+\item 
+\#define \hyperlink{roomprogs_8cpp_a7bb4b8146392f4aec1ab575d3452ade2}{R\-P\-\_\-\-G\-I\-V\-E\-\_\-\-C\-O\-L\-O\-R}~70
+\item 
+\#define \hyperlink{roomprogs_8cpp_aa0e99eac07ae2d14dff979423c1dab5a}{R\-P\-\_\-\-L\-O\-A\-D\-\_\-\-C\-O\-L\-O\-R}~71
+\item 
+\#define \hyperlink{roomprogs_8cpp_aaccd801369e54a73da78f806037312b6}{R\-P\-\_\-\-X\-P\-O\-I\-S\-O\-N}~72
+\item 
+\#define \hyperlink{roomprogs_8cpp_a0146f68f0858edd084af30304d08895d}{R\-P\-\_\-\-X\-S\-T\-I\-N\-K}~73
+\item 
+\#define \hyperlink{roomprogs_8cpp_a423ffd0574b73e5620e6363d9daa1b08}{R\-P\-\_\-\-N\-E\-W\-L\-I\-N\-E}~74
+\item 
+\#define \hyperlink{roomprogs_8cpp_a4abcf675e16287cd9314c8e4bcc8ca20}{M\-A\-X\-\_\-\-R\-P\-R\-G\-\_\-\-N\-E\-S\-T}~30
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{roomprogs_8cpp_a9ee512aa96d1a69a6f2af84d7a920020}{initialize\-\_\-location\-\_\-map} (void)
+\item 
+void \hyperlink{roomprogs_8cpp_a86163bc68bdfca5f084d360a108ed8de}{rxp} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$prg, char $\ast$, char $\ast$, char $\ast$)
+\item 
+char $\ast$ \hyperlink{roomprogs_8cpp_a949e82d984df65c7fe59f730db18c36b}{next\-\_\-line} (char $\ast$old)
+\item 
+int \hyperlink{roomprogs_8cpp_a4699b3405805a5bb19bb35e470c41a80}{doit} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, const char $\ast$func, char $\ast$arg, char $\ast$, char $\ast$, char $\ast$, \hyperlink{structroom__prog__var}{room\-\_\-prog\-\_\-var} $\ast$\&)
+\item 
+void \hyperlink{roomprogs_8cpp_ae13929063f0daded37dd5e4777e0632f}{r\-\_\-link} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+void \hyperlink{roomprogs_8cpp_a95e89833586a3823f41d584701147842}{r\-\_\-unlink} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+void \hyperlink{roomprogs_8cpp_a384f9385cdc3d2577d8cdf9793f14dab}{r\-\_\-exit} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+void \hyperlink{roomprogs_8cpp_a696e3807d8c3e7362a505ed0f4caaed3}{r\-\_\-give} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+void \hyperlink{roomprogs_8cpp_aa6cc3cb8cbce680be8c4bd198da108ea}{r\-\_\-give\-\_\-color} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+void \hyperlink{roomprogs_8cpp_a0937316da9e6e66d5ffdffc723796f8a}{r\-\_\-load\-\_\-color} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+void \hyperlink{roomprogs_8cpp_a2a2047b06c1167884849512dc48feecb}{r\-\_\-put} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+void \hyperlink{roomprogs_8cpp_a84252fa3d707c415fb699c883f471d9e}{r\-\_\-get} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+void \hyperlink{roomprogs_8cpp_a86523982a2d707561cf46e5f355c5e56}{r\-\_\-take} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+void \hyperlink{roomprogs_8cpp_a70f0cdcd310c92db3ba4825b229363db}{r\-\_\-unexit} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+void \hyperlink{roomprogs_8cpp_aa7e441b43c98c7f4a76a0e11adc1cbd4}{r\-\_\-atlook} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+void \hyperlink{roomprogs_8cpp_a4b5aec51738c9ef948fe8ff3ff0282e0}{r\-\_\-atecho} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+void \hyperlink{roomprogs_8cpp_a02837d4c088d42548a740b6f6826c884}{r\-\_\-atread} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+void \hyperlink{roomprogs_8cpp_a187f57b37162818b7f6ac05a61f3eb84}{r\-\_\-loadmob} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+void \hyperlink{roomprogs_8cpp_a423a857f4128893742b832bd1bbaca5e}{r\-\_\-exmob} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+void \hyperlink{roomprogs_8cpp_af9cb1fd7abf2c6e356aef95e77e45414}{r\-\_\-rftog} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$arg)
+\item 
+void \hyperlink{roomprogs_8cpp_acbe831d7799831386bfef3e8938e96fa}{r\-\_\-force} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+void \hyperlink{roomprogs_8cpp_a836766c8ac7dfcb8cdeec538cdeedeff}{r\-\_\-pain} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+void \hyperlink{roomprogs_8cpp_aec4d87b7bd957b7780d8b0dc1ac759f8}{r\-\_\-transmob} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+void \hyperlink{roomprogs_8cpp_a76fb42c0b147743cef454fa827d6c642}{r\-\_\-painmess} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$victim, int dam)
+\item 
+void \hyperlink{roomprogs_8cpp_a91042e5f4e795005bac8f5f0431515a2}{r\-\_\-purge} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+void \hyperlink{roomprogs_8cpp_ac5ca33008e460f64ef1e2d635f11eb5e}{r\-\_\-load\-\_\-clone} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+void \hyperlink{roomprogs_8cpp_a9c4a2ce8906fbe56f27051e5f7eb03e0}{r\-\_\-load\-\_\-obj} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+void \hyperlink{roomprogs_8cpp_a88f4b4461d5f44c27839f8ac58d7cc0d}{r\-\_\-stayput} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+void \hyperlink{roomprogs_8cpp_a00c3688b800a8f7d8f5badb38ba952cb}{r\-\_\-zone\-\_\-echo} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+void \hyperlink{roomprogs_8cpp_a56720b51cbdb17062b7efbed35c1311b}{r\-\_\-atwrite} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+void \hyperlink{roomprogs_8cpp_a1a634fd451cfbfa906ca14ac3dad8361}{r\-\_\-system} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+void \hyperlink{roomprogs_8cpp_ad2894e33013fe22eb4a2964bf723455f}{r\-\_\-clan\-\_\-echo} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+void \hyperlink{roomprogs_8cpp_aa004c4e972039aabe5b625af469456db}{r\-\_\-trans\-\_\-group} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+void \hyperlink{roomprogs_8cpp_ad2525de31f36e27bb83f0ebf110d3eab}{r\-\_\-set} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, \hyperlink{structroom__prog__var}{room\-\_\-prog\-\_\-var} $\ast$\&)
+\item 
+void \hyperlink{roomprogs_8cpp_a9cd3c05d023d81c2c7496ed0534319c5}{r\-\_\-criminalize} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+void \hyperlink{roomprogs_8cpp_abce2e833371b86370c0cdbc34e9d080e}{r\-\_\-strip} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+void \hyperlink{roomprogs_8cpp_a0ef944a8de83b0ad697e87ceee1da67a}{r\-\_\-clan} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+void \hyperlink{roomprogs_8cpp_a7d8ddeae9c035c910e82355a6948f1e0}{r\-\_\-takemoney} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+void \hyperlink{roomprogs_8cpp_af7b3eed5ac1fb67fe2cd27c4d67dfdd1}{r\-\_\-delay} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+void \hyperlink{roomprogs_8cpp_a409dbc9f30e98cd359868de3e45c1c66}{r\-\_\-teach} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+void \hyperlink{roomprogs_8cpp_a7714ccf64feb00ab7af339fd2e962c38}{r\-\_\-doitanyway} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, char $\ast$, char $\ast$, char $\ast$)
+\item 
+void \hyperlink{roomprogs_8cpp_abddd0f50545887b7e35c00e8d5d78e7a}{r\-\_\-door} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+void \hyperlink{roomprogs_8cpp_a812c78c29471113b6e95516cb42f2588}{r\-\_\-math} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, \hyperlink{structroom__prog__var}{room\-\_\-prog\-\_\-var} $\ast$\&)
+\item 
+void \hyperlink{roomprogs_8cpp_a9fd91156b6a5552a3cf0855a5a8805a9}{r\-\_\-transobj} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+void \hyperlink{roomprogs_8cpp_ad48b7221c0e33ebd4c051bc1ce59a48e}{r\-\_\-tally} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, std\-::string argument, \hyperlink{structroom__prog__var}{room\-\_\-prog\-\_\-var} $\ast$\&)
+\item 
+void \hyperlink{roomprogs_8cpp_abc527d8da2b261d53a82c05d0b91a12c}{r\-\_\-objvnum} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, std\-::string argument, \hyperlink{structroom__prog__var}{room\-\_\-prog\-\_\-var} $\ast$\&)
+\item 
+void \hyperlink{roomprogs_8cpp_a37c6f342c1317d75a0ac0194b5fbe457}{r\-\_\-randomobj} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, std\-::string argument, \hyperlink{structroom__prog__var}{room\-\_\-prog\-\_\-var} $\ast$\&)
+\item 
+void \hyperlink{roomprogs_8cpp_aef15d18ef590de3440938ad09506ed20}{r\-\_\-info} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$, std\-::string, \hyperlink{structroom__prog__var}{room\-\_\-prog\-\_\-var} $\ast$\&)
+\item 
+void \hyperlink{roomprogs_8cpp_a167ea83bc0ae41668dbb344ab743bb12}{r\-\_\-setval} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$, std\-::string)
+\item 
+void \hyperlink{roomprogs_8cpp_a4acf71a05b1eff5a41a832c8162ded21}{r\-\_\-concat} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$, std\-::string, \hyperlink{structroom__prog__var}{room\-\_\-prog\-\_\-var} $\ast$\&)
+\item 
+void \hyperlink{roomprogs_8cpp_af15a912de67a023b372dd7a42275b0e7}{r\-\_\-mftog} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$, std\-::string)
+\item 
+void \hyperlink{roomprogs_8cpp_a642ad63cfb1440103ba41436a32a0d4b}{r\-\_\-coppertoshillings} (std\-::string, \hyperlink{structroom__prog__var}{room\-\_\-prog\-\_\-var} $\ast$\&)
+\item 
+void \hyperlink{roomprogs_8cpp_ac8ad37d0b8eb3fcaf3708281a71c0053}{r\-\_\-mcopy} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+void \hyperlink{roomprogs_8cpp_a3d45e38c3b0df1995ee9fc60ab76bcc5}{r\-\_\-owner} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+void \hyperlink{roomprogs_8cpp_aeb871b2cc89f4804658c5393bc9e3ac4}{r\-\_\-skilluse} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+void \hyperlink{roomprogs_8cpp_a33c7a85080d15ac96fc183e1efe41c3c}{r\-\_\-givecash} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+void \hyperlink{roomprogs_8cpp_a9ae23bf32152594fd2d853c02f2aecd3}{r\-\_\-mrend} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+void \hyperlink{roomprogs_8cpp_acf95d8f478dbe7f4b66f94135da9026e}{r\-\_\-stun} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+void \hyperlink{roomprogs_8cpp_a9a52c1ed68411bd89403d41529ea87fa}{r\-\_\-fatigue} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+void \hyperlink{roomprogs_8cpp_a82ffc9a25798d118262b84a254fdf677}{r\-\_\-heal} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+void \hyperlink{roomprogs_8cpp_a130bddd81bcf0014a829e6a19e341c29}{r\-\_\-music} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+void \hyperlink{roomprogs_8cpp_aefde3e95e5483826acd6c5c7e928a59c}{r\-\_\-sound} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+void \hyperlink{roomprogs_8cpp_a607b4864997c213a1943ed32c179124b}{r\-\_\-xpoison} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+void \hyperlink{roomprogs_8cpp_a56be8301f1ab30402f4327f5e5aa65d7}{r\-\_\-xstink} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+\hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} \hyperlink{roomprogs_8cpp_aa5582d94c89a500f8a0bbeff2b2faf75}{is\-\_\-variable\-\_\-in\-\_\-list} (\hyperlink{structroom__prog__var}{room\-\_\-prog\-\_\-var} $\ast$\&variable\-\_\-list, std\-::string variable\-\_\-name)
+\item 
+std\-::string \hyperlink{roomprogs_8cpp_a2354237460e9084e56e4f6f13f46118a}{get\-\_\-variable\-\_\-data} (\hyperlink{structroom__prog__var}{room\-\_\-prog\-\_\-var} $\ast$\&variable\-\_\-list, std\-::string variable\-\_\-name)
+\item 
+\hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} \hyperlink{roomprogs_8cpp_a1d732402a7781309601baa283f346eb1}{is\-\_\-variable\-\_\-number} (\hyperlink{structroom__prog__var}{room\-\_\-prog\-\_\-var} $\ast$\&variable\-\_\-list, std\-::string variable\-\_\-name)
+\item 
+void \hyperlink{roomprogs_8cpp_a023e91b5d566c9c17ae14a532217cb0b}{set\-\_\-variable\-\_\-data} (\hyperlink{structroom__prog__var}{room\-\_\-prog\-\_\-var} $\ast$\&variable\-\_\-list, std\-::string variable\-\_\-name, std\-::string \hyperlink{structvariable__data}{variable\-\_\-data})
+\item 
+void \hyperlink{roomprogs_8cpp_a319d2be3926d7e5b0aeb3943915d5d46}{add\-\_\-variable\-\_\-to\-\_\-list} (\hyperlink{structroom__prog__var}{room\-\_\-prog\-\_\-var} $\ast$\&variable\-\_\-list, std\-::string variable\-\_\-name, std\-::string \hyperlink{structvariable__data}{variable\-\_\-data})
+\item 
+void \hyperlink{roomprogs_8cpp_a759c31e18e0ccb5201397b568ae711bd}{delete\-\_\-all\-\_\-vars} (\hyperlink{structroom__prog__var}{room\-\_\-prog\-\_\-var} $\ast$\&variable\-\_\-list)
+\item 
+void \hyperlink{roomprogs_8cpp_a6c216f478e4cf96f3638892926e1305f}{delete\-\_\-var\-\_\-from\-\_\-list} (\hyperlink{structroom__prog__var}{room\-\_\-prog\-\_\-var} $\ast$\&variable\-\_\-list, std\-::string variable\-\_\-name)
+\item 
+std\-::vector$<$ std\-::string $>$ \hyperlink{roomprogs_8cpp_a7d1d18b6f0b5b758939cc91ae481c9d1}{tokenize\-\_\-str} (const std\-::string \&str, const std\-::string \&delims=\char`\"{}$\vert$\textbackslash{}t\char`\"{})
+\begin{DoxyCompactList}\small\item\em convert input string into vector of string tokens \end{DoxyCompactList}\item 
+int \hyperlink{roomprogs_8cpp_a84f55f7633b10f0610cd5e878aa20801}{r\-\_\-isname} (char $\ast$str, char $\ast$namelist)
+\item 
+int \hyperlink{roomprogs_8cpp_a814c3c0c0d61611d683419002d56fca3}{r\-\_\-program} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+int \hyperlink{roomprogs_8cpp_acade40baf417fab22674993da04ddf8e}{m\-\_\-prog} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+int \hyperlink{roomprogs_8cpp_a5ed3e71565a09f57cbb2e65c5ba473d1}{m\-\_\-prog} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, \hyperlink{structroom__prog}{room\-\_\-prog} prog)
+\item 
+int \hyperlink{roomprogs_8cpp_a8ee53762c70675d4cb8eb979aca7f547}{o\-\_\-prog} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, \hyperlink{structroom__prog}{room\-\_\-prog} prog)
+\item 
+void \hyperlink{roomprogs_8cpp_a8be54fab656f1a36ed56abb85d20ab33}{ref} (char $\ast$str, char $\ast$return\-\_\-string)
+\item 
+\hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} \hyperlink{roomprogs_8cpp_a02fdc94e0cae23e25761c4b73135c8ab}{oexist} (int n\-Virtual, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$ptr\-Contents, \hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} b\-Nest)
+\item 
+\hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} \hyperlink{roomprogs_8cpp_abd77f1af86126ccfe8db6d4451e62cb8}{outranks} (char $\ast$has\-\_\-rank, char $\ast$compared\-\_\-rank, char $\ast$clan)
+\item 
+void \hyperlink{roomprogs_8cpp_a33acab67aedfb5ddbcc2ee04a9eb49be}{evaluate\-\_\-if} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$arg, \hyperlink{structroom__prog__var}{room\-\_\-prog\-\_\-var} $\ast$\&variables)
+\item 
+void \hyperlink{roomprogs_8cpp_a70284517372176bf849eaec830c8a3a8}{reval} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$arg, \hyperlink{structroom__prog__var}{room\-\_\-prog\-\_\-var} $\ast$\&variable\-\_\-list)
+\item 
+void \hyperlink{roomprogs_8cpp_a04fc57b7a1150a25903471f37e9c14f3}{do\-\_\-mpstat} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{roomprogs_8cpp_afb57de252969d864c15bbaf98b085b78}{do\-\_\-mpadd} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{roomprogs_8cpp_a56a3a2648cb786da2cc47dfdd6044b14}{do\-\_\-mpdel} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{roomprogs_8cpp_a1ac11fed1de3f919186162844d571bdf}{do\-\_\-mpcmd} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{roomprogs_8cpp_a38a08ae48294b00efcacba2f5cfe0c36}{do\-\_\-mpkey} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{roomprogs_8cpp_a18a8733f538d9ed7735e5dd8e05fdbda}{do\-\_\-mptype} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{roomprogs_8cpp_a16b6d6165337b1df16e2a618908762f2}{do\-\_\-mpprg} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{roomprogs_8cpp_a8c756462bb455bd40fec86def76896bf}{do\-\_\-mpapp} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{roomprogs_8cpp_aacf6b7070c5499625d425692b4dee35c}{do\-\_\-opstat} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{roomprogs_8cpp_a45473d48dfb0a4a8f88abeda5e843db7}{do\-\_\-opadd} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{roomprogs_8cpp_a74fd24f30bfb269540610998b1bf745a}{do\-\_\-opdel} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{roomprogs_8cpp_a2bfe01706aa539a34624ebac9fa3f937}{do\-\_\-opcmd} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{roomprogs_8cpp_ae559fa748dc24753d97bb7652dad576d}{do\-\_\-opkey} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{roomprogs_8cpp_a2006b6ad16c068a8056df3c9848c7d6b}{do\-\_\-optype} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{roomprogs_8cpp_a987c0da0c19d9e4a904fd9bb2ae91996}{do\-\_\-opprg} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{roomprogs_8cpp_ac098e8885045a5e3e91783303d8f165d}{do\-\_\-opapp} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+int \hyperlink{roomprogs_8cpp_a979a60297ccec1121817313e74b23b86}{c\-\_\-prog} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, \hyperlink{structroom__prog}{room\-\_\-prog} prog)
+\item 
+void \hyperlink{roomprogs_8cpp_aef8c13771c9a63a02e19d58a7b2a9f16}{do\-\_\-cpstat} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{roomprogs_8cpp_ab9617c2ccb8883b8656f7b31ac2adc70}{do\-\_\-cpadd} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{roomprogs_8cpp_aa06467ec17dd8529743c245ae386fc04}{do\-\_\-cpdel} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{roomprogs_8cpp_a25ae982d958b6995dfff5ca61ee20b56}{do\-\_\-cpcmd} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{roomprogs_8cpp_a6169762e1ece5099ceb7e61780ee51d0}{do\-\_\-cpkey} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{roomprogs_8cpp_a54b12067434a2b27d08b8e3d462b9166}{do\-\_\-cptype} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{roomprogs_8cpp_a861a1a857b8a7ca19af5bbe820a09c62}{do\-\_\-cpprg} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{roomprogs_8cpp_acc592321eec42eb3fcf0bbdd8bc349be}{do\-\_\-cpapp} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{roomprogs_8cpp_ae87cd1e11871ddb8dc4238c4d53dcf47}{do\-\_\-rpadd} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{roomprogs_8cpp_a5be75081f138cd23b28160e1eb7294cf}{do\-\_\-rpdel} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{roomprogs_8cpp_ab31db832d11d9a0039f4d563e386b66b}{do\-\_\-rpcmd} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{roomprogs_8cpp_abd65457fc668c0af4208488b470fd88a}{do\-\_\-rpkey} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{roomprogs_8cpp_a1b56f7cf8b3c285720391fc3814ba261}{do\-\_\-rpprg} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{roomprogs_8cpp_a176c004e8c45f5ba774b3994bfdc894e}{do\-\_\-rpapp} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{roomprogs_8cpp_aea91d10085c811b249ec78be39781406}{do\-\_\-rpstat} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{roomprogs_8cpp_af083103546fa4535b62592869b617988}{r\-\_\-lock} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+char $\ast$ \hyperlink{roomprogs_8cpp_a0f96a6e6977865a0f64088cc6460d8fc}{room\-\_\-\-\_\-get\-\_\-description} (\hyperlink{room_8h_aede519ef65d80b5242a4a28b69d5e097}{R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$room)
+\begin{DoxyCompactList}\small\item\em Obtain the current room description. \end{DoxyCompactList}\item 
+\hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} \hyperlink{roomprogs_8cpp_ac264a2bb2ab65b774620754bc7bdf8f1}{prog\-\_\-object\-\_\-properties} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj, std\-::string argument, std\-::string \&output)
+\item 
+void \hyperlink{roomprogs_8cpp_a5c8f084e69027e26fba07d1a6e0794d6}{prog\-\_\-object\-\_\-properties} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj, std\-::string argument)
+\item 
+std\-::string \hyperlink{roomprogs_8cpp_a5c1bc4bad122ef67c483ed891e2e9032}{alternate\-\_\-money\-\_\-description} (int money)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const struct \hyperlink{structconstant__data}{constant\-\_\-data} \hyperlink{roomprogs_8cpp_af41979541578b7f95c0a98a18712ccb7}{constant\-\_\-info} \mbox{[}$\,$\mbox{]}
+\item 
+\hyperlink{classrpie_1_1server}{rpie\-::server} \hyperlink{roomprogs_8cpp_a55c71990ee4162ebec6abe401996cf15}{engine}
+\item 
+std\-::multimap$<$ int, \hyperlink{structroom__prog}{room\-\_\-prog} $>$ \hyperlink{roomprogs_8cpp_ab725bd2e806404aaa0c3801bc97cde29}{mob\-\_\-prog\-\_\-list}
+\item 
+std\-::multimap$<$ int, \hyperlink{structroom__prog}{room\-\_\-prog} $>$ \hyperlink{roomprogs_8cpp_a5b8ee11ca5cb281c6e10c897b4417a91}{obj\-\_\-prog\-\_\-list}
+\item 
+std\-::multimap$<$ std\-::string, \\*
+\hyperlink{structroom__prog}{room\-\_\-prog} $>$ \hyperlink{roomprogs_8cpp_a071f46361ec95ca001cfd6d25333db81}{craft\-\_\-prog\-\_\-list}
+\item 
+std\-::map$<$ int, std\-::string $>$ \hyperlink{roomprogs_8cpp_a102396f7850327c09e414b191c20dfcf}{map\-Wear\-By\-Loc}
+\item 
+std\-::map$<$ std\-::string, int $>$ \hyperlink{roomprogs_8cpp_ad702509ab9f1fc6d961ecb42186d2d41}{map\-Wear\-By\-Name}
+\item 
+\hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} \hyperlink{roomprogs_8cpp_a6bc3c90520e99ef3d485f146e5a19363}{ifin} \mbox{[}\hyperlink{roomprogs_8cpp_a4abcf675e16287cd9314c8e4bcc8ca20}{M\-A\-X\-\_\-\-R\-P\-R\-G\-\_\-\-N\-E\-S\-T}\mbox{]}
+\item 
+int \hyperlink{roomprogs_8cpp_a34cde1d7337690558723978c5c5226e1}{n\-Nest} = 1
+\item 
+int \hyperlink{roomprogs_8cpp_a42f016c30c402f3c7774e3090f10ca2a}{random\-\_\-number} \mbox{[}10\mbox{]} = \{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 \}
+\item 
+int \hyperlink{roomprogs_8cpp_a8a56c5b9e51fe5cd30614f13fa657ebe}{count\-\_\-number} \mbox{[}10\mbox{]} = \{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 \}
+\item 
+const char $\ast$ \hyperlink{roomprogs_8cpp_a91e86c0f62fc7e7eaf1ee265910fbffd}{rfuncs} \mbox{[}$\,$\mbox{]}
+\item 
+char $\ast$ \hyperlink{roomprogs_8cpp_a3b282584cde0eee2620d3cd95cf634c0}{exits} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{roomprogs_8cpp_a4abcf675e16287cd9314c8e4bcc8ca20}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!M\-A\-X\-\_\-\-R\-P\-R\-G\-\_\-\-N\-E\-S\-T@{M\-A\-X\-\_\-\-R\-P\-R\-G\-\_\-\-N\-E\-S\-T}}
+\index{M\-A\-X\-\_\-\-R\-P\-R\-G\-\_\-\-N\-E\-S\-T@{M\-A\-X\-\_\-\-R\-P\-R\-G\-\_\-\-N\-E\-S\-T}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{M\-A\-X\-\_\-\-R\-P\-R\-G\-\_\-\-N\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-X\-\_\-\-R\-P\-R\-G\-\_\-\-N\-E\-S\-T~30}}\label{roomprogs_8cpp_a4abcf675e16287cd9314c8e4bcc8ca20}
+\hypertarget{roomprogs_8cpp_a032450e6fd79c8453df024ab08445bcf}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-A\-T\-E\-C\-H\-O@{R\-P\-\_\-\-A\-T\-E\-C\-H\-O}}
+\index{R\-P\-\_\-\-A\-T\-E\-C\-H\-O@{R\-P\-\_\-\-A\-T\-E\-C\-H\-O}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-A\-T\-E\-C\-H\-O}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-A\-T\-E\-C\-H\-O~0}}\label{roomprogs_8cpp_a032450e6fd79c8453df024ab08445bcf}
+\hypertarget{roomprogs_8cpp_aac802f15e2d1f4e5b3ce32950901d056}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-A\-T\-L\-O\-O\-K@{R\-P\-\_\-\-A\-T\-L\-O\-O\-K}}
+\index{R\-P\-\_\-\-A\-T\-L\-O\-O\-K@{R\-P\-\_\-\-A\-T\-L\-O\-O\-K}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-A\-T\-L\-O\-O\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-A\-T\-L\-O\-O\-K~9}}\label{roomprogs_8cpp_aac802f15e2d1f4e5b3ce32950901d056}
+\hypertarget{roomprogs_8cpp_a4a24807b774262eed1ff62ae10669f0c}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-A\-T\-R\-E\-A\-D@{R\-P\-\_\-\-A\-T\-R\-E\-A\-D}}
+\index{R\-P\-\_\-\-A\-T\-R\-E\-A\-D@{R\-P\-\_\-\-A\-T\-R\-E\-A\-D}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-A\-T\-R\-E\-A\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-A\-T\-R\-E\-A\-D~28}}\label{roomprogs_8cpp_a4a24807b774262eed1ff62ae10669f0c}
+\hypertarget{roomprogs_8cpp_a0dd0fd823427018d524b372b7f5b6859}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-A\-T\-W\-R\-I\-T\-E@{R\-P\-\_\-\-A\-T\-W\-R\-I\-T\-E}}
+\index{R\-P\-\_\-\-A\-T\-W\-R\-I\-T\-E@{R\-P\-\_\-\-A\-T\-W\-R\-I\-T\-E}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-A\-T\-W\-R\-I\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-A\-T\-W\-R\-I\-T\-E~35	/$\ast$ leave a board message $\ast$/}}\label{roomprogs_8cpp_a0dd0fd823427018d524b372b7f5b6859}
+\hypertarget{roomprogs_8cpp_ab584e9e26742ddeae1a5b911f2b27719}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-C\-L\-A\-N@{R\-P\-\_\-\-C\-L\-A\-N}}
+\index{R\-P\-\_\-\-C\-L\-A\-N@{R\-P\-\_\-\-C\-L\-A\-N}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-C\-L\-A\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-C\-L\-A\-N~42      /$\ast$ adds people to a clan at a certain rank $\ast$/}}\label{roomprogs_8cpp_ab584e9e26742ddeae1a5b911f2b27719}
+\hypertarget{roomprogs_8cpp_aa65c47147673e3ffe4eb165ec0debc64}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-C\-L\-A\-N\-\_\-\-E\-C\-H\-O@{R\-P\-\_\-\-C\-L\-A\-N\-\_\-\-E\-C\-H\-O}}
+\index{R\-P\-\_\-\-C\-L\-A\-N\-\_\-\-E\-C\-H\-O@{R\-P\-\_\-\-C\-L\-A\-N\-\_\-\-E\-C\-H\-O}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-C\-L\-A\-N\-\_\-\-E\-C\-H\-O}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-C\-L\-A\-N\-\_\-\-E\-C\-H\-O~37	/$\ast$ send a message to clan members $\ast$/}}\label{roomprogs_8cpp_aa65c47147673e3ffe4eb165ec0debc64}
+\hypertarget{roomprogs_8cpp_a7a06488426258515a864f0e11deb524a}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-C\-O\-N\-C\-A\-T@{R\-P\-\_\-\-C\-O\-N\-C\-A\-T}}
+\index{R\-P\-\_\-\-C\-O\-N\-C\-A\-T@{R\-P\-\_\-\-C\-O\-N\-C\-A\-T}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-C\-O\-N\-C\-A\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-C\-O\-N\-C\-A\-T~57}}\label{roomprogs_8cpp_a7a06488426258515a864f0e11deb524a}
+\hypertarget{roomprogs_8cpp_a0c85d613cedb4289e15a9e5f4a42956f}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-C\-O\-P\-P\-E\-R\-\_\-\-T\-O\-\_\-\-S\-H\-I\-L\-L\-I\-N\-G\-S@{R\-P\-\_\-\-C\-O\-P\-P\-E\-R\-\_\-\-T\-O\-\_\-\-S\-H\-I\-L\-L\-I\-N\-G\-S}}
+\index{R\-P\-\_\-\-C\-O\-P\-P\-E\-R\-\_\-\-T\-O\-\_\-\-S\-H\-I\-L\-L\-I\-N\-G\-S@{R\-P\-\_\-\-C\-O\-P\-P\-E\-R\-\_\-\-T\-O\-\_\-\-S\-H\-I\-L\-L\-I\-N\-G\-S}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-C\-O\-P\-P\-E\-R\-\_\-\-T\-O\-\_\-\-S\-H\-I\-L\-L\-I\-N\-G\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-C\-O\-P\-P\-E\-R\-\_\-\-T\-O\-\_\-\-S\-H\-I\-L\-L\-I\-N\-G\-S~60}}\label{roomprogs_8cpp_a0c85d613cedb4289e15a9e5f4a42956f}
+\hypertarget{roomprogs_8cpp_a48f2d778c6523b96088543ebae0ea1f2}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-C\-R\-I\-M\-I\-N\-A\-L\-I\-Z\-E@{R\-P\-\_\-\-C\-R\-I\-M\-I\-N\-A\-L\-I\-Z\-E}}
+\index{R\-P\-\_\-\-C\-R\-I\-M\-I\-N\-A\-L\-I\-Z\-E@{R\-P\-\_\-\-C\-R\-I\-M\-I\-N\-A\-L\-I\-Z\-E}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-C\-R\-I\-M\-I\-N\-A\-L\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-C\-R\-I\-M\-I\-N\-A\-L\-I\-Z\-E~40      /$\ast$ {\bf criminalize} a person or room $\ast$/}}\label{roomprogs_8cpp_a48f2d778c6523b96088543ebae0ea1f2}
+\hypertarget{roomprogs_8cpp_ade310e3e54bc46d87cc09abe4b1bb445}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-D\-E\-L\-A\-Y@{R\-P\-\_\-\-D\-E\-L\-A\-Y}}
+\index{R\-P\-\_\-\-D\-E\-L\-A\-Y@{R\-P\-\_\-\-D\-E\-L\-A\-Y}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-D\-E\-L\-A\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-D\-E\-L\-A\-Y~44 /$\ast$ Delayed command just like scommand $\ast$/}}\label{roomprogs_8cpp_ade310e3e54bc46d87cc09abe4b1bb445}
+\hypertarget{roomprogs_8cpp_af1b204cd8b9dca9032a61d860a64054b}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-D\-O\-I\-T\-A\-N\-Y\-W\-A\-Y@{R\-P\-\_\-\-D\-O\-I\-T\-A\-N\-Y\-W\-A\-Y}}
+\index{R\-P\-\_\-\-D\-O\-I\-T\-A\-N\-Y\-W\-A\-Y@{R\-P\-\_\-\-D\-O\-I\-T\-A\-N\-Y\-W\-A\-Y}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-D\-O\-I\-T\-A\-N\-Y\-W\-A\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-D\-O\-I\-T\-A\-N\-Y\-W\-A\-Y~46}}\label{roomprogs_8cpp_af1b204cd8b9dca9032a61d860a64054b}
+\hypertarget{roomprogs_8cpp_ac02047bfbb2c8930766f968a8f36d013}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-D\-O\-O\-R@{R\-P\-\_\-\-D\-O\-O\-R}}
+\index{R\-P\-\_\-\-D\-O\-O\-R@{R\-P\-\_\-\-D\-O\-O\-R}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-D\-O\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-D\-O\-O\-R~47}}\label{roomprogs_8cpp_ac02047bfbb2c8930766f968a8f36d013}
+\hypertarget{roomprogs_8cpp_af3df43d73ea66421673cb916cdf823e9}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-E\-L\-S\-E@{R\-P\-\_\-\-E\-L\-S\-E}}
+\index{R\-P\-\_\-\-E\-L\-S\-E@{R\-P\-\_\-\-E\-L\-S\-E}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-E\-L\-S\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-E\-L\-S\-E~23}}\label{roomprogs_8cpp_af3df43d73ea66421673cb916cdf823e9}
+\hypertarget{roomprogs_8cpp_ae52a84af4f207b94ccf76bf3476839ce}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-E\-X\-I\-T@{R\-P\-\_\-\-E\-X\-I\-T}}
+\index{R\-P\-\_\-\-E\-X\-I\-T@{R\-P\-\_\-\-E\-X\-I\-T}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-E\-X\-I\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-E\-X\-I\-T~7}}\label{roomprogs_8cpp_ae52a84af4f207b94ccf76bf3476839ce}
+\hypertarget{roomprogs_8cpp_a1d5f53401cee066c95f6ae686920afe0}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-E\-X\-M\-O\-B@{R\-P\-\_\-\-E\-X\-M\-O\-B}}
+\index{R\-P\-\_\-\-E\-X\-M\-O\-B@{R\-P\-\_\-\-E\-X\-M\-O\-B}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-E\-X\-M\-O\-B}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-E\-X\-M\-O\-B~20}}\label{roomprogs_8cpp_a1d5f53401cee066c95f6ae686920afe0}
+\hypertarget{roomprogs_8cpp_af1bcaa954cb3bf7928e5b81a28a61ce0}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-F\-A\-T\-I\-G\-U\-E@{R\-P\-\_\-\-F\-A\-T\-I\-G\-U\-E}}
+\index{R\-P\-\_\-\-F\-A\-T\-I\-G\-U\-E@{R\-P\-\_\-\-F\-A\-T\-I\-G\-U\-E}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-F\-A\-T\-I\-G\-U\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-F\-A\-T\-I\-G\-U\-E~66}}\label{roomprogs_8cpp_af1bcaa954cb3bf7928e5b81a28a61ce0}
+\hypertarget{roomprogs_8cpp_a1a7c4c807da1c0b12687c9ec73f5d021}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-F\-I@{R\-P\-\_\-\-F\-I}}
+\index{R\-P\-\_\-\-F\-I@{R\-P\-\_\-\-F\-I}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-F\-I}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-F\-I~22}}\label{roomprogs_8cpp_a1a7c4c807da1c0b12687c9ec73f5d021}
+\hypertarget{roomprogs_8cpp_af0683398794a20ff7f634c2efa18902a}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-F\-O\-R\-C\-E@{R\-P\-\_\-\-F\-O\-R\-C\-E}}
+\index{R\-P\-\_\-\-F\-O\-R\-C\-E@{R\-P\-\_\-\-F\-O\-R\-C\-E}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-F\-O\-R\-C\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-F\-O\-R\-C\-E~5}}\label{roomprogs_8cpp_af0683398794a20ff7f634c2efa18902a}
+\hypertarget{roomprogs_8cpp_a96bac0d63b3c19e59ac2a9d000b8a0ca}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-G\-E\-T@{R\-P\-\_\-\-G\-E\-T}}
+\index{R\-P\-\_\-\-G\-E\-T@{R\-P\-\_\-\-G\-E\-T}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-G\-E\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-G\-E\-T~15}}\label{roomprogs_8cpp_a96bac0d63b3c19e59ac2a9d000b8a0ca}
+\hypertarget{roomprogs_8cpp_a6c984bf50b9fbf8bd484d9f56c27ccda}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-G\-E\-T\-C\-A\-S\-H@{R\-P\-\_\-\-G\-E\-T\-C\-A\-S\-H}}
+\index{R\-P\-\_\-\-G\-E\-T\-C\-A\-S\-H@{R\-P\-\_\-\-G\-E\-T\-C\-A\-S\-H}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-G\-E\-T\-C\-A\-S\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-G\-E\-T\-C\-A\-S\-H~17}}\label{roomprogs_8cpp_a6c984bf50b9fbf8bd484d9f56c27ccda}
+\hypertarget{roomprogs_8cpp_affb4e19ed13c8c1318667cc4d8736e3d}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-G\-I\-V\-E@{R\-P\-\_\-\-G\-I\-V\-E}}
+\index{R\-P\-\_\-\-G\-I\-V\-E@{R\-P\-\_\-\-G\-I\-V\-E}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-G\-I\-V\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-G\-I\-V\-E~1}}\label{roomprogs_8cpp_affb4e19ed13c8c1318667cc4d8736e3d}
+\hypertarget{roomprogs_8cpp_a7bb4b8146392f4aec1ab575d3452ade2}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-G\-I\-V\-E\-\_\-\-C\-O\-L\-O\-R@{R\-P\-\_\-\-G\-I\-V\-E\-\_\-\-C\-O\-L\-O\-R}}
+\index{R\-P\-\_\-\-G\-I\-V\-E\-\_\-\-C\-O\-L\-O\-R@{R\-P\-\_\-\-G\-I\-V\-E\-\_\-\-C\-O\-L\-O\-R}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-G\-I\-V\-E\-\_\-\-C\-O\-L\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-G\-I\-V\-E\-\_\-\-C\-O\-L\-O\-R~70}}\label{roomprogs_8cpp_a7bb4b8146392f4aec1ab575d3452ade2}
+\hypertarget{roomprogs_8cpp_a48fe3cbc0c77974c0e27d76812ae03f1}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-G\-I\-V\-E\-C\-A\-S\-H@{R\-P\-\_\-\-G\-I\-V\-E\-C\-A\-S\-H}}
+\index{R\-P\-\_\-\-G\-I\-V\-E\-C\-A\-S\-H@{R\-P\-\_\-\-G\-I\-V\-E\-C\-A\-S\-H}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-G\-I\-V\-E\-C\-A\-S\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-G\-I\-V\-E\-C\-A\-S\-H~18}}\label{roomprogs_8cpp_a48fe3cbc0c77974c0e27d76812ae03f1}
+\hypertarget{roomprogs_8cpp_adddd1331228be474a50c2414b0fffe5a}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-H\-A\-L\-T@{R\-P\-\_\-\-H\-A\-L\-T}}
+\index{R\-P\-\_\-\-H\-A\-L\-T@{R\-P\-\_\-\-H\-A\-L\-T}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-H\-A\-L\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-H\-A\-L\-T~29}}\label{roomprogs_8cpp_adddd1331228be474a50c2414b0fffe5a}
+\hypertarget{roomprogs_8cpp_aaf1e8f2e833c909f7ad3caa173a90952}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-H\-E\-A\-L@{R\-P\-\_\-\-H\-E\-A\-L}}
+\index{R\-P\-\_\-\-H\-E\-A\-L@{R\-P\-\_\-\-H\-E\-A\-L}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-H\-E\-A\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-H\-E\-A\-L~67}}\label{roomprogs_8cpp_aaf1e8f2e833c909f7ad3caa173a90952}
+\hypertarget{roomprogs_8cpp_aae56010346c08953abd792a677ac5831}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-I\-F@{R\-P\-\_\-\-I\-F}}
+\index{R\-P\-\_\-\-I\-F@{R\-P\-\_\-\-I\-F}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-I\-F}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-I\-F~21}}\label{roomprogs_8cpp_aae56010346c08953abd792a677ac5831}
+\hypertarget{roomprogs_8cpp_a0258bd4ddbe924ad0ede01731edd8895}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-I\-N\-F\-O@{R\-P\-\_\-\-I\-N\-F\-O}}
+\index{R\-P\-\_\-\-I\-N\-F\-O@{R\-P\-\_\-\-I\-N\-F\-O}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-I\-N\-F\-O}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-I\-N\-F\-O~55}}\label{roomprogs_8cpp_a0258bd4ddbe924ad0ede01731edd8895}
+\hypertarget{roomprogs_8cpp_ac55c25b7c3b6aac03711598c7c14cc15}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-L\-I\-N\-K@{R\-P\-\_\-\-L\-I\-N\-K}}
+\index{R\-P\-\_\-\-L\-I\-N\-K@{R\-P\-\_\-\-L\-I\-N\-K}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-L\-I\-N\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-L\-I\-N\-K~6}}\label{roomprogs_8cpp_ac55c25b7c3b6aac03711598c7c14cc15}
+\hypertarget{roomprogs_8cpp_a62b26e23fe55937f9b0e5f977f49822d}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-L\-O\-A\-D@{R\-P\-\_\-\-L\-O\-A\-D}}
+\index{R\-P\-\_\-\-L\-O\-A\-D@{R\-P\-\_\-\-L\-O\-A\-D}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-L\-O\-A\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-L\-O\-A\-D~4}}\label{roomprogs_8cpp_a62b26e23fe55937f9b0e5f977f49822d}
+\hypertarget{roomprogs_8cpp_ac8536f88ca65440439c00d09f0676b44}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-L\-O\-A\-D\-\_\-\-C\-L\-O\-N\-E@{R\-P\-\_\-\-L\-O\-A\-D\-\_\-\-C\-L\-O\-N\-E}}
+\index{R\-P\-\_\-\-L\-O\-A\-D\-\_\-\-C\-L\-O\-N\-E@{R\-P\-\_\-\-L\-O\-A\-D\-\_\-\-C\-L\-O\-N\-E}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-L\-O\-A\-D\-\_\-\-C\-L\-O\-N\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-L\-O\-A\-D\-\_\-\-C\-L\-O\-N\-E~31}}\label{roomprogs_8cpp_ac8536f88ca65440439c00d09f0676b44}
+\hypertarget{roomprogs_8cpp_aa0e99eac07ae2d14dff979423c1dab5a}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-L\-O\-A\-D\-\_\-\-C\-O\-L\-O\-R@{R\-P\-\_\-\-L\-O\-A\-D\-\_\-\-C\-O\-L\-O\-R}}
+\index{R\-P\-\_\-\-L\-O\-A\-D\-\_\-\-C\-O\-L\-O\-R@{R\-P\-\_\-\-L\-O\-A\-D\-\_\-\-C\-O\-L\-O\-R}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-L\-O\-A\-D\-\_\-\-C\-O\-L\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-L\-O\-A\-D\-\_\-\-C\-O\-L\-O\-R~71}}\label{roomprogs_8cpp_aa0e99eac07ae2d14dff979423c1dab5a}
+\hypertarget{roomprogs_8cpp_a78d55573d8991685581513f1c1d3f048}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-L\-O\-A\-D\-M\-O\-B@{R\-P\-\_\-\-L\-O\-A\-D\-M\-O\-B}}
+\index{R\-P\-\_\-\-L\-O\-A\-D\-M\-O\-B@{R\-P\-\_\-\-L\-O\-A\-D\-M\-O\-B}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-L\-O\-A\-D\-M\-O\-B}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-L\-O\-A\-D\-M\-O\-B~19}}\label{roomprogs_8cpp_a78d55573d8991685581513f1c1d3f048}
+\hypertarget{roomprogs_8cpp_ae0bf0a27e01304773a40e9fc82d1edec}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-L\-O\-A\-D\-O\-B\-J@{R\-P\-\_\-\-L\-O\-A\-D\-O\-B\-J}}
+\index{R\-P\-\_\-\-L\-O\-A\-D\-O\-B\-J@{R\-P\-\_\-\-L\-O\-A\-D\-O\-B\-J}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-L\-O\-A\-D\-O\-B\-J}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-L\-O\-A\-D\-O\-B\-J~32}}\label{roomprogs_8cpp_ae0bf0a27e01304773a40e9fc82d1edec}
+\hypertarget{roomprogs_8cpp_a5adfe6b81a17a4d06a1d00149001475c}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-L\-O\-C\-K@{R\-P\-\_\-\-L\-O\-C\-K}}
+\index{R\-P\-\_\-\-L\-O\-C\-K@{R\-P\-\_\-\-L\-O\-C\-K}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-L\-O\-C\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-L\-O\-C\-K~16}}\label{roomprogs_8cpp_a5adfe6b81a17a4d06a1d00149001475c}
+\hypertarget{roomprogs_8cpp_aa80dc26e7494c789471f8705a7beb1ed}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-M\-A\-T\-H@{R\-P\-\_\-\-M\-A\-T\-H}}
+\index{R\-P\-\_\-\-M\-A\-T\-H@{R\-P\-\_\-\-M\-A\-T\-H}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-M\-A\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-M\-A\-T\-H~48}}\label{roomprogs_8cpp_aa80dc26e7494c789471f8705a7beb1ed}
+\hypertarget{roomprogs_8cpp_aa1af58cb7396ab1c60cca681b91abe6e}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-M\-C\-O\-P\-Y@{R\-P\-\_\-\-M\-C\-O\-P\-Y}}
+\index{R\-P\-\_\-\-M\-C\-O\-P\-Y@{R\-P\-\_\-\-M\-C\-O\-P\-Y}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-M\-C\-O\-P\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-M\-C\-O\-P\-Y~61}}\label{roomprogs_8cpp_aa1af58cb7396ab1c60cca681b91abe6e}
+\hypertarget{roomprogs_8cpp_a5fe5adc55eedc6b3350cbdeb0d8cc192}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-M\-F\-T\-O\-G@{R\-P\-\_\-\-M\-F\-T\-O\-G}}
+\index{R\-P\-\_\-\-M\-F\-T\-O\-G@{R\-P\-\_\-\-M\-F\-T\-O\-G}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-M\-F\-T\-O\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-M\-F\-T\-O\-G~58}}\label{roomprogs_8cpp_a5fe5adc55eedc6b3350cbdeb0d8cc192}
+\hypertarget{roomprogs_8cpp_a8535bb113acf4d0227b2b409f108f67f}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-M\-U\-S\-I\-C@{R\-P\-\_\-\-M\-U\-S\-I\-C}}
+\index{R\-P\-\_\-\-M\-U\-S\-I\-C@{R\-P\-\_\-\-M\-U\-S\-I\-C}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-M\-U\-S\-I\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-M\-U\-S\-I\-C~69}}\label{roomprogs_8cpp_a8535bb113acf4d0227b2b409f108f67f}
+\hypertarget{roomprogs_8cpp_a423ffd0574b73e5620e6363d9daa1b08}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-N\-E\-W\-L\-I\-N\-E@{R\-P\-\_\-\-N\-E\-W\-L\-I\-N\-E}}
+\index{R\-P\-\_\-\-N\-E\-W\-L\-I\-N\-E@{R\-P\-\_\-\-N\-E\-W\-L\-I\-N\-E}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-N\-E\-W\-L\-I\-N\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-N\-E\-W\-L\-I\-N\-E~74}}\label{roomprogs_8cpp_a423ffd0574b73e5620e6363d9daa1b08}
+\hypertarget{roomprogs_8cpp_a91b21c77883efeaa6470ece1265225a3}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-N\-O\-O\-P@{R\-P\-\_\-\-N\-O\-O\-P}}
+\index{R\-P\-\_\-\-N\-O\-O\-P@{R\-P\-\_\-\-N\-O\-O\-P}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-N\-O\-O\-P}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-N\-O\-O\-P~49 /$\ast$ Do nothing -\/ i.\-e. for comments $\ast$/}}\label{roomprogs_8cpp_a91b21c77883efeaa6470ece1265225a3}
+\hypertarget{roomprogs_8cpp_af3c6b90be93c6d8e90b3fe51377e825f}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-N\-O\-O\-P2@{R\-P\-\_\-\-N\-O\-O\-P2}}
+\index{R\-P\-\_\-\-N\-O\-O\-P2@{R\-P\-\_\-\-N\-O\-O\-P2}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-N\-O\-O\-P2}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-N\-O\-O\-P2~59}}\label{roomprogs_8cpp_af3c6b90be93c6d8e90b3fe51377e825f}
+\hypertarget{roomprogs_8cpp_a6068d52536539fb27f3a9a8cad375f6c}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-O\-B\-J\-V\-N\-U\-M@{R\-P\-\_\-\-O\-B\-J\-V\-N\-U\-M}}
+\index{R\-P\-\_\-\-O\-B\-J\-V\-N\-U\-M@{R\-P\-\_\-\-O\-B\-J\-V\-N\-U\-M}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-O\-B\-J\-V\-N\-U\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-O\-B\-J\-V\-N\-U\-M~53}}\label{roomprogs_8cpp_a6068d52536539fb27f3a9a8cad375f6c}
+\hypertarget{roomprogs_8cpp_a7d6dcc0715a6343ff918a85d4709958a}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-O\-B\-R@{R\-P\-\_\-\-O\-B\-R}}
+\index{R\-P\-\_\-\-O\-B\-R@{R\-P\-\_\-\-O\-B\-R}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-O\-B\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-O\-B\-R~51}}\label{roomprogs_8cpp_a7d6dcc0715a6343ff918a85d4709958a}
+\hypertarget{roomprogs_8cpp_a733b9f06a4af763874edb494fa216283}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-O\-S\-T\-R@{R\-P\-\_\-\-O\-S\-T\-R}}
+\index{R\-P\-\_\-\-O\-S\-T\-R@{R\-P\-\_\-\-O\-S\-T\-R}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-O\-S\-T\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-O\-S\-T\-R~11}}\label{roomprogs_8cpp_a733b9f06a4af763874edb494fa216283}
+\hypertarget{roomprogs_8cpp_a58e96facd43c03e12e08df8aeb1266f5}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-O\-W\-N\-E\-R@{R\-P\-\_\-\-O\-W\-N\-E\-R}}
+\index{R\-P\-\_\-\-O\-W\-N\-E\-R@{R\-P\-\_\-\-O\-W\-N\-E\-R}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-O\-W\-N\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-O\-W\-N\-E\-R~62}}\label{roomprogs_8cpp_a58e96facd43c03e12e08df8aeb1266f5}
+\hypertarget{roomprogs_8cpp_a14d7563d8da0690deb226218191e3c19}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-P\-A\-I\-N@{R\-P\-\_\-\-P\-A\-I\-N}}
+\index{R\-P\-\_\-\-P\-A\-I\-N@{R\-P\-\_\-\-P\-A\-I\-N}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-P\-A\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-P\-A\-I\-N~25}}\label{roomprogs_8cpp_a14d7563d8da0690deb226218191e3c19}
+\hypertarget{roomprogs_8cpp_a889384f962c54d51e42ed364546d12e4}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-P\-U\-R\-G\-E@{R\-P\-\_\-\-P\-U\-R\-G\-E}}
+\index{R\-P\-\_\-\-P\-U\-R\-G\-E@{R\-P\-\_\-\-P\-U\-R\-G\-E}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-P\-U\-R\-G\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-P\-U\-R\-G\-E~30}}\label{roomprogs_8cpp_a889384f962c54d51e42ed364546d12e4}
+\hypertarget{roomprogs_8cpp_aad3ace7964ef45da03cb55521e048089}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-P\-U\-T@{R\-P\-\_\-\-P\-U\-T}}
+\index{R\-P\-\_\-\-P\-U\-T@{R\-P\-\_\-\-P\-U\-T}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-P\-U\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-P\-U\-T~14}}\label{roomprogs_8cpp_aad3ace7964ef45da03cb55521e048089}
+\hypertarget{roomprogs_8cpp_ad9c4ed1bc402cb88e732b36a1d9eeb45}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-R\-A\-N\-D\-O\-M\-O\-B\-J@{R\-P\-\_\-\-R\-A\-N\-D\-O\-M\-O\-B\-J}}
+\index{R\-P\-\_\-\-R\-A\-N\-D\-O\-M\-O\-B\-J@{R\-P\-\_\-\-R\-A\-N\-D\-O\-M\-O\-B\-J}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-R\-A\-N\-D\-O\-M\-O\-B\-J}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-R\-A\-N\-D\-O\-M\-O\-B\-J~54}}\label{roomprogs_8cpp_ad9c4ed1bc402cb88e732b36a1d9eeb45}
+\hypertarget{roomprogs_8cpp_af7a6cbb43d5e715714718511dd4381b9}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-R\-E\-N\-D@{R\-P\-\_\-\-R\-E\-N\-D}}
+\index{R\-P\-\_\-\-R\-E\-N\-D@{R\-P\-\_\-\-R\-E\-N\-D}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-R\-E\-N\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-R\-E\-N\-D~64}}\label{roomprogs_8cpp_af7a6cbb43d5e715714718511dd4381b9}
+\hypertarget{roomprogs_8cpp_a19c40de2a7e088db2cead6d80e1d26e2}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-R\-F\-T\-O\-G@{R\-P\-\_\-\-R\-F\-T\-O\-G}}
+\index{R\-P\-\_\-\-R\-F\-T\-O\-G@{R\-P\-\_\-\-R\-F\-T\-O\-G}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-R\-F\-T\-O\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-R\-F\-T\-O\-G~24}}\label{roomprogs_8cpp_a19c40de2a7e088db2cead6d80e1d26e2}
+\hypertarget{roomprogs_8cpp_a52b52abd94ca13861d38caecd39f92cb}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-S\-E\-T@{R\-P\-\_\-\-S\-E\-T}}
+\index{R\-P\-\_\-\-S\-E\-T@{R\-P\-\_\-\-S\-E\-T}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-S\-E\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-S\-E\-T~39}}\label{roomprogs_8cpp_a52b52abd94ca13861d38caecd39f92cb}
+\hypertarget{roomprogs_8cpp_add0db5da336f32e17215c5bb82aa0f20}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-S\-E\-T\-V\-A\-L@{R\-P\-\_\-\-S\-E\-T\-V\-A\-L}}
+\index{R\-P\-\_\-\-S\-E\-T\-V\-A\-L@{R\-P\-\_\-\-S\-E\-T\-V\-A\-L}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-S\-E\-T\-V\-A\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-S\-E\-T\-V\-A\-L~56}}\label{roomprogs_8cpp_add0db5da336f32e17215c5bb82aa0f20}
+\hypertarget{roomprogs_8cpp_adb77d8e8482ba4d0f6f6df959f06d991}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-S\-K\-I\-L\-L\-U\-S\-E@{R\-P\-\_\-\-S\-K\-I\-L\-L\-U\-S\-E}}
+\index{R\-P\-\_\-\-S\-K\-I\-L\-L\-U\-S\-E@{R\-P\-\_\-\-S\-K\-I\-L\-L\-U\-S\-E}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-S\-K\-I\-L\-L\-U\-S\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-S\-K\-I\-L\-L\-U\-S\-E~63}}\label{roomprogs_8cpp_adb77d8e8482ba4d0f6f6df959f06d991}
+\hypertarget{roomprogs_8cpp_a01b4be2a674857515078ddc58759b976}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-S\-O\-U\-N\-D@{R\-P\-\_\-\-S\-O\-U\-N\-D}}
+\index{R\-P\-\_\-\-S\-O\-U\-N\-D@{R\-P\-\_\-\-S\-O\-U\-N\-D}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-S\-O\-U\-N\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-S\-O\-U\-N\-D~68}}\label{roomprogs_8cpp_a01b4be2a674857515078ddc58759b976}
+\hypertarget{roomprogs_8cpp_aea379f525a00bd9eaca220a015eb6b2b}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-S\-T\-A\-Y\-P\-U\-T@{R\-P\-\_\-\-S\-T\-A\-Y\-P\-U\-T}}
+\index{R\-P\-\_\-\-S\-T\-A\-Y\-P\-U\-T@{R\-P\-\_\-\-S\-T\-A\-Y\-P\-U\-T}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-S\-T\-A\-Y\-P\-U\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-S\-T\-A\-Y\-P\-U\-T~33	/$\ast$ flag a mob stayput $\ast$/}}\label{roomprogs_8cpp_aea379f525a00bd9eaca220a015eb6b2b}
+\hypertarget{roomprogs_8cpp_acd0b0d937230e1dd7902a2efdba1070b}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-S\-T\-R\-I\-P@{R\-P\-\_\-\-S\-T\-R\-I\-P}}
+\index{R\-P\-\_\-\-S\-T\-R\-I\-P@{R\-P\-\_\-\-S\-T\-R\-I\-P}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-S\-T\-R\-I\-P}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-S\-T\-R\-I\-P~41      /$\ast$ takes a person'{\bf s} equipment and puts it all neatly in a bag $\ast$/}}\label{roomprogs_8cpp_acd0b0d937230e1dd7902a2efdba1070b}
+\hypertarget{roomprogs_8cpp_a7ba7982cd68b960898ef3bb048464435}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-S\-T\-U\-N@{R\-P\-\_\-\-S\-T\-U\-N}}
+\index{R\-P\-\_\-\-S\-T\-U\-N@{R\-P\-\_\-\-S\-T\-U\-N}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-S\-T\-U\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-S\-T\-U\-N~65}}\label{roomprogs_8cpp_a7ba7982cd68b960898ef3bb048464435}
+\hypertarget{roomprogs_8cpp_a5e4bb267196ccda827a89ab9a6603de3}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-S\-Y\-S\-T\-E\-M@{R\-P\-\_\-\-S\-Y\-S\-T\-E\-M}}
+\index{R\-P\-\_\-\-S\-Y\-S\-T\-E\-M@{R\-P\-\_\-\-S\-Y\-S\-T\-E\-M}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-S\-Y\-S\-T\-E\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-S\-Y\-S\-T\-E\-M~36	/$\ast$ submit a system message $\ast$/}}\label{roomprogs_8cpp_a5e4bb267196ccda827a89ab9a6603de3}
+\hypertarget{roomprogs_8cpp_aa00a0c12443fcbb7c3fa2893bf9d7b86}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-T\-A\-K\-E@{R\-P\-\_\-\-T\-A\-K\-E}}
+\index{R\-P\-\_\-\-T\-A\-K\-E@{R\-P\-\_\-\-T\-A\-K\-E}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-T\-A\-K\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-T\-A\-K\-E~2}}\label{roomprogs_8cpp_aa00a0c12443fcbb7c3fa2893bf9d7b86}
+\hypertarget{roomprogs_8cpp_ab60312e9604f2ca86633bbe2720c2563}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-T\-A\-K\-E\-M\-O\-N\-E\-Y@{R\-P\-\_\-\-T\-A\-K\-E\-M\-O\-N\-E\-Y}}
+\index{R\-P\-\_\-\-T\-A\-K\-E\-M\-O\-N\-E\-Y@{R\-P\-\_\-\-T\-A\-K\-E\-M\-O\-N\-E\-Y}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-T\-A\-K\-E\-M\-O\-N\-E\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-T\-A\-K\-E\-M\-O\-N\-E\-Y~43 /$\ast$ Take money from a player'{\bf s} inventory T\-B\-A\-: Take money from room too $\ast$/}}\label{roomprogs_8cpp_ab60312e9604f2ca86633bbe2720c2563}
+\hypertarget{roomprogs_8cpp_a5eec7d5361216fac0caa5c18e87bc58f}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-T\-A\-L\-L\-Y@{R\-P\-\_\-\-T\-A\-L\-L\-Y}}
+\index{R\-P\-\_\-\-T\-A\-L\-L\-Y@{R\-P\-\_\-\-T\-A\-L\-L\-Y}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-T\-A\-L\-L\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-T\-A\-L\-L\-Y~52}}\label{roomprogs_8cpp_a5eec7d5361216fac0caa5c18e87bc58f}
+\hypertarget{roomprogs_8cpp_a52f11e0fc3527f94657643ec16d4ff45}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-T\-E\-A\-C\-H@{R\-P\-\_\-\-T\-E\-A\-C\-H}}
+\index{R\-P\-\_\-\-T\-E\-A\-C\-H@{R\-P\-\_\-\-T\-E\-A\-C\-H}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-T\-E\-A\-C\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-T\-E\-A\-C\-H~45 /$\ast$ Teach character skill $\ast$/}}\label{roomprogs_8cpp_a52f11e0fc3527f94657643ec16d4ff45}
+\hypertarget{roomprogs_8cpp_abb4be461436b367ad3e6ef4a1cc3703a}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-T\-R\-A\-N\-S@{R\-P\-\_\-\-T\-R\-A\-N\-S}}
+\index{R\-P\-\_\-\-T\-R\-A\-N\-S@{R\-P\-\_\-\-T\-R\-A\-N\-S}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-T\-R\-A\-N\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-T\-R\-A\-N\-S~3}}\label{roomprogs_8cpp_abb4be461436b367ad3e6ef4a1cc3703a}
+\hypertarget{roomprogs_8cpp_a9c0502c156f79d9e426bf08b1f48faae}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-T\-R\-A\-N\-S\-\_\-\-G\-R\-O\-U\-P@{R\-P\-\_\-\-T\-R\-A\-N\-S\-\_\-\-G\-R\-O\-U\-P}}
+\index{R\-P\-\_\-\-T\-R\-A\-N\-S\-\_\-\-G\-R\-O\-U\-P@{R\-P\-\_\-\-T\-R\-A\-N\-S\-\_\-\-G\-R\-O\-U\-P}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-T\-R\-A\-N\-S\-\_\-\-G\-R\-O\-U\-P}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-T\-R\-A\-N\-S\-\_\-\-G\-R\-O\-U\-P~38	/$\ast$ send a message to clan members $\ast$/}}\label{roomprogs_8cpp_a9c0502c156f79d9e426bf08b1f48faae}
+\hypertarget{roomprogs_8cpp_a1c4870a124d7af8dcc138b1d9304b8bd}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-T\-R\-A\-N\-S\-M\-O\-B@{R\-P\-\_\-\-T\-R\-A\-N\-S\-M\-O\-B}}
+\index{R\-P\-\_\-\-T\-R\-A\-N\-S\-M\-O\-B@{R\-P\-\_\-\-T\-R\-A\-N\-S\-M\-O\-B}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-T\-R\-A\-N\-S\-M\-O\-B}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-T\-R\-A\-N\-S\-M\-O\-B~27}}\label{roomprogs_8cpp_a1c4870a124d7af8dcc138b1d9304b8bd}
+\hypertarget{roomprogs_8cpp_a92213664466a493930de224c4e3b3774}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-T\-R\-A\-N\-S\-O\-B\-J@{R\-P\-\_\-\-T\-R\-A\-N\-S\-O\-B\-J}}
+\index{R\-P\-\_\-\-T\-R\-A\-N\-S\-O\-B\-J@{R\-P\-\_\-\-T\-R\-A\-N\-S\-O\-B\-J}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-T\-R\-A\-N\-S\-O\-B\-J}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-T\-R\-A\-N\-S\-O\-B\-J~50}}\label{roomprogs_8cpp_a92213664466a493930de224c4e3b3774}
+\hypertarget{roomprogs_8cpp_a3bbd208b26b0d060f8ca00597a78fec1}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-U\-N\-E\-X\-I\-T@{R\-P\-\_\-\-U\-N\-E\-X\-I\-T}}
+\index{R\-P\-\_\-\-U\-N\-E\-X\-I\-T@{R\-P\-\_\-\-U\-N\-E\-X\-I\-T}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-U\-N\-E\-X\-I\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-U\-N\-E\-X\-I\-T~13}}\label{roomprogs_8cpp_a3bbd208b26b0d060f8ca00597a78fec1}
+\hypertarget{roomprogs_8cpp_af91ad8b805cdb295ae8f7f0610ad4d9f}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-U\-N\-L\-I\-N\-K@{R\-P\-\_\-\-U\-N\-L\-I\-N\-K}}
+\index{R\-P\-\_\-\-U\-N\-L\-I\-N\-K@{R\-P\-\_\-\-U\-N\-L\-I\-N\-K}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-U\-N\-L\-I\-N\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-U\-N\-L\-I\-N\-K~12}}\label{roomprogs_8cpp_af91ad8b805cdb295ae8f7f0610ad4d9f}
+\hypertarget{roomprogs_8cpp_a76381addb05c2649a0645edd86577f89}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-U\-N\-L\-O\-C\-K@{R\-P\-\_\-\-U\-N\-L\-O\-C\-K}}
+\index{R\-P\-\_\-\-U\-N\-L\-O\-C\-K@{R\-P\-\_\-\-U\-N\-L\-O\-C\-K}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-U\-N\-L\-O\-C\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-U\-N\-L\-O\-C\-K~8}}\label{roomprogs_8cpp_a76381addb05c2649a0645edd86577f89}
+\hypertarget{roomprogs_8cpp_ac9577047740a6f993837c70fe7c54172}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-V\-B\-R@{R\-P\-\_\-\-V\-B\-R}}
+\index{R\-P\-\_\-\-V\-B\-R@{R\-P\-\_\-\-V\-B\-R}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-V\-B\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-V\-B\-R~26	/$\ast$ Force line break to char $\ast$/}}\label{roomprogs_8cpp_ac9577047740a6f993837c70fe7c54172}
+\hypertarget{roomprogs_8cpp_a076824ad21bd31687dfff1b9b04fba0e}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-V\-S\-T\-R@{R\-P\-\_\-\-V\-S\-T\-R}}
+\index{R\-P\-\_\-\-V\-S\-T\-R@{R\-P\-\_\-\-V\-S\-T\-R}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-V\-S\-T\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-V\-S\-T\-R~10}}\label{roomprogs_8cpp_a076824ad21bd31687dfff1b9b04fba0e}
+\hypertarget{roomprogs_8cpp_aaccd801369e54a73da78f806037312b6}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-X\-P\-O\-I\-S\-O\-N@{R\-P\-\_\-\-X\-P\-O\-I\-S\-O\-N}}
+\index{R\-P\-\_\-\-X\-P\-O\-I\-S\-O\-N@{R\-P\-\_\-\-X\-P\-O\-I\-S\-O\-N}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-X\-P\-O\-I\-S\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-X\-P\-O\-I\-S\-O\-N~72}}\label{roomprogs_8cpp_aaccd801369e54a73da78f806037312b6}
+\hypertarget{roomprogs_8cpp_a0146f68f0858edd084af30304d08895d}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-X\-S\-T\-I\-N\-K@{R\-P\-\_\-\-X\-S\-T\-I\-N\-K}}
+\index{R\-P\-\_\-\-X\-S\-T\-I\-N\-K@{R\-P\-\_\-\-X\-S\-T\-I\-N\-K}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-X\-S\-T\-I\-N\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-X\-S\-T\-I\-N\-K~73}}\label{roomprogs_8cpp_a0146f68f0858edd084af30304d08895d}
+\hypertarget{roomprogs_8cpp_a0462cf398dbe865d7be175e141cd93d0}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!R\-P\-\_\-\-Z\-O\-N\-E\-\_\-\-E\-C\-H\-O@{R\-P\-\_\-\-Z\-O\-N\-E\-\_\-\-E\-C\-H\-O}}
+\index{R\-P\-\_\-\-Z\-O\-N\-E\-\_\-\-E\-C\-H\-O@{R\-P\-\_\-\-Z\-O\-N\-E\-\_\-\-E\-C\-H\-O}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{R\-P\-\_\-\-Z\-O\-N\-E\-\_\-\-E\-C\-H\-O}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-P\-\_\-\-Z\-O\-N\-E\-\_\-\-E\-C\-H\-O~34	/$\ast$ echo to a zone (indoor and/or outdoor) $\ast$/}}\label{roomprogs_8cpp_a0462cf398dbe865d7be175e141cd93d0}
+
+
+\subsection{Function Documentation}
+\hypertarget{roomprogs_8cpp_a319d2be3926d7e5b0aeb3943915d5d46}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!add\-\_\-variable\-\_\-to\-\_\-list@{add\-\_\-variable\-\_\-to\-\_\-list}}
+\index{add\-\_\-variable\-\_\-to\-\_\-list@{add\-\_\-variable\-\_\-to\-\_\-list}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{add\-\_\-variable\-\_\-to\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}void add\-\_\-variable\-\_\-to\-\_\-list (
+\begin{DoxyParamCaption}
+\item[{{\bf room\-\_\-prog\-\_\-var} $\ast$\&}]{variable\-\_\-list, }
+\item[{std\-::string}]{variable\-\_\-name, }
+\item[{std\-::string}]{variable\-\_\-data}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a319d2be3926d7e5b0aeb3943915d5d46}
+\hypertarget{roomprogs_8cpp_a5c1bc4bad122ef67c483ed891e2e9032}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!alternate\-\_\-money\-\_\-description@{alternate\-\_\-money\-\_\-description}}
+\index{alternate\-\_\-money\-\_\-description@{alternate\-\_\-money\-\_\-description}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{alternate\-\_\-money\-\_\-description}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string alternate\-\_\-money\-\_\-description (
+\begin{DoxyParamCaption}
+\item[{int}]{money}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a5c1bc4bad122ef67c483ed891e2e9032}
+\hypertarget{roomprogs_8cpp_a979a60297ccec1121817313e74b23b86}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!c\-\_\-prog@{c\-\_\-prog}}
+\index{c\-\_\-prog@{c\-\_\-prog}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{c\-\_\-prog}]{\setlength{\rightskip}{0pt plus 5cm}int c\-\_\-prog (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{{\bf room\-\_\-prog}}]{prog}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a979a60297ccec1121817313e74b23b86}
+\hypertarget{roomprogs_8cpp_a759c31e18e0ccb5201397b568ae711bd}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!delete\-\_\-all\-\_\-vars@{delete\-\_\-all\-\_\-vars}}
+\index{delete\-\_\-all\-\_\-vars@{delete\-\_\-all\-\_\-vars}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{delete\-\_\-all\-\_\-vars}]{\setlength{\rightskip}{0pt plus 5cm}void delete\-\_\-all\-\_\-vars (
+\begin{DoxyParamCaption}
+\item[{{\bf room\-\_\-prog\-\_\-var} $\ast$\&}]{variable\-\_\-list}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a759c31e18e0ccb5201397b568ae711bd}
+\hypertarget{roomprogs_8cpp_a6c216f478e4cf96f3638892926e1305f}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!delete\-\_\-var\-\_\-from\-\_\-list@{delete\-\_\-var\-\_\-from\-\_\-list}}
+\index{delete\-\_\-var\-\_\-from\-\_\-list@{delete\-\_\-var\-\_\-from\-\_\-list}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{delete\-\_\-var\-\_\-from\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}void delete\-\_\-var\-\_\-from\-\_\-list (
+\begin{DoxyParamCaption}
+\item[{{\bf room\-\_\-prog\-\_\-var} $\ast$\&}]{variable\-\_\-list, }
+\item[{std\-::string}]{variable\-\_\-name}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a6c216f478e4cf96f3638892926e1305f}
+\hypertarget{roomprogs_8cpp_ab9617c2ccb8883b8656f7b31ac2adc70}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!do\-\_\-cpadd@{do\-\_\-cpadd}}
+\index{do\-\_\-cpadd@{do\-\_\-cpadd}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{do\-\_\-cpadd}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-cpadd (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_ab9617c2ccb8883b8656f7b31ac2adc70}
+\hypertarget{roomprogs_8cpp_acc592321eec42eb3fcf0bbdd8bc349be}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!do\-\_\-cpapp@{do\-\_\-cpapp}}
+\index{do\-\_\-cpapp@{do\-\_\-cpapp}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{do\-\_\-cpapp}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-cpapp (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_acc592321eec42eb3fcf0bbdd8bc349be}
+\hypertarget{roomprogs_8cpp_a25ae982d958b6995dfff5ca61ee20b56}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!do\-\_\-cpcmd@{do\-\_\-cpcmd}}
+\index{do\-\_\-cpcmd@{do\-\_\-cpcmd}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{do\-\_\-cpcmd}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-cpcmd (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a25ae982d958b6995dfff5ca61ee20b56}
+\hypertarget{roomprogs_8cpp_aa06467ec17dd8529743c245ae386fc04}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!do\-\_\-cpdel@{do\-\_\-cpdel}}
+\index{do\-\_\-cpdel@{do\-\_\-cpdel}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{do\-\_\-cpdel}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-cpdel (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_aa06467ec17dd8529743c245ae386fc04}
+\hypertarget{roomprogs_8cpp_a6169762e1ece5099ceb7e61780ee51d0}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!do\-\_\-cpkey@{do\-\_\-cpkey}}
+\index{do\-\_\-cpkey@{do\-\_\-cpkey}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{do\-\_\-cpkey}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-cpkey (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a6169762e1ece5099ceb7e61780ee51d0}
+\hypertarget{roomprogs_8cpp_a861a1a857b8a7ca19af5bbe820a09c62}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!do\-\_\-cpprg@{do\-\_\-cpprg}}
+\index{do\-\_\-cpprg@{do\-\_\-cpprg}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{do\-\_\-cpprg}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-cpprg (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a861a1a857b8a7ca19af5bbe820a09c62}
+\hypertarget{roomprogs_8cpp_aef8c13771c9a63a02e19d58a7b2a9f16}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!do\-\_\-cpstat@{do\-\_\-cpstat}}
+\index{do\-\_\-cpstat@{do\-\_\-cpstat}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{do\-\_\-cpstat}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-cpstat (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_aef8c13771c9a63a02e19d58a7b2a9f16}
+\hypertarget{roomprogs_8cpp_a54b12067434a2b27d08b8e3d462b9166}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!do\-\_\-cptype@{do\-\_\-cptype}}
+\index{do\-\_\-cptype@{do\-\_\-cptype}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{do\-\_\-cptype}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-cptype (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a54b12067434a2b27d08b8e3d462b9166}
+\hypertarget{roomprogs_8cpp_afb57de252969d864c15bbaf98b085b78}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!do\-\_\-mpadd@{do\-\_\-mpadd}}
+\index{do\-\_\-mpadd@{do\-\_\-mpadd}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{do\-\_\-mpadd}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-mpadd (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_afb57de252969d864c15bbaf98b085b78}
+\hypertarget{roomprogs_8cpp_a8c756462bb455bd40fec86def76896bf}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!do\-\_\-mpapp@{do\-\_\-mpapp}}
+\index{do\-\_\-mpapp@{do\-\_\-mpapp}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{do\-\_\-mpapp}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-mpapp (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a8c756462bb455bd40fec86def76896bf}
+\hypertarget{roomprogs_8cpp_a1ac11fed1de3f919186162844d571bdf}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!do\-\_\-mpcmd@{do\-\_\-mpcmd}}
+\index{do\-\_\-mpcmd@{do\-\_\-mpcmd}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{do\-\_\-mpcmd}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-mpcmd (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a1ac11fed1de3f919186162844d571bdf}
+\hypertarget{roomprogs_8cpp_a56a3a2648cb786da2cc47dfdd6044b14}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!do\-\_\-mpdel@{do\-\_\-mpdel}}
+\index{do\-\_\-mpdel@{do\-\_\-mpdel}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{do\-\_\-mpdel}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-mpdel (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a56a3a2648cb786da2cc47dfdd6044b14}
+\hypertarget{roomprogs_8cpp_a38a08ae48294b00efcacba2f5cfe0c36}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!do\-\_\-mpkey@{do\-\_\-mpkey}}
+\index{do\-\_\-mpkey@{do\-\_\-mpkey}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{do\-\_\-mpkey}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-mpkey (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a38a08ae48294b00efcacba2f5cfe0c36}
+\hypertarget{roomprogs_8cpp_a16b6d6165337b1df16e2a618908762f2}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!do\-\_\-mpprg@{do\-\_\-mpprg}}
+\index{do\-\_\-mpprg@{do\-\_\-mpprg}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{do\-\_\-mpprg}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-mpprg (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a16b6d6165337b1df16e2a618908762f2}
+\hypertarget{roomprogs_8cpp_a04fc57b7a1150a25903471f37e9c14f3}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!do\-\_\-mpstat@{do\-\_\-mpstat}}
+\index{do\-\_\-mpstat@{do\-\_\-mpstat}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{do\-\_\-mpstat}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-mpstat (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a04fc57b7a1150a25903471f37e9c14f3}
+\hypertarget{roomprogs_8cpp_a18a8733f538d9ed7735e5dd8e05fdbda}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!do\-\_\-mptype@{do\-\_\-mptype}}
+\index{do\-\_\-mptype@{do\-\_\-mptype}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{do\-\_\-mptype}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-mptype (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a18a8733f538d9ed7735e5dd8e05fdbda}
+\hypertarget{roomprogs_8cpp_a45473d48dfb0a4a8f88abeda5e843db7}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!do\-\_\-opadd@{do\-\_\-opadd}}
+\index{do\-\_\-opadd@{do\-\_\-opadd}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{do\-\_\-opadd}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-opadd (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a45473d48dfb0a4a8f88abeda5e843db7}
+\hypertarget{roomprogs_8cpp_ac098e8885045a5e3e91783303d8f165d}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!do\-\_\-opapp@{do\-\_\-opapp}}
+\index{do\-\_\-opapp@{do\-\_\-opapp}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{do\-\_\-opapp}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-opapp (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_ac098e8885045a5e3e91783303d8f165d}
+\hypertarget{roomprogs_8cpp_a2bfe01706aa539a34624ebac9fa3f937}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!do\-\_\-opcmd@{do\-\_\-opcmd}}
+\index{do\-\_\-opcmd@{do\-\_\-opcmd}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{do\-\_\-opcmd}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-opcmd (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a2bfe01706aa539a34624ebac9fa3f937}
+\hypertarget{roomprogs_8cpp_a74fd24f30bfb269540610998b1bf745a}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!do\-\_\-opdel@{do\-\_\-opdel}}
+\index{do\-\_\-opdel@{do\-\_\-opdel}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{do\-\_\-opdel}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-opdel (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a74fd24f30bfb269540610998b1bf745a}
+\hypertarget{roomprogs_8cpp_ae559fa748dc24753d97bb7652dad576d}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!do\-\_\-opkey@{do\-\_\-opkey}}
+\index{do\-\_\-opkey@{do\-\_\-opkey}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{do\-\_\-opkey}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-opkey (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_ae559fa748dc24753d97bb7652dad576d}
+\hypertarget{roomprogs_8cpp_a987c0da0c19d9e4a904fd9bb2ae91996}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!do\-\_\-opprg@{do\-\_\-opprg}}
+\index{do\-\_\-opprg@{do\-\_\-opprg}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{do\-\_\-opprg}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-opprg (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a987c0da0c19d9e4a904fd9bb2ae91996}
+\hypertarget{roomprogs_8cpp_aacf6b7070c5499625d425692b4dee35c}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!do\-\_\-opstat@{do\-\_\-opstat}}
+\index{do\-\_\-opstat@{do\-\_\-opstat}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{do\-\_\-opstat}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-opstat (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_aacf6b7070c5499625d425692b4dee35c}
+\hypertarget{roomprogs_8cpp_a2006b6ad16c068a8056df3c9848c7d6b}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!do\-\_\-optype@{do\-\_\-optype}}
+\index{do\-\_\-optype@{do\-\_\-optype}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{do\-\_\-optype}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-optype (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a2006b6ad16c068a8056df3c9848c7d6b}
+\hypertarget{roomprogs_8cpp_ae87cd1e11871ddb8dc4238c4d53dcf47}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!do\-\_\-rpadd@{do\-\_\-rpadd}}
+\index{do\-\_\-rpadd@{do\-\_\-rpadd}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{do\-\_\-rpadd}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-rpadd (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_ae87cd1e11871ddb8dc4238c4d53dcf47}
+\hypertarget{roomprogs_8cpp_a176c004e8c45f5ba774b3994bfdc894e}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!do\-\_\-rpapp@{do\-\_\-rpapp}}
+\index{do\-\_\-rpapp@{do\-\_\-rpapp}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{do\-\_\-rpapp}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-rpapp (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a176c004e8c45f5ba774b3994bfdc894e}
+\hypertarget{roomprogs_8cpp_ab31db832d11d9a0039f4d563e386b66b}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!do\-\_\-rpcmd@{do\-\_\-rpcmd}}
+\index{do\-\_\-rpcmd@{do\-\_\-rpcmd}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{do\-\_\-rpcmd}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-rpcmd (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_ab31db832d11d9a0039f4d563e386b66b}
+\hypertarget{roomprogs_8cpp_a5be75081f138cd23b28160e1eb7294cf}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!do\-\_\-rpdel@{do\-\_\-rpdel}}
+\index{do\-\_\-rpdel@{do\-\_\-rpdel}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{do\-\_\-rpdel}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-rpdel (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a5be75081f138cd23b28160e1eb7294cf}
+\hypertarget{roomprogs_8cpp_abd65457fc668c0af4208488b470fd88a}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!do\-\_\-rpkey@{do\-\_\-rpkey}}
+\index{do\-\_\-rpkey@{do\-\_\-rpkey}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{do\-\_\-rpkey}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-rpkey (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_abd65457fc668c0af4208488b470fd88a}
+\hypertarget{roomprogs_8cpp_a1b56f7cf8b3c285720391fc3814ba261}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!do\-\_\-rpprg@{do\-\_\-rpprg}}
+\index{do\-\_\-rpprg@{do\-\_\-rpprg}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{do\-\_\-rpprg}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-rpprg (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a1b56f7cf8b3c285720391fc3814ba261}
+\hypertarget{roomprogs_8cpp_aea91d10085c811b249ec78be39781406}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!do\-\_\-rpstat@{do\-\_\-rpstat}}
+\index{do\-\_\-rpstat@{do\-\_\-rpstat}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{do\-\_\-rpstat}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-rpstat (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_aea91d10085c811b249ec78be39781406}
+\hypertarget{roomprogs_8cpp_a4699b3405805a5bb19bb35e470c41a80}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!doit@{doit}}
+\index{doit@{doit}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{doit}]{\setlength{\rightskip}{0pt plus 5cm}int doit (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{const char $\ast$}]{func, }
+\item[{char $\ast$}]{arg, }
+\item[{char $\ast$}]{command, }
+\item[{char $\ast$}]{keyword, }
+\item[{char $\ast$}]{argument, }
+\item[{{\bf room\-\_\-prog\-\_\-var} $\ast$\&}]{variable\-\_\-list}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a4699b3405805a5bb19bb35e470c41a80}
+\hypertarget{roomprogs_8cpp_a33acab67aedfb5ddbcc2ee04a9eb49be}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!evaluate\-\_\-if@{evaluate\-\_\-if}}
+\index{evaluate\-\_\-if@{evaluate\-\_\-if}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{evaluate\-\_\-if}]{\setlength{\rightskip}{0pt plus 5cm}void evaluate\-\_\-if (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{arg, }
+\item[{{\bf room\-\_\-prog\-\_\-var} $\ast$\&}]{variables}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a33acab67aedfb5ddbcc2ee04a9eb49be}
+\hypertarget{roomprogs_8cpp_a2354237460e9084e56e4f6f13f46118a}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!get\-\_\-variable\-\_\-data@{get\-\_\-variable\-\_\-data}}
+\index{get\-\_\-variable\-\_\-data@{get\-\_\-variable\-\_\-data}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{get\-\_\-variable\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string get\-\_\-variable\-\_\-data (
+\begin{DoxyParamCaption}
+\item[{{\bf room\-\_\-prog\-\_\-var} $\ast$\&}]{variable\-\_\-list, }
+\item[{std\-::string}]{variable\-\_\-name}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a2354237460e9084e56e4f6f13f46118a}
+\hypertarget{roomprogs_8cpp_a9ee512aa96d1a69a6f2af84d7a920020}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!initialize\-\_\-location\-\_\-map@{initialize\-\_\-location\-\_\-map}}
+\index{initialize\-\_\-location\-\_\-map@{initialize\-\_\-location\-\_\-map}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{initialize\-\_\-location\-\_\-map}]{\setlength{\rightskip}{0pt plus 5cm}void initialize\-\_\-location\-\_\-map (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a9ee512aa96d1a69a6f2af84d7a920020}
+\hypertarget{roomprogs_8cpp_aa5582d94c89a500f8a0bbeff2b2faf75}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!is\-\_\-variable\-\_\-in\-\_\-list@{is\-\_\-variable\-\_\-in\-\_\-list}}
+\index{is\-\_\-variable\-\_\-in\-\_\-list@{is\-\_\-variable\-\_\-in\-\_\-list}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{is\-\_\-variable\-\_\-in\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} is\-\_\-variable\-\_\-in\-\_\-list (
+\begin{DoxyParamCaption}
+\item[{{\bf room\-\_\-prog\-\_\-var} $\ast$\&}]{variable\-\_\-list, }
+\item[{std\-::string}]{variable\-\_\-name}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_aa5582d94c89a500f8a0bbeff2b2faf75}
+\hypertarget{roomprogs_8cpp_a1d732402a7781309601baa283f346eb1}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!is\-\_\-variable\-\_\-number@{is\-\_\-variable\-\_\-number}}
+\index{is\-\_\-variable\-\_\-number@{is\-\_\-variable\-\_\-number}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{is\-\_\-variable\-\_\-number}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} is\-\_\-variable\-\_\-number (
+\begin{DoxyParamCaption}
+\item[{{\bf room\-\_\-prog\-\_\-var} $\ast$\&}]{variable\-\_\-list, }
+\item[{std\-::string}]{variable\-\_\-name}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a1d732402a7781309601baa283f346eb1}
+\hypertarget{roomprogs_8cpp_acade40baf417fab22674993da04ddf8e}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!m\-\_\-prog@{m\-\_\-prog}}
+\index{m\-\_\-prog@{m\-\_\-prog}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{m\-\_\-prog}]{\setlength{\rightskip}{0pt plus 5cm}int m\-\_\-prog (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_acade40baf417fab22674993da04ddf8e}
+\hypertarget{roomprogs_8cpp_a5ed3e71565a09f57cbb2e65c5ba473d1}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!m\-\_\-prog@{m\-\_\-prog}}
+\index{m\-\_\-prog@{m\-\_\-prog}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{m\-\_\-prog}]{\setlength{\rightskip}{0pt plus 5cm}int m\-\_\-prog (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{{\bf room\-\_\-prog}}]{prog}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a5ed3e71565a09f57cbb2e65c5ba473d1}
+\hypertarget{roomprogs_8cpp_a949e82d984df65c7fe59f730db18c36b}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!next\-\_\-line@{next\-\_\-line}}
+\index{next\-\_\-line@{next\-\_\-line}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{next\-\_\-line}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ next\-\_\-line (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{old}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a949e82d984df65c7fe59f730db18c36b}
+\hypertarget{roomprogs_8cpp_a8ee53762c70675d4cb8eb979aca7f547}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!o\-\_\-prog@{o\-\_\-prog}}
+\index{o\-\_\-prog@{o\-\_\-prog}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{o\-\_\-prog}]{\setlength{\rightskip}{0pt plus 5cm}int o\-\_\-prog (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{{\bf room\-\_\-prog}}]{prog}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a8ee53762c70675d4cb8eb979aca7f547}
+\hypertarget{roomprogs_8cpp_a02fdc94e0cae23e25761c4b73135c8ab}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!oexist@{oexist}}
+\index{oexist@{oexist}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{oexist}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} oexist (
+\begin{DoxyParamCaption}
+\item[{int}]{n\-Virtual, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{ptr\-Contents, }
+\item[{{\bf bool}}]{b\-Nest}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a02fdc94e0cae23e25761c4b73135c8ab}
+\hypertarget{roomprogs_8cpp_abd77f1af86126ccfe8db6d4451e62cb8}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!outranks@{outranks}}
+\index{outranks@{outranks}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{outranks}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} outranks (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{has\-\_\-rank, }
+\item[{char $\ast$}]{compared\-\_\-rank, }
+\item[{char $\ast$}]{clan}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_abd77f1af86126ccfe8db6d4451e62cb8}
+\hypertarget{roomprogs_8cpp_ac264a2bb2ab65b774620754bc7bdf8f1}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!prog\-\_\-object\-\_\-properties@{prog\-\_\-object\-\_\-properties}}
+\index{prog\-\_\-object\-\_\-properties@{prog\-\_\-object\-\_\-properties}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{prog\-\_\-object\-\_\-properties}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} prog\-\_\-object\-\_\-properties (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj, }
+\item[{std\-::string}]{argument, }
+\item[{std\-::string \&}]{output}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_ac264a2bb2ab65b774620754bc7bdf8f1}
+\hypertarget{roomprogs_8cpp_a5c8f084e69027e26fba07d1a6e0794d6}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!prog\-\_\-object\-\_\-properties@{prog\-\_\-object\-\_\-properties}}
+\index{prog\-\_\-object\-\_\-properties@{prog\-\_\-object\-\_\-properties}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{prog\-\_\-object\-\_\-properties}]{\setlength{\rightskip}{0pt plus 5cm}void prog\-\_\-object\-\_\-properties (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj, }
+\item[{std\-::string}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a5c8f084e69027e26fba07d1a6e0794d6}
+\hypertarget{roomprogs_8cpp_a4b5aec51738c9ef948fe8ff3ff0282e0}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-atecho@{r\-\_\-atecho}}
+\index{r\-\_\-atecho@{r\-\_\-atecho}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-atecho}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-atecho (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a4b5aec51738c9ef948fe8ff3ff0282e0}
+\hypertarget{roomprogs_8cpp_aa7e441b43c98c7f4a76a0e11adc1cbd4}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-atlook@{r\-\_\-atlook}}
+\index{r\-\_\-atlook@{r\-\_\-atlook}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-atlook}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-atlook (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_aa7e441b43c98c7f4a76a0e11adc1cbd4}
+\hypertarget{roomprogs_8cpp_a02837d4c088d42548a740b6f6826c884}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-atread@{r\-\_\-atread}}
+\index{r\-\_\-atread@{r\-\_\-atread}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-atread}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-atread (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a02837d4c088d42548a740b6f6826c884}
+\hypertarget{roomprogs_8cpp_a56720b51cbdb17062b7efbed35c1311b}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-atwrite@{r\-\_\-atwrite}}
+\index{r\-\_\-atwrite@{r\-\_\-atwrite}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-atwrite}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-atwrite (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a56720b51cbdb17062b7efbed35c1311b}
+\hypertarget{roomprogs_8cpp_a0ef944a8de83b0ad697e87ceee1da67a}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-clan@{r\-\_\-clan}}
+\index{r\-\_\-clan@{r\-\_\-clan}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-clan}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-clan (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a0ef944a8de83b0ad697e87ceee1da67a}
+\hypertarget{roomprogs_8cpp_ad2894e33013fe22eb4a2964bf723455f}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-clan\-\_\-echo@{r\-\_\-clan\-\_\-echo}}
+\index{r\-\_\-clan\-\_\-echo@{r\-\_\-clan\-\_\-echo}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-clan\-\_\-echo}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-clan\-\_\-echo (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_ad2894e33013fe22eb4a2964bf723455f}
+\hypertarget{roomprogs_8cpp_a4acf71a05b1eff5a41a832c8162ded21}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-concat@{r\-\_\-concat}}
+\index{r\-\_\-concat@{r\-\_\-concat}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-concat}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-concat (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{std\-::string}]{argument, }
+\item[{{\bf room\-\_\-prog\-\_\-var} $\ast$\&}]{variable\-\_\-list}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a4acf71a05b1eff5a41a832c8162ded21}
+\hypertarget{roomprogs_8cpp_a642ad63cfb1440103ba41436a32a0d4b}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-coppertoshillings@{r\-\_\-coppertoshillings}}
+\index{r\-\_\-coppertoshillings@{r\-\_\-coppertoshillings}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-coppertoshillings}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-coppertoshillings (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{argument, }
+\item[{{\bf room\-\_\-prog\-\_\-var} $\ast$\&}]{variable\-\_\-list}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a642ad63cfb1440103ba41436a32a0d4b}
+\hypertarget{roomprogs_8cpp_a9cd3c05d023d81c2c7496ed0534319c5}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-criminalize@{r\-\_\-criminalize}}
+\index{r\-\_\-criminalize@{r\-\_\-criminalize}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-criminalize}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-criminalize (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a9cd3c05d023d81c2c7496ed0534319c5}
+\hypertarget{roomprogs_8cpp_af7b3eed5ac1fb67fe2cd27c4d67dfdd1}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-delay@{r\-\_\-delay}}
+\index{r\-\_\-delay@{r\-\_\-delay}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-delay}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-delay (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_af7b3eed5ac1fb67fe2cd27c4d67dfdd1}
+\hypertarget{roomprogs_8cpp_a7714ccf64feb00ab7af339fd2e962c38}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-doitanyway@{r\-\_\-doitanyway}}
+\index{r\-\_\-doitanyway@{r\-\_\-doitanyway}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-doitanyway}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-doitanyway (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{char $\ast$}]{command, }
+\item[{char $\ast$}]{keyword, }
+\item[{char $\ast$}]{player\-\_\-args}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a7714ccf64feb00ab7af339fd2e962c38}
+\hypertarget{roomprogs_8cpp_abddd0f50545887b7e35c00e8d5d78e7a}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-door@{r\-\_\-door}}
+\index{r\-\_\-door@{r\-\_\-door}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-door}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-door (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_abddd0f50545887b7e35c00e8d5d78e7a}
+\hypertarget{roomprogs_8cpp_a384f9385cdc3d2577d8cdf9793f14dab}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-exit@{r\-\_\-exit}}
+\index{r\-\_\-exit@{r\-\_\-exit}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-exit}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-exit (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a384f9385cdc3d2577d8cdf9793f14dab}
+\hypertarget{roomprogs_8cpp_a423a857f4128893742b832bd1bbaca5e}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-exmob@{r\-\_\-exmob}}
+\index{r\-\_\-exmob@{r\-\_\-exmob}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-exmob}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-exmob (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a423a857f4128893742b832bd1bbaca5e}
+\hypertarget{roomprogs_8cpp_a9a52c1ed68411bd89403d41529ea87fa}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-fatigue@{r\-\_\-fatigue}}
+\index{r\-\_\-fatigue@{r\-\_\-fatigue}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-fatigue}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-fatigue (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a9a52c1ed68411bd89403d41529ea87fa}
+\hypertarget{roomprogs_8cpp_acbe831d7799831386bfef3e8938e96fa}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-force@{r\-\_\-force}}
+\index{r\-\_\-force@{r\-\_\-force}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-force}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-force (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_acbe831d7799831386bfef3e8938e96fa}
+\hypertarget{roomprogs_8cpp_a84252fa3d707c415fb699c883f471d9e}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-get@{r\-\_\-get}}
+\index{r\-\_\-get@{r\-\_\-get}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-get}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-get (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a84252fa3d707c415fb699c883f471d9e}
+\hypertarget{roomprogs_8cpp_a696e3807d8c3e7362a505ed0f4caaed3}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-give@{r\-\_\-give}}
+\index{r\-\_\-give@{r\-\_\-give}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-give}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-give (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a696e3807d8c3e7362a505ed0f4caaed3}
+\hypertarget{roomprogs_8cpp_aa6cc3cb8cbce680be8c4bd198da108ea}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-give\-\_\-color@{r\-\_\-give\-\_\-color}}
+\index{r\-\_\-give\-\_\-color@{r\-\_\-give\-\_\-color}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-give\-\_\-color}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-give\-\_\-color (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_aa6cc3cb8cbce680be8c4bd198da108ea}
+\hypertarget{roomprogs_8cpp_a33c7a85080d15ac96fc183e1efe41c3c}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-givecash@{r\-\_\-givecash}}
+\index{r\-\_\-givecash@{r\-\_\-givecash}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-givecash}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-givecash (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a33c7a85080d15ac96fc183e1efe41c3c}
+\hypertarget{roomprogs_8cpp_a82ffc9a25798d118262b84a254fdf677}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-heal@{r\-\_\-heal}}
+\index{r\-\_\-heal@{r\-\_\-heal}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-heal}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-heal (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a82ffc9a25798d118262b84a254fdf677}
+\hypertarget{roomprogs_8cpp_aef15d18ef590de3440938ad09506ed20}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-info@{r\-\_\-info}}
+\index{r\-\_\-info@{r\-\_\-info}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-info}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-info (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{std\-::string}]{argument, }
+\item[{{\bf room\-\_\-prog\-\_\-var} $\ast$\&}]{variable\-\_\-list}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_aef15d18ef590de3440938ad09506ed20}
+\hypertarget{roomprogs_8cpp_a84f55f7633b10f0610cd5e878aa20801}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-isname@{r\-\_\-isname}}
+\index{r\-\_\-isname@{r\-\_\-isname}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-isname}]{\setlength{\rightskip}{0pt plus 5cm}int r\-\_\-isname (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{str, }
+\item[{char $\ast$}]{namelist}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a84f55f7633b10f0610cd5e878aa20801}
+\hypertarget{roomprogs_8cpp_ae13929063f0daded37dd5e4777e0632f}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-link@{r\-\_\-link}}
+\index{r\-\_\-link@{r\-\_\-link}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-link}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-link (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_ae13929063f0daded37dd5e4777e0632f}
+\hypertarget{roomprogs_8cpp_ac5ca33008e460f64ef1e2d635f11eb5e}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-load\-\_\-clone@{r\-\_\-load\-\_\-clone}}
+\index{r\-\_\-load\-\_\-clone@{r\-\_\-load\-\_\-clone}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-load\-\_\-clone}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-load\-\_\-clone (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_ac5ca33008e460f64ef1e2d635f11eb5e}
+\hypertarget{roomprogs_8cpp_a0937316da9e6e66d5ffdffc723796f8a}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-load\-\_\-color@{r\-\_\-load\-\_\-color}}
+\index{r\-\_\-load\-\_\-color@{r\-\_\-load\-\_\-color}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-load\-\_\-color}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-load\-\_\-color (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a0937316da9e6e66d5ffdffc723796f8a}
+\hypertarget{roomprogs_8cpp_a9c4a2ce8906fbe56f27051e5f7eb03e0}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-load\-\_\-obj@{r\-\_\-load\-\_\-obj}}
+\index{r\-\_\-load\-\_\-obj@{r\-\_\-load\-\_\-obj}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-load\-\_\-obj}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-load\-\_\-obj (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a9c4a2ce8906fbe56f27051e5f7eb03e0}
+\hypertarget{roomprogs_8cpp_a187f57b37162818b7f6ac05a61f3eb84}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-loadmob@{r\-\_\-loadmob}}
+\index{r\-\_\-loadmob@{r\-\_\-loadmob}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-loadmob}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-loadmob (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a187f57b37162818b7f6ac05a61f3eb84}
+\hypertarget{roomprogs_8cpp_af083103546fa4535b62592869b617988}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-lock@{r\-\_\-lock}}
+\index{r\-\_\-lock@{r\-\_\-lock}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-lock}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-lock (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_af083103546fa4535b62592869b617988}
+\hypertarget{roomprogs_8cpp_a812c78c29471113b6e95516cb42f2588}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-math@{r\-\_\-math}}
+\index{r\-\_\-math@{r\-\_\-math}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-math}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-math (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{{\bf room\-\_\-prog\-\_\-var} $\ast$\&}]{variable\-\_\-list}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a812c78c29471113b6e95516cb42f2588}
+\hypertarget{roomprogs_8cpp_ac8ad37d0b8eb3fcaf3708281a71c0053}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-mcopy@{r\-\_\-mcopy}}
+\index{r\-\_\-mcopy@{r\-\_\-mcopy}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-mcopy}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-mcopy (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_ac8ad37d0b8eb3fcaf3708281a71c0053}
+\hypertarget{roomprogs_8cpp_af15a912de67a023b372dd7a42275b0e7}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-mftog@{r\-\_\-mftog}}
+\index{r\-\_\-mftog@{r\-\_\-mftog}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-mftog}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-mftog (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{std\-::string}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_af15a912de67a023b372dd7a42275b0e7}
+\hypertarget{roomprogs_8cpp_a9ae23bf32152594fd2d853c02f2aecd3}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-mrend@{r\-\_\-mrend}}
+\index{r\-\_\-mrend@{r\-\_\-mrend}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-mrend}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-mrend (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a9ae23bf32152594fd2d853c02f2aecd3}
+\hypertarget{roomprogs_8cpp_a130bddd81bcf0014a829e6a19e341c29}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-music@{r\-\_\-music}}
+\index{r\-\_\-music@{r\-\_\-music}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-music}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-music (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a130bddd81bcf0014a829e6a19e341c29}
+\hypertarget{roomprogs_8cpp_abc527d8da2b261d53a82c05d0b91a12c}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-objvnum@{r\-\_\-objvnum}}
+\index{r\-\_\-objvnum@{r\-\_\-objvnum}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-objvnum}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-objvnum (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{std\-::string}]{argument, }
+\item[{{\bf room\-\_\-prog\-\_\-var} $\ast$\&}]{variable\-\_\-list}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_abc527d8da2b261d53a82c05d0b91a12c}
+\hypertarget{roomprogs_8cpp_a3d45e38c3b0df1995ee9fc60ab76bcc5}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-owner@{r\-\_\-owner}}
+\index{r\-\_\-owner@{r\-\_\-owner}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-owner}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-owner (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a3d45e38c3b0df1995ee9fc60ab76bcc5}
+\hypertarget{roomprogs_8cpp_a836766c8ac7dfcb8cdeec538cdeedeff}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-pain@{r\-\_\-pain}}
+\index{r\-\_\-pain@{r\-\_\-pain}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-pain}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-pain (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a836766c8ac7dfcb8cdeec538cdeedeff}
+\hypertarget{roomprogs_8cpp_a76fb42c0b147743cef454fa827d6c642}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-painmess@{r\-\_\-painmess}}
+\index{r\-\_\-painmess@{r\-\_\-painmess}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-painmess}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-painmess (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{victim, }
+\item[{int}]{dam}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a76fb42c0b147743cef454fa827d6c642}
+\hypertarget{roomprogs_8cpp_a814c3c0c0d61611d683419002d56fca3}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-program@{r\-\_\-program}}
+\index{r\-\_\-program@{r\-\_\-program}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-program}]{\setlength{\rightskip}{0pt plus 5cm}int r\-\_\-program (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a814c3c0c0d61611d683419002d56fca3}
+\hypertarget{roomprogs_8cpp_a91042e5f4e795005bac8f5f0431515a2}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-purge@{r\-\_\-purge}}
+\index{r\-\_\-purge@{r\-\_\-purge}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-purge}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-purge (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a91042e5f4e795005bac8f5f0431515a2}
+\hypertarget{roomprogs_8cpp_a2a2047b06c1167884849512dc48feecb}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-put@{r\-\_\-put}}
+\index{r\-\_\-put@{r\-\_\-put}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-put}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-put (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a2a2047b06c1167884849512dc48feecb}
+\hypertarget{roomprogs_8cpp_a37c6f342c1317d75a0ac0194b5fbe457}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-randomobj@{r\-\_\-randomobj}}
+\index{r\-\_\-randomobj@{r\-\_\-randomobj}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-randomobj}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-randomobj (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{std\-::string}]{argument, }
+\item[{{\bf room\-\_\-prog\-\_\-var} $\ast$\&}]{variable\-\_\-list}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a37c6f342c1317d75a0ac0194b5fbe457}
+\hypertarget{roomprogs_8cpp_af9cb1fd7abf2c6e356aef95e77e45414}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-rftog@{r\-\_\-rftog}}
+\index{r\-\_\-rftog@{r\-\_\-rftog}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-rftog}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-rftog (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{arg}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_af9cb1fd7abf2c6e356aef95e77e45414}
+\hypertarget{roomprogs_8cpp_ad2525de31f36e27bb83f0ebf110d3eab}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-set@{r\-\_\-set}}
+\index{r\-\_\-set@{r\-\_\-set}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-set}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-set (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{{\bf room\-\_\-prog\-\_\-var} $\ast$\&}]{variable\-\_\-list}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_ad2525de31f36e27bb83f0ebf110d3eab}
+\hypertarget{roomprogs_8cpp_a167ea83bc0ae41668dbb344ab743bb12}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-setval@{r\-\_\-setval}}
+\index{r\-\_\-setval@{r\-\_\-setval}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-setval}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-setval (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{std\-::string}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a167ea83bc0ae41668dbb344ab743bb12}
+\hypertarget{roomprogs_8cpp_aeb871b2cc89f4804658c5393bc9e3ac4}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-skilluse@{r\-\_\-skilluse}}
+\index{r\-\_\-skilluse@{r\-\_\-skilluse}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-skilluse}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-skilluse (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_aeb871b2cc89f4804658c5393bc9e3ac4}
+\hypertarget{roomprogs_8cpp_aefde3e95e5483826acd6c5c7e928a59c}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-sound@{r\-\_\-sound}}
+\index{r\-\_\-sound@{r\-\_\-sound}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-sound}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-sound (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_aefde3e95e5483826acd6c5c7e928a59c}
+\hypertarget{roomprogs_8cpp_a88f4b4461d5f44c27839f8ac58d7cc0d}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-stayput@{r\-\_\-stayput}}
+\index{r\-\_\-stayput@{r\-\_\-stayput}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-stayput}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-stayput (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a88f4b4461d5f44c27839f8ac58d7cc0d}
+\hypertarget{roomprogs_8cpp_abce2e833371b86370c0cdbc34e9d080e}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-strip@{r\-\_\-strip}}
+\index{r\-\_\-strip@{r\-\_\-strip}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-strip}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-strip (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_abce2e833371b86370c0cdbc34e9d080e}
+\hypertarget{roomprogs_8cpp_acf95d8f478dbe7f4b66f94135da9026e}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-stun@{r\-\_\-stun}}
+\index{r\-\_\-stun@{r\-\_\-stun}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-stun}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-stun (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_acf95d8f478dbe7f4b66f94135da9026e}
+\hypertarget{roomprogs_8cpp_a1a634fd451cfbfa906ca14ac3dad8361}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-system@{r\-\_\-system}}
+\index{r\-\_\-system@{r\-\_\-system}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-system}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-system (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a1a634fd451cfbfa906ca14ac3dad8361}
+\hypertarget{roomprogs_8cpp_a86523982a2d707561cf46e5f355c5e56}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-take@{r\-\_\-take}}
+\index{r\-\_\-take@{r\-\_\-take}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-take}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-take (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a86523982a2d707561cf46e5f355c5e56}
+\hypertarget{roomprogs_8cpp_a7d8ddeae9c035c910e82355a6948f1e0}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-takemoney@{r\-\_\-takemoney}}
+\index{r\-\_\-takemoney@{r\-\_\-takemoney}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-takemoney}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-takemoney (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a7d8ddeae9c035c910e82355a6948f1e0}
+\hypertarget{roomprogs_8cpp_ad48b7221c0e33ebd4c051bc1ce59a48e}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-tally@{r\-\_\-tally}}
+\index{r\-\_\-tally@{r\-\_\-tally}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-tally}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-tally (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{std\-::string}]{argument, }
+\item[{{\bf room\-\_\-prog\-\_\-var} $\ast$\&}]{variable\-\_\-list}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_ad48b7221c0e33ebd4c051bc1ce59a48e}
+\hypertarget{roomprogs_8cpp_a409dbc9f30e98cd359868de3e45c1c66}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-teach@{r\-\_\-teach}}
+\index{r\-\_\-teach@{r\-\_\-teach}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-teach}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-teach (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a409dbc9f30e98cd359868de3e45c1c66}
+\hypertarget{roomprogs_8cpp_aa004c4e972039aabe5b625af469456db}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-trans\-\_\-group@{r\-\_\-trans\-\_\-group}}
+\index{r\-\_\-trans\-\_\-group@{r\-\_\-trans\-\_\-group}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-trans\-\_\-group}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-trans\-\_\-group (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_aa004c4e972039aabe5b625af469456db}
+loop here \hypertarget{roomprogs_8cpp_aec4d87b7bd957b7780d8b0dc1ac759f8}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-transmob@{r\-\_\-transmob}}
+\index{r\-\_\-transmob@{r\-\_\-transmob}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-transmob}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-transmob (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_aec4d87b7bd957b7780d8b0dc1ac759f8}
+\hypertarget{roomprogs_8cpp_a9fd91156b6a5552a3cf0855a5a8805a9}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-transobj@{r\-\_\-transobj}}
+\index{r\-\_\-transobj@{r\-\_\-transobj}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-transobj}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-transobj (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a9fd91156b6a5552a3cf0855a5a8805a9}
+\hypertarget{roomprogs_8cpp_a70f0cdcd310c92db3ba4825b229363db}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-unexit@{r\-\_\-unexit}}
+\index{r\-\_\-unexit@{r\-\_\-unexit}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-unexit}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-unexit (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a70f0cdcd310c92db3ba4825b229363db}
+\hypertarget{roomprogs_8cpp_a95e89833586a3823f41d584701147842}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-unlink@{r\-\_\-unlink}}
+\index{r\-\_\-unlink@{r\-\_\-unlink}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-unlink}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-unlink (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a95e89833586a3823f41d584701147842}
+\hypertarget{roomprogs_8cpp_a607b4864997c213a1943ed32c179124b}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-xpoison@{r\-\_\-xpoison}}
+\index{r\-\_\-xpoison@{r\-\_\-xpoison}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-xpoison}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-xpoison (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a607b4864997c213a1943ed32c179124b}
+\hypertarget{roomprogs_8cpp_a56be8301f1ab30402f4327f5e5aa65d7}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-xstink@{r\-\_\-xstink}}
+\index{r\-\_\-xstink@{r\-\_\-xstink}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-xstink}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-xstink (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a56be8301f1ab30402f4327f5e5aa65d7}
+\hypertarget{roomprogs_8cpp_a00c3688b800a8f7d8f5badb38ba952cb}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!r\-\_\-zone\-\_\-echo@{r\-\_\-zone\-\_\-echo}}
+\index{r\-\_\-zone\-\_\-echo@{r\-\_\-zone\-\_\-echo}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{r\-\_\-zone\-\_\-echo}]{\setlength{\rightskip}{0pt plus 5cm}void r\-\_\-zone\-\_\-echo (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a00c3688b800a8f7d8f5badb38ba952cb}
+\hypertarget{roomprogs_8cpp_a8be54fab656f1a36ed56abb85d20ab33}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!ref@{ref}}
+\index{ref@{ref}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{ref}]{\setlength{\rightskip}{0pt plus 5cm}void ref (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{str, }
+\item[{char $\ast$}]{return\-\_\-string}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a8be54fab656f1a36ed56abb85d20ab33}
+\hypertarget{roomprogs_8cpp_a70284517372176bf849eaec830c8a3a8}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!reval@{reval}}
+\index{reval@{reval}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{reval}]{\setlength{\rightskip}{0pt plus 5cm}void reval (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{arg, }
+\item[{{\bf room\-\_\-prog\-\_\-var} $\ast$\&}]{variable\-\_\-list}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a70284517372176bf849eaec830c8a3a8}
+\hypertarget{roomprogs_8cpp_a0f96a6e6977865a0f64088cc6460d8fc}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!room\-\_\-\-\_\-get\-\_\-description@{room\-\_\-\-\_\-get\-\_\-description}}
+\index{room\-\_\-\-\_\-get\-\_\-description@{room\-\_\-\-\_\-get\-\_\-description}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{room\-\_\-\-\_\-get\-\_\-description}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ room\-\_\-\-\_\-get\-\_\-description (
+\begin{DoxyParamCaption}
+\item[{{\bf R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$}]{room}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a0f96a6e6977865a0f64088cc6460d8fc}
+
+
+Obtain the current room description. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em room} & The room to examine (i.\-e. \char`\"{}this-\/$>$get\-\_\-description\char`\"{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The current room description By default, return the room's description. If there are extra descriptions defined, then pick the closest case and return that instead. If you have an extra description for the current weather \& time scenario, return that.
+\end{DoxyReturn}
+Otherwise fall back on the default room description.
+
+15-\/12-\/07\-: Fixed a long standing bug that didn't display night time weather descriptions, but had to make the function somewhat messier to do so.
+\begin{DoxyItemize}
+\item Kithrater
+\end{DoxyItemize}
+
+17-\/12-\/07\-: If the room has a xerox, copy the emulated room's descs instead of our own, to save 5 meg room files.
+\begin{DoxyItemize}
+\item Kithrater 
+\end{DoxyItemize}\hypertarget{roomprogs_8cpp_a86163bc68bdfca5f084d360a108ed8de}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!rxp@{rxp}}
+\index{rxp@{rxp}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{rxp}]{\setlength{\rightskip}{0pt plus 5cm}void rxp (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{prg, }
+\item[{char $\ast$}]{command, }
+\item[{char $\ast$}]{keyword, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a86163bc68bdfca5f084d360a108ed8de}
+\hypertarget{roomprogs_8cpp_a023e91b5d566c9c17ae14a532217cb0b}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!set\-\_\-variable\-\_\-data@{set\-\_\-variable\-\_\-data}}
+\index{set\-\_\-variable\-\_\-data@{set\-\_\-variable\-\_\-data}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{set\-\_\-variable\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}void set\-\_\-variable\-\_\-data (
+\begin{DoxyParamCaption}
+\item[{{\bf room\-\_\-prog\-\_\-var} $\ast$\&}]{variable\-\_\-list, }
+\item[{std\-::string}]{variable\-\_\-name, }
+\item[{std\-::string}]{variable\-\_\-data}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a023e91b5d566c9c17ae14a532217cb0b}
+\hypertarget{roomprogs_8cpp_a7d1d18b6f0b5b758939cc91ae481c9d1}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!tokenize\-\_\-str@{tokenize\-\_\-str}}
+\index{tokenize\-\_\-str@{tokenize\-\_\-str}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{tokenize\-\_\-str}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ std\-::string $>$ tokenize\-\_\-str (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{str, }
+\item[{const std\-::string \&}]{delims = {\ttfamily \char`\"{}$\vert$\textbackslash{}t\char`\"{}}}
+\end{DoxyParamCaption}
+)}}\label{roomprogs_8cpp_a7d1d18b6f0b5b758939cc91ae481c9d1}
+
+
+convert input string into vector of string tokens 
+
+\begin{DoxyNote}{Note}
+consecutive delimiters will be treated as single delimiter 
+
+delimiters are {\itshape not} included in return data
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em input} & string to be parsed \\
+\hline
+{\em delims} & list of delimiters. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Variable Documentation}
+\hypertarget{roomprogs_8cpp_af41979541578b7f95c0a98a18712ccb7}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!constant\-\_\-info@{constant\-\_\-info}}
+\index{constant\-\_\-info@{constant\-\_\-info}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{constant\-\_\-info}]{\setlength{\rightskip}{0pt plus 5cm}const struct {\bf constant\-\_\-data} constant\-\_\-info\mbox{[}$\,$\mbox{]}}}\label{roomprogs_8cpp_af41979541578b7f95c0a98a18712ccb7}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \{ \{ \textcolor{stringliteral}{"item-types"}, \textcolor{stringliteral}{"OSET                   "}, ( \textcolor{keywordtype}{void} ** ) \hyperlink{olc_8cpp_a3804a9b6d65d3983e59e92e3be751594}{item\_types} \}, \{
+        \textcolor{stringliteral}{"econ-flags"}, \textcolor{stringliteral}{"OSET/MSET flag         "}, ( \textcolor{keywordtype}{void} ** ) \hyperlink{commerce_8cpp_a8b9476d9da4183798063ed9bc70e1124}{econ\_flags} \}, \{ \textcolor{stringliteral}{"materials"}, \textcolor{stringliteral}{"OSET
+       NAME <list>       "},
+        ( \textcolor{keywordtype}{void} ** ) \hyperlink{olc_8cpp_a0c4440f39d7f3322ccf1e2d216dfcf60}{materials} \}, \{ \textcolor{stringliteral}{"wear-bits"}, \textcolor{stringliteral}{"OSET flag              "}, ( \textcolor{keywordtype}{void} ** ) 
+      \hyperlink{olc_8cpp_ac5f6303e8713dfe1ed6d3afbcfdce602}{wear\_bits} \}, \{ \textcolor{stringliteral}{"extra-bits"},
+        \textcolor{stringliteral}{"OSET flag              "}, ( \textcolor{keywordtype}{void} ** ) \hyperlink{olc_8cpp_ac90080cb12a4b2191c1877183585f4ed}{extra\_bits} \},
+
+        \{ \textcolor{stringliteral}{"drinks"}, \textcolor{stringliteral}{"OSET oval2 <#>         "}, ( \textcolor{keywordtype}{void} ** ) \hyperlink{olc_8cpp_adc777e95799694a525ac901005c0ab45}{drinks} \}, \{ \textcolor{stringliteral}{"position-types"}, \textcolor{stringliteral}{"MSET       
+                  "},
+                ( \textcolor{keywordtype}{void} ** ) \hyperlink{constants_8cpp_a389363ecfb2939a981edef6b8b879692}{position\_types} \}, \{ \textcolor{stringliteral}{"sex-types"}, \textcolor{stringliteral}{"MSET                   "}, ( \textcolor{keywordtype}{
+      void} ** ) \hyperlink{constants_8cpp_ab976b3c42464ed7e1bf871bcabdc671e}{sex\_types} \}, \{
+                \textcolor{stringliteral}{"action-bits"}, \textcolor{stringliteral}{"MSET flag              "}, ( \textcolor{keywordtype}{void} ** ) 
+      \hyperlink{constants_8cpp_a3d003a2f6acbfa0e7ba85203f886ecfb}{action\_bits} \}, \{ \textcolor{stringliteral}{"affected-bits"},
+                \textcolor{stringliteral}{"MSET flag              "}, ( \textcolor{keywordtype}{void} ** ) \hyperlink{constants_8cpp_a91e2fb87cbea85232961558e1f835f24}{affected\_bits} \}, \{ \textcolor{stringliteral}{"skills"}, \textcolor{stringliteral}{"MSET     
+                    "},
+                ( \textcolor{keywordtype}{void} ** ) \hyperlink{act_8comm_8cpp_a8e457eb86df54c0f75b9529b85f4f109}{skills} \}, \{ \textcolor{stringliteral}{"speeds"}, \textcolor{stringliteral}{"MSET speed             "}, ( \textcolor{keywordtype}{void} ** ) 
+      \hyperlink{act_8movement_8cpp_a4f1c52c6b233d08cf652acdc6f0800ea}{speeds} \}, \{ \textcolor{stringliteral}{"room-bits"},
+                \textcolor{stringliteral}{"RFLAGS flag              "}, ( \textcolor{keywordtype}{void} ** ) \hyperlink{olc_8cpp_aa0c1cab38901fe9aab8da53112441c59}{room\_bits} \}, \{ \textcolor{stringliteral}{"exit-bits"}, \textcolor{stringliteral}{"RDFLAGS dir
+       flag       "},
+                ( \textcolor{keywordtype}{void} ** ) \hyperlink{constants_8cpp_aae2f57d8decf5481492d9deba5981455}{exit\_bits} \}, \{ \textcolor{stringliteral}{"sector-types"}, \textcolor{stringliteral}{"RSECTOR                  "}, ( \textcolor{keywordtype}{void} **
+       ) \hyperlink{olc_8cpp_a8e76b3513b5d09928058afdec6a0f789}{sector\_types} \}, \{
+                \textcolor{stringliteral}{"weather-room"}, \textcolor{stringliteral}{"WEATHER                  "}, ( \textcolor{keywordtype}{void} ** ) 
+      \hyperlink{constants_8cpp_a0cb02a8d2fc4710a14ab08874fe793eb}{weather\_room} \},
+        
+        \{ \textcolor{stringliteral}{"woundlocs"}, \textcolor{stringliteral}{"Wound Locations          "}, ( \textcolor{keywordtype}{void} ** ) \hyperlink{olc_8cpp_a5f988b5e42ba005bae0bbfd8701959d1}{wound\_locations} \}, \{ \textcolor{stringliteral}{"
+      variable-races"},
+                \textcolor{stringliteral}{"Variable Races           "}, ( \textcolor{keywordtype}{void} ** ) \hyperlink{create__mobile_8cpp_ab1f85e0d33098e3895f5de1a89f12639}{variable\_races} \}, \{ \textcolor{stringliteral}{"damage-types"},
+                \textcolor{stringliteral}{"REND Damage Types        "}, ( \textcolor{keywordtype}{void} ** ) \hyperlink{object__damage_8cpp_ad6889baca55c416148a1989efe1abfdc}{damage\_type} \},
+        
+
+        \{ \textcolor{stringliteral}{""}, \textcolor{stringliteral}{""}, NULL \} \}
+\end{DoxyCode}
+\hypertarget{roomprogs_8cpp_a8a56c5b9e51fe5cd30614f13fa657ebe}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!count\-\_\-number@{count\-\_\-number}}
+\index{count\-\_\-number@{count\-\_\-number}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{count\-\_\-number}]{\setlength{\rightskip}{0pt plus 5cm}int count\-\_\-number\mbox{[}10\mbox{]} = \{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 \}}}\label{roomprogs_8cpp_a8a56c5b9e51fe5cd30614f13fa657ebe}
+\hypertarget{roomprogs_8cpp_a071f46361ec95ca001cfd6d25333db81}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!craft\-\_\-prog\-\_\-list@{craft\-\_\-prog\-\_\-list}}
+\index{craft\-\_\-prog\-\_\-list@{craft\-\_\-prog\-\_\-list}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{craft\-\_\-prog\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}std\-::multimap$<$ std\-::string, {\bf room\-\_\-prog} $>$ craft\-\_\-prog\-\_\-list}}\label{roomprogs_8cpp_a071f46361ec95ca001cfd6d25333db81}
+\hypertarget{roomprogs_8cpp_a55c71990ee4162ebec6abe401996cf15}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!engine@{engine}}
+\index{engine@{engine}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{engine}]{\setlength{\rightskip}{0pt plus 5cm}{\bf rpie\-::server} engine}}\label{roomprogs_8cpp_a55c71990ee4162ebec6abe401996cf15}
+\hypertarget{roomprogs_8cpp_a3b282584cde0eee2620d3cd95cf634c0}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!exits@{exits}}
+\index{exits@{exits}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{exits}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ exits\mbox{[}$\,$\mbox{]}}}\label{roomprogs_8cpp_a3b282584cde0eee2620d3cd95cf634c0}
+\hypertarget{roomprogs_8cpp_a6bc3c90520e99ef3d485f146e5a19363}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!ifin@{ifin}}
+\index{ifin@{ifin}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{ifin}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} ifin\mbox{[}{\bf M\-A\-X\-\_\-\-R\-P\-R\-G\-\_\-\-N\-E\-S\-T}\mbox{]}}}\label{roomprogs_8cpp_a6bc3c90520e99ef3d485f146e5a19363}
+\hypertarget{roomprogs_8cpp_a102396f7850327c09e414b191c20dfcf}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!map\-Wear\-By\-Loc@{map\-Wear\-By\-Loc}}
+\index{map\-Wear\-By\-Loc@{map\-Wear\-By\-Loc}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{map\-Wear\-By\-Loc}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$ int, std\-::string $>$ map\-Wear\-By\-Loc}}\label{roomprogs_8cpp_a102396f7850327c09e414b191c20dfcf}
+\hypertarget{roomprogs_8cpp_ad702509ab9f1fc6d961ecb42186d2d41}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!map\-Wear\-By\-Name@{map\-Wear\-By\-Name}}
+\index{map\-Wear\-By\-Name@{map\-Wear\-By\-Name}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{map\-Wear\-By\-Name}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$ std\-::string, int $>$ map\-Wear\-By\-Name}}\label{roomprogs_8cpp_ad702509ab9f1fc6d961ecb42186d2d41}
+\hypertarget{roomprogs_8cpp_ab725bd2e806404aaa0c3801bc97cde29}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!mob\-\_\-prog\-\_\-list@{mob\-\_\-prog\-\_\-list}}
+\index{mob\-\_\-prog\-\_\-list@{mob\-\_\-prog\-\_\-list}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{mob\-\_\-prog\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}std\-::multimap$<$ int, {\bf room\-\_\-prog} $>$ mob\-\_\-prog\-\_\-list}}\label{roomprogs_8cpp_ab725bd2e806404aaa0c3801bc97cde29}
+\hypertarget{roomprogs_8cpp_a34cde1d7337690558723978c5c5226e1}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!n\-Nest@{n\-Nest}}
+\index{n\-Nest@{n\-Nest}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{n\-Nest}]{\setlength{\rightskip}{0pt plus 5cm}int n\-Nest = 1}}\label{roomprogs_8cpp_a34cde1d7337690558723978c5c5226e1}
+\hypertarget{roomprogs_8cpp_a5b8ee11ca5cb281c6e10c897b4417a91}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!obj\-\_\-prog\-\_\-list@{obj\-\_\-prog\-\_\-list}}
+\index{obj\-\_\-prog\-\_\-list@{obj\-\_\-prog\-\_\-list}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{obj\-\_\-prog\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}std\-::multimap$<$ int, {\bf room\-\_\-prog} $>$ obj\-\_\-prog\-\_\-list}}\label{roomprogs_8cpp_a5b8ee11ca5cb281c6e10c897b4417a91}
+\hypertarget{roomprogs_8cpp_a42f016c30c402f3c7774e3090f10ca2a}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!random\-\_\-number@{random\-\_\-number}}
+\index{random\-\_\-number@{random\-\_\-number}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{random\-\_\-number}]{\setlength{\rightskip}{0pt plus 5cm}int random\-\_\-number\mbox{[}10\mbox{]} = \{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 \}}}\label{roomprogs_8cpp_a42f016c30c402f3c7774e3090f10ca2a}
+\hypertarget{roomprogs_8cpp_a91e86c0f62fc7e7eaf1ee265910fbffd}{\index{roomprogs.\-cpp@{roomprogs.\-cpp}!rfuncs@{rfuncs}}
+\index{rfuncs@{rfuncs}!roomprogs.cpp@{roomprogs.\-cpp}}
+\subsubsection[{rfuncs}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ rfuncs\mbox{[}$\,$\mbox{]}}}\label{roomprogs_8cpp_a91e86c0f62fc7e7eaf1ee265910fbffd}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \{ \textcolor{stringliteral}{"atecho"}, \textcolor{stringliteral}{"give"}, \textcolor{stringliteral}{"take"}, \textcolor{stringliteral}{"trans"}, \textcolor{stringliteral}{"load"}, \textcolor{stringliteral}{"force"}, \textcolor{stringliteral}{"link"}, \textcolor{stringliteral}{"exit"}, \textcolor{stringliteral}{"unlock"}, \textcolor{stringliteral}{"atlook"}, \textcolor{stringliteral}{"vstr"},
+        \textcolor{stringliteral}{"ostr"}, \textcolor{stringliteral}{"unlink"}, \textcolor{stringliteral}{"unexit"}, \textcolor{stringliteral}{"put"}, \textcolor{stringliteral}{"get"}, \textcolor{stringliteral}{"lock"}, \textcolor{stringliteral}{"getcash"}, \textcolor{stringliteral}{"givecash"}, \textcolor{stringliteral}{"loadmob"}, \textcolor{stringliteral}{"exmob"}, \textcolor{stringliteral}{"if"}, \textcolor{stringliteral}{
+      "fi"}, \textcolor{stringliteral}{"else"},
+        \textcolor{stringliteral}{"rftog"}, \textcolor{stringliteral}{"pain"}, \textcolor{stringliteral}{"vbr"}, \textcolor{stringliteral}{"transmob"}, \textcolor{stringliteral}{"atread"}, \textcolor{stringliteral}{"halt"}, \textcolor{stringliteral}{"purge"}, \textcolor{stringliteral}{"load\_clone"}, \textcolor{stringliteral}{"loadobj"}, \textcolor{stringliteral}{"stayput"}, \textcolor{stringliteral}{
+      "zone\_echo"},
+        \textcolor{stringliteral}{"atwrite"}, \textcolor{stringliteral}{"system"}, \textcolor{stringliteral}{"clan\_echo"}, \textcolor{stringliteral}{"trans\_group"}, \textcolor{stringliteral}{"set"}, \textcolor{stringliteral}{"criminalize"}, \textcolor{stringliteral}{"strip"}, \textcolor{stringliteral}{"xclan"}, \textcolor{stringliteral}{"takemoney
+      "}, \textcolor{stringliteral}{"delay"},
+        \textcolor{stringliteral}{"teach"}, \textcolor{stringliteral}{"doitanyway"}, \textcolor{stringliteral}{"door"}, \textcolor{stringliteral}{"math"}, \textcolor{stringliteral}{"noop"}, \textcolor{stringliteral}{"transobj"}, \textcolor{stringliteral}{"obr"}, \textcolor{stringliteral}{"tally"}, \textcolor{stringliteral}{"objvnum"}, \textcolor{stringliteral}{"randomobj"}, \textcolor{stringliteral}{
+      "info"},
+        \textcolor{stringliteral}{"setval"}, \textcolor{stringliteral}{"concat"}, \textcolor{stringliteral}{"mftog"}, \textcolor{stringliteral}{"//"}, \textcolor{stringliteral}{"copper\_to\_shillings"}, \textcolor{stringliteral}{"mcopy"}, \textcolor{stringliteral}{"owner"}, \textcolor{stringliteral}{"skilluse"}, \textcolor{stringliteral}{"rend"}, \textcolor{stringliteral}{"
+      stun"},
+        \textcolor{stringliteral}{"fatigue"}, \textcolor{stringliteral}{"progheal"}, \textcolor{stringliteral}{"sound"}, \textcolor{stringliteral}{"music"}, \textcolor{stringliteral}{"give\_color"}, \textcolor{stringliteral}{"load\_color"}, \textcolor{stringliteral}{"xpoison"},
+        \textcolor{stringliteral}{"xstink"}, \textcolor{stringliteral}{"\(\backslash\)n"} \}
+\end{DoxyCode}

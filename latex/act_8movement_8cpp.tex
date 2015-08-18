@@ -1,0 +1,1436 @@
+\hypertarget{act_8movement_8cpp}{\section{act.\-movement.\-cpp File Reference}
+\label{act_8movement_8cpp}\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}}
+}
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$ctype.\-h$>$}\\*
+{\ttfamily \#include $<$unistd.\-h$>$}\\*
+{\ttfamily \#include $<$sys/stat.\-h$>$}\\*
+{\ttfamily \#include $<$math.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}structs.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}protos.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}decl.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}group.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utility.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{act_8movement_8cpp_a6773c68091a2a25c12ccb1906815d3c5}{T\-R\-A\-C\-K\-\_\-\-L\-I\-M\-I\-T\-\_\-\-P\-E\-R\-\_\-\-R\-O\-O\-M}~10
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{act_8movement_8cpp_a7df19cf730447c00150569250a4b5e1d}{round} (double x)
+\item 
+\hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} \hyperlink{act_8movement_8cpp_a367d561f7210affed1e95e7bbd4ded53}{is\-\_\-outdoors} (\hyperlink{room_8h_aede519ef65d80b5242a4a28b69d5e097}{R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$room)
+\item 
+\hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} \hyperlink{act_8movement_8cpp_a8d54086784dc82104f4c5f79c9fe1454}{skip\-\_\-sneak\-\_\-check} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+int \hyperlink{act_8movement_8cpp_a4f9331d7240c486150f077385b63adea}{ride\-\_\-mount} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$mount, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$rider, int current, int target, int dir)
+\item 
+void \hyperlink{act_8movement_8cpp_a7399fe6d7ffd8fdf88a42ba77b4ea8be}{do\-\_\-party} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+int \hyperlink{act_8movement_8cpp_a2a417a0533dc0b98c34cd404935b6f51}{suffocated} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+int \hyperlink{act_8movement_8cpp_a5ec1dc254d7073749fca4929b73a9ac7}{drowned} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+int \hyperlink{act_8movement_8cpp_a29e4447c21a92bbd65d702dcfdd65f28}{floating\-\_\-check} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+int \hyperlink{act_8movement_8cpp_a5bfce4e716903e293dd0441c2f461094}{swimming\-\_\-check} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{act_8movement_8cpp_adc076de3cbe768d2497439b9f63c757d}{do\-\_\-outside} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8movement_8cpp_a26a159a6f7758ac853ce93c6e91891aa}{do\-\_\-inside} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8movement_8cpp_af91ebded9da719b3b7c6d4274e5617cf}{track\-\_\-from\-\_\-room} (\hyperlink{room_8h_aede519ef65d80b5242a4a28b69d5e097}{R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$room, \hyperlink{structs_8h_af9d52b956546cea804db50a106a26e61}{T\-R\-A\-C\-K\-\_\-\-D\-A\-T\-A} $\ast$\hyperlink{protos_8h_a635c9a755843b80cb5ae092c03cd9e85}{track})
+\item 
+void \hyperlink{act_8movement_8cpp_ad4cdb72101a5ed286323a47c31a18355}{track\-\_\-expiration} (\hyperlink{room_8h_aede519ef65d80b5242a4a28b69d5e097}{R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$room, \hyperlink{structs_8h_af9d52b956546cea804db50a106a26e61}{T\-R\-A\-C\-K\-\_\-\-D\-A\-T\-A} $\ast$\hyperlink{protos_8h_a635c9a755843b80cb5ae092c03cd9e85}{track})
+\item 
+void \hyperlink{act_8movement_8cpp_a49ce66448f56b56a9f27af01cb72abe2}{update\-\_\-room\-\_\-tracks} (void)
+\item 
+void \hyperlink{act_8movement_8cpp_acbbc6df34386d8c80be54e466dc9a862}{leave\-\_\-tracks} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int to\-\_\-dir, int from\-\_\-dir)
+\item 
+void \hyperlink{act_8movement_8cpp_aa2af182e832e49b0b79b0507da241503}{clear\-\_\-pmote} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{act_8movement_8cpp_a332cfad532809046793c7b6f0329247a}{clear\-\_\-status} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+int \hyperlink{act_8movement_8cpp_a0612c31569668b94bc39c69117a0ac6c}{check\-\_\-climb} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{act_8movement_8cpp_aa46b49460445e00c36f4e481ab4c8578}{do\-\_\-crawl} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8movement_8cpp_a723e3241aef9dad2cf7a3cd191a876d9}{do\-\_\-swim} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8movement_8cpp_a7eac68365f7b502649e1b42a467d1729}{do\-\_\-float} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+int \hyperlink{act_8movement_8cpp_a2e04499663250bbdda91e7f5cf264cf4}{clear\-\_\-current\-\_\-move} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{act_8movement_8cpp_a9335f785c2d462dc438aa580764f52f8}{stop\-\_\-mount\-\_\-train} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$stopper)
+\item 
+void \hyperlink{act_8movement_8cpp_a2b74ce15f7564fbce6317f78254d2d48}{clear\-\_\-moves} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{act_8movement_8cpp_a8470306e1c07a15ad2115feec7fffe40}{add\-\_\-to\-\_\-qe\-\_\-list} (\hyperlink{structs_8h_a888de2c98dc331eca63dac1c44ba8b8c}{Q\-E\-\_\-\-D\-A\-T\-A} $\ast$qe)
+\item 
+int \hyperlink{act_8movement_8cpp_a913e112f57fd155928ff238649e4ba1c}{is\-\_\-moving\-\_\-toward} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$target, int dir, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$archer)
+\item 
+int \hyperlink{act_8movement_8cpp_ad178589fe8776731bf6a5df1d9cc38f3}{is\-\_\-moving\-\_\-away} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$target, int dir, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$archer)
+\item 
+void \hyperlink{act_8movement_8cpp_a331ac37c06bb706c6053377b20148eb6}{outside\-\_\-inside} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{act_8movement_8cpp_a7567761a39f0f10081b68cc662d68be2}{enter\-\_\-room} (\hyperlink{structs_8h_a888de2c98dc331eca63dac1c44ba8b8c}{Q\-E\-\_\-\-D\-A\-T\-A} $\ast$qe)
+\item 
+void \hyperlink{act_8movement_8cpp_a12eec2c8c0baeacb5e692f0caecaeb67}{process\-\_\-quarter\-\_\-events} (void)
+\item 
+void \hyperlink{act_8movement_8cpp_af9bc3ee6d1be95e47ed3e644b79dd91d}{exit\-\_\-room} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int dir, int flags, int leave\-\_\-time, int arrive\-\_\-time, int speed\-\_\-name, int needed\-\_\-movement, char $\ast$travel\-\_\-str, char $\ast$group\-\_\-str)
+\item 
+int \hyperlink{act_8movement_8cpp_a584195932a798757a072e2900ea89393}{calc\-\_\-movement\-\_\-charge} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int dir, int wanted\-\_\-time, int flags, int $\ast$speed, int $\ast$speed\-\_\-name, float $\ast$walk\-\_\-time)
+\item 
+void \hyperlink{act_8movement_8cpp_a6f4499fc9b8dfb593c7ee26a0e5e1a0c}{initiate\-\_\-move} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+int \hyperlink{act_8movement_8cpp_a0b9d65c9659c8a507b2fabe7802a0d44}{isguarded} (\hyperlink{room_8h_aede519ef65d80b5242a4a28b69d5e097}{R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$room, int dir)
+\item 
+void \hyperlink{act_8movement_8cpp_a428e2e1e064ed5190e49b23365f9da53}{move} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int dir, int speed)
+\item 
+void \hyperlink{act_8movement_8cpp_a17c6e90d72bf38f69d8f8fa660526688}{do\-\_\-move} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int dir)
+\item 
+void \hyperlink{act_8movement_8cpp_a852d7fdf5e3510ab8051db052f442944}{hitches\-\_\-follow} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int dir, int leave\-\_\-time, int arrive\-\_\-time)
+\item 
+void \hyperlink{act_8movement_8cpp_a677e2208b04034c956d038b0dd4ffd08}{do\-\_\-east} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8movement_8cpp_a2b829859a57ddfabc526d9ef35661883}{do\-\_\-west} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8movement_8cpp_a0e79a97825edddcbed2370d21bf8883b}{do\-\_\-north} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8movement_8cpp_ad8be1b5a7b39645ebaf10777bf861e78}{do\-\_\-northeast} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8movement_8cpp_ad976dc3504be13eb08e636d03b54e076}{do\-\_\-northwest} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8movement_8cpp_aef47a2838c92f67eb2eb3c0feb395a25}{do\-\_\-southeast} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8movement_8cpp_af95ea9880aada185e25b6159950e5459}{do\-\_\-southwest} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8movement_8cpp_af97fee7b0731ae7e93016a92a5859d7e}{do\-\_\-south} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8movement_8cpp_ae30860548752eee005c6de12611dc6b0}{do\-\_\-up} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8movement_8cpp_ad3cee189832109eaad0c462a85f7f0e4}{do\-\_\-down} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8movement_8cpp_a5d27dcc5ba74db7869111252a1482883}{do\-\_\-upnorth} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8movement_8cpp_a2a48670f71f71a1188b7b0c2360ff915}{do\-\_\-upeast} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8movement_8cpp_af304af33569450d3fa727d9299839e8d}{do\-\_\-upsouth} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8movement_8cpp_afa8d937030ba2ec1a53391f4494aa0e1}{do\-\_\-upwest} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8movement_8cpp_aa5e26127977a24bcda3d5df70b55129d}{do\-\_\-upnortheast} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8movement_8cpp_a3ebd0d2e456b4177f40f9d22d5782abd}{do\-\_\-upnorthwest} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8movement_8cpp_a78c62cc03016770c2948cfa1c9de2e48}{do\-\_\-upsoutheast} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8movement_8cpp_a926a7e6b0044cdfdee1d2f871793a93a}{do\-\_\-upsouthwest} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8movement_8cpp_a0642fa5ce8afef0caf5b6929f8b150d0}{do\-\_\-downnorth} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8movement_8cpp_a0f7c4416a34ef6128c8d4527180f8ff9}{do\-\_\-downeast} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8movement_8cpp_af0ca80d082c91547e2d479216046acc8}{do\-\_\-downsouth} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8movement_8cpp_ae10d51d1a3faee874a89a76199d332b7}{do\-\_\-downwest} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8movement_8cpp_ad15788c8b525803e9b56310f5bdfad7d}{do\-\_\-downnortheast} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8movement_8cpp_ab26bf2b40b26d86c024a81e8b5d5cc27}{do\-\_\-downnorthwest} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8movement_8cpp_aa0222ef4aa0500796c6455cc25ffcdf7}{do\-\_\-downsoutheast} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8movement_8cpp_a2e78fcd5ee210e007141cbfb7374d1fc}{do\-\_\-downsouthwest} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+int \hyperlink{act_8movement_8cpp_a515eeb560505b6753dc0bc689684abe7}{find\-\_\-door} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$type, char $\ast$dir)
+\item 
+void \hyperlink{act_8movement_8cpp_a22dd8e7f959275e2ac3623da5c6cc2a3}{do\-\_\-open} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8movement_8cpp_a1c5bfb3ab5641599fa2762a0f9b2adb3}{do\-\_\-close} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{act_8movement_8cpp_ac7615ca3a3465830f5927fd5f3804d0f}{has\-\_\-key} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj, int key)
+\item 
+void \hyperlink{act_8movement_8cpp_a4f853c948d900969f5d31eb693bccf26}{do\-\_\-lock} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8movement_8cpp_ae6259b267401f160011289fdc77356fc}{do\-\_\-unlock} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8movement_8cpp_afb5b6a1a0effccef7807537d645e3eaa}{do\-\_\-pick} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8movement_8cpp_a6b2d47bb335993529118d30ac657ba93}{delayed\-\_\-pick\-\_\-obj} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{act_8movement_8cpp_a0506d7a30438cc69188800afdd0432d2}{delayed\-\_\-pick} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{act_8movement_8cpp_ac8c135b28e7c5af29fed6552d4fa01d4}{enter\-\_\-vehicle} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ent\-\_\-mob)
+\item 
+void \hyperlink{act_8movement_8cpp_a788d2985e4901d5672bbd928f0272b71}{do\-\_\-enter} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8movement_8cpp_a63078b5472a0a60af11721f161cf74f4}{leave\-\_\-vehicle} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+void \hyperlink{act_8movement_8cpp_a730c39bd321563ef4e762b003dc8320f}{do\-\_\-leave} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8movement_8cpp_a324d44ef599831d501953c41bc3c892f}{do\-\_\-stand} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8movement_8cpp_a03584f00eb009d255fca0c5b115c6692}{do\-\_\-sit} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8movement_8cpp_a9d726876efbe04246694afc4ac1433e0}{do\-\_\-rest} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8movement_8cpp_aa95462dc832c3f001691462f18b5e9ab}{do\-\_\-sleep} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+int \hyperlink{act_8movement_8cpp_adb7480387269d2137c8e033cb933d54d}{wakeup} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{act_8movement_8cpp_af87cd6209e998b0aac44a0c8423759dd}{do\-\_\-wake} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int not\-\_\-noisy)
+\item 
+void \hyperlink{act_8movement_8cpp_af201d6bb30e1bc1de27371e096fea80a}{do\-\_\-sail} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+int \hyperlink{act_8movement_8cpp_a635c9a755843b80cb5ae092c03cd9e85}{track} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int to\-\_\-room)
+\item 
+int \hyperlink{act_8movement_8cpp_a90452af8db6b9d95f3a320d52c0aab65}{pathfind} (int from\-\_\-room, int to\-\_\-room)
+\item 
+char $\ast$ \hyperlink{act_8movement_8cpp_ac7b7c119069625b9b31dce5daf734b7f}{crude\-\_\-name} (int race)
+\item 
+char $\ast$ \hyperlink{act_8movement_8cpp_a9320dfc8bcc7f872b087cc31c49251d2}{specific\-\_\-name} (int race)
+\item 
+char $\ast$ \hyperlink{act_8movement_8cpp_a406208b8c0a456188a0873848779dad2}{track\-\_\-age} (int hours\-\_\-passed)
+\item 
+char $\ast$ \hyperlink{act_8movement_8cpp_a4d3407a452d80ad798f72560df0f86b5}{speed\-\_\-adj} (int speed)
+\item 
+void \hyperlink{act_8movement_8cpp_aa6203d5467b074e2e262a4eb8c511213}{delayed\-\_\-track} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{act_8movement_8cpp_a9a183130aa7268f996f17f6d0f6994da}{skill\-\_\-tracking} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8movement_8cpp_a07a8d0cb7ddde5e6e9a23b57a0e96b97}{do\-\_\-track} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8movement_8cpp_adc9267ef2c2b475aead0e34c873d435e}{do\-\_\-drag} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+int \hyperlink{act_8movement_8cpp_aec68cd98a16dbd0ab6c855e785396981}{is\-\_\-mounted} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+int \hyperlink{act_8movement_8cpp_a49c01595606689cbc3f1331be38181f1}{can\-\_\-mount} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$mount)
+\item 
+int \hyperlink{act_8movement_8cpp_a2ff974b7e2512971950884655cfa3f0c}{hitch\-\_\-char} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$hitch)
+\item 
+void \hyperlink{act_8movement_8cpp_a53a5190db97139aadb899e7d0bd67843}{unhitch\-\_\-char} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$hitch)
+\item 
+void \hyperlink{act_8movement_8cpp_a69e6e06994762e7ad3cbc4c8fcae5c59}{do\-\_\-hitch} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8movement_8cpp_afd157c59dc30d3b15708321912e34269}{do\-\_\-unhitch} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8movement_8cpp_a0170a89e1cbcb48c6abb9b6daa1abbb5}{do\-\_\-mount} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8movement_8cpp_a6ef957b9adafbdc216a5b11b7a52927a}{do\-\_\-tame} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8movement_8cpp_a3c5b6235f58fdadbae143ffb82c63844}{do\-\_\-dismount} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8movement_8cpp_a4075c473fcb3850c6599264e5063a998}{do\-\_\-bridle} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8movement_8cpp_aba8b13b5f85e5c14f7b7ae573d9c35f0}{dump\-\_\-rider} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$rider, int forced)
+\item 
+void \hyperlink{act_8movement_8cpp_af4f50c076ffd586134ee00e7289e21b4}{do\-\_\-buck} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8movement_8cpp_a21b906329d99d601d5795abe9cdbb3c6}{do\-\_\-shadow} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8movement_8cpp_a0b97c0379131be148c675cf87b87bbd1}{shadowers\-\_\-shadow} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int to\-\_\-room, int move\-\_\-dir)
+\item 
+void \hyperlink{act_8movement_8cpp_afaee6e58b7e7234eda06f5f2d3cad455}{watched\-\_\-action} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$arg, int dist, int mode)
+\item 
+int \hyperlink{act_8movement_8cpp_a3fcc18c31419bb145a9af68e4954867d}{room\-\_\-avail} (\hyperlink{room_8h_aede519ef65d80b5242a4a28b69d5e097}{R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$troom, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{act_8movement_8cpp_a3bf9650a2f84a85472fe45aa24cc4bba}{do\-\_\-push} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{act_8movement_8cpp_a13abb010ec8400574268ad25b9e083da}{n\-Party\-Room} = 0
+\item 
+char \hyperlink{act_8movement_8cpp_a669eca5f50878105ab257382a9151e8f}{n\-Party\-Dir} = -\/1
+\item 
+\hyperlink{clan_8h_a7cdc2f1c9b4cc99d0cbd70a2c1d9b246}{C\-L\-A\-N\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{act_8movement_8cpp_a06abbac1ee19e3c7ac9c668f049cc29e}{ptr\-Party\-Clan} = N\-U\-L\-L
+\item 
+\hyperlink{structs_8h_a888de2c98dc331eca63dac1c44ba8b8c}{Q\-E\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{act_8movement_8cpp_a041d0defdf16f6b58b95e8089e652f07}{quarter\-\_\-event\-\_\-list} = N\-U\-L\-L
+\item 
+const int \hyperlink{act_8movement_8cpp_a5eaf165e887fc4e2faea5fc6ba0b022a}{movement\-\_\-loss} \mbox{[}$\,$\mbox{]}
+\item 
+const int \hyperlink{act_8movement_8cpp_ad825b51a327eb9e135660c4938a0835a}{terrain\-\_\-walk\-\_\-time} \mbox{[}$\,$\mbox{]}
+\item 
+const int \hyperlink{act_8movement_8cpp_a68864b6f6b61db5266b6fb28fa23c96c}{terrain\-\_\-penalty} \mbox{[}23\mbox{]}\mbox{[}2\mbox{]}
+\item 
+const char $\ast$ \hyperlink{act_8movement_8cpp_abefc4de14f3bdc4e57e1ff2074a39ecf}{leg\-\_\-woundlocs} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$const \hyperlink{act_8movement_8cpp_a90f3e9b95f5e20f5384cd6d0b7ec4e6f}{relative\-\_\-dirs} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$const \hyperlink{act_8movement_8cpp_a66eacf2435806e1def6122244365764e}{dirs} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$const \hyperlink{act_8movement_8cpp_a638b1f253368f3f1854b8a6211f9a0e2}{short\-\_\-dirs} \mbox{[}$\,$\mbox{]}
+\item 
+const int \hyperlink{act_8movement_8cpp_a8278c1cbdaf427df8623841822aaeb6b}{rev\-\_\-dir} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$const \hyperlink{act_8movement_8cpp_a4f1c52c6b233d08cf652acdc6f0800ea}{speeds} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$const \hyperlink{act_8movement_8cpp_a52d42d2cf1a7ba137cf40056d324186a}{mount\-\_\-speeds} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$const \hyperlink{act_8movement_8cpp_ab0eaef13a9d0443c03167852757a52b9}{mount\-\_\-speeds\-\_\-ing} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{act_8movement_8cpp_aa9787317029094b687f9e67e3c703758}{direction} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{act_8movement_8cpp_a60c901f7af71b66a65be26830a984ebc}{rev\-\_\-d2} \mbox{[}$\,$\mbox{]}
+\item 
+const float \hyperlink{act_8movement_8cpp_acc627062b327246b30d09c081dddf4d1}{move\-\_\-speeds} \mbox{[}$\,$\mbox{]} = \{ 1.\-00, 2.\-50, 1.\-60, 0.\-50, 0.\-33, 0.\-25, 1.\-60, 3.\-00 \}
+\item 
+const struct \hyperlink{structencumberance__info}{encumberance\-\_\-info} \hyperlink{act_8movement_8cpp_a20a931de5d15b2382fe707a5fbc8b38d}{enc\-\_\-tab} \mbox{[}$\,$\mbox{]}
+\item 
+const struct \hyperlink{structfatigue__data}{fatigue\-\_\-data} \hyperlink{act_8movement_8cpp_a5c6f8f3349625e966f26248bc85fbf50}{fatigue} \mbox{[}$\,$\mbox{]}
+\item 
+int \hyperlink{act_8movement_8cpp_a9468cb53198c30ac0bb393310a27485b}{search\-\_\-sequence} = 0
+\item 
+int \hyperlink{act_8movement_8cpp_aac59977222997a44c3d1ce4bc844919a}{high\-\_\-water} = 0
+\item 
+int \hyperlink{act_8movement_8cpp_a6a27b9fe0bda34750302322ca4e8abaf}{rooms\-\_\-scanned} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{act_8movement_8cpp_a6773c68091a2a25c12ccb1906815d3c5}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!T\-R\-A\-C\-K\-\_\-\-L\-I\-M\-I\-T\-\_\-\-P\-E\-R\-\_\-\-R\-O\-O\-M@{T\-R\-A\-C\-K\-\_\-\-L\-I\-M\-I\-T\-\_\-\-P\-E\-R\-\_\-\-R\-O\-O\-M}}
+\index{T\-R\-A\-C\-K\-\_\-\-L\-I\-M\-I\-T\-\_\-\-P\-E\-R\-\_\-\-R\-O\-O\-M@{T\-R\-A\-C\-K\-\_\-\-L\-I\-M\-I\-T\-\_\-\-P\-E\-R\-\_\-\-R\-O\-O\-M}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{T\-R\-A\-C\-K\-\_\-\-L\-I\-M\-I\-T\-\_\-\-P\-E\-R\-\_\-\-R\-O\-O\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-R\-A\-C\-K\-\_\-\-L\-I\-M\-I\-T\-\_\-\-P\-E\-R\-\_\-\-R\-O\-O\-M~10}}\label{act_8movement_8cpp_a6773c68091a2a25c12ccb1906815d3c5}
+
+
+\subsection{Function Documentation}
+\hypertarget{act_8movement_8cpp_a8470306e1c07a15ad2115feec7fffe40}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!add\-\_\-to\-\_\-qe\-\_\-list@{add\-\_\-to\-\_\-qe\-\_\-list}}
+\index{add\-\_\-to\-\_\-qe\-\_\-list@{add\-\_\-to\-\_\-qe\-\_\-list}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{add\-\_\-to\-\_\-qe\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}void add\-\_\-to\-\_\-qe\-\_\-list (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\-E\-\_\-\-D\-A\-T\-A} $\ast$}]{qe}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a8470306e1c07a15ad2115feec7fffe40}
+\hypertarget{act_8movement_8cpp_a584195932a798757a072e2900ea89393}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!calc\-\_\-movement\-\_\-charge@{calc\-\_\-movement\-\_\-charge}}
+\index{calc\-\_\-movement\-\_\-charge@{calc\-\_\-movement\-\_\-charge}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{calc\-\_\-movement\-\_\-charge}]{\setlength{\rightskip}{0pt plus 5cm}int calc\-\_\-movement\-\_\-charge (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{dir, }
+\item[{int}]{wanted\-\_\-time, }
+\item[{int}]{flags, }
+\item[{int $\ast$}]{speed, }
+\item[{int $\ast$}]{speed\-\_\-name, }
+\item[{float $\ast$}]{walk\-\_\-time}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a584195932a798757a072e2900ea89393}
+\hypertarget{act_8movement_8cpp_a49c01595606689cbc3f1331be38181f1}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!can\-\_\-mount@{can\-\_\-mount}}
+\index{can\-\_\-mount@{can\-\_\-mount}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{can\-\_\-mount}]{\setlength{\rightskip}{0pt plus 5cm}int can\-\_\-mount (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{mount}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a49c01595606689cbc3f1331be38181f1}
+\hypertarget{act_8movement_8cpp_a0612c31569668b94bc39c69117a0ac6c}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!check\-\_\-climb@{check\-\_\-climb}}
+\index{check\-\_\-climb@{check\-\_\-climb}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{check\-\_\-climb}]{\setlength{\rightskip}{0pt plus 5cm}int check\-\_\-climb (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a0612c31569668b94bc39c69117a0ac6c}
+\hypertarget{act_8movement_8cpp_a2e04499663250bbdda91e7f5cf264cf4}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!clear\-\_\-current\-\_\-move@{clear\-\_\-current\-\_\-move}}
+\index{clear\-\_\-current\-\_\-move@{clear\-\_\-current\-\_\-move}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{clear\-\_\-current\-\_\-move}]{\setlength{\rightskip}{0pt plus 5cm}int clear\-\_\-current\-\_\-move (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a2e04499663250bbdda91e7f5cf264cf4}
+\hypertarget{act_8movement_8cpp_a2b74ce15f7564fbce6317f78254d2d48}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!clear\-\_\-moves@{clear\-\_\-moves}}
+\index{clear\-\_\-moves@{clear\-\_\-moves}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{clear\-\_\-moves}]{\setlength{\rightskip}{0pt plus 5cm}void clear\-\_\-moves (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a2b74ce15f7564fbce6317f78254d2d48}
+\hypertarget{act_8movement_8cpp_aa2af182e832e49b0b79b0507da241503}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!clear\-\_\-pmote@{clear\-\_\-pmote}}
+\index{clear\-\_\-pmote@{clear\-\_\-pmote}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{clear\-\_\-pmote}]{\setlength{\rightskip}{0pt plus 5cm}void clear\-\_\-pmote (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_aa2af182e832e49b0b79b0507da241503}
+\hypertarget{act_8movement_8cpp_a332cfad532809046793c7b6f0329247a}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!clear\-\_\-status@{clear\-\_\-status}}
+\index{clear\-\_\-status@{clear\-\_\-status}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{clear\-\_\-status}]{\setlength{\rightskip}{0pt plus 5cm}void clear\-\_\-status (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a332cfad532809046793c7b6f0329247a}
+\hypertarget{act_8movement_8cpp_ac7b7c119069625b9b31dce5daf734b7f}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!crude\-\_\-name@{crude\-\_\-name}}
+\index{crude\-\_\-name@{crude\-\_\-name}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{crude\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ crude\-\_\-name (
+\begin{DoxyParamCaption}
+\item[{int}]{race}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_ac7b7c119069625b9b31dce5daf734b7f}
+\hypertarget{act_8movement_8cpp_a0506d7a30438cc69188800afdd0432d2}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!delayed\-\_\-pick@{delayed\-\_\-pick}}
+\index{delayed\-\_\-pick@{delayed\-\_\-pick}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{delayed\-\_\-pick}]{\setlength{\rightskip}{0pt plus 5cm}void delayed\-\_\-pick (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a0506d7a30438cc69188800afdd0432d2}
+\hypertarget{act_8movement_8cpp_a6b2d47bb335993529118d30ac657ba93}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!delayed\-\_\-pick\-\_\-obj@{delayed\-\_\-pick\-\_\-obj}}
+\index{delayed\-\_\-pick\-\_\-obj@{delayed\-\_\-pick\-\_\-obj}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{delayed\-\_\-pick\-\_\-obj}]{\setlength{\rightskip}{0pt plus 5cm}void delayed\-\_\-pick\-\_\-obj (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a6b2d47bb335993529118d30ac657ba93}
+\hypertarget{act_8movement_8cpp_aa6203d5467b074e2e262a4eb8c511213}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!delayed\-\_\-track@{delayed\-\_\-track}}
+\index{delayed\-\_\-track@{delayed\-\_\-track}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{delayed\-\_\-track}]{\setlength{\rightskip}{0pt plus 5cm}void delayed\-\_\-track (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_aa6203d5467b074e2e262a4eb8c511213}
+\hypertarget{act_8movement_8cpp_a4075c473fcb3850c6599264e5063a998}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-bridle@{do\-\_\-bridle}}
+\index{do\-\_\-bridle@{do\-\_\-bridle}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-bridle}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-bridle (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a4075c473fcb3850c6599264e5063a998}
+\hypertarget{act_8movement_8cpp_af4f50c076ffd586134ee00e7289e21b4}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-buck@{do\-\_\-buck}}
+\index{do\-\_\-buck@{do\-\_\-buck}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-buck}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-buck (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_af4f50c076ffd586134ee00e7289e21b4}
+\hypertarget{act_8movement_8cpp_a1c5bfb3ab5641599fa2762a0f9b2adb3}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-close@{do\-\_\-close}}
+\index{do\-\_\-close@{do\-\_\-close}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-close}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-close (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a1c5bfb3ab5641599fa2762a0f9b2adb3}
+\hypertarget{act_8movement_8cpp_aa46b49460445e00c36f4e481ab4c8578}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-crawl@{do\-\_\-crawl}}
+\index{do\-\_\-crawl@{do\-\_\-crawl}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-crawl}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-crawl (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_aa46b49460445e00c36f4e481ab4c8578}
+\hypertarget{act_8movement_8cpp_a3c5b6235f58fdadbae143ffb82c63844}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-dismount@{do\-\_\-dismount}}
+\index{do\-\_\-dismount@{do\-\_\-dismount}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-dismount}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-dismount (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a3c5b6235f58fdadbae143ffb82c63844}
+\hypertarget{act_8movement_8cpp_ad3cee189832109eaad0c462a85f7f0e4}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-down@{do\-\_\-down}}
+\index{do\-\_\-down@{do\-\_\-down}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-down}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-down (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_ad3cee189832109eaad0c462a85f7f0e4}
+\hypertarget{act_8movement_8cpp_a0f7c4416a34ef6128c8d4527180f8ff9}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-downeast@{do\-\_\-downeast}}
+\index{do\-\_\-downeast@{do\-\_\-downeast}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-downeast}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-downeast (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a0f7c4416a34ef6128c8d4527180f8ff9}
+\hypertarget{act_8movement_8cpp_a0642fa5ce8afef0caf5b6929f8b150d0}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-downnorth@{do\-\_\-downnorth}}
+\index{do\-\_\-downnorth@{do\-\_\-downnorth}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-downnorth}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-downnorth (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a0642fa5ce8afef0caf5b6929f8b150d0}
+\hypertarget{act_8movement_8cpp_ad15788c8b525803e9b56310f5bdfad7d}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-downnortheast@{do\-\_\-downnortheast}}
+\index{do\-\_\-downnortheast@{do\-\_\-downnortheast}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-downnortheast}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-downnortheast (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_ad15788c8b525803e9b56310f5bdfad7d}
+\hypertarget{act_8movement_8cpp_ab26bf2b40b26d86c024a81e8b5d5cc27}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-downnorthwest@{do\-\_\-downnorthwest}}
+\index{do\-\_\-downnorthwest@{do\-\_\-downnorthwest}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-downnorthwest}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-downnorthwest (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_ab26bf2b40b26d86c024a81e8b5d5cc27}
+\hypertarget{act_8movement_8cpp_af0ca80d082c91547e2d479216046acc8}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-downsouth@{do\-\_\-downsouth}}
+\index{do\-\_\-downsouth@{do\-\_\-downsouth}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-downsouth}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-downsouth (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_af0ca80d082c91547e2d479216046acc8}
+\hypertarget{act_8movement_8cpp_aa0222ef4aa0500796c6455cc25ffcdf7}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-downsoutheast@{do\-\_\-downsoutheast}}
+\index{do\-\_\-downsoutheast@{do\-\_\-downsoutheast}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-downsoutheast}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-downsoutheast (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_aa0222ef4aa0500796c6455cc25ffcdf7}
+\hypertarget{act_8movement_8cpp_a2e78fcd5ee210e007141cbfb7374d1fc}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-downsouthwest@{do\-\_\-downsouthwest}}
+\index{do\-\_\-downsouthwest@{do\-\_\-downsouthwest}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-downsouthwest}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-downsouthwest (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a2e78fcd5ee210e007141cbfb7374d1fc}
+\hypertarget{act_8movement_8cpp_ae10d51d1a3faee874a89a76199d332b7}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-downwest@{do\-\_\-downwest}}
+\index{do\-\_\-downwest@{do\-\_\-downwest}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-downwest}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-downwest (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_ae10d51d1a3faee874a89a76199d332b7}
+\hypertarget{act_8movement_8cpp_adc9267ef2c2b475aead0e34c873d435e}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-drag@{do\-\_\-drag}}
+\index{do\-\_\-drag@{do\-\_\-drag}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-drag}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-drag (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_adc9267ef2c2b475aead0e34c873d435e}
+\hypertarget{act_8movement_8cpp_a677e2208b04034c956d038b0dd4ffd08}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-east@{do\-\_\-east}}
+\index{do\-\_\-east@{do\-\_\-east}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-east}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-east (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a677e2208b04034c956d038b0dd4ffd08}
+\hypertarget{act_8movement_8cpp_a788d2985e4901d5672bbd928f0272b71}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-enter@{do\-\_\-enter}}
+\index{do\-\_\-enter@{do\-\_\-enter}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-enter}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-enter (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a788d2985e4901d5672bbd928f0272b71}
+Entering a vehicle
+
+Enter a dwelling \hypertarget{act_8movement_8cpp_a7eac68365f7b502649e1b42a467d1729}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-float@{do\-\_\-float}}
+\index{do\-\_\-float@{do\-\_\-float}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-float}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-float (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a7eac68365f7b502649e1b42a467d1729}
+\hypertarget{act_8movement_8cpp_a69e6e06994762e7ad3cbc4c8fcae5c59}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-hitch@{do\-\_\-hitch}}
+\index{do\-\_\-hitch@{do\-\_\-hitch}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-hitch}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-hitch (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a69e6e06994762e7ad3cbc4c8fcae5c59}
+\hypertarget{act_8movement_8cpp_a26a159a6f7758ac853ce93c6e91891aa}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-inside@{do\-\_\-inside}}
+\index{do\-\_\-inside@{do\-\_\-inside}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-inside}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-inside (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a26a159a6f7758ac853ce93c6e91891aa}
+\hypertarget{act_8movement_8cpp_a730c39bd321563ef4e762b003dc8320f}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-leave@{do\-\_\-leave}}
+\index{do\-\_\-leave@{do\-\_\-leave}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-leave}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-leave (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a730c39bd321563ef4e762b003dc8320f}
+\hypertarget{act_8movement_8cpp_a4f853c948d900969f5d31eb693bccf26}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-lock@{do\-\_\-lock}}
+\index{do\-\_\-lock@{do\-\_\-lock}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-lock}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-lock (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a4f853c948d900969f5d31eb693bccf26}
+\hypertarget{act_8movement_8cpp_a0170a89e1cbcb48c6abb9b6daa1abbb5}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-mount@{do\-\_\-mount}}
+\index{do\-\_\-mount@{do\-\_\-mount}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-mount}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-mount (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a0170a89e1cbcb48c6abb9b6daa1abbb5}
+\hypertarget{act_8movement_8cpp_a17c6e90d72bf38f69d8f8fa660526688}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-move@{do\-\_\-move}}
+\index{do\-\_\-move@{do\-\_\-move}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-move}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-move (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{dir}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a17c6e90d72bf38f69d8f8fa660526688}
+\hypertarget{act_8movement_8cpp_a0e79a97825edddcbed2370d21bf8883b}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-north@{do\-\_\-north}}
+\index{do\-\_\-north@{do\-\_\-north}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-north}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-north (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a0e79a97825edddcbed2370d21bf8883b}
+\hypertarget{act_8movement_8cpp_ad8be1b5a7b39645ebaf10777bf861e78}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-northeast@{do\-\_\-northeast}}
+\index{do\-\_\-northeast@{do\-\_\-northeast}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-northeast}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-northeast (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_ad8be1b5a7b39645ebaf10777bf861e78}
+\hypertarget{act_8movement_8cpp_ad976dc3504be13eb08e636d03b54e076}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-northwest@{do\-\_\-northwest}}
+\index{do\-\_\-northwest@{do\-\_\-northwest}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-northwest}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-northwest (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_ad976dc3504be13eb08e636d03b54e076}
+\hypertarget{act_8movement_8cpp_a22dd8e7f959275e2ac3623da5c6cc2a3}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-open@{do\-\_\-open}}
+\index{do\-\_\-open@{do\-\_\-open}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-open}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-open (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a22dd8e7f959275e2ac3623da5c6cc2a3}
+\hypertarget{act_8movement_8cpp_adc076de3cbe768d2497439b9f63c757d}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-outside@{do\-\_\-outside}}
+\index{do\-\_\-outside@{do\-\_\-outside}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-outside}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-outside (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_adc076de3cbe768d2497439b9f63c757d}
+\hypertarget{act_8movement_8cpp_a7399fe6d7ffd8fdf88a42ba77b4ea8be}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-party@{do\-\_\-party}}
+\index{do\-\_\-party@{do\-\_\-party}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-party}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-party (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a7399fe6d7ffd8fdf88a42ba77b4ea8be}
+\hypertarget{act_8movement_8cpp_afb5b6a1a0effccef7807537d645e3eaa}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-pick@{do\-\_\-pick}}
+\index{do\-\_\-pick@{do\-\_\-pick}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-pick}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-pick (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_afb5b6a1a0effccef7807537d645e3eaa}
+\hypertarget{act_8movement_8cpp_a3bf9650a2f84a85472fe45aa24cc4bba}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-push@{do\-\_\-push}}
+\index{do\-\_\-push@{do\-\_\-push}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-push}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-push (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a3bf9650a2f84a85472fe45aa24cc4bba}
+\hypertarget{act_8movement_8cpp_a9d726876efbe04246694afc4ac1433e0}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-rest@{do\-\_\-rest}}
+\index{do\-\_\-rest@{do\-\_\-rest}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-rest}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-rest (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a9d726876efbe04246694afc4ac1433e0}
+\hypertarget{act_8movement_8cpp_af201d6bb30e1bc1de27371e096fea80a}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-sail@{do\-\_\-sail}}
+\index{do\-\_\-sail@{do\-\_\-sail}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-sail}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-sail (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_af201d6bb30e1bc1de27371e096fea80a}
+\hypertarget{act_8movement_8cpp_a21b906329d99d601d5795abe9cdbb3c6}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-shadow@{do\-\_\-shadow}}
+\index{do\-\_\-shadow@{do\-\_\-shadow}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-shadow}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-shadow (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a21b906329d99d601d5795abe9cdbb3c6}
+\hypertarget{act_8movement_8cpp_a03584f00eb009d255fca0c5b115c6692}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-sit@{do\-\_\-sit}}
+\index{do\-\_\-sit@{do\-\_\-sit}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-sit}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-sit (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a03584f00eb009d255fca0c5b115c6692}
+\hypertarget{act_8movement_8cpp_aa95462dc832c3f001691462f18b5e9ab}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-sleep@{do\-\_\-sleep}}
+\index{do\-\_\-sleep@{do\-\_\-sleep}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-sleep}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-sleep (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_aa95462dc832c3f001691462f18b5e9ab}
+\hypertarget{act_8movement_8cpp_af97fee7b0731ae7e93016a92a5859d7e}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-south@{do\-\_\-south}}
+\index{do\-\_\-south@{do\-\_\-south}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-south}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-south (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_af97fee7b0731ae7e93016a92a5859d7e}
+\hypertarget{act_8movement_8cpp_aef47a2838c92f67eb2eb3c0feb395a25}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-southeast@{do\-\_\-southeast}}
+\index{do\-\_\-southeast@{do\-\_\-southeast}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-southeast}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-southeast (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_aef47a2838c92f67eb2eb3c0feb395a25}
+\hypertarget{act_8movement_8cpp_af95ea9880aada185e25b6159950e5459}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-southwest@{do\-\_\-southwest}}
+\index{do\-\_\-southwest@{do\-\_\-southwest}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-southwest}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-southwest (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_af95ea9880aada185e25b6159950e5459}
+\hypertarget{act_8movement_8cpp_a324d44ef599831d501953c41bc3c892f}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-stand@{do\-\_\-stand}}
+\index{do\-\_\-stand@{do\-\_\-stand}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-stand}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-stand (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a324d44ef599831d501953c41bc3c892f}
+\hypertarget{act_8movement_8cpp_a723e3241aef9dad2cf7a3cd191a876d9}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-swim@{do\-\_\-swim}}
+\index{do\-\_\-swim@{do\-\_\-swim}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-swim}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-swim (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a723e3241aef9dad2cf7a3cd191a876d9}
+\hypertarget{act_8movement_8cpp_a6ef957b9adafbdc216a5b11b7a52927a}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-tame@{do\-\_\-tame}}
+\index{do\-\_\-tame@{do\-\_\-tame}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-tame}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-tame (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a6ef957b9adafbdc216a5b11b7a52927a}
+\hypertarget{act_8movement_8cpp_a07a8d0cb7ddde5e6e9a23b57a0e96b97}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-track@{do\-\_\-track}}
+\index{do\-\_\-track@{do\-\_\-track}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-track}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-track (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a07a8d0cb7ddde5e6e9a23b57a0e96b97}
+\hypertarget{act_8movement_8cpp_afd157c59dc30d3b15708321912e34269}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-unhitch@{do\-\_\-unhitch}}
+\index{do\-\_\-unhitch@{do\-\_\-unhitch}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-unhitch}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-unhitch (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_afd157c59dc30d3b15708321912e34269}
+\hypertarget{act_8movement_8cpp_ae6259b267401f160011289fdc77356fc}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-unlock@{do\-\_\-unlock}}
+\index{do\-\_\-unlock@{do\-\_\-unlock}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-unlock}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-unlock (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_ae6259b267401f160011289fdc77356fc}
+\hypertarget{act_8movement_8cpp_ae30860548752eee005c6de12611dc6b0}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-up@{do\-\_\-up}}
+\index{do\-\_\-up@{do\-\_\-up}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-up}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-up (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_ae30860548752eee005c6de12611dc6b0}
+\hypertarget{act_8movement_8cpp_a2a48670f71f71a1188b7b0c2360ff915}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-upeast@{do\-\_\-upeast}}
+\index{do\-\_\-upeast@{do\-\_\-upeast}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-upeast}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-upeast (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a2a48670f71f71a1188b7b0c2360ff915}
+\hypertarget{act_8movement_8cpp_a5d27dcc5ba74db7869111252a1482883}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-upnorth@{do\-\_\-upnorth}}
+\index{do\-\_\-upnorth@{do\-\_\-upnorth}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-upnorth}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-upnorth (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a5d27dcc5ba74db7869111252a1482883}
+\hypertarget{act_8movement_8cpp_aa5e26127977a24bcda3d5df70b55129d}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-upnortheast@{do\-\_\-upnortheast}}
+\index{do\-\_\-upnortheast@{do\-\_\-upnortheast}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-upnortheast}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-upnortheast (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_aa5e26127977a24bcda3d5df70b55129d}
+\hypertarget{act_8movement_8cpp_a3ebd0d2e456b4177f40f9d22d5782abd}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-upnorthwest@{do\-\_\-upnorthwest}}
+\index{do\-\_\-upnorthwest@{do\-\_\-upnorthwest}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-upnorthwest}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-upnorthwest (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a3ebd0d2e456b4177f40f9d22d5782abd}
+\hypertarget{act_8movement_8cpp_af304af33569450d3fa727d9299839e8d}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-upsouth@{do\-\_\-upsouth}}
+\index{do\-\_\-upsouth@{do\-\_\-upsouth}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-upsouth}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-upsouth (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_af304af33569450d3fa727d9299839e8d}
+\hypertarget{act_8movement_8cpp_a78c62cc03016770c2948cfa1c9de2e48}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-upsoutheast@{do\-\_\-upsoutheast}}
+\index{do\-\_\-upsoutheast@{do\-\_\-upsoutheast}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-upsoutheast}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-upsoutheast (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a78c62cc03016770c2948cfa1c9de2e48}
+\hypertarget{act_8movement_8cpp_a926a7e6b0044cdfdee1d2f871793a93a}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-upsouthwest@{do\-\_\-upsouthwest}}
+\index{do\-\_\-upsouthwest@{do\-\_\-upsouthwest}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-upsouthwest}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-upsouthwest (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a926a7e6b0044cdfdee1d2f871793a93a}
+\hypertarget{act_8movement_8cpp_afa8d937030ba2ec1a53391f4494aa0e1}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-upwest@{do\-\_\-upwest}}
+\index{do\-\_\-upwest@{do\-\_\-upwest}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-upwest}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-upwest (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_afa8d937030ba2ec1a53391f4494aa0e1}
+\hypertarget{act_8movement_8cpp_af87cd6209e998b0aac44a0c8423759dd}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-wake@{do\-\_\-wake}}
+\index{do\-\_\-wake@{do\-\_\-wake}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-wake}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-wake (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{not\-\_\-noisy}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_af87cd6209e998b0aac44a0c8423759dd}
+\hypertarget{act_8movement_8cpp_a2b829859a57ddfabc526d9ef35661883}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!do\-\_\-west@{do\-\_\-west}}
+\index{do\-\_\-west@{do\-\_\-west}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{do\-\_\-west}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-west (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a2b829859a57ddfabc526d9ef35661883}
+\hypertarget{act_8movement_8cpp_a5ec1dc254d7073749fca4929b73a9ac7}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!drowned@{drowned}}
+\index{drowned@{drowned}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{drowned}]{\setlength{\rightskip}{0pt plus 5cm}int drowned (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a5ec1dc254d7073749fca4929b73a9ac7}
+\hypertarget{act_8movement_8cpp_aba8b13b5f85e5c14f7b7ae573d9c35f0}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!dump\-\_\-rider@{dump\-\_\-rider}}
+\index{dump\-\_\-rider@{dump\-\_\-rider}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{dump\-\_\-rider}]{\setlength{\rightskip}{0pt plus 5cm}void dump\-\_\-rider (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{rider, }
+\item[{int}]{forced}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_aba8b13b5f85e5c14f7b7ae573d9c35f0}
+\hypertarget{act_8movement_8cpp_a7567761a39f0f10081b68cc662d68be2}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!enter\-\_\-room@{enter\-\_\-room}}
+\index{enter\-\_\-room@{enter\-\_\-room}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{enter\-\_\-room}]{\setlength{\rightskip}{0pt plus 5cm}void enter\-\_\-room (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\-E\-\_\-\-D\-A\-T\-A} $\ast$}]{qe}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a7567761a39f0f10081b68cc662d68be2}
+\hypertarget{act_8movement_8cpp_ac8c135b28e7c5af29fed6552d4fa01d4}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!enter\-\_\-vehicle@{enter\-\_\-vehicle}}
+\index{enter\-\_\-vehicle@{enter\-\_\-vehicle}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{enter\-\_\-vehicle}]{\setlength{\rightskip}{0pt plus 5cm}void enter\-\_\-vehicle (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ent\-\_\-mob}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_ac8c135b28e7c5af29fed6552d4fa01d4}
+\hypertarget{act_8movement_8cpp_af9bc3ee6d1be95e47ed3e644b79dd91d}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!exit\-\_\-room@{exit\-\_\-room}}
+\index{exit\-\_\-room@{exit\-\_\-room}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{exit\-\_\-room}]{\setlength{\rightskip}{0pt plus 5cm}void exit\-\_\-room (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{dir, }
+\item[{int}]{flags, }
+\item[{int}]{leave\-\_\-time, }
+\item[{int}]{arrive\-\_\-time, }
+\item[{int}]{speed\-\_\-name, }
+\item[{int}]{needed\-\_\-movement, }
+\item[{char $\ast$}]{travel\-\_\-str, }
+\item[{char $\ast$}]{group\-\_\-str}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_af9bc3ee6d1be95e47ed3e644b79dd91d}
+\hypertarget{act_8movement_8cpp_a515eeb560505b6753dc0bc689684abe7}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!find\-\_\-door@{find\-\_\-door}}
+\index{find\-\_\-door@{find\-\_\-door}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{find\-\_\-door}]{\setlength{\rightskip}{0pt plus 5cm}int find\-\_\-door (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{type, }
+\item[{char $\ast$}]{dir}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a515eeb560505b6753dc0bc689684abe7}
+\hypertarget{act_8movement_8cpp_a29e4447c21a92bbd65d702dcfdd65f28}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!floating\-\_\-check@{floating\-\_\-check}}
+\index{floating\-\_\-check@{floating\-\_\-check}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{floating\-\_\-check}]{\setlength{\rightskip}{0pt plus 5cm}int floating\-\_\-check (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a29e4447c21a92bbd65d702dcfdd65f28}
+\hypertarget{act_8movement_8cpp_ac7615ca3a3465830f5927fd5f3804d0f}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!has\-\_\-key@{has\-\_\-key}}
+\index{has\-\_\-key@{has\-\_\-key}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{has\-\_\-key}]{\setlength{\rightskip}{0pt plus 5cm}{\bf O\-B\-J\-\_\-\-D\-A\-T\-A}$\ast$ has\-\_\-key (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj, }
+\item[{int}]{key}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_ac7615ca3a3465830f5927fd5f3804d0f}
+\hypertarget{act_8movement_8cpp_a2ff974b7e2512971950884655cfa3f0c}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!hitch\-\_\-char@{hitch\-\_\-char}}
+\index{hitch\-\_\-char@{hitch\-\_\-char}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{hitch\-\_\-char}]{\setlength{\rightskip}{0pt plus 5cm}int hitch\-\_\-char (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{hitch}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a2ff974b7e2512971950884655cfa3f0c}
+\hypertarget{act_8movement_8cpp_a852d7fdf5e3510ab8051db052f442944}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!hitches\-\_\-follow@{hitches\-\_\-follow}}
+\index{hitches\-\_\-follow@{hitches\-\_\-follow}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{hitches\-\_\-follow}]{\setlength{\rightskip}{0pt plus 5cm}void hitches\-\_\-follow (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{dir, }
+\item[{int}]{leave\-\_\-time, }
+\item[{int}]{arrive\-\_\-time}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a852d7fdf5e3510ab8051db052f442944}
+\hypertarget{act_8movement_8cpp_a6f4499fc9b8dfb593c7ee26a0e5e1a0c}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!initiate\-\_\-move@{initiate\-\_\-move}}
+\index{initiate\-\_\-move@{initiate\-\_\-move}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{initiate\-\_\-move}]{\setlength{\rightskip}{0pt plus 5cm}void initiate\-\_\-move (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a6f4499fc9b8dfb593c7ee26a0e5e1a0c}
+\hypertarget{act_8movement_8cpp_aec68cd98a16dbd0ab6c855e785396981}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!is\-\_\-mounted@{is\-\_\-mounted}}
+\index{is\-\_\-mounted@{is\-\_\-mounted}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{is\-\_\-mounted}]{\setlength{\rightskip}{0pt plus 5cm}int is\-\_\-mounted (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_aec68cd98a16dbd0ab6c855e785396981}
+\hypertarget{act_8movement_8cpp_ad178589fe8776731bf6a5df1d9cc38f3}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!is\-\_\-moving\-\_\-away@{is\-\_\-moving\-\_\-away}}
+\index{is\-\_\-moving\-\_\-away@{is\-\_\-moving\-\_\-away}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{is\-\_\-moving\-\_\-away}]{\setlength{\rightskip}{0pt plus 5cm}int is\-\_\-moving\-\_\-away (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{target, }
+\item[{int}]{dir, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{archer}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_ad178589fe8776731bf6a5df1d9cc38f3}
+\hypertarget{act_8movement_8cpp_a913e112f57fd155928ff238649e4ba1c}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!is\-\_\-moving\-\_\-toward@{is\-\_\-moving\-\_\-toward}}
+\index{is\-\_\-moving\-\_\-toward@{is\-\_\-moving\-\_\-toward}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{is\-\_\-moving\-\_\-toward}]{\setlength{\rightskip}{0pt plus 5cm}int is\-\_\-moving\-\_\-toward (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{target, }
+\item[{int}]{dir, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{archer}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a913e112f57fd155928ff238649e4ba1c}
+\hypertarget{act_8movement_8cpp_a367d561f7210affed1e95e7bbd4ded53}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!is\-\_\-outdoors@{is\-\_\-outdoors}}
+\index{is\-\_\-outdoors@{is\-\_\-outdoors}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{is\-\_\-outdoors}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} is\-\_\-outdoors (
+\begin{DoxyParamCaption}
+\item[{{\bf R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$}]{room}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a367d561f7210affed1e95e7bbd4ded53}
+\hypertarget{act_8movement_8cpp_a0b9d65c9659c8a507b2fabe7802a0d44}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!isguarded@{isguarded}}
+\index{isguarded@{isguarded}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{isguarded}]{\setlength{\rightskip}{0pt plus 5cm}int isguarded (
+\begin{DoxyParamCaption}
+\item[{{\bf R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$}]{room, }
+\item[{int}]{dir}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a0b9d65c9659c8a507b2fabe7802a0d44}
+\hypertarget{act_8movement_8cpp_acbbc6df34386d8c80be54e466dc9a862}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!leave\-\_\-tracks@{leave\-\_\-tracks}}
+\index{leave\-\_\-tracks@{leave\-\_\-tracks}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{leave\-\_\-tracks}]{\setlength{\rightskip}{0pt plus 5cm}void leave\-\_\-tracks (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{to\-\_\-dir, }
+\item[{int}]{from\-\_\-dir}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_acbbc6df34386d8c80be54e466dc9a862}
+\hypertarget{act_8movement_8cpp_a63078b5472a0a60af11721f161cf74f4}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!leave\-\_\-vehicle@{leave\-\_\-vehicle}}
+\index{leave\-\_\-vehicle@{leave\-\_\-vehicle}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{leave\-\_\-vehicle}]{\setlength{\rightskip}{0pt plus 5cm}void leave\-\_\-vehicle (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a63078b5472a0a60af11721f161cf74f4}
+\hypertarget{act_8movement_8cpp_a428e2e1e064ed5190e49b23365f9da53}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!move@{move}}
+\index{move@{move}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{move}]{\setlength{\rightskip}{0pt plus 5cm}void move (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{dir, }
+\item[{int}]{speed}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a428e2e1e064ed5190e49b23365f9da53}
+\hypertarget{act_8movement_8cpp_a331ac37c06bb706c6053377b20148eb6}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!outside\-\_\-inside@{outside\-\_\-inside}}
+\index{outside\-\_\-inside@{outside\-\_\-inside}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{outside\-\_\-inside}]{\setlength{\rightskip}{0pt plus 5cm}void outside\-\_\-inside (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a331ac37c06bb706c6053377b20148eb6}
+\hypertarget{act_8movement_8cpp_a90452af8db6b9d95f3a320d52c0aab65}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!pathfind@{pathfind}}
+\index{pathfind@{pathfind}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{pathfind}]{\setlength{\rightskip}{0pt plus 5cm}int pathfind (
+\begin{DoxyParamCaption}
+\item[{int}]{from\-\_\-room, }
+\item[{int}]{to\-\_\-room}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a90452af8db6b9d95f3a320d52c0aab65}
+\hypertarget{act_8movement_8cpp_a12eec2c8c0baeacb5e692f0caecaeb67}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!process\-\_\-quarter\-\_\-events@{process\-\_\-quarter\-\_\-events}}
+\index{process\-\_\-quarter\-\_\-events@{process\-\_\-quarter\-\_\-events}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{process\-\_\-quarter\-\_\-events}]{\setlength{\rightskip}{0pt plus 5cm}void process\-\_\-quarter\-\_\-events (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a12eec2c8c0baeacb5e692f0caecaeb67}
+\hypertarget{act_8movement_8cpp_a4f9331d7240c486150f077385b63adea}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!ride\-\_\-mount@{ride\-\_\-mount}}
+\index{ride\-\_\-mount@{ride\-\_\-mount}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{ride\-\_\-mount}]{\setlength{\rightskip}{0pt plus 5cm}int ride\-\_\-mount (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{mount, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{rider, }
+\item[{int}]{current, }
+\item[{int}]{target, }
+\item[{int}]{dir}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a4f9331d7240c486150f077385b63adea}
+\hypertarget{act_8movement_8cpp_a3fcc18c31419bb145a9af68e4954867d}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!room\-\_\-avail@{room\-\_\-avail}}
+\index{room\-\_\-avail@{room\-\_\-avail}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{room\-\_\-avail}]{\setlength{\rightskip}{0pt plus 5cm}int room\-\_\-avail (
+\begin{DoxyParamCaption}
+\item[{{\bf R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$}]{troom, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a3fcc18c31419bb145a9af68e4954867d}
+\hypertarget{act_8movement_8cpp_a7df19cf730447c00150569250a4b5e1d}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!round@{round}}
+\index{round@{round}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{round}]{\setlength{\rightskip}{0pt plus 5cm}double round (
+\begin{DoxyParamCaption}
+\item[{double}]{x}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a7df19cf730447c00150569250a4b5e1d}
+\hypertarget{act_8movement_8cpp_a0b97c0379131be148c675cf87b87bbd1}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!shadowers\-\_\-shadow@{shadowers\-\_\-shadow}}
+\index{shadowers\-\_\-shadow@{shadowers\-\_\-shadow}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{shadowers\-\_\-shadow}]{\setlength{\rightskip}{0pt plus 5cm}void shadowers\-\_\-shadow (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{to\-\_\-room, }
+\item[{int}]{move\-\_\-dir}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a0b97c0379131be148c675cf87b87bbd1}
+\hypertarget{act_8movement_8cpp_a9a183130aa7268f996f17f6d0f6994da}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!skill\-\_\-tracking@{skill\-\_\-tracking}}
+\index{skill\-\_\-tracking@{skill\-\_\-tracking}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{skill\-\_\-tracking}]{\setlength{\rightskip}{0pt plus 5cm}void skill\-\_\-tracking (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a9a183130aa7268f996f17f6d0f6994da}
+\hypertarget{act_8movement_8cpp_a8d54086784dc82104f4c5f79c9fe1454}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!skip\-\_\-sneak\-\_\-check@{skip\-\_\-sneak\-\_\-check}}
+\index{skip\-\_\-sneak\-\_\-check@{skip\-\_\-sneak\-\_\-check}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{skip\-\_\-sneak\-\_\-check}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} skip\-\_\-sneak\-\_\-check (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a8d54086784dc82104f4c5f79c9fe1454}
+\hypertarget{act_8movement_8cpp_a9320dfc8bcc7f872b087cc31c49251d2}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!specific\-\_\-name@{specific\-\_\-name}}
+\index{specific\-\_\-name@{specific\-\_\-name}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{specific\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ specific\-\_\-name (
+\begin{DoxyParamCaption}
+\item[{int}]{race}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a9320dfc8bcc7f872b087cc31c49251d2}
+\-: Make racially non-\/specific \hypertarget{act_8movement_8cpp_a4d3407a452d80ad798f72560df0f86b5}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!speed\-\_\-adj@{speed\-\_\-adj}}
+\index{speed\-\_\-adj@{speed\-\_\-adj}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{speed\-\_\-adj}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ speed\-\_\-adj (
+\begin{DoxyParamCaption}
+\item[{int}]{speed}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a4d3407a452d80ad798f72560df0f86b5}
+\hypertarget{act_8movement_8cpp_a9335f785c2d462dc438aa580764f52f8}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!stop\-\_\-mount\-\_\-train@{stop\-\_\-mount\-\_\-train}}
+\index{stop\-\_\-mount\-\_\-train@{stop\-\_\-mount\-\_\-train}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{stop\-\_\-mount\-\_\-train}]{\setlength{\rightskip}{0pt plus 5cm}void stop\-\_\-mount\-\_\-train (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{stopper}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a9335f785c2d462dc438aa580764f52f8}
+\hypertarget{act_8movement_8cpp_a2a417a0533dc0b98c34cd404935b6f51}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!suffocated@{suffocated}}
+\index{suffocated@{suffocated}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{suffocated}]{\setlength{\rightskip}{0pt plus 5cm}int suffocated (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a2a417a0533dc0b98c34cd404935b6f51}
+\hypertarget{act_8movement_8cpp_a5bfce4e716903e293dd0441c2f461094}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!swimming\-\_\-check@{swimming\-\_\-check}}
+\index{swimming\-\_\-check@{swimming\-\_\-check}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{swimming\-\_\-check}]{\setlength{\rightskip}{0pt plus 5cm}int swimming\-\_\-check (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a5bfce4e716903e293dd0441c2f461094}
+\hypertarget{act_8movement_8cpp_a635c9a755843b80cb5ae092c03cd9e85}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!track@{track}}
+\index{track@{track}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{track}]{\setlength{\rightskip}{0pt plus 5cm}int track (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{to\-\_\-room}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a635c9a755843b80cb5ae092c03cd9e85}
+\hypertarget{act_8movement_8cpp_a406208b8c0a456188a0873848779dad2}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!track\-\_\-age@{track\-\_\-age}}
+\index{track\-\_\-age@{track\-\_\-age}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{track\-\_\-age}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ track\-\_\-age (
+\begin{DoxyParamCaption}
+\item[{int}]{hours\-\_\-passed}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a406208b8c0a456188a0873848779dad2}
+\hypertarget{act_8movement_8cpp_ad4cdb72101a5ed286323a47c31a18355}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!track\-\_\-expiration@{track\-\_\-expiration}}
+\index{track\-\_\-expiration@{track\-\_\-expiration}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{track\-\_\-expiration}]{\setlength{\rightskip}{0pt plus 5cm}void track\-\_\-expiration (
+\begin{DoxyParamCaption}
+\item[{{\bf R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$}]{room, }
+\item[{{\bf T\-R\-A\-C\-K\-\_\-\-D\-A\-T\-A} $\ast$}]{track}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_ad4cdb72101a5ed286323a47c31a18355}
+\hypertarget{act_8movement_8cpp_af91ebded9da719b3b7c6d4274e5617cf}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!track\-\_\-from\-\_\-room@{track\-\_\-from\-\_\-room}}
+\index{track\-\_\-from\-\_\-room@{track\-\_\-from\-\_\-room}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{track\-\_\-from\-\_\-room}]{\setlength{\rightskip}{0pt plus 5cm}void track\-\_\-from\-\_\-room (
+\begin{DoxyParamCaption}
+\item[{{\bf R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$}]{room, }
+\item[{{\bf T\-R\-A\-C\-K\-\_\-\-D\-A\-T\-A} $\ast$}]{track}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_af91ebded9da719b3b7c6d4274e5617cf}
+\hypertarget{act_8movement_8cpp_a53a5190db97139aadb899e7d0bd67843}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!unhitch\-\_\-char@{unhitch\-\_\-char}}
+\index{unhitch\-\_\-char@{unhitch\-\_\-char}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{unhitch\-\_\-char}]{\setlength{\rightskip}{0pt plus 5cm}void unhitch\-\_\-char (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{hitch}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a53a5190db97139aadb899e7d0bd67843}
+\hypertarget{act_8movement_8cpp_a49ce66448f56b56a9f27af01cb72abe2}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!update\-\_\-room\-\_\-tracks@{update\-\_\-room\-\_\-tracks}}
+\index{update\-\_\-room\-\_\-tracks@{update\-\_\-room\-\_\-tracks}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{update\-\_\-room\-\_\-tracks}]{\setlength{\rightskip}{0pt plus 5cm}void update\-\_\-room\-\_\-tracks (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_a49ce66448f56b56a9f27af01cb72abe2}
+\hypertarget{act_8movement_8cpp_adb7480387269d2137c8e033cb933d54d}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!wakeup@{wakeup}}
+\index{wakeup@{wakeup}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{wakeup}]{\setlength{\rightskip}{0pt plus 5cm}int wakeup (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_adb7480387269d2137c8e033cb933d54d}
+\hypertarget{act_8movement_8cpp_afaee6e58b7e7234eda06f5f2d3cad455}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!watched\-\_\-action@{watched\-\_\-action}}
+\index{watched\-\_\-action@{watched\-\_\-action}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{watched\-\_\-action}]{\setlength{\rightskip}{0pt plus 5cm}void watched\-\_\-action (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{arg, }
+\item[{int}]{dist, }
+\item[{int}]{mode}
+\end{DoxyParamCaption}
+)}}\label{act_8movement_8cpp_afaee6e58b7e7234eda06f5f2d3cad455}
+
+
+\subsection{Variable Documentation}
+\hypertarget{act_8movement_8cpp_aa9787317029094b687f9e67e3c703758}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!direction@{direction}}
+\index{direction@{direction}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{direction}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ direction\mbox{[}$\,$\mbox{]}}}\label{act_8movement_8cpp_aa9787317029094b687f9e67e3c703758}
+\hypertarget{act_8movement_8cpp_a66eacf2435806e1def6122244365764e}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!dirs@{dirs}}
+\index{dirs@{dirs}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{dirs}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ const dirs\mbox{[}$\,$\mbox{]}}}\label{act_8movement_8cpp_a66eacf2435806e1def6122244365764e}
+\hypertarget{act_8movement_8cpp_a20a931de5d15b2382fe707a5fbc8b38d}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!enc\-\_\-tab@{enc\-\_\-tab}}
+\index{enc\-\_\-tab@{enc\-\_\-tab}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{enc\-\_\-tab}]{\setlength{\rightskip}{0pt plus 5cm}const struct {\bf encumberance\-\_\-info} enc\-\_\-tab\mbox{[}$\,$\mbox{]}}}\label{act_8movement_8cpp_a20a931de5d15b2382fe707a5fbc8b38d}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \{300, 0, 0, 0, 0, 1.00, \textcolor{stringliteral}{"unencumbered"}\},
+    \{600, 5, 2, 0, 0, 1.00, \textcolor{stringliteral}{"lightly encumbered"}\},
+    \{900, 10, 4, 5, 1, 0.95, \textcolor{stringliteral}{"encumbered"}\},
+    \{1300, 15, 6, 10, 2, 0.90, \textcolor{stringliteral}{"heavily encumbered"}\},
+    \{2000, 25, 8, 15, 2, 0.80, \textcolor{stringliteral}{"critically encumbered"}\},
+    \{9999900, 25, 4, 15, 2, 0.70, \textcolor{stringliteral}{"immobile"}\},
+\}
+\end{DoxyCode}
+\hypertarget{act_8movement_8cpp_a5c6f8f3349625e966f26248bc85fbf50}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!fatigue@{fatigue}}
+\index{fatigue@{fatigue}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{fatigue}]{\setlength{\rightskip}{0pt plus 5cm}const struct {\bf fatigue\-\_\-data} fatigue\mbox{[}$\,$\mbox{]}}}\label{act_8movement_8cpp_a5c6f8f3349625e966f26248bc85fbf50}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \{
+        5, 0.65, \textcolor{stringliteral}{"Completely Exhausted"}
+    \},
+    \{15, 0.70, \textcolor{stringliteral}{"Exhausted"}\},
+        \{25, 0.75, \textcolor{stringliteral}{"Extremely Tired"}\},
+        \{35, 0.80, \textcolor{stringliteral}{"Tired"}\},
+        \{45, 0.85, \textcolor{stringliteral}{"Somewhat Tired"}\},
+        \{55, 0.90, \textcolor{stringliteral}{"Winded"}\},
+        \{75, 0.95, \textcolor{stringliteral}{"Somewhat Winded"}\},
+        \{90, 1.00, \textcolor{stringliteral}{"Relatively Fresh"}\},
+        \{999, 1.00, \textcolor{stringliteral}{"Completely Rested"}\}
+\}
+\end{DoxyCode}
+\hypertarget{act_8movement_8cpp_aac59977222997a44c3d1ce4bc844919a}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!high\-\_\-water@{high\-\_\-water}}
+\index{high\-\_\-water@{high\-\_\-water}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{high\-\_\-water}]{\setlength{\rightskip}{0pt plus 5cm}int high\-\_\-water = 0}}\label{act_8movement_8cpp_aac59977222997a44c3d1ce4bc844919a}
+\hypertarget{act_8movement_8cpp_abefc4de14f3bdc4e57e1ff2074a39ecf}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!leg\-\_\-woundlocs@{leg\-\_\-woundlocs}}
+\index{leg\-\_\-woundlocs@{leg\-\_\-woundlocs}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{leg\-\_\-woundlocs}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ leg\-\_\-woundlocs\mbox{[}$\,$\mbox{]}}}\label{act_8movement_8cpp_abefc4de14f3bdc4e57e1ff2074a39ecf}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"groin"},
+    \textcolor{stringliteral}{"rthigh"},
+    \textcolor{stringliteral}{"lthigh"},
+    \textcolor{stringliteral}{"rknee"},
+    \textcolor{stringliteral}{"lknee"},
+    \textcolor{stringliteral}{"rcalf"},
+    \textcolor{stringliteral}{"lcalf"},
+    \textcolor{stringliteral}{"rfoot"},
+    \textcolor{stringliteral}{"lfoot"},
+    \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}
+\hypertarget{act_8movement_8cpp_a52d42d2cf1a7ba137cf40056d324186a}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!mount\-\_\-speeds@{mount\-\_\-speeds}}
+\index{mount\-\_\-speeds@{mount\-\_\-speeds}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{mount\-\_\-speeds}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ const mount\-\_\-speeds\mbox{[}$\,$\mbox{]}}}\label{act_8movement_8cpp_a52d42d2cf1a7ba137cf40056d324186a}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"trot"},
+    \textcolor{stringliteral}{"walk"},
+    \textcolor{stringliteral}{"slow trot"},
+    \textcolor{stringliteral}{"canter"},
+    \textcolor{stringliteral}{"race"},
+    \textcolor{stringliteral}{"gallop"},
+    \textcolor{stringliteral}{"immwalk"},
+    \textcolor{stringliteral}{"swim"},
+    \textcolor{stringliteral}{"float"},
+    \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}
+\hypertarget{act_8movement_8cpp_ab0eaef13a9d0443c03167852757a52b9}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!mount\-\_\-speeds\-\_\-ing@{mount\-\_\-speeds\-\_\-ing}}
+\index{mount\-\_\-speeds\-\_\-ing@{mount\-\_\-speeds\-\_\-ing}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{mount\-\_\-speeds\-\_\-ing}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ const mount\-\_\-speeds\-\_\-ing\mbox{[}$\,$\mbox{]}}}\label{act_8movement_8cpp_ab0eaef13a9d0443c03167852757a52b9}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"trotting"},
+    \textcolor{stringliteral}{"walking"},
+    \textcolor{stringliteral}{"slowly trotting"},
+    \textcolor{stringliteral}{"cantering"},
+    \textcolor{stringliteral}{"racing"},
+    \textcolor{stringliteral}{"galloping"},
+    \textcolor{stringliteral}{"immwalking"},
+    \textcolor{stringliteral}{"swimming"},
+    \textcolor{stringliteral}{"floating"},
+    \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}
+\hypertarget{act_8movement_8cpp_acc627062b327246b30d09c081dddf4d1}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!move\-\_\-speeds@{move\-\_\-speeds}}
+\index{move\-\_\-speeds@{move\-\_\-speeds}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{move\-\_\-speeds}]{\setlength{\rightskip}{0pt plus 5cm}const float move\-\_\-speeds\mbox{[}$\,$\mbox{]} = \{ 1.\-00, 2.\-50, 1.\-60, 0.\-50, 0.\-33, 0.\-25, 1.\-60, 3.\-00 \}}}\label{act_8movement_8cpp_acc627062b327246b30d09c081dddf4d1}
+\hypertarget{act_8movement_8cpp_a5eaf165e887fc4e2faea5fc6ba0b022a}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!movement\-\_\-loss@{movement\-\_\-loss}}
+\index{movement\-\_\-loss@{movement\-\_\-loss}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{movement\-\_\-loss}]{\setlength{\rightskip}{0pt plus 5cm}const int movement\-\_\-loss\mbox{[}$\,$\mbox{]}}}\label{act_8movement_8cpp_a5eaf165e887fc4e2faea5fc6ba0b022a}
+\hypertarget{act_8movement_8cpp_a669eca5f50878105ab257382a9151e8f}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!n\-Party\-Dir@{n\-Party\-Dir}}
+\index{n\-Party\-Dir@{n\-Party\-Dir}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{n\-Party\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}char n\-Party\-Dir = -\/1}}\label{act_8movement_8cpp_a669eca5f50878105ab257382a9151e8f}
+\hypertarget{act_8movement_8cpp_a13abb010ec8400574268ad25b9e083da}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!n\-Party\-Room@{n\-Party\-Room}}
+\index{n\-Party\-Room@{n\-Party\-Room}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{n\-Party\-Room}]{\setlength{\rightskip}{0pt plus 5cm}int n\-Party\-Room = 0}}\label{act_8movement_8cpp_a13abb010ec8400574268ad25b9e083da}
+\hypertarget{act_8movement_8cpp_a06abbac1ee19e3c7ac9c668f049cc29e}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!ptr\-Party\-Clan@{ptr\-Party\-Clan}}
+\index{ptr\-Party\-Clan@{ptr\-Party\-Clan}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{ptr\-Party\-Clan}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-L\-A\-N\-\_\-\-D\-A\-T\-A}$\ast$ ptr\-Party\-Clan = N\-U\-L\-L}}\label{act_8movement_8cpp_a06abbac1ee19e3c7ac9c668f049cc29e}
+\hypertarget{act_8movement_8cpp_a041d0defdf16f6b58b95e8089e652f07}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!quarter\-\_\-event\-\_\-list@{quarter\-\_\-event\-\_\-list}}
+\index{quarter\-\_\-event\-\_\-list@{quarter\-\_\-event\-\_\-list}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{quarter\-\_\-event\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\-E\-\_\-\-D\-A\-T\-A}$\ast$ quarter\-\_\-event\-\_\-list = N\-U\-L\-L}}\label{act_8movement_8cpp_a041d0defdf16f6b58b95e8089e652f07}
+\hypertarget{act_8movement_8cpp_a90f3e9b95f5e20f5384cd6d0b7ec4e6f}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!relative\-\_\-dirs@{relative\-\_\-dirs}}
+\index{relative\-\_\-dirs@{relative\-\_\-dirs}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{relative\-\_\-dirs}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ const relative\-\_\-dirs\mbox{[}$\,$\mbox{]}}}\label{act_8movement_8cpp_a90f3e9b95f5e20f5384cd6d0b7ec4e6f}
+\hypertarget{act_8movement_8cpp_a60c901f7af71b66a65be26830a984ebc}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!rev\-\_\-d2@{rev\-\_\-d2}}
+\index{rev\-\_\-d2@{rev\-\_\-d2}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{rev\-\_\-d2}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ rev\-\_\-d2\mbox{[}$\,$\mbox{]}}}\label{act_8movement_8cpp_a60c901f7af71b66a65be26830a984ebc}
+\hypertarget{act_8movement_8cpp_a8278c1cbdaf427df8623841822aaeb6b}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!rev\-\_\-dir@{rev\-\_\-dir}}
+\index{rev\-\_\-dir@{rev\-\_\-dir}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{rev\-\_\-dir}]{\setlength{\rightskip}{0pt plus 5cm}const int rev\-\_\-dir\mbox{[}$\,$\mbox{]}}}\label{act_8movement_8cpp_a8278c1cbdaf427df8623841822aaeb6b}
+\hypertarget{act_8movement_8cpp_a6a27b9fe0bda34750302322ca4e8abaf}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!rooms\-\_\-scanned@{rooms\-\_\-scanned}}
+\index{rooms\-\_\-scanned@{rooms\-\_\-scanned}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{rooms\-\_\-scanned}]{\setlength{\rightskip}{0pt plus 5cm}int rooms\-\_\-scanned = 0}}\label{act_8movement_8cpp_a6a27b9fe0bda34750302322ca4e8abaf}
+\hypertarget{act_8movement_8cpp_a9468cb53198c30ac0bb393310a27485b}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!search\-\_\-sequence@{search\-\_\-sequence}}
+\index{search\-\_\-sequence@{search\-\_\-sequence}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{search\-\_\-sequence}]{\setlength{\rightskip}{0pt plus 5cm}int search\-\_\-sequence = 0}}\label{act_8movement_8cpp_a9468cb53198c30ac0bb393310a27485b}
+\hypertarget{act_8movement_8cpp_a638b1f253368f3f1854b8a6211f9a0e2}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!short\-\_\-dirs@{short\-\_\-dirs}}
+\index{short\-\_\-dirs@{short\-\_\-dirs}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{short\-\_\-dirs}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ const short\-\_\-dirs\mbox{[}$\,$\mbox{]}}}\label{act_8movement_8cpp_a638b1f253368f3f1854b8a6211f9a0e2}
+\hypertarget{act_8movement_8cpp_a4f1c52c6b233d08cf652acdc6f0800ea}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!speeds@{speeds}}
+\index{speeds@{speeds}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{speeds}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ const speeds\mbox{[}$\,$\mbox{]}}}\label{act_8movement_8cpp_a4f1c52c6b233d08cf652acdc6f0800ea}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"walk"},         
+    \textcolor{stringliteral}{"trudge"},           
+    \textcolor{stringliteral}{"pace"},         
+    \textcolor{stringliteral}{"jog"},          
+    \textcolor{stringliteral}{"run"},          
+    \textcolor{stringliteral}{"sprint"},           
+    \textcolor{stringliteral}{"immwalk"},          
+    \textcolor{stringliteral}{"swim"},         
+    \textcolor{stringliteral}{"crawl"},          
+    \textcolor{stringliteral}{"float"},        
+    \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}
+\hypertarget{act_8movement_8cpp_a68864b6f6b61db5266b6fb28fa23c96c}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!terrain\-\_\-penalty@{terrain\-\_\-penalty}}
+\index{terrain\-\_\-penalty@{terrain\-\_\-penalty}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{terrain\-\_\-penalty}]{\setlength{\rightskip}{0pt plus 5cm}const int terrain\-\_\-penalty\mbox{[}23\mbox{]}\mbox{[}2\mbox{]}}}\label{act_8movement_8cpp_a68864b6f6b61db5266b6fb28fa23c96c}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \{20, 20\}, 
+    \{20, 20\}, 
+    \{20, 20\}, 
+    \{0, 10\}, 
+    \{0, 20\}, 
+    \{10, 20\}, 
+    \{30, 30\}, 
+    \{0, 20\}, 
+    \{10, 20\}, 
+    \{10, 10\}, 
+    \{10, 10\}, 
+    \{20, 20\}, 
+    \{0, 20\}, 
+    \{10, 20\}, 
+    \{20, 20\}, 
+    \{20, 20\}, 
+    \{0, 10\}, 
+    \{0, 10\}, 
+    \{0, 10\}, 
+    \{20, 20\}, 
+    \{20, 20\}, 
+    \{20, 20\}, 
+    \{20, 20\} 
+\}
+\end{DoxyCode}
+\hypertarget{act_8movement_8cpp_ad825b51a327eb9e135660c4938a0835a}{\index{act.\-movement.\-cpp@{act.\-movement.\-cpp}!terrain\-\_\-walk\-\_\-time@{terrain\-\_\-walk\-\_\-time}}
+\index{terrain\-\_\-walk\-\_\-time@{terrain\-\_\-walk\-\_\-time}!act.movement.cpp@{act.\-movement.\-cpp}}
+\subsubsection[{terrain\-\_\-walk\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}const int terrain\-\_\-walk\-\_\-time\mbox{[}$\,$\mbox{]}}}\label{act_8movement_8cpp_ad825b51a327eb9e135660c4938a0835a}

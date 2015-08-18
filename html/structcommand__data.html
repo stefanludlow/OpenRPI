@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -89,29 +89,76 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">command_data Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="structs_8h_source.html">structs.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a7973dbece8d04ab7a146500721efde6f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7973dbece8d04ab7a146500721efde6f"></a>
-char *&#160;</td><td class="memItemRight" valign="bottom"><b>command</b></td></tr>
+<tr class="memitem:a7973dbece8d04ab7a146500721efde6f"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcommand__data.html#a7973dbece8d04ab7a146500721efde6f">command</a></td></tr>
 <tr class="separator:a7973dbece8d04ab7a146500721efde6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39db54ac3e5c2e63cde48047b94adc07"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a39db54ac3e5c2e63cde48047b94adc07"></a>
-void(*&#160;</td><td class="memItemRight" valign="bottom"><b>proc</b> )(<a class="el" href="structchar__data.html">CHAR_DATA</a> *ch, char *argument, int cmd)</td></tr>
+<tr class="memitem:a39db54ac3e5c2e63cde48047b94adc07"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcommand__data.html#a39db54ac3e5c2e63cde48047b94adc07">proc</a> )(<a class="el" href="structs_8h.html#af33ed1e66e8541a08bed257124f50f31">CHAR_DATA</a> *ch, char *argument, int cmd)</td></tr>
 <tr class="separator:a39db54ac3e5c2e63cde48047b94adc07"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90ec821dd6eb3eb1740ffd2dacc28fc8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a90ec821dd6eb3eb1740ffd2dacc28fc8"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>min_position</b></td></tr>
+<tr class="memitem:a90ec821dd6eb3eb1740ffd2dacc28fc8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcommand__data.html#a90ec821dd6eb3eb1740ffd2dacc28fc8">min_position</a></td></tr>
 <tr class="separator:a90ec821dd6eb3eb1740ffd2dacc28fc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3737745e9257a92a59402b56340ac250"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3737745e9257a92a59402b56340ac250"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>flags</b></td></tr>
+<tr class="memitem:a3737745e9257a92a59402b56340ac250"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcommand__data.html#a3737745e9257a92a59402b56340ac250">flags</a></td></tr>
 <tr class="separator:a3737745e9257a92a59402b56340ac250"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a7973dbece8d04ab7a146500721efde6f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* command_data::command</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3737745e9257a92a59402b56340ac250"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int command_data::flags</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a90ec821dd6eb3eb1740ffd2dacc28fc8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int command_data::min_position</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a39db54ac3e5c2e63cde48047b94adc07"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void(* command_data::proc)(<a class="el" href="structs_8h.html#af33ed1e66e8541a08bed257124f50f31">CHAR_DATA</a> *ch, char *argument, int cmd)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li><a class="el" href="structs_8h_source.html">structs.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 17 2015 21:26:48 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 17 2015 22:02:23 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

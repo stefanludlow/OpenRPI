@@ -62,6 +62,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -70,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -84,7 +85,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">decl.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//</span></div>
+<a href="decl_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span><span class="comment">//</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"></span><span class="comment">//</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"></span><span class="comment">//</span></div>
@@ -97,34 +98,44 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;time.h&gt;</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> rewind (FILE * stream);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="decl_8h.html#aa0cd401f198d33d9d01a9e8aa4026819">rewind</a> (FILE * stream);</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> fclose ();</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> perror ();</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">extern</span> time_t time ();</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> pclose ();</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> gettimeofday ();</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> getrlimit ();</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> select ();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="decl_8h.html#a8b9c3a533b9c6429d63aa0a970fb214c">fclose</a> ();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="decl_8h.html#a814d1254226d51a219c7c1c5534078e2">perror</a> ();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">extern</span> time_t <a class="code" href="decl_8h.html#a023a060a6ec6f836453010baac84279e">time</a> ();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="decl_8h.html#a01a6dd34fa639fc5ad5a05b22407a658">pclose</a> ();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="decl_8h.html#a36216c761887c876cd782147a9cec866">gettimeofday</a> ();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="decl_8h.html#a79167cb0c8d6f449dc1b15d71e15ab69">getrlimit</a> ();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="decl_8h.html#a9150fa5e8500ad4f13cd5e4f881a470b">select</a> ();</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#ifndef LINUX</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#if defined (_sys_socket_h)</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor"></span><span class="keyword">extern</span> <span class="keywordtype">int</span> socket (<span class="keywordtype">int</span> domain, <span class="keywordtype">int</span> type, <span class="keywordtype">int</span> protocol);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> setsockopt (<span class="keywordtype">int</span> s, <span class="keywordtype">int</span> level, <span class="keywordtype">int</span> optname, <span class="keywordtype">char</span> *optval,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> setsockopt (<span class="keywordtype">int</span> <a class="code" href="crafts_8cpp.html#a1b3d0481a7741b1fed73df389c9990c6">s</a>, <span class="keywordtype">int</span> level, <span class="keywordtype">int</span> optname, <span class="keywordtype">char</span> *optval,</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;               <span class="keywordtype">int</span> optlen);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> bind (<span class="keywordtype">int</span> s, <span class="keyword">struct</span> sockaddr_in *name, <span class="keywordtype">int</span> namelen);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> accept (<span class="keywordtype">int</span> s, <span class="keyword">struct</span> sockaddr_in *addr, <span class="keywordtype">int</span> *addrlen);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> listen (<span class="keywordtype">int</span> s, <span class="keywordtype">int</span> backlog);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> bind (<span class="keywordtype">int</span> <a class="code" href="crafts_8cpp.html#a1b3d0481a7741b1fed73df389c9990c6">s</a>, <span class="keyword">struct</span> sockaddr_in *name, <span class="keywordtype">int</span> namelen);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> accept (<span class="keywordtype">int</span> <a class="code" href="crafts_8cpp.html#a1b3d0481a7741b1fed73df389c9990c6">s</a>, <span class="keyword">struct</span> sockaddr_in *addr, <span class="keywordtype">int</span> *addrlen);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> listen (<span class="keywordtype">int</span> <a class="code" href="crafts_8cpp.html#a1b3d0481a7741b1fed73df389c9990c6">s</a>, <span class="keywordtype">int</span> backlog);</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> fseek (FILE * stream, <span class="keywordtype">long</span> offset, <span class="keywordtype">int</span> ptrname);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="decl_8h.html#a05a7780bb1c4e758c7e44f89620f2e21">fseek</a> (FILE * stream, <span class="keywordtype">long</span> offset, <span class="keywordtype">int</span> ptrname);</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#endif // _rpie_decl_h_</span></div>
+<div class="ttc" id="decl_8h_html_a79167cb0c8d6f449dc1b15d71e15ab69"><div class="ttname"><a href="decl_8h.html#a79167cb0c8d6f449dc1b15d71e15ab69">getrlimit</a></div><div class="ttdeci">int getrlimit()</div></div>
+<div class="ttc" id="decl_8h_html_aa0cd401f198d33d9d01a9e8aa4026819"><div class="ttname"><a href="decl_8h.html#aa0cd401f198d33d9d01a9e8aa4026819">rewind</a></div><div class="ttdeci">void rewind(FILE *stream)</div><div class="ttdoc">decl.h - Program Declarations </div></div>
+<div class="ttc" id="decl_8h_html_a05a7780bb1c4e758c7e44f89620f2e21"><div class="ttname"><a href="decl_8h.html#a05a7780bb1c4e758c7e44f89620f2e21">fseek</a></div><div class="ttdeci">int fseek(FILE *stream, long offset, int ptrname)</div></div>
+<div class="ttc" id="decl_8h_html_a9150fa5e8500ad4f13cd5e4f881a470b"><div class="ttname"><a href="decl_8h.html#a9150fa5e8500ad4f13cd5e4f881a470b">select</a></div><div class="ttdeci">int select()</div></div>
+<div class="ttc" id="decl_8h_html_a36216c761887c876cd782147a9cec866"><div class="ttname"><a href="decl_8h.html#a36216c761887c876cd782147a9cec866">gettimeofday</a></div><div class="ttdeci">int gettimeofday()</div></div>
+<div class="ttc" id="crafts_8cpp_html_a1b3d0481a7741b1fed73df389c9990c6"><div class="ttname"><a href="crafts_8cpp.html#a1b3d0481a7741b1fed73df389c9990c6">s</a></div><div class="ttdeci">#define s(a)</div><div class="ttdef"><b>Definition:</b> crafts.cpp:23</div></div>
+<div class="ttc" id="decl_8h_html_a023a060a6ec6f836453010baac84279e"><div class="ttname"><a href="decl_8h.html#a023a060a6ec6f836453010baac84279e">time</a></div><div class="ttdeci">time_t time()</div></div>
+<div class="ttc" id="decl_8h_html_a814d1254226d51a219c7c1c5534078e2"><div class="ttname"><a href="decl_8h.html#a814d1254226d51a219c7c1c5534078e2">perror</a></div><div class="ttdeci">void perror()</div></div>
+<div class="ttc" id="decl_8h_html_a8b9c3a533b9c6429d63aa0a970fb214c"><div class="ttname"><a href="decl_8h.html#a8b9c3a533b9c6429d63aa0a970fb214c">fclose</a></div><div class="ttdeci">int fclose()</div></div>
+<div class="ttc" id="decl_8h_html_a01a6dd34fa639fc5ad5a05b22407a658"><div class="ttname"><a href="decl_8h.html#a01a6dd34fa639fc5ad5a05b22407a658">pclose</a></div><div class="ttdeci">int pclose()</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 17 2015 21:26:48 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 17 2015 22:02:22 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

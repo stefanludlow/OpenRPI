@@ -1,0 +1,872 @@
+\hypertarget{commerce_8cpp}{\section{commerce.\-cpp File Reference}
+\label{commerce_8cpp}\index{commerce.\-cpp@{commerce.\-cpp}}
+}
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$time.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$ctype.\-h$>$}\\*
+{\ttfamily \#include $<$errno.\-h$>$}\\*
+{\ttfamily \#include $<$math.\-h$>$}\\*
+{\ttfamily \#include $<$mysql/mysql.\-h$>$}\\*
+{\ttfamily \#include $<$unistd.\-h$>$}\\*
+{\ttfamily \#include $<$sys/stat.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}server.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}structs.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}protos.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}group.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utility.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}account.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$memory$>$}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{commerce_8cpp_afb634dc108bd4e983dd815f82543e2d5}{V\-N\-P\-C\-\_\-\-C\-O\-P\-P\-E\-R\-\_\-\-P\-U\-R\-S\-E}~200
+\item 
+\#define \hyperlink{commerce_8cpp_ab2740a6d2f0bfd36f7f779196db1c7a0}{M\-A\-X\-\_\-\-I\-N\-V\-\_\-\-C\-O\-U\-N\-T}~60
+\item 
+\#define \hyperlink{commerce_8cpp_a09b3d73691f752028ba3a9addbe792c1}{N\-O\-\_\-\-S\-U\-C\-H\-\_\-\-I\-T\-E\-M1}~\char`\"{}Don't seem to have that in my inventory. Would you like to buy something else?\char`\"{}
+\item 
+\#define \hyperlink{commerce_8cpp_a434c7df26974d5bb18ee9be6db325dc7}{N\-O\-\_\-\-S\-U\-C\-H\-\_\-\-I\-T\-E\-M2}~\char`\"{}I don't see that particular item. Perhaps you misplaced it?\char`\"{}
+\item 
+\#define \hyperlink{commerce_8cpp_a7303680a39d84d730c0987f383fe6bac}{M\-I\-S\-S\-I\-N\-G\-\_\-\-C\-A\-S\-H1}~\char`\"{}A little too expensive for me now -\/-\/ why don't you try back later?\char`\"{}
+\item 
+\#define \hyperlink{commerce_8cpp_a2cb19bcfbdd51c7f2e1a85a28455571f}{M\-I\-S\-S\-I\-N\-G\-\_\-\-C\-A\-S\-H2}~\char`\"{}You're a little short on coins, I see; come back when you can afford it.\char`\"{}
+\item 
+\#define \hyperlink{commerce_8cpp_a683513f64e3cb9ad74eae0b766757601}{D\-O\-\_\-\-N\-O\-T\-\_\-\-B\-U\-Y}~\char`\"{}I don't buy those sorts of things, I'\hyperlink{utility_8cpp_aa2e3edb156b8116204fda5c7cd008e98}{m} afraid.\char`\"{}
+\item 
+\#define \hyperlink{commerce_8cpp_ab9dcbd34d1a170e7064ed4121f5a7c05}{S\-H\-O\-R\-T\-\_\-\-O\-N\-\_\-\-R\-E\-N\-T}~\char`\"{}You haven't got enough for your rent. Don't bother talking to me again until you do.\char`\"{}
+\item 
+\#define \hyperlink{commerce_8cpp_a1c909ff986ab952d83f4f7f6f72fe593}{R\-E\-N\-T\-\_\-\-P\-R\-O\-B\-L\-E\-M}~\char`\"{}We're not open for business just now -\/ come back later.\char`\"{}
+\item 
+\#define \hyperlink{commerce_8cpp_a15b9b9224c0a35c66925c2c7fda6661a}{R\-E\-N\-T\-\_\-\-C\-O\-M\-M\-E\-N\-C\-E\-D}~\char`\"{}A pleasure doing business with you. To see how much rent you have left, type \#6rent balance\#0. Here's your key. To visit your room, type \#6rent access\#0 -\/ you'll need your key handy to do so.\char`\"{}
+\item 
+\#define \hyperlink{commerce_8cpp_a36049283bd07519ab174fb9592e66748}{R\-E\-N\-T\-\_\-\-T\-O\-P\-P\-E\-D\-U\-P}~\char`\"{}Ah, thank you very much. That'\hyperlink{staff_8cpp_a1b3d0481a7741b1fed73df389c9990c6}{s} one more full month added to your rent balance.\char`\"{}
+\item 
+\#define \hyperlink{commerce_8cpp_ac7634fa3677b3e6e073957fa0778eb1f}{A\-L\-R\-E\-A\-D\-Y\-\_\-\-R\-E\-N\-T\-I\-N\-G}~\char`\"{}But you're already renting from us -\/ one lease per tennant.\char`\"{}
+\item 
+\#define \hyperlink{commerce_8cpp_a23bb4a76eabd7b552ce475dadffd3090}{N\-O\-T\-\_\-\-R\-E\-N\-T\-I\-N\-G}~\char`\"{}But we don't have you on our records as renting here -\/ just because you have the key doesn't prove anything.\char`\"{}
+\item 
+\#define \hyperlink{commerce_8cpp_ad326a153328ed8e8348f5ce8c58592c5}{M\-I\-S\-S\-I\-N\-G\-\_\-\-K\-E\-Y}~\char`\"{}You'll need to show me some kind of key if you want to do that.\char`\"{}
+\item 
+\#define \hyperlink{commerce_8cpp_a24793ee30179b39dc5e49ab7dd61a692}{M\-I\-S\-S\-I\-N\-G\-\_\-\-R\-E\-N\-T}~\char`\"{}Nobody is getting up in to that room until I see some rent -\/ the owner will need to \#6topup\#0.\char`\"{}
+\item 
+\#define \hyperlink{commerce_8cpp_aca2db71d6970b4f932eb49abffe6466a}{G\-O\-\_\-\-O\-N\-\_\-\-U\-P}~\char`\"{}Welcome back, go right up to your room.\char`\"{}
+\item 
+\#define \hyperlink{commerce_8cpp_a471be0bc30d65f8ac149bdba0fb4131a}{R\-O\-O\-M\-\_\-\-P\-R\-O\-B\-L\-E\-M}~\char`\"{}We don't have any such room on our records here -\/ are you sure that'\hyperlink{staff_8cpp_a1b3d0481a7741b1fed73df389c9990c6}{s} the right pass?\char`\"{}
+\item 
+\#define \hyperlink{commerce_8cpp_aeb185e87e213fd6e729470ada9bd73ec}{R\-E\-N\-T\-\_\-\-R\-E\-P\-L\-A\-C\-E\-D}~\char`\"{}Here'\hyperlink{staff_8cpp_a1b3d0481a7741b1fed73df389c9990c6}{s} your new key. If you lose it again, it will cost you again.\char`\"{}
+\item 
+\#define \hyperlink{commerce_8cpp_ae75b6b1fe69d45ab4735cab0b5fb490e}{K\-E\-Y\-\_\-\-P\-R\-O\-B\-L\-E\-M}~\char`\"{}You aren't holding any key that I recognise.\char`\"{}
+\item 
+\#define \hyperlink{commerce_8cpp_a69bafb2498f1f91f4b2f37d13e42288a}{R\-E\-N\-T\-\_\-\-R\-E\-P\-L\-I\-C\-A\-T\-E\-D}~\char`\"{}Here'\hyperlink{staff_8cpp_a1b3d0481a7741b1fed73df389c9990c6}{s} another copy of the key. Be sure to keep \hyperlink{protos_8h_a635c9a755843b80cb5ae092c03cd9e85}{track} of both.\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{commerce_8cpp_ab6a8a99cc67871b23a75a170665e805b}{is\-\_\-tagged} (char $\ast$name\-\_\-str)
+\item 
+void \hyperlink{commerce_8cpp_a719961316e1f6454d19b69a0c96afce8}{do\-\_\-classify} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{commerce_8cpp_a6a4313da26f1310085a039502afa6afb}{redeem\-\_\-order} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$ticket, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$keeper)
+\item 
+float \hyperlink{commerce_8cpp_a1e9493af4b981b86d218a190f6a383c9}{calculate\-\_\-sale\-\_\-price} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$keeper, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int quantity, \hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} round\-\_\-result, \hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} sell)
+\item 
+\hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} \hyperlink{commerce_8cpp_a344bc93bbd7f3fea1ccaf51f8c4accfc}{can\-\_\-order} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj)
+\item 
+void \hyperlink{commerce_8cpp_a9f429bfe3740cf722bfc3f44b7f24f37}{do\-\_\-order} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{commerce_8cpp_a1235ce59ce5713d5fed15a3ebabf5728}{refresh\-\_\-colors} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$keeper)
+\item 
+void \hyperlink{commerce_8cpp_a2638c3591e030e0b85491a329559c774}{manage\-\_\-resources} (void)
+\item 
+int \hyperlink{commerce_8cpp_a886aaad062a8826cde450b5ab537d38b}{vnpc\-\_\-customer} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$keeper, int purse)
+\item 
+void \hyperlink{commerce_8cpp_a73cd475f6dcb5d7eb4b565e7aebdf58e}{do\-\_\-list} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{commerce_8cpp_a0e38e5ecbb0f8589eb2b45c5c16c3473}{do\-\_\-preview} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+int \hyperlink{commerce_8cpp_a2a82c741e308936897b01031e7d09828}{keeper\-\_\-has\-\_\-item} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$keeper, int ovnum)
+\item 
+int \hyperlink{commerce_8cpp_ad9e9b4f998ded881f9f27ca79305ceb4}{keeper\-\_\-makes} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$keeper, int ovnum)
+\item 
+void \hyperlink{commerce_8cpp_a05add779f8e781806619b8f80d860431}{money\-\_\-to\-\_\-storeroom} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$keeper, int amount)
+\item 
+void \hyperlink{commerce_8cpp_a4095d6a3cf90a62046ee151b9d04b265}{subtract\-\_\-keeper\-\_\-money} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$keeper, int cost)
+\item 
+void \hyperlink{commerce_8cpp_ae13ce4f14cbb174f0f770aa406b01e25}{do\-\_\-buy} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+int \hyperlink{commerce_8cpp_a91618ec1316cc3c3dd20e42e019d8dd1}{keeper\-\_\-uses\-\_\-currency\-\_\-type} (int currency\-\_\-type, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj)
+\item 
+int \hyperlink{commerce_8cpp_a0c618c97085ef79f7234c781ca1d3bee}{trades\-\_\-in} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$keeper, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj)
+\item 
+int \hyperlink{commerce_8cpp_ad82c1265f277eb69c839aaaf43c6ed22}{keeper\-\_\-has\-\_\-money} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$keeper, int cost)
+\item 
+void \hyperlink{commerce_8cpp_a4e9bf8918c3275fbff847f820b2f4ec0}{keeper\-\_\-money\-\_\-to\-\_\-char} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$keeper, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int money)
+\item 
+void \hyperlink{commerce_8cpp_a45d44ebdd3bf5adbf54d53f49bd045f0}{do\-\_\-sell} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{commerce_8cpp_aebec9a3b8f8e518130c60a0e44e9ac68}{do\-\_\-value} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{commerce_8cpp_aca5e78916f63da8a288a8dd22e567f4b}{do\-\_\-exchange} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{commerce_8cpp_ad17085b21f3149d4cc40fe3b936740c4}{do\-\_\-barter} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{commerce_8cpp_a93b24bc66bdf022a3c7dd2dbb330a5b1}{do\-\_\-receipts} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+int \hyperlink{commerce_8cpp_a5cc4908394d31f35b4115bb25c95e0e6}{get\-\_\-uniq\-\_\-ticket} (void)
+\item 
+void \hyperlink{commerce_8cpp_a53a5190db97139aadb899e7d0bd67843}{unhitch\-\_\-char} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$hitch)
+\item 
+void \hyperlink{commerce_8cpp_a8a525d51d4f67c63eb6f2af46ce2eefe}{do\-\_\-stable} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{commerce_8cpp_a2835bd4104242cc336c825ff10347493}{unstable} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$ticket, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$keeper)
+\item 
+void \hyperlink{commerce_8cpp_aeeba42057b49f2bc245dd8af5b36a3ff}{do\-\_\-pay2} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+int \hyperlink{commerce_8cpp_a61fa104f4fe5223ebb68b81fba24965c}{is\-\_\-toll\-\_\-paid} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int dir)
+\item 
+void \hyperlink{commerce_8cpp_a1d750d38b2b4a753d4451db1dfe96a6f}{do\-\_\-pay} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{commerce_8cpp_af93d9b3559cfadbbfa2b8cdb17bae97e}{stop\-\_\-tolls} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{commerce_8cpp_a0bf159a0e425b195bd261a8a7cb35ae2}{toll\-\_\-collector} (\hyperlink{room_8h_aede519ef65d80b5242a4a28b69d5e097}{R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$room, int dir)
+\item 
+void \hyperlink{commerce_8cpp_a35aaae94e5a589199fef8487cd4bd60c}{do\-\_\-toll} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+int \hyperlink{commerce_8cpp_acb036d1d1a01b7b34d7d6eb3373f1fb5}{can\-\_\-subtract\-\_\-money} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int farthings\-\_\-to\-\_\-subtract, int currency\-\_\-type)
+\item 
+void \hyperlink{commerce_8cpp_a461334100fc220c40bedcc75eec69d46}{subtract\-\_\-money} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int farthings\-\_\-to\-\_\-subtract, int currency\-\_\-type)
+\item 
+void \hyperlink{commerce_8cpp_aba772f90766de0b5937487ec1897597b}{money\-\_\-from\-\_\-char\-\_\-to\-\_\-room} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int vnum)
+\item 
+int \hyperlink{commerce_8cpp_a6c3edc3a882f7cf005a3e1f8a067204b}{name\-\_\-to\-\_\-econ\-\_\-zone} (char $\ast$econ\-\_\-zone\-\_\-name)
+\item 
+int \hyperlink{commerce_8cpp_afd9b035cb7202fe327f3ad9f62863293}{zone\-\_\-to\-\_\-econ\-\_\-zone} (int zone)
+\item 
+int \hyperlink{commerce_8cpp_a06d8b046e30b88c7df40677cc3102a8a}{obj\-\_\-to\-\_\-econ\-\_\-zone} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj)
+\item 
+void \hyperlink{commerce_8cpp_afda908a7b63bd6254c81e885b3271d4d}{econ\-\_\-markup\-\_\-discount} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$keeper, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj, float $\ast$markup, float $\ast$discount)
+\item 
+float \hyperlink{commerce_8cpp_a847bef3236234d97115c06fb54c1d49f}{econ\-\_\-discount} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$keeper, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj)
+\item 
+float \hyperlink{commerce_8cpp_a5415676ebfa1a49fbc4e1dbcb3544f2d}{econ\-\_\-markup} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$keeper, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj)
+\item 
+float \hyperlink{commerce_8cpp_af801160a7481c3173151e6fa3b8b4bed}{tally} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj, char $\ast$buffer, int depth, int $\ast$weight)
+\item 
+void \hyperlink{commerce_8cpp_a57e20cca793a9fb1db1b2938405651b7}{do\-\_\-tally} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{commerce_8cpp_a04f5105fa9186a72c6d5192b2af7c5c9}{do\-\_\-mark} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{commerce_8cpp_a0601904f6727baf1f3cc8a1e0ecbe0df}{do\-\_\-payroll} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{commerce_8cpp_a07fbc7984c97a33ed0cde8773a302b69}{do\-\_\-trade} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{commerce_8cpp_a81c24ae9335ca7a9633bce61be847d37}{delayed\-\_\-trade\-\_\-assist} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{commerce_8cpp_a314afa4f37941c33ca64e6fb67ce630b}{delayed\-\_\-trade} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{commerce_8cpp_a3e149edc6e58f722578fb54a610334e5}{do\-\_\-rent} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{commerce_8cpp_a1369d8dcb19a4ae53fe8d521a611299d}{rent\-\_\-update} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classrpie_1_1server}{rpie\-::server} \hyperlink{commerce_8cpp_a55c71990ee4162ebec6abe401996cf15}{engine}
+\item 
+const char $\ast$ \hyperlink{commerce_8cpp_a00853743a2d3039c7b3e956d947600d7}{standard\-\_\-object\-\_\-colors} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{commerce_8cpp_ad3b2bf9367f65e2577d3cfbdf584a47b}{chemical\-\_\-names} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{commerce_8cpp_a4485455a1535b450768a61c5bbd566e8}{sizes} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{commerce_8cpp_a3cec2c56422c15e2a0fa7c1766a64797}{sizes\-\_\-named} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{commerce_8cpp_a8b9476d9da4183798063ed9bc70e1124}{econ\-\_\-flags} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{commerce_8cpp_a0c247fc329d8fea7ddb00b0ce2ef5ba5}{resources} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{commerce_8cpp_a4b27314160c4dd9df713818bf00581b9}{trade\-\_\-bundles} \mbox{[}$\,$\mbox{]}
+\item 
+const struct \hyperlink{structecon__data}{econ\-\_\-data} \hyperlink{commerce_8cpp_aa58ba4fe509c008bedc25f3cc72540db}{default\-\_\-econ\-\_\-info} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{commerce_8cpp_ac7634fa3677b3e6e073957fa0778eb1f}{\index{commerce.\-cpp@{commerce.\-cpp}!A\-L\-R\-E\-A\-D\-Y\-\_\-\-R\-E\-N\-T\-I\-N\-G@{A\-L\-R\-E\-A\-D\-Y\-\_\-\-R\-E\-N\-T\-I\-N\-G}}
+\index{A\-L\-R\-E\-A\-D\-Y\-\_\-\-R\-E\-N\-T\-I\-N\-G@{A\-L\-R\-E\-A\-D\-Y\-\_\-\-R\-E\-N\-T\-I\-N\-G}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{A\-L\-R\-E\-A\-D\-Y\-\_\-\-R\-E\-N\-T\-I\-N\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-L\-R\-E\-A\-D\-Y\-\_\-\-R\-E\-N\-T\-I\-N\-G~\char`\"{}But you're already renting from us -\/ one lease per tennant.\char`\"{}}}\label{commerce_8cpp_ac7634fa3677b3e6e073957fa0778eb1f}
+\hypertarget{commerce_8cpp_a683513f64e3cb9ad74eae0b766757601}{\index{commerce.\-cpp@{commerce.\-cpp}!D\-O\-\_\-\-N\-O\-T\-\_\-\-B\-U\-Y@{D\-O\-\_\-\-N\-O\-T\-\_\-\-B\-U\-Y}}
+\index{D\-O\-\_\-\-N\-O\-T\-\_\-\-B\-U\-Y@{D\-O\-\_\-\-N\-O\-T\-\_\-\-B\-U\-Y}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{D\-O\-\_\-\-N\-O\-T\-\_\-\-B\-U\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-O\-\_\-\-N\-O\-T\-\_\-\-B\-U\-Y~\char`\"{}I don't buy those sorts of things, I'{\bf m} afraid.\char`\"{}}}\label{commerce_8cpp_a683513f64e3cb9ad74eae0b766757601}
+\hypertarget{commerce_8cpp_aca2db71d6970b4f932eb49abffe6466a}{\index{commerce.\-cpp@{commerce.\-cpp}!G\-O\-\_\-\-O\-N\-\_\-\-U\-P@{G\-O\-\_\-\-O\-N\-\_\-\-U\-P}}
+\index{G\-O\-\_\-\-O\-N\-\_\-\-U\-P@{G\-O\-\_\-\-O\-N\-\_\-\-U\-P}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{G\-O\-\_\-\-O\-N\-\_\-\-U\-P}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\-O\-\_\-\-O\-N\-\_\-\-U\-P~\char`\"{}Welcome back, go right up to your room.\char`\"{}}}\label{commerce_8cpp_aca2db71d6970b4f932eb49abffe6466a}
+\hypertarget{commerce_8cpp_ae75b6b1fe69d45ab4735cab0b5fb490e}{\index{commerce.\-cpp@{commerce.\-cpp}!K\-E\-Y\-\_\-\-P\-R\-O\-B\-L\-E\-M@{K\-E\-Y\-\_\-\-P\-R\-O\-B\-L\-E\-M}}
+\index{K\-E\-Y\-\_\-\-P\-R\-O\-B\-L\-E\-M@{K\-E\-Y\-\_\-\-P\-R\-O\-B\-L\-E\-M}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{K\-E\-Y\-\_\-\-P\-R\-O\-B\-L\-E\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define K\-E\-Y\-\_\-\-P\-R\-O\-B\-L\-E\-M~\char`\"{}You aren't holding any key that I recognise.\char`\"{}}}\label{commerce_8cpp_ae75b6b1fe69d45ab4735cab0b5fb490e}
+\hypertarget{commerce_8cpp_ab2740a6d2f0bfd36f7f779196db1c7a0}{\index{commerce.\-cpp@{commerce.\-cpp}!M\-A\-X\-\_\-\-I\-N\-V\-\_\-\-C\-O\-U\-N\-T@{M\-A\-X\-\_\-\-I\-N\-V\-\_\-\-C\-O\-U\-N\-T}}
+\index{M\-A\-X\-\_\-\-I\-N\-V\-\_\-\-C\-O\-U\-N\-T@{M\-A\-X\-\_\-\-I\-N\-V\-\_\-\-C\-O\-U\-N\-T}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{M\-A\-X\-\_\-\-I\-N\-V\-\_\-\-C\-O\-U\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-X\-\_\-\-I\-N\-V\-\_\-\-C\-O\-U\-N\-T~60}}\label{commerce_8cpp_ab2740a6d2f0bfd36f7f779196db1c7a0}
+\hypertarget{commerce_8cpp_a7303680a39d84d730c0987f383fe6bac}{\index{commerce.\-cpp@{commerce.\-cpp}!M\-I\-S\-S\-I\-N\-G\-\_\-\-C\-A\-S\-H1@{M\-I\-S\-S\-I\-N\-G\-\_\-\-C\-A\-S\-H1}}
+\index{M\-I\-S\-S\-I\-N\-G\-\_\-\-C\-A\-S\-H1@{M\-I\-S\-S\-I\-N\-G\-\_\-\-C\-A\-S\-H1}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{M\-I\-S\-S\-I\-N\-G\-\_\-\-C\-A\-S\-H1}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-I\-S\-S\-I\-N\-G\-\_\-\-C\-A\-S\-H1~\char`\"{}A little too expensive for me now -\/-\/ why don't you try back later?\char`\"{}}}\label{commerce_8cpp_a7303680a39d84d730c0987f383fe6bac}
+\hypertarget{commerce_8cpp_a2cb19bcfbdd51c7f2e1a85a28455571f}{\index{commerce.\-cpp@{commerce.\-cpp}!M\-I\-S\-S\-I\-N\-G\-\_\-\-C\-A\-S\-H2@{M\-I\-S\-S\-I\-N\-G\-\_\-\-C\-A\-S\-H2}}
+\index{M\-I\-S\-S\-I\-N\-G\-\_\-\-C\-A\-S\-H2@{M\-I\-S\-S\-I\-N\-G\-\_\-\-C\-A\-S\-H2}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{M\-I\-S\-S\-I\-N\-G\-\_\-\-C\-A\-S\-H2}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-I\-S\-S\-I\-N\-G\-\_\-\-C\-A\-S\-H2~\char`\"{}You're a little short on coins, I see; come back when you can afford it.\char`\"{}}}\label{commerce_8cpp_a2cb19bcfbdd51c7f2e1a85a28455571f}
+\hypertarget{commerce_8cpp_ad326a153328ed8e8348f5ce8c58592c5}{\index{commerce.\-cpp@{commerce.\-cpp}!M\-I\-S\-S\-I\-N\-G\-\_\-\-K\-E\-Y@{M\-I\-S\-S\-I\-N\-G\-\_\-\-K\-E\-Y}}
+\index{M\-I\-S\-S\-I\-N\-G\-\_\-\-K\-E\-Y@{M\-I\-S\-S\-I\-N\-G\-\_\-\-K\-E\-Y}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{M\-I\-S\-S\-I\-N\-G\-\_\-\-K\-E\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-I\-S\-S\-I\-N\-G\-\_\-\-K\-E\-Y~\char`\"{}You'll need to show me some kind of key if you want to do that.\char`\"{}}}\label{commerce_8cpp_ad326a153328ed8e8348f5ce8c58592c5}
+\hypertarget{commerce_8cpp_a24793ee30179b39dc5e49ab7dd61a692}{\index{commerce.\-cpp@{commerce.\-cpp}!M\-I\-S\-S\-I\-N\-G\-\_\-\-R\-E\-N\-T@{M\-I\-S\-S\-I\-N\-G\-\_\-\-R\-E\-N\-T}}
+\index{M\-I\-S\-S\-I\-N\-G\-\_\-\-R\-E\-N\-T@{M\-I\-S\-S\-I\-N\-G\-\_\-\-R\-E\-N\-T}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{M\-I\-S\-S\-I\-N\-G\-\_\-\-R\-E\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-I\-S\-S\-I\-N\-G\-\_\-\-R\-E\-N\-T~\char`\"{}Nobody is getting up in to that room until I see some rent -\/ the owner will need to \#6topup\#0.\char`\"{}}}\label{commerce_8cpp_a24793ee30179b39dc5e49ab7dd61a692}
+\hypertarget{commerce_8cpp_a09b3d73691f752028ba3a9addbe792c1}{\index{commerce.\-cpp@{commerce.\-cpp}!N\-O\-\_\-\-S\-U\-C\-H\-\_\-\-I\-T\-E\-M1@{N\-O\-\_\-\-S\-U\-C\-H\-\_\-\-I\-T\-E\-M1}}
+\index{N\-O\-\_\-\-S\-U\-C\-H\-\_\-\-I\-T\-E\-M1@{N\-O\-\_\-\-S\-U\-C\-H\-\_\-\-I\-T\-E\-M1}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{N\-O\-\_\-\-S\-U\-C\-H\-\_\-\-I\-T\-E\-M1}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-O\-\_\-\-S\-U\-C\-H\-\_\-\-I\-T\-E\-M1~\char`\"{}Don't seem to have that in my inventory. Would you like to buy something else?\char`\"{}}}\label{commerce_8cpp_a09b3d73691f752028ba3a9addbe792c1}
+\hypertarget{commerce_8cpp_a434c7df26974d5bb18ee9be6db325dc7}{\index{commerce.\-cpp@{commerce.\-cpp}!N\-O\-\_\-\-S\-U\-C\-H\-\_\-\-I\-T\-E\-M2@{N\-O\-\_\-\-S\-U\-C\-H\-\_\-\-I\-T\-E\-M2}}
+\index{N\-O\-\_\-\-S\-U\-C\-H\-\_\-\-I\-T\-E\-M2@{N\-O\-\_\-\-S\-U\-C\-H\-\_\-\-I\-T\-E\-M2}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{N\-O\-\_\-\-S\-U\-C\-H\-\_\-\-I\-T\-E\-M2}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-O\-\_\-\-S\-U\-C\-H\-\_\-\-I\-T\-E\-M2~\char`\"{}I don't see that particular item. Perhaps you misplaced it?\char`\"{}}}\label{commerce_8cpp_a434c7df26974d5bb18ee9be6db325dc7}
+\hypertarget{commerce_8cpp_a23bb4a76eabd7b552ce475dadffd3090}{\index{commerce.\-cpp@{commerce.\-cpp}!N\-O\-T\-\_\-\-R\-E\-N\-T\-I\-N\-G@{N\-O\-T\-\_\-\-R\-E\-N\-T\-I\-N\-G}}
+\index{N\-O\-T\-\_\-\-R\-E\-N\-T\-I\-N\-G@{N\-O\-T\-\_\-\-R\-E\-N\-T\-I\-N\-G}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{N\-O\-T\-\_\-\-R\-E\-N\-T\-I\-N\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-O\-T\-\_\-\-R\-E\-N\-T\-I\-N\-G~\char`\"{}But we don't have you on our records as renting here -\/ just because you have the key doesn't prove anything.\char`\"{}}}\label{commerce_8cpp_a23bb4a76eabd7b552ce475dadffd3090}
+\hypertarget{commerce_8cpp_a15b9b9224c0a35c66925c2c7fda6661a}{\index{commerce.\-cpp@{commerce.\-cpp}!R\-E\-N\-T\-\_\-\-C\-O\-M\-M\-E\-N\-C\-E\-D@{R\-E\-N\-T\-\_\-\-C\-O\-M\-M\-E\-N\-C\-E\-D}}
+\index{R\-E\-N\-T\-\_\-\-C\-O\-M\-M\-E\-N\-C\-E\-D@{R\-E\-N\-T\-\_\-\-C\-O\-M\-M\-E\-N\-C\-E\-D}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{R\-E\-N\-T\-\_\-\-C\-O\-M\-M\-E\-N\-C\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-E\-N\-T\-\_\-\-C\-O\-M\-M\-E\-N\-C\-E\-D~\char`\"{}A pleasure doing business with you. To see how much rent you have left, type \#6rent balance\#0. Here's your key. To visit your room, type \#6rent access\#0 -\/ you'll need your key handy to do so.\char`\"{}}}\label{commerce_8cpp_a15b9b9224c0a35c66925c2c7fda6661a}
+\hypertarget{commerce_8cpp_a1c909ff986ab952d83f4f7f6f72fe593}{\index{commerce.\-cpp@{commerce.\-cpp}!R\-E\-N\-T\-\_\-\-P\-R\-O\-B\-L\-E\-M@{R\-E\-N\-T\-\_\-\-P\-R\-O\-B\-L\-E\-M}}
+\index{R\-E\-N\-T\-\_\-\-P\-R\-O\-B\-L\-E\-M@{R\-E\-N\-T\-\_\-\-P\-R\-O\-B\-L\-E\-M}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{R\-E\-N\-T\-\_\-\-P\-R\-O\-B\-L\-E\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-E\-N\-T\-\_\-\-P\-R\-O\-B\-L\-E\-M~\char`\"{}We're not open for business just now -\/ come back later.\char`\"{}}}\label{commerce_8cpp_a1c909ff986ab952d83f4f7f6f72fe593}
+\hypertarget{commerce_8cpp_aeb185e87e213fd6e729470ada9bd73ec}{\index{commerce.\-cpp@{commerce.\-cpp}!R\-E\-N\-T\-\_\-\-R\-E\-P\-L\-A\-C\-E\-D@{R\-E\-N\-T\-\_\-\-R\-E\-P\-L\-A\-C\-E\-D}}
+\index{R\-E\-N\-T\-\_\-\-R\-E\-P\-L\-A\-C\-E\-D@{R\-E\-N\-T\-\_\-\-R\-E\-P\-L\-A\-C\-E\-D}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{R\-E\-N\-T\-\_\-\-R\-E\-P\-L\-A\-C\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-E\-N\-T\-\_\-\-R\-E\-P\-L\-A\-C\-E\-D~\char`\"{}Here'{\bf s} your new key. If you lose it again, it will cost you again.\char`\"{}}}\label{commerce_8cpp_aeb185e87e213fd6e729470ada9bd73ec}
+\hypertarget{commerce_8cpp_a69bafb2498f1f91f4b2f37d13e42288a}{\index{commerce.\-cpp@{commerce.\-cpp}!R\-E\-N\-T\-\_\-\-R\-E\-P\-L\-I\-C\-A\-T\-E\-D@{R\-E\-N\-T\-\_\-\-R\-E\-P\-L\-I\-C\-A\-T\-E\-D}}
+\index{R\-E\-N\-T\-\_\-\-R\-E\-P\-L\-I\-C\-A\-T\-E\-D@{R\-E\-N\-T\-\_\-\-R\-E\-P\-L\-I\-C\-A\-T\-E\-D}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{R\-E\-N\-T\-\_\-\-R\-E\-P\-L\-I\-C\-A\-T\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-E\-N\-T\-\_\-\-R\-E\-P\-L\-I\-C\-A\-T\-E\-D~\char`\"{}Here'{\bf s} another copy of the key. Be sure to keep {\bf track} of both.\char`\"{}}}\label{commerce_8cpp_a69bafb2498f1f91f4b2f37d13e42288a}
+\hypertarget{commerce_8cpp_a36049283bd07519ab174fb9592e66748}{\index{commerce.\-cpp@{commerce.\-cpp}!R\-E\-N\-T\-\_\-\-T\-O\-P\-P\-E\-D\-U\-P@{R\-E\-N\-T\-\_\-\-T\-O\-P\-P\-E\-D\-U\-P}}
+\index{R\-E\-N\-T\-\_\-\-T\-O\-P\-P\-E\-D\-U\-P@{R\-E\-N\-T\-\_\-\-T\-O\-P\-P\-E\-D\-U\-P}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{R\-E\-N\-T\-\_\-\-T\-O\-P\-P\-E\-D\-U\-P}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-E\-N\-T\-\_\-\-T\-O\-P\-P\-E\-D\-U\-P~\char`\"{}Ah, thank you very much. That'{\bf s} one more full month added to your rent balance.\char`\"{}}}\label{commerce_8cpp_a36049283bd07519ab174fb9592e66748}
+\hypertarget{commerce_8cpp_a471be0bc30d65f8ac149bdba0fb4131a}{\index{commerce.\-cpp@{commerce.\-cpp}!R\-O\-O\-M\-\_\-\-P\-R\-O\-B\-L\-E\-M@{R\-O\-O\-M\-\_\-\-P\-R\-O\-B\-L\-E\-M}}
+\index{R\-O\-O\-M\-\_\-\-P\-R\-O\-B\-L\-E\-M@{R\-O\-O\-M\-\_\-\-P\-R\-O\-B\-L\-E\-M}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{R\-O\-O\-M\-\_\-\-P\-R\-O\-B\-L\-E\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-O\-O\-M\-\_\-\-P\-R\-O\-B\-L\-E\-M~\char`\"{}We don't have any such room on our records here -\/ are you sure that'{\bf s} the right pass?\char`\"{}}}\label{commerce_8cpp_a471be0bc30d65f8ac149bdba0fb4131a}
+\hypertarget{commerce_8cpp_ab9dcbd34d1a170e7064ed4121f5a7c05}{\index{commerce.\-cpp@{commerce.\-cpp}!S\-H\-O\-R\-T\-\_\-\-O\-N\-\_\-\-R\-E\-N\-T@{S\-H\-O\-R\-T\-\_\-\-O\-N\-\_\-\-R\-E\-N\-T}}
+\index{S\-H\-O\-R\-T\-\_\-\-O\-N\-\_\-\-R\-E\-N\-T@{S\-H\-O\-R\-T\-\_\-\-O\-N\-\_\-\-R\-E\-N\-T}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{S\-H\-O\-R\-T\-\_\-\-O\-N\-\_\-\-R\-E\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-H\-O\-R\-T\-\_\-\-O\-N\-\_\-\-R\-E\-N\-T~\char`\"{}You haven't got enough for your rent. Don't bother talking to me again until you do.\char`\"{}}}\label{commerce_8cpp_ab9dcbd34d1a170e7064ed4121f5a7c05}
+\hypertarget{commerce_8cpp_afb634dc108bd4e983dd815f82543e2d5}{\index{commerce.\-cpp@{commerce.\-cpp}!V\-N\-P\-C\-\_\-\-C\-O\-P\-P\-E\-R\-\_\-\-P\-U\-R\-S\-E@{V\-N\-P\-C\-\_\-\-C\-O\-P\-P\-E\-R\-\_\-\-P\-U\-R\-S\-E}}
+\index{V\-N\-P\-C\-\_\-\-C\-O\-P\-P\-E\-R\-\_\-\-P\-U\-R\-S\-E@{V\-N\-P\-C\-\_\-\-C\-O\-P\-P\-E\-R\-\_\-\-P\-U\-R\-S\-E}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{V\-N\-P\-C\-\_\-\-C\-O\-P\-P\-E\-R\-\_\-\-P\-U\-R\-S\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define V\-N\-P\-C\-\_\-\-C\-O\-P\-P\-E\-R\-\_\-\-P\-U\-R\-S\-E~200}}\label{commerce_8cpp_afb634dc108bd4e983dd815f82543e2d5}
+
+
+\subsection{Function Documentation}
+\hypertarget{commerce_8cpp_a1e9493af4b981b86d218a190f6a383c9}{\index{commerce.\-cpp@{commerce.\-cpp}!calculate\-\_\-sale\-\_\-price@{calculate\-\_\-sale\-\_\-price}}
+\index{calculate\-\_\-sale\-\_\-price@{calculate\-\_\-sale\-\_\-price}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{calculate\-\_\-sale\-\_\-price}]{\setlength{\rightskip}{0pt plus 5cm}float calculate\-\_\-sale\-\_\-price (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{keeper, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{quantity, }
+\item[{{\bf bool}}]{round\-\_\-result, }
+\item[{{\bf bool}}]{sell}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_a1e9493af4b981b86d218a190f6a383c9}
+\hypertarget{commerce_8cpp_a344bc93bbd7f3fea1ccaf51f8c4accfc}{\index{commerce.\-cpp@{commerce.\-cpp}!can\-\_\-order@{can\-\_\-order}}
+\index{can\-\_\-order@{can\-\_\-order}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{can\-\_\-order}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} can\-\_\-order (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_a344bc93bbd7f3fea1ccaf51f8c4accfc}
+\hypertarget{commerce_8cpp_acb036d1d1a01b7b34d7d6eb3373f1fb5}{\index{commerce.\-cpp@{commerce.\-cpp}!can\-\_\-subtract\-\_\-money@{can\-\_\-subtract\-\_\-money}}
+\index{can\-\_\-subtract\-\_\-money@{can\-\_\-subtract\-\_\-money}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{can\-\_\-subtract\-\_\-money}]{\setlength{\rightskip}{0pt plus 5cm}int can\-\_\-subtract\-\_\-money (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{farthings\-\_\-to\-\_\-subtract, }
+\item[{int}]{currency\-\_\-type}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_acb036d1d1a01b7b34d7d6eb3373f1fb5}
+\hypertarget{commerce_8cpp_a314afa4f37941c33ca64e6fb67ce630b}{\index{commerce.\-cpp@{commerce.\-cpp}!delayed\-\_\-trade@{delayed\-\_\-trade}}
+\index{delayed\-\_\-trade@{delayed\-\_\-trade}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{delayed\-\_\-trade}]{\setlength{\rightskip}{0pt plus 5cm}void delayed\-\_\-trade (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_a314afa4f37941c33ca64e6fb67ce630b}
+\hypertarget{commerce_8cpp_a81c24ae9335ca7a9633bce61be847d37}{\index{commerce.\-cpp@{commerce.\-cpp}!delayed\-\_\-trade\-\_\-assist@{delayed\-\_\-trade\-\_\-assist}}
+\index{delayed\-\_\-trade\-\_\-assist@{delayed\-\_\-trade\-\_\-assist}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{delayed\-\_\-trade\-\_\-assist}]{\setlength{\rightskip}{0pt plus 5cm}void delayed\-\_\-trade\-\_\-assist (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_a81c24ae9335ca7a9633bce61be847d37}
+\hypertarget{commerce_8cpp_ad17085b21f3149d4cc40fe3b936740c4}{\index{commerce.\-cpp@{commerce.\-cpp}!do\-\_\-barter@{do\-\_\-barter}}
+\index{do\-\_\-barter@{do\-\_\-barter}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{do\-\_\-barter}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-barter (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_ad17085b21f3149d4cc40fe3b936740c4}
+\hypertarget{commerce_8cpp_ae13ce4f14cbb174f0f770aa406b01e25}{\index{commerce.\-cpp@{commerce.\-cpp}!do\-\_\-buy@{do\-\_\-buy}}
+\index{do\-\_\-buy@{do\-\_\-buy}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{do\-\_\-buy}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-buy (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_ae13ce4f14cbb174f0f770aa406b01e25}
+\hypertarget{commerce_8cpp_a719961316e1f6454d19b69a0c96afce8}{\index{commerce.\-cpp@{commerce.\-cpp}!do\-\_\-classify@{do\-\_\-classify}}
+\index{do\-\_\-classify@{do\-\_\-classify}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{do\-\_\-classify}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-classify (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_a719961316e1f6454d19b69a0c96afce8}
+\hypertarget{commerce_8cpp_aca5e78916f63da8a288a8dd22e567f4b}{\index{commerce.\-cpp@{commerce.\-cpp}!do\-\_\-exchange@{do\-\_\-exchange}}
+\index{do\-\_\-exchange@{do\-\_\-exchange}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{do\-\_\-exchange}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-exchange (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_aca5e78916f63da8a288a8dd22e567f4b}
+\hypertarget{commerce_8cpp_a73cd475f6dcb5d7eb4b565e7aebdf58e}{\index{commerce.\-cpp@{commerce.\-cpp}!do\-\_\-list@{do\-\_\-list}}
+\index{do\-\_\-list@{do\-\_\-list}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{do\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-list (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_a73cd475f6dcb5d7eb4b565e7aebdf58e}
+\hypertarget{commerce_8cpp_a04f5105fa9186a72c6d5192b2af7c5c9}{\index{commerce.\-cpp@{commerce.\-cpp}!do\-\_\-mark@{do\-\_\-mark}}
+\index{do\-\_\-mark@{do\-\_\-mark}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{do\-\_\-mark}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-mark (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_a04f5105fa9186a72c6d5192b2af7c5c9}
+\hypertarget{commerce_8cpp_a9f429bfe3740cf722bfc3f44b7f24f37}{\index{commerce.\-cpp@{commerce.\-cpp}!do\-\_\-order@{do\-\_\-order}}
+\index{do\-\_\-order@{do\-\_\-order}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{do\-\_\-order}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-order (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_a9f429bfe3740cf722bfc3f44b7f24f37}
+\hypertarget{commerce_8cpp_a1d750d38b2b4a753d4451db1dfe96a6f}{\index{commerce.\-cpp@{commerce.\-cpp}!do\-\_\-pay@{do\-\_\-pay}}
+\index{do\-\_\-pay@{do\-\_\-pay}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{do\-\_\-pay}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-pay (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_a1d750d38b2b4a753d4451db1dfe96a6f}
+\hypertarget{commerce_8cpp_aeeba42057b49f2bc245dd8af5b36a3ff}{\index{commerce.\-cpp@{commerce.\-cpp}!do\-\_\-pay2@{do\-\_\-pay2}}
+\index{do\-\_\-pay2@{do\-\_\-pay2}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{do\-\_\-pay2}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-pay2 (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_aeeba42057b49f2bc245dd8af5b36a3ff}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000016}{Todo}]Flagges as unreachable \end{DoxyRefDesc}
+\hypertarget{commerce_8cpp_a0601904f6727baf1f3cc8a1e0ecbe0df}{\index{commerce.\-cpp@{commerce.\-cpp}!do\-\_\-payroll@{do\-\_\-payroll}}
+\index{do\-\_\-payroll@{do\-\_\-payroll}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{do\-\_\-payroll}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-payroll (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_a0601904f6727baf1f3cc8a1e0ecbe0df}
+\hypertarget{commerce_8cpp_a0e38e5ecbb0f8589eb2b45c5c16c3473}{\index{commerce.\-cpp@{commerce.\-cpp}!do\-\_\-preview@{do\-\_\-preview}}
+\index{do\-\_\-preview@{do\-\_\-preview}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{do\-\_\-preview}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-preview (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_a0e38e5ecbb0f8589eb2b45c5c16c3473}
+\hypertarget{commerce_8cpp_a93b24bc66bdf022a3c7dd2dbb330a5b1}{\index{commerce.\-cpp@{commerce.\-cpp}!do\-\_\-receipts@{do\-\_\-receipts}}
+\index{do\-\_\-receipts@{do\-\_\-receipts}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{do\-\_\-receipts}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-receipts (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_a93b24bc66bdf022a3c7dd2dbb330a5b1}
+\hypertarget{commerce_8cpp_a3e149edc6e58f722578fb54a610334e5}{\index{commerce.\-cpp@{commerce.\-cpp}!do\-\_\-rent@{do\-\_\-rent}}
+\index{do\-\_\-rent@{do\-\_\-rent}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{do\-\_\-rent}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-rent (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_a3e149edc6e58f722578fb54a610334e5}
+\hypertarget{commerce_8cpp_a45d44ebdd3bf5adbf54d53f49bd045f0}{\index{commerce.\-cpp@{commerce.\-cpp}!do\-\_\-sell@{do\-\_\-sell}}
+\index{do\-\_\-sell@{do\-\_\-sell}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{do\-\_\-sell}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-sell (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_a45d44ebdd3bf5adbf54d53f49bd045f0}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000015}{Todo}]Flagged as unreachable \end{DoxyRefDesc}
+\hypertarget{commerce_8cpp_a8a525d51d4f67c63eb6f2af46ce2eefe}{\index{commerce.\-cpp@{commerce.\-cpp}!do\-\_\-stable@{do\-\_\-stable}}
+\index{do\-\_\-stable@{do\-\_\-stable}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{do\-\_\-stable}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-stable (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_a8a525d51d4f67c63eb6f2af46ce2eefe}
+\hypertarget{commerce_8cpp_a57e20cca793a9fb1db1b2938405651b7}{\index{commerce.\-cpp@{commerce.\-cpp}!do\-\_\-tally@{do\-\_\-tally}}
+\index{do\-\_\-tally@{do\-\_\-tally}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{do\-\_\-tally}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-tally (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_a57e20cca793a9fb1db1b2938405651b7}
+\hypertarget{commerce_8cpp_a35aaae94e5a589199fef8487cd4bd60c}{\index{commerce.\-cpp@{commerce.\-cpp}!do\-\_\-toll@{do\-\_\-toll}}
+\index{do\-\_\-toll@{do\-\_\-toll}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{do\-\_\-toll}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-toll (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_a35aaae94e5a589199fef8487cd4bd60c}
+\hypertarget{commerce_8cpp_a07fbc7984c97a33ed0cde8773a302b69}{\index{commerce.\-cpp@{commerce.\-cpp}!do\-\_\-trade@{do\-\_\-trade}}
+\index{do\-\_\-trade@{do\-\_\-trade}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{do\-\_\-trade}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-trade (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_a07fbc7984c97a33ed0cde8773a302b69}
+\hypertarget{commerce_8cpp_aebec9a3b8f8e518130c60a0e44e9ac68}{\index{commerce.\-cpp@{commerce.\-cpp}!do\-\_\-value@{do\-\_\-value}}
+\index{do\-\_\-value@{do\-\_\-value}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{do\-\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-value (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_aebec9a3b8f8e518130c60a0e44e9ac68}
+\hypertarget{commerce_8cpp_a847bef3236234d97115c06fb54c1d49f}{\index{commerce.\-cpp@{commerce.\-cpp}!econ\-\_\-discount@{econ\-\_\-discount}}
+\index{econ\-\_\-discount@{econ\-\_\-discount}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{econ\-\_\-discount}]{\setlength{\rightskip}{0pt plus 5cm}float econ\-\_\-discount (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{keeper, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_a847bef3236234d97115c06fb54c1d49f}
+\hypertarget{commerce_8cpp_a5415676ebfa1a49fbc4e1dbcb3544f2d}{\index{commerce.\-cpp@{commerce.\-cpp}!econ\-\_\-markup@{econ\-\_\-markup}}
+\index{econ\-\_\-markup@{econ\-\_\-markup}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{econ\-\_\-markup}]{\setlength{\rightskip}{0pt plus 5cm}float econ\-\_\-markup (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{keeper, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_a5415676ebfa1a49fbc4e1dbcb3544f2d}
+\hypertarget{commerce_8cpp_afda908a7b63bd6254c81e885b3271d4d}{\index{commerce.\-cpp@{commerce.\-cpp}!econ\-\_\-markup\-\_\-discount@{econ\-\_\-markup\-\_\-discount}}
+\index{econ\-\_\-markup\-\_\-discount@{econ\-\_\-markup\-\_\-discount}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{econ\-\_\-markup\-\_\-discount}]{\setlength{\rightskip}{0pt plus 5cm}void econ\-\_\-markup\-\_\-discount (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{keeper, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj, }
+\item[{float $\ast$}]{markup, }
+\item[{float $\ast$}]{discount}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_afda908a7b63bd6254c81e885b3271d4d}
+\hypertarget{commerce_8cpp_a5cc4908394d31f35b4115bb25c95e0e6}{\index{commerce.\-cpp@{commerce.\-cpp}!get\-\_\-uniq\-\_\-ticket@{get\-\_\-uniq\-\_\-ticket}}
+\index{get\-\_\-uniq\-\_\-ticket@{get\-\_\-uniq\-\_\-ticket}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{get\-\_\-uniq\-\_\-ticket}]{\setlength{\rightskip}{0pt plus 5cm}int get\-\_\-uniq\-\_\-ticket (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_a5cc4908394d31f35b4115bb25c95e0e6}
+\hypertarget{commerce_8cpp_ab6a8a99cc67871b23a75a170665e805b}{\index{commerce.\-cpp@{commerce.\-cpp}!is\-\_\-tagged@{is\-\_\-tagged}}
+\index{is\-\_\-tagged@{is\-\_\-tagged}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{is\-\_\-tagged}]{\setlength{\rightskip}{0pt plus 5cm}int is\-\_\-tagged (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name\-\_\-str}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_ab6a8a99cc67871b23a75a170665e805b}
+\hypertarget{commerce_8cpp_a61fa104f4fe5223ebb68b81fba24965c}{\index{commerce.\-cpp@{commerce.\-cpp}!is\-\_\-toll\-\_\-paid@{is\-\_\-toll\-\_\-paid}}
+\index{is\-\_\-toll\-\_\-paid@{is\-\_\-toll\-\_\-paid}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{is\-\_\-toll\-\_\-paid}]{\setlength{\rightskip}{0pt plus 5cm}int is\-\_\-toll\-\_\-paid (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{dir}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_a61fa104f4fe5223ebb68b81fba24965c}
+\hypertarget{commerce_8cpp_a2a82c741e308936897b01031e7d09828}{\index{commerce.\-cpp@{commerce.\-cpp}!keeper\-\_\-has\-\_\-item@{keeper\-\_\-has\-\_\-item}}
+\index{keeper\-\_\-has\-\_\-item@{keeper\-\_\-has\-\_\-item}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{keeper\-\_\-has\-\_\-item}]{\setlength{\rightskip}{0pt plus 5cm}int keeper\-\_\-has\-\_\-item (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{keeper, }
+\item[{int}]{ovnum}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_a2a82c741e308936897b01031e7d09828}
+\hypertarget{commerce_8cpp_ad82c1265f277eb69c839aaaf43c6ed22}{\index{commerce.\-cpp@{commerce.\-cpp}!keeper\-\_\-has\-\_\-money@{keeper\-\_\-has\-\_\-money}}
+\index{keeper\-\_\-has\-\_\-money@{keeper\-\_\-has\-\_\-money}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{keeper\-\_\-has\-\_\-money}]{\setlength{\rightskip}{0pt plus 5cm}int keeper\-\_\-has\-\_\-money (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{keeper, }
+\item[{int}]{cost}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_ad82c1265f277eb69c839aaaf43c6ed22}
+\hypertarget{commerce_8cpp_ad9e9b4f998ded881f9f27ca79305ceb4}{\index{commerce.\-cpp@{commerce.\-cpp}!keeper\-\_\-makes@{keeper\-\_\-makes}}
+\index{keeper\-\_\-makes@{keeper\-\_\-makes}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{keeper\-\_\-makes}]{\setlength{\rightskip}{0pt plus 5cm}int keeper\-\_\-makes (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{keeper, }
+\item[{int}]{ovnum}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_ad9e9b4f998ded881f9f27ca79305ceb4}
+\hypertarget{commerce_8cpp_a4e9bf8918c3275fbff847f820b2f4ec0}{\index{commerce.\-cpp@{commerce.\-cpp}!keeper\-\_\-money\-\_\-to\-\_\-char@{keeper\-\_\-money\-\_\-to\-\_\-char}}
+\index{keeper\-\_\-money\-\_\-to\-\_\-char@{keeper\-\_\-money\-\_\-to\-\_\-char}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{keeper\-\_\-money\-\_\-to\-\_\-char}]{\setlength{\rightskip}{0pt plus 5cm}void keeper\-\_\-money\-\_\-to\-\_\-char (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{keeper, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{money}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_a4e9bf8918c3275fbff847f820b2f4ec0}
+\hypertarget{commerce_8cpp_a91618ec1316cc3c3dd20e42e019d8dd1}{\index{commerce.\-cpp@{commerce.\-cpp}!keeper\-\_\-uses\-\_\-currency\-\_\-type@{keeper\-\_\-uses\-\_\-currency\-\_\-type}}
+\index{keeper\-\_\-uses\-\_\-currency\-\_\-type@{keeper\-\_\-uses\-\_\-currency\-\_\-type}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{keeper\-\_\-uses\-\_\-currency\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}int keeper\-\_\-uses\-\_\-currency\-\_\-type (
+\begin{DoxyParamCaption}
+\item[{int}]{currency\-\_\-type, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_a91618ec1316cc3c3dd20e42e019d8dd1}
+\hypertarget{commerce_8cpp_a2638c3591e030e0b85491a329559c774}{\index{commerce.\-cpp@{commerce.\-cpp}!manage\-\_\-resources@{manage\-\_\-resources}}
+\index{manage\-\_\-resources@{manage\-\_\-resources}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{manage\-\_\-resources}]{\setlength{\rightskip}{0pt plus 5cm}void manage\-\_\-resources (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_a2638c3591e030e0b85491a329559c774}
+\hypertarget{commerce_8cpp_aba772f90766de0b5937487ec1897597b}{\index{commerce.\-cpp@{commerce.\-cpp}!money\-\_\-from\-\_\-char\-\_\-to\-\_\-room@{money\-\_\-from\-\_\-char\-\_\-to\-\_\-room}}
+\index{money\-\_\-from\-\_\-char\-\_\-to\-\_\-room@{money\-\_\-from\-\_\-char\-\_\-to\-\_\-room}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{money\-\_\-from\-\_\-char\-\_\-to\-\_\-room}]{\setlength{\rightskip}{0pt plus 5cm}void money\-\_\-from\-\_\-char\-\_\-to\-\_\-room (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{vnum}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_aba772f90766de0b5937487ec1897597b}
+\hypertarget{commerce_8cpp_a05add779f8e781806619b8f80d860431}{\index{commerce.\-cpp@{commerce.\-cpp}!money\-\_\-to\-\_\-storeroom@{money\-\_\-to\-\_\-storeroom}}
+\index{money\-\_\-to\-\_\-storeroom@{money\-\_\-to\-\_\-storeroom}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{money\-\_\-to\-\_\-storeroom}]{\setlength{\rightskip}{0pt plus 5cm}void money\-\_\-to\-\_\-storeroom (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{keeper, }
+\item[{int}]{amount}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_a05add779f8e781806619b8f80d860431}
+\hypertarget{commerce_8cpp_a6c3edc3a882f7cf005a3e1f8a067204b}{\index{commerce.\-cpp@{commerce.\-cpp}!name\-\_\-to\-\_\-econ\-\_\-zone@{name\-\_\-to\-\_\-econ\-\_\-zone}}
+\index{name\-\_\-to\-\_\-econ\-\_\-zone@{name\-\_\-to\-\_\-econ\-\_\-zone}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{name\-\_\-to\-\_\-econ\-\_\-zone}]{\setlength{\rightskip}{0pt plus 5cm}int name\-\_\-to\-\_\-econ\-\_\-zone (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{econ\-\_\-zone\-\_\-name}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_a6c3edc3a882f7cf005a3e1f8a067204b}
+\hypertarget{commerce_8cpp_a06d8b046e30b88c7df40677cc3102a8a}{\index{commerce.\-cpp@{commerce.\-cpp}!obj\-\_\-to\-\_\-econ\-\_\-zone@{obj\-\_\-to\-\_\-econ\-\_\-zone}}
+\index{obj\-\_\-to\-\_\-econ\-\_\-zone@{obj\-\_\-to\-\_\-econ\-\_\-zone}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{obj\-\_\-to\-\_\-econ\-\_\-zone}]{\setlength{\rightskip}{0pt plus 5cm}int obj\-\_\-to\-\_\-econ\-\_\-zone (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_a06d8b046e30b88c7df40677cc3102a8a}
+\hypertarget{commerce_8cpp_a6a4313da26f1310085a039502afa6afb}{\index{commerce.\-cpp@{commerce.\-cpp}!redeem\-\_\-order@{redeem\-\_\-order}}
+\index{redeem\-\_\-order@{redeem\-\_\-order}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{redeem\-\_\-order}]{\setlength{\rightskip}{0pt plus 5cm}void redeem\-\_\-order (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{ticket, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{keeper}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_a6a4313da26f1310085a039502afa6afb}
+\hypertarget{commerce_8cpp_a1235ce59ce5713d5fed15a3ebabf5728}{\index{commerce.\-cpp@{commerce.\-cpp}!refresh\-\_\-colors@{refresh\-\_\-colors}}
+\index{refresh\-\_\-colors@{refresh\-\_\-colors}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{refresh\-\_\-colors}]{\setlength{\rightskip}{0pt plus 5cm}void refresh\-\_\-colors (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{keeper}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_a1235ce59ce5713d5fed15a3ebabf5728}
+\hypertarget{commerce_8cpp_a1369d8dcb19a4ae53fe8d521a611299d}{\index{commerce.\-cpp@{commerce.\-cpp}!rent\-\_\-update@{rent\-\_\-update}}
+\index{rent\-\_\-update@{rent\-\_\-update}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{rent\-\_\-update}]{\setlength{\rightskip}{0pt plus 5cm}void rent\-\_\-update (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_a1369d8dcb19a4ae53fe8d521a611299d}
+\hypertarget{commerce_8cpp_af93d9b3559cfadbbfa2b8cdb17bae97e}{\index{commerce.\-cpp@{commerce.\-cpp}!stop\-\_\-tolls@{stop\-\_\-tolls}}
+\index{stop\-\_\-tolls@{stop\-\_\-tolls}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{stop\-\_\-tolls}]{\setlength{\rightskip}{0pt plus 5cm}void stop\-\_\-tolls (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_af93d9b3559cfadbbfa2b8cdb17bae97e}
+\hypertarget{commerce_8cpp_a4095d6a3cf90a62046ee151b9d04b265}{\index{commerce.\-cpp@{commerce.\-cpp}!subtract\-\_\-keeper\-\_\-money@{subtract\-\_\-keeper\-\_\-money}}
+\index{subtract\-\_\-keeper\-\_\-money@{subtract\-\_\-keeper\-\_\-money}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{subtract\-\_\-keeper\-\_\-money}]{\setlength{\rightskip}{0pt plus 5cm}void subtract\-\_\-keeper\-\_\-money (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{keeper, }
+\item[{int}]{cost}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_a4095d6a3cf90a62046ee151b9d04b265}
+\hypertarget{commerce_8cpp_a461334100fc220c40bedcc75eec69d46}{\index{commerce.\-cpp@{commerce.\-cpp}!subtract\-\_\-money@{subtract\-\_\-money}}
+\index{subtract\-\_\-money@{subtract\-\_\-money}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{subtract\-\_\-money}]{\setlength{\rightskip}{0pt plus 5cm}void subtract\-\_\-money (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{farthings\-\_\-to\-\_\-subtract, }
+\item[{int}]{currency\-\_\-type}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_a461334100fc220c40bedcc75eec69d46}
+\hypertarget{commerce_8cpp_af801160a7481c3173151e6fa3b8b4bed}{\index{commerce.\-cpp@{commerce.\-cpp}!tally@{tally}}
+\index{tally@{tally}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{tally}]{\setlength{\rightskip}{0pt plus 5cm}float tally (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj, }
+\item[{char $\ast$}]{buffer, }
+\item[{int}]{depth, }
+\item[{int $\ast$}]{weight}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_af801160a7481c3173151e6fa3b8b4bed}
+\hypertarget{commerce_8cpp_a0bf159a0e425b195bd261a8a7cb35ae2}{\index{commerce.\-cpp@{commerce.\-cpp}!toll\-\_\-collector@{toll\-\_\-collector}}
+\index{toll\-\_\-collector@{toll\-\_\-collector}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{toll\-\_\-collector}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A}$\ast$ toll\-\_\-collector (
+\begin{DoxyParamCaption}
+\item[{{\bf R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$}]{room, }
+\item[{int}]{dir}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_a0bf159a0e425b195bd261a8a7cb35ae2}
+\hypertarget{commerce_8cpp_a0c618c97085ef79f7234c781ca1d3bee}{\index{commerce.\-cpp@{commerce.\-cpp}!trades\-\_\-in@{trades\-\_\-in}}
+\index{trades\-\_\-in@{trades\-\_\-in}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{trades\-\_\-in}]{\setlength{\rightskip}{0pt plus 5cm}int trades\-\_\-in (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{keeper, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_a0c618c97085ef79f7234c781ca1d3bee}
+\hypertarget{commerce_8cpp_a53a5190db97139aadb899e7d0bd67843}{\index{commerce.\-cpp@{commerce.\-cpp}!unhitch\-\_\-char@{unhitch\-\_\-char}}
+\index{unhitch\-\_\-char@{unhitch\-\_\-char}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{unhitch\-\_\-char}]{\setlength{\rightskip}{0pt plus 5cm}void unhitch\-\_\-char (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{hitch}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_a53a5190db97139aadb899e7d0bd67843}
+\hypertarget{commerce_8cpp_a2835bd4104242cc336c825ff10347493}{\index{commerce.\-cpp@{commerce.\-cpp}!unstable@{unstable}}
+\index{unstable@{unstable}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{unstable}]{\setlength{\rightskip}{0pt plus 5cm}void unstable (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{ticket, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{keeper}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_a2835bd4104242cc336c825ff10347493}
+\hypertarget{commerce_8cpp_a886aaad062a8826cde450b5ab537d38b}{\index{commerce.\-cpp@{commerce.\-cpp}!vnpc\-\_\-customer@{vnpc\-\_\-customer}}
+\index{vnpc\-\_\-customer@{vnpc\-\_\-customer}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{vnpc\-\_\-customer}]{\setlength{\rightskip}{0pt plus 5cm}int vnpc\-\_\-customer (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{keeper, }
+\item[{int}]{purse}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_a886aaad062a8826cde450b5ab537d38b}
+\hypertarget{commerce_8cpp_afd9b035cb7202fe327f3ad9f62863293}{\index{commerce.\-cpp@{commerce.\-cpp}!zone\-\_\-to\-\_\-econ\-\_\-zone@{zone\-\_\-to\-\_\-econ\-\_\-zone}}
+\index{zone\-\_\-to\-\_\-econ\-\_\-zone@{zone\-\_\-to\-\_\-econ\-\_\-zone}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{zone\-\_\-to\-\_\-econ\-\_\-zone}]{\setlength{\rightskip}{0pt plus 5cm}int zone\-\_\-to\-\_\-econ\-\_\-zone (
+\begin{DoxyParamCaption}
+\item[{int}]{zone}
+\end{DoxyParamCaption}
+)}}\label{commerce_8cpp_afd9b035cb7202fe327f3ad9f62863293}
+
+
+\subsection{Variable Documentation}
+\hypertarget{commerce_8cpp_ad3b2bf9367f65e2577d3cfbdf584a47b}{\index{commerce.\-cpp@{commerce.\-cpp}!chemical\-\_\-names@{chemical\-\_\-names}}
+\index{chemical\-\_\-names@{chemical\-\_\-names}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{chemical\-\_\-names}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ chemical\-\_\-names\mbox{[}$\,$\mbox{]}}}\label{commerce_8cpp_ad3b2bf9367f65e2577d3cfbdf584a47b}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"hypochlorite"},
+    \textcolor{stringliteral}{"bitartrate"},
+    \textcolor{stringliteral}{"ferricyanide"},
+    \textcolor{stringliteral}{"biosilicate"},
+    \textcolor{stringliteral}{"thiosulfate"},
+    \textcolor{stringliteral}{"salicylate"},
+    \textcolor{stringliteral}{"ferrocyanide"},
+    \textcolor{stringliteral}{"magneside"},
+    \textcolor{stringliteral}{"oxyacetate"},
+    \textcolor{stringliteral}{"quadraphosphate"},
+    \textcolor{stringliteral}{"nitrohydrochloric"},
+    \textcolor{stringliteral}{"trimethylxanthine"},
+    \textcolor{stringliteral}{"celezolxana"},
+    \textcolor{stringliteral}{"theoxanthine"},
+    \textcolor{stringliteral}{"paraphylline"},
+    \textcolor{stringliteral}{"wynstinnite"},
+    \textcolor{stringliteral}{"paraoxynodrene"},
+    \textcolor{stringliteral}{"noxoterraphate"},
+    \textcolor{stringliteral}{"biocyaniside"},
+    \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}
+\hypertarget{commerce_8cpp_aa58ba4fe509c008bedc25f3cc72540db}{\index{commerce.\-cpp@{commerce.\-cpp}!default\-\_\-econ\-\_\-info@{default\-\_\-econ\-\_\-info}}
+\index{default\-\_\-econ\-\_\-info@{default\-\_\-econ\-\_\-info}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{default\-\_\-econ\-\_\-info}]{\setlength{\rightskip}{0pt plus 5cm}const struct {\bf econ\-\_\-data} default\-\_\-econ\-\_\-info\mbox{[}$\,$\mbox{]}}}\label{commerce_8cpp_aa58ba4fe509c008bedc25f3cc72540db}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    
+    \{\textcolor{stringliteral}{"minas tirith"},
+    \{\{1.00, 0.50\}, \{1.25, 0.75\}, \{1.40, 0.90\}, \{2.25, 1.75\}, \{1.60, 1.25\}\}
+    \},
+    \{\textcolor{stringliteral}{"osgiliath"},
+    \{\{1.00, 0.75\}, \{1.00, 0.50\}, \{1.20, 0.80\}, \{2.00, 1.50\}, \{1.40, 0.95\}\}
+    \},
+    \{\textcolor{stringliteral}{"gondor"},
+    \{\{1.10, 0.85\}, \{1.20, 0.95\}, \{1.00, 0.50\}, \{2.10, 1.65\}, \{1.50, 1.05\}\}
+    \},
+    \{\textcolor{stringliteral}{"minas morgul"},
+    \{\{0.50, 0.25\}, \{0.75, 0.50\}, \{0.60, 0.40\}, \{1.00, 0.50\}, \{0.70, 0.45\}\}
+    \},
+    \{\textcolor{stringliteral}{"foreign"},
+    \{\{1.10, 0.85\}, \{1.20, 0.95\}, \{1.25, 1.00\}, \{1.60, 1.25\}, \{1.00, 0.50\}\}
+    \},
+    \{\textcolor{stringliteral}{"\(\backslash\)n"}, \{\{1.00, 0.50\}, \{1.00, 0.50\}, \{1.00, 0.50\}, \{1.00, 0.50\}, \{1.00, 0.50\}\}\}
+\}
+\end{DoxyCode}
+\hypertarget{commerce_8cpp_a8b9476d9da4183798063ed9bc70e1124}{\index{commerce.\-cpp@{commerce.\-cpp}!econ\-\_\-flags@{econ\-\_\-flags}}
+\index{econ\-\_\-flags@{econ\-\_\-flags}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{econ\-\_\-flags}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ econ\-\_\-flags\mbox{[}$\,$\mbox{]}}}\label{commerce_8cpp_a8b9476d9da4183798063ed9bc70e1124}
+\hypertarget{commerce_8cpp_a55c71990ee4162ebec6abe401996cf15}{\index{commerce.\-cpp@{commerce.\-cpp}!engine@{engine}}
+\index{engine@{engine}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{engine}]{\setlength{\rightskip}{0pt plus 5cm}{\bf rpie\-::server} engine}}\label{commerce_8cpp_a55c71990ee4162ebec6abe401996cf15}
+\hypertarget{commerce_8cpp_a0c247fc329d8fea7ddb00b0ce2ef5ba5}{\index{commerce.\-cpp@{commerce.\-cpp}!resources@{resources}}
+\index{resources@{resources}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{resources}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ resources\mbox{[}$\,$\mbox{]}}}\label{commerce_8cpp_a0c247fc329d8fea7ddb00b0ce2ef5ba5}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=  
+\{
+    \textcolor{stringliteral}{"coal"},
+    \textcolor{stringliteral}{"iron"},
+    \textcolor{stringliteral}{"copper"},
+    \textcolor{stringliteral}{"gold"},
+    \textcolor{stringliteral}{"silver"},
+    \textcolor{stringliteral}{"salt"},
+    \textcolor{stringliteral}{"wheat"},
+    \textcolor{stringliteral}{"barley"},
+    \textcolor{stringliteral}{"wool"},
+    \textcolor{stringliteral}{"flax"},
+    \textcolor{stringliteral}{"linen"},
+    \textcolor{stringliteral}{"silk"},
+    \textcolor{stringliteral}{"FILLER"},
+    \textcolor{stringliteral}{"FILLER"},
+    \textcolor{stringliteral}{"FILLER"},
+    \textcolor{stringliteral}{"FILLER"},
+    \textcolor{stringliteral}{"FILLER"},
+    \textcolor{stringliteral}{"FILLER"},
+    \textcolor{stringliteral}{"nobarter"},
+    \textcolor{stringliteral}{"\(\backslash\)n"},
+\}
+\end{DoxyCode}
+\hypertarget{commerce_8cpp_a4485455a1535b450768a61c5bbd566e8}{\index{commerce.\-cpp@{commerce.\-cpp}!sizes@{sizes}}
+\index{sizes@{sizes}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{sizes}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ sizes\mbox{[}$\,$\mbox{]}}}\label{commerce_8cpp_a4485455a1535b450768a61c5bbd566e8}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"Sizeless"},
+    \textcolor{stringliteral}{"XXS"},
+    \textcolor{stringliteral}{"XS"},
+    \textcolor{stringliteral}{"S"},
+    \textcolor{stringliteral}{"M"},
+    \textcolor{stringliteral}{"L"},
+    \textcolor{stringliteral}{"XL"},
+    \textcolor{stringliteral}{"XXL"},
+    \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}
+\hypertarget{commerce_8cpp_a3cec2c56422c15e2a0fa7c1766a64797}{\index{commerce.\-cpp@{commerce.\-cpp}!sizes\-\_\-named@{sizes\-\_\-named}}
+\index{sizes\-\_\-named@{sizes\-\_\-named}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{sizes\-\_\-named}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ sizes\-\_\-named\mbox{[}$\,$\mbox{]}}}\label{commerce_8cpp_a3cec2c56422c15e2a0fa7c1766a64797}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"\(\backslash\)01"},          
+    \textcolor{stringliteral}{"XX-Small"},
+    \textcolor{stringliteral}{"X-Small"},
+    \textcolor{stringliteral}{"Small"},
+    \textcolor{stringliteral}{"Medium"},
+    \textcolor{stringliteral}{"Large"},
+    \textcolor{stringliteral}{"X-Large"},
+    \textcolor{stringliteral}{"XX-Large"},
+    \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}
+\hypertarget{commerce_8cpp_a00853743a2d3039c7b3e956d947600d7}{\index{commerce.\-cpp@{commerce.\-cpp}!standard\-\_\-object\-\_\-colors@{standard\-\_\-object\-\_\-colors}}
+\index{standard\-\_\-object\-\_\-colors@{standard\-\_\-object\-\_\-colors}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{standard\-\_\-object\-\_\-colors}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ standard\-\_\-object\-\_\-colors\mbox{[}$\,$\mbox{]}}}\label{commerce_8cpp_a00853743a2d3039c7b3e956d947600d7}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"black"},
+    \textcolor{stringliteral}{"white"},
+    \textcolor{stringliteral}{"grey"},
+    \textcolor{stringliteral}{"red"},
+    \textcolor{stringliteral}{"orange"},
+    \textcolor{stringliteral}{"yellow"},
+    \textcolor{stringliteral}{"green"},
+    \textcolor{stringliteral}{"blue"},
+    \textcolor{stringliteral}{"indigo"},
+    \textcolor{stringliteral}{"purple"},
+    \textcolor{stringliteral}{"brown"},
+    \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}
+\hypertarget{commerce_8cpp_a4b27314160c4dd9df713818bf00581b9}{\index{commerce.\-cpp@{commerce.\-cpp}!trade\-\_\-bundles@{trade\-\_\-bundles}}
+\index{trade\-\_\-bundles@{trade\-\_\-bundles}!commerce.cpp@{commerce.\-cpp}}
+\subsubsection[{trade\-\_\-bundles}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ trade\-\_\-bundles\mbox{[}$\,$\mbox{]}}}\label{commerce_8cpp_a4b27314160c4dd9df713818bf00581b9}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"junk"},
+    \textcolor{stringliteral}{"hides"},
+    \textcolor{stringliteral}{"clothes"},
+    \textcolor{stringliteral}{"food"},
+    \textcolor{stringliteral}{"knickknacks"},
+    \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}

@@ -1,0 +1,570 @@
+\hypertarget{clan_8cpp}{\section{clan.\-cpp File Reference}
+\label{clan_8cpp}\index{clan.\-cpp@{clan.\-cpp}}
+}
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$ctype.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}server.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}net\-\_\-link.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}protos.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}clan.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utility.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{clan_8cpp_a8ad095eeac93949b80af8026118a0c6f}{clan\-\_\-forum\-\_\-add} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$clan, char $\ast$rank)
+\item 
+void \hyperlink{clan_8cpp_a652bad49925bc360a2c715e21e28b631}{clan\-\_\-forum\-\_\-remove} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$clan)
+\item 
+void \hyperlink{clan_8cpp_a83f88175cdd26a99d5584cdb6450d20a}{clan\-\_\-forum\-\_\-remove\-\_\-all} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+char $\ast$ \hyperlink{clan_8cpp_a45602812f36faff01e0d58be3133747e}{display\-\_\-clan\-\_\-ranks} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$observer)
+\item 
+void \hyperlink{clan_8cpp_a3e20d95ce7aa030d8e04d027f1c2d04a}{add\-\_\-clandef} (char $\ast$argument)
+\item 
+int \hyperlink{clan_8cpp_a3e6f64e98b20ddf45cb41558a0ab9d00}{is\-\_\-brother} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$tch)
+\item 
+int \hyperlink{clan_8cpp_a98f171c552a6b544fda6660657e35a11}{is\-\_\-leader} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$src, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$tar)
+\item 
+void \hyperlink{clan_8cpp_ac53437018596ff1794d198d0fc0efdda}{add\-\_\-clan\-\_\-id\-\_\-string} (char $\ast$string, char $\ast$clan\-\_\-name, char $\ast$clan\-\_\-flags)
+\item 
+void \hyperlink{clan_8cpp_ad6a92c2e4fdd16e1af17273a328148a1}{add\-\_\-clan\-\_\-id} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$clan\-\_\-name, const char $\ast$clan\-\_\-flags)
+\item 
+int \hyperlink{clan_8cpp_ab798b9e31ae7a2ce0017f11db6d77863}{is\-\_\-clan\-\_\-member} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$clan\-\_\-name)
+\item 
+int \hyperlink{clan_8cpp_a55aa3e165bf8ea2aa80de9576a21b92e}{is\-\_\-clan\-\_\-member\-\_\-player} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$clan\-\_\-name)
+\item 
+void \hyperlink{clan_8cpp_ac1f6a80dbd5407599dcee6cadca18f26}{clan\-\_\-object\-\_\-equip} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj)
+\item 
+void \hyperlink{clan_8cpp_a5dcccfe44e737a92afb1b88f60bc38ee}{clan\-\_\-object\-\_\-unequip} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj)
+\item 
+void \hyperlink{clan_8cpp_a66e9f558cbea561166a77d6022ae30de}{do\-\_\-clan} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+int \hyperlink{clan_8cpp_ae7eeb6414740d30e08d4afb7e281c5e8}{clan\-\_\-flags\-\_\-to\-\_\-value} (char $\ast$flag\-\_\-names, char $\ast$clan\-\_\-name)
+\item 
+int \hyperlink{clan_8cpp_ad5830e6d7f15c95b16b1ecf64f4ff09c}{clan\-\_\-flags\-\_\-to\-\_\-value} (char $\ast$flag\-\_\-names)
+\item 
+char $\ast$ \hyperlink{clan_8cpp_a25a05af79c0b52e6079785c299a440f2}{value\-\_\-to\-\_\-clan\-\_\-flags} (int flags)
+\item 
+char $\ast$ \hyperlink{clan_8cpp_ab22bdf2af4d6cf91e193c9cd686bbf8f}{remove\-\_\-clan\-\_\-from\-\_\-string} (char $\ast$string, char $\ast$old\-\_\-clan\-\_\-name)
+\item 
+char $\ast$ \hyperlink{clan_8cpp_a86e323a888a8bd75c51db65a066418a8}{add\-\_\-clan\-\_\-to\-\_\-string} (char $\ast$string, char $\ast$new\-\_\-clan\-\_\-name, int clan\-\_\-flags)
+\item 
+void \hyperlink{clan_8cpp_a2d4be30522c95c225315d64f944a084d}{remove\-\_\-clan} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$old\-\_\-clan\-\_\-name)
+\item 
+void \hyperlink{clan_8cpp_a8c3c5c3fc9c9706cf4bbac78475f41d3}{add\-\_\-clan} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$new\-\_\-clan\-\_\-name, int clan\-\_\-flags)
+\item 
+int \hyperlink{clan_8cpp_a7ef2272647ce685415c1aa5b083e47b4}{get\-\_\-next\-\_\-clan} (char $\ast$$\ast$p, char $\ast$clan\-\_\-name, int $\ast$clan\-\_\-flags)
+\item 
+char $\ast$ \hyperlink{clan_8cpp_ac4ace0bc933375db7a1cc9ba134d9a25}{get\-\_\-shared\-\_\-clan\-\_\-rank} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$observer)
+\item 
+char $\ast$ \hyperlink{clan_8cpp_a5c3825b42e388f2b0e8d83b9d7568974}{get\-\_\-clan\-\_\-rank\-\_\-name} (int flags)
+\item 
+char $\ast$ \hyperlink{clan_8cpp_ad5180ec69215364b1ca80761c72517ee}{get\-\_\-clan\-\_\-rank\-\_\-name} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$clan, int flags)
+\item 
+int \hyperlink{clan_8cpp_ada609746b5c7768b791aa56ac714a029}{get\-\_\-clan\-\_\-in\-\_\-string} (char $\ast$string, char $\ast$clan, int $\ast$clan\-\_\-flags)
+\item 
+int \hyperlink{clan_8cpp_a53cc682cc2f0a56784b08ed29cd5f3ed}{get\-\_\-clan} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, const char $\ast$clan, int $\ast$clan\-\_\-flags)
+\item 
+int \hyperlink{clan_8cpp_afd69fc57ea63c77653c305ed59e78f65}{get\-\_\-clan\-\_\-long} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$clan\-\_\-name, int $\ast$clan\-\_\-flags)
+\item 
+int \hyperlink{clan_8cpp_a270063e4bc47eb991f439a6c624ce507}{get\-\_\-clan\-\_\-long\-\_\-short} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$clan\-\_\-name, int $\ast$clan\-\_\-flags)
+\item 
+int \hyperlink{clan_8cpp_a582545659cd505b40feebad4f8eeb27d}{get\-\_\-next\-\_\-leader} (char $\ast$$\ast$p, char $\ast$clan\-\_\-name, int $\ast$clan\-\_\-flags)
+\item 
+\hyperlink{clan_8h_a7cdc2f1c9b4cc99d0cbd70a2c1d9b246}{C\-L\-A\-N\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{clan_8cpp_ac346d71c6492e9be1d4cdd0455895585}{get\-\_\-clandef} (const char $\ast$clan\-\_\-name)
+\item 
+\hyperlink{clan_8h_a7cdc2f1c9b4cc99d0cbd70a2c1d9b246}{C\-L\-A\-N\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{clan_8cpp_adad605fb59603b55ac6a3a851e6f6535}{get\-\_\-clandef\-\_\-long} (char $\ast$clan\-\_\-long\-\_\-name)
+\item 
+\hyperlink{clan_8h_a7cdc2f1c9b4cc99d0cbd70a2c1d9b246}{C\-L\-A\-N\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{clan_8cpp_ae684a10fb81f6a800bef24dcf8f0bb3c}{get\-\_\-clanid} (int clan\-\_\-id)
+\item 
+void \hyperlink{clan_8cpp_a126ea7ee6bf8d76b95dc403ad9e9138a}{update\-\_\-enforcement\-\_\-array} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+int \hyperlink{clan_8cpp_abf31328fad6a65899ae494c5be271cd0}{is\-\_\-area\-\_\-leader} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{clan_8cpp_ad6416fc9d6512f77482327291c546180}{do\-\_\-assign} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{clan_8cpp_a475cd9c0bdd06eff5af216dbaecfd637}{notify\-\_\-captors} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{clan_8cpp_a6f90a561b2d1b198cba56368f3400ba7}{show\-\_\-waiting\-\_\-prisoners} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{clan_8cpp_a3ea797a4f9050c337dd136886c6d899f}{do\-\_\-promote} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{clan_8cpp_a6f5e7b4f139f4d3a74b83ae9eaa50fe1}{do\-\_\-invite} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{clan_8cpp_a23d55aa552cafa82860852c4d063a506}{invite\-\_\-accept} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+void \hyperlink{clan_8cpp_a2e1b2f2cf8c240fec1edaca1cf17fe3a}{do\-\_\-recruit} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{clan_8cpp_aa2716f1f2c74b0991af0e659ed1b0ef4}{do\-\_\-disband} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{clan_8cpp_a07cf91172df3009ddc729d43d18fef1b}{do\-\_\-castout} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{clan_8cpp_acf9e137fb04624a3883351508c407c10}{clan\-\_\-\-\_\-assert\-\_\-member\-\_\-objs} ()
+\item 
+void \hyperlink{clan_8cpp_a97dd842ef4d40edd30b18f0fb79a7288}{clan\-\_\-\-\_\-do\-\_\-add} (\hyperlink{clan_8h_a7cdc2f1c9b4cc99d0cbd70a2c1d9b246}{C\-L\-A\-N\-\_\-\-D\-A\-T\-A} $\ast$clan)
+\item 
+void \hyperlink{clan_8cpp_ae96f5c2a71d8ee5c1298563481e50c84}{clan\-\_\-\-\_\-do\-\_\-update} (\hyperlink{clan_8h_a7cdc2f1c9b4cc99d0cbd70a2c1d9b246}{C\-L\-A\-N\-\_\-\-D\-A\-T\-A} $\ast$clan)
+\item 
+void \hyperlink{clan_8cpp_a22308403893e01728e2b2cb19536b2f5}{clan\-\_\-\-\_\-do\-\_\-remove} (\hyperlink{clan_8h_a7cdc2f1c9b4cc99d0cbd70a2c1d9b246}{C\-L\-A\-N\-\_\-\-D\-A\-T\-A} $\ast$clan)
+\item 
+void \hyperlink{clan_8cpp_af51499ede50a67dc3085a396ee748afe}{clan\-\_\-\-\_\-do\-\_\-load} ()
+\item 
+void \hyperlink{clan_8cpp_ade57d6502efef791c612aad6ffcf0f56}{clan\-\_\-\-\_\-do\-\_\-score} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{clan_8cpp_ac0ce70bf4dfede2de98d117019809066}{clan\-\_\-\-\_\-filedump} (F\-I\-L\-E $\ast$fp)
+\item 
+void \hyperlink{clan_8cpp_a5c637d8c180385d7d6952ae65f40195f}{clan\-\_\-rem\-\_\-obj} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj, \hyperlink{structs_8h_a0567cf0e911b537bd58e7b0fb58f34b1}{O\-B\-J\-\_\-\-C\-L\-A\-N\-\_\-\-D\-A\-T\-A} $\ast$targ)
+\item 
+void \hyperlink{clan_8cpp_a9f0d86bcc3d5bfccc06d9deab8e06b82}{do\-\_\-rollcall} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classrpie_1_1server}{rpie\-::server} \hyperlink{clan_8cpp_a55c71990ee4162ebec6abe401996cf15}{engine}
+\item 
+\hyperlink{structs_8h_a2621572337e2557c60a36d55d8283a0a}{N\-A\-M\-E\-\_\-\-S\-W\-I\-T\-C\-H\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{clan_8cpp_af82008133145febb52032e3ae51a585d}{clan\-\_\-name\-\_\-switch\-\_\-list} = N\-U\-L\-L
+\item 
+\hyperlink{clan_8h_a7cdc2f1c9b4cc99d0cbd70a2c1d9b246}{C\-L\-A\-N\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{clan_8cpp_ad900be0295ffbdeba407aa92728d4aed}{clan\-\_\-list} = N\-U\-L\-L
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{clan_8cpp_a8c3c5c3fc9c9706cf4bbac78475f41d3}{\index{clan.\-cpp@{clan.\-cpp}!add\-\_\-clan@{add\-\_\-clan}}
+\index{add\-\_\-clan@{add\-\_\-clan}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{add\-\_\-clan}]{\setlength{\rightskip}{0pt plus 5cm}void add\-\_\-clan (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{new\-\_\-clan\-\_\-name, }
+\item[{int}]{clan\-\_\-flags}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_a8c3c5c3fc9c9706cf4bbac78475f41d3}
+\hypertarget{clan_8cpp_ad6a92c2e4fdd16e1af17273a328148a1}{\index{clan.\-cpp@{clan.\-cpp}!add\-\_\-clan\-\_\-id@{add\-\_\-clan\-\_\-id}}
+\index{add\-\_\-clan\-\_\-id@{add\-\_\-clan\-\_\-id}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{add\-\_\-clan\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}void add\-\_\-clan\-\_\-id (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{clan\-\_\-name, }
+\item[{const char $\ast$}]{clan\-\_\-flags}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_ad6a92c2e4fdd16e1af17273a328148a1}
+\hypertarget{clan_8cpp_ac53437018596ff1794d198d0fc0efdda}{\index{clan.\-cpp@{clan.\-cpp}!add\-\_\-clan\-\_\-id\-\_\-string@{add\-\_\-clan\-\_\-id\-\_\-string}}
+\index{add\-\_\-clan\-\_\-id\-\_\-string@{add\-\_\-clan\-\_\-id\-\_\-string}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{add\-\_\-clan\-\_\-id\-\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}void add\-\_\-clan\-\_\-id\-\_\-string (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{string, }
+\item[{char $\ast$}]{clan\-\_\-name, }
+\item[{char $\ast$}]{clan\-\_\-flags}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_ac53437018596ff1794d198d0fc0efdda}
+\hypertarget{clan_8cpp_a86e323a888a8bd75c51db65a066418a8}{\index{clan.\-cpp@{clan.\-cpp}!add\-\_\-clan\-\_\-to\-\_\-string@{add\-\_\-clan\-\_\-to\-\_\-string}}
+\index{add\-\_\-clan\-\_\-to\-\_\-string@{add\-\_\-clan\-\_\-to\-\_\-string}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{add\-\_\-clan\-\_\-to\-\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ add\-\_\-clan\-\_\-to\-\_\-string (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{string, }
+\item[{char $\ast$}]{new\-\_\-clan\-\_\-name, }
+\item[{int}]{clan\-\_\-flags}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_a86e323a888a8bd75c51db65a066418a8}
+\hypertarget{clan_8cpp_a3e20d95ce7aa030d8e04d027f1c2d04a}{\index{clan.\-cpp@{clan.\-cpp}!add\-\_\-clandef@{add\-\_\-clandef}}
+\index{add\-\_\-clandef@{add\-\_\-clandef}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{add\-\_\-clandef}]{\setlength{\rightskip}{0pt plus 5cm}void add\-\_\-clandef (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_a3e20d95ce7aa030d8e04d027f1c2d04a}
+\hypertarget{clan_8cpp_acf9e137fb04624a3883351508c407c10}{\index{clan.\-cpp@{clan.\-cpp}!clan\-\_\-\-\_\-assert\-\_\-member\-\_\-objs@{clan\-\_\-\-\_\-assert\-\_\-member\-\_\-objs}}
+\index{clan\-\_\-\-\_\-assert\-\_\-member\-\_\-objs@{clan\-\_\-\-\_\-assert\-\_\-member\-\_\-objs}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{clan\-\_\-\-\_\-assert\-\_\-member\-\_\-objs}]{\setlength{\rightskip}{0pt plus 5cm}void clan\-\_\-\-\_\-assert\-\_\-member\-\_\-objs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_acf9e137fb04624a3883351508c407c10}
+\hypertarget{clan_8cpp_a97dd842ef4d40edd30b18f0fb79a7288}{\index{clan.\-cpp@{clan.\-cpp}!clan\-\_\-\-\_\-do\-\_\-add@{clan\-\_\-\-\_\-do\-\_\-add}}
+\index{clan\-\_\-\-\_\-do\-\_\-add@{clan\-\_\-\-\_\-do\-\_\-add}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{clan\-\_\-\-\_\-do\-\_\-add}]{\setlength{\rightskip}{0pt plus 5cm}void clan\-\_\-\-\_\-do\-\_\-add (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-L\-A\-N\-\_\-\-D\-A\-T\-A} $\ast$}]{clan}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_a97dd842ef4d40edd30b18f0fb79a7288}
+\hypertarget{clan_8cpp_af51499ede50a67dc3085a396ee748afe}{\index{clan.\-cpp@{clan.\-cpp}!clan\-\_\-\-\_\-do\-\_\-load@{clan\-\_\-\-\_\-do\-\_\-load}}
+\index{clan\-\_\-\-\_\-do\-\_\-load@{clan\-\_\-\-\_\-do\-\_\-load}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{clan\-\_\-\-\_\-do\-\_\-load}]{\setlength{\rightskip}{0pt plus 5cm}void clan\-\_\-\-\_\-do\-\_\-load (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_af51499ede50a67dc3085a396ee748afe}
+\hypertarget{clan_8cpp_a22308403893e01728e2b2cb19536b2f5}{\index{clan.\-cpp@{clan.\-cpp}!clan\-\_\-\-\_\-do\-\_\-remove@{clan\-\_\-\-\_\-do\-\_\-remove}}
+\index{clan\-\_\-\-\_\-do\-\_\-remove@{clan\-\_\-\-\_\-do\-\_\-remove}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{clan\-\_\-\-\_\-do\-\_\-remove}]{\setlength{\rightskip}{0pt plus 5cm}void clan\-\_\-\-\_\-do\-\_\-remove (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-L\-A\-N\-\_\-\-D\-A\-T\-A} $\ast$}]{clan}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_a22308403893e01728e2b2cb19536b2f5}
+\hypertarget{clan_8cpp_ade57d6502efef791c612aad6ffcf0f56}{\index{clan.\-cpp@{clan.\-cpp}!clan\-\_\-\-\_\-do\-\_\-score@{clan\-\_\-\-\_\-do\-\_\-score}}
+\index{clan\-\_\-\-\_\-do\-\_\-score@{clan\-\_\-\-\_\-do\-\_\-score}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{clan\-\_\-\-\_\-do\-\_\-score}]{\setlength{\rightskip}{0pt plus 5cm}void clan\-\_\-\-\_\-do\-\_\-score (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_ade57d6502efef791c612aad6ffcf0f56}
+\hypertarget{clan_8cpp_ae96f5c2a71d8ee5c1298563481e50c84}{\index{clan.\-cpp@{clan.\-cpp}!clan\-\_\-\-\_\-do\-\_\-update@{clan\-\_\-\-\_\-do\-\_\-update}}
+\index{clan\-\_\-\-\_\-do\-\_\-update@{clan\-\_\-\-\_\-do\-\_\-update}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{clan\-\_\-\-\_\-do\-\_\-update}]{\setlength{\rightskip}{0pt plus 5cm}void clan\-\_\-\-\_\-do\-\_\-update (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-L\-A\-N\-\_\-\-D\-A\-T\-A} $\ast$}]{clan}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_ae96f5c2a71d8ee5c1298563481e50c84}
+\hypertarget{clan_8cpp_ac0ce70bf4dfede2de98d117019809066}{\index{clan.\-cpp@{clan.\-cpp}!clan\-\_\-\-\_\-filedump@{clan\-\_\-\-\_\-filedump}}
+\index{clan\-\_\-\-\_\-filedump@{clan\-\_\-\-\_\-filedump}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{clan\-\_\-\-\_\-filedump}]{\setlength{\rightskip}{0pt plus 5cm}void clan\-\_\-\-\_\-filedump (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{fp}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_ac0ce70bf4dfede2de98d117019809066}
+\hypertarget{clan_8cpp_ae7eeb6414740d30e08d4afb7e281c5e8}{\index{clan.\-cpp@{clan.\-cpp}!clan\-\_\-flags\-\_\-to\-\_\-value@{clan\-\_\-flags\-\_\-to\-\_\-value}}
+\index{clan\-\_\-flags\-\_\-to\-\_\-value@{clan\-\_\-flags\-\_\-to\-\_\-value}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{clan\-\_\-flags\-\_\-to\-\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}int clan\-\_\-flags\-\_\-to\-\_\-value (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{flag\-\_\-names, }
+\item[{char $\ast$}]{clan\-\_\-name}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_ae7eeb6414740d30e08d4afb7e281c5e8}
+\hypertarget{clan_8cpp_ad5830e6d7f15c95b16b1ecf64f4ff09c}{\index{clan.\-cpp@{clan.\-cpp}!clan\-\_\-flags\-\_\-to\-\_\-value@{clan\-\_\-flags\-\_\-to\-\_\-value}}
+\index{clan\-\_\-flags\-\_\-to\-\_\-value@{clan\-\_\-flags\-\_\-to\-\_\-value}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{clan\-\_\-flags\-\_\-to\-\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}int clan\-\_\-flags\-\_\-to\-\_\-value (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{flag\-\_\-names}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_ad5830e6d7f15c95b16b1ecf64f4ff09c}
+\hypertarget{clan_8cpp_a8ad095eeac93949b80af8026118a0c6f}{\index{clan.\-cpp@{clan.\-cpp}!clan\-\_\-forum\-\_\-add@{clan\-\_\-forum\-\_\-add}}
+\index{clan\-\_\-forum\-\_\-add@{clan\-\_\-forum\-\_\-add}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{clan\-\_\-forum\-\_\-add}]{\setlength{\rightskip}{0pt plus 5cm}void clan\-\_\-forum\-\_\-add (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{clan, }
+\item[{char $\ast$}]{rank}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_a8ad095eeac93949b80af8026118a0c6f}
+\hypertarget{clan_8cpp_a652bad49925bc360a2c715e21e28b631}{\index{clan.\-cpp@{clan.\-cpp}!clan\-\_\-forum\-\_\-remove@{clan\-\_\-forum\-\_\-remove}}
+\index{clan\-\_\-forum\-\_\-remove@{clan\-\_\-forum\-\_\-remove}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{clan\-\_\-forum\-\_\-remove}]{\setlength{\rightskip}{0pt plus 5cm}void clan\-\_\-forum\-\_\-remove (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{clan}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_a652bad49925bc360a2c715e21e28b631}
+\hypertarget{clan_8cpp_a83f88175cdd26a99d5584cdb6450d20a}{\index{clan.\-cpp@{clan.\-cpp}!clan\-\_\-forum\-\_\-remove\-\_\-all@{clan\-\_\-forum\-\_\-remove\-\_\-all}}
+\index{clan\-\_\-forum\-\_\-remove\-\_\-all@{clan\-\_\-forum\-\_\-remove\-\_\-all}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{clan\-\_\-forum\-\_\-remove\-\_\-all}]{\setlength{\rightskip}{0pt plus 5cm}void clan\-\_\-forum\-\_\-remove\-\_\-all (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_a83f88175cdd26a99d5584cdb6450d20a}
+\hypertarget{clan_8cpp_ac1f6a80dbd5407599dcee6cadca18f26}{\index{clan.\-cpp@{clan.\-cpp}!clan\-\_\-object\-\_\-equip@{clan\-\_\-object\-\_\-equip}}
+\index{clan\-\_\-object\-\_\-equip@{clan\-\_\-object\-\_\-equip}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{clan\-\_\-object\-\_\-equip}]{\setlength{\rightskip}{0pt plus 5cm}void clan\-\_\-object\-\_\-equip (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_ac1f6a80dbd5407599dcee6cadca18f26}
+\hypertarget{clan_8cpp_a5dcccfe44e737a92afb1b88f60bc38ee}{\index{clan.\-cpp@{clan.\-cpp}!clan\-\_\-object\-\_\-unequip@{clan\-\_\-object\-\_\-unequip}}
+\index{clan\-\_\-object\-\_\-unequip@{clan\-\_\-object\-\_\-unequip}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{clan\-\_\-object\-\_\-unequip}]{\setlength{\rightskip}{0pt plus 5cm}void clan\-\_\-object\-\_\-unequip (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_a5dcccfe44e737a92afb1b88f60bc38ee}
+\hypertarget{clan_8cpp_a5c637d8c180385d7d6952ae65f40195f}{\index{clan.\-cpp@{clan.\-cpp}!clan\-\_\-rem\-\_\-obj@{clan\-\_\-rem\-\_\-obj}}
+\index{clan\-\_\-rem\-\_\-obj@{clan\-\_\-rem\-\_\-obj}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{clan\-\_\-rem\-\_\-obj}]{\setlength{\rightskip}{0pt plus 5cm}void clan\-\_\-rem\-\_\-obj (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj, }
+\item[{{\bf O\-B\-J\-\_\-\-C\-L\-A\-N\-\_\-\-D\-A\-T\-A} $\ast$}]{targ}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_a5c637d8c180385d7d6952ae65f40195f}
+\hypertarget{clan_8cpp_a45602812f36faff01e0d58be3133747e}{\index{clan.\-cpp@{clan.\-cpp}!display\-\_\-clan\-\_\-ranks@{display\-\_\-clan\-\_\-ranks}}
+\index{display\-\_\-clan\-\_\-ranks@{display\-\_\-clan\-\_\-ranks}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{display\-\_\-clan\-\_\-ranks}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ display\-\_\-clan\-\_\-ranks (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{observer}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_a45602812f36faff01e0d58be3133747e}
+\hypertarget{clan_8cpp_ad6416fc9d6512f77482327291c546180}{\index{clan.\-cpp@{clan.\-cpp}!do\-\_\-assign@{do\-\_\-assign}}
+\index{do\-\_\-assign@{do\-\_\-assign}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{do\-\_\-assign}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-assign (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_ad6416fc9d6512f77482327291c546180}
+\hypertarget{clan_8cpp_a07cf91172df3009ddc729d43d18fef1b}{\index{clan.\-cpp@{clan.\-cpp}!do\-\_\-castout@{do\-\_\-castout}}
+\index{do\-\_\-castout@{do\-\_\-castout}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{do\-\_\-castout}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-castout (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_a07cf91172df3009ddc729d43d18fef1b}
+\hypertarget{clan_8cpp_a66e9f558cbea561166a77d6022ae30de}{\index{clan.\-cpp@{clan.\-cpp}!do\-\_\-clan@{do\-\_\-clan}}
+\index{do\-\_\-clan@{do\-\_\-clan}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{do\-\_\-clan}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-clan (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_a66e9f558cbea561166a77d6022ae30de}
+\hypertarget{clan_8cpp_aa2716f1f2c74b0991af0e659ed1b0ef4}{\index{clan.\-cpp@{clan.\-cpp}!do\-\_\-disband@{do\-\_\-disband}}
+\index{do\-\_\-disband@{do\-\_\-disband}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{do\-\_\-disband}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-disband (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_aa2716f1f2c74b0991af0e659ed1b0ef4}
+\hypertarget{clan_8cpp_a6f5e7b4f139f4d3a74b83ae9eaa50fe1}{\index{clan.\-cpp@{clan.\-cpp}!do\-\_\-invite@{do\-\_\-invite}}
+\index{do\-\_\-invite@{do\-\_\-invite}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{do\-\_\-invite}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-invite (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_a6f5e7b4f139f4d3a74b83ae9eaa50fe1}
+\hypertarget{clan_8cpp_a3ea797a4f9050c337dd136886c6d899f}{\index{clan.\-cpp@{clan.\-cpp}!do\-\_\-promote@{do\-\_\-promote}}
+\index{do\-\_\-promote@{do\-\_\-promote}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{do\-\_\-promote}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-promote (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_a3ea797a4f9050c337dd136886c6d899f}
+\hypertarget{clan_8cpp_a2e1b2f2cf8c240fec1edaca1cf17fe3a}{\index{clan.\-cpp@{clan.\-cpp}!do\-\_\-recruit@{do\-\_\-recruit}}
+\index{do\-\_\-recruit@{do\-\_\-recruit}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{do\-\_\-recruit}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-recruit (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_a2e1b2f2cf8c240fec1edaca1cf17fe3a}
+\hypertarget{clan_8cpp_a9f0d86bcc3d5bfccc06d9deab8e06b82}{\index{clan.\-cpp@{clan.\-cpp}!do\-\_\-rollcall@{do\-\_\-rollcall}}
+\index{do\-\_\-rollcall@{do\-\_\-rollcall}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{do\-\_\-rollcall}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-rollcall (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_a9f0d86bcc3d5bfccc06d9deab8e06b82}
+roster $<$clan name$>$=\char`\"{}\char`\"{}$>$ Will list all clanmembers who have logged in during the last two weeks. Only the sdesc and rank is given. \hypertarget{clan_8cpp_a53cc682cc2f0a56784b08ed29cd5f3ed}{\index{clan.\-cpp@{clan.\-cpp}!get\-\_\-clan@{get\-\_\-clan}}
+\index{get\-\_\-clan@{get\-\_\-clan}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{get\-\_\-clan}]{\setlength{\rightskip}{0pt plus 5cm}int get\-\_\-clan (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{const char $\ast$}]{clan, }
+\item[{int $\ast$}]{clan\-\_\-flags}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_a53cc682cc2f0a56784b08ed29cd5f3ed}
+\hypertarget{clan_8cpp_ada609746b5c7768b791aa56ac714a029}{\index{clan.\-cpp@{clan.\-cpp}!get\-\_\-clan\-\_\-in\-\_\-string@{get\-\_\-clan\-\_\-in\-\_\-string}}
+\index{get\-\_\-clan\-\_\-in\-\_\-string@{get\-\_\-clan\-\_\-in\-\_\-string}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{get\-\_\-clan\-\_\-in\-\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}int get\-\_\-clan\-\_\-in\-\_\-string (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{string, }
+\item[{char $\ast$}]{clan, }
+\item[{int $\ast$}]{clan\-\_\-flags}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_ada609746b5c7768b791aa56ac714a029}
+\hypertarget{clan_8cpp_afd69fc57ea63c77653c305ed59e78f65}{\index{clan.\-cpp@{clan.\-cpp}!get\-\_\-clan\-\_\-long@{get\-\_\-clan\-\_\-long}}
+\index{get\-\_\-clan\-\_\-long@{get\-\_\-clan\-\_\-long}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{get\-\_\-clan\-\_\-long}]{\setlength{\rightskip}{0pt plus 5cm}int get\-\_\-clan\-\_\-long (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{clan\-\_\-name, }
+\item[{int $\ast$}]{clan\-\_\-flags}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_afd69fc57ea63c77653c305ed59e78f65}
+\hypertarget{clan_8cpp_a270063e4bc47eb991f439a6c624ce507}{\index{clan.\-cpp@{clan.\-cpp}!get\-\_\-clan\-\_\-long\-\_\-short@{get\-\_\-clan\-\_\-long\-\_\-short}}
+\index{get\-\_\-clan\-\_\-long\-\_\-short@{get\-\_\-clan\-\_\-long\-\_\-short}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{get\-\_\-clan\-\_\-long\-\_\-short}]{\setlength{\rightskip}{0pt plus 5cm}int get\-\_\-clan\-\_\-long\-\_\-short (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{clan\-\_\-name, }
+\item[{int $\ast$}]{clan\-\_\-flags}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_a270063e4bc47eb991f439a6c624ce507}
+\hypertarget{clan_8cpp_a5c3825b42e388f2b0e8d83b9d7568974}{\index{clan.\-cpp@{clan.\-cpp}!get\-\_\-clan\-\_\-rank\-\_\-name@{get\-\_\-clan\-\_\-rank\-\_\-name}}
+\index{get\-\_\-clan\-\_\-rank\-\_\-name@{get\-\_\-clan\-\_\-rank\-\_\-name}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{get\-\_\-clan\-\_\-rank\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ get\-\_\-clan\-\_\-rank\-\_\-name (
+\begin{DoxyParamCaption}
+\item[{int}]{flags}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_a5c3825b42e388f2b0e8d83b9d7568974}
+\hypertarget{clan_8cpp_ad5180ec69215364b1ca80761c72517ee}{\index{clan.\-cpp@{clan.\-cpp}!get\-\_\-clan\-\_\-rank\-\_\-name@{get\-\_\-clan\-\_\-rank\-\_\-name}}
+\index{get\-\_\-clan\-\_\-rank\-\_\-name@{get\-\_\-clan\-\_\-rank\-\_\-name}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{get\-\_\-clan\-\_\-rank\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ get\-\_\-clan\-\_\-rank\-\_\-name (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{clan, }
+\item[{int}]{flags}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_ad5180ec69215364b1ca80761c72517ee}
+\hypertarget{clan_8cpp_ac346d71c6492e9be1d4cdd0455895585}{\index{clan.\-cpp@{clan.\-cpp}!get\-\_\-clandef@{get\-\_\-clandef}}
+\index{get\-\_\-clandef@{get\-\_\-clandef}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{get\-\_\-clandef}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-L\-A\-N\-\_\-\-D\-A\-T\-A}$\ast$ get\-\_\-clandef (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{clan\-\_\-name}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_ac346d71c6492e9be1d4cdd0455895585}
+\hypertarget{clan_8cpp_adad605fb59603b55ac6a3a851e6f6535}{\index{clan.\-cpp@{clan.\-cpp}!get\-\_\-clandef\-\_\-long@{get\-\_\-clandef\-\_\-long}}
+\index{get\-\_\-clandef\-\_\-long@{get\-\_\-clandef\-\_\-long}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{get\-\_\-clandef\-\_\-long}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-L\-A\-N\-\_\-\-D\-A\-T\-A}$\ast$ get\-\_\-clandef\-\_\-long (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{clan\-\_\-long\-\_\-name}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_adad605fb59603b55ac6a3a851e6f6535}
+\hypertarget{clan_8cpp_ae684a10fb81f6a800bef24dcf8f0bb3c}{\index{clan.\-cpp@{clan.\-cpp}!get\-\_\-clanid@{get\-\_\-clanid}}
+\index{get\-\_\-clanid@{get\-\_\-clanid}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{get\-\_\-clanid}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-L\-A\-N\-\_\-\-D\-A\-T\-A}$\ast$ get\-\_\-clanid (
+\begin{DoxyParamCaption}
+\item[{int}]{clan\-\_\-id}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_ae684a10fb81f6a800bef24dcf8f0bb3c}
+\hypertarget{clan_8cpp_a7ef2272647ce685415c1aa5b083e47b4}{\index{clan.\-cpp@{clan.\-cpp}!get\-\_\-next\-\_\-clan@{get\-\_\-next\-\_\-clan}}
+\index{get\-\_\-next\-\_\-clan@{get\-\_\-next\-\_\-clan}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{get\-\_\-next\-\_\-clan}]{\setlength{\rightskip}{0pt plus 5cm}int get\-\_\-next\-\_\-clan (
+\begin{DoxyParamCaption}
+\item[{char $\ast$$\ast$}]{p, }
+\item[{char $\ast$}]{clan\-\_\-name, }
+\item[{int $\ast$}]{clan\-\_\-flags}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_a7ef2272647ce685415c1aa5b083e47b4}
+\hypertarget{clan_8cpp_a582545659cd505b40feebad4f8eeb27d}{\index{clan.\-cpp@{clan.\-cpp}!get\-\_\-next\-\_\-leader@{get\-\_\-next\-\_\-leader}}
+\index{get\-\_\-next\-\_\-leader@{get\-\_\-next\-\_\-leader}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{get\-\_\-next\-\_\-leader}]{\setlength{\rightskip}{0pt plus 5cm}int get\-\_\-next\-\_\-leader (
+\begin{DoxyParamCaption}
+\item[{char $\ast$$\ast$}]{p, }
+\item[{char $\ast$}]{clan\-\_\-name, }
+\item[{int $\ast$}]{clan\-\_\-flags}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_a582545659cd505b40feebad4f8eeb27d}
+\hypertarget{clan_8cpp_ac4ace0bc933375db7a1cc9ba134d9a25}{\index{clan.\-cpp@{clan.\-cpp}!get\-\_\-shared\-\_\-clan\-\_\-rank@{get\-\_\-shared\-\_\-clan\-\_\-rank}}
+\index{get\-\_\-shared\-\_\-clan\-\_\-rank@{get\-\_\-shared\-\_\-clan\-\_\-rank}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{get\-\_\-shared\-\_\-clan\-\_\-rank}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ get\-\_\-shared\-\_\-clan\-\_\-rank (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{observer}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_ac4ace0bc933375db7a1cc9ba134d9a25}
+\hypertarget{clan_8cpp_a23d55aa552cafa82860852c4d063a506}{\index{clan.\-cpp@{clan.\-cpp}!invite\-\_\-accept@{invite\-\_\-accept}}
+\index{invite\-\_\-accept@{invite\-\_\-accept}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{invite\-\_\-accept}]{\setlength{\rightskip}{0pt plus 5cm}void invite\-\_\-accept (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_a23d55aa552cafa82860852c4d063a506}
+\hypertarget{clan_8cpp_abf31328fad6a65899ae494c5be271cd0}{\index{clan.\-cpp@{clan.\-cpp}!is\-\_\-area\-\_\-leader@{is\-\_\-area\-\_\-leader}}
+\index{is\-\_\-area\-\_\-leader@{is\-\_\-area\-\_\-leader}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{is\-\_\-area\-\_\-leader}]{\setlength{\rightskip}{0pt plus 5cm}int is\-\_\-area\-\_\-leader (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_abf31328fad6a65899ae494c5be271cd0}
+\hypertarget{clan_8cpp_a3e6f64e98b20ddf45cb41558a0ab9d00}{\index{clan.\-cpp@{clan.\-cpp}!is\-\_\-brother@{is\-\_\-brother}}
+\index{is\-\_\-brother@{is\-\_\-brother}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{is\-\_\-brother}]{\setlength{\rightskip}{0pt plus 5cm}int is\-\_\-brother (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{tch}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_a3e6f64e98b20ddf45cb41558a0ab9d00}
+\hypertarget{clan_8cpp_ab798b9e31ae7a2ce0017f11db6d77863}{\index{clan.\-cpp@{clan.\-cpp}!is\-\_\-clan\-\_\-member@{is\-\_\-clan\-\_\-member}}
+\index{is\-\_\-clan\-\_\-member@{is\-\_\-clan\-\_\-member}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{is\-\_\-clan\-\_\-member}]{\setlength{\rightskip}{0pt plus 5cm}int is\-\_\-clan\-\_\-member (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{clan\-\_\-name}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_ab798b9e31ae7a2ce0017f11db6d77863}
+\hypertarget{clan_8cpp_a55aa3e165bf8ea2aa80de9576a21b92e}{\index{clan.\-cpp@{clan.\-cpp}!is\-\_\-clan\-\_\-member\-\_\-player@{is\-\_\-clan\-\_\-member\-\_\-player}}
+\index{is\-\_\-clan\-\_\-member\-\_\-player@{is\-\_\-clan\-\_\-member\-\_\-player}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{is\-\_\-clan\-\_\-member\-\_\-player}]{\setlength{\rightskip}{0pt plus 5cm}int is\-\_\-clan\-\_\-member\-\_\-player (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{clan\-\_\-name}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_a55aa3e165bf8ea2aa80de9576a21b92e}
+\hypertarget{clan_8cpp_a98f171c552a6b544fda6660657e35a11}{\index{clan.\-cpp@{clan.\-cpp}!is\-\_\-leader@{is\-\_\-leader}}
+\index{is\-\_\-leader@{is\-\_\-leader}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{is\-\_\-leader}]{\setlength{\rightskip}{0pt plus 5cm}int is\-\_\-leader (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{src, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{tar}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_a98f171c552a6b544fda6660657e35a11}
+\hypertarget{clan_8cpp_a475cd9c0bdd06eff5af216dbaecfd637}{\index{clan.\-cpp@{clan.\-cpp}!notify\-\_\-captors@{notify\-\_\-captors}}
+\index{notify\-\_\-captors@{notify\-\_\-captors}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{notify\-\_\-captors}]{\setlength{\rightskip}{0pt plus 5cm}void notify\-\_\-captors (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_a475cd9c0bdd06eff5af216dbaecfd637}
+\hypertarget{clan_8cpp_a2d4be30522c95c225315d64f944a084d}{\index{clan.\-cpp@{clan.\-cpp}!remove\-\_\-clan@{remove\-\_\-clan}}
+\index{remove\-\_\-clan@{remove\-\_\-clan}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{remove\-\_\-clan}]{\setlength{\rightskip}{0pt plus 5cm}void remove\-\_\-clan (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{old\-\_\-clan\-\_\-name}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_a2d4be30522c95c225315d64f944a084d}
+\hypertarget{clan_8cpp_ab22bdf2af4d6cf91e193c9cd686bbf8f}{\index{clan.\-cpp@{clan.\-cpp}!remove\-\_\-clan\-\_\-from\-\_\-string@{remove\-\_\-clan\-\_\-from\-\_\-string}}
+\index{remove\-\_\-clan\-\_\-from\-\_\-string@{remove\-\_\-clan\-\_\-from\-\_\-string}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{remove\-\_\-clan\-\_\-from\-\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ remove\-\_\-clan\-\_\-from\-\_\-string (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{string, }
+\item[{char $\ast$}]{old\-\_\-clan\-\_\-name}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_ab22bdf2af4d6cf91e193c9cd686bbf8f}
+\hypertarget{clan_8cpp_a6f90a561b2d1b198cba56368f3400ba7}{\index{clan.\-cpp@{clan.\-cpp}!show\-\_\-waiting\-\_\-prisoners@{show\-\_\-waiting\-\_\-prisoners}}
+\index{show\-\_\-waiting\-\_\-prisoners@{show\-\_\-waiting\-\_\-prisoners}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{show\-\_\-waiting\-\_\-prisoners}]{\setlength{\rightskip}{0pt plus 5cm}void show\-\_\-waiting\-\_\-prisoners (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_a6f90a561b2d1b198cba56368f3400ba7}
+\hypertarget{clan_8cpp_a126ea7ee6bf8d76b95dc403ad9e9138a}{\index{clan.\-cpp@{clan.\-cpp}!update\-\_\-enforcement\-\_\-array@{update\-\_\-enforcement\-\_\-array}}
+\index{update\-\_\-enforcement\-\_\-array@{update\-\_\-enforcement\-\_\-array}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{update\-\_\-enforcement\-\_\-array}]{\setlength{\rightskip}{0pt plus 5cm}void update\-\_\-enforcement\-\_\-array (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_a126ea7ee6bf8d76b95dc403ad9e9138a}
+\hypertarget{clan_8cpp_a25a05af79c0b52e6079785c299a440f2}{\index{clan.\-cpp@{clan.\-cpp}!value\-\_\-to\-\_\-clan\-\_\-flags@{value\-\_\-to\-\_\-clan\-\_\-flags}}
+\index{value\-\_\-to\-\_\-clan\-\_\-flags@{value\-\_\-to\-\_\-clan\-\_\-flags}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{value\-\_\-to\-\_\-clan\-\_\-flags}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ value\-\_\-to\-\_\-clan\-\_\-flags (
+\begin{DoxyParamCaption}
+\item[{int}]{flags}
+\end{DoxyParamCaption}
+)}}\label{clan_8cpp_a25a05af79c0b52e6079785c299a440f2}
+
+
+\subsection{Variable Documentation}
+\hypertarget{clan_8cpp_ad900be0295ffbdeba407aa92728d4aed}{\index{clan.\-cpp@{clan.\-cpp}!clan\-\_\-list@{clan\-\_\-list}}
+\index{clan\-\_\-list@{clan\-\_\-list}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{clan\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-L\-A\-N\-\_\-\-D\-A\-T\-A}$\ast$ clan\-\_\-list = N\-U\-L\-L}}\label{clan_8cpp_ad900be0295ffbdeba407aa92728d4aed}
+\hypertarget{clan_8cpp_af82008133145febb52032e3ae51a585d}{\index{clan.\-cpp@{clan.\-cpp}!clan\-\_\-name\-\_\-switch\-\_\-list@{clan\-\_\-name\-\_\-switch\-\_\-list}}
+\index{clan\-\_\-name\-\_\-switch\-\_\-list@{clan\-\_\-name\-\_\-switch\-\_\-list}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{clan\-\_\-name\-\_\-switch\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}{\bf N\-A\-M\-E\-\_\-\-S\-W\-I\-T\-C\-H\-\_\-\-D\-A\-T\-A}$\ast$ clan\-\_\-name\-\_\-switch\-\_\-list = N\-U\-L\-L}}\label{clan_8cpp_af82008133145febb52032e3ae51a585d}
+\hypertarget{clan_8cpp_a55c71990ee4162ebec6abe401996cf15}{\index{clan.\-cpp@{clan.\-cpp}!engine@{engine}}
+\index{engine@{engine}!clan.cpp@{clan.\-cpp}}
+\subsubsection[{engine}]{\setlength{\rightskip}{0pt plus 5cm}{\bf rpie\-::server} engine}}\label{clan_8cpp_a55c71990ee4162ebec6abe401996cf15}

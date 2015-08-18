@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -90,42 +90,233 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">tBroadwave Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="BroadwaveClient_8h_source.html">BroadwaveClient.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a66ca08d576ca703db094ccd501ba1ef1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a66ca08d576ca703db094ccd501ba1ef1"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>initialiseBroadwave</b> ()</td></tr>
+<tr class="memitem:a49e6459acc422e1e50ea686dc57d2908"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtBroadwave.html#a49e6459acc422e1e50ea686dc57d2908">tBroadwave</a> ()</td></tr>
+<tr class="separator:a49e6459acc422e1e50ea686dc57d2908"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fb9bf57c5957e26c961a5acc00d732a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtBroadwave.html#a5fb9bf57c5957e26c961a5acc00d732a">~tBroadwave</a> ()</td></tr>
+<tr class="separator:a5fb9bf57c5957e26c961a5acc00d732a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66ca08d576ca703db094ccd501ba1ef1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtBroadwave.html#a66ca08d576ca703db094ccd501ba1ef1">initialiseBroadwave</a> ()</td></tr>
 <tr class="separator:a66ca08d576ca703db094ccd501ba1ef1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a74ec4ce019b8c3a76b38322628944425"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a74ec4ce019b8c3a76b38322628944425"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>listenBroadwave</b> ()</td></tr>
+<tr class="memitem:a74ec4ce019b8c3a76b38322628944425"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtBroadwave.html#a74ec4ce019b8c3a76b38322628944425">listenBroadwave</a> ()</td></tr>
 <tr class="separator:a74ec4ce019b8c3a76b38322628944425"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c5a7502622dbc6e5250787c60994be6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0c5a7502622dbc6e5250787c60994be6"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>broadcastBroadwave</b> (string actor, string subwave, string message)</td></tr>
+<tr class="memitem:a0c5a7502622dbc6e5250787c60994be6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtBroadwave.html#a0c5a7502622dbc6e5250787c60994be6">broadcastBroadwave</a> (string actor, string subwave, string message)</td></tr>
 <tr class="separator:a0c5a7502622dbc6e5250787c60994be6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8683c7cb9d5f0dbc2c26e3f4280a410"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab8683c7cb9d5f0dbc2c26e3f4280a410"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>loginBroadwave</b> ()</td></tr>
+<tr class="memitem:ab8683c7cb9d5f0dbc2c26e3f4280a410"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtBroadwave.html#ab8683c7cb9d5f0dbc2c26e3f4280a410">loginBroadwave</a> ()</td></tr>
 <tr class="separator:ab8683c7cb9d5f0dbc2c26e3f4280a410"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9440718c9bc24ec9ca48c4cec153ee79"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9440718c9bc24ec9ca48c4cec153ee79"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>systemBroadwave</b> (string password, string remainder)</td></tr>
+<tr class="memitem:a9440718c9bc24ec9ca48c4cec153ee79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtBroadwave.html#a9440718c9bc24ec9ca48c4cec153ee79">systemBroadwave</a> (string password, string remainder)</td></tr>
 <tr class="separator:a9440718c9bc24ec9ca48c4cec153ee79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:adff4bca86536a98a70666d4a6151f0c0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adff4bca86536a98a70666d4a6151f0c0"></a>
-sockaddr_in&#160;</td><td class="memItemRight" valign="bottom"><b>clientService</b></td></tr>
+<tr class="memitem:adff4bca86536a98a70666d4a6151f0c0"><td class="memItemLeft" align="right" valign="top">sockaddr_in&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtBroadwave.html#adff4bca86536a98a70666d4a6151f0c0">clientService</a></td></tr>
 <tr class="separator:adff4bca86536a98a70666d4a6151f0c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a870c289fd02820e7398ee604675c9783"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a870c289fd02820e7398ee604675c9783"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>initialised</b></td></tr>
+<tr class="memitem:a870c289fd02820e7398ee604675c9783"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtBroadwave.html#a870c289fd02820e7398ee604675c9783">initialised</a></td></tr>
 <tr class="separator:a870c289fd02820e7398ee604675c9783"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a49e6459acc422e1e50ea686dc57d2908"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tBroadwave::tBroadwave </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5fb9bf57c5957e26c961a5acc00d732a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tBroadwave::~tBroadwave </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a0c5a7502622dbc6e5250787c60994be6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tBroadwave::broadcastBroadwave </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>actor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>subwave</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>message</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a66ca08d576ca703db094ccd501ba1ef1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tBroadwave::initialiseBroadwave </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a74ec4ce019b8c3a76b38322628944425"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tBroadwave::listenBroadwave </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab8683c7cb9d5f0dbc2c26e3f4280a410"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tBroadwave::loginBroadwave </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9440718c9bc24ec9ca48c4cec153ee79"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tBroadwave::systemBroadwave </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>password</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>remainder</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="adff4bca86536a98a70666d4a6151f0c0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sockaddr_in tBroadwave::clientService</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a870c289fd02820e7398ee604675c9783"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a> tBroadwave::initialised</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="BroadwaveClient_8h_source.html">BroadwaveClient.h</a></li>
-<li>BroadwaveClient.cpp</li>
+<li><a class="el" href="BroadwaveClient_8cpp.html">BroadwaveClient.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 17 2015 21:26:48 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 17 2015 22:02:23 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

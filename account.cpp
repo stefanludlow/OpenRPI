@@ -7,6 +7,9 @@
 #include "utils.h"
 #include "net_link.h"
 
+///@file
+///@brief Doxygen test of Account.cpp
+
 account::account (const char *acct_name)
 {
   int row_count = 0;

@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -89,65 +89,244 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">wound_data Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="structs_8h_source.html">structs.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a2be5f7c5b4eb38dbb6bb79af189c655c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2be5f7c5b4eb38dbb6bb79af189c655c"></a>
-char *&#160;</td><td class="memItemRight" valign="bottom"><b>location</b></td></tr>
+<tr class="memitem:a2be5f7c5b4eb38dbb6bb79af189c655c"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structwound__data.html#a2be5f7c5b4eb38dbb6bb79af189c655c">location</a></td></tr>
 <tr class="separator:a2be5f7c5b4eb38dbb6bb79af189c655c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e948e084dc2302ff639487fd52efff1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4e948e084dc2302ff639487fd52efff1"></a>
-char *&#160;</td><td class="memItemRight" valign="bottom"><b>type</b></td></tr>
+<tr class="memitem:a4e948e084dc2302ff639487fd52efff1"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structwound__data.html#a4e948e084dc2302ff639487fd52efff1">type</a></td></tr>
 <tr class="separator:a4e948e084dc2302ff639487fd52efff1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae70e3e3fb9e71ac3a53fc0cc57a3770c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae70e3e3fb9e71ac3a53fc0cc57a3770c"></a>
-char *&#160;</td><td class="memItemRight" valign="bottom"><b>name</b></td></tr>
+<tr class="memitem:ae70e3e3fb9e71ac3a53fc0cc57a3770c"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structwound__data.html#ae70e3e3fb9e71ac3a53fc0cc57a3770c">name</a></td></tr>
 <tr class="separator:ae70e3e3fb9e71ac3a53fc0cc57a3770c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa16c2ce2d57f9e2d99d8d1de805e5610"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa16c2ce2d57f9e2d99d8d1de805e5610"></a>
-char *&#160;</td><td class="memItemRight" valign="bottom"><b>severity</b></td></tr>
+<tr class="memitem:aa16c2ce2d57f9e2d99d8d1de805e5610"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structwound__data.html#aa16c2ce2d57f9e2d99d8d1de805e5610">severity</a></td></tr>
 <tr class="separator:aa16c2ce2d57f9e2d99d8d1de805e5610"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6f172445dca229d7781f4dfdc895050"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa6f172445dca229d7781f4dfdc895050"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>damage</b></td></tr>
+<tr class="memitem:aa6f172445dca229d7781f4dfdc895050"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structwound__data.html#aa6f172445dca229d7781f4dfdc895050">damage</a></td></tr>
 <tr class="separator:aa6f172445dca229d7781f4dfdc895050"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a59a84f83cfb4885e6e9bb2782265b100"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a59a84f83cfb4885e6e9bb2782265b100"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>bleeding</b></td></tr>
+<tr class="memitem:a59a84f83cfb4885e6e9bb2782265b100"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structwound__data.html#a59a84f83cfb4885e6e9bb2782265b100">bleeding</a></td></tr>
 <tr class="separator:a59a84f83cfb4885e6e9bb2782265b100"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afaac7fc7d77e319662551ac5203812a4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afaac7fc7d77e319662551ac5203812a4"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>poison</b></td></tr>
+<tr class="memitem:afaac7fc7d77e319662551ac5203812a4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structwound__data.html#afaac7fc7d77e319662551ac5203812a4">poison</a></td></tr>
 <tr class="separator:afaac7fc7d77e319662551ac5203812a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1b6d71d3730dd8f645c9bedd193fabe"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa1b6d71d3730dd8f645c9bedd193fabe"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>infection</b></td></tr>
+<tr class="memitem:aa1b6d71d3730dd8f645c9bedd193fabe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structwound__data.html#aa1b6d71d3730dd8f645c9bedd193fabe">infection</a></td></tr>
 <tr class="separator:aa1b6d71d3730dd8f645c9bedd193fabe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d4f9e5da9b43e9c8c853331e1ce4265"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7d4f9e5da9b43e9c8c853331e1ce4265"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>healerskill</b></td></tr>
+<tr class="memitem:a7d4f9e5da9b43e9c8c853331e1ce4265"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structwound__data.html#a7d4f9e5da9b43e9c8c853331e1ce4265">healerskill</a></td></tr>
 <tr class="separator:a7d4f9e5da9b43e9c8c853331e1ce4265"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5125718894a9abf21860c54d2cc72549"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5125718894a9abf21860c54d2cc72549"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>bindskill</b></td></tr>
+<tr class="memitem:a5125718894a9abf21860c54d2cc72549"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structwound__data.html#a5125718894a9abf21860c54d2cc72549">bindskill</a></td></tr>
 <tr class="separator:a5125718894a9abf21860c54d2cc72549"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ab905e77555a860ba18fe5989ed7324"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1ab905e77555a860ba18fe5989ed7324"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>lasthealed</b></td></tr>
+<tr class="memitem:a1ab905e77555a860ba18fe5989ed7324"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structwound__data.html#a1ab905e77555a860ba18fe5989ed7324">lasthealed</a></td></tr>
 <tr class="separator:a1ab905e77555a860ba18fe5989ed7324"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a588ef2d4af6aa25b0f261d647dbee9f8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a588ef2d4af6aa25b0f261d647dbee9f8"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>lastbled</b></td></tr>
+<tr class="memitem:a588ef2d4af6aa25b0f261d647dbee9f8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structwound__data.html#a588ef2d4af6aa25b0f261d647dbee9f8">lastbled</a></td></tr>
 <tr class="separator:a588ef2d4af6aa25b0f261d647dbee9f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aafcdf74603ffe58b8c6b6f6ac37d6fc1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aafcdf74603ffe58b8c6b6f6ac37d6fc1"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>lastbound</b></td></tr>
+<tr class="memitem:aafcdf74603ffe58b8c6b6f6ac37d6fc1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structwound__data.html#aafcdf74603ffe58b8c6b6f6ac37d6fc1">lastbound</a></td></tr>
 <tr class="separator:aafcdf74603ffe58b8c6b6f6ac37d6fc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6df02e8d8a22003c56b69d4ed5200bf6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6df02e8d8a22003c56b69d4ed5200bf6"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>fracture</b></td></tr>
+<tr class="memitem:a6df02e8d8a22003c56b69d4ed5200bf6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structwound__data.html#a6df02e8d8a22003c56b69d4ed5200bf6">fracture</a></td></tr>
 <tr class="separator:a6df02e8d8a22003c56b69d4ed5200bf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a29aecddb9188f1fcbe5d911608cc7a42"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a29aecddb9188f1fcbe5d911608cc7a42"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>gunshot</b></td></tr>
+<tr class="memitem:a29aecddb9188f1fcbe5d911608cc7a42"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structwound__data.html#a29aecddb9188f1fcbe5d911608cc7a42">gunshot</a></td></tr>
 <tr class="separator:a29aecddb9188f1fcbe5d911608cc7a42"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae32ec87ea6c38e7cd0cf1b210005d46d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae32ec87ea6c38e7cd0cf1b210005d46d"></a>
-<a class="el" href="structwound__data.html">WOUND_DATA</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>next</b></td></tr>
+<tr class="memitem:ae32ec87ea6c38e7cd0cf1b210005d46d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structs_8h.html#acd99076446b10c8cfc2d23d4bfc40211">WOUND_DATA</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structwound__data.html#ae32ec87ea6c38e7cd0cf1b210005d46d">next</a></td></tr>
 <tr class="separator:ae32ec87ea6c38e7cd0cf1b210005d46d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a5125718894a9abf21860c54d2cc72549"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int wound_data::bindskill</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a59a84f83cfb4885e6e9bb2782265b100"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int wound_data::bleeding</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa6f172445dca229d7781f4dfdc895050"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int wound_data::damage</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6df02e8d8a22003c56b69d4ed5200bf6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int wound_data::fracture</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a29aecddb9188f1fcbe5d911608cc7a42"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int wound_data::gunshot</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7d4f9e5da9b43e9c8c853331e1ce4265"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int wound_data::healerskill</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa1b6d71d3730dd8f645c9bedd193fabe"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int wound_data::infection</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a588ef2d4af6aa25b0f261d647dbee9f8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int wound_data::lastbled</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aafcdf74603ffe58b8c6b6f6ac37d6fc1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int wound_data::lastbound</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1ab905e77555a860ba18fe5989ed7324"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int wound_data::lasthealed</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2be5f7c5b4eb38dbb6bb79af189c655c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* wound_data::location</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae70e3e3fb9e71ac3a53fc0cc57a3770c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* wound_data::name</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae32ec87ea6c38e7cd0cf1b210005d46d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structs_8h.html#acd99076446b10c8cfc2d23d4bfc40211">WOUND_DATA</a>* wound_data::next</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="afaac7fc7d77e319662551ac5203812a4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int wound_data::poison</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa16c2ce2d57f9e2d99d8d1de805e5610"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* wound_data::severity</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4e948e084dc2302ff639487fd52efff1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* wound_data::type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li><a class="el" href="structs_8h_source.html">structs.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 17 2015 21:26:48 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 17 2015 22:02:23 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

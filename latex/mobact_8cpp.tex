@@ -1,0 +1,544 @@
+\hypertarget{mobact_8cpp}{\section{mobact.\-cpp File Reference}
+\label{mobact_8cpp}\index{mobact.\-cpp@{mobact.\-cpp}}
+}
+{\ttfamily \#include \char`\"{}server.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$time.\-h$>$}\\*
+{\ttfamily \#include $<$signal.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}structs.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}net\-\_\-link.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}protos.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}decl.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}group.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utility.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{mobact_8cpp_a0b96d3fdaa32878ca68cef8ad8720b34}{J\-A\-I\-L\-B\-A\-G\-\_\-\-D\-E\-S\-C\-\_\-\-P\-R\-E\-P\-E\-N\-D}~\char`\"{}Belongings for\char`\"{}
+\item 
+\#define \hyperlink{mobact_8cpp_a80c680b6bcc93f55ffe4febf181f59ef}{M\-O\-B\-\_\-\-I\-G\-N\-O\-R\-E\-S\-\_\-\-D\-O\-O\-R\-S}~-\/1
+\item 
+\#define \hyperlink{mobact_8cpp_a1ad02b52898cc5bc13a21bdb56bc6e20}{M\-A\-R\-K\-E\-T\-P\-L\-A\-C\-E\-\_\-\-D\-U\-M\-P}~75555
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} \hyperlink{mobact_8cpp_a77034669e3349e7c94eb0ee020712801}{could\-\_\-attack} (const \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, const \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$target)
+\item 
+void \hyperlink{mobact_8cpp_a35e6ac45e9a91e002e94a2f349939337}{ai\-\_\-strength\-\_\-check} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$threat, double $\ast$ally\-\_\-strength, double $\ast$enemy\-\_\-strength)
+\item 
+int \hyperlink{mobact_8cpp_a8e3d23f975cdc5e6e5e7b9990d4d9e3e}{is\-\_\-wanted\-\_\-in\-\_\-area} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+int \hyperlink{mobact_8cpp_a2ac154f9b08070613f835830a3b7f1dd}{enforcer} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$crim, int will\-\_\-act, int witness)
+\item 
+int \hyperlink{mobact_8cpp_a773ee6335b3fcc691a429ee4b97bd15b}{mob\-\_\-remembers\-\_\-whom} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$name, int mode)
+\item 
+int \hyperlink{mobact_8cpp_abe2f19197ee07ee4b0e0a7832775cc73}{mob\-\_\-wander} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{mobact_8cpp_a767d59c0f697513365eebeb8d84f066f}{common\-\_\-guard} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{mobact_8cpp_a5dfdf0fc27bb5f45d92bef0743121332}{jailer\-\_\-func} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+int \hyperlink{mobact_8cpp_a798cabc0e4aab51240e2b68554e991a8}{has\-\_\-weapon} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+int \hyperlink{mobact_8cpp_aba62ee25b0cf7b65d84a14df21afb3f8}{enforcer\-\_\-weapon\-\_\-check} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+int \hyperlink{mobact_8cpp_ab598c244121b389ff47f6e43dbfed2a5}{enforcer\-\_\-hood\-\_\-check} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+int \hyperlink{mobact_8cpp_ad2bf1b4d28d838af84d11d4121912ca8}{find\-\_\-mob\-\_\-in\-\_\-room} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+int \hyperlink{mobact_8cpp_a0154235580ecbeca9f592d4f5246406a}{find\-\_\-obj\-\_\-in\-\_\-room} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+int \hyperlink{mobact_8cpp_a573d47f172bf2625f1d808d4b8d184ae}{mob\-\_\-weather\-\_\-reaction} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+int \hyperlink{mobact_8cpp_a5dd817957022171b4472a6c55d698305}{shooter\-\_\-routine} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+int \hyperlink{mobact_8cpp_ac74f5a9f516bb35cd08cf1cbf9ab03f0}{miscellaneous\-\_\-routine} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+int \hyperlink{mobact_8cpp_a54af2c177e2d443016a44f1a292478e0}{rescue\-\_\-routine} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+int \hyperlink{mobact_8cpp_a3fe20db21708a127aea3613d4a5652e6}{combat\-\_\-routine} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{mobact_8cpp_a489ac83795247b21ca9ba0513b69ff1d}{add\-\_\-attacker} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$victim, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$threat)
+\item 
+void \hyperlink{mobact_8cpp_aa693d2cca8aa248c8984ccf9dfb80074}{add\-\_\-threat} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$victim, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$threat, int amount)
+\item 
+int \hyperlink{mobact_8cpp_a6c6af68708011e43a238f5e1071b9581}{npc\-\_\-charge} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$archer)
+\item 
+int \hyperlink{mobact_8cpp_a946b84ffee835513d8c477e9817d78a0}{fail\-\_\-morale} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$threat, \hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} fight, \hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} group\-\_\-test)
+\item 
+void \hyperlink{mobact_8cpp_a7d0cfab3ad03744eda19e55426a13eda}{threat\-\_\-from\-\_\-char} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_aed0fe51c5cd01a7f8f46bdc898586ad8}{T\-H\-R\-E\-A\-T\-\_\-\-D\-A\-T\-A} $\ast$att)
+\item 
+void \hyperlink{mobact_8cpp_ab53dca2edf23ca4edacdee6d6aabb0f2}{remove\-\_\-threat} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$victim, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$threat)
+\item 
+void \hyperlink{mobact_8cpp_a3fcc7c908b1b1665795dc855262f6a6d}{attacker\-\_\-from\-\_\-char} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_a72de0d7a32d309e37b0abace8b26b98c}{A\-T\-T\-A\-C\-K\-E\-R\-\_\-\-D\-A\-T\-A} $\ast$att)
+\item 
+void \hyperlink{mobact_8cpp_a131fc6cfcceec8c03b02c74662b7554d}{remove\-\_\-attacker} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$victim, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$threat)
+\item 
+void \hyperlink{mobact_8cpp_a33bba84ea5edadeb6a6d42b4a633a75e}{random\-\_\-direction} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int dir, int times)
+\item 
+void \hyperlink{mobact_8cpp_ace06e6d455f150a17629a5dd29b99746}{npc\-\_\-evasion} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int dir)
+\item 
+void \hyperlink{mobact_8cpp_a924e397dcc8cc9862667997777be9d4b}{ready\-\_\-melee\-\_\-weapons} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{mobact_8cpp_af5c33469a5e78d85be4906351bf1b182}{unready\-\_\-weapons} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{mobact_8cpp_ac114d63e289707609f583936ea477a11}{acquire\-\_\-archer\-\_\-target} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int i)
+\item 
+\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{mobact_8cpp_a0596e7cfa1a1669685fa5b7a966b2884}{acquire\-\_\-distant\-\_\-target} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int i)
+\item 
+int \hyperlink{mobact_8cpp_a99d3ec223c38dd2b4c6aab417dbbc735}{falling\-\_\-back} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+int \hyperlink{mobact_8cpp_aa4c1761953a2c615a3e66c49f8f0d3fe}{evaluate\-\_\-threats} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+int \hyperlink{mobact_8cpp_a862127dc66301b3954a2f82393a8156f}{survival\-\_\-routine} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+int \hyperlink{mobact_8cpp_a1b588a23ab36508c1c0a0b6d44d9f971}{predatory\-\_\-mobile} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+int \hyperlink{mobact_8cpp_afa3dc19d9d63e6e4eb3d8e6d6aef926c}{target\-\_\-acquisition} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{mobact_8cpp_ab6c04b34d3e91510963b64a9fa98bdc4}{mobile\-\_\-routines} (int pulse)
+\item 
+int \hyperlink{mobact_8cpp_a34674725a608ed18e2914d8ff6da2675}{is\-\_\-threat} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$tch)
+\item 
+int \hyperlink{mobact_8cpp_a06e1882ff90a21a68567d19178c74858}{wildlife\-\_\-check} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$target)
+\item 
+int \hyperlink{mobact_8cpp_aff35e2020fb479fadf4b6ac121691984}{would\-\_\-attack} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$tch)
+\item 
+void \hyperlink{mobact_8cpp_a0501f6996f295bc0f0611cf9c690e241}{do\-\_\-would} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{mobact_8cpp_aae05ea577698977ab20c329eb7a1d409}{activate\-\_\-resets} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{mobact_8cpp_aa920685185f7f602f4b7a9d93453c174}{npc\-\_\-ranged\-\_\-retaliation} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$target, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+int \hyperlink{mobact_8cpp_ab9c469c230a52be31e66c2b4f8a2efed}{is\-\_\-combat\-\_\-ready} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{mobact_8cpp_a79dfc26ef9a7999eef117877bb613725}{npc\-\_\-ranged\-\_\-response} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$npc, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$retal\-\_\-ch)
+\item 
+void \hyperlink{mobact_8cpp_a23e8fc7cee2d80b8391523aa735c9cf2}{do\-\_\-aistat} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{mobact_8cpp_a7cfde649c5cd60acbc5fa7c34ffd9042}{do\-\_\-aiadd} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{mobact_8cpp_ab208a79d299955e05c5d4b29ab3362ca}{do\-\_\-aidel} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{mobact_8cpp_a0b08ea8084ff7f2a59d200d9278fae1e}{do\-\_\-aitype} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+std\-::map$<$ int, \hyperlink{structmobile__ai}{mobile\-\_\-ai} $>$ \hyperlink{mobact_8cpp_a0ceb050e53a82d8dec4a75723cba0fee}{mob\-\_\-ai\-\_\-list}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{mobact_8cpp_a0b96d3fdaa32878ca68cef8ad8720b34}{\index{mobact.\-cpp@{mobact.\-cpp}!J\-A\-I\-L\-B\-A\-G\-\_\-\-D\-E\-S\-C\-\_\-\-P\-R\-E\-P\-E\-N\-D@{J\-A\-I\-L\-B\-A\-G\-\_\-\-D\-E\-S\-C\-\_\-\-P\-R\-E\-P\-E\-N\-D}}
+\index{J\-A\-I\-L\-B\-A\-G\-\_\-\-D\-E\-S\-C\-\_\-\-P\-R\-E\-P\-E\-N\-D@{J\-A\-I\-L\-B\-A\-G\-\_\-\-D\-E\-S\-C\-\_\-\-P\-R\-E\-P\-E\-N\-D}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{J\-A\-I\-L\-B\-A\-G\-\_\-\-D\-E\-S\-C\-\_\-\-P\-R\-E\-P\-E\-N\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define J\-A\-I\-L\-B\-A\-G\-\_\-\-D\-E\-S\-C\-\_\-\-P\-R\-E\-P\-E\-N\-D~\char`\"{}Belongings for\char`\"{}}}\label{mobact_8cpp_a0b96d3fdaa32878ca68cef8ad8720b34}
+\hypertarget{mobact_8cpp_a1ad02b52898cc5bc13a21bdb56bc6e20}{\index{mobact.\-cpp@{mobact.\-cpp}!M\-A\-R\-K\-E\-T\-P\-L\-A\-C\-E\-\_\-\-D\-U\-M\-P@{M\-A\-R\-K\-E\-T\-P\-L\-A\-C\-E\-\_\-\-D\-U\-M\-P}}
+\index{M\-A\-R\-K\-E\-T\-P\-L\-A\-C\-E\-\_\-\-D\-U\-M\-P@{M\-A\-R\-K\-E\-T\-P\-L\-A\-C\-E\-\_\-\-D\-U\-M\-P}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{M\-A\-R\-K\-E\-T\-P\-L\-A\-C\-E\-\_\-\-D\-U\-M\-P}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-R\-K\-E\-T\-P\-L\-A\-C\-E\-\_\-\-D\-U\-M\-P~75555}}\label{mobact_8cpp_a1ad02b52898cc5bc13a21bdb56bc6e20}
+\hypertarget{mobact_8cpp_a80c680b6bcc93f55ffe4febf181f59ef}{\index{mobact.\-cpp@{mobact.\-cpp}!M\-O\-B\-\_\-\-I\-G\-N\-O\-R\-E\-S\-\_\-\-D\-O\-O\-R\-S@{M\-O\-B\-\_\-\-I\-G\-N\-O\-R\-E\-S\-\_\-\-D\-O\-O\-R\-S}}
+\index{M\-O\-B\-\_\-\-I\-G\-N\-O\-R\-E\-S\-\_\-\-D\-O\-O\-R\-S@{M\-O\-B\-\_\-\-I\-G\-N\-O\-R\-E\-S\-\_\-\-D\-O\-O\-R\-S}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{M\-O\-B\-\_\-\-I\-G\-N\-O\-R\-E\-S\-\_\-\-D\-O\-O\-R\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-O\-B\-\_\-\-I\-G\-N\-O\-R\-E\-S\-\_\-\-D\-O\-O\-R\-S~-\/1}}\label{mobact_8cpp_a80c680b6bcc93f55ffe4febf181f59ef}
+
+
+\subsection{Function Documentation}
+\hypertarget{mobact_8cpp_ac114d63e289707609f583936ea477a11}{\index{mobact.\-cpp@{mobact.\-cpp}!acquire\-\_\-archer\-\_\-target@{acquire\-\_\-archer\-\_\-target}}
+\index{acquire\-\_\-archer\-\_\-target@{acquire\-\_\-archer\-\_\-target}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{acquire\-\_\-archer\-\_\-target}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A}$\ast$ acquire\-\_\-archer\-\_\-target (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}}\label{mobact_8cpp_ac114d63e289707609f583936ea477a11}
+\hypertarget{mobact_8cpp_a0596e7cfa1a1669685fa5b7a966b2884}{\index{mobact.\-cpp@{mobact.\-cpp}!acquire\-\_\-distant\-\_\-target@{acquire\-\_\-distant\-\_\-target}}
+\index{acquire\-\_\-distant\-\_\-target@{acquire\-\_\-distant\-\_\-target}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{acquire\-\_\-distant\-\_\-target}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A}$\ast$ acquire\-\_\-distant\-\_\-target (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}}\label{mobact_8cpp_a0596e7cfa1a1669685fa5b7a966b2884}
+\hypertarget{mobact_8cpp_aae05ea577698977ab20c329eb7a1d409}{\index{mobact.\-cpp@{mobact.\-cpp}!activate\-\_\-resets@{activate\-\_\-resets}}
+\index{activate\-\_\-resets@{activate\-\_\-resets}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{activate\-\_\-resets}]{\setlength{\rightskip}{0pt plus 5cm}void activate\-\_\-resets (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{mobact_8cpp_aae05ea577698977ab20c329eb7a1d409}
+\hypertarget{mobact_8cpp_a489ac83795247b21ca9ba0513b69ff1d}{\index{mobact.\-cpp@{mobact.\-cpp}!add\-\_\-attacker@{add\-\_\-attacker}}
+\index{add\-\_\-attacker@{add\-\_\-attacker}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{add\-\_\-attacker}]{\setlength{\rightskip}{0pt plus 5cm}void add\-\_\-attacker (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{victim, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{threat}
+\end{DoxyParamCaption}
+)}}\label{mobact_8cpp_a489ac83795247b21ca9ba0513b69ff1d}
+\hypertarget{mobact_8cpp_aa693d2cca8aa248c8984ccf9dfb80074}{\index{mobact.\-cpp@{mobact.\-cpp}!add\-\_\-threat@{add\-\_\-threat}}
+\index{add\-\_\-threat@{add\-\_\-threat}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{add\-\_\-threat}]{\setlength{\rightskip}{0pt plus 5cm}void add\-\_\-threat (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{victim, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{threat, }
+\item[{int}]{amount}
+\end{DoxyParamCaption}
+)}}\label{mobact_8cpp_aa693d2cca8aa248c8984ccf9dfb80074}
+\hypertarget{mobact_8cpp_a35e6ac45e9a91e002e94a2f349939337}{\index{mobact.\-cpp@{mobact.\-cpp}!ai\-\_\-strength\-\_\-check@{ai\-\_\-strength\-\_\-check}}
+\index{ai\-\_\-strength\-\_\-check@{ai\-\_\-strength\-\_\-check}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{ai\-\_\-strength\-\_\-check}]{\setlength{\rightskip}{0pt plus 5cm}void ai\-\_\-strength\-\_\-check (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{threat, }
+\item[{double $\ast$}]{ally\-\_\-strength, }
+\item[{double $\ast$}]{enemy\-\_\-strength}
+\end{DoxyParamCaption}
+)}}\label{mobact_8cpp_a35e6ac45e9a91e002e94a2f349939337}
+\hypertarget{mobact_8cpp_a3fcc7c908b1b1665795dc855262f6a6d}{\index{mobact.\-cpp@{mobact.\-cpp}!attacker\-\_\-from\-\_\-char@{attacker\-\_\-from\-\_\-char}}
+\index{attacker\-\_\-from\-\_\-char@{attacker\-\_\-from\-\_\-char}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{attacker\-\_\-from\-\_\-char}]{\setlength{\rightskip}{0pt plus 5cm}void attacker\-\_\-from\-\_\-char (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf A\-T\-T\-A\-C\-K\-E\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{att}
+\end{DoxyParamCaption}
+)}}\label{mobact_8cpp_a3fcc7c908b1b1665795dc855262f6a6d}
+\hypertarget{mobact_8cpp_a3fe20db21708a127aea3613d4a5652e6}{\index{mobact.\-cpp@{mobact.\-cpp}!combat\-\_\-routine@{combat\-\_\-routine}}
+\index{combat\-\_\-routine@{combat\-\_\-routine}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{combat\-\_\-routine}]{\setlength{\rightskip}{0pt plus 5cm}int combat\-\_\-routine (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{mobact_8cpp_a3fe20db21708a127aea3613d4a5652e6}
+\hypertarget{mobact_8cpp_a767d59c0f697513365eebeb8d84f066f}{\index{mobact.\-cpp@{mobact.\-cpp}!common\-\_\-guard@{common\-\_\-guard}}
+\index{common\-\_\-guard@{common\-\_\-guard}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{common\-\_\-guard}]{\setlength{\rightskip}{0pt plus 5cm}void common\-\_\-guard (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{mobact_8cpp_a767d59c0f697513365eebeb8d84f066f}
+\hypertarget{mobact_8cpp_a77034669e3349e7c94eb0ee020712801}{\index{mobact.\-cpp@{mobact.\-cpp}!could\-\_\-attack@{could\-\_\-attack}}
+\index{could\-\_\-attack@{could\-\_\-attack}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{could\-\_\-attack}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} could\-\_\-attack (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{const {\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{target}
+\end{DoxyParamCaption}
+)}}\label{mobact_8cpp_a77034669e3349e7c94eb0ee020712801}
+\hypertarget{mobact_8cpp_a7cfde649c5cd60acbc5fa7c34ffd9042}{\index{mobact.\-cpp@{mobact.\-cpp}!do\-\_\-aiadd@{do\-\_\-aiadd}}
+\index{do\-\_\-aiadd@{do\-\_\-aiadd}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{do\-\_\-aiadd}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-aiadd (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{mobact_8cpp_a7cfde649c5cd60acbc5fa7c34ffd9042}
+\hypertarget{mobact_8cpp_ab208a79d299955e05c5d4b29ab3362ca}{\index{mobact.\-cpp@{mobact.\-cpp}!do\-\_\-aidel@{do\-\_\-aidel}}
+\index{do\-\_\-aidel@{do\-\_\-aidel}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{do\-\_\-aidel}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-aidel (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{mobact_8cpp_ab208a79d299955e05c5d4b29ab3362ca}
+\hypertarget{mobact_8cpp_a23e8fc7cee2d80b8391523aa735c9cf2}{\index{mobact.\-cpp@{mobact.\-cpp}!do\-\_\-aistat@{do\-\_\-aistat}}
+\index{do\-\_\-aistat@{do\-\_\-aistat}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{do\-\_\-aistat}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-aistat (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{mobact_8cpp_a23e8fc7cee2d80b8391523aa735c9cf2}
+\hypertarget{mobact_8cpp_a0b08ea8084ff7f2a59d200d9278fae1e}{\index{mobact.\-cpp@{mobact.\-cpp}!do\-\_\-aitype@{do\-\_\-aitype}}
+\index{do\-\_\-aitype@{do\-\_\-aitype}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{do\-\_\-aitype}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-aitype (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{mobact_8cpp_a0b08ea8084ff7f2a59d200d9278fae1e}
+\hypertarget{mobact_8cpp_a0501f6996f295bc0f0611cf9c690e241}{\index{mobact.\-cpp@{mobact.\-cpp}!do\-\_\-would@{do\-\_\-would}}
+\index{do\-\_\-would@{do\-\_\-would}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{do\-\_\-would}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-would (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{mobact_8cpp_a0501f6996f295bc0f0611cf9c690e241}
+\hypertarget{mobact_8cpp_a2ac154f9b08070613f835830a3b7f1dd}{\index{mobact.\-cpp@{mobact.\-cpp}!enforcer@{enforcer}}
+\index{enforcer@{enforcer}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{enforcer}]{\setlength{\rightskip}{0pt plus 5cm}int enforcer (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{crim, }
+\item[{int}]{will\-\_\-act, }
+\item[{int}]{witness}
+\end{DoxyParamCaption}
+)}}\label{mobact_8cpp_a2ac154f9b08070613f835830a3b7f1dd}
+\hypertarget{mobact_8cpp_ab598c244121b389ff47f6e43dbfed2a5}{\index{mobact.\-cpp@{mobact.\-cpp}!enforcer\-\_\-hood\-\_\-check@{enforcer\-\_\-hood\-\_\-check}}
+\index{enforcer\-\_\-hood\-\_\-check@{enforcer\-\_\-hood\-\_\-check}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{enforcer\-\_\-hood\-\_\-check}]{\setlength{\rightskip}{0pt plus 5cm}int enforcer\-\_\-hood\-\_\-check (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{mobact_8cpp_ab598c244121b389ff47f6e43dbfed2a5}
+\hypertarget{mobact_8cpp_aba62ee25b0cf7b65d84a14df21afb3f8}{\index{mobact.\-cpp@{mobact.\-cpp}!enforcer\-\_\-weapon\-\_\-check@{enforcer\-\_\-weapon\-\_\-check}}
+\index{enforcer\-\_\-weapon\-\_\-check@{enforcer\-\_\-weapon\-\_\-check}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{enforcer\-\_\-weapon\-\_\-check}]{\setlength{\rightskip}{0pt plus 5cm}int enforcer\-\_\-weapon\-\_\-check (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{mobact_8cpp_aba62ee25b0cf7b65d84a14df21afb3f8}
+\hypertarget{mobact_8cpp_aa4c1761953a2c615a3e66c49f8f0d3fe}{\index{mobact.\-cpp@{mobact.\-cpp}!evaluate\-\_\-threats@{evaluate\-\_\-threats}}
+\index{evaluate\-\_\-threats@{evaluate\-\_\-threats}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{evaluate\-\_\-threats}]{\setlength{\rightskip}{0pt plus 5cm}int evaluate\-\_\-threats (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{mobact_8cpp_aa4c1761953a2c615a3e66c49f8f0d3fe}
+\hypertarget{mobact_8cpp_a946b84ffee835513d8c477e9817d78a0}{\index{mobact.\-cpp@{mobact.\-cpp}!fail\-\_\-morale@{fail\-\_\-morale}}
+\index{fail\-\_\-morale@{fail\-\_\-morale}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{fail\-\_\-morale}]{\setlength{\rightskip}{0pt plus 5cm}int fail\-\_\-morale (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{threat, }
+\item[{{\bf bool}}]{fight, }
+\item[{{\bf bool}}]{group\-\_\-test}
+\end{DoxyParamCaption}
+)}}\label{mobact_8cpp_a946b84ffee835513d8c477e9817d78a0}
+\hypertarget{mobact_8cpp_a99d3ec223c38dd2b4c6aab417dbbc735}{\index{mobact.\-cpp@{mobact.\-cpp}!falling\-\_\-back@{falling\-\_\-back}}
+\index{falling\-\_\-back@{falling\-\_\-back}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{falling\-\_\-back}]{\setlength{\rightskip}{0pt plus 5cm}int falling\-\_\-back (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{mobact_8cpp_a99d3ec223c38dd2b4c6aab417dbbc735}
+\hypertarget{mobact_8cpp_ad2bf1b4d28d838af84d11d4121912ca8}{\index{mobact.\-cpp@{mobact.\-cpp}!find\-\_\-mob\-\_\-in\-\_\-room@{find\-\_\-mob\-\_\-in\-\_\-room}}
+\index{find\-\_\-mob\-\_\-in\-\_\-room@{find\-\_\-mob\-\_\-in\-\_\-room}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{find\-\_\-mob\-\_\-in\-\_\-room}]{\setlength{\rightskip}{0pt plus 5cm}int find\-\_\-mob\-\_\-in\-\_\-room (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{mobact_8cpp_ad2bf1b4d28d838af84d11d4121912ca8}
+\hypertarget{mobact_8cpp_a0154235580ecbeca9f592d4f5246406a}{\index{mobact.\-cpp@{mobact.\-cpp}!find\-\_\-obj\-\_\-in\-\_\-room@{find\-\_\-obj\-\_\-in\-\_\-room}}
+\index{find\-\_\-obj\-\_\-in\-\_\-room@{find\-\_\-obj\-\_\-in\-\_\-room}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{find\-\_\-obj\-\_\-in\-\_\-room}]{\setlength{\rightskip}{0pt plus 5cm}int find\-\_\-obj\-\_\-in\-\_\-room (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{mobact_8cpp_a0154235580ecbeca9f592d4f5246406a}
+\hypertarget{mobact_8cpp_a798cabc0e4aab51240e2b68554e991a8}{\index{mobact.\-cpp@{mobact.\-cpp}!has\-\_\-weapon@{has\-\_\-weapon}}
+\index{has\-\_\-weapon@{has\-\_\-weapon}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{has\-\_\-weapon}]{\setlength{\rightskip}{0pt plus 5cm}int has\-\_\-weapon (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{mobact_8cpp_a798cabc0e4aab51240e2b68554e991a8}
+\hypertarget{mobact_8cpp_ab9c469c230a52be31e66c2b4f8a2efed}{\index{mobact.\-cpp@{mobact.\-cpp}!is\-\_\-combat\-\_\-ready@{is\-\_\-combat\-\_\-ready}}
+\index{is\-\_\-combat\-\_\-ready@{is\-\_\-combat\-\_\-ready}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{is\-\_\-combat\-\_\-ready}]{\setlength{\rightskip}{0pt plus 5cm}int is\-\_\-combat\-\_\-ready (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{mobact_8cpp_ab9c469c230a52be31e66c2b4f8a2efed}
+\hypertarget{mobact_8cpp_a34674725a608ed18e2914d8ff6da2675}{\index{mobact.\-cpp@{mobact.\-cpp}!is\-\_\-threat@{is\-\_\-threat}}
+\index{is\-\_\-threat@{is\-\_\-threat}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{is\-\_\-threat}]{\setlength{\rightskip}{0pt plus 5cm}int is\-\_\-threat (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{tch}
+\end{DoxyParamCaption}
+)}}\label{mobact_8cpp_a34674725a608ed18e2914d8ff6da2675}
+\hypertarget{mobact_8cpp_a8e3d23f975cdc5e6e5e7b9990d4d9e3e}{\index{mobact.\-cpp@{mobact.\-cpp}!is\-\_\-wanted\-\_\-in\-\_\-area@{is\-\_\-wanted\-\_\-in\-\_\-area}}
+\index{is\-\_\-wanted\-\_\-in\-\_\-area@{is\-\_\-wanted\-\_\-in\-\_\-area}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{is\-\_\-wanted\-\_\-in\-\_\-area}]{\setlength{\rightskip}{0pt plus 5cm}int is\-\_\-wanted\-\_\-in\-\_\-area (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{mobact_8cpp_a8e3d23f975cdc5e6e5e7b9990d4d9e3e}
+\hypertarget{mobact_8cpp_a5dfdf0fc27bb5f45d92bef0743121332}{\index{mobact.\-cpp@{mobact.\-cpp}!jailer\-\_\-func@{jailer\-\_\-func}}
+\index{jailer\-\_\-func@{jailer\-\_\-func}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{jailer\-\_\-func}]{\setlength{\rightskip}{0pt plus 5cm}void jailer\-\_\-func (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{mobact_8cpp_a5dfdf0fc27bb5f45d92bef0743121332}
+\hypertarget{mobact_8cpp_ac74f5a9f516bb35cd08cf1cbf9ab03f0}{\index{mobact.\-cpp@{mobact.\-cpp}!miscellaneous\-\_\-routine@{miscellaneous\-\_\-routine}}
+\index{miscellaneous\-\_\-routine@{miscellaneous\-\_\-routine}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{miscellaneous\-\_\-routine}]{\setlength{\rightskip}{0pt plus 5cm}int miscellaneous\-\_\-routine (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{mobact_8cpp_ac74f5a9f516bb35cd08cf1cbf9ab03f0}
+\hypertarget{mobact_8cpp_a773ee6335b3fcc691a429ee4b97bd15b}{\index{mobact.\-cpp@{mobact.\-cpp}!mob\-\_\-remembers\-\_\-whom@{mob\-\_\-remembers\-\_\-whom}}
+\index{mob\-\_\-remembers\-\_\-whom@{mob\-\_\-remembers\-\_\-whom}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{mob\-\_\-remembers\-\_\-whom}]{\setlength{\rightskip}{0pt plus 5cm}int mob\-\_\-remembers\-\_\-whom (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{name, }
+\item[{int}]{mode}
+\end{DoxyParamCaption}
+)}}\label{mobact_8cpp_a773ee6335b3fcc691a429ee4b97bd15b}
+\hypertarget{mobact_8cpp_abe2f19197ee07ee4b0e0a7832775cc73}{\index{mobact.\-cpp@{mobact.\-cpp}!mob\-\_\-wander@{mob\-\_\-wander}}
+\index{mob\-\_\-wander@{mob\-\_\-wander}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{mob\-\_\-wander}]{\setlength{\rightskip}{0pt plus 5cm}int mob\-\_\-wander (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{mobact_8cpp_abe2f19197ee07ee4b0e0a7832775cc73}
+\hypertarget{mobact_8cpp_a573d47f172bf2625f1d808d4b8d184ae}{\index{mobact.\-cpp@{mobact.\-cpp}!mob\-\_\-weather\-\_\-reaction@{mob\-\_\-weather\-\_\-reaction}}
+\index{mob\-\_\-weather\-\_\-reaction@{mob\-\_\-weather\-\_\-reaction}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{mob\-\_\-weather\-\_\-reaction}]{\setlength{\rightskip}{0pt plus 5cm}int mob\-\_\-weather\-\_\-reaction (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{mobact_8cpp_a573d47f172bf2625f1d808d4b8d184ae}
+\hypertarget{mobact_8cpp_ab6c04b34d3e91510963b64a9fa98bdc4}{\index{mobact.\-cpp@{mobact.\-cpp}!mobile\-\_\-routines@{mobile\-\_\-routines}}
+\index{mobile\-\_\-routines@{mobile\-\_\-routines}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{mobile\-\_\-routines}]{\setlength{\rightskip}{0pt plus 5cm}void mobile\-\_\-routines (
+\begin{DoxyParamCaption}
+\item[{int}]{pulse}
+\end{DoxyParamCaption}
+)}}\label{mobact_8cpp_ab6c04b34d3e91510963b64a9fa98bdc4}
+\hypertarget{mobact_8cpp_a6c6af68708011e43a238f5e1071b9581}{\index{mobact.\-cpp@{mobact.\-cpp}!npc\-\_\-charge@{npc\-\_\-charge}}
+\index{npc\-\_\-charge@{npc\-\_\-charge}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{npc\-\_\-charge}]{\setlength{\rightskip}{0pt plus 5cm}int npc\-\_\-charge (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{archer}
+\end{DoxyParamCaption}
+)}}\label{mobact_8cpp_a6c6af68708011e43a238f5e1071b9581}
+\hypertarget{mobact_8cpp_ace06e6d455f150a17629a5dd29b99746}{\index{mobact.\-cpp@{mobact.\-cpp}!npc\-\_\-evasion@{npc\-\_\-evasion}}
+\index{npc\-\_\-evasion@{npc\-\_\-evasion}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{npc\-\_\-evasion}]{\setlength{\rightskip}{0pt plus 5cm}void npc\-\_\-evasion (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{dir}
+\end{DoxyParamCaption}
+)}}\label{mobact_8cpp_ace06e6d455f150a17629a5dd29b99746}
+\hypertarget{mobact_8cpp_a79dfc26ef9a7999eef117877bb613725}{\index{mobact.\-cpp@{mobact.\-cpp}!npc\-\_\-ranged\-\_\-response@{npc\-\_\-ranged\-\_\-response}}
+\index{npc\-\_\-ranged\-\_\-response@{npc\-\_\-ranged\-\_\-response}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{npc\-\_\-ranged\-\_\-response}]{\setlength{\rightskip}{0pt plus 5cm}void npc\-\_\-ranged\-\_\-response (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{npc, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{retal\-\_\-ch}
+\end{DoxyParamCaption}
+)}}\label{mobact_8cpp_a79dfc26ef9a7999eef117877bb613725}
+\hypertarget{mobact_8cpp_aa920685185f7f602f4b7a9d93453c174}{\index{mobact.\-cpp@{mobact.\-cpp}!npc\-\_\-ranged\-\_\-retaliation@{npc\-\_\-ranged\-\_\-retaliation}}
+\index{npc\-\_\-ranged\-\_\-retaliation@{npc\-\_\-ranged\-\_\-retaliation}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{npc\-\_\-ranged\-\_\-retaliation}]{\setlength{\rightskip}{0pt plus 5cm}void npc\-\_\-ranged\-\_\-retaliation (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{target, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{mobact_8cpp_aa920685185f7f602f4b7a9d93453c174}
+\hypertarget{mobact_8cpp_a1b588a23ab36508c1c0a0b6d44d9f971}{\index{mobact.\-cpp@{mobact.\-cpp}!predatory\-\_\-mobile@{predatory\-\_\-mobile}}
+\index{predatory\-\_\-mobile@{predatory\-\_\-mobile}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{predatory\-\_\-mobile}]{\setlength{\rightskip}{0pt plus 5cm}int predatory\-\_\-mobile (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{mobact_8cpp_a1b588a23ab36508c1c0a0b6d44d9f971}
+\hypertarget{mobact_8cpp_a33bba84ea5edadeb6a6d42b4a633a75e}{\index{mobact.\-cpp@{mobact.\-cpp}!random\-\_\-direction@{random\-\_\-direction}}
+\index{random\-\_\-direction@{random\-\_\-direction}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{random\-\_\-direction}]{\setlength{\rightskip}{0pt plus 5cm}void random\-\_\-direction (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{dir, }
+\item[{int}]{times}
+\end{DoxyParamCaption}
+)}}\label{mobact_8cpp_a33bba84ea5edadeb6a6d42b4a633a75e}
+\hypertarget{mobact_8cpp_a924e397dcc8cc9862667997777be9d4b}{\index{mobact.\-cpp@{mobact.\-cpp}!ready\-\_\-melee\-\_\-weapons@{ready\-\_\-melee\-\_\-weapons}}
+\index{ready\-\_\-melee\-\_\-weapons@{ready\-\_\-melee\-\_\-weapons}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{ready\-\_\-melee\-\_\-weapons}]{\setlength{\rightskip}{0pt plus 5cm}void ready\-\_\-melee\-\_\-weapons (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{mobact_8cpp_a924e397dcc8cc9862667997777be9d4b}
+\hypertarget{mobact_8cpp_a131fc6cfcceec8c03b02c74662b7554d}{\index{mobact.\-cpp@{mobact.\-cpp}!remove\-\_\-attacker@{remove\-\_\-attacker}}
+\index{remove\-\_\-attacker@{remove\-\_\-attacker}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{remove\-\_\-attacker}]{\setlength{\rightskip}{0pt plus 5cm}void remove\-\_\-attacker (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{victim, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{threat}
+\end{DoxyParamCaption}
+)}}\label{mobact_8cpp_a131fc6cfcceec8c03b02c74662b7554d}
+\hypertarget{mobact_8cpp_ab53dca2edf23ca4edacdee6d6aabb0f2}{\index{mobact.\-cpp@{mobact.\-cpp}!remove\-\_\-threat@{remove\-\_\-threat}}
+\index{remove\-\_\-threat@{remove\-\_\-threat}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{remove\-\_\-threat}]{\setlength{\rightskip}{0pt plus 5cm}void remove\-\_\-threat (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{victim, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{threat}
+\end{DoxyParamCaption}
+)}}\label{mobact_8cpp_ab53dca2edf23ca4edacdee6d6aabb0f2}
+\hypertarget{mobact_8cpp_a54af2c177e2d443016a44f1a292478e0}{\index{mobact.\-cpp@{mobact.\-cpp}!rescue\-\_\-routine@{rescue\-\_\-routine}}
+\index{rescue\-\_\-routine@{rescue\-\_\-routine}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{rescue\-\_\-routine}]{\setlength{\rightskip}{0pt plus 5cm}int rescue\-\_\-routine (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{mobact_8cpp_a54af2c177e2d443016a44f1a292478e0}
+\hypertarget{mobact_8cpp_a5dd817957022171b4472a6c55d698305}{\index{mobact.\-cpp@{mobact.\-cpp}!shooter\-\_\-routine@{shooter\-\_\-routine}}
+\index{shooter\-\_\-routine@{shooter\-\_\-routine}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{shooter\-\_\-routine}]{\setlength{\rightskip}{0pt plus 5cm}int shooter\-\_\-routine (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{mobact_8cpp_a5dd817957022171b4472a6c55d698305}
+\hypertarget{mobact_8cpp_a862127dc66301b3954a2f82393a8156f}{\index{mobact.\-cpp@{mobact.\-cpp}!survival\-\_\-routine@{survival\-\_\-routine}}
+\index{survival\-\_\-routine@{survival\-\_\-routine}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{survival\-\_\-routine}]{\setlength{\rightskip}{0pt plus 5cm}int survival\-\_\-routine (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{mobact_8cpp_a862127dc66301b3954a2f82393a8156f}
+\hypertarget{mobact_8cpp_afa3dc19d9d63e6e4eb3d8e6d6aef926c}{\index{mobact.\-cpp@{mobact.\-cpp}!target\-\_\-acquisition@{target\-\_\-acquisition}}
+\index{target\-\_\-acquisition@{target\-\_\-acquisition}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{target\-\_\-acquisition}]{\setlength{\rightskip}{0pt plus 5cm}int target\-\_\-acquisition (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{mobact_8cpp_afa3dc19d9d63e6e4eb3d8e6d6aef926c}
+\hypertarget{mobact_8cpp_a7d0cfab3ad03744eda19e55426a13eda}{\index{mobact.\-cpp@{mobact.\-cpp}!threat\-\_\-from\-\_\-char@{threat\-\_\-from\-\_\-char}}
+\index{threat\-\_\-from\-\_\-char@{threat\-\_\-from\-\_\-char}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{threat\-\_\-from\-\_\-char}]{\setlength{\rightskip}{0pt plus 5cm}void threat\-\_\-from\-\_\-char (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf T\-H\-R\-E\-A\-T\-\_\-\-D\-A\-T\-A} $\ast$}]{att}
+\end{DoxyParamCaption}
+)}}\label{mobact_8cpp_a7d0cfab3ad03744eda19e55426a13eda}
+\hypertarget{mobact_8cpp_af5c33469a5e78d85be4906351bf1b182}{\index{mobact.\-cpp@{mobact.\-cpp}!unready\-\_\-weapons@{unready\-\_\-weapons}}
+\index{unready\-\_\-weapons@{unready\-\_\-weapons}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{unready\-\_\-weapons}]{\setlength{\rightskip}{0pt plus 5cm}void unready\-\_\-weapons (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{mobact_8cpp_af5c33469a5e78d85be4906351bf1b182}
+\hypertarget{mobact_8cpp_a06e1882ff90a21a68567d19178c74858}{\index{mobact.\-cpp@{mobact.\-cpp}!wildlife\-\_\-check@{wildlife\-\_\-check}}
+\index{wildlife\-\_\-check@{wildlife\-\_\-check}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{wildlife\-\_\-check}]{\setlength{\rightskip}{0pt plus 5cm}int wildlife\-\_\-check (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{target}
+\end{DoxyParamCaption}
+)}}\label{mobact_8cpp_a06e1882ff90a21a68567d19178c74858}
+\hypertarget{mobact_8cpp_aff35e2020fb479fadf4b6ac121691984}{\index{mobact.\-cpp@{mobact.\-cpp}!would\-\_\-attack@{would\-\_\-attack}}
+\index{would\-\_\-attack@{would\-\_\-attack}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{would\-\_\-attack}]{\setlength{\rightskip}{0pt plus 5cm}int would\-\_\-attack (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{tch}
+\end{DoxyParamCaption}
+)}}\label{mobact_8cpp_aff35e2020fb479fadf4b6ac121691984}
+
+
+\subsection{Variable Documentation}
+\hypertarget{mobact_8cpp_a0ceb050e53a82d8dec4a75723cba0fee}{\index{mobact.\-cpp@{mobact.\-cpp}!mob\-\_\-ai\-\_\-list@{mob\-\_\-ai\-\_\-list}}
+\index{mob\-\_\-ai\-\_\-list@{mob\-\_\-ai\-\_\-list}!mobact.cpp@{mobact.\-cpp}}
+\subsubsection[{mob\-\_\-ai\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$int, {\bf mobile\-\_\-ai}$>$ mob\-\_\-ai\-\_\-list}}\label{mobact_8cpp_a0ceb050e53a82d8dec4a75723cba0fee}

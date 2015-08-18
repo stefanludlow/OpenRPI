@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -90,84 +90,502 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Block Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="structs_8h_source.html">structs.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a86fa6c69e85d6d72a39c2bede6e283a6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a86fa6c69e85d6d72a39c2bede6e283a6"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Block</b> (int nVirtual)</td></tr>
+<tr class="memitem:aaaf9bb7522544e166bbe22c762f1cd2e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBlock.html#aaaf9bb7522544e166bbe22c762f1cd2e">Block</a> (void)</td></tr>
+<tr class="separator:aaaf9bb7522544e166bbe22c762f1cd2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86fa6c69e85d6d72a39c2bede6e283a6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBlock.html#a86fa6c69e85d6d72a39c2bede6e283a6">Block</a> (int nVirtual)</td></tr>
 <tr class="separator:a86fa6c69e85d6d72a39c2bede6e283a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ce7c14cd53f4bd28d88c49e818efac6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4ce7c14cd53f4bd28d88c49e818efac6"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>initialize</b> (void)</td></tr>
+<tr class="memitem:a3fb080c59a4a608bfe919a713060f7ec"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBlock.html#a3fb080c59a4a608bfe919a713060f7ec">~Block</a> (void)</td></tr>
+<tr class="separator:a3fb080c59a4a608bfe919a713060f7ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ce7c14cd53f4bd28d88c49e818efac6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBlock.html#a4ce7c14cd53f4bd28d88c49e818efac6">initialize</a> (void)</td></tr>
 <tr class="separator:a4ce7c14cd53f4bd28d88c49e818efac6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2007116298de0c700f37a14096569816"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2007116298de0c700f37a14096569816"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>clanName</b> (int systemId, int clan)</td></tr>
+<tr class="memitem:a2007116298de0c700f37a14096569816"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBlock.html#a2007116298de0c700f37a14096569816">clanName</a> (int systemId, int clan)</td></tr>
 <tr class="separator:a2007116298de0c700f37a14096569816"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9223f4b110b49f645fed119f4f25e48e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9223f4b110b49f645fed119f4f25e48e"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>shortOwn</b> (int systemId)</td></tr>
+<tr class="memitem:a9223f4b110b49f645fed119f4f25e48e"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBlock.html#a9223f4b110b49f645fed119f4f25e48e">shortOwn</a> (int systemId)</td></tr>
 <tr class="separator:a9223f4b110b49f645fed119f4f25e48e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abcb33df5c14f06df6a16b6ee5a337bdd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abcb33df5c14f06df6a16b6ee5a337bdd"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>status</b> (int systemId, int hoodLoyalty, int heartLoyalty, char *hoodName)</td></tr>
+<tr class="memitem:abcb33df5c14f06df6a16b6ee5a337bdd"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBlock.html#abcb33df5c14f06df6a16b6ee5a337bdd">status</a> (int systemId, int hoodLoyalty, int heartLoyalty, char *hoodName)</td></tr>
 <tr class="separator:abcb33df5c14f06df6a16b6ee5a337bdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1fb255ff20b8b4ad71daf96fe8434c0d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1fb255ff20b8b4ad71daf96fe8434c0d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>updateBeat</b> (int hoodLoyalty, int heartLoyalty, bool isTurn)</td></tr>
+<tr class="memitem:a1fb255ff20b8b4ad71daf96fe8434c0d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBlock.html#a1fb255ff20b8b4ad71daf96fe8434c0d">updateBeat</a> (int hoodLoyalty, int heartLoyalty, <a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a> isTurn)</td></tr>
 <tr class="separator:a1fb255ff20b8b4ad71daf96fe8434c0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd93660e205566d69a0a43987944a3b5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acd93660e205566d69a0a43987944a3b5"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>contestBlock</b> ()</td></tr>
+<tr class="memitem:acd93660e205566d69a0a43987944a3b5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBlock.html#acd93660e205566d69a0a43987944a3b5">contestBlock</a> ()</td></tr>
 <tr class="separator:acd93660e205566d69a0a43987944a3b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acacdd9c24b1e8725f6e88eddd5d4384a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acacdd9c24b1e8725f6e88eddd5d4384a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>decayBlock</b> (int hoodLoyalty, int heartLoyalty, bool isTurn)</td></tr>
+<tr class="memitem:acacdd9c24b1e8725f6e88eddd5d4384a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBlock.html#acacdd9c24b1e8725f6e88eddd5d4384a">decayBlock</a> (int hoodLoyalty, int heartLoyalty, <a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a> isTurn)</td></tr>
 <tr class="separator:acacdd9c24b1e8725f6e88eddd5d4384a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad852050bf8d0b0a45606c7c81eff5e01"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad852050bf8d0b0a45606c7c81eff5e01"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>refreshBlock</b> ()</td></tr>
+<tr class="memitem:ad852050bf8d0b0a45606c7c81eff5e01"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBlock.html#ad852050bf8d0b0a45606c7c81eff5e01">refreshBlock</a> ()</td></tr>
 <tr class="separator:ad852050bf8d0b0a45606c7c81eff5e01"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76ab5cc26d168222de57266857087f3f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a76ab5cc26d168222de57266857087f3f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>saveBlock</b> ()</td></tr>
+<tr class="memitem:a76ab5cc26d168222de57266857087f3f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBlock.html#a76ab5cc26d168222de57266857087f3f">saveBlock</a> ()</td></tr>
 <tr class="separator:a76ab5cc26d168222de57266857087f3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4f51b15f69ffe16d79a37eba197f487"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad4f51b15f69ffe16d79a37eba197f487"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>clanPosition</b> (char *clanName, int systemId)</td></tr>
+<tr class="memitem:ad4f51b15f69ffe16d79a37eba197f487"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBlock.html#ad4f51b15f69ffe16d79a37eba197f487">clanPosition</a> (char *<a class="el" href="classBlock.html#a2007116298de0c700f37a14096569816">clanName</a>, int systemId)</td></tr>
 <tr class="separator:ad4f51b15f69ffe16d79a37eba197f487"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1b293eaf069756ceb86282c7d3a3715"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae1b293eaf069756ceb86282c7d3a3715"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>sufferViolence</b> (int clanId)</td></tr>
+<tr class="memitem:ae1b293eaf069756ceb86282c7d3a3715"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBlock.html#ae1b293eaf069756ceb86282c7d3a3715">sufferViolence</a> (int clanId)</td></tr>
 <tr class="separator:ae1b293eaf069756ceb86282c7d3a3715"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a7d080c6c349d17e582d63405d40ba4b7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7d080c6c349d17e582d63405d40ba4b7"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>turfRoom</b></td></tr>
+<tr class="memitem:a7d080c6c349d17e582d63405d40ba4b7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBlock.html#a7d080c6c349d17e582d63405d40ba4b7">turfRoom</a></td></tr>
 <tr class="separator:a7d080c6c349d17e582d63405d40ba4b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a174ece7b61ffa487286bdd2fc487c510"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a174ece7b61ffa487286bdd2fc487c510"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>turfHood</b></td></tr>
+<tr class="memitem:a174ece7b61ffa487286bdd2fc487c510"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBlock.html#a174ece7b61ffa487286bdd2fc487c510">turfHood</a></td></tr>
 <tr class="separator:a174ece7b61ffa487286bdd2fc487c510"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a70dbb5221f0c068954a6d43b72a54eca"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a70dbb5221f0c068954a6d43b72a54eca"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>blockLoyalty</b></td></tr>
+<tr class="memitem:a70dbb5221f0c068954a6d43b72a54eca"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBlock.html#a70dbb5221f0c068954a6d43b72a54eca">blockLoyalty</a></td></tr>
 <tr class="separator:a70dbb5221f0c068954a6d43b72a54eca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a108050a7570c5c5d1de1b83f42a265dc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a108050a7570c5c5d1de1b83f42a265dc"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>blockType</b></td></tr>
+<tr class="memitem:a108050a7570c5c5d1de1b83f42a265dc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBlock.html#a108050a7570c5c5d1de1b83f42a265dc">blockType</a></td></tr>
 <tr class="separator:a108050a7570c5c5d1de1b83f42a265dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad35fa4c92d80803155062dbd44f53af7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad35fa4c92d80803155062dbd44f53af7"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>blockImprove</b></td></tr>
+<tr class="memitem:ad35fa4c92d80803155062dbd44f53af7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBlock.html#ad35fa4c92d80803155062dbd44f53af7">blockImprove</a></td></tr>
 <tr class="separator:ad35fa4c92d80803155062dbd44f53af7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d1441123e6e6cc6d12184fc6e639186"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4d1441123e6e6cc6d12184fc6e639186"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>scores</b> [TURF_CLANS][2]</td></tr>
+<tr class="memitem:a4d1441123e6e6cc6d12184fc6e639186"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBlock.html#a4d1441123e6e6cc6d12184fc6e639186">scores</a> [<a class="el" href="structs_8h.html#acfd70c8e304a61f3865e64234b2993f7">TURF_CLANS</a>][2]</td></tr>
 <tr class="separator:a4d1441123e6e6cc6d12184fc6e639186"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab23e6326ffa446b8879cff0a7672dd9a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab23e6326ffa446b8879cff0a7672dd9a"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>actioned</b> [TURF_CLANS]</td></tr>
+<tr class="memitem:ab23e6326ffa446b8879cff0a7672dd9a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBlock.html#ab23e6326ffa446b8879cff0a7672dd9a">actioned</a> [<a class="el" href="structs_8h.html#acfd70c8e304a61f3865e64234b2993f7">TURF_CLANS</a>]</td></tr>
 <tr class="separator:ab23e6326ffa446b8879cff0a7672dd9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af4947e7e95b6a9a6ad312658f02142f3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af4947e7e95b6a9a6ad312658f02142f3"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>actionScore</b> [TURF_CLANS]</td></tr>
+<tr class="memitem:af4947e7e95b6a9a6ad312658f02142f3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBlock.html#af4947e7e95b6a9a6ad312658f02142f3">actionScore</a> [<a class="el" href="structs_8h.html#acfd70c8e304a61f3865e64234b2993f7">TURF_CLANS</a>]</td></tr>
 <tr class="separator:af4947e7e95b6a9a6ad312658f02142f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0df0d90035b29fed825caa9f8008bab"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab0df0d90035b29fed825caa9f8008bab"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>violence</b></td></tr>
+<tr class="memitem:ab0df0d90035b29fed825caa9f8008bab"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBlock.html#ab0df0d90035b29fed825caa9f8008bab">violence</a></td></tr>
 <tr class="separator:ab0df0d90035b29fed825caa9f8008bab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="aaaf9bb7522544e166bbe22c762f1cd2e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Block::Block </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a86fa6c69e85d6d72a39c2bede6e283a6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Block::Block </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nVirtual</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3fb080c59a4a608bfe919a713060f7ec"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Block::~Block </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a2007116298de0c700f37a14096569816"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Block::clanName </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>systemId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>clan</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad4f51b15f69ffe16d79a37eba197f487"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Block::clanPosition </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>clanName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>systemId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="acd93660e205566d69a0a43987944a3b5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a> Block::contestBlock </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="acacdd9c24b1e8725f6e88eddd5d4384a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Block::decayBlock </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>hoodLoyalty</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>heartLoyalty</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a>&#160;</td>
+          <td class="paramname"><em>isTurn</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4ce7c14cd53f4bd28d88c49e818efac6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Block::initialize </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad852050bf8d0b0a45606c7c81eff5e01"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Block::refreshBlock </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a76ab5cc26d168222de57266857087f3f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Block::saveBlock </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9223f4b110b49f645fed119f4f25e48e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Block::shortOwn </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>systemId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abcb33df5c14f06df6a16b6ee5a337bdd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Block::status </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>systemId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>hoodLoyalty</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>heartLoyalty</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>hoodName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae1b293eaf069756ceb86282c7d3a3715"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Block::sufferViolence </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>clanId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1fb255ff20b8b4ad71daf96fe8434c0d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Block::updateBeat </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>hoodLoyalty</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>heartLoyalty</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a>&#160;</td>
+          <td class="paramname"><em>isTurn</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="ab23e6326ffa446b8879cff0a7672dd9a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Block::actioned[<a class="el" href="structs_8h.html#acfd70c8e304a61f3865e64234b2993f7">TURF_CLANS</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af4947e7e95b6a9a6ad312658f02142f3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Block::actionScore[<a class="el" href="structs_8h.html#acfd70c8e304a61f3865e64234b2993f7">TURF_CLANS</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad35fa4c92d80803155062dbd44f53af7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Block::blockImprove</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a70dbb5221f0c068954a6d43b72a54eca"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Block::blockLoyalty</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a108050a7570c5c5d1de1b83f42a265dc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Block::blockType</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4d1441123e6e6cc6d12184fc6e639186"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Block::scores[<a class="el" href="structs_8h.html#acfd70c8e304a61f3865e64234b2993f7">TURF_CLANS</a>][2]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a174ece7b61ffa487286bdd2fc487c510"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Block::turfHood</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7d080c6c349d17e582d63405d40ba4b7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Block::turfRoom</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab0df0d90035b29fed825caa9f8008bab"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Block::violence</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="structs_8h_source.html">structs.h</a></li>
-<li>turf.cpp</li>
+<li><a class="el" href="turf_8cpp.html">turf.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 17 2015 21:26:48 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 17 2015 22:02:23 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

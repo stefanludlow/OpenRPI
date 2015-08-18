@@ -1,0 +1,2043 @@
+\hypertarget{olc_8cpp}{\section{olc.\-cpp File Reference}
+\label{olc_8cpp}\index{olc.\-cpp@{olc.\-cpp}}
+}
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$ctype.\-h$>$}\\*
+{\ttfamily \#include $<$time.\-h$>$}\\*
+{\ttfamily \#include $<$unistd.\-h$>$}\\*
+{\ttfamily \#include $<$dirent.\-h$>$}\\*
+{\ttfamily \#include $<$mysql/mysql.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}server.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}structs.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}net\-\_\-link.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}account.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}protos.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}decl.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utility.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{olc_8cpp_a15419c09c37faed53d8bff1308c62404}{R\-O\-O\-M\-\_\-\-M\-A\-X}~100000
+\item 
+\#define \hyperlink{olc_8cpp_a9038fefbff7f02c8a6e70fdae195cc83}{Z\-O\-N\-E\-\_\-\-S\-I\-Z\-E}~1000
+\item 
+\#define \hyperlink{olc_8cpp_a1b3d0481a7741b1fed73df389c9990c6}{s}(a)~\hyperlink{protos_8h_a9c8a5aa90c25577cd77fbbbab531800c}{send\-\_\-to\-\_\-char} (a \char`\"{}\textbackslash{}n\char`\"{}, ch);
+\item 
+\#define \hyperlink{olc_8cpp_afb43ff5d734718994e56a75ce0684582}{S\-T\-\_\-\-S\-K\-I\-L\-L}~0
+\item 
+\#define \hyperlink{olc_8cpp_a9adb1be72a152c15d2ecfb5c25728583}{S\-T\-\_\-\-H\-I\-T\-S}~1
+\item 
+\#define \hyperlink{olc_8cpp_af6e9c5555872acc2459272da655cb864}{S\-T\-\_\-\-D\-A\-M}~2
+\item 
+\#define \hyperlink{olc_8cpp_acff191f35ac824e01b07b09cfac2b1d6}{S\-T\-\_\-\-A\-R\-M\-O\-R}~3
+\item 
+\#define \hyperlink{olc_8cpp_a48219850e864edcea0a2cc90cb4865a6}{S\-T\-\_\-\-S\-P\-E\-E\-D}~4
+\item 
+\#define \hyperlink{olc_8cpp_ac0bee16e638a72877efa405a03367a8b}{T\-O\-K\-\_\-\-W\-O\-R\-D}~0
+\item 
+\#define \hyperlink{olc_8cpp_a6d75325443212b60baee084ea24ccc62}{T\-O\-K\-\_\-\-N\-E\-W\-L\-I\-N\-E}~1
+\item 
+\#define \hyperlink{olc_8cpp_a4713b756c63dec7741cd8d57b0d5d6f2}{T\-O\-K\-\_\-\-P\-A\-R\-A\-G\-R\-A\-P\-H}~2
+\item 
+\#define \hyperlink{olc_8cpp_ae7ea5bc2a7802523cef85bb62c0839a6}{T\-O\-K\-\_\-\-E\-N\-D}~3
+\item 
+\#define \hyperlink{olc_8cpp_a7b20bff70f0a5550a73a8573fb2894d9}{T\-O\-K\-\_\-\-S\-E\-N\-T\-E\-N\-C\-E}~4
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{olc_8cpp_aa45521b9493e0a1018fce64e8b5fb5f8}{do\-\_\-wearloc} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_a36ed171cf831916f30f93f120b3af5a0}{make\-\_\-quiet} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{olc_8cpp_adf4f147ee20e9d1d9eb6bcab40a1a93e}{do\-\_\-zmode} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_a971e2dd6aae3d6ecfbb42722f5e838ad}{do\-\_\-zlife} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_aba98a479f1df20112a76acb0ab8ea5a0}{do\-\_\-freeze} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_ab44d05e55a1b1b473de720137bdc0232}{do\-\_\-thaw} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_a9ccea102506b29cd66b5affbd1f4bd0f}{fwrite\-\_\-mobile} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$tmob, F\-I\-L\-E $\ast$fp)
+\item 
+void \hyperlink{olc_8cpp_ab98b0f8188257f395dd9ddc1ddc13e96}{mysql\-\_\-save\-\_\-vobject} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$tobj, int \hyperlink{protos_8h_a63c89c04d1feae07ca35558055155ffb}{port})
+\item 
+void \hyperlink{olc_8cpp_aac58781cf16f03fd64aaa5c4c88b345f}{fwrite\-\_\-object} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$tobj, F\-I\-L\-E $\ast$fp)
+\item 
+void \hyperlink{olc_8cpp_a1c57a114b3a889f2f4e5967e1b4374cd}{fwrite\-\_\-room} (\hyperlink{room_8h_aede519ef65d80b5242a4a28b69d5e097}{R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$troom, F\-I\-L\-E $\ast$fp)
+\item 
+void \hyperlink{olc_8cpp_a3ff9d2975528a4d744aafaa2336b9c69}{save\-\_\-affect\-\_\-reset} (F\-I\-L\-E $\ast$fp, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$tmp\-\_\-mob, \hyperlink{structs_8h_a0a9304fc5764d8448c93fdffdd64e1d2}{A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$af)
+\item 
+void \hyperlink{olc_8cpp_a164d8e1740e5ba6fbb87311acf9f9893}{fwrite\-\_\-resets} (\hyperlink{room_8h_aede519ef65d80b5242a4a28b69d5e097}{R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$troom, F\-I\-L\-E $\ast$fp)
+\item 
+void \hyperlink{olc_8cpp_a482f9d74fb8ceafd6abcd3bbce22f136}{do\-\_\-zsave} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$arg, int cmd)
+\item 
+F\-I\-L\-E $\ast$ \hyperlink{olc_8cpp_a0f8983990cfb52328db1288339bd8df6}{open\-\_\-and\-\_\-rename} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$name, int zone)
+\item 
+int \hyperlink{olc_8cpp_a6c5ac64a18777a532c510decc5fffbc4}{save\-\_\-rooms} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int zone)
+\item 
+void \hyperlink{olc_8cpp_aa39c805f57624e531384d9e262d62710}{do\-\_\-rclone} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_abec76fa1fbd5139cdfc18236357260bc}{do\-\_\-rdoor} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_ac5507162065f52f6ca38d1296a371c9b}{do\-\_\-rgate} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_a9448fccf721a5c8fd7352911d5722608}{do\-\_\-review} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_a1f06be7323d95b924a8cfbf6e86ebadd}{show\-\_\-reg\-\_\-by\-\_\-name} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$reg\-\_\-name)
+\item 
+void \hyperlink{olc_8cpp_afbe52965d7af868e39a0d7c85bcd9d41}{olist\-\_\-show} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj, int type, int header)
+\item 
+void \hyperlink{olc_8cpp_a6ee010d6e1e9f7796498b50580c12686}{mlist\-\_\-show} (std\-::string $\ast$output\-\_\-string, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$mob, \hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} header)
+\item 
+void \hyperlink{olc_8cpp_aaad84ccbde8cb15ccc632d3af6ef3396}{do\-\_\-mlist} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$input\-\_\-argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_a24da5a8cab6f8604d5406ee8214ee3e1}{do\-\_\-olist} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_a519919f64e953d3518444fe396c30dd7}{do\-\_\-show} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_a43b3001f47e6790bdbb131f9e15efbc5}{do\-\_\-zname} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_abffe1c2a1be2fc018108821906305cdb}{do\-\_\-rlink} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_aab63fcabc06352b85aa6b40fe577ae92}{do\-\_\-rcret} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_a25de5957655229783afd3b42aa41fe30}{do\-\_\-rexit} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_adb42b85b1b9c40f94fcd48f968e8667f}{do\-\_\-rname} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_abbbecd3623c7323bbc91aa3ef4d3bdf4}{do\-\_\-rinit} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_a0eba4246859550fbd338a633d66e0da2}{do\-\_\-rxchange} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_a828a6fd07f66971c116672fed38a8f52}{post\-\_\-rdesc} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d)
+\item 
+void \hyperlink{olc_8cpp_a04a7c068a3db022285d7fa431501e581}{do\-\_\-rdesc} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_ade7d267ba0734d70a749901375298573}{do\-\_\-rappend} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_a7d68251bd66e3303bf1d9763afc42991}{do\-\_\-redesc} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_a71008670f8c921b5294e0195c5c6d09d}{do\-\_\-rlinkrm} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_a96d82569105803fc03d7fe1363c249c6}{do\-\_\-rexitrm} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_a17ef47a83f908d829a16b1eaca94f6b8}{do\-\_\-wsave} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_a81bd220a31b1f87867688148d2e18d60}{do\-\_\-rsector} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_a59a05baea1d9f1a7270b374bc910cb94}{do\-\_\-rflags} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_af4c24e43928d099aec2fca125fa68d0a}{do\-\_\-rddesc} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_acf9b8f6f4b035d33e6a27d5017581ab6}{do\-\_\-rkey} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_a08f07eee5d3d1198b9ae1e672b1a5559}{do\-\_\-rdflag} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_a5d2a235eadd25977e939a61f28534dc9}{do\-\_\-minit} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_ac504fb64cb61e76ac1a929dec175f911}{do\-\_\-oinit} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_a8af3c6828c87bbf4cc1e84eaa7920820}{do\-\_\-rblock} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_aa1ee1f771065c2639776393e9b4e438d}{do\-\_\-runused} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_a0358a43d1feb27800d17f516f412ed0d}{do\-\_\-munused} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_a24cae68a0e931788221c0180302984bc}{do\-\_\-ounused} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+int \hyperlink{olc_8cpp_a604cd45db70938956af49bfb856a0f77}{index\-\_\-lookup} (const char $\ast$const $\ast$index, const char $\ast$const lookup)
+\item 
+int \hyperlink{olc_8cpp_ad80711f862ed771b1221ba64d0fbb71c}{lookup\-\_\-dir} (const char $\ast$value)
+\item 
+void \hyperlink{olc_8cpp_ae5f084bdaf4aafe783454999161ce5e5}{do\-\_\-tags} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_a20a5964bfe999ef7126d7c668ddba586}{do\-\_\-object} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+int \hyperlink{olc_8cpp_a4e11dab29393f108f2a4c98aa1f5e908}{redefine\-\_\-objects} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$proto)
+\item 
+int \hyperlink{olc_8cpp_adf331010c936409ffe2a870c9923a712}{redefine\-\_\-mobiles} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$proto)
+\item 
+void \hyperlink{olc_8cpp_a06d53fbb17df2d1667df9a060a2d096c}{give\-\_\-oset\-\_\-help} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{olc_8cpp_adcb54b9631a56dd02fee2b4357c7c079}{post\-\_\-odesc} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d)
+\item 
+void \hyperlink{olc_8cpp_a1a340014e5d47baae0ba57f18bd91587}{oset\-\_\-cue} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$builder, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj, const char $\ast$ocue, const char $\ast$reflex)
+\item 
+void \hyperlink{olc_8cpp_a2ca95aabe39f764c764a931e013f12a1}{do\-\_\-mobile\-\_\-standards} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$edit\-\_\-mob, char $\ast$argument)
+\item 
+void \hyperlink{olc_8cpp_ae40501e8bf6a3d01556c27c705dabaeb}{do\-\_\-object\-\_\-standards} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj, int cmd)
+\item 
+void \hyperlink{olc_8cpp_a0d2461c1ecbb430ee423a702ad9a5a35}{do\-\_\-oset} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_ac1160a74a0952187297f807c3f6b27f2}{post\-\_\-oset} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d)
+\item 
+void \hyperlink{olc_8cpp_a4436d5f67444cc9c7bfc9a1149b69b41}{do\-\_\-mobile} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_a0aff0d41556588f20e4e0170594abd82}{add\-\_\-replace\-\_\-mobprog} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$mob, char $\ast$trigger\-\_\-name)
+\item 
+void \hyperlink{olc_8cpp_af7889d33ebbbdb4f2b846c5d6475b6e2}{give\-\_\-mset\-\_\-help} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{olc_8cpp_a161b64d3f959e042d99bf9d0fbcca3c0}{post\-\_\-mdesc} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d)
+\item 
+void \hyperlink{olc_8cpp_a5f0be49d0473df8a58f418a270c6e86e}{update\-\_\-crafts\-\_\-file} (void)
+\item 
+void \hyperlink{olc_8cpp_ae78c3053e9c1844f85afb2cf1a7dfa80}{do\-\_\-cset} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_abec1b429b57381b00ef7d252d81bb1be}{mset\-\_\-account\-\_\-flag} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, const char $\ast$account\-\_\-name, const char $\ast$subcmd)
+\item 
+void \hyperlink{olc_8cpp_a4ee399fde005a59799e75baeffbf8e6c}{mset\-\_\-cue} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$builder, \hyperlink{structs_8h_a22df42ea12f8103efe61fe6aa34085e0}{M\-O\-B\-\_\-\-D\-A\-T\-A} $\ast$mob, const char $\ast$cue, const char $\ast$reflex)
+\item 
+void \hyperlink{olc_8cpp_a168ab4a4e34426188be948452272bd80}{do\-\_\-tableit} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_a426da269facc03e4b888746492fff321}{do\-\_\-mset} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_a9328f6a09888f6ee1b07c8537329eab6}{post\-\_\-mset} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d)
+\item 
+void \hyperlink{olc_8cpp_aac8f574a31671cbba5a5482c8c3522b6}{consider\-\_\-wearing} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj)
+\item 
+void \hyperlink{olc_8cpp_a4ebb55ad38894a9c9f9c0c78ceda3958}{do\-\_\-outfit} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_a1d51ff9034590f2ae2713acb3df2de6e}{purge\-\_\-zone} (int zone, int $\ast$obj\-\_\-count, int $\ast$mob\-\_\-count, int $\ast$stray\-\_\-count)
+\item 
+void \hyperlink{olc_8cpp_a1b2843505c156f54542a63418271be3e}{do\-\_\-refresh} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_adf31899eadd312c18a0d2b93cf27423a}{replace\-\_\-object} (int src, int tar, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{olc_8cpp_acb768e89228981db35035d3af4a186ef}{replace\-\_\-mobile} (int src, int tar, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{olc_8cpp_a655fc5d9069c274fea519ad1843e1cf4}{do\-\_\-replace} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_a1544d4e204c374645e8ac1f1193b9469}{advance\-\_\-spaces} (char $\ast$$\ast$\hyperlink{staff_8cpp_a1b3d0481a7741b1fed73df389c9990c6}{s})
+\item 
+int \hyperlink{olc_8cpp_ae2333a268addce28536dbc72a9a0c4c2}{get\-\_\-token} (char $\ast$$\ast$\hyperlink{staff_8cpp_a1b3d0481a7741b1fed73df389c9990c6}{s}, char $\ast$token)
+\item 
+void \hyperlink{olc_8cpp_ac55e934b7e0380939db5e09f92736c60}{reformat\-\_\-desc} (char $\ast$source, char $\ast$$\ast$target)
+\item 
+void \hyperlink{olc_8cpp_ab2a3e495d69aa98739ea891abbed974a}{reformat\-\_\-string} (char $\ast$source, char $\ast$$\ast$target)
+\item 
+int \hyperlink{olc_8cpp_ab916351d966abf5ecc33eb9d2348e77f}{free\-\_\-exit} (struct \hyperlink{structroom__direction__data}{room\-\_\-direction\-\_\-data} $\ast$exit)
+\item 
+int \hyperlink{olc_8cpp_abe0d333cb9c939627b49ef3023bae2c7}{free\-\_\-room} (\hyperlink{room_8h_aede519ef65d80b5242a4a28b69d5e097}{R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$room)
+\item 
+int \hyperlink{olc_8cpp_abc414dc9271ccb87061dbdeb8d975be0}{rdelete} (\hyperlink{room_8h_aede519ef65d80b5242a4a28b69d5e097}{R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$room)
+\item 
+void \hyperlink{olc_8cpp_a154f76cf642d23437422f771b70302c1}{do\-\_\-rdelete} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_a8ddc9dc42ffa59a292e72c7d4300c068}{do\-\_\-rmove} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_a5835a0fdaf3f54fff418431eebb0b57a}{do\-\_\-zset} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{olc_8cpp_a353ef7e9b5992bcf48b6b8aa6d4f4db4}{mcopy} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$mob, int cmd)
+\item 
+void \hyperlink{olc_8cpp_a5fd782238e66e3ca4a898f71b0d64621}{do\-\_\-mcopy} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_a461d27d68afd973b84c626fa872337d1}{do\-\_\-rset} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_a61161df0137f7da8c8de13700ac15863}{do\-\_\-job} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_aebad7e7f9f4119d9a00648f16e64af2d}{do\-\_\-mclone} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_a5bc8e4867b32a816a3ae4b5484229f4c}{list\-\_\-mob\-\_\-resets} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$mob)
+\item 
+void \hyperlink{olc_8cpp_a825e8cd32cfd4b9319ba0fb132cf7891}{reset\-\_\-insert} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_ab78d529b5a10f3e757885b70f902d46a}{R\-E\-S\-E\-T\-\_\-\-D\-A\-T\-A} $\ast$reset)
+\item 
+int \hyperlink{olc_8cpp_a1c1ec0ff3eab027c9ebb5b3fcf5415c5}{reset\-\_\-delete} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$mob, int reset\-\_\-num)
+\item 
+void \hyperlink{olc_8cpp_a770dc185ff26427b56d85d554f9ed6ba}{do\-\_\-resets} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_ae03a090a725aa80a8d709b06ce35c68c}{do\-\_\-document} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_a5c8abbe5246cf7543503a20eedf506f1}{do\-\_\-instruct} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_a91d5ed3866a5a82fd5903f7f7b6cce44}{rlist\-\_\-show} (\hyperlink{room_8h_aede519ef65d80b5242a4a28b69d5e097}{R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$troom, int sector, int header)
+\item 
+void \hyperlink{olc_8cpp_af0388c862c47b5f3b74dff9e83bcedee}{do\-\_\-rlist} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_a80b145af1c7de43cad8b42920e9e1535}{do\-\_\-rcap} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_ac027815c7d68028d7eb0d1ff0f5a0362}{do\-\_\-rxerox} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_a7f83a6ad6ef5a9f7040dffaff8f324ad}{do\-\_\-renviro} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{olc_8cpp_aac1226a3135b1fcdb3c8501ba4d101a4}{do\-\_\-rscent} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classrpie_1_1server}{rpie\-::server} \hyperlink{olc_8cpp_a55c71990ee4162ebec6abe401996cf15}{engine}
+\item 
+const char $\ast$ \hyperlink{olc_8cpp_abbe427a5be5cb3aeb07ecc44ae81ad55}{weather\-\_\-states} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{olc_8cpp_ae080b6fb7734735b31de5f752dea425d}{apply\-\_\-types} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{olc_8cpp_ab2b6780cecfe7ea3ec0bad5453b2112d}{deity\-\_\-name} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{olc_8cpp_a5f988b5e42ba005bae0bbfd8701959d1}{wound\-\_\-locations} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{olc_8cpp_a0c4440f39d7f3322ccf1e2d216dfcf60}{materials} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{olc_8cpp_adc777e95799694a525ac901005c0ab45}{drinks} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{olc_8cpp_aa803452c9cbfee85cf24c7a0b0a9722b}{frames} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{olc_8cpp_ac5f6303e8713dfe1ed6d3afbcfdce602}{wear\-\_\-bits} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{olc_8cpp_ac90080cb12a4b2191c1877183585f4ed}{extra\-\_\-bits} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{olc_8cpp_aa0c1cab38901fe9aab8da53112441c59}{room\-\_\-bits} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{olc_8cpp_a791c60a8264d95b1d9164407930156e7}{real\-\_\-sector\-\_\-names} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{olc_8cpp_a8e76b3513b5d09928058afdec6a0f789}{sector\-\_\-types} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{olc_8cpp_a3804a9b6d65d3983e59e92e3be751594}{item\-\_\-types} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{olc_8cpp_a28eeabb2504a47a327213c19622d2f84}{trap\-\_\-bits} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{olc_8cpp_ade18717517e1fb3880df8e0631ff1cd8}{elec\-\_\-bits} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{olc_8cpp_ad66044db6d5a09464a98ab52cfd86c25}{batt\-\_\-bits} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{olc_8cpp_a94c8d0a3a3fb5b2d3a72bb3b63d5225c}{suits} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{olc_8cpp_a6c8f0732734941f7dde9fb899ac9de63}{cards} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{olc_8cpp_af4682b23df7996ac10a2cc6762160a98}{foraged\-\_\-bits} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{olc_8cpp_a491d06a542cf125e8a799d9146bebee5}{gun\-\_\-bits} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{olc_8cpp_ada6662d650828d4536134390dcf746b3}{calibers} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{olc_8cpp_a65849e1721f26b048415ab36ece0eb0c}{shell\-\_\-name} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{olc_8cpp_a6befdd41b3b5cd77dc4f5d6d4f7cb9b6}{shell\-\_\-name\-\_\-plural} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{olc_8cpp_a600672d3e5e148f2e848b3f33b55c300}{ammo\-\_\-sizes} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{olc_8cpp_a81a7878bc9b71b76dec1b65353cf4927}{trigger\-\_\-text\-\_\-first} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{olc_8cpp_a2edb4ec91d507dd42de89401167c0917}{trigger\-\_\-text\-\_\-third} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{olc_8cpp_a07cd39fac4b600c446e4faf7e27d0b74}{echo\-\_\-one} \mbox{[}$\,$\mbox{]}
+\item 
+const int \hyperlink{olc_8cpp_a9c774a95a0480efb880b3d74dd9ad4c1}{echo\-\_\-one\-\_\-qty} = 2
+\item 
+const char $\ast$ \hyperlink{olc_8cpp_a5f8d5ee3ec2965661844e48a7f694b22}{echo\-\_\-two} \mbox{[}$\,$\mbox{]}
+\item 
+const int \hyperlink{olc_8cpp_a23013f3ca470ee5614274c997191307d}{echo\-\_\-two\-\_\-qty} = 9
+\item 
+const char $\ast$ \hyperlink{olc_8cpp_ad362ed97df75e4ea224c51f038fe2fd3}{echo\-\_\-three} \mbox{[}$\,$\mbox{]}
+\item 
+const int \hyperlink{olc_8cpp_a15a20911a9170782c1974c4b61b7a151}{echo\-\_\-three\-\_\-qty} = 3
+\item 
+const char $\ast$ \hyperlink{olc_8cpp_a2bf4abc7886274db88f0895f0b144c6f}{echo\-\_\-four} \mbox{[}$\,$\mbox{]}
+\item 
+const int \hyperlink{olc_8cpp_a000872551beef5830eacb505b59ae0f4}{echo\-\_\-four\-\_\-qty} = 2
+\item 
+const char $\ast$ \hyperlink{olc_8cpp_a976fe585397febf972a0bdbb5f070d62}{echo\-\_\-five} \mbox{[}$\,$\mbox{]}
+\item 
+const int \hyperlink{olc_8cpp_adbdb3a16e569b1281dccfd9295a1a34f}{echo\-\_\-five\-\_\-qty} = 2
+\item 
+const char $\ast$ \hyperlink{olc_8cpp_af6ceec115c1b5d71754b7c4c23c949d4}{ammo\-\_\-bits} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{olc_8cpp_a9e17c0cfe371f58850bd8474e397eaaf}{gun\-\_\-set} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{olc_8cpp_a68c2a9c0e2e0f8c05cb684f21fa73056}{armor\-\_\-locs} \mbox{[}\hyperlink{structs_8h_ad75186dfad7f248bdc5b76d418327aad}{M\-A\-X\-\_\-\-H\-I\-T\-L\-O\-C}+1\mbox{]}
+\item 
+const char $\ast$ \hyperlink{olc_8cpp_aa3c60610061ab2baf01ffc64547f35bb}{mob\-\_\-oset\-\_\-armors} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{olc_8cpp_a45f52015dfafd5c97eb132ce0e2c1640}{mob\-\_\-armors} \mbox{[}$\,$\mbox{]}
+\item 
+const int \hyperlink{olc_8cpp_aed0f9af1c90e8ae1bf5152b2ce1ad8cc}{weapon\-\_\-standards} \mbox{[}5\mbox{]}\mbox{[}4\mbox{]}\mbox{[}7\mbox{]}
+\item 
+const int \hyperlink{olc_8cpp_a54b4dc9d5c65bfa855901459559e1e79}{armor\-\_\-standards} \mbox{[}5\mbox{]}\mbox{[}6\mbox{]}\mbox{[}5\mbox{]}
+\item 
+const struct \hyperlink{structconstant__data}{constant\-\_\-data} \hyperlink{olc_8cpp_af41979541578b7f95c0a98a18712ccb7}{constant\-\_\-info} \mbox{[}$\,$\mbox{]}
+\item 
+std\-::multimap$<$ int, \hyperlink{structvariable__data}{variable\-\_\-data} $>$ \hyperlink{olc_8cpp_a0648ea431a490ba9090b5a71a099283b}{obj\-\_\-variable\-\_\-list}
+\item 
+std\-::multimap$<$ int, std\-::string $>$ \hyperlink{olc_8cpp_a388a9b052cfa85e2de421c447839c258}{variable\-\_\-categories}
+\item 
+const int \hyperlink{olc_8cpp_a52d27f4a5e852529f80dc5a4dce53d85}{body\-\_\-sneak\-\_\-amount} \mbox{[}\hyperlink{structs_8h_ad75186dfad7f248bdc5b76d418327aad}{M\-A\-X\-\_\-\-H\-I\-T\-L\-O\-C}\mbox{]}
+\item 
+const int \hyperlink{olc_8cpp_a2f9be24caff417bb5c8420e73f2bb090}{body\-\_\-weight\-\_\-amount} \mbox{[}\hyperlink{structs_8h_ad75186dfad7f248bdc5b76d418327aad}{M\-A\-X\-\_\-\-H\-I\-T\-L\-O\-C}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{olc_8cpp_a15419c09c37faed53d8bff1308c62404}{\index{olc.\-cpp@{olc.\-cpp}!R\-O\-O\-M\-\_\-\-M\-A\-X@{R\-O\-O\-M\-\_\-\-M\-A\-X}}
+\index{R\-O\-O\-M\-\_\-\-M\-A\-X@{R\-O\-O\-M\-\_\-\-M\-A\-X}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{R\-O\-O\-M\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-O\-O\-M\-\_\-\-M\-A\-X~100000}}\label{olc_8cpp_a15419c09c37faed53d8bff1308c62404}
+\hypertarget{olc_8cpp_a1b3d0481a7741b1fed73df389c9990c6}{\index{olc.\-cpp@{olc.\-cpp}!s@{s}}
+\index{s@{s}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{s}]{\setlength{\rightskip}{0pt plus 5cm}\#define s(
+\begin{DoxyParamCaption}
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf send\-\_\-to\-\_\-char} (a \char`\"{}\textbackslash{}n\char`\"{}, ch);}}\label{olc_8cpp_a1b3d0481a7741b1fed73df389c9990c6}
+\hypertarget{olc_8cpp_acff191f35ac824e01b07b09cfac2b1d6}{\index{olc.\-cpp@{olc.\-cpp}!S\-T\-\_\-\-A\-R\-M\-O\-R@{S\-T\-\_\-\-A\-R\-M\-O\-R}}
+\index{S\-T\-\_\-\-A\-R\-M\-O\-R@{S\-T\-\_\-\-A\-R\-M\-O\-R}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{S\-T\-\_\-\-A\-R\-M\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-T\-\_\-\-A\-R\-M\-O\-R~3}}\label{olc_8cpp_acff191f35ac824e01b07b09cfac2b1d6}
+\hypertarget{olc_8cpp_af6e9c5555872acc2459272da655cb864}{\index{olc.\-cpp@{olc.\-cpp}!S\-T\-\_\-\-D\-A\-M@{S\-T\-\_\-\-D\-A\-M}}
+\index{S\-T\-\_\-\-D\-A\-M@{S\-T\-\_\-\-D\-A\-M}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{S\-T\-\_\-\-D\-A\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-T\-\_\-\-D\-A\-M~2}}\label{olc_8cpp_af6e9c5555872acc2459272da655cb864}
+\hypertarget{olc_8cpp_a9adb1be72a152c15d2ecfb5c25728583}{\index{olc.\-cpp@{olc.\-cpp}!S\-T\-\_\-\-H\-I\-T\-S@{S\-T\-\_\-\-H\-I\-T\-S}}
+\index{S\-T\-\_\-\-H\-I\-T\-S@{S\-T\-\_\-\-H\-I\-T\-S}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{S\-T\-\_\-\-H\-I\-T\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-T\-\_\-\-H\-I\-T\-S~1}}\label{olc_8cpp_a9adb1be72a152c15d2ecfb5c25728583}
+\hypertarget{olc_8cpp_afb43ff5d734718994e56a75ce0684582}{\index{olc.\-cpp@{olc.\-cpp}!S\-T\-\_\-\-S\-K\-I\-L\-L@{S\-T\-\_\-\-S\-K\-I\-L\-L}}
+\index{S\-T\-\_\-\-S\-K\-I\-L\-L@{S\-T\-\_\-\-S\-K\-I\-L\-L}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{S\-T\-\_\-\-S\-K\-I\-L\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-T\-\_\-\-S\-K\-I\-L\-L~0}}\label{olc_8cpp_afb43ff5d734718994e56a75ce0684582}
+\hypertarget{olc_8cpp_a48219850e864edcea0a2cc90cb4865a6}{\index{olc.\-cpp@{olc.\-cpp}!S\-T\-\_\-\-S\-P\-E\-E\-D@{S\-T\-\_\-\-S\-P\-E\-E\-D}}
+\index{S\-T\-\_\-\-S\-P\-E\-E\-D@{S\-T\-\_\-\-S\-P\-E\-E\-D}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{S\-T\-\_\-\-S\-P\-E\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-T\-\_\-\-S\-P\-E\-E\-D~4}}\label{olc_8cpp_a48219850e864edcea0a2cc90cb4865a6}
+\hypertarget{olc_8cpp_ae7ea5bc2a7802523cef85bb62c0839a6}{\index{olc.\-cpp@{olc.\-cpp}!T\-O\-K\-\_\-\-E\-N\-D@{T\-O\-K\-\_\-\-E\-N\-D}}
+\index{T\-O\-K\-\_\-\-E\-N\-D@{T\-O\-K\-\_\-\-E\-N\-D}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{T\-O\-K\-\_\-\-E\-N\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-O\-K\-\_\-\-E\-N\-D~3}}\label{olc_8cpp_ae7ea5bc2a7802523cef85bb62c0839a6}
+\hypertarget{olc_8cpp_a6d75325443212b60baee084ea24ccc62}{\index{olc.\-cpp@{olc.\-cpp}!T\-O\-K\-\_\-\-N\-E\-W\-L\-I\-N\-E@{T\-O\-K\-\_\-\-N\-E\-W\-L\-I\-N\-E}}
+\index{T\-O\-K\-\_\-\-N\-E\-W\-L\-I\-N\-E@{T\-O\-K\-\_\-\-N\-E\-W\-L\-I\-N\-E}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{T\-O\-K\-\_\-\-N\-E\-W\-L\-I\-N\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-O\-K\-\_\-\-N\-E\-W\-L\-I\-N\-E~1}}\label{olc_8cpp_a6d75325443212b60baee084ea24ccc62}
+\hypertarget{olc_8cpp_a4713b756c63dec7741cd8d57b0d5d6f2}{\index{olc.\-cpp@{olc.\-cpp}!T\-O\-K\-\_\-\-P\-A\-R\-A\-G\-R\-A\-P\-H@{T\-O\-K\-\_\-\-P\-A\-R\-A\-G\-R\-A\-P\-H}}
+\index{T\-O\-K\-\_\-\-P\-A\-R\-A\-G\-R\-A\-P\-H@{T\-O\-K\-\_\-\-P\-A\-R\-A\-G\-R\-A\-P\-H}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{T\-O\-K\-\_\-\-P\-A\-R\-A\-G\-R\-A\-P\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-O\-K\-\_\-\-P\-A\-R\-A\-G\-R\-A\-P\-H~2}}\label{olc_8cpp_a4713b756c63dec7741cd8d57b0d5d6f2}
+\hypertarget{olc_8cpp_a7b20bff70f0a5550a73a8573fb2894d9}{\index{olc.\-cpp@{olc.\-cpp}!T\-O\-K\-\_\-\-S\-E\-N\-T\-E\-N\-C\-E@{T\-O\-K\-\_\-\-S\-E\-N\-T\-E\-N\-C\-E}}
+\index{T\-O\-K\-\_\-\-S\-E\-N\-T\-E\-N\-C\-E@{T\-O\-K\-\_\-\-S\-E\-N\-T\-E\-N\-C\-E}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{T\-O\-K\-\_\-\-S\-E\-N\-T\-E\-N\-C\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-O\-K\-\_\-\-S\-E\-N\-T\-E\-N\-C\-E~4}}\label{olc_8cpp_a7b20bff70f0a5550a73a8573fb2894d9}
+\hypertarget{olc_8cpp_ac0bee16e638a72877efa405a03367a8b}{\index{olc.\-cpp@{olc.\-cpp}!T\-O\-K\-\_\-\-W\-O\-R\-D@{T\-O\-K\-\_\-\-W\-O\-R\-D}}
+\index{T\-O\-K\-\_\-\-W\-O\-R\-D@{T\-O\-K\-\_\-\-W\-O\-R\-D}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{T\-O\-K\-\_\-\-W\-O\-R\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-O\-K\-\_\-\-W\-O\-R\-D~0}}\label{olc_8cpp_ac0bee16e638a72877efa405a03367a8b}
+\hypertarget{olc_8cpp_a9038fefbff7f02c8a6e70fdae195cc83}{\index{olc.\-cpp@{olc.\-cpp}!Z\-O\-N\-E\-\_\-\-S\-I\-Z\-E@{Z\-O\-N\-E\-\_\-\-S\-I\-Z\-E}}
+\index{Z\-O\-N\-E\-\_\-\-S\-I\-Z\-E@{Z\-O\-N\-E\-\_\-\-S\-I\-Z\-E}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{Z\-O\-N\-E\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define Z\-O\-N\-E\-\_\-\-S\-I\-Z\-E~1000}}\label{olc_8cpp_a9038fefbff7f02c8a6e70fdae195cc83}
+
+
+\subsection{Function Documentation}
+\hypertarget{olc_8cpp_a0aff0d41556588f20e4e0170594abd82}{\index{olc.\-cpp@{olc.\-cpp}!add\-\_\-replace\-\_\-mobprog@{add\-\_\-replace\-\_\-mobprog}}
+\index{add\-\_\-replace\-\_\-mobprog@{add\-\_\-replace\-\_\-mobprog}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{add\-\_\-replace\-\_\-mobprog}]{\setlength{\rightskip}{0pt plus 5cm}void add\-\_\-replace\-\_\-mobprog (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{mob, }
+\item[{char $\ast$}]{trigger\-\_\-name}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a0aff0d41556588f20e4e0170594abd82}
+\hypertarget{olc_8cpp_a1544d4e204c374645e8ac1f1193b9469}{\index{olc.\-cpp@{olc.\-cpp}!advance\-\_\-spaces@{advance\-\_\-spaces}}
+\index{advance\-\_\-spaces@{advance\-\_\-spaces}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{advance\-\_\-spaces}]{\setlength{\rightskip}{0pt plus 5cm}void advance\-\_\-spaces (
+\begin{DoxyParamCaption}
+\item[{char $\ast$$\ast$}]{s}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a1544d4e204c374645e8ac1f1193b9469}
+\hypertarget{olc_8cpp_aac8f574a31671cbba5a5482c8c3522b6}{\index{olc.\-cpp@{olc.\-cpp}!consider\-\_\-wearing@{consider\-\_\-wearing}}
+\index{consider\-\_\-wearing@{consider\-\_\-wearing}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{consider\-\_\-wearing}]{\setlength{\rightskip}{0pt plus 5cm}void consider\-\_\-wearing (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_aac8f574a31671cbba5a5482c8c3522b6}
+\hypertarget{olc_8cpp_ae78c3053e9c1844f85afb2cf1a7dfa80}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-cset@{do\-\_\-cset}}
+\index{do\-\_\-cset@{do\-\_\-cset}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-cset}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-cset (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_ae78c3053e9c1844f85afb2cf1a7dfa80}
+Phase Echos
+
+Phase Flags
+
+Phase Mobs
+
+Phase Delete
+
+Phase Timer
+
+Phase Skill set and check
+
+Phase Attribute set and check
+
+Phase move cost
+
+Phase pain cost
+
+Phase Failure objects
+
+Phase Ovals (normal)
+
+Phase Variables (normal)
+
+Phase Objects (normal)
+
+Phase error message
+
+cset error message \hypertarget{olc_8cpp_ae03a090a725aa80a8d709b06ce35c68c}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-document@{do\-\_\-document}}
+\index{do\-\_\-document@{do\-\_\-document}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-document}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-document (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_ae03a090a725aa80a8d709b06ce35c68c}
+\hypertarget{olc_8cpp_aba98a479f1df20112a76acb0ab8ea5a0}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-freeze@{do\-\_\-freeze}}
+\index{do\-\_\-freeze@{do\-\_\-freeze}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-freeze}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-freeze (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_aba98a479f1df20112a76acb0ab8ea5a0}
+\hypertarget{olc_8cpp_a5c8abbe5246cf7543503a20eedf506f1}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-instruct@{do\-\_\-instruct}}
+\index{do\-\_\-instruct@{do\-\_\-instruct}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-instruct}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-instruct (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a5c8abbe5246cf7543503a20eedf506f1}
+\hypertarget{olc_8cpp_a61161df0137f7da8c8de13700ac15863}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-job@{do\-\_\-job}}
+\index{do\-\_\-job@{do\-\_\-job}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-job}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-job (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a61161df0137f7da8c8de13700ac15863}
+\hypertarget{olc_8cpp_aebad7e7f9f4119d9a00648f16e64af2d}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-mclone@{do\-\_\-mclone}}
+\index{do\-\_\-mclone@{do\-\_\-mclone}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-mclone}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-mclone (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_aebad7e7f9f4119d9a00648f16e64af2d}
+\hypertarget{olc_8cpp_a5fd782238e66e3ca4a898f71b0d64621}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-mcopy@{do\-\_\-mcopy}}
+\index{do\-\_\-mcopy@{do\-\_\-mcopy}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-mcopy}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-mcopy (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a5fd782238e66e3ca4a898f71b0d64621}
+\hypertarget{olc_8cpp_a5d2a235eadd25977e939a61f28534dc9}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-minit@{do\-\_\-minit}}
+\index{do\-\_\-minit@{do\-\_\-minit}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-minit}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-minit (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a5d2a235eadd25977e939a61f28534dc9}
+\hypertarget{olc_8cpp_aaad84ccbde8cb15ccc632d3af6ef3396}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-mlist@{do\-\_\-mlist}}
+\index{do\-\_\-mlist@{do\-\_\-mlist}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-mlist}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-mlist (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{input\-\_\-argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_aaad84ccbde8cb15ccc632d3af6ef3396}
+\hypertarget{olc_8cpp_a4436d5f67444cc9c7bfc9a1149b69b41}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-mobile@{do\-\_\-mobile}}
+\index{do\-\_\-mobile@{do\-\_\-mobile}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-mobile}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-mobile (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a4436d5f67444cc9c7bfc9a1149b69b41}
+\hypertarget{olc_8cpp_a2ca95aabe39f764c764a931e013f12a1}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-mobile\-\_\-standards@{do\-\_\-mobile\-\_\-standards}}
+\index{do\-\_\-mobile\-\_\-standards@{do\-\_\-mobile\-\_\-standards}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-mobile\-\_\-standards}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-mobile\-\_\-standards (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{edit\-\_\-mob, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a2ca95aabe39f764c764a931e013f12a1}
+\hypertarget{olc_8cpp_a426da269facc03e4b888746492fff321}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-mset@{do\-\_\-mset}}
+\index{do\-\_\-mset@{do\-\_\-mset}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-mset}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-mset (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a426da269facc03e4b888746492fff321}
+morphing mobs \hypertarget{olc_8cpp_a0358a43d1feb27800d17f516f412ed0d}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-munused@{do\-\_\-munused}}
+\index{do\-\_\-munused@{do\-\_\-munused}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-munused}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-munused (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a0358a43d1feb27800d17f516f412ed0d}
+\hypertarget{olc_8cpp_a20a5964bfe999ef7126d7c668ddba586}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-object@{do\-\_\-object}}
+\index{do\-\_\-object@{do\-\_\-object}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-object}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-object (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a20a5964bfe999ef7126d7c668ddba586}
+\hypertarget{olc_8cpp_ae40501e8bf6a3d01556c27c705dabaeb}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-object\-\_\-standards@{do\-\_\-object\-\_\-standards}}
+\index{do\-\_\-object\-\_\-standards@{do\-\_\-object\-\_\-standards}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-object\-\_\-standards}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-object\-\_\-standards (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_ae40501e8bf6a3d01556c27c705dabaeb}
+\hypertarget{olc_8cpp_ac504fb64cb61e76ac1a929dec175f911}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-oinit@{do\-\_\-oinit}}
+\index{do\-\_\-oinit@{do\-\_\-oinit}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-oinit}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-oinit (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_ac504fb64cb61e76ac1a929dec175f911}
+\hypertarget{olc_8cpp_a24da5a8cab6f8604d5406ee8214ee3e1}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-olist@{do\-\_\-olist}}
+\index{do\-\_\-olist@{do\-\_\-olist}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-olist}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-olist (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a24da5a8cab6f8604d5406ee8214ee3e1}
+\hypertarget{olc_8cpp_a0d2461c1ecbb430ee423a702ad9a5a35}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-oset@{do\-\_\-oset}}
+\index{do\-\_\-oset@{do\-\_\-oset}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-oset}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-oset (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a0d2461c1ecbb430ee423a702ad9a5a35}
+clanning for objects
+
+clanadd $<$clan name$>$=\char`\"{}\char`\"{}$>$ \mbox{[}$<$clan rank$>$=\char`\"{}\char`\"{}$>$\mbox{]}
+
+clanremove\hypertarget{olc_8cpp_a24cae68a0e931788221c0180302984bc}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-ounused@{do\-\_\-ounused}}
+\index{do\-\_\-ounused@{do\-\_\-ounused}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-ounused}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-ounused (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a24cae68a0e931788221c0180302984bc}
+\hypertarget{olc_8cpp_a4ebb55ad38894a9c9f9c0c78ceda3958}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-outfit@{do\-\_\-outfit}}
+\index{do\-\_\-outfit@{do\-\_\-outfit}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-outfit}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-outfit (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a4ebb55ad38894a9c9f9c0c78ceda3958}
+\hypertarget{olc_8cpp_ade7d267ba0734d70a749901375298573}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-rappend@{do\-\_\-rappend}}
+\index{do\-\_\-rappend@{do\-\_\-rappend}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-rappend}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-rappend (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_ade7d267ba0734d70a749901375298573}
+\hypertarget{olc_8cpp_a8af3c6828c87bbf4cc1e84eaa7920820}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-rblock@{do\-\_\-rblock}}
+\index{do\-\_\-rblock@{do\-\_\-rblock}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-rblock}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-rblock (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a8af3c6828c87bbf4cc1e84eaa7920820}
+\hypertarget{olc_8cpp_a80b145af1c7de43cad8b42920e9e1535}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-rcap@{do\-\_\-rcap}}
+\index{do\-\_\-rcap@{do\-\_\-rcap}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-rcap}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-rcap (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a80b145af1c7de43cad8b42920e9e1535}
+\hypertarget{olc_8cpp_aa39c805f57624e531384d9e262d62710}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-rclone@{do\-\_\-rclone}}
+\index{do\-\_\-rclone@{do\-\_\-rclone}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-rclone}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-rclone (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_aa39c805f57624e531384d9e262d62710}
+\hypertarget{olc_8cpp_aab63fcabc06352b85aa6b40fe577ae92}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-rcret@{do\-\_\-rcret}}
+\index{do\-\_\-rcret@{do\-\_\-rcret}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-rcret}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-rcret (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_aab63fcabc06352b85aa6b40fe577ae92}
+\hypertarget{olc_8cpp_af4c24e43928d099aec2fca125fa68d0a}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-rddesc@{do\-\_\-rddesc}}
+\index{do\-\_\-rddesc@{do\-\_\-rddesc}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-rddesc}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-rddesc (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_af4c24e43928d099aec2fca125fa68d0a}
+\hypertarget{olc_8cpp_a154f76cf642d23437422f771b70302c1}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-rdelete@{do\-\_\-rdelete}}
+\index{do\-\_\-rdelete@{do\-\_\-rdelete}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-rdelete}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-rdelete (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a154f76cf642d23437422f771b70302c1}
+\hypertarget{olc_8cpp_a04a7c068a3db022285d7fa431501e581}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-rdesc@{do\-\_\-rdesc}}
+\index{do\-\_\-rdesc@{do\-\_\-rdesc}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-rdesc}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-rdesc (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a04a7c068a3db022285d7fa431501e581}
+\hypertarget{olc_8cpp_a08f07eee5d3d1198b9ae1e672b1a5559}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-rdflag@{do\-\_\-rdflag}}
+\index{do\-\_\-rdflag@{do\-\_\-rdflag}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-rdflag}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-rdflag (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a08f07eee5d3d1198b9ae1e672b1a5559}
+\hypertarget{olc_8cpp_abec76fa1fbd5139cdfc18236357260bc}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-rdoor@{do\-\_\-rdoor}}
+\index{do\-\_\-rdoor@{do\-\_\-rdoor}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-rdoor}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-rdoor (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_abec76fa1fbd5139cdfc18236357260bc}
+\hypertarget{olc_8cpp_a7d68251bd66e3303bf1d9763afc42991}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-redesc@{do\-\_\-redesc}}
+\index{do\-\_\-redesc@{do\-\_\-redesc}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-redesc}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-redesc (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a7d68251bd66e3303bf1d9763afc42991}
+\hypertarget{olc_8cpp_a1b2843505c156f54542a63418271be3e}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-refresh@{do\-\_\-refresh}}
+\index{do\-\_\-refresh@{do\-\_\-refresh}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-refresh}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-refresh (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a1b2843505c156f54542a63418271be3e}
+\hypertarget{olc_8cpp_a7f83a6ad6ef5a9f7040dffaff8f324ad}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-renviro@{do\-\_\-renviro}}
+\index{do\-\_\-renviro@{do\-\_\-renviro}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-renviro}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-renviro (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a7f83a6ad6ef5a9f7040dffaff8f324ad}
+\hypertarget{olc_8cpp_a655fc5d9069c274fea519ad1843e1cf4}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-replace@{do\-\_\-replace}}
+\index{do\-\_\-replace@{do\-\_\-replace}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-replace}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-replace (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a655fc5d9069c274fea519ad1843e1cf4}
+\hypertarget{olc_8cpp_a770dc185ff26427b56d85d554f9ed6ba}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-resets@{do\-\_\-resets}}
+\index{do\-\_\-resets@{do\-\_\-resets}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-resets}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-resets (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a770dc185ff26427b56d85d554f9ed6ba}
+\hypertarget{olc_8cpp_a9448fccf721a5c8fd7352911d5722608}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-review@{do\-\_\-review}}
+\index{do\-\_\-review@{do\-\_\-review}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-review}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-review (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a9448fccf721a5c8fd7352911d5722608}
+\hypertarget{olc_8cpp_a25de5957655229783afd3b42aa41fe30}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-rexit@{do\-\_\-rexit}}
+\index{do\-\_\-rexit@{do\-\_\-rexit}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-rexit}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-rexit (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a25de5957655229783afd3b42aa41fe30}
+\hypertarget{olc_8cpp_a96d82569105803fc03d7fe1363c249c6}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-rexitrm@{do\-\_\-rexitrm}}
+\index{do\-\_\-rexitrm@{do\-\_\-rexitrm}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-rexitrm}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-rexitrm (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a96d82569105803fc03d7fe1363c249c6}
+\hypertarget{olc_8cpp_a59a05baea1d9f1a7270b374bc910cb94}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-rflags@{do\-\_\-rflags}}
+\index{do\-\_\-rflags@{do\-\_\-rflags}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-rflags}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-rflags (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a59a05baea1d9f1a7270b374bc910cb94}
+\hypertarget{olc_8cpp_ac5507162065f52f6ca38d1296a371c9b}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-rgate@{do\-\_\-rgate}}
+\index{do\-\_\-rgate@{do\-\_\-rgate}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-rgate}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-rgate (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_ac5507162065f52f6ca38d1296a371c9b}
+\hypertarget{olc_8cpp_abbbecd3623c7323bbc91aa3ef4d3bdf4}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-rinit@{do\-\_\-rinit}}
+\index{do\-\_\-rinit@{do\-\_\-rinit}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-rinit}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-rinit (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_abbbecd3623c7323bbc91aa3ef4d3bdf4}
+\hypertarget{olc_8cpp_acf9b8f6f4b035d33e6a27d5017581ab6}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-rkey@{do\-\_\-rkey}}
+\index{do\-\_\-rkey@{do\-\_\-rkey}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-rkey}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-rkey (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_acf9b8f6f4b035d33e6a27d5017581ab6}
+\hypertarget{olc_8cpp_abffe1c2a1be2fc018108821906305cdb}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-rlink@{do\-\_\-rlink}}
+\index{do\-\_\-rlink@{do\-\_\-rlink}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-rlink}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-rlink (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_abffe1c2a1be2fc018108821906305cdb}
+\hypertarget{olc_8cpp_a71008670f8c921b5294e0195c5c6d09d}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-rlinkrm@{do\-\_\-rlinkrm}}
+\index{do\-\_\-rlinkrm@{do\-\_\-rlinkrm}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-rlinkrm}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-rlinkrm (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a71008670f8c921b5294e0195c5c6d09d}
+\hypertarget{olc_8cpp_af0388c862c47b5f3b74dff9e83bcedee}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-rlist@{do\-\_\-rlist}}
+\index{do\-\_\-rlist@{do\-\_\-rlist}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-rlist}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-rlist (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_af0388c862c47b5f3b74dff9e83bcedee}
+\hypertarget{olc_8cpp_a8ddc9dc42ffa59a292e72c7d4300c068}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-rmove@{do\-\_\-rmove}}
+\index{do\-\_\-rmove@{do\-\_\-rmove}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-rmove}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-rmove (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a8ddc9dc42ffa59a292e72c7d4300c068}
+\hypertarget{olc_8cpp_adb42b85b1b9c40f94fcd48f968e8667f}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-rname@{do\-\_\-rname}}
+\index{do\-\_\-rname@{do\-\_\-rname}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-rname}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-rname (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_adb42b85b1b9c40f94fcd48f968e8667f}
+\hypertarget{olc_8cpp_aac1226a3135b1fcdb3c8501ba4d101a4}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-rscent@{do\-\_\-rscent}}
+\index{do\-\_\-rscent@{do\-\_\-rscent}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-rscent}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-rscent (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_aac1226a3135b1fcdb3c8501ba4d101a4}
+\hypertarget{olc_8cpp_a81bd220a31b1f87867688148d2e18d60}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-rsector@{do\-\_\-rsector}}
+\index{do\-\_\-rsector@{do\-\_\-rsector}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-rsector}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-rsector (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a81bd220a31b1f87867688148d2e18d60}
+\hypertarget{olc_8cpp_a461d27d68afd973b84c626fa872337d1}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-rset@{do\-\_\-rset}}
+\index{do\-\_\-rset@{do\-\_\-rset}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-rset}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-rset (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a461d27d68afd973b84c626fa872337d1}
+\hypertarget{olc_8cpp_aa1ee1f771065c2639776393e9b4e438d}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-runused@{do\-\_\-runused}}
+\index{do\-\_\-runused@{do\-\_\-runused}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-runused}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-runused (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_aa1ee1f771065c2639776393e9b4e438d}
+\hypertarget{olc_8cpp_a0eba4246859550fbd338a633d66e0da2}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-rxchange@{do\-\_\-rxchange}}
+\index{do\-\_\-rxchange@{do\-\_\-rxchange}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-rxchange}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-rxchange (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a0eba4246859550fbd338a633d66e0da2}
+\hypertarget{olc_8cpp_ac027815c7d68028d7eb0d1ff0f5a0362}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-rxerox@{do\-\_\-rxerox}}
+\index{do\-\_\-rxerox@{do\-\_\-rxerox}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-rxerox}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-rxerox (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_ac027815c7d68028d7eb0d1ff0f5a0362}
+\hypertarget{olc_8cpp_a519919f64e953d3518444fe396c30dd7}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-show@{do\-\_\-show}}
+\index{do\-\_\-show@{do\-\_\-show}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-show}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-show (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a519919f64e953d3518444fe396c30dd7}
+\hypertarget{olc_8cpp_a168ab4a4e34426188be948452272bd80}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-tableit@{do\-\_\-tableit}}
+\index{do\-\_\-tableit@{do\-\_\-tableit}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-tableit}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-tableit (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a168ab4a4e34426188be948452272bd80}
+\hypertarget{olc_8cpp_ae5f084bdaf4aafe783454999161ce5e5}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-tags@{do\-\_\-tags}}
+\index{do\-\_\-tags@{do\-\_\-tags}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-tags}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-tags (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_ae5f084bdaf4aafe783454999161ce5e5}
+\hypertarget{olc_8cpp_ab44d05e55a1b1b473de720137bdc0232}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-thaw@{do\-\_\-thaw}}
+\index{do\-\_\-thaw@{do\-\_\-thaw}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-thaw}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-thaw (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_ab44d05e55a1b1b473de720137bdc0232}
+\hypertarget{olc_8cpp_aa45521b9493e0a1018fce64e8b5fb5f8}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-wearloc@{do\-\_\-wearloc}}
+\index{do\-\_\-wearloc@{do\-\_\-wearloc}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-wearloc}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-wearloc (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_aa45521b9493e0a1018fce64e8b5fb5f8}
+\hypertarget{olc_8cpp_a17ef47a83f908d829a16b1eaca94f6b8}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-wsave@{do\-\_\-wsave}}
+\index{do\-\_\-wsave@{do\-\_\-wsave}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-wsave}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-wsave (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a17ef47a83f908d829a16b1eaca94f6b8}
+\hypertarget{olc_8cpp_a971e2dd6aae3d6ecfbb42722f5e838ad}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-zlife@{do\-\_\-zlife}}
+\index{do\-\_\-zlife@{do\-\_\-zlife}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-zlife}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-zlife (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a971e2dd6aae3d6ecfbb42722f5e838ad}
+\hypertarget{olc_8cpp_adf4f147ee20e9d1d9eb6bcab40a1a93e}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-zmode@{do\-\_\-zmode}}
+\index{do\-\_\-zmode@{do\-\_\-zmode}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-zmode}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-zmode (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_adf4f147ee20e9d1d9eb6bcab40a1a93e}
+\hypertarget{olc_8cpp_a43b3001f47e6790bdbb131f9e15efbc5}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-zname@{do\-\_\-zname}}
+\index{do\-\_\-zname@{do\-\_\-zname}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-zname}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-zname (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a43b3001f47e6790bdbb131f9e15efbc5}
+\hypertarget{olc_8cpp_a482f9d74fb8ceafd6abcd3bbce22f136}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-zsave@{do\-\_\-zsave}}
+\index{do\-\_\-zsave@{do\-\_\-zsave}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-zsave}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-zsave (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{arg, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a482f9d74fb8ceafd6abcd3bbce22f136}
+\hypertarget{olc_8cpp_a5835a0fdaf3f54fff418431eebb0b57a}{\index{olc.\-cpp@{olc.\-cpp}!do\-\_\-zset@{do\-\_\-zset}}
+\index{do\-\_\-zset@{do\-\_\-zset}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{do\-\_\-zset}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-zset (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a5835a0fdaf3f54fff418431eebb0b57a}
+\hypertarget{olc_8cpp_ab916351d966abf5ecc33eb9d2348e77f}{\index{olc.\-cpp@{olc.\-cpp}!free\-\_\-exit@{free\-\_\-exit}}
+\index{free\-\_\-exit@{free\-\_\-exit}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{free\-\_\-exit}]{\setlength{\rightskip}{0pt plus 5cm}int free\-\_\-exit (
+\begin{DoxyParamCaption}
+\item[{struct {\bf room\-\_\-direction\-\_\-data} $\ast$}]{exit}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_ab916351d966abf5ecc33eb9d2348e77f}
+\hypertarget{olc_8cpp_abe0d333cb9c939627b49ef3023bae2c7}{\index{olc.\-cpp@{olc.\-cpp}!free\-\_\-room@{free\-\_\-room}}
+\index{free\-\_\-room@{free\-\_\-room}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{free\-\_\-room}]{\setlength{\rightskip}{0pt plus 5cm}int free\-\_\-room (
+\begin{DoxyParamCaption}
+\item[{{\bf R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$}]{room}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_abe0d333cb9c939627b49ef3023bae2c7}
+\hypertarget{olc_8cpp_a9ccea102506b29cd66b5affbd1f4bd0f}{\index{olc.\-cpp@{olc.\-cpp}!fwrite\-\_\-mobile@{fwrite\-\_\-mobile}}
+\index{fwrite\-\_\-mobile@{fwrite\-\_\-mobile}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{fwrite\-\_\-mobile}]{\setlength{\rightskip}{0pt plus 5cm}void fwrite\-\_\-mobile (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{tmob, }
+\item[{F\-I\-L\-E $\ast$}]{fp}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a9ccea102506b29cd66b5affbd1f4bd0f}
+\hypertarget{olc_8cpp_aac58781cf16f03fd64aaa5c4c88b345f}{\index{olc.\-cpp@{olc.\-cpp}!fwrite\-\_\-object@{fwrite\-\_\-object}}
+\index{fwrite\-\_\-object@{fwrite\-\_\-object}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{fwrite\-\_\-object}]{\setlength{\rightskip}{0pt plus 5cm}void fwrite\-\_\-object (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{tobj, }
+\item[{F\-I\-L\-E $\ast$}]{fp}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_aac58781cf16f03fd64aaa5c4c88b345f}
+\hypertarget{olc_8cpp_a164d8e1740e5ba6fbb87311acf9f9893}{\index{olc.\-cpp@{olc.\-cpp}!fwrite\-\_\-resets@{fwrite\-\_\-resets}}
+\index{fwrite\-\_\-resets@{fwrite\-\_\-resets}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{fwrite\-\_\-resets}]{\setlength{\rightskip}{0pt plus 5cm}void fwrite\-\_\-resets (
+\begin{DoxyParamCaption}
+\item[{{\bf R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$}]{troom, }
+\item[{F\-I\-L\-E $\ast$}]{fp}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a164d8e1740e5ba6fbb87311acf9f9893}
+\hypertarget{olc_8cpp_a1c57a114b3a889f2f4e5967e1b4374cd}{\index{olc.\-cpp@{olc.\-cpp}!fwrite\-\_\-room@{fwrite\-\_\-room}}
+\index{fwrite\-\_\-room@{fwrite\-\_\-room}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{fwrite\-\_\-room}]{\setlength{\rightskip}{0pt plus 5cm}void fwrite\-\_\-room (
+\begin{DoxyParamCaption}
+\item[{{\bf R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$}]{troom, }
+\item[{F\-I\-L\-E $\ast$}]{fp}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a1c57a114b3a889f2f4e5967e1b4374cd}
+\hypertarget{olc_8cpp_ae2333a268addce28536dbc72a9a0c4c2}{\index{olc.\-cpp@{olc.\-cpp}!get\-\_\-token@{get\-\_\-token}}
+\index{get\-\_\-token@{get\-\_\-token}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{get\-\_\-token}]{\setlength{\rightskip}{0pt plus 5cm}int get\-\_\-token (
+\begin{DoxyParamCaption}
+\item[{char $\ast$$\ast$}]{s, }
+\item[{char $\ast$}]{token}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_ae2333a268addce28536dbc72a9a0c4c2}
+\hypertarget{olc_8cpp_af7889d33ebbbdb4f2b846c5d6475b6e2}{\index{olc.\-cpp@{olc.\-cpp}!give\-\_\-mset\-\_\-help@{give\-\_\-mset\-\_\-help}}
+\index{give\-\_\-mset\-\_\-help@{give\-\_\-mset\-\_\-help}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{give\-\_\-mset\-\_\-help}]{\setlength{\rightskip}{0pt plus 5cm}void give\-\_\-mset\-\_\-help (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_af7889d33ebbbdb4f2b846c5d6475b6e2}
+\hypertarget{olc_8cpp_a06d53fbb17df2d1667df9a060a2d096c}{\index{olc.\-cpp@{olc.\-cpp}!give\-\_\-oset\-\_\-help@{give\-\_\-oset\-\_\-help}}
+\index{give\-\_\-oset\-\_\-help@{give\-\_\-oset\-\_\-help}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{give\-\_\-oset\-\_\-help}]{\setlength{\rightskip}{0pt plus 5cm}void give\-\_\-oset\-\_\-help (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a06d53fbb17df2d1667df9a060a2d096c}
+\hypertarget{olc_8cpp_a604cd45db70938956af49bfb856a0f77}{\index{olc.\-cpp@{olc.\-cpp}!index\-\_\-lookup@{index\-\_\-lookup}}
+\index{index\-\_\-lookup@{index\-\_\-lookup}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{index\-\_\-lookup}]{\setlength{\rightskip}{0pt plus 5cm}int index\-\_\-lookup (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$const $\ast$}]{index, }
+\item[{const char $\ast$const}]{lookup}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a604cd45db70938956af49bfb856a0f77}
+\hypertarget{olc_8cpp_a5bc8e4867b32a816a3ae4b5484229f4c}{\index{olc.\-cpp@{olc.\-cpp}!list\-\_\-mob\-\_\-resets@{list\-\_\-mob\-\_\-resets}}
+\index{list\-\_\-mob\-\_\-resets@{list\-\_\-mob\-\_\-resets}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{list\-\_\-mob\-\_\-resets}]{\setlength{\rightskip}{0pt plus 5cm}void list\-\_\-mob\-\_\-resets (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{mob}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a5bc8e4867b32a816a3ae4b5484229f4c}
+\hypertarget{olc_8cpp_ad80711f862ed771b1221ba64d0fbb71c}{\index{olc.\-cpp@{olc.\-cpp}!lookup\-\_\-dir@{lookup\-\_\-dir}}
+\index{lookup\-\_\-dir@{lookup\-\_\-dir}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{lookup\-\_\-dir}]{\setlength{\rightskip}{0pt plus 5cm}int lookup\-\_\-dir (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{value}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_ad80711f862ed771b1221ba64d0fbb71c}
+\hypertarget{olc_8cpp_a36ed171cf831916f30f93f120b3af5a0}{\index{olc.\-cpp@{olc.\-cpp}!make\-\_\-quiet@{make\-\_\-quiet}}
+\index{make\-\_\-quiet@{make\-\_\-quiet}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{make\-\_\-quiet}]{\setlength{\rightskip}{0pt plus 5cm}void make\-\_\-quiet (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a36ed171cf831916f30f93f120b3af5a0}
+\hypertarget{olc_8cpp_a353ef7e9b5992bcf48b6b8aa6d4f4db4}{\index{olc.\-cpp@{olc.\-cpp}!mcopy@{mcopy}}
+\index{mcopy@{mcopy}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{mcopy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A}$\ast$ mcopy (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{mob, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a353ef7e9b5992bcf48b6b8aa6d4f4db4}
+\hypertarget{olc_8cpp_a6ee010d6e1e9f7796498b50580c12686}{\index{olc.\-cpp@{olc.\-cpp}!mlist\-\_\-show@{mlist\-\_\-show}}
+\index{mlist\-\_\-show@{mlist\-\_\-show}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{mlist\-\_\-show}]{\setlength{\rightskip}{0pt plus 5cm}void mlist\-\_\-show (
+\begin{DoxyParamCaption}
+\item[{std\-::string $\ast$}]{output\-\_\-string, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{mob, }
+\item[{{\bf bool}}]{header}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a6ee010d6e1e9f7796498b50580c12686}
+\hypertarget{olc_8cpp_abec1b429b57381b00ef7d252d81bb1be}{\index{olc.\-cpp@{olc.\-cpp}!mset\-\_\-account\-\_\-flag@{mset\-\_\-account\-\_\-flag}}
+\index{mset\-\_\-account\-\_\-flag@{mset\-\_\-account\-\_\-flag}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{mset\-\_\-account\-\_\-flag}]{\setlength{\rightskip}{0pt plus 5cm}void mset\-\_\-account\-\_\-flag (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{const char $\ast$}]{account\-\_\-name, }
+\item[{const char $\ast$}]{subcmd}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_abec1b429b57381b00ef7d252d81bb1be}
+\hypertarget{olc_8cpp_a4ee399fde005a59799e75baeffbf8e6c}{\index{olc.\-cpp@{olc.\-cpp}!mset\-\_\-cue@{mset\-\_\-cue}}
+\index{mset\-\_\-cue@{mset\-\_\-cue}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{mset\-\_\-cue}]{\setlength{\rightskip}{0pt plus 5cm}void mset\-\_\-cue (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{builder, }
+\item[{{\bf M\-O\-B\-\_\-\-D\-A\-T\-A} $\ast$}]{mob, }
+\item[{const char $\ast$}]{cue, }
+\item[{const char $\ast$}]{reflex}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a4ee399fde005a59799e75baeffbf8e6c}
+\hypertarget{olc_8cpp_ab98b0f8188257f395dd9ddc1ddc13e96}{\index{olc.\-cpp@{olc.\-cpp}!mysql\-\_\-save\-\_\-vobject@{mysql\-\_\-save\-\_\-vobject}}
+\index{mysql\-\_\-save\-\_\-vobject@{mysql\-\_\-save\-\_\-vobject}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{mysql\-\_\-save\-\_\-vobject}]{\setlength{\rightskip}{0pt plus 5cm}void mysql\-\_\-save\-\_\-vobject (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{tobj, }
+\item[{int}]{port}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_ab98b0f8188257f395dd9ddc1ddc13e96}
+\hypertarget{olc_8cpp_afbe52965d7af868e39a0d7c85bcd9d41}{\index{olc.\-cpp@{olc.\-cpp}!olist\-\_\-show@{olist\-\_\-show}}
+\index{olist\-\_\-show@{olist\-\_\-show}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{olist\-\_\-show}]{\setlength{\rightskip}{0pt plus 5cm}void olist\-\_\-show (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj, }
+\item[{int}]{type, }
+\item[{int}]{header}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_afbe52965d7af868e39a0d7c85bcd9d41}
+\hypertarget{olc_8cpp_a0f8983990cfb52328db1288339bd8df6}{\index{olc.\-cpp@{olc.\-cpp}!open\-\_\-and\-\_\-rename@{open\-\_\-and\-\_\-rename}}
+\index{open\-\_\-and\-\_\-rename@{open\-\_\-and\-\_\-rename}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{open\-\_\-and\-\_\-rename}]{\setlength{\rightskip}{0pt plus 5cm}F\-I\-L\-E$\ast$ open\-\_\-and\-\_\-rename (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{name, }
+\item[{int}]{zone}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a0f8983990cfb52328db1288339bd8df6}
+\hypertarget{olc_8cpp_a1a340014e5d47baae0ba57f18bd91587}{\index{olc.\-cpp@{olc.\-cpp}!oset\-\_\-cue@{oset\-\_\-cue}}
+\index{oset\-\_\-cue@{oset\-\_\-cue}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{oset\-\_\-cue}]{\setlength{\rightskip}{0pt plus 5cm}void oset\-\_\-cue (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{builder, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj, }
+\item[{const char $\ast$}]{ocue, }
+\item[{const char $\ast$}]{reflex}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a1a340014e5d47baae0ba57f18bd91587}
+\hypertarget{olc_8cpp_a161b64d3f959e042d99bf9d0fbcca3c0}{\index{olc.\-cpp@{olc.\-cpp}!post\-\_\-mdesc@{post\-\_\-mdesc}}
+\index{post\-\_\-mdesc@{post\-\_\-mdesc}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{post\-\_\-mdesc}]{\setlength{\rightskip}{0pt plus 5cm}void post\-\_\-mdesc (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a161b64d3f959e042d99bf9d0fbcca3c0}
+\hypertarget{olc_8cpp_a9328f6a09888f6ee1b07c8537329eab6}{\index{olc.\-cpp@{olc.\-cpp}!post\-\_\-mset@{post\-\_\-mset}}
+\index{post\-\_\-mset@{post\-\_\-mset}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{post\-\_\-mset}]{\setlength{\rightskip}{0pt plus 5cm}void post\-\_\-mset (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a9328f6a09888f6ee1b07c8537329eab6}
+\hypertarget{olc_8cpp_adcb54b9631a56dd02fee2b4357c7c079}{\index{olc.\-cpp@{olc.\-cpp}!post\-\_\-odesc@{post\-\_\-odesc}}
+\index{post\-\_\-odesc@{post\-\_\-odesc}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{post\-\_\-odesc}]{\setlength{\rightskip}{0pt plus 5cm}void post\-\_\-odesc (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_adcb54b9631a56dd02fee2b4357c7c079}
+\hypertarget{olc_8cpp_ac1160a74a0952187297f807c3f6b27f2}{\index{olc.\-cpp@{olc.\-cpp}!post\-\_\-oset@{post\-\_\-oset}}
+\index{post\-\_\-oset@{post\-\_\-oset}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{post\-\_\-oset}]{\setlength{\rightskip}{0pt plus 5cm}void post\-\_\-oset (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_ac1160a74a0952187297f807c3f6b27f2}
+\hypertarget{olc_8cpp_a828a6fd07f66971c116672fed38a8f52}{\index{olc.\-cpp@{olc.\-cpp}!post\-\_\-rdesc@{post\-\_\-rdesc}}
+\index{post\-\_\-rdesc@{post\-\_\-rdesc}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{post\-\_\-rdesc}]{\setlength{\rightskip}{0pt plus 5cm}void post\-\_\-rdesc (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a828a6fd07f66971c116672fed38a8f52}
+\hypertarget{olc_8cpp_a1d51ff9034590f2ae2713acb3df2de6e}{\index{olc.\-cpp@{olc.\-cpp}!purge\-\_\-zone@{purge\-\_\-zone}}
+\index{purge\-\_\-zone@{purge\-\_\-zone}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{purge\-\_\-zone}]{\setlength{\rightskip}{0pt plus 5cm}void purge\-\_\-zone (
+\begin{DoxyParamCaption}
+\item[{int}]{zone, }
+\item[{int $\ast$}]{obj\-\_\-count, }
+\item[{int $\ast$}]{mob\-\_\-count, }
+\item[{int $\ast$}]{stray\-\_\-count}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a1d51ff9034590f2ae2713acb3df2de6e}
+\hypertarget{olc_8cpp_abc414dc9271ccb87061dbdeb8d975be0}{\index{olc.\-cpp@{olc.\-cpp}!rdelete@{rdelete}}
+\index{rdelete@{rdelete}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{rdelete}]{\setlength{\rightskip}{0pt plus 5cm}int rdelete (
+\begin{DoxyParamCaption}
+\item[{{\bf R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$}]{room}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_abc414dc9271ccb87061dbdeb8d975be0}
+\hypertarget{olc_8cpp_adf331010c936409ffe2a870c9923a712}{\index{olc.\-cpp@{olc.\-cpp}!redefine\-\_\-mobiles@{redefine\-\_\-mobiles}}
+\index{redefine\-\_\-mobiles@{redefine\-\_\-mobiles}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{redefine\-\_\-mobiles}]{\setlength{\rightskip}{0pt plus 5cm}int redefine\-\_\-mobiles (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{proto}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_adf331010c936409ffe2a870c9923a712}
+\hypertarget{olc_8cpp_a4e11dab29393f108f2a4c98aa1f5e908}{\index{olc.\-cpp@{olc.\-cpp}!redefine\-\_\-objects@{redefine\-\_\-objects}}
+\index{redefine\-\_\-objects@{redefine\-\_\-objects}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{redefine\-\_\-objects}]{\setlength{\rightskip}{0pt plus 5cm}int redefine\-\_\-objects (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{proto}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a4e11dab29393f108f2a4c98aa1f5e908}
+\hypertarget{olc_8cpp_ac55e934b7e0380939db5e09f92736c60}{\index{olc.\-cpp@{olc.\-cpp}!reformat\-\_\-desc@{reformat\-\_\-desc}}
+\index{reformat\-\_\-desc@{reformat\-\_\-desc}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{reformat\-\_\-desc}]{\setlength{\rightskip}{0pt plus 5cm}void reformat\-\_\-desc (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{source, }
+\item[{char $\ast$$\ast$}]{target}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_ac55e934b7e0380939db5e09f92736c60}
+\hypertarget{olc_8cpp_ab2a3e495d69aa98739ea891abbed974a}{\index{olc.\-cpp@{olc.\-cpp}!reformat\-\_\-string@{reformat\-\_\-string}}
+\index{reformat\-\_\-string@{reformat\-\_\-string}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{reformat\-\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}void reformat\-\_\-string (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{source, }
+\item[{char $\ast$$\ast$}]{target}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_ab2a3e495d69aa98739ea891abbed974a}
+\hypertarget{olc_8cpp_acb768e89228981db35035d3af4a186ef}{\index{olc.\-cpp@{olc.\-cpp}!replace\-\_\-mobile@{replace\-\_\-mobile}}
+\index{replace\-\_\-mobile@{replace\-\_\-mobile}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{replace\-\_\-mobile}]{\setlength{\rightskip}{0pt plus 5cm}void replace\-\_\-mobile (
+\begin{DoxyParamCaption}
+\item[{int}]{src, }
+\item[{int}]{tar, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_acb768e89228981db35035d3af4a186ef}
+\hypertarget{olc_8cpp_adf31899eadd312c18a0d2b93cf27423a}{\index{olc.\-cpp@{olc.\-cpp}!replace\-\_\-object@{replace\-\_\-object}}
+\index{replace\-\_\-object@{replace\-\_\-object}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{replace\-\_\-object}]{\setlength{\rightskip}{0pt plus 5cm}void replace\-\_\-object (
+\begin{DoxyParamCaption}
+\item[{int}]{src, }
+\item[{int}]{tar, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_adf31899eadd312c18a0d2b93cf27423a}
+\hypertarget{olc_8cpp_a1c1ec0ff3eab027c9ebb5b3fcf5415c5}{\index{olc.\-cpp@{olc.\-cpp}!reset\-\_\-delete@{reset\-\_\-delete}}
+\index{reset\-\_\-delete@{reset\-\_\-delete}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{reset\-\_\-delete}]{\setlength{\rightskip}{0pt plus 5cm}int reset\-\_\-delete (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{mob, }
+\item[{int}]{reset\-\_\-num}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a1c1ec0ff3eab027c9ebb5b3fcf5415c5}
+\hypertarget{olc_8cpp_a825e8cd32cfd4b9319ba0fb132cf7891}{\index{olc.\-cpp@{olc.\-cpp}!reset\-\_\-insert@{reset\-\_\-insert}}
+\index{reset\-\_\-insert@{reset\-\_\-insert}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{reset\-\_\-insert}]{\setlength{\rightskip}{0pt plus 5cm}void reset\-\_\-insert (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf R\-E\-S\-E\-T\-\_\-\-D\-A\-T\-A} $\ast$}]{reset}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a825e8cd32cfd4b9319ba0fb132cf7891}
+\hypertarget{olc_8cpp_a91d5ed3866a5a82fd5903f7f7b6cce44}{\index{olc.\-cpp@{olc.\-cpp}!rlist\-\_\-show@{rlist\-\_\-show}}
+\index{rlist\-\_\-show@{rlist\-\_\-show}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{rlist\-\_\-show}]{\setlength{\rightskip}{0pt plus 5cm}void rlist\-\_\-show (
+\begin{DoxyParamCaption}
+\item[{{\bf R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$}]{troom, }
+\item[{int}]{sector, }
+\item[{int}]{header}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a91d5ed3866a5a82fd5903f7f7b6cce44}
+\hypertarget{olc_8cpp_a3ff9d2975528a4d744aafaa2336b9c69}{\index{olc.\-cpp@{olc.\-cpp}!save\-\_\-affect\-\_\-reset@{save\-\_\-affect\-\_\-reset}}
+\index{save\-\_\-affect\-\_\-reset@{save\-\_\-affect\-\_\-reset}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{save\-\_\-affect\-\_\-reset}]{\setlength{\rightskip}{0pt plus 5cm}void save\-\_\-affect\-\_\-reset (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{fp, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{tmp\-\_\-mob, }
+\item[{{\bf A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$}]{af}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a3ff9d2975528a4d744aafaa2336b9c69}
+\hypertarget{olc_8cpp_a6c5ac64a18777a532c510decc5fffbc4}{\index{olc.\-cpp@{olc.\-cpp}!save\-\_\-rooms@{save\-\_\-rooms}}
+\index{save\-\_\-rooms@{save\-\_\-rooms}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{save\-\_\-rooms}]{\setlength{\rightskip}{0pt plus 5cm}int save\-\_\-rooms (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{zone}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a6c5ac64a18777a532c510decc5fffbc4}
+\hypertarget{olc_8cpp_a1f06be7323d95b924a8cfbf6e86ebadd}{\index{olc.\-cpp@{olc.\-cpp}!show\-\_\-reg\-\_\-by\-\_\-name@{show\-\_\-reg\-\_\-by\-\_\-name}}
+\index{show\-\_\-reg\-\_\-by\-\_\-name@{show\-\_\-reg\-\_\-by\-\_\-name}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{show\-\_\-reg\-\_\-by\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}void show\-\_\-reg\-\_\-by\-\_\-name (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{reg\-\_\-name}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a1f06be7323d95b924a8cfbf6e86ebadd}
+\hypertarget{olc_8cpp_a5f0be49d0473df8a58f418a270c6e86e}{\index{olc.\-cpp@{olc.\-cpp}!update\-\_\-crafts\-\_\-file@{update\-\_\-crafts\-\_\-file}}
+\index{update\-\_\-crafts\-\_\-file@{update\-\_\-crafts\-\_\-file}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{update\-\_\-crafts\-\_\-file}]{\setlength{\rightskip}{0pt plus 5cm}void update\-\_\-crafts\-\_\-file (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{olc_8cpp_a5f0be49d0473df8a58f418a270c6e86e}
+if race
+
+if clan
+
+if opens for skill
+
+uses skill in phases
+
+add header info to database
+
+add all information to text file
+
+is opening craft for some skill(s)
+
+requires race
+
+requires clan
+
+requires sector
+
+requires season
+
+requires weather 
+
+\subsection{Variable Documentation}
+\hypertarget{olc_8cpp_af6ceec115c1b5d71754b7c4c23c949d4}{\index{olc.\-cpp@{olc.\-cpp}!ammo\-\_\-bits@{ammo\-\_\-bits}}
+\index{ammo\-\_\-bits@{ammo\-\_\-bits}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{ammo\-\_\-bits}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ ammo\-\_\-bits\mbox{[}$\,$\mbox{]}}}\label{olc_8cpp_af6ceec115c1b5d71754b7c4c23c949d4}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"jacketed"},
+    \textcolor{stringliteral}{"hollow-tip"},
+    \textcolor{stringliteral}{"armor-piercing"},
+    \textcolor{stringliteral}{"incendiary"},
+    \textcolor{stringliteral}{"tracer"},
+    \textcolor{stringliteral}{"blunted"},
+    \textcolor{stringliteral}{"sharpened"},
+    \textcolor{stringliteral}{"bone"},
+    \textcolor{stringliteral}{"flint"},
+    \textcolor{stringliteral}{"metal-tipped"},
+    \textcolor{stringliteral}{"broadhead"},
+    \textcolor{stringliteral}{"bodkin"},
+    \textcolor{stringliteral}{"flaming"},
+    \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}
+\hypertarget{olc_8cpp_a600672d3e5e148f2e848b3f33b55c300}{\index{olc.\-cpp@{olc.\-cpp}!ammo\-\_\-sizes@{ammo\-\_\-sizes}}
+\index{ammo\-\_\-sizes@{ammo\-\_\-sizes}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{ammo\-\_\-sizes}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ ammo\-\_\-sizes\mbox{[}$\,$\mbox{]}}}\label{olc_8cpp_a600672d3e5e148f2e848b3f33b55c300}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"pistol"},
+    \textcolor{stringliteral}{"SMG"},
+    \textcolor{stringliteral}{"rifle"},
+    \textcolor{stringliteral}{"sling"},
+    \textcolor{stringliteral}{"heavy-gun"},
+    \textcolor{stringliteral}{"blowgun"},
+    \textcolor{stringliteral}{"ray-gun"},
+    \textcolor{stringliteral}{"crossbow"},
+    \textcolor{stringliteral}{"shortbow"},
+    \textcolor{stringliteral}{"longbow"},
+    \textcolor{stringliteral}{"elvenbow"},
+    \textcolor{stringliteral}{"balista"},
+    \textcolor{stringliteral}{"slingshot"},
+    \textcolor{stringliteral}{"catapult"},
+    \textcolor{stringliteral}{"trebuchet"},
+    \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}
+\hypertarget{olc_8cpp_ae080b6fb7734735b31de5f752dea425d}{\index{olc.\-cpp@{olc.\-cpp}!apply\-\_\-types@{apply\-\_\-types}}
+\index{apply\-\_\-types@{apply\-\_\-types}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{apply\-\_\-types}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ apply\-\_\-types\mbox{[}$\,$\mbox{]}}}\label{olc_8cpp_ae080b6fb7734735b31de5f752dea425d}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"None"},
+    \textcolor{stringliteral}{"Strength"},
+    \textcolor{stringliteral}{"Dexterity"},
+    \textcolor{stringliteral}{"Intelligence"},
+    \textcolor{stringliteral}{"Charisma"},
+    \textcolor{stringliteral}{"Aura"},
+    \textcolor{stringliteral}{"Will"},
+    \textcolor{stringliteral}{"Constitution"},
+    \textcolor{stringliteral}{"Sex"},
+    \textcolor{stringliteral}{"Age"},
+    \textcolor{stringliteral}{"Weight"},
+    \textcolor{stringliteral}{"Height"},
+    \textcolor{stringliteral}{"Defense"},
+    \textcolor{stringliteral}{"Hitpoints"},
+    \textcolor{stringliteral}{"Movement"},
+    \textcolor{stringliteral}{"Cash"},
+    \textcolor{stringliteral}{"Armor"},
+    \textcolor{stringliteral}{"Offense"},
+    \textcolor{stringliteral}{"Damagebonus"},
+    \textcolor{stringliteral}{"Save\_Par"},
+    \textcolor{stringliteral}{"Save\_Rod"},
+    \textcolor{stringliteral}{"Save\_Pet"},
+    \textcolor{stringliteral}{"Save\_Bre"},
+    \textcolor{stringliteral}{"Save\_Spe"},
+    \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}
+\hypertarget{olc_8cpp_a68c2a9c0e2e0f8c05cb684f21fa73056}{\index{olc.\-cpp@{olc.\-cpp}!armor\-\_\-locs@{armor\-\_\-locs}}
+\index{armor\-\_\-locs@{armor\-\_\-locs}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{armor\-\_\-locs}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ armor\-\_\-locs\mbox{[}{\bf M\-A\-X\-\_\-\-H\-I\-T\-L\-O\-C}+1\mbox{]}}}\label{olc_8cpp_a68c2a9c0e2e0f8c05cb684f21fa73056}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"torso"},
+    \textcolor{stringliteral}{"upper-legs"},
+    \textcolor{stringliteral}{"upper-arms"},
+    \textcolor{stringliteral}{"head"},
+    \textcolor{stringliteral}{"neck"},
+    \textcolor{stringliteral}{"feet"},
+    \textcolor{stringliteral}{"hands"},
+    \textcolor{stringliteral}{"eyes"},
+    \textcolor{stringliteral}{"lower-legs"},
+    \textcolor{stringliteral}{"lower-arms"},
+    \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}
+\hypertarget{olc_8cpp_a54b4dc9d5c65bfa855901459559e1e79}{\index{olc.\-cpp@{olc.\-cpp}!armor\-\_\-standards@{armor\-\_\-standards}}
+\index{armor\-\_\-standards@{armor\-\_\-standards}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{armor\-\_\-standards}]{\setlength{\rightskip}{0pt plus 5cm}const int armor\-\_\-standards\mbox{[}5\mbox{]}\mbox{[}6\mbox{]}\mbox{[}5\mbox{]}}}\label{olc_8cpp_a54b4dc9d5c65bfa855901459559e1e79}
+\hypertarget{olc_8cpp_ad66044db6d5a09464a98ab52cfd86c25}{\index{olc.\-cpp@{olc.\-cpp}!batt\-\_\-bits@{batt\-\_\-bits}}
+\index{batt\-\_\-bits@{batt\-\_\-bits}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{batt\-\_\-bits}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ batt\-\_\-bits\mbox{[}$\,$\mbox{]}}}\label{olc_8cpp_ad66044db6d5a09464a98ab52cfd86c25}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"Battery"},
+    \textcolor{stringliteral}{"Cell-Pack"},
+    \textcolor{stringliteral}{"Fusion-Cell"},
+    \textcolor{stringliteral}{"Internal"},
+    \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}
+\hypertarget{olc_8cpp_a52d27f4a5e852529f80dc5a4dce53d85}{\index{olc.\-cpp@{olc.\-cpp}!body\-\_\-sneak\-\_\-amount@{body\-\_\-sneak\-\_\-amount}}
+\index{body\-\_\-sneak\-\_\-amount@{body\-\_\-sneak\-\_\-amount}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{body\-\_\-sneak\-\_\-amount}]{\setlength{\rightskip}{0pt plus 5cm}const int body\-\_\-sneak\-\_\-amount\mbox{[}{\bf M\-A\-X\-\_\-\-H\-I\-T\-L\-O\-C}\mbox{]}}}\label{olc_8cpp_a52d27f4a5e852529f80dc5a4dce53d85}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    6,  
+    2,  
+    2,  
+    0,  
+    0,  
+    1,  
+    0,  
+    0,  
+    2,  
+    2  
+\}
+\end{DoxyCode}
+\hypertarget{olc_8cpp_a2f9be24caff417bb5c8420e73f2bb090}{\index{olc.\-cpp@{olc.\-cpp}!body\-\_\-weight\-\_\-amount@{body\-\_\-weight\-\_\-amount}}
+\index{body\-\_\-weight\-\_\-amount@{body\-\_\-weight\-\_\-amount}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{body\-\_\-weight\-\_\-amount}]{\setlength{\rightskip}{0pt plus 5cm}const int body\-\_\-weight\-\_\-amount\mbox{[}{\bf M\-A\-X\-\_\-\-H\-I\-T\-L\-O\-C}\mbox{]}}}\label{olc_8cpp_a2f9be24caff417bb5c8420e73f2bb090}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    10,  
+    5,  
+    5,  
+    4,  
+    1,  
+    10,  
+    4,  
+    1,  
+    5,  
+    5  
+\}
+\end{DoxyCode}
+\hypertarget{olc_8cpp_ada6662d650828d4536134390dcf746b3}{\index{olc.\-cpp@{olc.\-cpp}!calibers@{calibers}}
+\index{calibers@{calibers}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{calibers}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ calibers\mbox{[}$\,$\mbox{]}}}\label{olc_8cpp_ada6662d650828d4536134390dcf746b3}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{".20"},
+    \textcolor{stringliteral}{".25"},
+    \textcolor{stringliteral}{".30"},
+    \textcolor{stringliteral}{".35"},
+    \textcolor{stringliteral}{".40"},
+    \textcolor{stringliteral}{".45"},
+    \textcolor{stringliteral}{".50"},
+    \textcolor{stringliteral}{".55"},
+    \textcolor{stringliteral}{".60"},
+    \textcolor{stringliteral}{"BB"}, 
+    \textcolor{stringliteral}{"dart"},
+    \textcolor{stringliteral}{"bolt"},
+    \textcolor{stringliteral}{"short-arrow"},
+    \textcolor{stringliteral}{"long-arrow"},
+    \textcolor{stringliteral}{"elven-arrow"},
+    \textcolor{stringliteral}{"balista-bolt"},
+    \textcolor{stringliteral}{"slingshot-stone"},
+    \textcolor{stringliteral}{"catapult-stone"},
+    \textcolor{stringliteral}{"trebuchet-boulder"},
+    \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}
+\hypertarget{olc_8cpp_a6c8f0732734941f7dde9fb899ac9de63}{\index{olc.\-cpp@{olc.\-cpp}!cards@{cards}}
+\index{cards@{cards}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{cards}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ cards\mbox{[}$\,$\mbox{]}}}\label{olc_8cpp_a6c8f0732734941f7dde9fb899ac9de63}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"Ace"},
+    \textcolor{stringliteral}{"two"},
+    \textcolor{stringliteral}{"three"},
+    \textcolor{stringliteral}{"four"},
+    \textcolor{stringliteral}{"five"},
+    \textcolor{stringliteral}{"six"},
+    \textcolor{stringliteral}{"seven"},
+    \textcolor{stringliteral}{"eight"},
+    \textcolor{stringliteral}{"nine"},
+    \textcolor{stringliteral}{"ten"},
+    \textcolor{stringliteral}{"Jack"},
+    \textcolor{stringliteral}{"Queen"},
+    \textcolor{stringliteral}{"King"},
+    \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}
+\hypertarget{olc_8cpp_af41979541578b7f95c0a98a18712ccb7}{\index{olc.\-cpp@{olc.\-cpp}!constant\-\_\-info@{constant\-\_\-info}}
+\index{constant\-\_\-info@{constant\-\_\-info}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{constant\-\_\-info}]{\setlength{\rightskip}{0pt plus 5cm}const struct {\bf constant\-\_\-data} constant\-\_\-info\mbox{[}$\,$\mbox{]}}}\label{olc_8cpp_af41979541578b7f95c0a98a18712ccb7}
+\hypertarget{olc_8cpp_ab2b6780cecfe7ea3ec0bad5453b2112d}{\index{olc.\-cpp@{olc.\-cpp}!deity\-\_\-name@{deity\-\_\-name}}
+\index{deity\-\_\-name@{deity\-\_\-name}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{deity\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ deity\-\_\-name\mbox{[}$\,$\mbox{]}}}\label{olc_8cpp_ab2b6780cecfe7ea3ec0bad5453b2112d}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"None"},
+    \textcolor{stringliteral}{"Manwe Sulimo"},
+    \textcolor{stringliteral}{"Varda Elentari"},
+    \textcolor{stringliteral}{"Ulmo"},
+    \textcolor{stringliteral}{"Yavanna Kementari"},
+    \textcolor{stringliteral}{"Aule the Smith"},
+    \textcolor{stringliteral}{"Nienna"},
+    \textcolor{stringliteral}{"Orome"},
+    \textcolor{stringliteral}{"Este the Gentle"},
+    \textcolor{stringliteral}{"Mandos"},
+    \textcolor{stringliteral}{"Vaire the Weaver"},
+    \textcolor{stringliteral}{"Lorien"},
+    \textcolor{stringliteral}{"Vana the Ever-young"},
+    \textcolor{stringliteral}{"Tulkas Astaldo"},
+    \textcolor{stringliteral}{"Nessa"},
+    \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}
+\hypertarget{olc_8cpp_adc777e95799694a525ac901005c0ab45}{\index{olc.\-cpp@{olc.\-cpp}!drinks@{drinks}}
+\index{drinks@{drinks}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{drinks}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ drinks\mbox{[}$\,$\mbox{]}}}\label{olc_8cpp_adc777e95799694a525ac901005c0ab45}
+\hypertarget{olc_8cpp_a976fe585397febf972a0bdbb5f070d62}{\index{olc.\-cpp@{olc.\-cpp}!echo\-\_\-five@{echo\-\_\-five}}
+\index{echo\-\_\-five@{echo\-\_\-five}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{echo\-\_\-five}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ echo\-\_\-five\mbox{[}$\,$\mbox{]}}}\label{olc_8cpp_a976fe585397febf972a0bdbb5f070d62}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \{
+  \textcolor{stringliteral}{" heading "}, 
+  \textcolor{stringliteral}{" disappearing "},
+  \textcolor{stringliteral}{" travelling "},
+  \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}
+\hypertarget{olc_8cpp_adbdb3a16e569b1281dccfd9295a1a34f}{\index{olc.\-cpp@{olc.\-cpp}!echo\-\_\-five\-\_\-qty@{echo\-\_\-five\-\_\-qty}}
+\index{echo\-\_\-five\-\_\-qty@{echo\-\_\-five\-\_\-qty}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{echo\-\_\-five\-\_\-qty}]{\setlength{\rightskip}{0pt plus 5cm}const int echo\-\_\-five\-\_\-qty = 2}}\label{olc_8cpp_adbdb3a16e569b1281dccfd9295a1a34f}
+\hypertarget{olc_8cpp_a2bf4abc7886274db88f0895f0b144c6f}{\index{olc.\-cpp@{olc.\-cpp}!echo\-\_\-four@{echo\-\_\-four}}
+\index{echo\-\_\-four@{echo\-\_\-four}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{echo\-\_\-four}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ echo\-\_\-four\mbox{[}$\,$\mbox{]}}}\label{olc_8cpp_a2bf4abc7886274db88f0895f0b144c6f}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \{
+  \textcolor{stringliteral}{" overhead"},
+  \textcolor{stringliteral}{" high overhead"},
+  \textcolor{stringliteral}{" through the area"},
+  \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}
+\hypertarget{olc_8cpp_a000872551beef5830eacb505b59ae0f4}{\index{olc.\-cpp@{olc.\-cpp}!echo\-\_\-four\-\_\-qty@{echo\-\_\-four\-\_\-qty}}
+\index{echo\-\_\-four\-\_\-qty@{echo\-\_\-four\-\_\-qty}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{echo\-\_\-four\-\_\-qty}]{\setlength{\rightskip}{0pt plus 5cm}const int echo\-\_\-four\-\_\-qty = 2}}\label{olc_8cpp_a000872551beef5830eacb505b59ae0f4}
+\hypertarget{olc_8cpp_a07cd39fac4b600c446e4faf7e27d0b74}{\index{olc.\-cpp@{olc.\-cpp}!echo\-\_\-one@{echo\-\_\-one}}
+\index{echo\-\_\-one@{echo\-\_\-one}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{echo\-\_\-one}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ echo\-\_\-one\mbox{[}$\,$\mbox{]}}}\label{olc_8cpp_a07cd39fac4b600c446e4faf7e27d0b74}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \{
+  \textcolor{stringliteral}{" sending "},
+  \textcolor{stringliteral}{" sending "}, 
+  \textcolor{stringliteral}{" sending "}, 
+  \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}
+\hypertarget{olc_8cpp_a9c774a95a0480efb880b3d74dd9ad4c1}{\index{olc.\-cpp@{olc.\-cpp}!echo\-\_\-one\-\_\-qty@{echo\-\_\-one\-\_\-qty}}
+\index{echo\-\_\-one\-\_\-qty@{echo\-\_\-one\-\_\-qty}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{echo\-\_\-one\-\_\-qty}]{\setlength{\rightskip}{0pt plus 5cm}const int echo\-\_\-one\-\_\-qty = 2}}\label{olc_8cpp_a9c774a95a0480efb880b3d74dd9ad4c1}
+\hypertarget{olc_8cpp_ad362ed97df75e4ea224c51f038fe2fd3}{\index{olc.\-cpp@{olc.\-cpp}!echo\-\_\-three@{echo\-\_\-three}}
+\index{echo\-\_\-three@{echo\-\_\-three}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{echo\-\_\-three}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ echo\-\_\-three\mbox{[}$\,$\mbox{]}}}\label{olc_8cpp_ad362ed97df75e4ea224c51f038fe2fd3}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \{
+  \textcolor{stringliteral}{" flies "},
+  \textcolor{stringliteral}{" hurtles "},
+  \textcolor{stringliteral}{" arcs "},
+  \textcolor{stringliteral}{" streaks "},
+  \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}
+\hypertarget{olc_8cpp_a15a20911a9170782c1974c4b61b7a151}{\index{olc.\-cpp@{olc.\-cpp}!echo\-\_\-three\-\_\-qty@{echo\-\_\-three\-\_\-qty}}
+\index{echo\-\_\-three\-\_\-qty@{echo\-\_\-three\-\_\-qty}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{echo\-\_\-three\-\_\-qty}]{\setlength{\rightskip}{0pt plus 5cm}const int echo\-\_\-three\-\_\-qty = 3}}\label{olc_8cpp_a15a20911a9170782c1974c4b61b7a151}
+\hypertarget{olc_8cpp_a5f8d5ee3ec2965661844e48a7f694b22}{\index{olc.\-cpp@{olc.\-cpp}!echo\-\_\-two@{echo\-\_\-two}}
+\index{echo\-\_\-two@{echo\-\_\-two}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{echo\-\_\-two}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ echo\-\_\-two\mbox{[}$\,$\mbox{]}}}\label{olc_8cpp_a5f8d5ee3ec2965661844e48a7f694b22}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \{
+  \textcolor{stringliteral}{" flying "},
+  \textcolor{stringliteral}{" hurtling "},
+  \textcolor{stringliteral}{" streaking "},
+  \textcolor{stringliteral}{" soaring "},
+  \textcolor{stringliteral}{" shooting "},
+  \textcolor{stringliteral}{" racing "},
+  \textcolor{stringliteral}{" speeding "},
+  \textcolor{stringliteral}{" tearing "},
+  \textcolor{stringliteral}{" rushing "},
+  \textcolor{stringliteral}{" arcing "},
+  \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}
+\hypertarget{olc_8cpp_a23013f3ca470ee5614274c997191307d}{\index{olc.\-cpp@{olc.\-cpp}!echo\-\_\-two\-\_\-qty@{echo\-\_\-two\-\_\-qty}}
+\index{echo\-\_\-two\-\_\-qty@{echo\-\_\-two\-\_\-qty}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{echo\-\_\-two\-\_\-qty}]{\setlength{\rightskip}{0pt plus 5cm}const int echo\-\_\-two\-\_\-qty = 9}}\label{olc_8cpp_a23013f3ca470ee5614274c997191307d}
+\hypertarget{olc_8cpp_ade18717517e1fb3880df8e0631ff1cd8}{\index{olc.\-cpp@{olc.\-cpp}!elec\-\_\-bits@{elec\-\_\-bits}}
+\index{elec\-\_\-bits@{elec\-\_\-bits}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{elec\-\_\-bits}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ elec\-\_\-bits\mbox{[}$\,$\mbox{]}}}\label{olc_8cpp_ade18717517e1fb3880df8e0631ff1cd8}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"Pwr\_Batt"},
+    \textcolor{stringliteral}{"Pwr\_Pack"},
+    \textcolor{stringliteral}{"Pwr\_Fusion"},
+    \textcolor{stringliteral}{"Pwr\_Internal"},
+    \textcolor{stringliteral}{"Fea\_Power"},
+    \textcolor{stringliteral}{"Fea\_Radio\_Encrypt"},
+    \textcolor{stringliteral}{"Fea\_Radio\_Set"},
+    \textcolor{stringliteral}{"Fea\_Radio\_Scan"},
+    \textcolor{stringliteral}{"Fea\_Radio\_Oneway"},
+    \textcolor{stringliteral}{"Fea\_Waterproof"},
+    \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}
+\hypertarget{olc_8cpp_a55c71990ee4162ebec6abe401996cf15}{\index{olc.\-cpp@{olc.\-cpp}!engine@{engine}}
+\index{engine@{engine}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{engine}]{\setlength{\rightskip}{0pt plus 5cm}{\bf rpie\-::server} engine}}\label{olc_8cpp_a55c71990ee4162ebec6abe401996cf15}
+\hypertarget{olc_8cpp_ac90080cb12a4b2191c1877183585f4ed}{\index{olc.\-cpp@{olc.\-cpp}!extra\-\_\-bits@{extra\-\_\-bits}}
+\index{extra\-\_\-bits@{extra\-\_\-bits}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{extra\-\_\-bits}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ extra\-\_\-bits\mbox{[}$\,$\mbox{]}}}\label{olc_8cpp_ac90080cb12a4b2191c1877183585f4ed}
+\hypertarget{olc_8cpp_af4682b23df7996ac10a2cc6762160a98}{\index{olc.\-cpp@{olc.\-cpp}!foraged\-\_\-bits@{foraged\-\_\-bits}}
+\index{foraged\-\_\-bits@{foraged\-\_\-bits}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{foraged\-\_\-bits}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ foraged\-\_\-bits\mbox{[}$\,$\mbox{]}}}\label{olc_8cpp_af4682b23df7996ac10a2cc6762160a98}
+\hypertarget{olc_8cpp_aa803452c9cbfee85cf24c7a0b0a9722b}{\index{olc.\-cpp@{olc.\-cpp}!frames@{frames}}
+\index{frames@{frames}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{frames}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ frames\mbox{[}$\,$\mbox{]}}}\label{olc_8cpp_aa803452c9cbfee85cf24c7a0b0a9722b}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"feather"},
+    \textcolor{stringliteral}{"scant"},
+    \textcolor{stringliteral}{"light"},
+    \textcolor{stringliteral}{"medium"},
+    \textcolor{stringliteral}{"heavy"},
+    \textcolor{stringliteral}{"massive"},
+    \textcolor{stringliteral}{"mammoth"},
+    \textcolor{stringliteral}{"monstrous"},
+    \textcolor{stringliteral}{"gigantic"},
+    \textcolor{stringliteral}{"gargantuan"},
+    \textcolor{stringliteral}{"colossal"},
+    \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}
+\hypertarget{olc_8cpp_a491d06a542cf125e8a799d9146bebee5}{\index{olc.\-cpp@{olc.\-cpp}!gun\-\_\-bits@{gun\-\_\-bits}}
+\index{gun\-\_\-bits@{gun\-\_\-bits}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{gun\-\_\-bits}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ gun\-\_\-bits\mbox{[}$\,$\mbox{]}}}\label{olc_8cpp_a491d06a542cf125e8a799d9146bebee5}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"safety"},
+    \textcolor{stringliteral}{"burst"},
+    \textcolor{stringliteral}{"automatic"},
+    \textcolor{stringliteral}{"silencable"},
+    \textcolor{stringliteral}{"silent"},
+    \textcolor{stringliteral}{"ammo-display"},
+    \textcolor{stringliteral}{"electronic-display"},
+    \textcolor{stringliteral}{"link-enhanced"},
+    \textcolor{stringliteral}{"automated-enhanced"},
+    \textcolor{stringliteral}{"telescopic-sighted"},
+    \textcolor{stringliteral}{"infrared-sighted"},
+    \textcolor{stringliteral}{"laser-sighted"},
+    \textcolor{stringliteral}{"single-direct"},
+    \textcolor{stringliteral}{"five-direct"},
+    \textcolor{stringliteral}{"six-direct"},
+    \textcolor{stringliteral}{"small magazine"},
+    \textcolor{stringliteral}{"medium magazine"},
+    \textcolor{stringliteral}{"large magazine"},
+    \textcolor{stringliteral}{"huge magazine"},
+    \textcolor{stringliteral}{"belt-fed"},
+    \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}
+\hypertarget{olc_8cpp_a9e17c0cfe371f58850bd8474e397eaaf}{\index{olc.\-cpp@{olc.\-cpp}!gun\-\_\-set@{gun\-\_\-set}}
+\index{gun\-\_\-set@{gun\-\_\-set}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{gun\-\_\-set}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ gun\-\_\-set\mbox{[}$\,$\mbox{]}}}\label{olc_8cpp_a9e17c0cfe371f58850bd8474e397eaaf}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"semi-automatic fire"},
+    \textcolor{stringliteral}{"safety"},
+    \textcolor{stringliteral}{"burst"},
+    \textcolor{stringliteral}{"automatic"},
+    \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}
+\hypertarget{olc_8cpp_a3804a9b6d65d3983e59e92e3be751594}{\index{olc.\-cpp@{olc.\-cpp}!item\-\_\-types@{item\-\_\-types}}
+\index{item\-\_\-types@{item\-\_\-types}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{item\-\_\-types}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ item\-\_\-types\mbox{[}$\,$\mbox{]}}}\label{olc_8cpp_a3804a9b6d65d3983e59e92e3be751594}
+\hypertarget{olc_8cpp_a0c4440f39d7f3322ccf1e2d216dfcf60}{\index{olc.\-cpp@{olc.\-cpp}!materials@{materials}}
+\index{materials@{materials}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{materials}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ materials\mbox{[}$\,$\mbox{]}}}\label{olc_8cpp_a0c4440f39d7f3322ccf1e2d216dfcf60}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+
+\{
+    \textcolor{stringliteral}{"None"},
+    \textcolor{stringliteral}{"Bone"},
+    \textcolor{stringliteral}{"Ceramic"},
+    \textcolor{stringliteral}{"Glass"},
+    \textcolor{stringliteral}{"Leather"},
+    \textcolor{stringliteral}{"Liquid"},
+    \textcolor{stringliteral}{"Metal"},
+    \textcolor{stringliteral}{"Mineral"},
+    \textcolor{stringliteral}{"Organic"}, 
+    \textcolor{stringliteral}{"Paper"},
+    \textcolor{stringliteral}{"Stone"}, 
+    \textcolor{stringliteral}{"Textile"}, 
+    \textcolor{stringliteral}{"Wood"}, 
+    \textcolor{stringliteral}{"Gemstone"},
+    \textcolor{stringliteral}{"Preciousmetal"},
+    \textcolor{stringliteral}{"Brick"},
+    \textcolor{stringliteral}{"Other"},
+    \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}
+\hypertarget{olc_8cpp_a45f52015dfafd5c97eb132ce0e2c1640}{\index{olc.\-cpp@{olc.\-cpp}!mob\-\_\-armors@{mob\-\_\-armors}}
+\index{mob\-\_\-armors@{mob\-\_\-armors}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{mob\-\_\-armors}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ mob\-\_\-armors\mbox{[}$\,$\mbox{]}}}\label{olc_8cpp_a45f52015dfafd5c97eb132ce0e2c1640}
+\hypertarget{olc_8cpp_aa3c60610061ab2baf01ffc64547f35bb}{\index{olc.\-cpp@{olc.\-cpp}!mob\-\_\-oset\-\_\-armors@{mob\-\_\-oset\-\_\-armors}}
+\index{mob\-\_\-oset\-\_\-armors@{mob\-\_\-oset\-\_\-armors}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{mob\-\_\-oset\-\_\-armors}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ mob\-\_\-oset\-\_\-armors\mbox{[}$\,$\mbox{]}}}\label{olc_8cpp_aa3c60610061ab2baf01ffc64547f35bb}
+\hypertarget{olc_8cpp_a0648ea431a490ba9090b5a71a099283b}{\index{olc.\-cpp@{olc.\-cpp}!obj\-\_\-variable\-\_\-list@{obj\-\_\-variable\-\_\-list}}
+\index{obj\-\_\-variable\-\_\-list@{obj\-\_\-variable\-\_\-list}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{obj\-\_\-variable\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}std\-::multimap$<$int, {\bf variable\-\_\-data}$>$ obj\-\_\-variable\-\_\-list}}\label{olc_8cpp_a0648ea431a490ba9090b5a71a099283b}
+\hypertarget{olc_8cpp_a791c60a8264d95b1d9164407930156e7}{\index{olc.\-cpp@{olc.\-cpp}!real\-\_\-sector\-\_\-names@{real\-\_\-sector\-\_\-names}}
+\index{real\-\_\-sector\-\_\-names@{real\-\_\-sector\-\_\-names}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{real\-\_\-sector\-\_\-names}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ real\-\_\-sector\-\_\-names\mbox{[}$\,$\mbox{]}}}\label{olc_8cpp_a791c60a8264d95b1d9164407930156e7}
+\hypertarget{olc_8cpp_aa0c1cab38901fe9aab8da53112441c59}{\index{olc.\-cpp@{olc.\-cpp}!room\-\_\-bits@{room\-\_\-bits}}
+\index{room\-\_\-bits@{room\-\_\-bits}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{room\-\_\-bits}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ room\-\_\-bits\mbox{[}$\,$\mbox{]}}}\label{olc_8cpp_aa0c1cab38901fe9aab8da53112441c59}
+\hypertarget{olc_8cpp_a8e76b3513b5d09928058afdec6a0f789}{\index{olc.\-cpp@{olc.\-cpp}!sector\-\_\-types@{sector\-\_\-types}}
+\index{sector\-\_\-types@{sector\-\_\-types}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{sector\-\_\-types}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ sector\-\_\-types\mbox{[}$\,$\mbox{]}}}\label{olc_8cpp_a8e76b3513b5d09928058afdec6a0f789}
+\hypertarget{olc_8cpp_a65849e1721f26b048415ab36ece0eb0c}{\index{olc.\-cpp@{olc.\-cpp}!shell\-\_\-name@{shell\-\_\-name}}
+\index{shell\-\_\-name@{shell\-\_\-name}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{shell\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ shell\-\_\-name\mbox{[}$\,$\mbox{]}}}\label{olc_8cpp_a65849e1721f26b048415ab36ece0eb0c}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"small bullet"},
+    \textcolor{stringliteral}{"small bullet"},
+    \textcolor{stringliteral}{"small bullet"},
+    \textcolor{stringliteral}{"bullet"},
+    \textcolor{stringliteral}{"bullet"},
+    \textcolor{stringliteral}{"bullet"},
+    \textcolor{stringliteral}{"large bullet"},
+    \textcolor{stringliteral}{"large bullet"},
+    \textcolor{stringliteral}{"large bullet"},
+    \textcolor{stringliteral}{"ball bearing"},
+    \textcolor{stringliteral}{"dart"},
+    \textcolor{stringliteral}{"bolt"},
+    \textcolor{stringliteral}{"arrow"},
+    \textcolor{stringliteral}{"arrow"},
+    \textcolor{stringliteral}{"arrow"},
+    \textcolor{stringliteral}{"balista-bolt"},
+    \textcolor{stringliteral}{"small-rock"},
+    \textcolor{stringliteral}{"stone"},
+    \textcolor{stringliteral}{"boulder"},
+    \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}
+\hypertarget{olc_8cpp_a6befdd41b3b5cd77dc4f5d6d4f7cb9b6}{\index{olc.\-cpp@{olc.\-cpp}!shell\-\_\-name\-\_\-plural@{shell\-\_\-name\-\_\-plural}}
+\index{shell\-\_\-name\-\_\-plural@{shell\-\_\-name\-\_\-plural}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{shell\-\_\-name\-\_\-plural}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ shell\-\_\-name\-\_\-plural\mbox{[}$\,$\mbox{]}}}\label{olc_8cpp_a6befdd41b3b5cd77dc4f5d6d4f7cb9b6}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"small bullets"},
+    \textcolor{stringliteral}{"small bullets"},
+    \textcolor{stringliteral}{"small bullets"},
+    \textcolor{stringliteral}{"bullets"},
+    \textcolor{stringliteral}{"bullets"},
+    \textcolor{stringliteral}{"bullets"},
+    \textcolor{stringliteral}{"large bullets"},
+    \textcolor{stringliteral}{"large bullets"},
+    \textcolor{stringliteral}{"large bullets"},
+    \textcolor{stringliteral}{"ball bearings"},
+    \textcolor{stringliteral}{"darts"},
+    \textcolor{stringliteral}{"bolts"},
+    \textcolor{stringliteral}{"arrows"},
+    \textcolor{stringliteral}{"arrows"},
+    \textcolor{stringliteral}{"arrows"},
+    \textcolor{stringliteral}{"balista-bolts"},
+    \textcolor{stringliteral}{"small-rocks"},
+    \textcolor{stringliteral}{"stones"},
+    \textcolor{stringliteral}{"boulders"},
+    \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}
+\hypertarget{olc_8cpp_a94c8d0a3a3fb5b2d3a72bb3b63d5225c}{\index{olc.\-cpp@{olc.\-cpp}!suits@{suits}}
+\index{suits@{suits}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{suits}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ suits\mbox{[}$\,$\mbox{]}}}\label{olc_8cpp_a94c8d0a3a3fb5b2d3a72bb3b63d5225c}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"Hearts"},
+    \textcolor{stringliteral}{"Diamonds"},
+    \textcolor{stringliteral}{"Clubs"},
+    \textcolor{stringliteral}{"Spades"},
+    \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}
+\hypertarget{olc_8cpp_a28eeabb2504a47a327213c19622d2f84}{\index{olc.\-cpp@{olc.\-cpp}!trap\-\_\-bits@{trap\-\_\-bits}}
+\index{trap\-\_\-bits@{trap\-\_\-bits}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{trap\-\_\-bits}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ trap\-\_\-bits\mbox{[}$\,$\mbox{]}}}\label{olc_8cpp_a28eeabb2504a47a327213c19622d2f84}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"On\_Exit"},
+    \textcolor{stringliteral}{"On\_Object"},
+    \textcolor{stringliteral}{"On\_Release"},
+    \textcolor{stringliteral}{"Aff\_Damage"},
+    \textcolor{stringliteral}{"Aff\_Trip"},
+    \textcolor{stringliteral}{"Aff\_Bind"},
+    \textcolor{stringliteral}{"Aff\_Somatic"},
+    \textcolor{stringliteral}{"Break\_Use"},
+    \textcolor{stringliteral}{"Break\_Reset"},
+    \textcolor{stringliteral}{"Trig\_Must"},
+    \textcolor{stringliteral}{"Trig\_Avoid"},
+    \textcolor{stringliteral}{"Targ\_Sole"},
+    \textcolor{stringliteral}{"Misc\_Always"},
+    \textcolor{stringliteral}{"Misc\_Invis"},
+    \textcolor{stringliteral}{"Misc\_Mystery"},
+    \textcolor{stringliteral}{"DO\_NOT\_USE"},
+    \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}
+\hypertarget{olc_8cpp_a81a7878bc9b71b76dec1b65353cf4927}{\index{olc.\-cpp@{olc.\-cpp}!trigger\-\_\-text\-\_\-first@{trigger\-\_\-text\-\_\-first}}
+\index{trigger\-\_\-text\-\_\-first@{trigger\-\_\-text\-\_\-first}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{trigger\-\_\-text\-\_\-first}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ trigger\-\_\-text\-\_\-first\mbox{[}$\,$\mbox{]}}}\label{olc_8cpp_a81a7878bc9b71b76dec1b65353cf4927}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \{
+  \textcolor{stringliteral}{" pull the trigger of "},  
+  \textcolor{stringliteral}{" pull the trigger of "},    
+  \textcolor{stringliteral}{" pull the trigger of "},
+  \textcolor{stringliteral}{" pull the trigger of "},
+  \textcolor{stringliteral}{" pull the trigger of "},  
+  \textcolor{stringliteral}{" pull the trigger of "},
+  \textcolor{stringliteral}{" pull the trigger of "},
+  \textcolor{stringliteral}{" pull the trigger of "},  
+  \textcolor{stringliteral}{" pull the trigger of "},
+  \textcolor{stringliteral}{" release one end of "}, 
+  \textcolor{stringliteral}{" blow sharply into "},  
+  \textcolor{stringliteral}{" engage the trigger mechanism of "}, 
+  \textcolor{stringliteral}{" release the bowstring of "}, 
+  \textcolor{stringliteral}{" release the bowstring of "}, 
+  \textcolor{stringliteral}{" loose the bowstring of "}, 
+  \textcolor{stringliteral}{" pull the trigger mechanism of "}, 
+  \textcolor{stringliteral}{" release the pocket of "}, 
+  \textcolor{stringliteral}{" yank the trigger of "},  
+  \textcolor{stringliteral}{" trip the mechanism of "},  
+  \textcolor{stringliteral}{" (error message 0304140206) "},
+  \textcolor{stringliteral}{" (error message 0304140207) "},
+  \textcolor{stringliteral}{" (error message 0304140208) "},
+  \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}
+\hypertarget{olc_8cpp_a2edb4ec91d507dd42de89401167c0917}{\index{olc.\-cpp@{olc.\-cpp}!trigger\-\_\-text\-\_\-third@{trigger\-\_\-text\-\_\-third}}
+\index{trigger\-\_\-text\-\_\-third@{trigger\-\_\-text\-\_\-third}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{trigger\-\_\-text\-\_\-third}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ trigger\-\_\-text\-\_\-third\mbox{[}$\,$\mbox{]}}}\label{olc_8cpp_a2edb4ec91d507dd42de89401167c0917}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \{
+  \textcolor{stringliteral}{" pulls the trigger of "},  
+  \textcolor{stringliteral}{" pulls the trigger of "},    
+  \textcolor{stringliteral}{" pulls the trigger of "},
+  \textcolor{stringliteral}{" pulls the trigger of "},
+  \textcolor{stringliteral}{" pulls the trigger of "},  
+  \textcolor{stringliteral}{" pulls the trigger of "},
+  \textcolor{stringliteral}{" pulls the trigger of "},
+  \textcolor{stringliteral}{" pulls the trigger of "},  
+  \textcolor{stringliteral}{" pulls the trigger of "},
+  \textcolor{stringliteral}{" releases one end of "}, 
+  \textcolor{stringliteral}{" blows sharply into "},  
+  \textcolor{stringliteral}{" engages the trigger mechanism of "}, 
+  \textcolor{stringliteral}{" releases the bowstring of "}, 
+  \textcolor{stringliteral}{" releases the bowstring of "}, 
+  \textcolor{stringliteral}{" looses the bowstring of "}, 
+  \textcolor{stringliteral}{" pulls the trigger mechanism of "}, 
+  \textcolor{stringliteral}{" releases the pocket of "}, 
+  \textcolor{stringliteral}{" yanks the trigger of "},  
+  \textcolor{stringliteral}{" trips the mechanism of "},  
+  \textcolor{stringliteral}{" (error message 0304140206) "},
+  \textcolor{stringliteral}{" (error message 0304140207) "},
+  \textcolor{stringliteral}{" (error message 0304140208) "},
+
+  \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}
+\hypertarget{olc_8cpp_a388a9b052cfa85e2de421c447839c258}{\index{olc.\-cpp@{olc.\-cpp}!variable\-\_\-categories@{variable\-\_\-categories}}
+\index{variable\-\_\-categories@{variable\-\_\-categories}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{variable\-\_\-categories}]{\setlength{\rightskip}{0pt plus 5cm}std\-::multimap$<$int, std\-::string$>$ variable\-\_\-categories}}\label{olc_8cpp_a388a9b052cfa85e2de421c447839c258}
+\hypertarget{olc_8cpp_aed0f9af1c90e8ae1bf5152b2ce1ad8cc}{\index{olc.\-cpp@{olc.\-cpp}!weapon\-\_\-standards@{weapon\-\_\-standards}}
+\index{weapon\-\_\-standards@{weapon\-\_\-standards}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{weapon\-\_\-standards}]{\setlength{\rightskip}{0pt plus 5cm}const int weapon\-\_\-standards\mbox{[}5\mbox{]}\mbox{[}4\mbox{]}\mbox{[}7\mbox{]}}}\label{olc_8cpp_aed0f9af1c90e8ae1bf5152b2ce1ad8cc}
+\hypertarget{olc_8cpp_ac5f6303e8713dfe1ed6d3afbcfdce602}{\index{olc.\-cpp@{olc.\-cpp}!wear\-\_\-bits@{wear\-\_\-bits}}
+\index{wear\-\_\-bits@{wear\-\_\-bits}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{wear\-\_\-bits}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ wear\-\_\-bits\mbox{[}$\,$\mbox{]}}}\label{olc_8cpp_ac5f6303e8713dfe1ed6d3afbcfdce602}
+\hypertarget{olc_8cpp_abbe427a5be5cb3aeb07ecc44ae81ad55}{\index{olc.\-cpp@{olc.\-cpp}!weather\-\_\-states@{weather\-\_\-states}}
+\index{weather\-\_\-states@{weather\-\_\-states}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{weather\-\_\-states}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ weather\-\_\-states\mbox{[}$\,$\mbox{]}}}\label{olc_8cpp_abbe427a5be5cb3aeb07ecc44ae81ad55}
+\hypertarget{olc_8cpp_a5f988b5e42ba005bae0bbfd8701959d1}{\index{olc.\-cpp@{olc.\-cpp}!wound\-\_\-locations@{wound\-\_\-locations}}
+\index{wound\-\_\-locations@{wound\-\_\-locations}!olc.cpp@{olc.\-cpp}}
+\subsubsection[{wound\-\_\-locations}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ wound\-\_\-locations\mbox{[}$\,$\mbox{]}}}\label{olc_8cpp_a5f988b5e42ba005bae0bbfd8701959d1}

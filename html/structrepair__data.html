@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -89,47 +89,160 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">repair_data Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="structs_8h_source.html">structs.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:aaf9cb30501da0fcdd9ec2d3a7f046163"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaf9cb30501da0fcdd9ec2d3a7f046163"></a>
-unsigned short int&#160;</td><td class="memItemRight" valign="bottom"><b>nCraftMinutes</b></td></tr>
+<tr class="memitem:aaf9cb30501da0fcdd9ec2d3a7f046163"><td class="memItemLeft" align="right" valign="top">unsigned short int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrepair__data.html#aaf9cb30501da0fcdd9ec2d3a7f046163">nCraftMinutes</a></td></tr>
 <tr class="separator:aaf9cb30501da0fcdd9ec2d3a7f046163"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb708e14f1dc18f87b9ad3d8d76af2b1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeb708e14f1dc18f87b9ad3d8d76af2b1"></a>
-unsigned short int&#160;</td><td class="memItemRight" valign="bottom"><b>nUses</b></td></tr>
+<tr class="memitem:aeb708e14f1dc18f87b9ad3d8d76af2b1"><td class="memItemLeft" align="right" valign="top">unsigned short int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrepair__data.html#aeb708e14f1dc18f87b9ad3d8d76af2b1">nUses</a></td></tr>
 <tr class="separator:aeb708e14f1dc18f87b9ad3d8d76af2b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27d05ca35c7f078dbf88614de0c61b23"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a27d05ca35c7f078dbf88614de0c61b23"></a>
-unsigned char&#160;</td><td class="memItemRight" valign="bottom"><b>nMendBonus</b></td></tr>
+<tr class="memitem:a27d05ca35c7f078dbf88614de0c61b23"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrepair__data.html#a27d05ca35c7f078dbf88614de0c61b23">nMendBonus</a></td></tr>
 <tr class="separator:a27d05ca35c7f078dbf88614de0c61b23"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad636f0948e248bda6414c21ae873f7f6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad636f0948e248bda6414c21ae873f7f6"></a>
-unsigned char&#160;</td><td class="memItemRight" valign="bottom"><b>nMinSkillNeeded</b></td></tr>
+<tr class="memitem:ad636f0948e248bda6414c21ae873f7f6"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrepair__data.html#ad636f0948e248bda6414c21ae873f7f6">nMinSkillNeeded</a></td></tr>
 <tr class="separator:ad636f0948e248bda6414c21ae873f7f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0cbc9f8bb473c514fc096d350fce8cd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad0cbc9f8bb473c514fc096d350fce8cd"></a>
-unsigned char&#160;</td><td class="memItemRight" valign="bottom"><b>nRequiresClan</b></td></tr>
+<tr class="memitem:ad0cbc9f8bb473c514fc096d350fce8cd"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrepair__data.html#ad0cbc9f8bb473c514fc096d350fce8cd">nRequiresClan</a></td></tr>
 <tr class="separator:ad0cbc9f8bb473c514fc096d350fce8cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6653d42ba1113629231aa0866039a8c1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6653d42ba1113629231aa0866039a8c1"></a>
-unsigned char&#160;</td><td class="memItemRight" valign="bottom"><b>bAnyoneMayUse</b></td></tr>
+<tr class="memitem:a6653d42ba1113629231aa0866039a8c1"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrepair__data.html#a6653d42ba1113629231aa0866039a8c1">bAnyoneMayUse</a></td></tr>
 <tr class="separator:a6653d42ba1113629231aa0866039a8c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a848d9f9734398c80549f983f6ed1f12e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a848d9f9734398c80549f983f6ed1f12e"></a>
-unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>flgDamageTypes</b></td></tr>
+<tr class="memitem:a848d9f9734398c80549f983f6ed1f12e"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrepair__data.html#a848d9f9734398c80549f983f6ed1f12e">flgDamageTypes</a></td></tr>
 <tr class="separator:a848d9f9734398c80549f983f6ed1f12e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2c69e734cf15c23f0596e1163cf9147"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac2c69e734cf15c23f0596e1163cf9147"></a>
-unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>flgMaterialSkills</b></td></tr>
+<tr class="memitem:ac2c69e734cf15c23f0596e1163cf9147"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrepair__data.html#ac2c69e734cf15c23f0596e1163cf9147">flgMaterialSkills</a></td></tr>
 <tr class="separator:ac2c69e734cf15c23f0596e1163cf9147"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0606072cc6581b1d5ca402204c436f88"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0606072cc6581b1d5ca402204c436f88"></a>
-unsigned char&#160;</td><td class="memItemRight" valign="bottom"><b>arrItemType</b> [4]</td></tr>
+<tr class="memitem:a0606072cc6581b1d5ca402204c436f88"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrepair__data.html#a0606072cc6581b1d5ca402204c436f88">arrItemType</a> [4]</td></tr>
 <tr class="separator:a0606072cc6581b1d5ca402204c436f88"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4529eaf745909e45171be3ba70399528"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4529eaf745909e45171be3ba70399528"></a>
-unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>nUnused</b></td></tr>
+<tr class="memitem:a4529eaf745909e45171be3ba70399528"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrepair__data.html#a4529eaf745909e45171be3ba70399528">nUnused</a></td></tr>
 <tr class="separator:a4529eaf745909e45171be3ba70399528"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a0606072cc6581b1d5ca402204c436f88"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char repair_data::arrItemType[4]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6653d42ba1113629231aa0866039a8c1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char repair_data::bAnyoneMayUse</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a848d9f9734398c80549f983f6ed1f12e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int repair_data::flgDamageTypes</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac2c69e734cf15c23f0596e1163cf9147"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int repair_data::flgMaterialSkills</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aaf9cb30501da0fcdd9ec2d3a7f046163"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned short int repair_data::nCraftMinutes</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a27d05ca35c7f078dbf88614de0c61b23"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char repair_data::nMendBonus</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad636f0948e248bda6414c21ae873f7f6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char repair_data::nMinSkillNeeded</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad0cbc9f8bb473c514fc096d350fce8cd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char repair_data::nRequiresClan</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4529eaf745909e45171be3ba70399528"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int repair_data::nUnused</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aeb708e14f1dc18f87b9ad3d8d76af2b1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned short int repair_data::nUses</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li><a class="el" href="structs_8h_source.html">structs.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 17 2015 21:26:48 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 17 2015 22:02:23 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

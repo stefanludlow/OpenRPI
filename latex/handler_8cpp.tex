@@ -1,0 +1,1088 @@
+\hypertarget{handler_8cpp}{\section{handler.\-cpp File Reference}
+\label{handler_8cpp}\index{handler.\-cpp@{handler.\-cpp}}
+}
+{\ttfamily \#include $<$unistd.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$ctype.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}server.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}structs.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}net\-\_\-link.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}protos.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}decl.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}group.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utility.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{handler_8cpp_a24ecf25d10b83aea29825a4887c69a22}{T\-A\-B\-L\-E\-\_\-\-U\-S\-E\-\_\-\-T\-A\-B\-L\-E}~1
+\item 
+\#define \hyperlink{handler_8cpp_ae56bdbf50d2fa86fd78a2c62ce3992d8}{T\-A\-B\-L\-E\-\_\-\-C\-O\-M\-B\-A\-T\-\_\-\-M\-E\-S\-S\-A\-G\-E}~2
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{handler_8cpp_a35e79ba45bb463ccb3371d016c721176}{is\-\_\-hooded} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+char $\ast$ \hyperlink{handler_8cpp_ac505a4a5195289110c094c73bff77c15}{char\-\_\-names} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+char $\ast$ \hyperlink{handler_8cpp_a5b351b280dbc78e445f1df5f8c9de46c}{fname} (char $\ast$namelist)
+\item 
+char $\ast$ \hyperlink{handler_8cpp_a923ce84e0dd6c92bd0fb0ec85e36bdc1}{fname\-\_\-hyphen} (char $\ast$namelist)
+\item 
+int \hyperlink{handler_8cpp_aa75aff646f6dcdaa9320ef0459afb7dc}{isname} (const char $\ast$str, char $\ast$namelist)
+\item 
+int \hyperlink{handler_8cpp_a8d1b9932e18ccdd0283f441b0b626e49}{isnamec} (char $\ast$str, char $\ast$namelist)
+\item 
+int \hyperlink{handler_8cpp_a86a5c2e8af1fc100a7324f06f0da346f}{real\-\_\-skill} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int skill)
+\item 
+void \hyperlink{handler_8cpp_a713f31775a09de1cf224d44259209df9}{affect\-\_\-modify} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int type, int loc, int mod, int bitv, int add, int sn)
+\item 
+void \hyperlink{handler_8cpp_ac27d2a0ae2868e9bb510d71fd5ebdaf9}{nullify\-\_\-affects} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{handler_8cpp_aa14c2b7026af93c17e253f11c9d7d2d2}{reapply\-\_\-affects} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+\hyperlink{structs_8h_a0a9304fc5764d8448c93fdffdd64e1d2}{A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$ \hyperlink{handler_8cpp_a79765acaa6e78fbf3114505f77f6e8b8}{get\-\_\-obj\-\_\-affect\-\_\-location} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj, int location)
+\item 
+void \hyperlink{handler_8cpp_aea474ede12af382961f21de8644808f1}{remove\-\_\-obj\-\_\-affect\-\_\-location} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj, int location)
+\item 
+void \hyperlink{handler_8cpp_a9a71a3e49c58aa78be44d376ed95b334}{affect\-\_\-to\-\_\-obj} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj, \hyperlink{structs_8h_a0a9304fc5764d8448c93fdffdd64e1d2}{A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$af)
+\item 
+void \hyperlink{handler_8cpp_ad2b644a278b0b7983979c4192185e97c}{scent\-\_\-to\-\_\-room} (\hyperlink{room_8h_aede519ef65d80b5242a4a28b69d5e097}{R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$room, \hyperlink{structs_8h_a65372345a26d15a29af1abf6cb29f785}{S\-C\-E\-N\-T\-\_\-\-D\-A\-T\-A} $\ast$scent)
+\item 
+void \hyperlink{handler_8cpp_a6cb8b51638fd0fe1140d9b9fc2c01da4}{scent\-\_\-to\-\_\-mob} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$mob, \hyperlink{structs_8h_a65372345a26d15a29af1abf6cb29f785}{S\-C\-E\-N\-T\-\_\-\-D\-A\-T\-A} $\ast$scent)
+\item 
+void \hyperlink{handler_8cpp_a0d36e6ff755058ca86a9571592a4324a}{scent\-\_\-to\-\_\-obj} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj, \hyperlink{structs_8h_a65372345a26d15a29af1abf6cb29f785}{S\-C\-E\-N\-T\-\_\-\-D\-A\-T\-A} $\ast$scent)
+\item 
+void \hyperlink{handler_8cpp_a5a961d613a8e495db1db5dc090778552}{remove\-\_\-mob\-\_\-scent} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$mob, \hyperlink{structs_8h_a65372345a26d15a29af1abf6cb29f785}{S\-C\-E\-N\-T\-\_\-\-D\-A\-T\-A} $\ast$scent)
+\item 
+void \hyperlink{handler_8cpp_a5d7b7e2b5ba145c85feae85c20ceeb18}{remove\-\_\-mob\-\_\-scent} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$mob, int scent\-\_\-ref)
+\item 
+void \hyperlink{handler_8cpp_a10f0b29bde58e92365f98a5da2db18df}{remove\-\_\-room\-\_\-scent} (\hyperlink{room_8h_aede519ef65d80b5242a4a28b69d5e097}{R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$room, \hyperlink{structs_8h_a65372345a26d15a29af1abf6cb29f785}{S\-C\-E\-N\-T\-\_\-\-D\-A\-T\-A} $\ast$scent)
+\item 
+void \hyperlink{handler_8cpp_a576738d9d3f7f5ed8859f5b7f9287970}{remove\-\_\-room\-\_\-scent} (\hyperlink{room_8h_aede519ef65d80b5242a4a28b69d5e097}{R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$room, int scent\-\_\-ref)
+\item 
+void \hyperlink{handler_8cpp_a6e57735f419f2aac624436a7d8f4e979}{remove\-\_\-obj\-\_\-scent} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj, \hyperlink{structs_8h_a65372345a26d15a29af1abf6cb29f785}{S\-C\-E\-N\-T\-\_\-\-D\-A\-T\-A} $\ast$scent)
+\item 
+void \hyperlink{handler_8cpp_a8f9dcbcbe4702bcb3c53aabc2e5c7326}{remove\-\_\-obj\-\_\-scent} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj, int scent\-\_\-ref)
+\item 
+void \hyperlink{handler_8cpp_a6780e42b55c00897c8f6687841d208d1}{remove\-\_\-obj\-\_\-mult\-\_\-affect} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj, int type)
+\item 
+void \hyperlink{handler_8cpp_aff42407fb6c672a766a4a59f062d419a}{remove\-\_\-obj\-\_\-affect} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj, int type)
+\item 
+\hyperlink{structs_8h_a0a9304fc5764d8448c93fdffdd64e1d2}{A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$ \hyperlink{handler_8cpp_a7f3b0ee9259dda0db6198ad40cafc2dc}{get\-\_\-obj\-\_\-affect} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj, int type)
+\item 
+\hyperlink{structs_8h_a0a9304fc5764d8448c93fdffdd64e1d2}{A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$ \hyperlink{handler_8cpp_abe13a177d0854e8fac817c7ec51bd1a2}{get\-\_\-covtable\-\_\-affect} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+\hyperlink{structs_8h_a0a9304fc5764d8448c93fdffdd64e1d2}{A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$ \hyperlink{handler_8cpp_a3231fc7c538887517988b6a8949b9cc4}{get\-\_\-affect} (const \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int affect\-\_\-type)
+\item 
+\hyperlink{structs_8h_a0a9304fc5764d8448c93fdffdd64e1d2}{A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$ \hyperlink{handler_8cpp_aeb61b87816b3e531e661b96c70f9b9ab}{get\-\_\-soma\-\_\-affect} (const \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int affect\-\_\-type)
+\item 
+\hyperlink{structs_8h_a65372345a26d15a29af1abf6cb29f785}{S\-C\-E\-N\-T\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{handler_8cpp_af8cf696a513ee1776e4e00f213ef7b95}{get\-\_\-scent} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int scent\-\_\-ref)
+\item 
+\hyperlink{structs_8h_a65372345a26d15a29af1abf6cb29f785}{S\-C\-E\-N\-T\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{handler_8cpp_af0323facc8cd5cf578261014a2dc5cf3}{get\-\_\-scent} (\hyperlink{room_8h_aede519ef65d80b5242a4a28b69d5e097}{R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$room, int scent\-\_\-ref)
+\item 
+\hyperlink{structs_8h_a65372345a26d15a29af1abf6cb29f785}{S\-C\-E\-N\-T\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{handler_8cpp_a5b5ace1623b0ce4dfcc639870c28e8dc}{get\-\_\-scent} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj, int scent\-\_\-ref)
+\item 
+void \hyperlink{handler_8cpp_a6fa20822eb6e0e7e706ac7ceea8eb22f}{affect\-\_\-to\-\_\-char} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_a0a9304fc5764d8448c93fdffdd64e1d2}{A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$af)
+\item 
+void \hyperlink{handler_8cpp_a55641803451fce638a19a810a7f27252}{remove\-\_\-affect\-\_\-type} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int type)
+\item 
+void \hyperlink{handler_8cpp_a5a9e54d3662b841de69cc690f22c369d}{affect\-\_\-remove} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_a0a9304fc5764d8448c93fdffdd64e1d2}{A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$af)
+\item 
+void \hyperlink{handler_8cpp_a64824fbe0f4cd1537c81e88a6f2452b4}{char\-\_\-from\-\_\-room} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{handler_8cpp_a1436b0e7c48c7eacb821d1dcdbd804ed}{char\-\_\-to\-\_\-room} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int room\-\_\-num)
+\item 
+void \hyperlink{handler_8cpp_acee754ab9479d718f7f4e7cc78180b4c}{obj\-\_\-to\-\_\-char} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{handler_8cpp_a1f643a294c1049d8185ef747934bdb04}{split\-\_\-obj} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj, int count)
+\item 
+void \hyperlink{handler_8cpp_a5716595055382aef878b93cbda5776f1}{obj\-\_\-from\-\_\-char} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$$\ast$obj, int count)
+\item 
+void \hyperlink{handler_8cpp_a5a047c2331454cd1c6ae626c97a25bf4}{equip\-\_\-char} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj, int pos)
+\item 
+\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{handler_8cpp_a0f267828612cfb482a930cdf9e4b6193}{unequip\-\_\-char} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int pos)
+\item 
+int \hyperlink{handler_8cpp_a84061a8e38a0528e58f095cd325ad3ad}{get\-\_\-number} (char $\ast$$\ast$name)
+\item 
+\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{handler_8cpp_aa39ffd4cd944ac56f2d213072a2deb4b}{get\-\_\-carried\-\_\-item} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int item\-\_\-type)
+\item 
+\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{handler_8cpp_ab1bfc36257bc7a3b837ed7ea3ec7a7d3}{get\-\_\-obj\-\_\-in\-\_\-list} (char $\ast$name, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$list)
+\item 
+\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{handler_8cpp_aa02fd87e95503306b67c4e15f74dc2d7}{get\-\_\-obj\-\_\-in\-\_\-list\-\_\-num} (int num, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$list)
+\item 
+\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{handler_8cpp_a206cef877ae4551fd731cfd3d8b4c064}{get\-\_\-obj\-\_\-in\-\_\-list\-\_\-last} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$list)
+\item 
+\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{handler_8cpp_a9a4757ba873fcd555e4ba803e30c4fd1}{get\-\_\-obj} (char $\ast$name)
+\item 
+\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{handler_8cpp_a8cc17a55478f6cba5a5a87887a18b6f4}{get\-\_\-char\-\_\-id} (int coldload\-\_\-id)
+\item 
+\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{handler_8cpp_a86dc848efeb3fa3282e59b0238b04495}{get\-\_\-obj\-\_\-in\-\_\-list\-\_\-id} (int coldload\-\_\-id, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$list)
+\item 
+\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{handler_8cpp_a62d19a13c63a06c5cab3228610fa188b}{get\-\_\-obj\-\_\-id} (int coldload\-\_\-id)
+\item 
+\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{handler_8cpp_a0dd1aba7a4d59606c53b9843cf328c61}{get\-\_\-char\-\_\-room} (char $\ast$name, int room)
+\item 
+\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{handler_8cpp_a36b466c03f6c66d34d224986f1648452}{get\-\_\-char} (char $\ast$name)
+\item 
+\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{handler_8cpp_a1c2d9669e56b7ef19b9f1118bb17212d}{get\-\_\-mob\-\_\-vnum} (int n\-Virtual)
+\item 
+\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{handler_8cpp_aa43007d45a48e588ef89d11e862339be}{get\-\_\-char\-\_\-nomask} (char $\ast$name)
+\item 
+void \hyperlink{handler_8cpp_aeddca5c5a7320273ec996c852ad51bd5}{obj\-\_\-to\-\_\-room} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$object, int room)
+\item 
+void \hyperlink{handler_8cpp_a6dc150f4e8c390395290bcbd5801c0b2}{obj\-\_\-from\-\_\-room} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$$\ast$obj, int count)
+\item 
+void \hyperlink{handler_8cpp_a3fef2832ca6179b4f0ad326040ebce84}{obj\-\_\-to\-\_\-obj} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$container)
+\item 
+void \hyperlink{handler_8cpp_a4671a17b1f9a07a8190e0c943295bbda}{obj\-\_\-from\-\_\-obj} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$$\ast$obj, int count)
+\item 
+void \hyperlink{handler_8cpp_ae722ecc1e8001f9b8c705cb5e8f149b5}{object\-\_\-list\-\_\-new\-\_\-owner} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$list, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{handler_8cpp_a2a2e8db630d8e585ac0707507030d488}{remove\-\_\-object\-\_\-affect} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj, \hyperlink{structs_8h_a0a9304fc5764d8448c93fdffdd64e1d2}{A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$af)
+\item 
+void \hyperlink{handler_8cpp_a575a33ffa31cff0c6d819517bdd9162b}{destroy\-\_\-dwelling} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj)
+\item 
+void \hyperlink{handler_8cpp_a0d6ac6e1e2db297ac0953c57af51cb14}{extract\-\_\-obj} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj)
+\item 
+void \hyperlink{handler_8cpp_a3e49674a7067c99036bb5de6a53e279e}{morph\-\_\-obj} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj)
+\item 
+void \hyperlink{handler_8cpp_a9b4e88e8df5ab3b5a015f0b982e8dc29}{remove\-\_\-sighting} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$target)
+\item 
+void \hyperlink{handler_8cpp_a9cbb06b2343931cf0059525a510ac772}{extract\-\_\-char} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{handler_8cpp_a28b88d9802b499d5d3dd2787c12a65f7}{get\-\_\-char\-\_\-room\-\_\-vis} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, const char $\ast$name)
+\item 
+\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{handler_8cpp_ace82d09fa50f0e5ce11ba91f5e7be52a}{get\-\_\-char\-\_\-room\-\_\-vis2} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int vnum, char $\ast$name)
+\item 
+\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{handler_8cpp_a9d37c7973e5027f18b6e47b47e14c682}{get\-\_\-char\-\_\-vis} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$name)
+\item 
+\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{handler_8cpp_a9b9a92beece628d019661af7e300fac9}{get\-\_\-obj\-\_\-in\-\_\-list\-\_\-vis\-\_\-not\-\_\-money} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$name, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$list)
+\item 
+\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{handler_8cpp_aedb45ce1a42fe24d02961323bc79899e}{get\-\_\-obj\-\_\-in\-\_\-list\-\_\-vis} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, const char $\ast$name, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$list)
+\item 
+\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{handler_8cpp_ab1b9e90879353c69e6e962dc1a09f404}{get\-\_\-obj\-\_\-in\-\_\-dark} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$name, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$list)
+\item 
+\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{handler_8cpp_aa1a079fa5ccf2ac4367efe271bac8ab1}{get\-\_\-obj\-\_\-vis} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$name)
+\item 
+void \hyperlink{handler_8cpp_a1bc1d801513ff05f0f0b1643940c31c5}{name\-\_\-money} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj)
+\item 
+\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{handler_8cpp_a7503e8f8a426c34365cb796a248aafbd}{create\-\_\-money} (int amount)
+\item 
+int \hyperlink{handler_8cpp_a115637dd5620bf31c9522278a3e0d155}{generic\-\_\-find} (char $\ast$arg, int bitvector, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$$\ast$tar\-\_\-ch, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$$\ast$tar\-\_\-obj)
+\item 
+\hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} \hyperlink{handler_8cpp_ab5eaf0cac28d2f9c7cb21032a931d60a}{get\-\_\-obj\-\_\-in\-\_\-equip\-\_\-num} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, long vnum)
+\item 
+void \hyperlink{handler_8cpp_a226828d8f2a7cd769a9dbea50944da2e}{clear\-\_\-delays} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{handler_8cpp_a36a0a991b0135103ed0bbc0bbcc5c63d}{update\-\_\-delays} (void)
+\item 
+void \hyperlink{handler_8cpp_a3fdd993f769032b34260fe87981e3e04}{break\-\_\-delay} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+\hyperlink{structs_8h_a0a9304fc5764d8448c93fdffdd64e1d2}{A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$ \hyperlink{handler_8cpp_a62a53575199dc1940df46d36073ab824}{is\-\_\-room\-\_\-affected} (\hyperlink{structs_8h_a0a9304fc5764d8448c93fdffdd64e1d2}{A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$af, int type)
+\item 
+void \hyperlink{handler_8cpp_a20d06a2832ca8f3753c7014a8c8fea9b}{add\-\_\-room\-\_\-affect} (\hyperlink{structs_8h_a0a9304fc5764d8448c93fdffdd64e1d2}{A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$$\ast$af, int type, int duration)
+\item 
+int \hyperlink{handler_8cpp_aeacd05a47f9ca19edb040c7489ec8993}{is\-\_\-in\-\_\-room} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$target)
+\item 
+int \hyperlink{handler_8cpp_a7714ef703de27678cdb89788d91a3bc6}{add\-\_\-registry} (int reg\-\_\-index, int value, const char $\ast$string)
+\item 
+void \hyperlink{handler_8cpp_aea811b98fa94d59993b714e92ebb7424}{free\-\_\-registry} (void)
+\item 
+int \hyperlink{handler_8cpp_ade0a7331367f2b2bb400d35190834cde}{lookup\-\_\-value} (char $\ast$string, int reg\-\_\-index)
+\item 
+char $\ast$ \hyperlink{handler_8cpp_a158d2d3c573ece92c8e64c4b3ece206e}{lookup\-\_\-string} (int value, int reg\-\_\-index)
+\item 
+void \hyperlink{handler_8cpp_abe6cf5ce5769688ff4b5caf71900ff14}{reg\-\_\-additional\-\_\-spell\-\_\-info} (int sn, char $\ast$buf)
+\item 
+void \hyperlink{handler_8cpp_a084b44212b75300b7d0fbb9225166472}{reg\-\_\-read\-\_\-magic} (F\-I\-L\-E $\ast$fp\-\_\-reg, char $\ast$buf)
+\item 
+void \hyperlink{handler_8cpp_ac5cb361aedc0fc43841cd568e47ea120}{reg\-\_\-read\-\_\-ov\-\_\-lv\-\_\-cap} (F\-I\-L\-E $\ast$fp\-\_\-reg, char $\ast$buf)
+\item 
+void \hyperlink{handler_8cpp_ad688c45641284c5de982b036acba0127}{reg\-\_\-read\-\_\-skill\-\_\-max\-\_\-rates} (F\-I\-L\-E $\ast$fp\-\_\-reg, char $\ast$buf)
+\item 
+void \hyperlink{handler_8cpp_a1788265e16a7833a2ab25200c88ba462}{reg\-\_\-read\-\_\-variables} (F\-I\-L\-E $\ast$fp\-\_\-reg, char $\ast$buf)
+\item 
+void \hyperlink{handler_8cpp_a538039f013e52f84f5ff0061b4c87c34}{insert\-\_\-combat\-\_\-msg} (\hyperlink{structs_8h_af0e01cee4316ace63de94a34a27b0018}{C\-O\-M\-B\-A\-T\-\_\-\-M\-S\-G\-\_\-\-D\-A\-T\-A} $\ast$cm)
+\item 
+void \hyperlink{handler_8cpp_a1f524dc7ae1dd15e8989a632596aaa58}{add\-\_\-combat\-\_\-message} (char $\ast$line)
+\item 
+void \hyperlink{handler_8cpp_a701e99ac1083a356baf40b6839e82923}{reg\-\_\-read\-\_\-tables} (F\-I\-L\-E $\ast$fp\-\_\-reg, char $\ast$buf)
+\item 
+void \hyperlink{handler_8cpp_a904a6bfe7cae61a573800ab6c36aabd8}{read\-\_\-spell} (\hyperlink{structs_8h_a946fd03f2da414ee020673d226fbae22}{P\-H\-A\-S\-E\-\_\-\-D\-A\-T\-A} $\ast$phase, char $\ast$argument)
+\item 
+void \hyperlink{handler_8cpp_a389d7bb1445a5b2fd8a99138b8bffe87}{read\-\_\-registry} ()
+\item 
+void \hyperlink{handler_8cpp_ab12faf5c1d29c4e152c7a2648b1db867}{setup\-\_\-registry} (void)
+\item 
+void \hyperlink{handler_8cpp_a0d989af0a2dc356431fd90bb8553c8f3}{load\-\_\-dynamic\-\_\-registry} (void)
+\item 
+void \hyperlink{handler_8cpp_ae37e90a506e16af5d76ab8c2ad301ed9}{morph\-\_\-mob} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+int \hyperlink{handler_8cpp_af73f1a0e850b206de09adc1249db4714}{can\-\_\-learn} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{handler_8cpp_a265ca481e506123b7663e4d5eb785459}{knockout}
+\item 
+\hyperlink{classrpie_1_1server}{rpie\-::server} \hyperlink{handler_8cpp_a55c71990ee4162ebec6abe401996cf15}{engine}
+\item 
+\hyperlink{structs_8h_af0e01cee4316ace63de94a34a27b0018}{C\-O\-M\-B\-A\-T\-\_\-\-M\-S\-G\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{handler_8cpp_a12f7f6e1784faf2174635b4ceac99a39}{cm\-\_\-list} = N\-U\-L\-L
+\item 
+const char $\ast$ \hyperlink{handler_8cpp_a07d2ba729d1cce51f946fa69682204b0}{targets} \mbox{[}$\,$\mbox{]}
+\item 
+struct \hyperlink{structuse__table__data}{use\-\_\-table\-\_\-data} \hyperlink{handler_8cpp_a9d211dbdfbe2130acc5f17d47bad3263}{use\-\_\-table} \mbox{[}$\,$\mbox{]}
+\item 
+int \hyperlink{handler_8cpp_ac130b1abe9bbce3d6a17f1cd30654aa6}{frequency} \mbox{[}1000\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{handler_8cpp_ae56bdbf50d2fa86fd78a2c62ce3992d8}{\index{handler.\-cpp@{handler.\-cpp}!T\-A\-B\-L\-E\-\_\-\-C\-O\-M\-B\-A\-T\-\_\-\-M\-E\-S\-S\-A\-G\-E@{T\-A\-B\-L\-E\-\_\-\-C\-O\-M\-B\-A\-T\-\_\-\-M\-E\-S\-S\-A\-G\-E}}
+\index{T\-A\-B\-L\-E\-\_\-\-C\-O\-M\-B\-A\-T\-\_\-\-M\-E\-S\-S\-A\-G\-E@{T\-A\-B\-L\-E\-\_\-\-C\-O\-M\-B\-A\-T\-\_\-\-M\-E\-S\-S\-A\-G\-E}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{T\-A\-B\-L\-E\-\_\-\-C\-O\-M\-B\-A\-T\-\_\-\-M\-E\-S\-S\-A\-G\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-A\-B\-L\-E\-\_\-\-C\-O\-M\-B\-A\-T\-\_\-\-M\-E\-S\-S\-A\-G\-E~2}}\label{handler_8cpp_ae56bdbf50d2fa86fd78a2c62ce3992d8}
+\hypertarget{handler_8cpp_a24ecf25d10b83aea29825a4887c69a22}{\index{handler.\-cpp@{handler.\-cpp}!T\-A\-B\-L\-E\-\_\-\-U\-S\-E\-\_\-\-T\-A\-B\-L\-E@{T\-A\-B\-L\-E\-\_\-\-U\-S\-E\-\_\-\-T\-A\-B\-L\-E}}
+\index{T\-A\-B\-L\-E\-\_\-\-U\-S\-E\-\_\-\-T\-A\-B\-L\-E@{T\-A\-B\-L\-E\-\_\-\-U\-S\-E\-\_\-\-T\-A\-B\-L\-E}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{T\-A\-B\-L\-E\-\_\-\-U\-S\-E\-\_\-\-T\-A\-B\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-A\-B\-L\-E\-\_\-\-U\-S\-E\-\_\-\-T\-A\-B\-L\-E~1}}\label{handler_8cpp_a24ecf25d10b83aea29825a4887c69a22}
+
+
+\subsection{Function Documentation}
+\hypertarget{handler_8cpp_a1f524dc7ae1dd15e8989a632596aaa58}{\index{handler.\-cpp@{handler.\-cpp}!add\-\_\-combat\-\_\-message@{add\-\_\-combat\-\_\-message}}
+\index{add\-\_\-combat\-\_\-message@{add\-\_\-combat\-\_\-message}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{add\-\_\-combat\-\_\-message}]{\setlength{\rightskip}{0pt plus 5cm}void add\-\_\-combat\-\_\-message (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{line}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a1f524dc7ae1dd15e8989a632596aaa58}
+\hypertarget{handler_8cpp_a7714ef703de27678cdb89788d91a3bc6}{\index{handler.\-cpp@{handler.\-cpp}!add\-\_\-registry@{add\-\_\-registry}}
+\index{add\-\_\-registry@{add\-\_\-registry}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{add\-\_\-registry}]{\setlength{\rightskip}{0pt plus 5cm}int add\-\_\-registry (
+\begin{DoxyParamCaption}
+\item[{int}]{reg\-\_\-index, }
+\item[{int}]{value, }
+\item[{const char $\ast$}]{string}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a7714ef703de27678cdb89788d91a3bc6}
+\hypertarget{handler_8cpp_a20d06a2832ca8f3753c7014a8c8fea9b}{\index{handler.\-cpp@{handler.\-cpp}!add\-\_\-room\-\_\-affect@{add\-\_\-room\-\_\-affect}}
+\index{add\-\_\-room\-\_\-affect@{add\-\_\-room\-\_\-affect}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{add\-\_\-room\-\_\-affect}]{\setlength{\rightskip}{0pt plus 5cm}void add\-\_\-room\-\_\-affect (
+\begin{DoxyParamCaption}
+\item[{{\bf A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$$\ast$}]{af, }
+\item[{int}]{type, }
+\item[{int}]{duration}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a20d06a2832ca8f3753c7014a8c8fea9b}
+\hypertarget{handler_8cpp_a713f31775a09de1cf224d44259209df9}{\index{handler.\-cpp@{handler.\-cpp}!affect\-\_\-modify@{affect\-\_\-modify}}
+\index{affect\-\_\-modify@{affect\-\_\-modify}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{affect\-\_\-modify}]{\setlength{\rightskip}{0pt plus 5cm}void affect\-\_\-modify (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{type, }
+\item[{int}]{loc, }
+\item[{int}]{mod, }
+\item[{int}]{bitv, }
+\item[{int}]{add, }
+\item[{int}]{sn}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a713f31775a09de1cf224d44259209df9}
+\hypertarget{handler_8cpp_a5a9e54d3662b841de69cc690f22c369d}{\index{handler.\-cpp@{handler.\-cpp}!affect\-\_\-remove@{affect\-\_\-remove}}
+\index{affect\-\_\-remove@{affect\-\_\-remove}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{affect\-\_\-remove}]{\setlength{\rightskip}{0pt plus 5cm}void affect\-\_\-remove (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$}]{af}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a5a9e54d3662b841de69cc690f22c369d}
+\hypertarget{handler_8cpp_a6fa20822eb6e0e7e706ac7ceea8eb22f}{\index{handler.\-cpp@{handler.\-cpp}!affect\-\_\-to\-\_\-char@{affect\-\_\-to\-\_\-char}}
+\index{affect\-\_\-to\-\_\-char@{affect\-\_\-to\-\_\-char}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{affect\-\_\-to\-\_\-char}]{\setlength{\rightskip}{0pt plus 5cm}void affect\-\_\-to\-\_\-char (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$}]{af}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a6fa20822eb6e0e7e706ac7ceea8eb22f}
+\hypertarget{handler_8cpp_a9a71a3e49c58aa78be44d376ed95b334}{\index{handler.\-cpp@{handler.\-cpp}!affect\-\_\-to\-\_\-obj@{affect\-\_\-to\-\_\-obj}}
+\index{affect\-\_\-to\-\_\-obj@{affect\-\_\-to\-\_\-obj}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{affect\-\_\-to\-\_\-obj}]{\setlength{\rightskip}{0pt plus 5cm}void affect\-\_\-to\-\_\-obj (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj, }
+\item[{{\bf A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$}]{af}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a9a71a3e49c58aa78be44d376ed95b334}
+\hypertarget{handler_8cpp_a3fdd993f769032b34260fe87981e3e04}{\index{handler.\-cpp@{handler.\-cpp}!break\-\_\-delay@{break\-\_\-delay}}
+\index{break\-\_\-delay@{break\-\_\-delay}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{break\-\_\-delay}]{\setlength{\rightskip}{0pt plus 5cm}void break\-\_\-delay (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a3fdd993f769032b34260fe87981e3e04}
+\hypertarget{handler_8cpp_af73f1a0e850b206de09adc1249db4714}{\index{handler.\-cpp@{handler.\-cpp}!can\-\_\-learn@{can\-\_\-learn}}
+\index{can\-\_\-learn@{can\-\_\-learn}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{can\-\_\-learn}]{\setlength{\rightskip}{0pt plus 5cm}int can\-\_\-learn (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_af73f1a0e850b206de09adc1249db4714}
+\hypertarget{handler_8cpp_a64824fbe0f4cd1537c81e88a6f2452b4}{\index{handler.\-cpp@{handler.\-cpp}!char\-\_\-from\-\_\-room@{char\-\_\-from\-\_\-room}}
+\index{char\-\_\-from\-\_\-room@{char\-\_\-from\-\_\-room}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{char\-\_\-from\-\_\-room}]{\setlength{\rightskip}{0pt plus 5cm}void char\-\_\-from\-\_\-room (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a64824fbe0f4cd1537c81e88a6f2452b4}
+\hypertarget{handler_8cpp_ac505a4a5195289110c094c73bff77c15}{\index{handler.\-cpp@{handler.\-cpp}!char\-\_\-names@{char\-\_\-names}}
+\index{char\-\_\-names@{char\-\_\-names}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{char\-\_\-names}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ char\-\_\-names (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_ac505a4a5195289110c094c73bff77c15}
+\hypertarget{handler_8cpp_a1436b0e7c48c7eacb821d1dcdbd804ed}{\index{handler.\-cpp@{handler.\-cpp}!char\-\_\-to\-\_\-room@{char\-\_\-to\-\_\-room}}
+\index{char\-\_\-to\-\_\-room@{char\-\_\-to\-\_\-room}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{char\-\_\-to\-\_\-room}]{\setlength{\rightskip}{0pt plus 5cm}void char\-\_\-to\-\_\-room (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{room\-\_\-num}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a1436b0e7c48c7eacb821d1dcdbd804ed}
+\hypertarget{handler_8cpp_a226828d8f2a7cd769a9dbea50944da2e}{\index{handler.\-cpp@{handler.\-cpp}!clear\-\_\-delays@{clear\-\_\-delays}}
+\index{clear\-\_\-delays@{clear\-\_\-delays}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{clear\-\_\-delays}]{\setlength{\rightskip}{0pt plus 5cm}void clear\-\_\-delays (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a226828d8f2a7cd769a9dbea50944da2e}
+\hypertarget{handler_8cpp_a7503e8f8a426c34365cb796a248aafbd}{\index{handler.\-cpp@{handler.\-cpp}!create\-\_\-money@{create\-\_\-money}}
+\index{create\-\_\-money@{create\-\_\-money}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{create\-\_\-money}]{\setlength{\rightskip}{0pt plus 5cm}{\bf O\-B\-J\-\_\-\-D\-A\-T\-A}$\ast$ create\-\_\-money (
+\begin{DoxyParamCaption}
+\item[{int}]{amount}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a7503e8f8a426c34365cb796a248aafbd}
+\hypertarget{handler_8cpp_a575a33ffa31cff0c6d819517bdd9162b}{\index{handler.\-cpp@{handler.\-cpp}!destroy\-\_\-dwelling@{destroy\-\_\-dwelling}}
+\index{destroy\-\_\-dwelling@{destroy\-\_\-dwelling}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{destroy\-\_\-dwelling}]{\setlength{\rightskip}{0pt plus 5cm}void destroy\-\_\-dwelling (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a575a33ffa31cff0c6d819517bdd9162b}
+\hypertarget{handler_8cpp_a5a047c2331454cd1c6ae626c97a25bf4}{\index{handler.\-cpp@{handler.\-cpp}!equip\-\_\-char@{equip\-\_\-char}}
+\index{equip\-\_\-char@{equip\-\_\-char}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{equip\-\_\-char}]{\setlength{\rightskip}{0pt plus 5cm}void equip\-\_\-char (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj, }
+\item[{int}]{pos}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a5a047c2331454cd1c6ae626c97a25bf4}
+\hypertarget{handler_8cpp_a9cbb06b2343931cf0059525a510ac772}{\index{handler.\-cpp@{handler.\-cpp}!extract\-\_\-char@{extract\-\_\-char}}
+\index{extract\-\_\-char@{extract\-\_\-char}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{extract\-\_\-char}]{\setlength{\rightskip}{0pt plus 5cm}void extract\-\_\-char (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a9cbb06b2343931cf0059525a510ac772}
+\hypertarget{handler_8cpp_a0d6ac6e1e2db297ac0953c57af51cb14}{\index{handler.\-cpp@{handler.\-cpp}!extract\-\_\-obj@{extract\-\_\-obj}}
+\index{extract\-\_\-obj@{extract\-\_\-obj}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{extract\-\_\-obj}]{\setlength{\rightskip}{0pt plus 5cm}void extract\-\_\-obj (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a0d6ac6e1e2db297ac0953c57af51cb14}
+\hypertarget{handler_8cpp_a5b351b280dbc78e445f1df5f8c9de46c}{\index{handler.\-cpp@{handler.\-cpp}!fname@{fname}}
+\index{fname@{fname}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{fname}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ fname (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{namelist}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a5b351b280dbc78e445f1df5f8c9de46c}
+\hypertarget{handler_8cpp_a923ce84e0dd6c92bd0fb0ec85e36bdc1}{\index{handler.\-cpp@{handler.\-cpp}!fname\-\_\-hyphen@{fname\-\_\-hyphen}}
+\index{fname\-\_\-hyphen@{fname\-\_\-hyphen}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{fname\-\_\-hyphen}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ fname\-\_\-hyphen (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{namelist}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a923ce84e0dd6c92bd0fb0ec85e36bdc1}
+\hypertarget{handler_8cpp_aea811b98fa94d59993b714e92ebb7424}{\index{handler.\-cpp@{handler.\-cpp}!free\-\_\-registry@{free\-\_\-registry}}
+\index{free\-\_\-registry@{free\-\_\-registry}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{free\-\_\-registry}]{\setlength{\rightskip}{0pt plus 5cm}void free\-\_\-registry (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_aea811b98fa94d59993b714e92ebb7424}
+\hypertarget{handler_8cpp_a115637dd5620bf31c9522278a3e0d155}{\index{handler.\-cpp@{handler.\-cpp}!generic\-\_\-find@{generic\-\_\-find}}
+\index{generic\-\_\-find@{generic\-\_\-find}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{generic\-\_\-find}]{\setlength{\rightskip}{0pt plus 5cm}int generic\-\_\-find (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{arg, }
+\item[{int}]{bitvector, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$$\ast$}]{tar\-\_\-ch, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$$\ast$}]{tar\-\_\-obj}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a115637dd5620bf31c9522278a3e0d155}
+\hypertarget{handler_8cpp_a3231fc7c538887517988b6a8949b9cc4}{\index{handler.\-cpp@{handler.\-cpp}!get\-\_\-affect@{get\-\_\-affect}}
+\index{get\-\_\-affect@{get\-\_\-affect}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{get\-\_\-affect}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E}$\ast$ get\-\_\-affect (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{affect\-\_\-type}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a3231fc7c538887517988b6a8949b9cc4}
+\hypertarget{handler_8cpp_aa39ffd4cd944ac56f2d213072a2deb4b}{\index{handler.\-cpp@{handler.\-cpp}!get\-\_\-carried\-\_\-item@{get\-\_\-carried\-\_\-item}}
+\index{get\-\_\-carried\-\_\-item@{get\-\_\-carried\-\_\-item}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{get\-\_\-carried\-\_\-item}]{\setlength{\rightskip}{0pt plus 5cm}{\bf O\-B\-J\-\_\-\-D\-A\-T\-A}$\ast$ get\-\_\-carried\-\_\-item (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{item\-\_\-type}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_aa39ffd4cd944ac56f2d213072a2deb4b}
+\hypertarget{handler_8cpp_a36b466c03f6c66d34d224986f1648452}{\index{handler.\-cpp@{handler.\-cpp}!get\-\_\-char@{get\-\_\-char}}
+\index{get\-\_\-char@{get\-\_\-char}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{get\-\_\-char}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A}$\ast$ get\-\_\-char (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a36b466c03f6c66d34d224986f1648452}
+\hypertarget{handler_8cpp_a8cc17a55478f6cba5a5a87887a18b6f4}{\index{handler.\-cpp@{handler.\-cpp}!get\-\_\-char\-\_\-id@{get\-\_\-char\-\_\-id}}
+\index{get\-\_\-char\-\_\-id@{get\-\_\-char\-\_\-id}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{get\-\_\-char\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A}$\ast$ get\-\_\-char\-\_\-id (
+\begin{DoxyParamCaption}
+\item[{int}]{coldload\-\_\-id}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a8cc17a55478f6cba5a5a87887a18b6f4}
+\hypertarget{handler_8cpp_aa43007d45a48e588ef89d11e862339be}{\index{handler.\-cpp@{handler.\-cpp}!get\-\_\-char\-\_\-nomask@{get\-\_\-char\-\_\-nomask}}
+\index{get\-\_\-char\-\_\-nomask@{get\-\_\-char\-\_\-nomask}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{get\-\_\-char\-\_\-nomask}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A}$\ast$ get\-\_\-char\-\_\-nomask (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_aa43007d45a48e588ef89d11e862339be}
+\hypertarget{handler_8cpp_a0dd1aba7a4d59606c53b9843cf328c61}{\index{handler.\-cpp@{handler.\-cpp}!get\-\_\-char\-\_\-room@{get\-\_\-char\-\_\-room}}
+\index{get\-\_\-char\-\_\-room@{get\-\_\-char\-\_\-room}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{get\-\_\-char\-\_\-room}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A}$\ast$ get\-\_\-char\-\_\-room (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name, }
+\item[{int}]{room}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a0dd1aba7a4d59606c53b9843cf328c61}
+\hypertarget{handler_8cpp_a28b88d9802b499d5d3dd2787c12a65f7}{\index{handler.\-cpp@{handler.\-cpp}!get\-\_\-char\-\_\-room\-\_\-vis@{get\-\_\-char\-\_\-room\-\_\-vis}}
+\index{get\-\_\-char\-\_\-room\-\_\-vis@{get\-\_\-char\-\_\-room\-\_\-vis}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{get\-\_\-char\-\_\-room\-\_\-vis}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A}$\ast$ get\-\_\-char\-\_\-room\-\_\-vis (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a28b88d9802b499d5d3dd2787c12a65f7}
+\hypertarget{handler_8cpp_ace82d09fa50f0e5ce11ba91f5e7be52a}{\index{handler.\-cpp@{handler.\-cpp}!get\-\_\-char\-\_\-room\-\_\-vis2@{get\-\_\-char\-\_\-room\-\_\-vis2}}
+\index{get\-\_\-char\-\_\-room\-\_\-vis2@{get\-\_\-char\-\_\-room\-\_\-vis2}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{get\-\_\-char\-\_\-room\-\_\-vis2}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A}$\ast$ get\-\_\-char\-\_\-room\-\_\-vis2 (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{vnum, }
+\item[{char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_ace82d09fa50f0e5ce11ba91f5e7be52a}
+\hypertarget{handler_8cpp_a9d37c7973e5027f18b6e47b47e14c682}{\index{handler.\-cpp@{handler.\-cpp}!get\-\_\-char\-\_\-vis@{get\-\_\-char\-\_\-vis}}
+\index{get\-\_\-char\-\_\-vis@{get\-\_\-char\-\_\-vis}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{get\-\_\-char\-\_\-vis}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A}$\ast$ get\-\_\-char\-\_\-vis (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a9d37c7973e5027f18b6e47b47e14c682}
+\hypertarget{handler_8cpp_abe13a177d0854e8fac817c7ec51bd1a2}{\index{handler.\-cpp@{handler.\-cpp}!get\-\_\-covtable\-\_\-affect@{get\-\_\-covtable\-\_\-affect}}
+\index{get\-\_\-covtable\-\_\-affect@{get\-\_\-covtable\-\_\-affect}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{get\-\_\-covtable\-\_\-affect}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E}$\ast$ get\-\_\-covtable\-\_\-affect (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_abe13a177d0854e8fac817c7ec51bd1a2}
+\hypertarget{handler_8cpp_a1c2d9669e56b7ef19b9f1118bb17212d}{\index{handler.\-cpp@{handler.\-cpp}!get\-\_\-mob\-\_\-vnum@{get\-\_\-mob\-\_\-vnum}}
+\index{get\-\_\-mob\-\_\-vnum@{get\-\_\-mob\-\_\-vnum}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{get\-\_\-mob\-\_\-vnum}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A}$\ast$ get\-\_\-mob\-\_\-vnum (
+\begin{DoxyParamCaption}
+\item[{int}]{n\-Virtual}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a1c2d9669e56b7ef19b9f1118bb17212d}
+\hypertarget{handler_8cpp_a84061a8e38a0528e58f095cd325ad3ad}{\index{handler.\-cpp@{handler.\-cpp}!get\-\_\-number@{get\-\_\-number}}
+\index{get\-\_\-number@{get\-\_\-number}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{get\-\_\-number}]{\setlength{\rightskip}{0pt plus 5cm}int get\-\_\-number (
+\begin{DoxyParamCaption}
+\item[{char $\ast$$\ast$}]{name}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a84061a8e38a0528e58f095cd325ad3ad}
+\hypertarget{handler_8cpp_a9a4757ba873fcd555e4ba803e30c4fd1}{\index{handler.\-cpp@{handler.\-cpp}!get\-\_\-obj@{get\-\_\-obj}}
+\index{get\-\_\-obj@{get\-\_\-obj}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{get\-\_\-obj}]{\setlength{\rightskip}{0pt plus 5cm}{\bf O\-B\-J\-\_\-\-D\-A\-T\-A}$\ast$ get\-\_\-obj (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a9a4757ba873fcd555e4ba803e30c4fd1}
+\hypertarget{handler_8cpp_a7f3b0ee9259dda0db6198ad40cafc2dc}{\index{handler.\-cpp@{handler.\-cpp}!get\-\_\-obj\-\_\-affect@{get\-\_\-obj\-\_\-affect}}
+\index{get\-\_\-obj\-\_\-affect@{get\-\_\-obj\-\_\-affect}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{get\-\_\-obj\-\_\-affect}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E}$\ast$ get\-\_\-obj\-\_\-affect (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj, }
+\item[{int}]{type}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a7f3b0ee9259dda0db6198ad40cafc2dc}
+\hypertarget{handler_8cpp_a79765acaa6e78fbf3114505f77f6e8b8}{\index{handler.\-cpp@{handler.\-cpp}!get\-\_\-obj\-\_\-affect\-\_\-location@{get\-\_\-obj\-\_\-affect\-\_\-location}}
+\index{get\-\_\-obj\-\_\-affect\-\_\-location@{get\-\_\-obj\-\_\-affect\-\_\-location}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{get\-\_\-obj\-\_\-affect\-\_\-location}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E}$\ast$ get\-\_\-obj\-\_\-affect\-\_\-location (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj, }
+\item[{int}]{location}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a79765acaa6e78fbf3114505f77f6e8b8}
+\hypertarget{handler_8cpp_a62d19a13c63a06c5cab3228610fa188b}{\index{handler.\-cpp@{handler.\-cpp}!get\-\_\-obj\-\_\-id@{get\-\_\-obj\-\_\-id}}
+\index{get\-\_\-obj\-\_\-id@{get\-\_\-obj\-\_\-id}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{get\-\_\-obj\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}{\bf O\-B\-J\-\_\-\-D\-A\-T\-A}$\ast$ get\-\_\-obj\-\_\-id (
+\begin{DoxyParamCaption}
+\item[{int}]{coldload\-\_\-id}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a62d19a13c63a06c5cab3228610fa188b}
+\hypertarget{handler_8cpp_ab1b9e90879353c69e6e962dc1a09f404}{\index{handler.\-cpp@{handler.\-cpp}!get\-\_\-obj\-\_\-in\-\_\-dark@{get\-\_\-obj\-\_\-in\-\_\-dark}}
+\index{get\-\_\-obj\-\_\-in\-\_\-dark@{get\-\_\-obj\-\_\-in\-\_\-dark}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{get\-\_\-obj\-\_\-in\-\_\-dark}]{\setlength{\rightskip}{0pt plus 5cm}{\bf O\-B\-J\-\_\-\-D\-A\-T\-A}$\ast$ get\-\_\-obj\-\_\-in\-\_\-dark (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{name, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{list}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_ab1b9e90879353c69e6e962dc1a09f404}
+\hypertarget{handler_8cpp_ab5eaf0cac28d2f9c7cb21032a931d60a}{\index{handler.\-cpp@{handler.\-cpp}!get\-\_\-obj\-\_\-in\-\_\-equip\-\_\-num@{get\-\_\-obj\-\_\-in\-\_\-equip\-\_\-num}}
+\index{get\-\_\-obj\-\_\-in\-\_\-equip\-\_\-num@{get\-\_\-obj\-\_\-in\-\_\-equip\-\_\-num}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{get\-\_\-obj\-\_\-in\-\_\-equip\-\_\-num}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} get\-\_\-obj\-\_\-in\-\_\-equip\-\_\-num (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{long}]{vnum}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_ab5eaf0cac28d2f9c7cb21032a931d60a}
+\hypertarget{handler_8cpp_ab1bfc36257bc7a3b837ed7ea3ec7a7d3}{\index{handler.\-cpp@{handler.\-cpp}!get\-\_\-obj\-\_\-in\-\_\-list@{get\-\_\-obj\-\_\-in\-\_\-list}}
+\index{get\-\_\-obj\-\_\-in\-\_\-list@{get\-\_\-obj\-\_\-in\-\_\-list}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{get\-\_\-obj\-\_\-in\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}{\bf O\-B\-J\-\_\-\-D\-A\-T\-A}$\ast$ get\-\_\-obj\-\_\-in\-\_\-list (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{list}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_ab1bfc36257bc7a3b837ed7ea3ec7a7d3}
+\hypertarget{handler_8cpp_a86dc848efeb3fa3282e59b0238b04495}{\index{handler.\-cpp@{handler.\-cpp}!get\-\_\-obj\-\_\-in\-\_\-list\-\_\-id@{get\-\_\-obj\-\_\-in\-\_\-list\-\_\-id}}
+\index{get\-\_\-obj\-\_\-in\-\_\-list\-\_\-id@{get\-\_\-obj\-\_\-in\-\_\-list\-\_\-id}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{get\-\_\-obj\-\_\-in\-\_\-list\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}{\bf O\-B\-J\-\_\-\-D\-A\-T\-A}$\ast$ get\-\_\-obj\-\_\-in\-\_\-list\-\_\-id (
+\begin{DoxyParamCaption}
+\item[{int}]{coldload\-\_\-id, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{list}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a86dc848efeb3fa3282e59b0238b04495}
+\hypertarget{handler_8cpp_a206cef877ae4551fd731cfd3d8b4c064}{\index{handler.\-cpp@{handler.\-cpp}!get\-\_\-obj\-\_\-in\-\_\-list\-\_\-last@{get\-\_\-obj\-\_\-in\-\_\-list\-\_\-last}}
+\index{get\-\_\-obj\-\_\-in\-\_\-list\-\_\-last@{get\-\_\-obj\-\_\-in\-\_\-list\-\_\-last}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{get\-\_\-obj\-\_\-in\-\_\-list\-\_\-last}]{\setlength{\rightskip}{0pt plus 5cm}{\bf O\-B\-J\-\_\-\-D\-A\-T\-A}$\ast$ get\-\_\-obj\-\_\-in\-\_\-list\-\_\-last (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{list}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a206cef877ae4551fd731cfd3d8b4c064}
+\hypertarget{handler_8cpp_aa02fd87e95503306b67c4e15f74dc2d7}{\index{handler.\-cpp@{handler.\-cpp}!get\-\_\-obj\-\_\-in\-\_\-list\-\_\-num@{get\-\_\-obj\-\_\-in\-\_\-list\-\_\-num}}
+\index{get\-\_\-obj\-\_\-in\-\_\-list\-\_\-num@{get\-\_\-obj\-\_\-in\-\_\-list\-\_\-num}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{get\-\_\-obj\-\_\-in\-\_\-list\-\_\-num}]{\setlength{\rightskip}{0pt plus 5cm}{\bf O\-B\-J\-\_\-\-D\-A\-T\-A}$\ast$ get\-\_\-obj\-\_\-in\-\_\-list\-\_\-num (
+\begin{DoxyParamCaption}
+\item[{int}]{num, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{list}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_aa02fd87e95503306b67c4e15f74dc2d7}
+\hypertarget{handler_8cpp_aedb45ce1a42fe24d02961323bc79899e}{\index{handler.\-cpp@{handler.\-cpp}!get\-\_\-obj\-\_\-in\-\_\-list\-\_\-vis@{get\-\_\-obj\-\_\-in\-\_\-list\-\_\-vis}}
+\index{get\-\_\-obj\-\_\-in\-\_\-list\-\_\-vis@{get\-\_\-obj\-\_\-in\-\_\-list\-\_\-vis}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{get\-\_\-obj\-\_\-in\-\_\-list\-\_\-vis}]{\setlength{\rightskip}{0pt plus 5cm}{\bf O\-B\-J\-\_\-\-D\-A\-T\-A}$\ast$ get\-\_\-obj\-\_\-in\-\_\-list\-\_\-vis (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{const char $\ast$}]{name, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{list}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_aedb45ce1a42fe24d02961323bc79899e}
+\hypertarget{handler_8cpp_a9b9a92beece628d019661af7e300fac9}{\index{handler.\-cpp@{handler.\-cpp}!get\-\_\-obj\-\_\-in\-\_\-list\-\_\-vis\-\_\-not\-\_\-money@{get\-\_\-obj\-\_\-in\-\_\-list\-\_\-vis\-\_\-not\-\_\-money}}
+\index{get\-\_\-obj\-\_\-in\-\_\-list\-\_\-vis\-\_\-not\-\_\-money@{get\-\_\-obj\-\_\-in\-\_\-list\-\_\-vis\-\_\-not\-\_\-money}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{get\-\_\-obj\-\_\-in\-\_\-list\-\_\-vis\-\_\-not\-\_\-money}]{\setlength{\rightskip}{0pt plus 5cm}{\bf O\-B\-J\-\_\-\-D\-A\-T\-A}$\ast$ get\-\_\-obj\-\_\-in\-\_\-list\-\_\-vis\-\_\-not\-\_\-money (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{name, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{list}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a9b9a92beece628d019661af7e300fac9}
+\hypertarget{handler_8cpp_aa1a079fa5ccf2ac4367efe271bac8ab1}{\index{handler.\-cpp@{handler.\-cpp}!get\-\_\-obj\-\_\-vis@{get\-\_\-obj\-\_\-vis}}
+\index{get\-\_\-obj\-\_\-vis@{get\-\_\-obj\-\_\-vis}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{get\-\_\-obj\-\_\-vis}]{\setlength{\rightskip}{0pt plus 5cm}{\bf O\-B\-J\-\_\-\-D\-A\-T\-A}$\ast$ get\-\_\-obj\-\_\-vis (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_aa1a079fa5ccf2ac4367efe271bac8ab1}
+\hypertarget{handler_8cpp_af8cf696a513ee1776e4e00f213ef7b95}{\index{handler.\-cpp@{handler.\-cpp}!get\-\_\-scent@{get\-\_\-scent}}
+\index{get\-\_\-scent@{get\-\_\-scent}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{get\-\_\-scent}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\-C\-E\-N\-T\-\_\-\-D\-A\-T\-A}$\ast$ get\-\_\-scent (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{scent\-\_\-ref}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_af8cf696a513ee1776e4e00f213ef7b95}
+\hypertarget{handler_8cpp_af0323facc8cd5cf578261014a2dc5cf3}{\index{handler.\-cpp@{handler.\-cpp}!get\-\_\-scent@{get\-\_\-scent}}
+\index{get\-\_\-scent@{get\-\_\-scent}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{get\-\_\-scent}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\-C\-E\-N\-T\-\_\-\-D\-A\-T\-A}$\ast$ get\-\_\-scent (
+\begin{DoxyParamCaption}
+\item[{{\bf R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$}]{room, }
+\item[{int}]{scent\-\_\-ref}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_af0323facc8cd5cf578261014a2dc5cf3}
+\hypertarget{handler_8cpp_a5b5ace1623b0ce4dfcc639870c28e8dc}{\index{handler.\-cpp@{handler.\-cpp}!get\-\_\-scent@{get\-\_\-scent}}
+\index{get\-\_\-scent@{get\-\_\-scent}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{get\-\_\-scent}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\-C\-E\-N\-T\-\_\-\-D\-A\-T\-A}$\ast$ get\-\_\-scent (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj, }
+\item[{int}]{scent\-\_\-ref}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a5b5ace1623b0ce4dfcc639870c28e8dc}
+\hypertarget{handler_8cpp_aeb61b87816b3e531e661b96c70f9b9ab}{\index{handler.\-cpp@{handler.\-cpp}!get\-\_\-soma\-\_\-affect@{get\-\_\-soma\-\_\-affect}}
+\index{get\-\_\-soma\-\_\-affect@{get\-\_\-soma\-\_\-affect}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{get\-\_\-soma\-\_\-affect}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E}$\ast$ get\-\_\-soma\-\_\-affect (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{affect\-\_\-type}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_aeb61b87816b3e531e661b96c70f9b9ab}
+\hypertarget{handler_8cpp_a538039f013e52f84f5ff0061b4c87c34}{\index{handler.\-cpp@{handler.\-cpp}!insert\-\_\-combat\-\_\-msg@{insert\-\_\-combat\-\_\-msg}}
+\index{insert\-\_\-combat\-\_\-msg@{insert\-\_\-combat\-\_\-msg}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{insert\-\_\-combat\-\_\-msg}]{\setlength{\rightskip}{0pt plus 5cm}void insert\-\_\-combat\-\_\-msg (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-O\-M\-B\-A\-T\-\_\-\-M\-S\-G\-\_\-\-D\-A\-T\-A} $\ast$}]{cm}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a538039f013e52f84f5ff0061b4c87c34}
+\hypertarget{handler_8cpp_a35e79ba45bb463ccb3371d016c721176}{\index{handler.\-cpp@{handler.\-cpp}!is\-\_\-hooded@{is\-\_\-hooded}}
+\index{is\-\_\-hooded@{is\-\_\-hooded}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{is\-\_\-hooded}]{\setlength{\rightskip}{0pt plus 5cm}int is\-\_\-hooded (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a35e79ba45bb463ccb3371d016c721176}
+\hypertarget{handler_8cpp_aeacd05a47f9ca19edb040c7489ec8993}{\index{handler.\-cpp@{handler.\-cpp}!is\-\_\-in\-\_\-room@{is\-\_\-in\-\_\-room}}
+\index{is\-\_\-in\-\_\-room@{is\-\_\-in\-\_\-room}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{is\-\_\-in\-\_\-room}]{\setlength{\rightskip}{0pt plus 5cm}int is\-\_\-in\-\_\-room (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{target}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_aeacd05a47f9ca19edb040c7489ec8993}
+\hypertarget{handler_8cpp_a62a53575199dc1940df46d36073ab824}{\index{handler.\-cpp@{handler.\-cpp}!is\-\_\-room\-\_\-affected@{is\-\_\-room\-\_\-affected}}
+\index{is\-\_\-room\-\_\-affected@{is\-\_\-room\-\_\-affected}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{is\-\_\-room\-\_\-affected}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E}$\ast$ is\-\_\-room\-\_\-affected (
+\begin{DoxyParamCaption}
+\item[{{\bf A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$}]{af, }
+\item[{int}]{type}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a62a53575199dc1940df46d36073ab824}
+\hypertarget{handler_8cpp_aa75aff646f6dcdaa9320ef0459afb7dc}{\index{handler.\-cpp@{handler.\-cpp}!isname@{isname}}
+\index{isname@{isname}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{isname}]{\setlength{\rightskip}{0pt plus 5cm}int isname (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{str, }
+\item[{char $\ast$}]{namelist}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_aa75aff646f6dcdaa9320ef0459afb7dc}
+\hypertarget{handler_8cpp_a8d1b9932e18ccdd0283f441b0b626e49}{\index{handler.\-cpp@{handler.\-cpp}!isnamec@{isnamec}}
+\index{isnamec@{isnamec}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{isnamec}]{\setlength{\rightskip}{0pt plus 5cm}int isnamec (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{str, }
+\item[{char $\ast$}]{namelist}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a8d1b9932e18ccdd0283f441b0b626e49}
+\hypertarget{handler_8cpp_a0d989af0a2dc356431fd90bb8553c8f3}{\index{handler.\-cpp@{handler.\-cpp}!load\-\_\-dynamic\-\_\-registry@{load\-\_\-dynamic\-\_\-registry}}
+\index{load\-\_\-dynamic\-\_\-registry@{load\-\_\-dynamic\-\_\-registry}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{load\-\_\-dynamic\-\_\-registry}]{\setlength{\rightskip}{0pt plus 5cm}void load\-\_\-dynamic\-\_\-registry (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a0d989af0a2dc356431fd90bb8553c8f3}
+\hypertarget{handler_8cpp_a158d2d3c573ece92c8e64c4b3ece206e}{\index{handler.\-cpp@{handler.\-cpp}!lookup\-\_\-string@{lookup\-\_\-string}}
+\index{lookup\-\_\-string@{lookup\-\_\-string}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{lookup\-\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ lookup\-\_\-string (
+\begin{DoxyParamCaption}
+\item[{int}]{value, }
+\item[{int}]{reg\-\_\-index}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a158d2d3c573ece92c8e64c4b3ece206e}
+\hypertarget{handler_8cpp_ade0a7331367f2b2bb400d35190834cde}{\index{handler.\-cpp@{handler.\-cpp}!lookup\-\_\-value@{lookup\-\_\-value}}
+\index{lookup\-\_\-value@{lookup\-\_\-value}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{lookup\-\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}int lookup\-\_\-value (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{string, }
+\item[{int}]{reg\-\_\-index}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_ade0a7331367f2b2bb400d35190834cde}
+\hypertarget{handler_8cpp_ae37e90a506e16af5d76ab8c2ad301ed9}{\index{handler.\-cpp@{handler.\-cpp}!morph\-\_\-mob@{morph\-\_\-mob}}
+\index{morph\-\_\-mob@{morph\-\_\-mob}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{morph\-\_\-mob}]{\setlength{\rightskip}{0pt plus 5cm}void morph\-\_\-mob (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_ae37e90a506e16af5d76ab8c2ad301ed9}
+\hypertarget{handler_8cpp_a3e49674a7067c99036bb5de6a53e279e}{\index{handler.\-cpp@{handler.\-cpp}!morph\-\_\-obj@{morph\-\_\-obj}}
+\index{morph\-\_\-obj@{morph\-\_\-obj}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{morph\-\_\-obj}]{\setlength{\rightskip}{0pt plus 5cm}void morph\-\_\-obj (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a3e49674a7067c99036bb5de6a53e279e}
+\hypertarget{handler_8cpp_a1bc1d801513ff05f0f0b1643940c31c5}{\index{handler.\-cpp@{handler.\-cpp}!name\-\_\-money@{name\-\_\-money}}
+\index{name\-\_\-money@{name\-\_\-money}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{name\-\_\-money}]{\setlength{\rightskip}{0pt plus 5cm}void name\-\_\-money (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a1bc1d801513ff05f0f0b1643940c31c5}
+\hypertarget{handler_8cpp_ac27d2a0ae2868e9bb510d71fd5ebdaf9}{\index{handler.\-cpp@{handler.\-cpp}!nullify\-\_\-affects@{nullify\-\_\-affects}}
+\index{nullify\-\_\-affects@{nullify\-\_\-affects}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{nullify\-\_\-affects}]{\setlength{\rightskip}{0pt plus 5cm}void nullify\-\_\-affects (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_ac27d2a0ae2868e9bb510d71fd5ebdaf9}
+\hypertarget{handler_8cpp_a5716595055382aef878b93cbda5776f1}{\index{handler.\-cpp@{handler.\-cpp}!obj\-\_\-from\-\_\-char@{obj\-\_\-from\-\_\-char}}
+\index{obj\-\_\-from\-\_\-char@{obj\-\_\-from\-\_\-char}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{obj\-\_\-from\-\_\-char}]{\setlength{\rightskip}{0pt plus 5cm}void obj\-\_\-from\-\_\-char (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$$\ast$}]{obj, }
+\item[{int}]{count}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a5716595055382aef878b93cbda5776f1}
+\hypertarget{handler_8cpp_a4671a17b1f9a07a8190e0c943295bbda}{\index{handler.\-cpp@{handler.\-cpp}!obj\-\_\-from\-\_\-obj@{obj\-\_\-from\-\_\-obj}}
+\index{obj\-\_\-from\-\_\-obj@{obj\-\_\-from\-\_\-obj}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{obj\-\_\-from\-\_\-obj}]{\setlength{\rightskip}{0pt plus 5cm}void obj\-\_\-from\-\_\-obj (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$$\ast$}]{obj, }
+\item[{int}]{count}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a4671a17b1f9a07a8190e0c943295bbda}
+\hypertarget{handler_8cpp_a6dc150f4e8c390395290bcbd5801c0b2}{\index{handler.\-cpp@{handler.\-cpp}!obj\-\_\-from\-\_\-room@{obj\-\_\-from\-\_\-room}}
+\index{obj\-\_\-from\-\_\-room@{obj\-\_\-from\-\_\-room}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{obj\-\_\-from\-\_\-room}]{\setlength{\rightskip}{0pt plus 5cm}void obj\-\_\-from\-\_\-room (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$$\ast$}]{obj, }
+\item[{int}]{count}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a6dc150f4e8c390395290bcbd5801c0b2}
+\hypertarget{handler_8cpp_acee754ab9479d718f7f4e7cc78180b4c}{\index{handler.\-cpp@{handler.\-cpp}!obj\-\_\-to\-\_\-char@{obj\-\_\-to\-\_\-char}}
+\index{obj\-\_\-to\-\_\-char@{obj\-\_\-to\-\_\-char}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{obj\-\_\-to\-\_\-char}]{\setlength{\rightskip}{0pt plus 5cm}void obj\-\_\-to\-\_\-char (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_acee754ab9479d718f7f4e7cc78180b4c}
+\hypertarget{handler_8cpp_a3fef2832ca6179b4f0ad326040ebce84}{\index{handler.\-cpp@{handler.\-cpp}!obj\-\_\-to\-\_\-obj@{obj\-\_\-to\-\_\-obj}}
+\index{obj\-\_\-to\-\_\-obj@{obj\-\_\-to\-\_\-obj}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{obj\-\_\-to\-\_\-obj}]{\setlength{\rightskip}{0pt plus 5cm}void obj\-\_\-to\-\_\-obj (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{container}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a3fef2832ca6179b4f0ad326040ebce84}
+\hypertarget{handler_8cpp_aeddca5c5a7320273ec996c852ad51bd5}{\index{handler.\-cpp@{handler.\-cpp}!obj\-\_\-to\-\_\-room@{obj\-\_\-to\-\_\-room}}
+\index{obj\-\_\-to\-\_\-room@{obj\-\_\-to\-\_\-room}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{obj\-\_\-to\-\_\-room}]{\setlength{\rightskip}{0pt plus 5cm}void obj\-\_\-to\-\_\-room (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{object, }
+\item[{int}]{room}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_aeddca5c5a7320273ec996c852ad51bd5}
+\hypertarget{handler_8cpp_ae722ecc1e8001f9b8c705cb5e8f149b5}{\index{handler.\-cpp@{handler.\-cpp}!object\-\_\-list\-\_\-new\-\_\-owner@{object\-\_\-list\-\_\-new\-\_\-owner}}
+\index{object\-\_\-list\-\_\-new\-\_\-owner@{object\-\_\-list\-\_\-new\-\_\-owner}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{object\-\_\-list\-\_\-new\-\_\-owner}]{\setlength{\rightskip}{0pt plus 5cm}void object\-\_\-list\-\_\-new\-\_\-owner (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{list, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_ae722ecc1e8001f9b8c705cb5e8f149b5}
+\hypertarget{handler_8cpp_a389d7bb1445a5b2fd8a99138b8bffe87}{\index{handler.\-cpp@{handler.\-cpp}!read\-\_\-registry@{read\-\_\-registry}}
+\index{read\-\_\-registry@{read\-\_\-registry}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{read\-\_\-registry}]{\setlength{\rightskip}{0pt plus 5cm}void read\-\_\-registry (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a389d7bb1445a5b2fd8a99138b8bffe87}
+\hypertarget{handler_8cpp_a904a6bfe7cae61a573800ab6c36aabd8}{\index{handler.\-cpp@{handler.\-cpp}!read\-\_\-spell@{read\-\_\-spell}}
+\index{read\-\_\-spell@{read\-\_\-spell}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{read\-\_\-spell}]{\setlength{\rightskip}{0pt plus 5cm}void read\-\_\-spell (
+\begin{DoxyParamCaption}
+\item[{{\bf P\-H\-A\-S\-E\-\_\-\-D\-A\-T\-A} $\ast$}]{phase, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a904a6bfe7cae61a573800ab6c36aabd8}
+\hypertarget{handler_8cpp_a86a5c2e8af1fc100a7324f06f0da346f}{\index{handler.\-cpp@{handler.\-cpp}!real\-\_\-skill@{real\-\_\-skill}}
+\index{real\-\_\-skill@{real\-\_\-skill}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{real\-\_\-skill}]{\setlength{\rightskip}{0pt plus 5cm}int real\-\_\-skill (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{skill}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a86a5c2e8af1fc100a7324f06f0da346f}
+\hypertarget{handler_8cpp_aa14c2b7026af93c17e253f11c9d7d2d2}{\index{handler.\-cpp@{handler.\-cpp}!reapply\-\_\-affects@{reapply\-\_\-affects}}
+\index{reapply\-\_\-affects@{reapply\-\_\-affects}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{reapply\-\_\-affects}]{\setlength{\rightskip}{0pt plus 5cm}void reapply\-\_\-affects (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_aa14c2b7026af93c17e253f11c9d7d2d2}
+\hypertarget{handler_8cpp_abe6cf5ce5769688ff4b5caf71900ff14}{\index{handler.\-cpp@{handler.\-cpp}!reg\-\_\-additional\-\_\-spell\-\_\-info@{reg\-\_\-additional\-\_\-spell\-\_\-info}}
+\index{reg\-\_\-additional\-\_\-spell\-\_\-info@{reg\-\_\-additional\-\_\-spell\-\_\-info}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{reg\-\_\-additional\-\_\-spell\-\_\-info}]{\setlength{\rightskip}{0pt plus 5cm}void reg\-\_\-additional\-\_\-spell\-\_\-info (
+\begin{DoxyParamCaption}
+\item[{int}]{sn, }
+\item[{char $\ast$}]{buf}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_abe6cf5ce5769688ff4b5caf71900ff14}
+\hypertarget{handler_8cpp_a084b44212b75300b7d0fbb9225166472}{\index{handler.\-cpp@{handler.\-cpp}!reg\-\_\-read\-\_\-magic@{reg\-\_\-read\-\_\-magic}}
+\index{reg\-\_\-read\-\_\-magic@{reg\-\_\-read\-\_\-magic}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{reg\-\_\-read\-\_\-magic}]{\setlength{\rightskip}{0pt plus 5cm}void reg\-\_\-read\-\_\-magic (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{fp\-\_\-reg, }
+\item[{char $\ast$}]{buf}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a084b44212b75300b7d0fbb9225166472}
+\hypertarget{handler_8cpp_ac5cb361aedc0fc43841cd568e47ea120}{\index{handler.\-cpp@{handler.\-cpp}!reg\-\_\-read\-\_\-ov\-\_\-lv\-\_\-cap@{reg\-\_\-read\-\_\-ov\-\_\-lv\-\_\-cap}}
+\index{reg\-\_\-read\-\_\-ov\-\_\-lv\-\_\-cap@{reg\-\_\-read\-\_\-ov\-\_\-lv\-\_\-cap}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{reg\-\_\-read\-\_\-ov\-\_\-lv\-\_\-cap}]{\setlength{\rightskip}{0pt plus 5cm}void reg\-\_\-read\-\_\-ov\-\_\-lv\-\_\-cap (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{fp\-\_\-reg, }
+\item[{char $\ast$}]{buf}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_ac5cb361aedc0fc43841cd568e47ea120}
+\hypertarget{handler_8cpp_ad688c45641284c5de982b036acba0127}{\index{handler.\-cpp@{handler.\-cpp}!reg\-\_\-read\-\_\-skill\-\_\-max\-\_\-rates@{reg\-\_\-read\-\_\-skill\-\_\-max\-\_\-rates}}
+\index{reg\-\_\-read\-\_\-skill\-\_\-max\-\_\-rates@{reg\-\_\-read\-\_\-skill\-\_\-max\-\_\-rates}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{reg\-\_\-read\-\_\-skill\-\_\-max\-\_\-rates}]{\setlength{\rightskip}{0pt plus 5cm}void reg\-\_\-read\-\_\-skill\-\_\-max\-\_\-rates (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{fp\-\_\-reg, }
+\item[{char $\ast$}]{buf}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_ad688c45641284c5de982b036acba0127}
+\hypertarget{handler_8cpp_a701e99ac1083a356baf40b6839e82923}{\index{handler.\-cpp@{handler.\-cpp}!reg\-\_\-read\-\_\-tables@{reg\-\_\-read\-\_\-tables}}
+\index{reg\-\_\-read\-\_\-tables@{reg\-\_\-read\-\_\-tables}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{reg\-\_\-read\-\_\-tables}]{\setlength{\rightskip}{0pt plus 5cm}void reg\-\_\-read\-\_\-tables (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{fp\-\_\-reg, }
+\item[{char $\ast$}]{buf}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a701e99ac1083a356baf40b6839e82923}
+\hypertarget{handler_8cpp_a1788265e16a7833a2ab25200c88ba462}{\index{handler.\-cpp@{handler.\-cpp}!reg\-\_\-read\-\_\-variables@{reg\-\_\-read\-\_\-variables}}
+\index{reg\-\_\-read\-\_\-variables@{reg\-\_\-read\-\_\-variables}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{reg\-\_\-read\-\_\-variables}]{\setlength{\rightskip}{0pt plus 5cm}void reg\-\_\-read\-\_\-variables (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{fp\-\_\-reg, }
+\item[{char $\ast$}]{buf}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a1788265e16a7833a2ab25200c88ba462}
+\hypertarget{handler_8cpp_a55641803451fce638a19a810a7f27252}{\index{handler.\-cpp@{handler.\-cpp}!remove\-\_\-affect\-\_\-type@{remove\-\_\-affect\-\_\-type}}
+\index{remove\-\_\-affect\-\_\-type@{remove\-\_\-affect\-\_\-type}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{remove\-\_\-affect\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}void remove\-\_\-affect\-\_\-type (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{type}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a55641803451fce638a19a810a7f27252}
+\hypertarget{handler_8cpp_a5a961d613a8e495db1db5dc090778552}{\index{handler.\-cpp@{handler.\-cpp}!remove\-\_\-mob\-\_\-scent@{remove\-\_\-mob\-\_\-scent}}
+\index{remove\-\_\-mob\-\_\-scent@{remove\-\_\-mob\-\_\-scent}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{remove\-\_\-mob\-\_\-scent}]{\setlength{\rightskip}{0pt plus 5cm}void remove\-\_\-mob\-\_\-scent (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{mob, }
+\item[{{\bf S\-C\-E\-N\-T\-\_\-\-D\-A\-T\-A} $\ast$}]{scent}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a5a961d613a8e495db1db5dc090778552}
+\hypertarget{handler_8cpp_a5d7b7e2b5ba145c85feae85c20ceeb18}{\index{handler.\-cpp@{handler.\-cpp}!remove\-\_\-mob\-\_\-scent@{remove\-\_\-mob\-\_\-scent}}
+\index{remove\-\_\-mob\-\_\-scent@{remove\-\_\-mob\-\_\-scent}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{remove\-\_\-mob\-\_\-scent}]{\setlength{\rightskip}{0pt plus 5cm}void remove\-\_\-mob\-\_\-scent (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{mob, }
+\item[{int}]{scent\-\_\-ref}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a5d7b7e2b5ba145c85feae85c20ceeb18}
+\hypertarget{handler_8cpp_aff42407fb6c672a766a4a59f062d419a}{\index{handler.\-cpp@{handler.\-cpp}!remove\-\_\-obj\-\_\-affect@{remove\-\_\-obj\-\_\-affect}}
+\index{remove\-\_\-obj\-\_\-affect@{remove\-\_\-obj\-\_\-affect}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{remove\-\_\-obj\-\_\-affect}]{\setlength{\rightskip}{0pt plus 5cm}void remove\-\_\-obj\-\_\-affect (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj, }
+\item[{int}]{type}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_aff42407fb6c672a766a4a59f062d419a}
+\hypertarget{handler_8cpp_aea474ede12af382961f21de8644808f1}{\index{handler.\-cpp@{handler.\-cpp}!remove\-\_\-obj\-\_\-affect\-\_\-location@{remove\-\_\-obj\-\_\-affect\-\_\-location}}
+\index{remove\-\_\-obj\-\_\-affect\-\_\-location@{remove\-\_\-obj\-\_\-affect\-\_\-location}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{remove\-\_\-obj\-\_\-affect\-\_\-location}]{\setlength{\rightskip}{0pt plus 5cm}void remove\-\_\-obj\-\_\-affect\-\_\-location (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj, }
+\item[{int}]{location}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_aea474ede12af382961f21de8644808f1}
+\hypertarget{handler_8cpp_a6780e42b55c00897c8f6687841d208d1}{\index{handler.\-cpp@{handler.\-cpp}!remove\-\_\-obj\-\_\-mult\-\_\-affect@{remove\-\_\-obj\-\_\-mult\-\_\-affect}}
+\index{remove\-\_\-obj\-\_\-mult\-\_\-affect@{remove\-\_\-obj\-\_\-mult\-\_\-affect}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{remove\-\_\-obj\-\_\-mult\-\_\-affect}]{\setlength{\rightskip}{0pt plus 5cm}void remove\-\_\-obj\-\_\-mult\-\_\-affect (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj, }
+\item[{int}]{type}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a6780e42b55c00897c8f6687841d208d1}
+\hypertarget{handler_8cpp_a6e57735f419f2aac624436a7d8f4e979}{\index{handler.\-cpp@{handler.\-cpp}!remove\-\_\-obj\-\_\-scent@{remove\-\_\-obj\-\_\-scent}}
+\index{remove\-\_\-obj\-\_\-scent@{remove\-\_\-obj\-\_\-scent}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{remove\-\_\-obj\-\_\-scent}]{\setlength{\rightskip}{0pt plus 5cm}void remove\-\_\-obj\-\_\-scent (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj, }
+\item[{{\bf S\-C\-E\-N\-T\-\_\-\-D\-A\-T\-A} $\ast$}]{scent}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a6e57735f419f2aac624436a7d8f4e979}
+\hypertarget{handler_8cpp_a8f9dcbcbe4702bcb3c53aabc2e5c7326}{\index{handler.\-cpp@{handler.\-cpp}!remove\-\_\-obj\-\_\-scent@{remove\-\_\-obj\-\_\-scent}}
+\index{remove\-\_\-obj\-\_\-scent@{remove\-\_\-obj\-\_\-scent}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{remove\-\_\-obj\-\_\-scent}]{\setlength{\rightskip}{0pt plus 5cm}void remove\-\_\-obj\-\_\-scent (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj, }
+\item[{int}]{scent\-\_\-ref}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a8f9dcbcbe4702bcb3c53aabc2e5c7326}
+\hypertarget{handler_8cpp_a2a2e8db630d8e585ac0707507030d488}{\index{handler.\-cpp@{handler.\-cpp}!remove\-\_\-object\-\_\-affect@{remove\-\_\-object\-\_\-affect}}
+\index{remove\-\_\-object\-\_\-affect@{remove\-\_\-object\-\_\-affect}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{remove\-\_\-object\-\_\-affect}]{\setlength{\rightskip}{0pt plus 5cm}void remove\-\_\-object\-\_\-affect (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj, }
+\item[{{\bf A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$}]{af}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a2a2e8db630d8e585ac0707507030d488}
+\hypertarget{handler_8cpp_a10f0b29bde58e92365f98a5da2db18df}{\index{handler.\-cpp@{handler.\-cpp}!remove\-\_\-room\-\_\-scent@{remove\-\_\-room\-\_\-scent}}
+\index{remove\-\_\-room\-\_\-scent@{remove\-\_\-room\-\_\-scent}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{remove\-\_\-room\-\_\-scent}]{\setlength{\rightskip}{0pt plus 5cm}void remove\-\_\-room\-\_\-scent (
+\begin{DoxyParamCaption}
+\item[{{\bf R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$}]{room, }
+\item[{{\bf S\-C\-E\-N\-T\-\_\-\-D\-A\-T\-A} $\ast$}]{scent}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a10f0b29bde58e92365f98a5da2db18df}
+\hypertarget{handler_8cpp_a576738d9d3f7f5ed8859f5b7f9287970}{\index{handler.\-cpp@{handler.\-cpp}!remove\-\_\-room\-\_\-scent@{remove\-\_\-room\-\_\-scent}}
+\index{remove\-\_\-room\-\_\-scent@{remove\-\_\-room\-\_\-scent}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{remove\-\_\-room\-\_\-scent}]{\setlength{\rightskip}{0pt plus 5cm}void remove\-\_\-room\-\_\-scent (
+\begin{DoxyParamCaption}
+\item[{{\bf R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$}]{room, }
+\item[{int}]{scent\-\_\-ref}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a576738d9d3f7f5ed8859f5b7f9287970}
+\hypertarget{handler_8cpp_a9b4e88e8df5ab3b5a015f0b982e8dc29}{\index{handler.\-cpp@{handler.\-cpp}!remove\-\_\-sighting@{remove\-\_\-sighting}}
+\index{remove\-\_\-sighting@{remove\-\_\-sighting}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{remove\-\_\-sighting}]{\setlength{\rightskip}{0pt plus 5cm}void remove\-\_\-sighting (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{target}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a9b4e88e8df5ab3b5a015f0b982e8dc29}
+\hypertarget{handler_8cpp_a6cb8b51638fd0fe1140d9b9fc2c01da4}{\index{handler.\-cpp@{handler.\-cpp}!scent\-\_\-to\-\_\-mob@{scent\-\_\-to\-\_\-mob}}
+\index{scent\-\_\-to\-\_\-mob@{scent\-\_\-to\-\_\-mob}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{scent\-\_\-to\-\_\-mob}]{\setlength{\rightskip}{0pt plus 5cm}void scent\-\_\-to\-\_\-mob (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{mob, }
+\item[{{\bf S\-C\-E\-N\-T\-\_\-\-D\-A\-T\-A} $\ast$}]{scent}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a6cb8b51638fd0fe1140d9b9fc2c01da4}
+\hypertarget{handler_8cpp_a0d36e6ff755058ca86a9571592a4324a}{\index{handler.\-cpp@{handler.\-cpp}!scent\-\_\-to\-\_\-obj@{scent\-\_\-to\-\_\-obj}}
+\index{scent\-\_\-to\-\_\-obj@{scent\-\_\-to\-\_\-obj}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{scent\-\_\-to\-\_\-obj}]{\setlength{\rightskip}{0pt plus 5cm}void scent\-\_\-to\-\_\-obj (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj, }
+\item[{{\bf S\-C\-E\-N\-T\-\_\-\-D\-A\-T\-A} $\ast$}]{scent}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a0d36e6ff755058ca86a9571592a4324a}
+\hypertarget{handler_8cpp_ad2b644a278b0b7983979c4192185e97c}{\index{handler.\-cpp@{handler.\-cpp}!scent\-\_\-to\-\_\-room@{scent\-\_\-to\-\_\-room}}
+\index{scent\-\_\-to\-\_\-room@{scent\-\_\-to\-\_\-room}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{scent\-\_\-to\-\_\-room}]{\setlength{\rightskip}{0pt plus 5cm}void scent\-\_\-to\-\_\-room (
+\begin{DoxyParamCaption}
+\item[{{\bf R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$}]{room, }
+\item[{{\bf S\-C\-E\-N\-T\-\_\-\-D\-A\-T\-A} $\ast$}]{scent}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_ad2b644a278b0b7983979c4192185e97c}
+\hypertarget{handler_8cpp_ab12faf5c1d29c4e152c7a2648b1db867}{\index{handler.\-cpp@{handler.\-cpp}!setup\-\_\-registry@{setup\-\_\-registry}}
+\index{setup\-\_\-registry@{setup\-\_\-registry}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{setup\-\_\-registry}]{\setlength{\rightskip}{0pt plus 5cm}void setup\-\_\-registry (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_ab12faf5c1d29c4e152c7a2648b1db867}
+\hypertarget{handler_8cpp_a1f643a294c1049d8185ef747934bdb04}{\index{handler.\-cpp@{handler.\-cpp}!split\-\_\-obj@{split\-\_\-obj}}
+\index{split\-\_\-obj@{split\-\_\-obj}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{split\-\_\-obj}]{\setlength{\rightskip}{0pt plus 5cm}{\bf O\-B\-J\-\_\-\-D\-A\-T\-A}$\ast$ split\-\_\-obj (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj, }
+\item[{int}]{count}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a1f643a294c1049d8185ef747934bdb04}
+\hypertarget{handler_8cpp_a0f267828612cfb482a930cdf9e4b6193}{\index{handler.\-cpp@{handler.\-cpp}!unequip\-\_\-char@{unequip\-\_\-char}}
+\index{unequip\-\_\-char@{unequip\-\_\-char}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{unequip\-\_\-char}]{\setlength{\rightskip}{0pt plus 5cm}{\bf O\-B\-J\-\_\-\-D\-A\-T\-A}$\ast$ unequip\-\_\-char (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{pos}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a0f267828612cfb482a930cdf9e4b6193}
+\hypertarget{handler_8cpp_a36a0a991b0135103ed0bbc0bbcc5c63d}{\index{handler.\-cpp@{handler.\-cpp}!update\-\_\-delays@{update\-\_\-delays}}
+\index{update\-\_\-delays@{update\-\_\-delays}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{update\-\_\-delays}]{\setlength{\rightskip}{0pt plus 5cm}void update\-\_\-delays (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{handler_8cpp_a36a0a991b0135103ed0bbc0bbcc5c63d}
+
+
+\subsection{Variable Documentation}
+\hypertarget{handler_8cpp_a12f7f6e1784faf2174635b4ceac99a39}{\index{handler.\-cpp@{handler.\-cpp}!cm\-\_\-list@{cm\-\_\-list}}
+\index{cm\-\_\-list@{cm\-\_\-list}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{cm\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-O\-M\-B\-A\-T\-\_\-\-M\-S\-G\-\_\-\-D\-A\-T\-A}$\ast$ cm\-\_\-list = N\-U\-L\-L}}\label{handler_8cpp_a12f7f6e1784faf2174635b4ceac99a39}
+\hypertarget{handler_8cpp_a55c71990ee4162ebec6abe401996cf15}{\index{handler.\-cpp@{handler.\-cpp}!engine@{engine}}
+\index{engine@{engine}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{engine}]{\setlength{\rightskip}{0pt plus 5cm}{\bf rpie\-::server} engine}}\label{handler_8cpp_a55c71990ee4162ebec6abe401996cf15}
+\hypertarget{handler_8cpp_ac130b1abe9bbce3d6a17f1cd30654aa6}{\index{handler.\-cpp@{handler.\-cpp}!frequency@{frequency}}
+\index{frequency@{frequency}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{frequency}]{\setlength{\rightskip}{0pt plus 5cm}int frequency\mbox{[}1000\mbox{]}}}\label{handler_8cpp_ac130b1abe9bbce3d6a17f1cd30654aa6}
+\hypertarget{handler_8cpp_a265ca481e506123b7663e4d5eb785459}{\index{handler.\-cpp@{handler.\-cpp}!knockout@{knockout}}
+\index{knockout@{knockout}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{knockout}]{\setlength{\rightskip}{0pt plus 5cm}int knockout}}\label{handler_8cpp_a265ca481e506123b7663e4d5eb785459}
+\hypertarget{handler_8cpp_a07d2ba729d1cce51f946fa69682204b0}{\index{handler.\-cpp@{handler.\-cpp}!targets@{targets}}
+\index{targets@{targets}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{targets}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ targets\mbox{[}$\,$\mbox{]}}}\label{handler_8cpp_a07d2ba729d1cce51f946fa69682204b0}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"Self"},
+    \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}
+\hypertarget{handler_8cpp_a9d211dbdfbe2130acc5f17d47bad3263}{\index{handler.\-cpp@{handler.\-cpp}!use\-\_\-table@{use\-\_\-table}}
+\index{use\-\_\-table@{use\-\_\-table}!handler.cpp@{handler.\-cpp}}
+\subsubsection[{use\-\_\-table}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf use\-\_\-table\-\_\-data} use\-\_\-table\mbox{[}$\,$\mbox{]}}}\label{handler_8cpp_a9d211dbdfbe2130acc5f17d47bad3263}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \{
+        8
+    \},              
+    \{10\},
+    \{10\},
+    \{10\},
+    \{16\},
+    \{16\},
+    \{16\},
+    \{22\},
+    \{22\},
+    \{22\},
+    \{25\},
+    \{25\},
+    \{0\},
+    \{0\},
+    \{0\},
+    \{0\}
+\}
+\end{DoxyCode}

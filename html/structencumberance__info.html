@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -89,38 +89,118 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">encumberance_info Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="structs_8h_source.html">structs.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:aa2ea8e741a58ad10c50eb074fb35bfb2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa2ea8e741a58ad10c50eb074fb35bfb2"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>str_mult_wt</b></td></tr>
+<tr class="memitem:aa2ea8e741a58ad10c50eb074fb35bfb2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structencumberance__info.html#aa2ea8e741a58ad10c50eb074fb35bfb2">str_mult_wt</a></td></tr>
 <tr class="separator:aa2ea8e741a58ad10c50eb074fb35bfb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af06509d4e25c3b78fc3e33f8b707d499"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af06509d4e25c3b78fc3e33f8b707d499"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>defense_pct</b></td></tr>
+<tr class="memitem:af06509d4e25c3b78fc3e33f8b707d499"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structencumberance__info.html#af06509d4e25c3b78fc3e33f8b707d499">defense_pct</a></td></tr>
 <tr class="separator:af06509d4e25c3b78fc3e33f8b707d499"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab6d07743a554bf638808d3b03f32b85"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aab6d07743a554bf638808d3b03f32b85"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>delay</b></td></tr>
+<tr class="memitem:aab6d07743a554bf638808d3b03f32b85"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structencumberance__info.html#aab6d07743a554bf638808d3b03f32b85">delay</a></td></tr>
 <tr class="separator:aab6d07743a554bf638808d3b03f32b85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add8426edbd9a6eecfb81c2fa07a7ad75"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="add8426edbd9a6eecfb81c2fa07a7ad75"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>offense_pct</b></td></tr>
+<tr class="memitem:add8426edbd9a6eecfb81c2fa07a7ad75"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structencumberance__info.html#add8426edbd9a6eecfb81c2fa07a7ad75">offense_pct</a></td></tr>
 <tr class="separator:add8426edbd9a6eecfb81c2fa07a7ad75"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88e17151ed64a63d9d0333949f0dc988"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a88e17151ed64a63d9d0333949f0dc988"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>move</b></td></tr>
+<tr class="memitem:a88e17151ed64a63d9d0333949f0dc988"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structencumberance__info.html#a88e17151ed64a63d9d0333949f0dc988">move</a></td></tr>
 <tr class="separator:a88e17151ed64a63d9d0333949f0dc988"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d805428c874845ca9df5a9c8d3b6345"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2d805428c874845ca9df5a9c8d3b6345"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>penalty</b></td></tr>
+<tr class="memitem:a2d805428c874845ca9df5a9c8d3b6345"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structencumberance__info.html#a2d805428c874845ca9df5a9c8d3b6345">penalty</a></td></tr>
 <tr class="separator:a2d805428c874845ca9df5a9c8d3b6345"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afaf76f823787c7af302e587b657c096a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afaf76f823787c7af302e587b657c096a"></a>
-char *&#160;</td><td class="memItemRight" valign="bottom"><b>encumbered_status</b></td></tr>
+<tr class="memitem:afaf76f823787c7af302e587b657c096a"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structencumberance__info.html#afaf76f823787c7af302e587b657c096a">encumbered_status</a></td></tr>
 <tr class="separator:afaf76f823787c7af302e587b657c096a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="af06509d4e25c3b78fc3e33f8b707d499"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int encumberance_info::defense_pct</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aab6d07743a554bf638808d3b03f32b85"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int encumberance_info::delay</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="afaf76f823787c7af302e587b657c096a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* encumberance_info::encumbered_status</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a88e17151ed64a63d9d0333949f0dc988"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int encumberance_info::move</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="add8426edbd9a6eecfb81c2fa07a7ad75"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int encumberance_info::offense_pct</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2d805428c874845ca9df5a9c8d3b6345"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float encumberance_info::penalty</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa2ea8e741a58ad10c50eb074fb35bfb2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int encumberance_info::str_mult_wt</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li><a class="el" href="structs_8h_source.html">structs.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 17 2015 21:26:48 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 17 2015 22:02:23 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

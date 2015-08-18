@@ -62,6 +62,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -70,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -84,7 +85,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">stringstack.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<a href="stringstack_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;strings.h&gt;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
@@ -103,33 +104,33 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="comment">// Constructors</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="classStringstack.html">Stringstack</a>();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="classStringstack.html#afab20605ad4777f27403444335a958a6">Stringstack</a>();</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="classStringstack.html">Stringstack</a>(std::string input);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="classStringstack.html">Stringstack</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *input);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="classStringstack.html">Stringstack</a>(std::istream &amp;input);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="classStringstack.html#afab20605ad4777f27403444335a958a6">Stringstack</a>(std::string input);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="classStringstack.html#afab20605ad4777f27403444335a958a6">Stringstack</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *input);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="classStringstack.html#afab20605ad4777f27403444335a958a6">Stringstack</a>(std::istream &amp;input);</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="classStringstack.html">Stringstack</a>(std::string input, <span class="keywordtype">bool</span> removeSpaces);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="classStringstack.html">Stringstack</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *input, <span class="keywordtype">bool</span> removeSpaces);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="classStringstack.html">Stringstack</a>(std::istream &amp;input, <span class="keywordtype">bool</span> removeSpaces);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="classStringstack.html#afab20605ad4777f27403444335a958a6">Stringstack</a>(std::string input, <span class="keywordtype">bool</span> removeSpaces);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="classStringstack.html#afab20605ad4777f27403444335a958a6">Stringstack</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *input, <span class="keywordtype">bool</span> removeSpaces);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="classStringstack.html#afab20605ad4777f27403444335a958a6">Stringstack</a>(std::istream &amp;input, <span class="keywordtype">bool</span> removeSpaces);</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">/* Assignment operator</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">    Takes a string and starts the Stringstack anew with it</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">    removeSpaces remains the same and if true, the new argument is trim&#39;d */</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="classStringstack.html">Stringstack</a>&amp; operator= (<span class="keyword">const</span> std::string &amp;newString);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="classStringstack.html">Stringstack</a>&amp; operator= (<span class="keyword">const</span> <span class="keywordtype">char</span> *newString);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="classStringstack.html">Stringstack</a>&amp; <a class="code" href="classStringstack.html#a2197bda2738d2f687f4b90575b1bf7e1">operator= </a>(<span class="keyword">const</span> std::string &amp;newString);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="classStringstack.html">Stringstack</a>&amp; <a class="code" href="classStringstack.html#a2197bda2738d2f687f4b90575b1bf7e1">operator= </a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *newString);</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">// Comparison operator</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">bool</span> operator== (<span class="keyword">const</span> std::string compare) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classStringstack.html#a8afc987bc55cf92fcf9eadcbb8c978b8">operator== </a>(<span class="keyword">const</span> std::string <a class="code" href="classStringstack.html#a3a92a82a838b77bedc268372e8fe7a41">compare</a>) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="comment">/* Argument Memory Access operator</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">    index &lt; 0 returns the reference for the argument</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">    -1 &lt; index &lt; memorySize returns the reference to any string in memory</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">    memorySize &lt; index throws a runtime error, as this is out of bounds access */</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    std::string&amp; operator[] (<span class="keyword">const</span> <span class="keywordtype">int</span> index);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    std::string&amp; <a class="code" href="classStringstack.html#a53a36a2da20ea60f2c9df67506f3748b">operator[] </a>(<span class="keyword">const</span> <span class="keywordtype">int</span> index);</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">// Static comparison methods for strings</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">bool</span> <span class="keyword">static</span> compare(<span class="keyword">const</span> std::string compare, <span class="keyword">const</span> std::string compare2) {</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classStringstack.html#a3a92a82a838b77bedc268372e8fe7a41">   46</a></span>&#160;    <span class="keywordtype">bool</span> <span class="keyword">static</span> <a class="code" href="classStringstack.html#a3a92a82a838b77bedc268372e8fe7a41">compare</a>(<span class="keyword">const</span> std::string compare, <span class="keyword">const</span> std::string compare2) {</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">if</span> ((strcasecmp(compare.c_str(), compare2.c_str())) == 0) {</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        }</div>
@@ -138,7 +139,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        }</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">bool</span> <span class="keyword">static</span> compare(<span class="keyword">const</span> <span class="keywordtype">char</span> *compare, <span class="keyword">const</span> <span class="keywordtype">char</span> *compare2) {</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classStringstack.html#a8d8758c37734f6f45d6f5177dcc1a922">   55</a></span>&#160;    <span class="keywordtype">bool</span> <span class="keyword">static</span> <a class="code" href="classStringstack.html#a8d8758c37734f6f45d6f5177dcc1a922">compare</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *compare, <span class="keyword">const</span> <span class="keywordtype">char</span> *compare2) {</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">if</span> ((strcasecmp(compare, compare2)) == 0) {</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        }</div>
@@ -148,7 +149,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">// Removes spaces from the beginning of a string</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    std::string <span class="keyword">static</span> trim(std::string &amp;input) {</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="classStringstack.html#ad7a1dcd59e92618fc6a52bba41e5854c">   65</a></span>&#160;    std::string <span class="keyword">static</span> <a class="code" href="classStringstack.html#ad7a1dcd59e92618fc6a52bba41e5854c">trim</a>(std::string &amp;input) {</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordtype">size_t</span> size = input.size();</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordtype">size_t</span> spaceCount = 0;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordtype">bool</span> allSpaces = <span class="keyword">true</span>;</div>
@@ -170,7 +171,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="comment">// Splits the first or next word off argument and stores it in argumentMemory.</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    std::string pop();</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    std::string <a class="code" href="classStringstack.html#a8a9777f29361b6e493108a234f89b81d">pop</a>();</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="comment">/* The same as pop() but is also sensitive to delimits, to handle words or commands with spaces.</span></div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">    Pass it a string for both beginning and starting delimits, for example &quot;[(&quot; and &quot;])&quot;.</span></div>
@@ -181,34 +182,34 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">    by the position of the second delimit in the secondDelimit string. For example, if &quot;[(&quot; and &quot;])&quot; are </span></div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">    passed with delimitsMatch set to true, if a [ is located, only its equivalent character in the </span></div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">    second string will be used to locate the end of the word - &quot;]&quot;.*/</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    std::string pop(std::string firstDelimit, std::string secondDelimit);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    std::string pop(std::string firstDelimit, std::string secondDelimit, <span class="keywordtype">bool</span> eraseDelimits, <span class="keywordtype">bool</span> delimitsMatch);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    std::string <a class="code" href="classStringstack.html#a8a9777f29361b6e493108a234f89b81d">pop</a>(std::string firstDelimit, std::string secondDelimit);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    std::string <a class="code" href="classStringstack.html#a8a9777f29361b6e493108a234f89b81d">pop</a>(std::string firstDelimit, std::string secondDelimit, <span class="keywordtype">bool</span> eraseDelimits, <span class="keywordtype">bool</span> delimitsMatch);</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="comment">// Locates a specific string in the string via delimits and pops it.</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    std::string findPop(std::string firstDelimit, std::string secondDelimit);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    std::string findPop(std::string firstDelimit, std::string secondDelimit, <span class="keywordtype">bool</span> eraseDelimits);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    std::string <a class="code" href="classStringstack.html#a71b03b6b0c5d15074abde46944d71864">findPop</a>(std::string firstDelimit, std::string secondDelimit);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    std::string <a class="code" href="classStringstack.html#a71b03b6b0c5d15074abde46944d71864">findPop</a>(std::string firstDelimit, std::string secondDelimit, <span class="keywordtype">bool</span> eraseDelimits);</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="comment">// Form of popDelimited suitable for popping strings containing &quot; and &#39;. Erases and matches delimits.</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    std::string popSpeech();</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    std::string <a class="code" href="classStringstack.html#ab1db05c3fe40c98493b6e02134eb8d64">popSpeech</a>();</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="comment">/* Form of pop to pop any data up until a specified delimit.</span></div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment">    -eraseDelimit: Decides if the delimit is erased from the popped string or not.*/</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    std::string popUntil(std::string delimit);</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    std::string popUntil(std::string delimit, <span class="keywordtype">bool</span> eraseDelimit);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    std::string <a class="code" href="classStringstack.html#afd03c9d391bfd931ffb35e544230b402">popUntil</a>(std::string delimit);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    std::string <a class="code" href="classStringstack.html#afd03c9d391bfd931ffb35e544230b402">popUntil</a>(std::string delimit, <span class="keywordtype">bool</span> eraseDelimit);</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="comment">// Returns whether a specific string is contained in the argument string or not.</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordtype">bool</span> find(std::string specifier);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classStringstack.html#ab657ed4278c068f32715c8b0b4d03312">find</a>(std::string specifier);</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="comment">// Returns the number of instances of the specified string in argument.</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordtype">int</span> argCount(std::string specifier);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classStringstack.html#ab3b7b4445b0ea898feaea34657e00c92">argCount</a>(std::string specifier);</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="comment">// Returns a vector of the strings that are contained within the argument string.</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    std::vector&lt;std::string&gt; argBatchFind(<span class="keyword">const</span> std::vector&lt;std::string&gt; &amp;strings);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    std::vector&lt;std::string&gt; <a class="code" href="classStringstack.html#a6e9d7a9a8909e5699f935575bf15fb5c">argBatchFind</a>(<span class="keyword">const</span> std::vector&lt;std::string&gt; &amp;strings);</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="comment">/* Returns a vector of std::pair containing the string and the count number of that string within</span></div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="comment">    the argument string.*/</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    std::vector&lt;std::pair&lt;std::string, int&gt; &gt; argBatchCount(<span class="keyword">const</span> std::vector&lt;std::string&gt; &amp;strings);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    std::vector&lt;std::pair&lt;std::string, int&gt; &gt; <a class="code" href="classStringstack.html#a807cfc6a9e73c3614e1ccec547721092">argBatchCount</a>(<span class="keyword">const</span> std::vector&lt;std::string&gt; &amp;strings);</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="comment">/* Locates a specific string in the string and replaces it with the replacement string.</span></div>
@@ -216,63 +217,91 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="comment">    -replaceAll: Decides whether all instances of the specific word are replaced.</span></div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="comment">    -replaceReverseOrder: Decides whether the string is traversed in order or in reverse.*/</span></div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordtype">void</span> argReplace(std::string specifier, std::string replacement);</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordtype">void</span> argReplace(std::string specifier, std::string replacement, <span class="keywordtype">bool</span> replaceAll, <span class="keywordtype">bool</span> replaceReverseOrder);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classStringstack.html#a73332f209b954e23d6486a7439a1d74a">argReplace</a>(std::string specifier, std::string replacement);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classStringstack.html#a73332f209b954e23d6486a7439a1d74a">argReplace</a>(std::string specifier, std::string replacement, <span class="keywordtype">bool</span> replaceAll, <span class="keywordtype">bool</span> replaceReverseOrder);</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="comment">// argReplace which never has replaceAll set true.</span></div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordtype">void</span> argReplaceOnce(std::string specifier, std::string replacement);</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordtype">void</span> argReplaceOnce(std::string specifier, std::string replacement, <span class="keywordtype">bool</span> replaceReverseOrder);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classStringstack.html#a405bd0c49154f672b01474697a2dac45">argReplaceOnce</a>(std::string specifier, std::string replacement);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classStringstack.html#a405bd0c49154f672b01474697a2dac45">argReplaceOnce</a>(std::string specifier, std::string replacement, <span class="keywordtype">bool</span> replaceReverseOrder);</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="comment">/* Recall past arguments</span></div>
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="comment">    Origin at zero */</span></div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    std::string recall(<span class="keywordtype">size_t</span> indexArg);</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    std::string last();</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    std::string <a class="code" href="classStringstack.html#a1ffee5cf0fac3be196cb6a2da5248c68">recall</a>(<span class="keywordtype">size_t</span> indexArg);</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    std::string <a class="code" href="classStringstack.html#a6451d4ae727082e186bc1e823787cfcd">last</a>();</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="comment">// Converts the last popped string to an integer using atoi. Returns -1.0 if it fails.</span></div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordtype">int</span> toInt();</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classStringstack.html#a8e8b15949b4e1a48c0b64f7631a17e5b">toInt</a>();</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="comment">// Converts the passed string to an integer using atoi. Returns -1.0 if it fails.</span></div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordtype">int</span> toInt(std::string integerString);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classStringstack.html#a8e8b15949b4e1a48c0b64f7631a17e5b">toInt</a>(std::string integerString);</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="comment">// Converts the indexed string to an integer using atoi. Returns -1.0 if it fails.</span></div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordtype">int</span> toInt(<span class="keywordtype">size_t</span> indexArg);</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classStringstack.html#a8e8b15949b4e1a48c0b64f7631a17e5b">toInt</a>(<span class="keywordtype">size_t</span> indexArg);</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="comment">// Converts the last popped string to a double, uses atof. Returns -1.0 if it fails.</span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordtype">double</span> toDouble();</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classStringstack.html#a3ba9b3e887c482b2dab3fe3f4010fa2d">toDouble</a>();</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="comment">// Converts the last popped string to a double, uses atof. Returns -1.0 if it fails.</span></div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keywordtype">double</span> toDouble(std::string doubleString);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classStringstack.html#a3ba9b3e887c482b2dab3fe3f4010fa2d">toDouble</a>(std::string doubleString);</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="comment">// Converts the indexed string to a double, uses atof. Returns -1.0 if it fails.</span></div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keywordtype">double</span> toDouble(<span class="keywordtype">size_t</span> indexArg);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classStringstack.html#a3ba9b3e887c482b2dab3fe3f4010fa2d">toDouble</a>(<span class="keywordtype">size_t</span> indexArg);</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="comment">/* Return portions of the stored argument, either from an argument, between arguments or all of them</span></div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="comment">    Origin at zero */</span></div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    std::string recallPartialString(<span class="keywordtype">size_t</span> begin);</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    std::string recallPartialString(<span class="keywordtype">size_t</span> begin, <span class="keywordtype">size_t</span> arguments);</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    std::string recallString();</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    std::string <a class="code" href="classStringstack.html#aac6c5200c1210f181f9c84885e85dc75">recallPartialString</a>(<span class="keywordtype">size_t</span> begin);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    std::string <a class="code" href="classStringstack.html#aac6c5200c1210f181f9c84885e85dc75">recallPartialString</a>(<span class="keywordtype">size_t</span> begin, <span class="keywordtype">size_t</span> arguments);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    std::string <a class="code" href="classStringstack.html#aaf7895e4f440740cc8170980c1140be3">recallString</a>();</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="comment">// Pops the whole input, either with pop or popSpeech</span></div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordtype">void</span> popAll();</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordtype">void</span> popAllSpeech();</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classStringstack.html#a787094ae6c979c8d1f81498b0743f4ad">popAll</a>();</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classStringstack.html#a867ab3e162e7ae1012d105b8a210df50">popAllSpeech</a>();</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="comment">// Returns if the Stringstack is fully popped</span></div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="keywordtype">bool</span> isFinished();</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classStringstack.html#afe0023a8e89792617fd595d400571faa">isFinished</a>();</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="comment">// Returns the current argument string</span></div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    std::string getArg();</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    std::string <a class="code" href="classStringstack.html#a97dbddf508815857bf97c7310b70c913">getArg</a>();</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="comment">// Returns the current argument string as a constant C string</span></div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* getCArg();</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="classStringstack.html#a246ba7090b700205b9e8321902fa6e5c">getCArg</a>();</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="comment">// Returns the input string as a constant C string</span></div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* getCArg(<span class="keyword">const</span> std::string input);</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="classStringstack.html#a246ba7090b700205b9e8321902fa6e5c">getCArg</a>(<span class="keyword">const</span> std::string input);</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;};</div>
+<div class="ttc" id="classStringstack_html_a246ba7090b700205b9e8321902fa6e5c"><div class="ttname"><a href="classStringstack.html#a246ba7090b700205b9e8321902fa6e5c">Stringstack::getCArg</a></div><div class="ttdeci">const char * getCArg()</div><div class="ttdef"><b>Definition:</b> stringstack.cpp:511</div></div>
+<div class="ttc" id="classStringstack_html_ab3b7b4445b0ea898feaea34657e00c92"><div class="ttname"><a href="classStringstack.html#ab3b7b4445b0ea898feaea34657e00c92">Stringstack::argCount</a></div><div class="ttdeci">int argCount(std::string specifier)</div><div class="ttdef"><b>Definition:</b> stringstack.cpp:311</div></div>
+<div class="ttc" id="classStringstack_html_ad7a1dcd59e92618fc6a52bba41e5854c"><div class="ttname"><a href="classStringstack.html#ad7a1dcd59e92618fc6a52bba41e5854c">Stringstack::trim</a></div><div class="ttdeci">static std::string trim(std::string &amp;input)</div><div class="ttdef"><b>Definition:</b> stringstack.h:65</div></div>
+<div class="ttc" id="classStringstack_html_afd03c9d391bfd931ffb35e544230b402"><div class="ttname"><a href="classStringstack.html#afd03c9d391bfd931ffb35e544230b402">Stringstack::popUntil</a></div><div class="ttdeci">std::string popUntil(std::string delimit)</div><div class="ttdef"><b>Definition:</b> stringstack.cpp:247</div></div>
+<div class="ttc" id="classStringstack_html_a787094ae6c979c8d1f81498b0743f4ad"><div class="ttname"><a href="classStringstack.html#a787094ae6c979c8d1f81498b0743f4ad">Stringstack::popAll</a></div><div class="ttdeci">void popAll()</div><div class="ttdef"><b>Definition:</b> stringstack.cpp:490</div></div>
+<div class="ttc" id="classStringstack_html_a8e8b15949b4e1a48c0b64f7631a17e5b"><div class="ttname"><a href="classStringstack.html#a8e8b15949b4e1a48c0b64f7631a17e5b">Stringstack::toInt</a></div><div class="ttdeci">int toInt()</div><div class="ttdef"><b>Definition:</b> stringstack.cpp:415</div></div>
+<div class="ttc" id="classStringstack_html_afe0023a8e89792617fd595d400571faa"><div class="ttname"><a href="classStringstack.html#afe0023a8e89792617fd595d400571faa">Stringstack::isFinished</a></div><div class="ttdeci">bool isFinished()</div><div class="ttdef"><b>Definition:</b> stringstack.cpp:502</div></div>
+<div class="ttc" id="classStringstack_html_ab1db05c3fe40c98493b6e02134eb8d64"><div class="ttname"><a href="classStringstack.html#ab1db05c3fe40c98493b6e02134eb8d64">Stringstack::popSpeech</a></div><div class="ttdeci">std::string popSpeech()</div><div class="ttdef"><b>Definition:</b> stringstack.cpp:243</div></div>
 <div class="ttc" id="classStringstack_html"><div class="ttname"><a href="classStringstack.html">Stringstack</a></div><div class="ttdef"><b>Definition:</b> stringstack.h:11</div></div>
+<div class="ttc" id="classStringstack_html_afab20605ad4777f27403444335a958a6"><div class="ttname"><a href="classStringstack.html#afab20605ad4777f27403444335a958a6">Stringstack::Stringstack</a></div><div class="ttdeci">Stringstack()</div><div class="ttdef"><b>Definition:</b> stringstack.cpp:7</div></div>
+<div class="ttc" id="classStringstack_html_a3ba9b3e887c482b2dab3fe3f4010fa2d"><div class="ttname"><a href="classStringstack.html#a3ba9b3e887c482b2dab3fe3f4010fa2d">Stringstack::toDouble</a></div><div class="ttdeci">double toDouble()</div><div class="ttdef"><b>Definition:</b> stringstack.cpp:432</div></div>
+<div class="ttc" id="classStringstack_html_aaf7895e4f440740cc8170980c1140be3"><div class="ttname"><a href="classStringstack.html#aaf7895e4f440740cc8170980c1140be3">Stringstack::recallString</a></div><div class="ttdeci">std::string recallString()</div><div class="ttdef"><b>Definition:</b> stringstack.cpp:486</div></div>
+<div class="ttc" id="classStringstack_html_a2197bda2738d2f687f4b90575b1bf7e1"><div class="ttname"><a href="classStringstack.html#a2197bda2738d2f687f4b90575b1bf7e1">Stringstack::operator=</a></div><div class="ttdeci">Stringstack &amp; operator=(const std::string &amp;newString)</div><div class="ttdef"><b>Definition:</b> stringstack.cpp:75</div></div>
+<div class="ttc" id="classStringstack_html_a73332f209b954e23d6486a7439a1d74a"><div class="ttname"><a href="classStringstack.html#a73332f209b954e23d6486a7439a1d74a">Stringstack::argReplace</a></div><div class="ttdeci">void argReplace(std::string specifier, std::string replacement)</div><div class="ttdef"><b>Definition:</b> stringstack.cpp:352</div></div>
+<div class="ttc" id="classStringstack_html_a97dbddf508815857bf97c7310b70c913"><div class="ttname"><a href="classStringstack.html#a97dbddf508815857bf97c7310b70c913">Stringstack::getArg</a></div><div class="ttdeci">std::string getArg()</div><div class="ttdef"><b>Definition:</b> stringstack.cpp:507</div></div>
+<div class="ttc" id="classStringstack_html_aac6c5200c1210f181f9c84885e85dc75"><div class="ttname"><a href="classStringstack.html#aac6c5200c1210f181f9c84885e85dc75">Stringstack::recallPartialString</a></div><div class="ttdeci">std::string recallPartialString(size_t begin)</div><div class="ttdef"><b>Definition:</b> stringstack.cpp:449</div></div>
+<div class="ttc" id="classStringstack_html_a405bd0c49154f672b01474697a2dac45"><div class="ttname"><a href="classStringstack.html#a405bd0c49154f672b01474697a2dac45">Stringstack::argReplaceOnce</a></div><div class="ttdeci">void argReplaceOnce(std::string specifier, std::string replacement)</div><div class="ttdef"><b>Definition:</b> stringstack.cpp:389</div></div>
+<div class="ttc" id="classStringstack_html_a3a92a82a838b77bedc268372e8fe7a41"><div class="ttname"><a href="classStringstack.html#a3a92a82a838b77bedc268372e8fe7a41">Stringstack::compare</a></div><div class="ttdeci">static bool compare(const std::string compare, const std::string compare2)</div><div class="ttdef"><b>Definition:</b> stringstack.h:46</div></div>
+<div class="ttc" id="classStringstack_html_a6e9d7a9a8909e5699f935575bf15fb5c"><div class="ttname"><a href="classStringstack.html#a6e9d7a9a8909e5699f935575bf15fb5c">Stringstack::argBatchFind</a></div><div class="ttdeci">std::vector&lt; std::string &gt; argBatchFind(const std::vector&lt; std::string &gt; &amp;strings)</div><div class="ttdef"><b>Definition:</b> stringstack.cpp:322</div></div>
+<div class="ttc" id="classStringstack_html_a867ab3e162e7ae1012d105b8a210df50"><div class="ttname"><a href="classStringstack.html#a867ab3e162e7ae1012d105b8a210df50">Stringstack::popAllSpeech</a></div><div class="ttdeci">void popAllSpeech()</div><div class="ttdef"><b>Definition:</b> stringstack.cpp:496</div></div>
+<div class="ttc" id="classStringstack_html_a53a36a2da20ea60f2c9df67506f3748b"><div class="ttname"><a href="classStringstack.html#a53a36a2da20ea60f2c9df67506f3748b">Stringstack::operator[]</a></div><div class="ttdeci">std::string &amp; operator[](const int index)</div><div class="ttdef"><b>Definition:</b> stringstack.cpp:115</div></div>
+<div class="ttc" id="classStringstack_html_a807cfc6a9e73c3614e1ccec547721092"><div class="ttname"><a href="classStringstack.html#a807cfc6a9e73c3614e1ccec547721092">Stringstack::argBatchCount</a></div><div class="ttdeci">std::vector&lt; std::pair&lt; std::string, int &gt; &gt; argBatchCount(const std::vector&lt; std::string &gt; &amp;strings)</div><div class="ttdef"><b>Definition:</b> stringstack.cpp:337</div></div>
+<div class="ttc" id="classStringstack_html_a8a9777f29361b6e493108a234f89b81d"><div class="ttname"><a href="classStringstack.html#a8a9777f29361b6e493108a234f89b81d">Stringstack::pop</a></div><div class="ttdeci">std::string pop()</div><div class="ttdef"><b>Definition:</b> stringstack.cpp:127</div></div>
+<div class="ttc" id="classStringstack_html_ab657ed4278c068f32715c8b0b4d03312"><div class="ttname"><a href="classStringstack.html#ab657ed4278c068f32715c8b0b4d03312">Stringstack::find</a></div><div class="ttdeci">bool find(std::string specifier)</div><div class="ttdef"><b>Definition:</b> stringstack.cpp:307</div></div>
+<div class="ttc" id="classStringstack_html_a8afc987bc55cf92fcf9eadcbb8c978b8"><div class="ttname"><a href="classStringstack.html#a8afc987bc55cf92fcf9eadcbb8c978b8">Stringstack::operator==</a></div><div class="ttdeci">bool operator==(const std::string compare) const </div><div class="ttdef"><b>Definition:</b> stringstack.cpp:101</div></div>
+<div class="ttc" id="classStringstack_html_a8d8758c37734f6f45d6f5177dcc1a922"><div class="ttname"><a href="classStringstack.html#a8d8758c37734f6f45d6f5177dcc1a922">Stringstack::compare</a></div><div class="ttdeci">static bool compare(const char *compare, const char *compare2)</div><div class="ttdef"><b>Definition:</b> stringstack.h:55</div></div>
+<div class="ttc" id="classStringstack_html_a1ffee5cf0fac3be196cb6a2da5248c68"><div class="ttname"><a href="classStringstack.html#a1ffee5cf0fac3be196cb6a2da5248c68">Stringstack::recall</a></div><div class="ttdeci">std::string recall(size_t indexArg)</div><div class="ttdef"><b>Definition:</b> stringstack.cpp:397</div></div>
+<div class="ttc" id="classStringstack_html_a6451d4ae727082e186bc1e823787cfcd"><div class="ttname"><a href="classStringstack.html#a6451d4ae727082e186bc1e823787cfcd">Stringstack::last</a></div><div class="ttdeci">std::string last()</div><div class="ttdef"><b>Definition:</b> stringstack.cpp:406</div></div>
+<div class="ttc" id="classStringstack_html_a71b03b6b0c5d15074abde46944d71864"><div class="ttname"><a href="classStringstack.html#a71b03b6b0c5d15074abde46944d71864">Stringstack::findPop</a></div><div class="ttdeci">std::string findPop(std::string firstDelimit, std::string secondDelimit)</div><div class="ttdef"><b>Definition:</b> stringstack.cpp:222</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 17 2015 21:26:48 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 17 2015 22:02:22 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

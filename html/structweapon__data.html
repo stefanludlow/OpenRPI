@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -89,47 +89,160 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">weapon_data Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="structs_8h_source.html">structs.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a97586bb9d2c71f5866d21367599806bb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a97586bb9d2c71f5866d21367599806bb"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>handedness</b></td></tr>
+<tr class="memitem:a97586bb9d2c71f5866d21367599806bb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structweapon__data.html#a97586bb9d2c71f5866d21367599806bb">handedness</a></td></tr>
 <tr class="separator:a97586bb9d2c71f5866d21367599806bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9aff2202aa2b4c62d81ca16eb2d7d1a6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9aff2202aa2b4c62d81ca16eb2d7d1a6"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>dice</b></td></tr>
+<tr class="memitem:a9aff2202aa2b4c62d81ca16eb2d7d1a6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structweapon__data.html#a9aff2202aa2b4c62d81ca16eb2d7d1a6">dice</a></td></tr>
 <tr class="separator:a9aff2202aa2b4c62d81ca16eb2d7d1a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd4e98c25e656b4fdefafdc6cf3a0d07"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acd4e98c25e656b4fdefafdc6cf3a0d07"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>sides</b></td></tr>
+<tr class="memitem:acd4e98c25e656b4fdefafdc6cf3a0d07"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structweapon__data.html#acd4e98c25e656b4fdefafdc6cf3a0d07">sides</a></td></tr>
 <tr class="separator:acd4e98c25e656b4fdefafdc6cf3a0d07"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a019395a4df1780650c9e614853b54019"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a019395a4df1780650c9e614853b54019"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>use_skill</b></td></tr>
+<tr class="memitem:a019395a4df1780650c9e614853b54019"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structweapon__data.html#a019395a4df1780650c9e614853b54019">use_skill</a></td></tr>
 <tr class="separator:a019395a4df1780650c9e614853b54019"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d6c5a161054ce406cfdee0dafbd4ed2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7d6c5a161054ce406cfdee0dafbd4ed2"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>hit_type</b></td></tr>
+<tr class="memitem:a7d6c5a161054ce406cfdee0dafbd4ed2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structweapon__data.html#a7d6c5a161054ce406cfdee0dafbd4ed2">hit_type</a></td></tr>
 <tr class="separator:a7d6c5a161054ce406cfdee0dafbd4ed2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab646699ef54c800842741b89f72b6280"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab646699ef54c800842741b89f72b6280"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>delay</b></td></tr>
+<tr class="memitem:ab646699ef54c800842741b89f72b6280"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structweapon__data.html#ab646699ef54c800842741b89f72b6280">delay</a></td></tr>
 <tr class="separator:ab646699ef54c800842741b89f72b6280"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a333138cf76af6771957bfff26075f126"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a333138cf76af6771957bfff26075f126"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>basedamage</b></td></tr>
+<tr class="memitem:a333138cf76af6771957bfff26075f126"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structweapon__data.html#a333138cf76af6771957bfff26075f126">basedamage</a></td></tr>
 <tr class="separator:a333138cf76af6771957bfff26075f126"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acdadb390593000d5561a33bd839125ef"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acdadb390593000d5561a33bd839125ef"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>attackclass</b></td></tr>
+<tr class="memitem:acdadb390593000d5561a33bd839125ef"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structweapon__data.html#acdadb390593000d5561a33bd839125ef">attackclass</a></td></tr>
 <tr class="separator:acdadb390593000d5561a33bd839125ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea968a5cc4ec4dc3d554ef789e58da69"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aea968a5cc4ec4dc3d554ef789e58da69"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>defenseclass</b></td></tr>
+<tr class="memitem:aea968a5cc4ec4dc3d554ef789e58da69"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structweapon__data.html#aea968a5cc4ec4dc3d554ef789e58da69">defenseclass</a></td></tr>
 <tr class="separator:aea968a5cc4ec4dc3d554ef789e58da69"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d697901007c5cd0f604b59a5864809d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4d697901007c5cd0f604b59a5864809d"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>range</b></td></tr>
+<tr class="memitem:a4d697901007c5cd0f604b59a5864809d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structweapon__data.html#a4d697901007c5cd0f604b59a5864809d">range</a></td></tr>
 <tr class="separator:a4d697901007c5cd0f604b59a5864809d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="acdadb390593000d5561a33bd839125ef"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int weapon_data::attackclass</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a333138cf76af6771957bfff26075f126"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int weapon_data::basedamage</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aea968a5cc4ec4dc3d554ef789e58da69"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int weapon_data::defenseclass</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab646699ef54c800842741b89f72b6280"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int weapon_data::delay</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9aff2202aa2b4c62d81ca16eb2d7d1a6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int weapon_data::dice</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a97586bb9d2c71f5866d21367599806bb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int weapon_data::handedness</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7d6c5a161054ce406cfdee0dafbd4ed2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int weapon_data::hit_type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4d697901007c5cd0f604b59a5864809d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int weapon_data::range</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="acd4e98c25e656b4fdefafdc6cf3a0d07"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int weapon_data::sides</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a019395a4df1780650c9e614853b54019"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int weapon_data::use_skill</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li><a class="el" href="structs_8h_source.html">structs.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 17 2015 21:26:48 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 17 2015 22:02:23 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

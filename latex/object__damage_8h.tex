@@ -1,0 +1,297 @@
+\hypertarget{object__damage_8h}{\section{object\-\_\-damage.\-h File Reference}
+\label{object__damage_8h}\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}}
+}
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structobject__damage}{object\-\_\-damage}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structobject__damage}{object\-\_\-damage} \hyperlink{object__damage_8h_a5a0c6470eee77c8c093bdc24f3e266c0}{O\-B\-J\-E\-C\-T\-\_\-\-D\-A\-M\-A\-G\-E}
+\item 
+typedef enum \hyperlink{object__damage_8h_aec13eb452f5adf9bf2356bef65b6e632}{e\-\_\-damage\-\_\-type} \hyperlink{object__damage_8h_ab80f609de4f2344d8067ac1746dde4a6}{D\-A\-M\-A\-G\-E\-\_\-\-T\-Y\-P\-E}
+\item 
+typedef enum \hyperlink{object__damage_8h_aa10986b5a96bde1274166c9f8ca4cae7}{e\-\_\-material\-\_\-skill} \hyperlink{object__damage_8h_a6f721c654f395b93d80ba4db9a6840aa}{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-S\-K\-I\-L\-L}
+\item 
+typedef enum \hyperlink{object__damage_8h_a054c7a0c5cebe63d082920ad23a8b0ba}{e\-\_\-material\-\_\-type} \hyperlink{object__damage_8h_ab2ceeba9e730d841b64f72b35d6278f2}{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-T\-Y\-P\-E}
+\item 
+typedef enum \hyperlink{object__damage_8h_ae57f65faa21c70ac0ffdd4449edfb5da}{e\-\_\-damage\-\_\-severity} \hyperlink{object__damage_8h_ad556de0e1a817a16647d92b05159963d}{D\-A\-M\-A\-G\-E\-\_\-\-S\-E\-V\-E\-R\-I\-T\-Y}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{object__damage_8h_a900fe72fff2c343fd3f146c228d21196}{e\-\_\-condition\-\_\-type} \{ \\*
+\hyperlink{object__damage_8h_a900fe72fff2c343fd3f146c228d21196a7e922370def16493ee834f8d1ca90758}{C\-O\-N\-D\-\_\-\-S\-T\-A\-I\-N} = 0, 
+\hyperlink{object__damage_8h_a900fe72fff2c343fd3f146c228d21196a87a8715cb67d6a6770a36d0cf23b7e96}{C\-O\-N\-D\-\_\-\-D\-I\-R\-T}, 
+\hyperlink{object__damage_8h_a900fe72fff2c343fd3f146c228d21196a957adf2733ef8506a249a6cc1ad247b6}{C\-O\-N\-D\-\_\-\-D\-U\-S\-T}, 
+\hyperlink{object__damage_8h_a900fe72fff2c343fd3f146c228d21196a70590f12fdb0d15aed58e6228d3c8351}{C\-O\-N\-D\-\_\-\-B\-L\-O\-O\-D}, 
+\\*
+\hyperlink{object__damage_8h_a900fe72fff2c343fd3f146c228d21196aaf01d3818d2af6d8bdd44f33c8cb2187}{C\-O\-N\-D\-\_\-\-W\-A\-T\-E\-R}, 
+\hyperlink{object__damage_8h_a900fe72fff2c343fd3f146c228d21196a0e10448c22f22524ae108a4cfd33fc6b}{C\-O\-N\-D\-\_\-\-F\-I\-L\-T\-H}, 
+\hyperlink{object__damage_8h_a900fe72fff2c343fd3f146c228d21196a43090720c772f33f9d65be8cd6fa09c1}{C\-O\-N\-D\-\_\-\-S\-L\-I\-M\-E}, 
+\hyperlink{object__damage_8h_a900fe72fff2c343fd3f146c228d21196ad6b76573fc1ade49c60d2476fc607955}{C\-O\-N\-D\-\_\-\-R\-U\-S\-T}, 
+\\*
+\hyperlink{object__damage_8h_a900fe72fff2c343fd3f146c228d21196a3eb46d3d7318e8e02daa0c9b2e5540ca}{C\-O\-N\-D\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-A\-X} = 8
+ \}
+\begin{DoxyCompactList}\small\item\em \hyperlink{object__damage_8h}{object\-\_\-damage.\-h} -\/ Object Damage Class \end{DoxyCompactList}\item 
+enum \hyperlink{object__damage_8h_aec13eb452f5adf9bf2356bef65b6e632}{e\-\_\-damage\-\_\-type} \{ \\*
+\hyperlink{object__damage_8h_aec13eb452f5adf9bf2356bef65b6e632a8a08ceb4f611908dcbaed234d665fe36}{D\-A\-M\-A\-G\-E\-\_\-\-P\-I\-E\-R\-C\-E} = 0, 
+\hyperlink{object__damage_8h_aec13eb452f5adf9bf2356bef65b6e632ab89716f0998e7975718073cdd01ce248}{D\-A\-M\-A\-G\-E\-\_\-\-B\-L\-U\-N\-T}, 
+\hyperlink{object__damage_8h_aec13eb452f5adf9bf2356bef65b6e632adab8c27054b6aa10039676228c734975}{D\-A\-M\-A\-G\-E\-\_\-\-S\-L\-A\-S\-H}, 
+\hyperlink{object__damage_8h_aec13eb452f5adf9bf2356bef65b6e632aea02ee8a360fcb1d8e9c0b4fecd3148e}{D\-A\-M\-A\-G\-E\-\_\-\-F\-R\-E\-E\-Z\-E}, 
+\\*
+\hyperlink{object__damage_8h_aec13eb452f5adf9bf2356bef65b6e632ad599d960978aecb28116818f09f8ef7c}{D\-A\-M\-A\-G\-E\-\_\-\-B\-U\-R\-N}, 
+\hyperlink{object__damage_8h_aec13eb452f5adf9bf2356bef65b6e632acf291e5e50b5752387ea3ed593abd1a4}{D\-A\-M\-A\-G\-E\-\_\-\-F\-I\-S\-T}, 
+\hyperlink{object__damage_8h_aec13eb452f5adf9bf2356bef65b6e632a358319045e2f2baf6040787a3b4ea551}{D\-A\-M\-A\-G\-E\-\_\-\-B\-L\-O\-O\-D}, 
+\hyperlink{object__damage_8h_aec13eb452f5adf9bf2356bef65b6e632a11980f4e28f1a5b740bd7669435b2ade}{D\-A\-M\-A\-G\-E\-\_\-\-W\-A\-T\-E\-R}, 
+\\*
+\hyperlink{object__damage_8h_aec13eb452f5adf9bf2356bef65b6e632ab5c13502f9da1938cd45f09bbf7248b4}{D\-A\-M\-A\-G\-E\-\_\-\-P\-E\-R\-M\-A\-N\-E\-N\-T}, 
+\hyperlink{object__damage_8h_aec13eb452f5adf9bf2356bef65b6e632a6ec6c8a8674f30c4d6cbecd8f88c4a45}{D\-A\-M\-A\-G\-E\-\_\-\-R\-E\-P\-A\-I\-R}, 
+\hyperlink{object__damage_8h_aec13eb452f5adf9bf2356bef65b6e632afa926892fd30ee15bf4c74ec1d0914f4}{D\-A\-M\-A\-G\-E\-\_\-\-B\-U\-L\-L\-E\-T}, 
+\hyperlink{object__damage_8h_aec13eb452f5adf9bf2356bef65b6e632a96ab3cbac60e7c4befa7c4445e2fe4bd}{D\-A\-M\-A\-G\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-A\-X} = 11
+ \}
+\item 
+enum \hyperlink{object__damage_8h_aa10986b5a96bde1274166c9f8ca4cae7}{e\-\_\-material\-\_\-skill} \{ \hyperlink{object__damage_8h_aa10986b5a96bde1274166c9f8ca4cae7a053d67441bd7b217d3501dd9bbc32fc8}{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-S\-K\-I\-L\-L\-\_\-\-U\-N\-D\-E\-F\-I\-N\-E\-D} = 0
+ \}
+\item 
+enum \hyperlink{object__damage_8h_a054c7a0c5cebe63d082920ad23a8b0ba}{e\-\_\-material\-\_\-type} \{ \\*
+\hyperlink{object__damage_8h_a054c7a0c5cebe63d082920ad23a8b0baa77e61b4661afe76238eb3f59f8462284}{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-U\-N\-D\-E\-F\-I\-N\-E\-D} = 0, 
+\hyperlink{object__damage_8h_a054c7a0c5cebe63d082920ad23a8b0baa4831d6f45c3e4151f01bbf97f571b09b}{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-O\-R\-G\-A\-N\-I\-C}, 
+\hyperlink{object__damage_8h_a054c7a0c5cebe63d082920ad23a8b0baa331a282a1efcaaead996995973e0d470}{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-T\-E\-X\-T\-I\-L\-E}, 
+\hyperlink{object__damage_8h_a054c7a0c5cebe63d082920ad23a8b0baaab633ca6af5a8d6388781a851c66b9f5}{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-M\-E\-T\-A\-L}, 
+\\*
+\hyperlink{object__damage_8h_a054c7a0c5cebe63d082920ad23a8b0baadfdea55a00243b67a9e8c45803d2a18d}{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-C\-E\-R\-A\-M\-I\-C}, 
+\hyperlink{object__damage_8h_a054c7a0c5cebe63d082920ad23a8b0baa813a9f4ce2425d48414be2b718f32487}{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-G\-L\-A\-S\-S}, 
+\hyperlink{object__damage_8h_a054c7a0c5cebe63d082920ad23a8b0baafe4b79e7face0e599fd1fa30c3f6ac83}{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-E\-L\-E\-C\-T\-R\-O\-N\-I\-C}, 
+\hyperlink{object__damage_8h_a054c7a0c5cebe63d082920ad23a8b0baa870af5ba5d9a9b310c924f655259ea37}{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-P\-L\-A\-S\-T\-I\-C\-S}, 
+\\*
+\hyperlink{object__damage_8h_a054c7a0c5cebe63d082920ad23a8b0baa05181f58cd858874001d6864889d8f85}{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-A\-X} = 8
+ \}
+\item 
+enum \hyperlink{object__damage_8h_ae57f65faa21c70ac0ffdd4449edfb5da}{e\-\_\-damage\-\_\-severity} \{ \\*
+\hyperlink{object__damage_8h_ae57f65faa21c70ac0ffdd4449edfb5daa189ac0aa7b06673f07a87eefa0902afb}{D\-A\-M\-A\-G\-E\-\_\-\-S\-M\-A\-L\-L} = 0, 
+\hyperlink{object__damage_8h_ae57f65faa21c70ac0ffdd4449edfb5daae9ef9ec9760d9541f906884d6b4f2ddf}{D\-A\-M\-A\-G\-E\-\_\-\-M\-I\-N\-O\-R}, 
+\hyperlink{object__damage_8h_ae57f65faa21c70ac0ffdd4449edfb5daa93073e3a81beccbb190bfcc156670394}{D\-A\-M\-A\-G\-E\-\_\-\-M\-O\-D\-E\-R\-A\-T\-E}, 
+\hyperlink{object__damage_8h_ae57f65faa21c70ac0ffdd4449edfb5daae901e31af4a6081e408f042840dce01b}{D\-A\-M\-A\-G\-E\-\_\-\-L\-A\-R\-G\-E}, 
+\\*
+\hyperlink{object__damage_8h_ae57f65faa21c70ac0ffdd4449edfb5daaa70cb353d3930663209aa1998b3ef71b}{D\-A\-M\-A\-G\-E\-\_\-\-H\-U\-G\-E}, 
+\hyperlink{object__damage_8h_ae57f65faa21c70ac0ffdd4449edfb5daabad8f9984c415d6f10a1b1a81aea32ba}{D\-A\-M\-A\-G\-E\-\_\-\-M\-A\-S\-S\-I\-V\-E}, 
+\hyperlink{object__damage_8h_ae57f65faa21c70ac0ffdd4449edfb5daa6b91668fb2e51f375310a41dd10490cb}{D\-A\-M\-A\-G\-E\-\_\-\-S\-E\-V\-E\-R\-I\-T\-Y\-\_\-\-M\-A\-X}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{object__damage_8h_a5a0c6470eee77c8c093bdc24f3e266c0}{O\-B\-J\-E\-C\-T\-\_\-\-D\-A\-M\-A\-G\-E} $\ast$ \hyperlink{object__damage_8h_a60d40546751ec243fe3dfea3ab1236cd}{object\-\_\-damage\-\_\-\-\_\-new} ()
+\item 
+\hyperlink{object__damage_8h_a5a0c6470eee77c8c093bdc24f3e266c0}{O\-B\-J\-E\-C\-T\-\_\-\-D\-A\-M\-A\-G\-E} $\ast$ \hyperlink{object__damage_8h_a96e4d8637221c7d9975c9135f662a450}{object\-\_\-damage\-\_\-\-\_\-new\-\_\-init} (\hyperlink{object__damage_8h_ab80f609de4f2344d8067ac1746dde4a6}{D\-A\-M\-A\-G\-E\-\_\-\-T\-Y\-P\-E} source, int impact, \hyperlink{object__damage_8h_ab2ceeba9e730d841b64f72b35d6278f2}{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-T\-Y\-P\-E} target, int lodged, int cmd)
+\item 
+char $\ast$ \hyperlink{object__damage_8h_a9832fa10f631aa5bbbc50c6bbd2d8d40}{object\-\_\-damage\-\_\-\-\_\-get\-\_\-sdesc} (\hyperlink{object__damage_8h_a5a0c6470eee77c8c093bdc24f3e266c0}{O\-B\-J\-E\-C\-T\-\_\-\-D\-A\-M\-A\-G\-E} $\ast$this\-Ptr)
+\item 
+int \hyperlink{object__damage_8h_a90ac46089730ed1357747e589ef1c532}{object\-\_\-damage\-\_\-\-\_\-write\-\_\-to\-\_\-file} (\hyperlink{object__damage_8h_a5a0c6470eee77c8c093bdc24f3e266c0}{O\-B\-J\-E\-C\-T\-\_\-\-D\-A\-M\-A\-G\-E} $\ast$this\-Ptr, F\-I\-L\-E $\ast$fp)
+\item 
+\hyperlink{object__damage_8h_a5a0c6470eee77c8c093bdc24f3e266c0}{O\-B\-J\-E\-C\-T\-\_\-\-D\-A\-M\-A\-G\-E} $\ast$ \hyperlink{object__damage_8h_a48b80457dc354c864967b3002d6a49f6}{object\-\_\-damage\-\_\-\-\_\-read\-\_\-from\-\_\-file} (F\-I\-L\-E $\ast$fp)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{object__damage_8h_ab78c6c04c7a8a62f4e045e5a500979ae}{damage\-\_\-type} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{object__damage_8h_aaaa692566f4c1f7d6821fdc7e19411fe}{enviro\-\_\-desc} \mbox{[}\hyperlink{object__damage_8h_a900fe72fff2c343fd3f146c228d21196a3eb46d3d7318e8e02daa0c9b2e5540ca}{C\-O\-N\-D\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-A\-X}\mbox{]}\mbox{[}6\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{object__damage_8h_ad556de0e1a817a16647d92b05159963d}{\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!D\-A\-M\-A\-G\-E\-\_\-\-S\-E\-V\-E\-R\-I\-T\-Y@{D\-A\-M\-A\-G\-E\-\_\-\-S\-E\-V\-E\-R\-I\-T\-Y}}
+\index{D\-A\-M\-A\-G\-E\-\_\-\-S\-E\-V\-E\-R\-I\-T\-Y@{D\-A\-M\-A\-G\-E\-\_\-\-S\-E\-V\-E\-R\-I\-T\-Y}!object_damage.h@{object\-\_\-damage.\-h}}
+\subsubsection[{D\-A\-M\-A\-G\-E\-\_\-\-S\-E\-V\-E\-R\-I\-T\-Y}]{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf e\-\_\-damage\-\_\-severity} {\bf D\-A\-M\-A\-G\-E\-\_\-\-S\-E\-V\-E\-R\-I\-T\-Y}}}\label{object__damage_8h_ad556de0e1a817a16647d92b05159963d}
+\hypertarget{object__damage_8h_ab80f609de4f2344d8067ac1746dde4a6}{\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!D\-A\-M\-A\-G\-E\-\_\-\-T\-Y\-P\-E@{D\-A\-M\-A\-G\-E\-\_\-\-T\-Y\-P\-E}}
+\index{D\-A\-M\-A\-G\-E\-\_\-\-T\-Y\-P\-E@{D\-A\-M\-A\-G\-E\-\_\-\-T\-Y\-P\-E}!object_damage.h@{object\-\_\-damage.\-h}}
+\subsubsection[{D\-A\-M\-A\-G\-E\-\_\-\-T\-Y\-P\-E}]{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf e\-\_\-damage\-\_\-type} {\bf D\-A\-M\-A\-G\-E\-\_\-\-T\-Y\-P\-E}}}\label{object__damage_8h_ab80f609de4f2344d8067ac1746dde4a6}
+\hypertarget{object__damage_8h_a6f721c654f395b93d80ba4db9a6840aa}{\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-S\-K\-I\-L\-L@{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-S\-K\-I\-L\-L}}
+\index{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-S\-K\-I\-L\-L@{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-S\-K\-I\-L\-L}!object_damage.h@{object\-\_\-damage.\-h}}
+\subsubsection[{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-S\-K\-I\-L\-L}]{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf e\-\_\-material\-\_\-skill} {\bf M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-S\-K\-I\-L\-L}}}\label{object__damage_8h_a6f721c654f395b93d80ba4db9a6840aa}
+\hypertarget{object__damage_8h_ab2ceeba9e730d841b64f72b35d6278f2}{\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-T\-Y\-P\-E@{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-T\-Y\-P\-E}}
+\index{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-T\-Y\-P\-E@{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-T\-Y\-P\-E}!object_damage.h@{object\-\_\-damage.\-h}}
+\subsubsection[{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-T\-Y\-P\-E}]{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf e\-\_\-material\-\_\-type} {\bf M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-T\-Y\-P\-E}}}\label{object__damage_8h_ab2ceeba9e730d841b64f72b35d6278f2}
+\hypertarget{object__damage_8h_a5a0c6470eee77c8c093bdc24f3e266c0}{\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!O\-B\-J\-E\-C\-T\-\_\-\-D\-A\-M\-A\-G\-E@{O\-B\-J\-E\-C\-T\-\_\-\-D\-A\-M\-A\-G\-E}}
+\index{O\-B\-J\-E\-C\-T\-\_\-\-D\-A\-M\-A\-G\-E@{O\-B\-J\-E\-C\-T\-\_\-\-D\-A\-M\-A\-G\-E}!object_damage.h@{object\-\_\-damage.\-h}}
+\subsubsection[{O\-B\-J\-E\-C\-T\-\_\-\-D\-A\-M\-A\-G\-E}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf object\-\_\-damage} {\bf O\-B\-J\-E\-C\-T\-\_\-\-D\-A\-M\-A\-G\-E}}}\label{object__damage_8h_a5a0c6470eee77c8c093bdc24f3e266c0}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{object__damage_8h_a900fe72fff2c343fd3f146c228d21196}{\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!e\-\_\-condition\-\_\-type@{e\-\_\-condition\-\_\-type}}
+\index{e\-\_\-condition\-\_\-type@{e\-\_\-condition\-\_\-type}!object_damage.h@{object\-\_\-damage.\-h}}
+\subsubsection[{e\-\_\-condition\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf e\-\_\-condition\-\_\-type}}}\label{object__damage_8h_a900fe72fff2c343fd3f146c228d21196}
+
+
+\hyperlink{object__damage_8h}{object\-\_\-damage.\-h} -\/ Object Damage Class 
+
+Shadows of Isildur R\-P\-I Engine++ Copyright (C) 2004-\/2006 C. W. Mc\-Henry Authors\-: C. W. Mc\-Henry (\href{mailto:traithe@middle-earth.us}{\tt traithe@middle-\/earth.\-us}) Jonathan W. Webb (\href{mailto:sighentist@middle-earth.us}{\tt sighentist@middle-\/earth.\-us}) U\-R\-L\-: \href{http://www.middle-earth.us}{\tt http\-://www.\-middle-\/earth.\-us} May includes portions derived from Harshlands Authors\-: Charles Rand (Rassilon) U\-R\-L\-: \href{http://www.harshlands.net}{\tt http\-://www.\-harshlands.\-net} May include portions derived under license from Diku\-M\-U\-D Gamma (0.\-0) which are Copyright (C) 1990, 1991 D\-I\-K\-U Authors\-: Hans Henrik Staerfeldt (\href{mailto:bombman@freja.diku.dk}{\tt bombman@freja.\-diku.\-dk}) Tom Madson (\href{mailto:noop@freja.diku.dk}{\tt noop@freja.\-diku.\-dk}) Katja Nyboe (\href{mailto:katz@freja.diku.dk}{\tt katz@freja.\-diku.\-dk}) Michael Seifert (\href{mailto:seifert@freja.diku.dk}{\tt seifert@freja.\-diku.\-dk}) Sebastian Hammer (\href{mailto:quinn@freja.diku.dk}{\tt quinn@freja.\-diku.\-dk}) \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{C\-O\-N\-D\-\_\-\-S\-T\-A\-I\-N@{C\-O\-N\-D\-\_\-\-S\-T\-A\-I\-N}!object\-\_\-damage.\-h@{object\-\_\-damage.\-h}}\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!C\-O\-N\-D\-\_\-\-S\-T\-A\-I\-N@{C\-O\-N\-D\-\_\-\-S\-T\-A\-I\-N}}\item[{\em 
+\hypertarget{object__damage_8h_a900fe72fff2c343fd3f146c228d21196a7e922370def16493ee834f8d1ca90758}{C\-O\-N\-D\-\_\-\-S\-T\-A\-I\-N}\label{object__damage_8h_a900fe72fff2c343fd3f146c228d21196a7e922370def16493ee834f8d1ca90758}
+}]\index{C\-O\-N\-D\-\_\-\-D\-I\-R\-T@{C\-O\-N\-D\-\_\-\-D\-I\-R\-T}!object\-\_\-damage.\-h@{object\-\_\-damage.\-h}}\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!C\-O\-N\-D\-\_\-\-D\-I\-R\-T@{C\-O\-N\-D\-\_\-\-D\-I\-R\-T}}\item[{\em 
+\hypertarget{object__damage_8h_a900fe72fff2c343fd3f146c228d21196a87a8715cb67d6a6770a36d0cf23b7e96}{C\-O\-N\-D\-\_\-\-D\-I\-R\-T}\label{object__damage_8h_a900fe72fff2c343fd3f146c228d21196a87a8715cb67d6a6770a36d0cf23b7e96}
+}]\index{C\-O\-N\-D\-\_\-\-D\-U\-S\-T@{C\-O\-N\-D\-\_\-\-D\-U\-S\-T}!object\-\_\-damage.\-h@{object\-\_\-damage.\-h}}\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!C\-O\-N\-D\-\_\-\-D\-U\-S\-T@{C\-O\-N\-D\-\_\-\-D\-U\-S\-T}}\item[{\em 
+\hypertarget{object__damage_8h_a900fe72fff2c343fd3f146c228d21196a957adf2733ef8506a249a6cc1ad247b6}{C\-O\-N\-D\-\_\-\-D\-U\-S\-T}\label{object__damage_8h_a900fe72fff2c343fd3f146c228d21196a957adf2733ef8506a249a6cc1ad247b6}
+}]\index{C\-O\-N\-D\-\_\-\-B\-L\-O\-O\-D@{C\-O\-N\-D\-\_\-\-B\-L\-O\-O\-D}!object\-\_\-damage.\-h@{object\-\_\-damage.\-h}}\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!C\-O\-N\-D\-\_\-\-B\-L\-O\-O\-D@{C\-O\-N\-D\-\_\-\-B\-L\-O\-O\-D}}\item[{\em 
+\hypertarget{object__damage_8h_a900fe72fff2c343fd3f146c228d21196a70590f12fdb0d15aed58e6228d3c8351}{C\-O\-N\-D\-\_\-\-B\-L\-O\-O\-D}\label{object__damage_8h_a900fe72fff2c343fd3f146c228d21196a70590f12fdb0d15aed58e6228d3c8351}
+}]\index{C\-O\-N\-D\-\_\-\-W\-A\-T\-E\-R@{C\-O\-N\-D\-\_\-\-W\-A\-T\-E\-R}!object\-\_\-damage.\-h@{object\-\_\-damage.\-h}}\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!C\-O\-N\-D\-\_\-\-W\-A\-T\-E\-R@{C\-O\-N\-D\-\_\-\-W\-A\-T\-E\-R}}\item[{\em 
+\hypertarget{object__damage_8h_a900fe72fff2c343fd3f146c228d21196aaf01d3818d2af6d8bdd44f33c8cb2187}{C\-O\-N\-D\-\_\-\-W\-A\-T\-E\-R}\label{object__damage_8h_a900fe72fff2c343fd3f146c228d21196aaf01d3818d2af6d8bdd44f33c8cb2187}
+}]\index{C\-O\-N\-D\-\_\-\-F\-I\-L\-T\-H@{C\-O\-N\-D\-\_\-\-F\-I\-L\-T\-H}!object\-\_\-damage.\-h@{object\-\_\-damage.\-h}}\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!C\-O\-N\-D\-\_\-\-F\-I\-L\-T\-H@{C\-O\-N\-D\-\_\-\-F\-I\-L\-T\-H}}\item[{\em 
+\hypertarget{object__damage_8h_a900fe72fff2c343fd3f146c228d21196a0e10448c22f22524ae108a4cfd33fc6b}{C\-O\-N\-D\-\_\-\-F\-I\-L\-T\-H}\label{object__damage_8h_a900fe72fff2c343fd3f146c228d21196a0e10448c22f22524ae108a4cfd33fc6b}
+}]\index{C\-O\-N\-D\-\_\-\-S\-L\-I\-M\-E@{C\-O\-N\-D\-\_\-\-S\-L\-I\-M\-E}!object\-\_\-damage.\-h@{object\-\_\-damage.\-h}}\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!C\-O\-N\-D\-\_\-\-S\-L\-I\-M\-E@{C\-O\-N\-D\-\_\-\-S\-L\-I\-M\-E}}\item[{\em 
+\hypertarget{object__damage_8h_a900fe72fff2c343fd3f146c228d21196a43090720c772f33f9d65be8cd6fa09c1}{C\-O\-N\-D\-\_\-\-S\-L\-I\-M\-E}\label{object__damage_8h_a900fe72fff2c343fd3f146c228d21196a43090720c772f33f9d65be8cd6fa09c1}
+}]\index{C\-O\-N\-D\-\_\-\-R\-U\-S\-T@{C\-O\-N\-D\-\_\-\-R\-U\-S\-T}!object\-\_\-damage.\-h@{object\-\_\-damage.\-h}}\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!C\-O\-N\-D\-\_\-\-R\-U\-S\-T@{C\-O\-N\-D\-\_\-\-R\-U\-S\-T}}\item[{\em 
+\hypertarget{object__damage_8h_a900fe72fff2c343fd3f146c228d21196ad6b76573fc1ade49c60d2476fc607955}{C\-O\-N\-D\-\_\-\-R\-U\-S\-T}\label{object__damage_8h_a900fe72fff2c343fd3f146c228d21196ad6b76573fc1ade49c60d2476fc607955}
+}]\index{C\-O\-N\-D\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-A\-X@{C\-O\-N\-D\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-A\-X}!object\-\_\-damage.\-h@{object\-\_\-damage.\-h}}\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!C\-O\-N\-D\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-A\-X@{C\-O\-N\-D\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-A\-X}}\item[{\em 
+\hypertarget{object__damage_8h_a900fe72fff2c343fd3f146c228d21196a3eb46d3d7318e8e02daa0c9b2e5540ca}{C\-O\-N\-D\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-A\-X}\label{object__damage_8h_a900fe72fff2c343fd3f146c228d21196a3eb46d3d7318e8e02daa0c9b2e5540ca}
+}]\end{description}
+\end{Desc}
+\hypertarget{object__damage_8h_ae57f65faa21c70ac0ffdd4449edfb5da}{\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!e\-\_\-damage\-\_\-severity@{e\-\_\-damage\-\_\-severity}}
+\index{e\-\_\-damage\-\_\-severity@{e\-\_\-damage\-\_\-severity}!object_damage.h@{object\-\_\-damage.\-h}}
+\subsubsection[{e\-\_\-damage\-\_\-severity}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf e\-\_\-damage\-\_\-severity}}}\label{object__damage_8h_ae57f65faa21c70ac0ffdd4449edfb5da}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{D\-A\-M\-A\-G\-E\-\_\-\-S\-M\-A\-L\-L@{D\-A\-M\-A\-G\-E\-\_\-\-S\-M\-A\-L\-L}!object\-\_\-damage.\-h@{object\-\_\-damage.\-h}}\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!D\-A\-M\-A\-G\-E\-\_\-\-S\-M\-A\-L\-L@{D\-A\-M\-A\-G\-E\-\_\-\-S\-M\-A\-L\-L}}\item[{\em 
+\hypertarget{object__damage_8h_ae57f65faa21c70ac0ffdd4449edfb5daa189ac0aa7b06673f07a87eefa0902afb}{D\-A\-M\-A\-G\-E\-\_\-\-S\-M\-A\-L\-L}\label{object__damage_8h_ae57f65faa21c70ac0ffdd4449edfb5daa189ac0aa7b06673f07a87eefa0902afb}
+}]\index{D\-A\-M\-A\-G\-E\-\_\-\-M\-I\-N\-O\-R@{D\-A\-M\-A\-G\-E\-\_\-\-M\-I\-N\-O\-R}!object\-\_\-damage.\-h@{object\-\_\-damage.\-h}}\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!D\-A\-M\-A\-G\-E\-\_\-\-M\-I\-N\-O\-R@{D\-A\-M\-A\-G\-E\-\_\-\-M\-I\-N\-O\-R}}\item[{\em 
+\hypertarget{object__damage_8h_ae57f65faa21c70ac0ffdd4449edfb5daae9ef9ec9760d9541f906884d6b4f2ddf}{D\-A\-M\-A\-G\-E\-\_\-\-M\-I\-N\-O\-R}\label{object__damage_8h_ae57f65faa21c70ac0ffdd4449edfb5daae9ef9ec9760d9541f906884d6b4f2ddf}
+}]\index{D\-A\-M\-A\-G\-E\-\_\-\-M\-O\-D\-E\-R\-A\-T\-E@{D\-A\-M\-A\-G\-E\-\_\-\-M\-O\-D\-E\-R\-A\-T\-E}!object\-\_\-damage.\-h@{object\-\_\-damage.\-h}}\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!D\-A\-M\-A\-G\-E\-\_\-\-M\-O\-D\-E\-R\-A\-T\-E@{D\-A\-M\-A\-G\-E\-\_\-\-M\-O\-D\-E\-R\-A\-T\-E}}\item[{\em 
+\hypertarget{object__damage_8h_ae57f65faa21c70ac0ffdd4449edfb5daa93073e3a81beccbb190bfcc156670394}{D\-A\-M\-A\-G\-E\-\_\-\-M\-O\-D\-E\-R\-A\-T\-E}\label{object__damage_8h_ae57f65faa21c70ac0ffdd4449edfb5daa93073e3a81beccbb190bfcc156670394}
+}]\index{D\-A\-M\-A\-G\-E\-\_\-\-L\-A\-R\-G\-E@{D\-A\-M\-A\-G\-E\-\_\-\-L\-A\-R\-G\-E}!object\-\_\-damage.\-h@{object\-\_\-damage.\-h}}\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!D\-A\-M\-A\-G\-E\-\_\-\-L\-A\-R\-G\-E@{D\-A\-M\-A\-G\-E\-\_\-\-L\-A\-R\-G\-E}}\item[{\em 
+\hypertarget{object__damage_8h_ae57f65faa21c70ac0ffdd4449edfb5daae901e31af4a6081e408f042840dce01b}{D\-A\-M\-A\-G\-E\-\_\-\-L\-A\-R\-G\-E}\label{object__damage_8h_ae57f65faa21c70ac0ffdd4449edfb5daae901e31af4a6081e408f042840dce01b}
+}]\index{D\-A\-M\-A\-G\-E\-\_\-\-H\-U\-G\-E@{D\-A\-M\-A\-G\-E\-\_\-\-H\-U\-G\-E}!object\-\_\-damage.\-h@{object\-\_\-damage.\-h}}\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!D\-A\-M\-A\-G\-E\-\_\-\-H\-U\-G\-E@{D\-A\-M\-A\-G\-E\-\_\-\-H\-U\-G\-E}}\item[{\em 
+\hypertarget{object__damage_8h_ae57f65faa21c70ac0ffdd4449edfb5daaa70cb353d3930663209aa1998b3ef71b}{D\-A\-M\-A\-G\-E\-\_\-\-H\-U\-G\-E}\label{object__damage_8h_ae57f65faa21c70ac0ffdd4449edfb5daaa70cb353d3930663209aa1998b3ef71b}
+}]\index{D\-A\-M\-A\-G\-E\-\_\-\-M\-A\-S\-S\-I\-V\-E@{D\-A\-M\-A\-G\-E\-\_\-\-M\-A\-S\-S\-I\-V\-E}!object\-\_\-damage.\-h@{object\-\_\-damage.\-h}}\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!D\-A\-M\-A\-G\-E\-\_\-\-M\-A\-S\-S\-I\-V\-E@{D\-A\-M\-A\-G\-E\-\_\-\-M\-A\-S\-S\-I\-V\-E}}\item[{\em 
+\hypertarget{object__damage_8h_ae57f65faa21c70ac0ffdd4449edfb5daabad8f9984c415d6f10a1b1a81aea32ba}{D\-A\-M\-A\-G\-E\-\_\-\-M\-A\-S\-S\-I\-V\-E}\label{object__damage_8h_ae57f65faa21c70ac0ffdd4449edfb5daabad8f9984c415d6f10a1b1a81aea32ba}
+}]\index{D\-A\-M\-A\-G\-E\-\_\-\-S\-E\-V\-E\-R\-I\-T\-Y\-\_\-\-M\-A\-X@{D\-A\-M\-A\-G\-E\-\_\-\-S\-E\-V\-E\-R\-I\-T\-Y\-\_\-\-M\-A\-X}!object\-\_\-damage.\-h@{object\-\_\-damage.\-h}}\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!D\-A\-M\-A\-G\-E\-\_\-\-S\-E\-V\-E\-R\-I\-T\-Y\-\_\-\-M\-A\-X@{D\-A\-M\-A\-G\-E\-\_\-\-S\-E\-V\-E\-R\-I\-T\-Y\-\_\-\-M\-A\-X}}\item[{\em 
+\hypertarget{object__damage_8h_ae57f65faa21c70ac0ffdd4449edfb5daa6b91668fb2e51f375310a41dd10490cb}{D\-A\-M\-A\-G\-E\-\_\-\-S\-E\-V\-E\-R\-I\-T\-Y\-\_\-\-M\-A\-X}\label{object__damage_8h_ae57f65faa21c70ac0ffdd4449edfb5daa6b91668fb2e51f375310a41dd10490cb}
+}]\end{description}
+\end{Desc}
+\hypertarget{object__damage_8h_aec13eb452f5adf9bf2356bef65b6e632}{\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!e\-\_\-damage\-\_\-type@{e\-\_\-damage\-\_\-type}}
+\index{e\-\_\-damage\-\_\-type@{e\-\_\-damage\-\_\-type}!object_damage.h@{object\-\_\-damage.\-h}}
+\subsubsection[{e\-\_\-damage\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf e\-\_\-damage\-\_\-type}}}\label{object__damage_8h_aec13eb452f5adf9bf2356bef65b6e632}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{D\-A\-M\-A\-G\-E\-\_\-\-P\-I\-E\-R\-C\-E@{D\-A\-M\-A\-G\-E\-\_\-\-P\-I\-E\-R\-C\-E}!object\-\_\-damage.\-h@{object\-\_\-damage.\-h}}\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!D\-A\-M\-A\-G\-E\-\_\-\-P\-I\-E\-R\-C\-E@{D\-A\-M\-A\-G\-E\-\_\-\-P\-I\-E\-R\-C\-E}}\item[{\em 
+\hypertarget{object__damage_8h_aec13eb452f5adf9bf2356bef65b6e632a8a08ceb4f611908dcbaed234d665fe36}{D\-A\-M\-A\-G\-E\-\_\-\-P\-I\-E\-R\-C\-E}\label{object__damage_8h_aec13eb452f5adf9bf2356bef65b6e632a8a08ceb4f611908dcbaed234d665fe36}
+}]\index{D\-A\-M\-A\-G\-E\-\_\-\-B\-L\-U\-N\-T@{D\-A\-M\-A\-G\-E\-\_\-\-B\-L\-U\-N\-T}!object\-\_\-damage.\-h@{object\-\_\-damage.\-h}}\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!D\-A\-M\-A\-G\-E\-\_\-\-B\-L\-U\-N\-T@{D\-A\-M\-A\-G\-E\-\_\-\-B\-L\-U\-N\-T}}\item[{\em 
+\hypertarget{object__damage_8h_aec13eb452f5adf9bf2356bef65b6e632ab89716f0998e7975718073cdd01ce248}{D\-A\-M\-A\-G\-E\-\_\-\-B\-L\-U\-N\-T}\label{object__damage_8h_aec13eb452f5adf9bf2356bef65b6e632ab89716f0998e7975718073cdd01ce248}
+}]\index{D\-A\-M\-A\-G\-E\-\_\-\-S\-L\-A\-S\-H@{D\-A\-M\-A\-G\-E\-\_\-\-S\-L\-A\-S\-H}!object\-\_\-damage.\-h@{object\-\_\-damage.\-h}}\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!D\-A\-M\-A\-G\-E\-\_\-\-S\-L\-A\-S\-H@{D\-A\-M\-A\-G\-E\-\_\-\-S\-L\-A\-S\-H}}\item[{\em 
+\hypertarget{object__damage_8h_aec13eb452f5adf9bf2356bef65b6e632adab8c27054b6aa10039676228c734975}{D\-A\-M\-A\-G\-E\-\_\-\-S\-L\-A\-S\-H}\label{object__damage_8h_aec13eb452f5adf9bf2356bef65b6e632adab8c27054b6aa10039676228c734975}
+}]\index{D\-A\-M\-A\-G\-E\-\_\-\-F\-R\-E\-E\-Z\-E@{D\-A\-M\-A\-G\-E\-\_\-\-F\-R\-E\-E\-Z\-E}!object\-\_\-damage.\-h@{object\-\_\-damage.\-h}}\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!D\-A\-M\-A\-G\-E\-\_\-\-F\-R\-E\-E\-Z\-E@{D\-A\-M\-A\-G\-E\-\_\-\-F\-R\-E\-E\-Z\-E}}\item[{\em 
+\hypertarget{object__damage_8h_aec13eb452f5adf9bf2356bef65b6e632aea02ee8a360fcb1d8e9c0b4fecd3148e}{D\-A\-M\-A\-G\-E\-\_\-\-F\-R\-E\-E\-Z\-E}\label{object__damage_8h_aec13eb452f5adf9bf2356bef65b6e632aea02ee8a360fcb1d8e9c0b4fecd3148e}
+}]\index{D\-A\-M\-A\-G\-E\-\_\-\-B\-U\-R\-N@{D\-A\-M\-A\-G\-E\-\_\-\-B\-U\-R\-N}!object\-\_\-damage.\-h@{object\-\_\-damage.\-h}}\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!D\-A\-M\-A\-G\-E\-\_\-\-B\-U\-R\-N@{D\-A\-M\-A\-G\-E\-\_\-\-B\-U\-R\-N}}\item[{\em 
+\hypertarget{object__damage_8h_aec13eb452f5adf9bf2356bef65b6e632ad599d960978aecb28116818f09f8ef7c}{D\-A\-M\-A\-G\-E\-\_\-\-B\-U\-R\-N}\label{object__damage_8h_aec13eb452f5adf9bf2356bef65b6e632ad599d960978aecb28116818f09f8ef7c}
+}]\index{D\-A\-M\-A\-G\-E\-\_\-\-F\-I\-S\-T@{D\-A\-M\-A\-G\-E\-\_\-\-F\-I\-S\-T}!object\-\_\-damage.\-h@{object\-\_\-damage.\-h}}\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!D\-A\-M\-A\-G\-E\-\_\-\-F\-I\-S\-T@{D\-A\-M\-A\-G\-E\-\_\-\-F\-I\-S\-T}}\item[{\em 
+\hypertarget{object__damage_8h_aec13eb452f5adf9bf2356bef65b6e632acf291e5e50b5752387ea3ed593abd1a4}{D\-A\-M\-A\-G\-E\-\_\-\-F\-I\-S\-T}\label{object__damage_8h_aec13eb452f5adf9bf2356bef65b6e632acf291e5e50b5752387ea3ed593abd1a4}
+}]\index{D\-A\-M\-A\-G\-E\-\_\-\-B\-L\-O\-O\-D@{D\-A\-M\-A\-G\-E\-\_\-\-B\-L\-O\-O\-D}!object\-\_\-damage.\-h@{object\-\_\-damage.\-h}}\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!D\-A\-M\-A\-G\-E\-\_\-\-B\-L\-O\-O\-D@{D\-A\-M\-A\-G\-E\-\_\-\-B\-L\-O\-O\-D}}\item[{\em 
+\hypertarget{object__damage_8h_aec13eb452f5adf9bf2356bef65b6e632a358319045e2f2baf6040787a3b4ea551}{D\-A\-M\-A\-G\-E\-\_\-\-B\-L\-O\-O\-D}\label{object__damage_8h_aec13eb452f5adf9bf2356bef65b6e632a358319045e2f2baf6040787a3b4ea551}
+}]\index{D\-A\-M\-A\-G\-E\-\_\-\-W\-A\-T\-E\-R@{D\-A\-M\-A\-G\-E\-\_\-\-W\-A\-T\-E\-R}!object\-\_\-damage.\-h@{object\-\_\-damage.\-h}}\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!D\-A\-M\-A\-G\-E\-\_\-\-W\-A\-T\-E\-R@{D\-A\-M\-A\-G\-E\-\_\-\-W\-A\-T\-E\-R}}\item[{\em 
+\hypertarget{object__damage_8h_aec13eb452f5adf9bf2356bef65b6e632a11980f4e28f1a5b740bd7669435b2ade}{D\-A\-M\-A\-G\-E\-\_\-\-W\-A\-T\-E\-R}\label{object__damage_8h_aec13eb452f5adf9bf2356bef65b6e632a11980f4e28f1a5b740bd7669435b2ade}
+}]\index{D\-A\-M\-A\-G\-E\-\_\-\-P\-E\-R\-M\-A\-N\-E\-N\-T@{D\-A\-M\-A\-G\-E\-\_\-\-P\-E\-R\-M\-A\-N\-E\-N\-T}!object\-\_\-damage.\-h@{object\-\_\-damage.\-h}}\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!D\-A\-M\-A\-G\-E\-\_\-\-P\-E\-R\-M\-A\-N\-E\-N\-T@{D\-A\-M\-A\-G\-E\-\_\-\-P\-E\-R\-M\-A\-N\-E\-N\-T}}\item[{\em 
+\hypertarget{object__damage_8h_aec13eb452f5adf9bf2356bef65b6e632ab5c13502f9da1938cd45f09bbf7248b4}{D\-A\-M\-A\-G\-E\-\_\-\-P\-E\-R\-M\-A\-N\-E\-N\-T}\label{object__damage_8h_aec13eb452f5adf9bf2356bef65b6e632ab5c13502f9da1938cd45f09bbf7248b4}
+}]\index{D\-A\-M\-A\-G\-E\-\_\-\-R\-E\-P\-A\-I\-R@{D\-A\-M\-A\-G\-E\-\_\-\-R\-E\-P\-A\-I\-R}!object\-\_\-damage.\-h@{object\-\_\-damage.\-h}}\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!D\-A\-M\-A\-G\-E\-\_\-\-R\-E\-P\-A\-I\-R@{D\-A\-M\-A\-G\-E\-\_\-\-R\-E\-P\-A\-I\-R}}\item[{\em 
+\hypertarget{object__damage_8h_aec13eb452f5adf9bf2356bef65b6e632a6ec6c8a8674f30c4d6cbecd8f88c4a45}{D\-A\-M\-A\-G\-E\-\_\-\-R\-E\-P\-A\-I\-R}\label{object__damage_8h_aec13eb452f5adf9bf2356bef65b6e632a6ec6c8a8674f30c4d6cbecd8f88c4a45}
+}]\index{D\-A\-M\-A\-G\-E\-\_\-\-B\-U\-L\-L\-E\-T@{D\-A\-M\-A\-G\-E\-\_\-\-B\-U\-L\-L\-E\-T}!object\-\_\-damage.\-h@{object\-\_\-damage.\-h}}\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!D\-A\-M\-A\-G\-E\-\_\-\-B\-U\-L\-L\-E\-T@{D\-A\-M\-A\-G\-E\-\_\-\-B\-U\-L\-L\-E\-T}}\item[{\em 
+\hypertarget{object__damage_8h_aec13eb452f5adf9bf2356bef65b6e632afa926892fd30ee15bf4c74ec1d0914f4}{D\-A\-M\-A\-G\-E\-\_\-\-B\-U\-L\-L\-E\-T}\label{object__damage_8h_aec13eb452f5adf9bf2356bef65b6e632afa926892fd30ee15bf4c74ec1d0914f4}
+}]\index{D\-A\-M\-A\-G\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-A\-X@{D\-A\-M\-A\-G\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-A\-X}!object\-\_\-damage.\-h@{object\-\_\-damage.\-h}}\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!D\-A\-M\-A\-G\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-A\-X@{D\-A\-M\-A\-G\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-A\-X}}\item[{\em 
+\hypertarget{object__damage_8h_aec13eb452f5adf9bf2356bef65b6e632a96ab3cbac60e7c4befa7c4445e2fe4bd}{D\-A\-M\-A\-G\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-A\-X}\label{object__damage_8h_aec13eb452f5adf9bf2356bef65b6e632a96ab3cbac60e7c4befa7c4445e2fe4bd}
+}]\end{description}
+\end{Desc}
+\hypertarget{object__damage_8h_aa10986b5a96bde1274166c9f8ca4cae7}{\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!e\-\_\-material\-\_\-skill@{e\-\_\-material\-\_\-skill}}
+\index{e\-\_\-material\-\_\-skill@{e\-\_\-material\-\_\-skill}!object_damage.h@{object\-\_\-damage.\-h}}
+\subsubsection[{e\-\_\-material\-\_\-skill}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf e\-\_\-material\-\_\-skill}}}\label{object__damage_8h_aa10986b5a96bde1274166c9f8ca4cae7}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-S\-K\-I\-L\-L\-\_\-\-U\-N\-D\-E\-F\-I\-N\-E\-D@{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-S\-K\-I\-L\-L\-\_\-\-U\-N\-D\-E\-F\-I\-N\-E\-D}!object\-\_\-damage.\-h@{object\-\_\-damage.\-h}}\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-S\-K\-I\-L\-L\-\_\-\-U\-N\-D\-E\-F\-I\-N\-E\-D@{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-S\-K\-I\-L\-L\-\_\-\-U\-N\-D\-E\-F\-I\-N\-E\-D}}\item[{\em 
+\hypertarget{object__damage_8h_aa10986b5a96bde1274166c9f8ca4cae7a053d67441bd7b217d3501dd9bbc32fc8}{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-S\-K\-I\-L\-L\-\_\-\-U\-N\-D\-E\-F\-I\-N\-E\-D}\label{object__damage_8h_aa10986b5a96bde1274166c9f8ca4cae7a053d67441bd7b217d3501dd9bbc32fc8}
+}]\end{description}
+\end{Desc}
+\hypertarget{object__damage_8h_a054c7a0c5cebe63d082920ad23a8b0ba}{\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!e\-\_\-material\-\_\-type@{e\-\_\-material\-\_\-type}}
+\index{e\-\_\-material\-\_\-type@{e\-\_\-material\-\_\-type}!object_damage.h@{object\-\_\-damage.\-h}}
+\subsubsection[{e\-\_\-material\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf e\-\_\-material\-\_\-type}}}\label{object__damage_8h_a054c7a0c5cebe63d082920ad23a8b0ba}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-U\-N\-D\-E\-F\-I\-N\-E\-D@{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-U\-N\-D\-E\-F\-I\-N\-E\-D}!object\-\_\-damage.\-h@{object\-\_\-damage.\-h}}\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-U\-N\-D\-E\-F\-I\-N\-E\-D@{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-U\-N\-D\-E\-F\-I\-N\-E\-D}}\item[{\em 
+\hypertarget{object__damage_8h_a054c7a0c5cebe63d082920ad23a8b0baa77e61b4661afe76238eb3f59f8462284}{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-U\-N\-D\-E\-F\-I\-N\-E\-D}\label{object__damage_8h_a054c7a0c5cebe63d082920ad23a8b0baa77e61b4661afe76238eb3f59f8462284}
+}]\index{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-O\-R\-G\-A\-N\-I\-C@{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-O\-R\-G\-A\-N\-I\-C}!object\-\_\-damage.\-h@{object\-\_\-damage.\-h}}\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-O\-R\-G\-A\-N\-I\-C@{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-O\-R\-G\-A\-N\-I\-C}}\item[{\em 
+\hypertarget{object__damage_8h_a054c7a0c5cebe63d082920ad23a8b0baa4831d6f45c3e4151f01bbf97f571b09b}{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-O\-R\-G\-A\-N\-I\-C}\label{object__damage_8h_a054c7a0c5cebe63d082920ad23a8b0baa4831d6f45c3e4151f01bbf97f571b09b}
+}]\index{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-T\-E\-X\-T\-I\-L\-E@{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-T\-E\-X\-T\-I\-L\-E}!object\-\_\-damage.\-h@{object\-\_\-damage.\-h}}\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-T\-E\-X\-T\-I\-L\-E@{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-T\-E\-X\-T\-I\-L\-E}}\item[{\em 
+\hypertarget{object__damage_8h_a054c7a0c5cebe63d082920ad23a8b0baa331a282a1efcaaead996995973e0d470}{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-T\-E\-X\-T\-I\-L\-E}\label{object__damage_8h_a054c7a0c5cebe63d082920ad23a8b0baa331a282a1efcaaead996995973e0d470}
+}]\index{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-M\-E\-T\-A\-L@{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-M\-E\-T\-A\-L}!object\-\_\-damage.\-h@{object\-\_\-damage.\-h}}\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-M\-E\-T\-A\-L@{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-M\-E\-T\-A\-L}}\item[{\em 
+\hypertarget{object__damage_8h_a054c7a0c5cebe63d082920ad23a8b0baaab633ca6af5a8d6388781a851c66b9f5}{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-M\-E\-T\-A\-L}\label{object__damage_8h_a054c7a0c5cebe63d082920ad23a8b0baaab633ca6af5a8d6388781a851c66b9f5}
+}]\index{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-C\-E\-R\-A\-M\-I\-C@{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-C\-E\-R\-A\-M\-I\-C}!object\-\_\-damage.\-h@{object\-\_\-damage.\-h}}\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-C\-E\-R\-A\-M\-I\-C@{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-C\-E\-R\-A\-M\-I\-C}}\item[{\em 
+\hypertarget{object__damage_8h_a054c7a0c5cebe63d082920ad23a8b0baadfdea55a00243b67a9e8c45803d2a18d}{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-C\-E\-R\-A\-M\-I\-C}\label{object__damage_8h_a054c7a0c5cebe63d082920ad23a8b0baadfdea55a00243b67a9e8c45803d2a18d}
+}]\index{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-G\-L\-A\-S\-S@{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-G\-L\-A\-S\-S}!object\-\_\-damage.\-h@{object\-\_\-damage.\-h}}\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-G\-L\-A\-S\-S@{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-G\-L\-A\-S\-S}}\item[{\em 
+\hypertarget{object__damage_8h_a054c7a0c5cebe63d082920ad23a8b0baa813a9f4ce2425d48414be2b718f32487}{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-G\-L\-A\-S\-S}\label{object__damage_8h_a054c7a0c5cebe63d082920ad23a8b0baa813a9f4ce2425d48414be2b718f32487}
+}]\index{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-E\-L\-E\-C\-T\-R\-O\-N\-I\-C@{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-E\-L\-E\-C\-T\-R\-O\-N\-I\-C}!object\-\_\-damage.\-h@{object\-\_\-damage.\-h}}\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-E\-L\-E\-C\-T\-R\-O\-N\-I\-C@{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-E\-L\-E\-C\-T\-R\-O\-N\-I\-C}}\item[{\em 
+\hypertarget{object__damage_8h_a054c7a0c5cebe63d082920ad23a8b0baafe4b79e7face0e599fd1fa30c3f6ac83}{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-E\-L\-E\-C\-T\-R\-O\-N\-I\-C}\label{object__damage_8h_a054c7a0c5cebe63d082920ad23a8b0baafe4b79e7face0e599fd1fa30c3f6ac83}
+}]\index{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-P\-L\-A\-S\-T\-I\-C\-S@{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-P\-L\-A\-S\-T\-I\-C\-S}!object\-\_\-damage.\-h@{object\-\_\-damage.\-h}}\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-P\-L\-A\-S\-T\-I\-C\-S@{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-P\-L\-A\-S\-T\-I\-C\-S}}\item[{\em 
+\hypertarget{object__damage_8h_a054c7a0c5cebe63d082920ad23a8b0baa870af5ba5d9a9b310c924f655259ea37}{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-P\-L\-A\-S\-T\-I\-C\-S}\label{object__damage_8h_a054c7a0c5cebe63d082920ad23a8b0baa870af5ba5d9a9b310c924f655259ea37}
+}]\index{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-A\-X@{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-A\-X}!object\-\_\-damage.\-h@{object\-\_\-damage.\-h}}\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-A\-X@{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-A\-X}}\item[{\em 
+\hypertarget{object__damage_8h_a054c7a0c5cebe63d082920ad23a8b0baa05181f58cd858874001d6864889d8f85}{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-A\-X}\label{object__damage_8h_a054c7a0c5cebe63d082920ad23a8b0baa05181f58cd858874001d6864889d8f85}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{object__damage_8h_a9832fa10f631aa5bbbc50c6bbd2d8d40}{\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!object\-\_\-damage\-\_\-\-\_\-get\-\_\-sdesc@{object\-\_\-damage\-\_\-\-\_\-get\-\_\-sdesc}}
+\index{object\-\_\-damage\-\_\-\-\_\-get\-\_\-sdesc@{object\-\_\-damage\-\_\-\-\_\-get\-\_\-sdesc}!object_damage.h@{object\-\_\-damage.\-h}}
+\subsubsection[{object\-\_\-damage\-\_\-\-\_\-get\-\_\-sdesc}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ object\-\_\-damage\-\_\-\-\_\-get\-\_\-sdesc (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-E\-C\-T\-\_\-\-D\-A\-M\-A\-G\-E} $\ast$}]{this\-Ptr}
+\end{DoxyParamCaption}
+)}}\label{object__damage_8h_a9832fa10f631aa5bbbc50c6bbd2d8d40}
+\hypertarget{object__damage_8h_a60d40546751ec243fe3dfea3ab1236cd}{\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!object\-\_\-damage\-\_\-\-\_\-new@{object\-\_\-damage\-\_\-\-\_\-new}}
+\index{object\-\_\-damage\-\_\-\-\_\-new@{object\-\_\-damage\-\_\-\-\_\-new}!object_damage.h@{object\-\_\-damage.\-h}}
+\subsubsection[{object\-\_\-damage\-\_\-\-\_\-new}]{\setlength{\rightskip}{0pt plus 5cm}{\bf O\-B\-J\-E\-C\-T\-\_\-\-D\-A\-M\-A\-G\-E}$\ast$ object\-\_\-damage\-\_\-\-\_\-new (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{object__damage_8h_a60d40546751ec243fe3dfea3ab1236cd}
+\hypertarget{object__damage_8h_a96e4d8637221c7d9975c9135f662a450}{\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!object\-\_\-damage\-\_\-\-\_\-new\-\_\-init@{object\-\_\-damage\-\_\-\-\_\-new\-\_\-init}}
+\index{object\-\_\-damage\-\_\-\-\_\-new\-\_\-init@{object\-\_\-damage\-\_\-\-\_\-new\-\_\-init}!object_damage.h@{object\-\_\-damage.\-h}}
+\subsubsection[{object\-\_\-damage\-\_\-\-\_\-new\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}{\bf O\-B\-J\-E\-C\-T\-\_\-\-D\-A\-M\-A\-G\-E}$\ast$ object\-\_\-damage\-\_\-\-\_\-new\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-A\-M\-A\-G\-E\-\_\-\-T\-Y\-P\-E}}]{source, }
+\item[{int}]{impact, }
+\item[{{\bf M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-T\-Y\-P\-E}}]{target, }
+\item[{int}]{lodged, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{object__damage_8h_a96e4d8637221c7d9975c9135f662a450}
+\hypertarget{object__damage_8h_a48b80457dc354c864967b3002d6a49f6}{\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!object\-\_\-damage\-\_\-\-\_\-read\-\_\-from\-\_\-file@{object\-\_\-damage\-\_\-\-\_\-read\-\_\-from\-\_\-file}}
+\index{object\-\_\-damage\-\_\-\-\_\-read\-\_\-from\-\_\-file@{object\-\_\-damage\-\_\-\-\_\-read\-\_\-from\-\_\-file}!object_damage.h@{object\-\_\-damage.\-h}}
+\subsubsection[{object\-\_\-damage\-\_\-\-\_\-read\-\_\-from\-\_\-file}]{\setlength{\rightskip}{0pt plus 5cm}{\bf O\-B\-J\-E\-C\-T\-\_\-\-D\-A\-M\-A\-G\-E}$\ast$ object\-\_\-damage\-\_\-\-\_\-read\-\_\-from\-\_\-file (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{fp}
+\end{DoxyParamCaption}
+)}}\label{object__damage_8h_a48b80457dc354c864967b3002d6a49f6}
+\hypertarget{object__damage_8h_a90ac46089730ed1357747e589ef1c532}{\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!object\-\_\-damage\-\_\-\-\_\-write\-\_\-to\-\_\-file@{object\-\_\-damage\-\_\-\-\_\-write\-\_\-to\-\_\-file}}
+\index{object\-\_\-damage\-\_\-\-\_\-write\-\_\-to\-\_\-file@{object\-\_\-damage\-\_\-\-\_\-write\-\_\-to\-\_\-file}!object_damage.h@{object\-\_\-damage.\-h}}
+\subsubsection[{object\-\_\-damage\-\_\-\-\_\-write\-\_\-to\-\_\-file}]{\setlength{\rightskip}{0pt plus 5cm}int object\-\_\-damage\-\_\-\-\_\-write\-\_\-to\-\_\-file (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-E\-C\-T\-\_\-\-D\-A\-M\-A\-G\-E} $\ast$}]{this\-Ptr, }
+\item[{F\-I\-L\-E $\ast$}]{fp}
+\end{DoxyParamCaption}
+)}}\label{object__damage_8h_a90ac46089730ed1357747e589ef1c532}
+
+
+\subsection{Variable Documentation}
+\hypertarget{object__damage_8h_ab78c6c04c7a8a62f4e045e5a500979ae}{\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!damage\-\_\-type@{damage\-\_\-type}}
+\index{damage\-\_\-type@{damage\-\_\-type}!object_damage.h@{object\-\_\-damage.\-h}}
+\subsubsection[{damage\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ damage\-\_\-type\mbox{[}$\,$\mbox{]}}}\label{object__damage_8h_ab78c6c04c7a8a62f4e045e5a500979ae}
+\hypertarget{object__damage_8h_aaaa692566f4c1f7d6821fdc7e19411fe}{\index{object\-\_\-damage.\-h@{object\-\_\-damage.\-h}!enviro\-\_\-desc@{enviro\-\_\-desc}}
+\index{enviro\-\_\-desc@{enviro\-\_\-desc}!object_damage.h@{object\-\_\-damage.\-h}}
+\subsubsection[{enviro\-\_\-desc}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ enviro\-\_\-desc\mbox{[}{\bf C\-O\-N\-D\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-A\-X}\mbox{]}\mbox{[}6\mbox{]}}}\label{object__damage_8h_aaaa692566f4c1f7d6821fdc7e19411fe}

@@ -1,0 +1,240 @@
+\hypertarget{commands_8cpp}{\section{commands.\-cpp File Reference}
+\label{commands_8cpp}\index{commands.\-cpp@{commands.\-cpp}}
+}
+{\ttfamily \#include $<$cstdlib$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$cstring$>$}\\*
+{\ttfamily \#include \char`\"{}structs.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}net\-\_\-link.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}protos.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utility.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}decl.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}group.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{commands_8cpp_ad0701c25147627778841299536434cba}{M\-A\-X\-\_\-\-S\-O\-C\-I\-A\-L\-S}~200
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{commands_8cpp_a46ad3344ee3d80b30f27bb39595ceeff}{search\-\_\-block} (char $\ast$arg, char $\ast$$\ast$list, \hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} exact)
+\item 
+void \hyperlink{commands_8cpp_a282a318e7fc8c9f5afc14d7ddbc0b893}{show\-\_\-to\-\_\-watchers} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$command)
+\item 
+void \hyperlink{commands_8cpp_a8ab259797a54173b33a35638af6f570c}{command\-\_\-interpreter} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+void \hyperlink{commands_8cpp_a9f593a4b559559c9bbf4eaffd9d0bdec}{argument\-\_\-interpreter} (char $\ast$argument, char $\ast$first\-\_\-arg, char $\ast$second\-\_\-arg)
+\item 
+int \hyperlink{commands_8cpp_afe2b6131dfbb554852754a77d20043ee}{is\-\_\-number} (const char $\ast$str)
+\item 
+int \hyperlink{commands_8cpp_a671b4ac7679e6fc1e72087795a431e71}{is\-\_\-number2} (const char $\ast$str, int def)
+\item 
+int \hyperlink{commands_8cpp_acd23424ba748f93bf926d4c096ca8cb4}{fill\-\_\-word} (char $\ast$argument)
+\item 
+int \hyperlink{commands_8cpp_a37f9765602de635473dfb728da901e4f}{is\-\_\-abbrev} (const char $\ast$arg1, const char $\ast$arg2)
+\item 
+int \hyperlink{commands_8cpp_a538da2cfd4e56fa507d357352b86a06a}{is\-\_\-abbrevc} (const char $\ast$arg1, const char $\ast$arg2)
+\item 
+void \hyperlink{commands_8cpp_a6250fa173cd34782536f92a9cd316055}{half\-\_\-chop} (char $\ast$string, char $\ast$arg1, char $\ast$arg2)
+\item 
+char $\ast$ \hyperlink{commands_8cpp_a56a228c88046e66f41c7f9f128f99753}{fread\-\_\-action} (F\-I\-L\-E $\ast$fl)
+\item 
+void \hyperlink{commands_8cpp_a6c451bd4e0152703a6efcfe1619955f3}{boot\-\_\-social\-\_\-messages} (void)
+\item 
+int \hyperlink{commands_8cpp_ac4e8bd4bb0604325f489463d0680a7c2}{social} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+void \hyperlink{commands_8cpp_ad58e7a3f24ce5f72a638c63876d1ae7d}{do\-\_\-commands} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{commands_8cpp_aa92d940911876349e5f9e03dd7c450b3}{do\-\_\-immcommands} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{commands_8cpp_a1777bce2e341d83e5b81930d1c1184e6}{last\-\_\-descriptor}
+\item 
+char \hyperlink{commands_8cpp_aa8b3218ebb75ff1e648fe99a8303c63d}{full\-\_\-last\-\_\-command} \mbox{[}\hyperlink{constants_8h_a6789ebc0df71a8ef76bfbb4fb5f74aad}{M\-A\-X\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-L\-E\-N\-G\-T\-H}\mbox{]}
+\item 
+char \hyperlink{commands_8cpp_a6d9f4254c5927f7a9d7aec9620554f37}{last\-\_\-command} \mbox{[}\hyperlink{constants_8h_a6789ebc0df71a8ef76bfbb4fb5f74aad}{M\-A\-X\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-L\-E\-N\-G\-T\-H}\mbox{]}
+\item 
+std\-::multimap$<$ int, \hyperlink{structroom__prog}{room\-\_\-prog} $>$ \hyperlink{commands_8cpp_a6b52b20d33b731a299259fb542ca737d}{mob\-\_\-prog\-\_\-list}
+\item 
+std\-::multimap$<$ int, \hyperlink{structroom__prog}{room\-\_\-prog} $>$ \hyperlink{commands_8cpp_aae764fe386f6d62720e9a5f6d31d59d3}{obj\-\_\-prog\-\_\-list}
+\item 
+const struct \hyperlink{structcommand__data}{command\-\_\-data} \hyperlink{commands_8cpp_a2527927b2ff541230f6f508de29a59b4}{commands} \mbox{[}$\,$\mbox{]}
+\item 
+char $\ast$ \hyperlink{commands_8cpp_aeaecf25641a927e1f4bc8c23366829d3}{fill} \mbox{[}$\,$\mbox{]}
+\item 
+\hyperlink{structs_8h_a56e4419cd90a8b32fb3c284c19321557}{S\-O\-C\-I\-A\-L\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{commands_8cpp_a1dd7ea670e537481a24eb46cb87d63da}{social\-\_\-messages} = N\-U\-L\-L
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{commands_8cpp_ad0701c25147627778841299536434cba}{\index{commands.\-cpp@{commands.\-cpp}!M\-A\-X\-\_\-\-S\-O\-C\-I\-A\-L\-S@{M\-A\-X\-\_\-\-S\-O\-C\-I\-A\-L\-S}}
+\index{M\-A\-X\-\_\-\-S\-O\-C\-I\-A\-L\-S@{M\-A\-X\-\_\-\-S\-O\-C\-I\-A\-L\-S}!commands.cpp@{commands.\-cpp}}
+\subsubsection[{M\-A\-X\-\_\-\-S\-O\-C\-I\-A\-L\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-X\-\_\-\-S\-O\-C\-I\-A\-L\-S~200}}\label{commands_8cpp_ad0701c25147627778841299536434cba}
+
+
+\subsection{Function Documentation}
+\hypertarget{commands_8cpp_a9f593a4b559559c9bbf4eaffd9d0bdec}{\index{commands.\-cpp@{commands.\-cpp}!argument\-\_\-interpreter@{argument\-\_\-interpreter}}
+\index{argument\-\_\-interpreter@{argument\-\_\-interpreter}!commands.cpp@{commands.\-cpp}}
+\subsubsection[{argument\-\_\-interpreter}]{\setlength{\rightskip}{0pt plus 5cm}void argument\-\_\-interpreter (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{argument, }
+\item[{char $\ast$}]{first\-\_\-arg, }
+\item[{char $\ast$}]{second\-\_\-arg}
+\end{DoxyParamCaption}
+)}}\label{commands_8cpp_a9f593a4b559559c9bbf4eaffd9d0bdec}
+\hypertarget{commands_8cpp_a6c451bd4e0152703a6efcfe1619955f3}{\index{commands.\-cpp@{commands.\-cpp}!boot\-\_\-social\-\_\-messages@{boot\-\_\-social\-\_\-messages}}
+\index{boot\-\_\-social\-\_\-messages@{boot\-\_\-social\-\_\-messages}!commands.cpp@{commands.\-cpp}}
+\subsubsection[{boot\-\_\-social\-\_\-messages}]{\setlength{\rightskip}{0pt plus 5cm}void boot\-\_\-social\-\_\-messages (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{commands_8cpp_a6c451bd4e0152703a6efcfe1619955f3}
+\hypertarget{commands_8cpp_a8ab259797a54173b33a35638af6f570c}{\index{commands.\-cpp@{commands.\-cpp}!command\-\_\-interpreter@{command\-\_\-interpreter}}
+\index{command\-\_\-interpreter@{command\-\_\-interpreter}!commands.cpp@{commands.\-cpp}}
+\subsubsection[{command\-\_\-interpreter}]{\setlength{\rightskip}{0pt plus 5cm}void command\-\_\-interpreter (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{commands_8cpp_a8ab259797a54173b33a35638af6f570c}
+\hypertarget{commands_8cpp_ad58e7a3f24ce5f72a638c63876d1ae7d}{\index{commands.\-cpp@{commands.\-cpp}!do\-\_\-commands@{do\-\_\-commands}}
+\index{do\-\_\-commands@{do\-\_\-commands}!commands.cpp@{commands.\-cpp}}
+\subsubsection[{do\-\_\-commands}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-commands (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{commands_8cpp_ad58e7a3f24ce5f72a638c63876d1ae7d}
+\hypertarget{commands_8cpp_aa92d940911876349e5f9e03dd7c450b3}{\index{commands.\-cpp@{commands.\-cpp}!do\-\_\-immcommands@{do\-\_\-immcommands}}
+\index{do\-\_\-immcommands@{do\-\_\-immcommands}!commands.cpp@{commands.\-cpp}}
+\subsubsection[{do\-\_\-immcommands}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-immcommands (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{commands_8cpp_aa92d940911876349e5f9e03dd7c450b3}
+\hypertarget{commands_8cpp_acd23424ba748f93bf926d4c096ca8cb4}{\index{commands.\-cpp@{commands.\-cpp}!fill\-\_\-word@{fill\-\_\-word}}
+\index{fill\-\_\-word@{fill\-\_\-word}!commands.cpp@{commands.\-cpp}}
+\subsubsection[{fill\-\_\-word}]{\setlength{\rightskip}{0pt plus 5cm}int fill\-\_\-word (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{commands_8cpp_acd23424ba748f93bf926d4c096ca8cb4}
+\hypertarget{commands_8cpp_a56a228c88046e66f41c7f9f128f99753}{\index{commands.\-cpp@{commands.\-cpp}!fread\-\_\-action@{fread\-\_\-action}}
+\index{fread\-\_\-action@{fread\-\_\-action}!commands.cpp@{commands.\-cpp}}
+\subsubsection[{fread\-\_\-action}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ fread\-\_\-action (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{fl}
+\end{DoxyParamCaption}
+)}}\label{commands_8cpp_a56a228c88046e66f41c7f9f128f99753}
+\hypertarget{commands_8cpp_a6250fa173cd34782536f92a9cd316055}{\index{commands.\-cpp@{commands.\-cpp}!half\-\_\-chop@{half\-\_\-chop}}
+\index{half\-\_\-chop@{half\-\_\-chop}!commands.cpp@{commands.\-cpp}}
+\subsubsection[{half\-\_\-chop}]{\setlength{\rightskip}{0pt plus 5cm}void half\-\_\-chop (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{string, }
+\item[{char $\ast$}]{arg1, }
+\item[{char $\ast$}]{arg2}
+\end{DoxyParamCaption}
+)}}\label{commands_8cpp_a6250fa173cd34782536f92a9cd316055}
+\hypertarget{commands_8cpp_a37f9765602de635473dfb728da901e4f}{\index{commands.\-cpp@{commands.\-cpp}!is\-\_\-abbrev@{is\-\_\-abbrev}}
+\index{is\-\_\-abbrev@{is\-\_\-abbrev}!commands.cpp@{commands.\-cpp}}
+\subsubsection[{is\-\_\-abbrev}]{\setlength{\rightskip}{0pt plus 5cm}int is\-\_\-abbrev (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{arg1, }
+\item[{const char $\ast$}]{arg2}
+\end{DoxyParamCaption}
+)}}\label{commands_8cpp_a37f9765602de635473dfb728da901e4f}
+\hypertarget{commands_8cpp_a538da2cfd4e56fa507d357352b86a06a}{\index{commands.\-cpp@{commands.\-cpp}!is\-\_\-abbrevc@{is\-\_\-abbrevc}}
+\index{is\-\_\-abbrevc@{is\-\_\-abbrevc}!commands.cpp@{commands.\-cpp}}
+\subsubsection[{is\-\_\-abbrevc}]{\setlength{\rightskip}{0pt plus 5cm}int is\-\_\-abbrevc (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{arg1, }
+\item[{const char $\ast$}]{arg2}
+\end{DoxyParamCaption}
+)}}\label{commands_8cpp_a538da2cfd4e56fa507d357352b86a06a}
+\hypertarget{commands_8cpp_afe2b6131dfbb554852754a77d20043ee}{\index{commands.\-cpp@{commands.\-cpp}!is\-\_\-number@{is\-\_\-number}}
+\index{is\-\_\-number@{is\-\_\-number}!commands.cpp@{commands.\-cpp}}
+\subsubsection[{is\-\_\-number}]{\setlength{\rightskip}{0pt plus 5cm}int is\-\_\-number (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{str}
+\end{DoxyParamCaption}
+)}}\label{commands_8cpp_afe2b6131dfbb554852754a77d20043ee}
+\hypertarget{commands_8cpp_a671b4ac7679e6fc1e72087795a431e71}{\index{commands.\-cpp@{commands.\-cpp}!is\-\_\-number2@{is\-\_\-number2}}
+\index{is\-\_\-number2@{is\-\_\-number2}!commands.cpp@{commands.\-cpp}}
+\subsubsection[{is\-\_\-number2}]{\setlength{\rightskip}{0pt plus 5cm}int is\-\_\-number2 (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{str, }
+\item[{int}]{def}
+\end{DoxyParamCaption}
+)}}\label{commands_8cpp_a671b4ac7679e6fc1e72087795a431e71}
+\hypertarget{commands_8cpp_a46ad3344ee3d80b30f27bb39595ceeff}{\index{commands.\-cpp@{commands.\-cpp}!search\-\_\-block@{search\-\_\-block}}
+\index{search\-\_\-block@{search\-\_\-block}!commands.cpp@{commands.\-cpp}}
+\subsubsection[{search\-\_\-block}]{\setlength{\rightskip}{0pt plus 5cm}int search\-\_\-block (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{arg, }
+\item[{char $\ast$$\ast$}]{list, }
+\item[{{\bf bool}}]{exact}
+\end{DoxyParamCaption}
+)}}\label{commands_8cpp_a46ad3344ee3d80b30f27bb39595ceeff}
+\hypertarget{commands_8cpp_a282a318e7fc8c9f5afc14d7ddbc0b893}{\index{commands.\-cpp@{commands.\-cpp}!show\-\_\-to\-\_\-watchers@{show\-\_\-to\-\_\-watchers}}
+\index{show\-\_\-to\-\_\-watchers@{show\-\_\-to\-\_\-watchers}!commands.cpp@{commands.\-cpp}}
+\subsubsection[{show\-\_\-to\-\_\-watchers}]{\setlength{\rightskip}{0pt plus 5cm}void show\-\_\-to\-\_\-watchers (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{command}
+\end{DoxyParamCaption}
+)}}\label{commands_8cpp_a282a318e7fc8c9f5afc14d7ddbc0b893}
+\hypertarget{commands_8cpp_ac4e8bd4bb0604325f489463d0680a7c2}{\index{commands.\-cpp@{commands.\-cpp}!social@{social}}
+\index{social@{social}!commands.cpp@{commands.\-cpp}}
+\subsubsection[{social}]{\setlength{\rightskip}{0pt plus 5cm}int social (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{commands_8cpp_ac4e8bd4bb0604325f489463d0680a7c2}
+
+
+\subsection{Variable Documentation}
+\hypertarget{commands_8cpp_a2527927b2ff541230f6f508de29a59b4}{\index{commands.\-cpp@{commands.\-cpp}!commands@{commands}}
+\index{commands@{commands}!commands.cpp@{commands.\-cpp}}
+\subsubsection[{commands}]{\setlength{\rightskip}{0pt plus 5cm}const struct {\bf command\-\_\-data} commands\mbox{[}$\,$\mbox{]}}}\label{commands_8cpp_a2527927b2ff541230f6f508de29a59b4}
+\hypertarget{commands_8cpp_aeaecf25641a927e1f4bc8c23366829d3}{\index{commands.\-cpp@{commands.\-cpp}!fill@{fill}}
+\index{fill@{fill}!commands.cpp@{commands.\-cpp}}
+\subsubsection[{fill}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ fill\mbox{[}$\,$\mbox{]}}}\label{commands_8cpp_aeaecf25641a927e1f4bc8c23366829d3}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \{\textcolor{stringliteral}{"in"},
+    \textcolor{stringliteral}{"from"},
+    \textcolor{stringliteral}{"with"},
+    \textcolor{stringliteral}{"the"},
+    \textcolor{stringliteral}{"on"},
+    \textcolor{stringliteral}{"at"},
+    \textcolor{stringliteral}{"to"},
+    \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}
+\hypertarget{commands_8cpp_aa8b3218ebb75ff1e648fe99a8303c63d}{\index{commands.\-cpp@{commands.\-cpp}!full\-\_\-last\-\_\-command@{full\-\_\-last\-\_\-command}}
+\index{full\-\_\-last\-\_\-command@{full\-\_\-last\-\_\-command}!commands.cpp@{commands.\-cpp}}
+\subsubsection[{full\-\_\-last\-\_\-command}]{\setlength{\rightskip}{0pt plus 5cm}char full\-\_\-last\-\_\-command\mbox{[}{\bf M\-A\-X\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-L\-E\-N\-G\-T\-H}\mbox{]}}}\label{commands_8cpp_aa8b3218ebb75ff1e648fe99a8303c63d}
+\hypertarget{commands_8cpp_a6d9f4254c5927f7a9d7aec9620554f37}{\index{commands.\-cpp@{commands.\-cpp}!last\-\_\-command@{last\-\_\-command}}
+\index{last\-\_\-command@{last\-\_\-command}!commands.cpp@{commands.\-cpp}}
+\subsubsection[{last\-\_\-command}]{\setlength{\rightskip}{0pt plus 5cm}char last\-\_\-command\mbox{[}{\bf M\-A\-X\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-L\-E\-N\-G\-T\-H}\mbox{]}}}\label{commands_8cpp_a6d9f4254c5927f7a9d7aec9620554f37}
+\hypertarget{commands_8cpp_a1777bce2e341d83e5b81930d1c1184e6}{\index{commands.\-cpp@{commands.\-cpp}!last\-\_\-descriptor@{last\-\_\-descriptor}}
+\index{last\-\_\-descriptor@{last\-\_\-descriptor}!commands.cpp@{commands.\-cpp}}
+\subsubsection[{last\-\_\-descriptor}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A}$\ast$ last\-\_\-descriptor}}\label{commands_8cpp_a1777bce2e341d83e5b81930d1c1184e6}
+\hypertarget{commands_8cpp_a6b52b20d33b731a299259fb542ca737d}{\index{commands.\-cpp@{commands.\-cpp}!mob\-\_\-prog\-\_\-list@{mob\-\_\-prog\-\_\-list}}
+\index{mob\-\_\-prog\-\_\-list@{mob\-\_\-prog\-\_\-list}!commands.cpp@{commands.\-cpp}}
+\subsubsection[{mob\-\_\-prog\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}std\-::multimap$<$int, {\bf room\-\_\-prog}$>$ mob\-\_\-prog\-\_\-list}}\label{commands_8cpp_a6b52b20d33b731a299259fb542ca737d}
+\hypertarget{commands_8cpp_aae764fe386f6d62720e9a5f6d31d59d3}{\index{commands.\-cpp@{commands.\-cpp}!obj\-\_\-prog\-\_\-list@{obj\-\_\-prog\-\_\-list}}
+\index{obj\-\_\-prog\-\_\-list@{obj\-\_\-prog\-\_\-list}!commands.cpp@{commands.\-cpp}}
+\subsubsection[{obj\-\_\-prog\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}std\-::multimap$<$int, {\bf room\-\_\-prog}$>$ obj\-\_\-prog\-\_\-list}}\label{commands_8cpp_aae764fe386f6d62720e9a5f6d31d59d3}
+\hypertarget{commands_8cpp_a1dd7ea670e537481a24eb46cb87d63da}{\index{commands.\-cpp@{commands.\-cpp}!social\-\_\-messages@{social\-\_\-messages}}
+\index{social\-\_\-messages@{social\-\_\-messages}!commands.cpp@{commands.\-cpp}}
+\subsubsection[{social\-\_\-messages}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\-O\-C\-I\-A\-L\-\_\-\-D\-A\-T\-A}$\ast$ social\-\_\-messages = N\-U\-L\-L}}\label{commands_8cpp_a1dd7ea670e537481a24eb46cb87d63da}

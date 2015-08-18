@@ -1,0 +1,216 @@
+\hypertarget{weather_8cpp}{\section{weather.\-cpp File Reference}
+\label{weather_8cpp}\index{weather.\-cpp@{weather.\-cpp}}
+}
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}structs.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}protos.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utility.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{weather_8cpp_a54acd55c3c4707d1f4bcf677f8ccd5ee}{initialize\-\_\-weather\-\_\-zones} (void)
+\item 
+void \hyperlink{weather_8cpp_ae355c90ab3e6ca0a1b6549c795d0c2ec}{weather} (int moon\-\_\-setting, int moon\-\_\-rise, int moon\-\_\-set)
+\item 
+int \hyperlink{weather_8cpp_a89b1fdc34c29bc50b397019f5e32f7af}{is\-\_\-leap\-\_\-year} (int year)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classWeather}{Weather} \hyperlink{weather_8cpp_ab509742d02ac9075ae0c79b3a313d8e8}{weather\-\_\-info} \mbox{[}100\mbox{]}
+\item 
+int \hyperlink{weather_8cpp_a5c682b79381f417d6b5e41a7de9d5cdd}{global\-\_\-moon\-\_\-light} = 0
+\item 
+int \hyperlink{weather_8cpp_a5f3959be20e11aa24a90919720637914}{moon\-\_\-light} \mbox{[}100\mbox{]}
+\item 
+int \hyperlink{weather_8cpp_ade9164bf372e98886f50543643933cc7}{sun\-\_\-light} = 1
+\item 
+int \hyperlink{weather_8cpp_a0b8329d0bd9de3051c53ee20e36bfe7e}{desc\-\_\-weather} \mbox{[}100\mbox{]}
+\item 
+\hyperlink{structs_8h_a0a9304fc5764d8448c93fdffdd64e1d2}{A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$ \hyperlink{weather_8cpp_aaa8d29864dad6a29fd4b4ac2077d6147}{world\-\_\-affects} = N\-U\-L\-L
+\item 
+const int \hyperlink{weather_8cpp_adbdce0ea7e0a680b6a8220ef3afe0061}{sunrise} \mbox{[}$\,$\mbox{]} = \{ 7, 6, 6, 6, 6, 5, 4, 4, 5, 5, 6, 6 \}
+\item 
+const int \hyperlink{weather_8cpp_a049cfccb986808f6f0093e04e69dd4d8}{sunset} \mbox{[}$\,$\mbox{]} = \{ 18, 18, 19, 19, 20, 21, 22, 22, 21, 20, 19, 18 \}
+\item 
+const char $\ast$ \hyperlink{weather_8cpp_a33ef0fdb57dee255c7abc4043a6c045b}{earth\-\_\-phase} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{weather_8cpp_af8a0b3c42e0b86c79302a50c8349e8cb}{abrev\-\_\-earth\-\_\-phase} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{weather_8cpp_aedffd37c86ff3d9ada07077d9af3d4b3}{sun\-\_\-phase} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{weather_8cpp_a57b44ff3c717bd8c2ef322d7383726ab}{temp\-\_\-phrase} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{weather_8cpp_af120a23d6bdcb43c72df35bba7ca9e6e}{wind\-\_\-temp\-\_\-phrase} \mbox{[}$\,$\mbox{]}
+\item 
+const int \hyperlink{weather_8cpp_a1ceede1e4600679384567c31ffd2102e}{seasonal\-\_\-temp} \mbox{[}7\mbox{]}\mbox{[}12\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{weather_8cpp_a54acd55c3c4707d1f4bcf677f8ccd5ee}{\index{weather.\-cpp@{weather.\-cpp}!initialize\-\_\-weather\-\_\-zones@{initialize\-\_\-weather\-\_\-zones}}
+\index{initialize\-\_\-weather\-\_\-zones@{initialize\-\_\-weather\-\_\-zones}!weather.cpp@{weather.\-cpp}}
+\subsubsection[{initialize\-\_\-weather\-\_\-zones}]{\setlength{\rightskip}{0pt plus 5cm}void initialize\-\_\-weather\-\_\-zones (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{weather_8cpp_a54acd55c3c4707d1f4bcf677f8ccd5ee}
+\hypertarget{weather_8cpp_a89b1fdc34c29bc50b397019f5e32f7af}{\index{weather.\-cpp@{weather.\-cpp}!is\-\_\-leap\-\_\-year@{is\-\_\-leap\-\_\-year}}
+\index{is\-\_\-leap\-\_\-year@{is\-\_\-leap\-\_\-year}!weather.cpp@{weather.\-cpp}}
+\subsubsection[{is\-\_\-leap\-\_\-year}]{\setlength{\rightskip}{0pt plus 5cm}int is\-\_\-leap\-\_\-year (
+\begin{DoxyParamCaption}
+\item[{int}]{year}
+\end{DoxyParamCaption}
+)}}\label{weather_8cpp_a89b1fdc34c29bc50b397019f5e32f7af}
+\hypertarget{weather_8cpp_ae355c90ab3e6ca0a1b6549c795d0c2ec}{\index{weather.\-cpp@{weather.\-cpp}!weather@{weather}}
+\index{weather@{weather}!weather.cpp@{weather.\-cpp}}
+\subsubsection[{weather}]{\setlength{\rightskip}{0pt plus 5cm}void weather (
+\begin{DoxyParamCaption}
+\item[{int}]{moon\-\_\-setting, }
+\item[{int}]{moon\-\_\-rise, }
+\item[{int}]{moon\-\_\-set}
+\end{DoxyParamCaption}
+)}}\label{weather_8cpp_ae355c90ab3e6ca0a1b6549c795d0c2ec}
+
+
+\subsection{Variable Documentation}
+\hypertarget{weather_8cpp_af8a0b3c42e0b86c79302a50c8349e8cb}{\index{weather.\-cpp@{weather.\-cpp}!abrev\-\_\-earth\-\_\-phase@{abrev\-\_\-earth\-\_\-phase}}
+\index{abrev\-\_\-earth\-\_\-phase@{abrev\-\_\-earth\-\_\-phase}!weather.cpp@{weather.\-cpp}}
+\subsubsection[{abrev\-\_\-earth\-\_\-phase}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ abrev\-\_\-earth\-\_\-phase\mbox{[}$\,$\mbox{]}}}\label{weather_8cpp_af8a0b3c42e0b86c79302a50c8349e8cb}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"FEa"},
+    \textcolor{stringliteral}{"GWn"},
+    \textcolor{stringliteral}{"TQu"},
+    \textcolor{stringliteral}{"CWn"},
+    \textcolor{stringliteral}{"NEa"},
+    \textcolor{stringliteral}{"CWx"},
+    \textcolor{stringliteral}{"FQu"},
+    \textcolor{stringliteral}{"GWx"},
+    \textcolor{stringliteral}{""},
+\}
+\end{DoxyCode}
+\hypertarget{weather_8cpp_a0b8329d0bd9de3051c53ee20e36bfe7e}{\index{weather.\-cpp@{weather.\-cpp}!desc\-\_\-weather@{desc\-\_\-weather}}
+\index{desc\-\_\-weather@{desc\-\_\-weather}!weather.cpp@{weather.\-cpp}}
+\subsubsection[{desc\-\_\-weather}]{\setlength{\rightskip}{0pt plus 5cm}int desc\-\_\-weather\mbox{[}100\mbox{]}}}\label{weather_8cpp_a0b8329d0bd9de3051c53ee20e36bfe7e}
+\hypertarget{weather_8cpp_a33ef0fdb57dee255c7abc4043a6c045b}{\index{weather.\-cpp@{weather.\-cpp}!earth\-\_\-phase@{earth\-\_\-phase}}
+\index{earth\-\_\-phase@{earth\-\_\-phase}!weather.cpp@{weather.\-cpp}}
+\subsubsection[{earth\-\_\-phase}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf earth\-\_\-phase}\mbox{[}$\,$\mbox{]}}}\label{weather_8cpp_a33ef0fdb57dee255c7abc4043a6c045b}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"Full Earth"},
+    \textcolor{stringliteral}{"Gibbous Waning"},
+    \textcolor{stringliteral}{"Three Quarter"},
+    \textcolor{stringliteral}{"Crescent Waning"},
+    \textcolor{stringliteral}{"New Earth"},
+    \textcolor{stringliteral}{"Crescent Waxing"},
+    \textcolor{stringliteral}{"First Quarter"},
+    \textcolor{stringliteral}{"Gibbous Waxing"}
+\}
+\end{DoxyCode}
+\hypertarget{weather_8cpp_a5c682b79381f417d6b5e41a7de9d5cdd}{\index{weather.\-cpp@{weather.\-cpp}!global\-\_\-moon\-\_\-light@{global\-\_\-moon\-\_\-light}}
+\index{global\-\_\-moon\-\_\-light@{global\-\_\-moon\-\_\-light}!weather.cpp@{weather.\-cpp}}
+\subsubsection[{global\-\_\-moon\-\_\-light}]{\setlength{\rightskip}{0pt plus 5cm}int global\-\_\-moon\-\_\-light = 0}}\label{weather_8cpp_a5c682b79381f417d6b5e41a7de9d5cdd}
+\hypertarget{weather_8cpp_a5f3959be20e11aa24a90919720637914}{\index{weather.\-cpp@{weather.\-cpp}!moon\-\_\-light@{moon\-\_\-light}}
+\index{moon\-\_\-light@{moon\-\_\-light}!weather.cpp@{weather.\-cpp}}
+\subsubsection[{moon\-\_\-light}]{\setlength{\rightskip}{0pt plus 5cm}int moon\-\_\-light\mbox{[}100\mbox{]}}}\label{weather_8cpp_a5f3959be20e11aa24a90919720637914}
+\hypertarget{weather_8cpp_a1ceede1e4600679384567c31ffd2102e}{\index{weather.\-cpp@{weather.\-cpp}!seasonal\-\_\-temp@{seasonal\-\_\-temp}}
+\index{seasonal\-\_\-temp@{seasonal\-\_\-temp}!weather.cpp@{weather.\-cpp}}
+\subsubsection[{seasonal\-\_\-temp}]{\setlength{\rightskip}{0pt plus 5cm}const int seasonal\-\_\-temp\mbox{[}7\mbox{]}\mbox{[}12\mbox{]}}}\label{weather_8cpp_a1ceede1e4600679384567c31ffd2102e}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \{
+    \{40, 47, 55, 63, 71, 79, 85, 79, 71, 63, 55, 47\},   
+
+    \{22, 29, 37, 45, 53, 61, 67, 61, 53, 45, 37, 29\},   
+    \{15, 22, 28, 38, 46, 50, 55, 50, 46, 38, 28, 22\},   
+    \{7, 14, 18, 22, 25, 27, 30, 27, 25, 22, 18, 14\},    
+
+    \{55, 57, 60, 65, 73, 81, 89, 81, 73, 65, 60, 53\},   
+    \{60, 62, 65, 70, 78, 86, 94, 86, 78, 70, 65, 58\},   
+    \{75, 77, 80, 85, 93, 101, 109, 101, 93, 85, 80, 73\} 
+\}
+\end{DoxyCode}
+\hypertarget{weather_8cpp_ade9164bf372e98886f50543643933cc7}{\index{weather.\-cpp@{weather.\-cpp}!sun\-\_\-light@{sun\-\_\-light}}
+\index{sun\-\_\-light@{sun\-\_\-light}!weather.cpp@{weather.\-cpp}}
+\subsubsection[{sun\-\_\-light}]{\setlength{\rightskip}{0pt plus 5cm}int sun\-\_\-light = 1}}\label{weather_8cpp_ade9164bf372e98886f50543643933cc7}
+\hypertarget{weather_8cpp_aedffd37c86ff3d9ada07077d9af3d4b3}{\index{weather.\-cpp@{weather.\-cpp}!sun\-\_\-phase@{sun\-\_\-phase}}
+\index{sun\-\_\-phase@{sun\-\_\-phase}!weather.cpp@{weather.\-cpp}}
+\subsubsection[{sun\-\_\-phase}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf sun\-\_\-phase}\mbox{[}$\,$\mbox{]}}}\label{weather_8cpp_aedffd37c86ff3d9ada07077d9af3d4b3}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"night time"},
+    \textcolor{stringliteral}{"before dawn"},
+    \textcolor{stringliteral}{"dawn"},
+    \textcolor{stringliteral}{"day time"},
+    \textcolor{stringliteral}{"high sun"},
+    \textcolor{stringliteral}{"dusk"},
+    \textcolor{stringliteral}{"evening"}
+\}
+\end{DoxyCode}
+\hypertarget{weather_8cpp_adbdce0ea7e0a680b6a8220ef3afe0061}{\index{weather.\-cpp@{weather.\-cpp}!sunrise@{sunrise}}
+\index{sunrise@{sunrise}!weather.cpp@{weather.\-cpp}}
+\subsubsection[{sunrise}]{\setlength{\rightskip}{0pt plus 5cm}const int sunrise\mbox{[}$\,$\mbox{]} = \{ 7, 6, 6, 6, 6, 5, 4, 4, 5, 5, 6, 6 \}}}\label{weather_8cpp_adbdce0ea7e0a680b6a8220ef3afe0061}
+\hypertarget{weather_8cpp_a049cfccb986808f6f0093e04e69dd4d8}{\index{weather.\-cpp@{weather.\-cpp}!sunset@{sunset}}
+\index{sunset@{sunset}!weather.cpp@{weather.\-cpp}}
+\subsubsection[{sunset}]{\setlength{\rightskip}{0pt plus 5cm}const int sunset\mbox{[}$\,$\mbox{]} = \{ 18, 18, 19, 19, 20, 21, 22, 22, 21, 20, 19, 18 \}}}\label{weather_8cpp_a049cfccb986808f6f0093e04e69dd4d8}
+\hypertarget{weather_8cpp_a57b44ff3c717bd8c2ef322d7383726ab}{\index{weather.\-cpp@{weather.\-cpp}!temp\-\_\-phrase@{temp\-\_\-phrase}}
+\index{temp\-\_\-phrase@{temp\-\_\-phrase}!weather.cpp@{weather.\-cpp}}
+\subsubsection[{temp\-\_\-phrase}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ temp\-\_\-phrase\mbox{[}$\,$\mbox{]}}}\label{weather_8cpp_a57b44ff3c717bd8c2ef322d7383726ab}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"cool"},
+    \textcolor{stringliteral}{"dangerously searing"},
+    \textcolor{stringliteral}{"painfully blazing"},
+    \textcolor{stringliteral}{"blistering"},
+    \textcolor{stringliteral}{"sweltering"},
+    \textcolor{stringliteral}{"hot"},
+    \textcolor{stringliteral}{"temperate"},
+    \textcolor{stringliteral}{"cool"},
+    \textcolor{stringliteral}{"chill"},
+    \textcolor{stringliteral}{"cold"},
+    \textcolor{stringliteral}{"very cold"},
+    \textcolor{stringliteral}{"frigid"},
+    \textcolor{stringliteral}{"freezing"},
+    \textcolor{stringliteral}{"numbingly frigid"},
+    \textcolor{stringliteral}{"painfully freezing"},
+    \textcolor{stringliteral}{"dangerously freezing"}
+\}
+\end{DoxyCode}
+\hypertarget{weather_8cpp_ab509742d02ac9075ae0c79b3a313d8e8}{\index{weather.\-cpp@{weather.\-cpp}!weather\-\_\-info@{weather\-\_\-info}}
+\index{weather\-\_\-info@{weather\-\_\-info}!weather.cpp@{weather.\-cpp}}
+\subsubsection[{weather\-\_\-info}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Weather} weather\-\_\-info\mbox{[}100\mbox{]}}}\label{weather_8cpp_ab509742d02ac9075ae0c79b3a313d8e8}
+\hypertarget{weather_8cpp_af120a23d6bdcb43c72df35bba7ca9e6e}{\index{weather.\-cpp@{weather.\-cpp}!wind\-\_\-temp\-\_\-phrase@{wind\-\_\-temp\-\_\-phrase}}
+\index{wind\-\_\-temp\-\_\-phrase@{wind\-\_\-temp\-\_\-phrase}!weather.cpp@{weather.\-cpp}}
+\subsubsection[{wind\-\_\-temp\-\_\-phrase}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ wind\-\_\-temp\-\_\-phrase\mbox{[}$\,$\mbox{]}}}\label{weather_8cpp_af120a23d6bdcb43c72df35bba7ca9e6e}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"cool"},
+    \textcolor{stringliteral}{"searing"},
+    \textcolor{stringliteral}{"scorching"},
+    \textcolor{stringliteral}{"sweltering"},
+    \textcolor{stringliteral}{"hot"},
+    \textcolor{stringliteral}{"warm"},
+    \textcolor{stringliteral}{"cool"},
+    \textcolor{stringliteral}{"chill"},
+    \textcolor{stringliteral}{"cold"},
+    \textcolor{stringliteral}{"frigid"},
+    \textcolor{stringliteral}{"freezing"},
+    \textcolor{stringliteral}{"artic"}
+\}
+\end{DoxyCode}
+\hypertarget{weather_8cpp_aaa8d29864dad6a29fd4b4ac2077d6147}{\index{weather.\-cpp@{weather.\-cpp}!world\-\_\-affects@{world\-\_\-affects}}
+\index{world\-\_\-affects@{world\-\_\-affects}!weather.cpp@{weather.\-cpp}}
+\subsubsection[{world\-\_\-affects}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E}$\ast$ world\-\_\-affects = N\-U\-L\-L}}\label{weather_8cpp_aaa8d29864dad6a29fd4b4ac2077d6147}

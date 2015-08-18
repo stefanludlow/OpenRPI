@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['load_5fconfig_5ffile',['load_config_file',['../classrpie_1_1server.html#a777008330eb6140447cc7f83aac3173d',1,'rpie::server']]],
-  ['load_5fconfig_5ffiles',['load_config_files',['../classrpie_1_1server.html#a6bed490717d2450853502414d32bb6a9',1,'rpie::server']]]
+  ['_5fdo_5fload',['_do_load',['../staff_8cpp.html#a4c68d629682d921256abca8de16b06d5',1,'staff.cpp']]],
+  ['_5ffilbuf',['_filbuf',['../protos_8h.html#a519f0bae1fe0d00851f9ade5be57f998',1,'protos.h']]],
+  ['_5fparse_5fname',['_parse_name',['../protos_8h.html#ab3a63a4f68ca3c835465665ea1aa1293',1,'protos.h']]]
 ];

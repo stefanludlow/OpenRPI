@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -89,108 +89,443 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">room_data Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="room_8h_source.html">room.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a1da0540f0aa7691a1f0083cfa2c5503e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1da0540f0aa7691a1f0083cfa2c5503e"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>vnum</b></td></tr>
+<tr class="memitem:a1da0540f0aa7691a1f0083cfa2c5503e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structroom__data.html#a1da0540f0aa7691a1f0083cfa2c5503e">vnum</a></td></tr>
 <tr class="separator:a1da0540f0aa7691a1f0083cfa2c5503e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a383dffb948db697aa64c2dbcfe3872a9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a383dffb948db697aa64c2dbcfe3872a9"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>zone</b></td></tr>
+<tr class="memitem:a383dffb948db697aa64c2dbcfe3872a9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structroom__data.html#a383dffb948db697aa64c2dbcfe3872a9">zone</a></td></tr>
 <tr class="separator:a383dffb948db697aa64c2dbcfe3872a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adcba259049bfe3580ddba8f5ec8f14aa"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adcba259049bfe3580ddba8f5ec8f14aa"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>sector_type</b></td></tr>
+<tr class="memitem:adcba259049bfe3580ddba8f5ec8f14aa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structroom__data.html#adcba259049bfe3580ddba8f5ec8f14aa">sector_type</a></td></tr>
 <tr class="separator:adcba259049bfe3580ddba8f5ec8f14aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84dd99267244c69b0008fd5288ba36a4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a84dd99267244c69b0008fd5288ba36a4"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>deity</b></td></tr>
+<tr class="memitem:a84dd99267244c69b0008fd5288ba36a4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structroom__data.html#a84dd99267244c69b0008fd5288ba36a4">deity</a></td></tr>
 <tr class="separator:a84dd99267244c69b0008fd5288ba36a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a648c8cb52e1ec2627819c9693f1bb841"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a648c8cb52e1ec2627819c9693f1bb841"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>light</b></td></tr>
+<tr class="memitem:a648c8cb52e1ec2627819c9693f1bb841"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structroom__data.html#a648c8cb52e1ec2627819c9693f1bb841">light</a></td></tr>
 <tr class="separator:a648c8cb52e1ec2627819c9693f1bb841"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aecb36bedf2a3d19b76182ae6f53ed707"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aecb36bedf2a3d19b76182ae6f53ed707"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>search_sequence</b></td></tr>
+<tr class="memitem:aecb36bedf2a3d19b76182ae6f53ed707"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structroom__data.html#aecb36bedf2a3d19b76182ae6f53ed707">search_sequence</a></td></tr>
 <tr class="separator:aecb36bedf2a3d19b76182ae6f53ed707"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e34bceb6379469470f8d136b6b9fd2e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6e34bceb6379469470f8d136b6b9fd2e"></a>
-char *&#160;</td><td class="memItemRight" valign="bottom"><b>name</b></td></tr>
+<tr class="memitem:a6e34bceb6379469470f8d136b6b9fd2e"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structroom__data.html#a6e34bceb6379469470f8d136b6b9fd2e">name</a></td></tr>
 <tr class="separator:a6e34bceb6379469470f8d136b6b9fd2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e3a9b1bac21549b5f2e8dad993a39db"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6e3a9b1bac21549b5f2e8dad993a39db"></a>
-char *&#160;</td><td class="memItemRight" valign="bottom"><b>description</b></td></tr>
+<tr class="memitem:a6e3a9b1bac21549b5f2e8dad993a39db"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structroom__data.html#a6e3a9b1bac21549b5f2e8dad993a39db">description</a></td></tr>
 <tr class="separator:a6e3a9b1bac21549b5f2e8dad993a39db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b1f9a94eb87c1aed90ae71c1230f505"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2b1f9a94eb87c1aed90ae71c1230f505"></a>
-<a class="el" href="structextra__descr__data.html">EXTRA_DESCR_DATA</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>ex_description</b></td></tr>
+<tr class="memitem:a2b1f9a94eb87c1aed90ae71c1230f505"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structs_8h.html#a23e61a3ec169d1e601ef3325a7daa744">EXTRA_DESCR_DATA</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structroom__data.html#a2b1f9a94eb87c1aed90ae71c1230f505">ex_description</a></td></tr>
 <tr class="separator:a2b1f9a94eb87c1aed90ae71c1230f505"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9dfc209119e69c508c5b6d77b1b106b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa9dfc209119e69c508c5b6d77b1b106b"></a>
-struct <a class="el" href="structwritten__descr__data.html">written_descr_data</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>wdesc</b></td></tr>
+<tr class="memitem:aa9dfc209119e69c508c5b6d77b1b106b"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structwritten__descr__data.html">written_descr_data</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structroom__data.html#aa9dfc209119e69c508c5b6d77b1b106b">wdesc</a></td></tr>
 <tr class="separator:aa9dfc209119e69c508c5b6d77b1b106b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7c6124bd14b4bb083c6ae973b21f31a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad7c6124bd14b4bb083c6ae973b21f31a"></a>
-struct <a class="el" href="structroom__direction__data.html">room_direction_data</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>dir_option</b> [LAST_DIR+1]</td></tr>
+<tr class="memitem:ad7c6124bd14b4bb083c6ae973b21f31a"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structroom__direction__data.html">room_direction_data</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structroom__data.html#ad7c6124bd14b4bb083c6ae973b21f31a">dir_option</a> [<a class="el" href="structs_8h.html#a058f44e8c189e50ab72f392b9ecf5cf0">LAST_DIR</a>+1]</td></tr>
 <tr class="separator:ad7c6124bd14b4bb083c6ae973b21f31a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a510a214502c552df4cd150fb29cd7494"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a510a214502c552df4cd150fb29cd7494"></a>
-struct <a class="el" href="structsecret.html">secret</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>secrets</b> [LAST_DIR+1]</td></tr>
+<tr class="memitem:a510a214502c552df4cd150fb29cd7494"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structsecret.html">secret</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structroom__data.html#a510a214502c552df4cd150fb29cd7494">secrets</a> [<a class="el" href="structs_8h.html#a058f44e8c189e50ab72f392b9ecf5cf0">LAST_DIR</a>+1]</td></tr>
 <tr class="separator:a510a214502c552df4cd150fb29cd7494"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84dbca4dc31fa5c684a622ae44729024"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a84dbca4dc31fa5c684a622ae44729024"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>room_flags</b></td></tr>
+<tr class="memitem:a84dbca4dc31fa5c684a622ae44729024"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structroom__data.html#a84dbca4dc31fa5c684a622ae44729024">room_flags</a></td></tr>
 <tr class="separator:a84dbca4dc31fa5c684a622ae44729024"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21ae8b8d9887eccbd976893a6fe78a02"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a21ae8b8d9887eccbd976893a6fe78a02"></a>
-<a class="el" href="structobj__data.html">OBJ_DATA</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>contents</b></td></tr>
+<tr class="memitem:a21ae8b8d9887eccbd976893a6fe78a02"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structs_8h.html#aaa59141dfc8c6ecdb6bfcf1537dd52d1">OBJ_DATA</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structroom__data.html#a21ae8b8d9887eccbd976893a6fe78a02">contents</a></td></tr>
 <tr class="separator:a21ae8b8d9887eccbd976893a6fe78a02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab90c1c312b2fb520ba8ee1d12167d044"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab90c1c312b2fb520ba8ee1d12167d044"></a>
-<a class="el" href="structchar__data.html">CHAR_DATA</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>people</b></td></tr>
+<tr class="memitem:ab90c1c312b2fb520ba8ee1d12167d044"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structs_8h.html#af33ed1e66e8541a08bed257124f50f31">CHAR_DATA</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structroom__data.html#ab90c1c312b2fb520ba8ee1d12167d044">people</a></td></tr>
 <tr class="separator:ab90c1c312b2fb520ba8ee1d12167d044"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab6e1a39fd56bee5e9330d88f8b3cee02"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab6e1a39fd56bee5e9330d88f8b3cee02"></a>
-struct <a class="el" href="structroom__prog.html">room_prog</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>prg</b></td></tr>
+<tr class="memitem:ab6e1a39fd56bee5e9330d88f8b3cee02"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structroom__prog.html">room_prog</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structroom__data.html#ab6e1a39fd56bee5e9330d88f8b3cee02">prg</a></td></tr>
 <tr class="separator:ab6e1a39fd56bee5e9330d88f8b3cee02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1d0742623d372dc510e1d1361059c17"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae1d0742623d372dc510e1d1361059c17"></a>
-<a class="el" href="structroom__data.html">ROOM_DATA</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>hnext</b></td></tr>
+<tr class="memitem:ae1d0742623d372dc510e1d1361059c17"><td class="memItemLeft" align="right" valign="top"><a class="el" href="room_8h.html#aede519ef65d80b5242a4a28b69d5e097">ROOM_DATA</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structroom__data.html#ae1d0742623d372dc510e1d1361059c17">hnext</a></td></tr>
 <tr class="separator:ae1d0742623d372dc510e1d1361059c17"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09023636d7d6e20591e52aa7284499e8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a09023636d7d6e20591e52aa7284499e8"></a>
-<a class="el" href="structroom__data.html">ROOM_DATA</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>lnext</b></td></tr>
+<tr class="memitem:a09023636d7d6e20591e52aa7284499e8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="room_8h.html#aede519ef65d80b5242a4a28b69d5e097">ROOM_DATA</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structroom__data.html#a09023636d7d6e20591e52aa7284499e8">lnext</a></td></tr>
 <tr class="separator:a09023636d7d6e20591e52aa7284499e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a852672f3a86650ef3195e48ac8b98277"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a852672f3a86650ef3195e48ac8b98277"></a>
-<a class="el" href="structaffected__type.html">AFFECTED_TYPE</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>affects</b></td></tr>
+<tr class="memitem:a852672f3a86650ef3195e48ac8b98277"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structs_8h.html#a0a9304fc5764d8448c93fdffdd64e1d2">AFFECTED_TYPE</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structroom__data.html#a852672f3a86650ef3195e48ac8b98277">affects</a></td></tr>
 <tr class="separator:a852672f3a86650ef3195e48ac8b98277"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca16d6adb7775145a0fb1a155d7921dc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aca16d6adb7775145a0fb1a155d7921dc"></a>
-<a class="el" href="structroom__extra__data.html">ROOM_EXTRA_DATA</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>extra</b></td></tr>
+<tr class="memitem:aca16d6adb7775145a0fb1a155d7921dc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structs_8h.html#af3953d8fde89034d622ecf2501c554f9">ROOM_EXTRA_DATA</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structroom__data.html#aca16d6adb7775145a0fb1a155d7921dc">extra</a></td></tr>
 <tr class="separator:aca16d6adb7775145a0fb1a155d7921dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3222bf61cd3cf881633df71fa78fffa7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3222bf61cd3cf881633df71fa78fffa7"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>psave_loaded</b></td></tr>
+<tr class="memitem:a3222bf61cd3cf881633df71fa78fffa7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structroom__data.html#a3222bf61cd3cf881633df71fa78fffa7">psave_loaded</a></td></tr>
 <tr class="separator:a3222bf61cd3cf881633df71fa78fffa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7712c20f923e067a93fa9c63ea79eb62"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7712c20f923e067a93fa9c63ea79eb62"></a>
-<a class="el" href="structtrack__data.html">TRACK_DATA</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>tracks</b></td></tr>
+<tr class="memitem:a7712c20f923e067a93fa9c63ea79eb62"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structs_8h.html#af9d52b956546cea804db50a106a26e61">TRACK_DATA</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structroom__data.html#a7712c20f923e067a93fa9c63ea79eb62">tracks</a></td></tr>
 <tr class="separator:a7712c20f923e067a93fa9c63ea79eb62"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1012bcc01b56574d4df5f88bb9392d3d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1012bcc01b56574d4df5f88bb9392d3d"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>entrance</b></td></tr>
+<tr class="memitem:a1012bcc01b56574d4df5f88bb9392d3d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structroom__data.html#a1012bcc01b56574d4df5f88bb9392d3d">entrance</a></td></tr>
 <tr class="separator:a1012bcc01b56574d4df5f88bb9392d3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2fe93bbee03c3867fdf6078fd11c5335"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2fe93bbee03c3867fdf6078fd11c5335"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structroom__data.html#a2fe93bbee03c3867fdf6078fd11c5335">occupants</a></td></tr>
-<tr class="memdesc:a2fe93bbee03c3867fdf6078fd11c5335"><td class="mdescLeft">&#160;</td><td class="mdescRight">used for carrying shouts into dwellings <br/></td></tr>
+<tr class="memitem:a2fe93bbee03c3867fdf6078fd11c5335"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structroom__data.html#a2fe93bbee03c3867fdf6078fd11c5335">occupants</a></td></tr>
+<tr class="memdesc:a2fe93bbee03c3867fdf6078fd11c5335"><td class="mdescLeft">&#160;</td><td class="mdescRight">used for carrying shouts into dwellings  <a href="#a2fe93bbee03c3867fdf6078fd11c5335">More...</a><br/></td></tr>
 <tr class="separator:a2fe93bbee03c3867fdf6078fd11c5335"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7fadfb270bbed7f410206382e36cbec8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7fadfb270bbed7f410206382e36cbec8"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>xerox</b></td></tr>
+<tr class="memitem:a7fadfb270bbed7f410206382e36cbec8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structroom__data.html#a7fadfb270bbed7f410206382e36cbec8">xerox</a></td></tr>
 <tr class="separator:a7fadfb270bbed7f410206382e36cbec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3e124ca1a2f90e3a5005a828eae3fc5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af3e124ca1a2f90e3a5005a828eae3fc5"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>capacity</b></td></tr>
+<tr class="memitem:af3e124ca1a2f90e3a5005a828eae3fc5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structroom__data.html#af3e124ca1a2f90e3a5005a828eae3fc5">capacity</a></td></tr>
 <tr class="separator:af3e124ca1a2f90e3a5005a828eae3fc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afbafe9a914efd5ecc9d2bb128828ba84"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afbafe9a914efd5ecc9d2bb128828ba84"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>enviro_type</b></td></tr>
+<tr class="memitem:afbafe9a914efd5ecc9d2bb128828ba84"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structroom__data.html#afbafe9a914efd5ecc9d2bb128828ba84">enviro_type</a></td></tr>
 <tr class="separator:afbafe9a914efd5ecc9d2bb128828ba84"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1332388c4d8e9b6e70d4694c0c6fd7be"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1332388c4d8e9b6e70d4694c0c6fd7be"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>enviro_power</b></td></tr>
+<tr class="memitem:a1332388c4d8e9b6e70d4694c0c6fd7be"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structroom__data.html#a1332388c4d8e9b6e70d4694c0c6fd7be">enviro_power</a></td></tr>
 <tr class="separator:a1332388c4d8e9b6e70d4694c0c6fd7be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a811c49ce5b3a76c01002b6137a2a95e8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a811c49ce5b3a76c01002b6137a2a95e8"></a>
-<a class="el" href="structscent__data.html">SCENT_DATA</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>scent</b></td></tr>
+<tr class="memitem:a811c49ce5b3a76c01002b6137a2a95e8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structs_8h.html#a65372345a26d15a29af1abf6cb29f785">SCENT_DATA</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structroom__data.html#a811c49ce5b3a76c01002b6137a2a95e8">scent</a></td></tr>
 <tr class="separator:a811c49ce5b3a76c01002b6137a2a95e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80cb0226783e1671bd5ba01f4d93ade9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a80cb0226783e1671bd5ba01f4d93ade9"></a>
-<a class="el" href="classNeighbourhood.html">Neighbourhood</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>hood</b></td></tr>
+<tr class="memitem:a80cb0226783e1671bd5ba01f4d93ade9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classNeighbourhood.html">Neighbourhood</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structroom__data.html#a80cb0226783e1671bd5ba01f4d93ade9">hood</a></td></tr>
 <tr class="separator:a80cb0226783e1671bd5ba01f4d93ade9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a852672f3a86650ef3195e48ac8b98277"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structs_8h.html#a0a9304fc5764d8448c93fdffdd64e1d2">AFFECTED_TYPE</a>* room_data::affects</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af3e124ca1a2f90e3a5005a828eae3fc5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int room_data::capacity</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a21ae8b8d9887eccbd976893a6fe78a02"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structs_8h.html#aaa59141dfc8c6ecdb6bfcf1537dd52d1">OBJ_DATA</a>* room_data::contents</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a84dd99267244c69b0008fd5288ba36a4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int room_data::deity</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6e3a9b1bac21549b5f2e8dad993a39db"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* room_data::description</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad7c6124bd14b4bb083c6ae973b21f31a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structroom__direction__data.html">room_direction_data</a>* room_data::dir_option[<a class="el" href="structs_8h.html#a058f44e8c189e50ab72f392b9ecf5cf0">LAST_DIR</a>+1]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1012bcc01b56574d4df5f88bb9392d3d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int room_data::entrance</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1332388c4d8e9b6e70d4694c0c6fd7be"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int room_data::enviro_power</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="afbafe9a914efd5ecc9d2bb128828ba84"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int room_data::enviro_type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2b1f9a94eb87c1aed90ae71c1230f505"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structs_8h.html#a23e61a3ec169d1e601ef3325a7daa744">EXTRA_DESCR_DATA</a>* room_data::ex_description</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aca16d6adb7775145a0fb1a155d7921dc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structs_8h.html#af3953d8fde89034d622ecf2501c554f9">ROOM_EXTRA_DATA</a>* room_data::extra</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae1d0742623d372dc510e1d1361059c17"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="room_8h.html#aede519ef65d80b5242a4a28b69d5e097">ROOM_DATA</a>* room_data::hnext</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a80cb0226783e1671bd5ba01f4d93ade9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classNeighbourhood.html">Neighbourhood</a>* room_data::hood</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a648c8cb52e1ec2627819c9693f1bb841"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int room_data::light</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a09023636d7d6e20591e52aa7284499e8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="room_8h.html#aede519ef65d80b5242a4a28b69d5e097">ROOM_DATA</a>* room_data::lnext</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6e34bceb6379469470f8d136b6b9fd2e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* room_data::name</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2fe93bbee03c3867fdf6078fd11c5335"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int room_data::occupants</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>used for carrying shouts into dwellings </p>
+
+</div>
+</div>
+<a class="anchor" id="ab90c1c312b2fb520ba8ee1d12167d044"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structs_8h.html#af33ed1e66e8541a08bed257124f50f31">CHAR_DATA</a>* room_data::people</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab6e1a39fd56bee5e9330d88f8b3cee02"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structroom__prog.html">room_prog</a>* room_data::prg</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3222bf61cd3cf881633df71fa78fffa7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a> room_data::psave_loaded</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a84dbca4dc31fa5c684a622ae44729024"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int room_data::room_flags</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a811c49ce5b3a76c01002b6137a2a95e8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structs_8h.html#a65372345a26d15a29af1abf6cb29f785">SCENT_DATA</a>* room_data::scent</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aecb36bedf2a3d19b76182ae6f53ed707"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int room_data::search_sequence</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a510a214502c552df4cd150fb29cd7494"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structsecret.html">secret</a>* room_data::secrets[<a class="el" href="structs_8h.html#a058f44e8c189e50ab72f392b9ecf5cf0">LAST_DIR</a>+1]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="adcba259049bfe3580ddba8f5ec8f14aa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int room_data::sector_type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7712c20f923e067a93fa9c63ea79eb62"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structs_8h.html#af9d52b956546cea804db50a106a26e61">TRACK_DATA</a>* room_data::tracks</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1da0540f0aa7691a1f0083cfa2c5503e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int room_data::vnum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa9dfc209119e69c508c5b6d77b1b106b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structwritten__descr__data.html">written_descr_data</a>* room_data::wdesc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7fadfb270bbed7f410206382e36cbec8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int room_data::xerox</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a383dffb948db697aa64c2dbcfe3872a9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int room_data::zone</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li><a class="el" href="room_8h_source.html">room.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 17 2015 21:26:48 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 17 2015 22:02:23 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

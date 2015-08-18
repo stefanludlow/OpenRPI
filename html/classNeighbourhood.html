@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -90,72 +90,360 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Neighbourhood Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="structs_8h_source.html">structs.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aeb02b940fc9cc8b8442a0bb95e642737"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeb02b940fc9cc8b8442a0bb95e642737"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>initialize</b> (void)</td></tr>
+<tr class="memitem:aabf34537b600d0c13cdb7e1ff945095f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeighbourhood.html#aabf34537b600d0c13cdb7e1ff945095f">Neighbourhood</a> (void)</td></tr>
+<tr class="separator:aabf34537b600d0c13cdb7e1ff945095f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb02b940fc9cc8b8442a0bb95e642737"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeighbourhood.html#aeb02b940fc9cc8b8442a0bb95e642737">initialize</a> (void)</td></tr>
 <tr class="separator:aeb02b940fc9cc8b8442a0bb95e642737"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3adaa96435a3f09910a2473fce4d3f63"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3adaa96435a3f09910a2473fce4d3f63"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>updateBeats</b> (bool isTurn)</td></tr>
+<tr class="memitem:a3adaa96435a3f09910a2473fce4d3f63"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeighbourhood.html#a3adaa96435a3f09910a2473fce4d3f63">updateBeats</a> (<a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a> isTurn)</td></tr>
 <tr class="separator:a3adaa96435a3f09910a2473fce4d3f63"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe038eeabeb3649d5b44e794f26934a2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abe038eeabeb3649d5b44e794f26934a2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>loadEnforcers</b> (<a class="el" href="structchar__data.html">CHAR_DATA</a> *ch, <a class="el" href="structchar__data.html">CHAR_DATA</a> *target)</td></tr>
+<tr class="memitem:abe038eeabeb3649d5b44e794f26934a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeighbourhood.html#abe038eeabeb3649d5b44e794f26934a2">loadEnforcers</a> (<a class="el" href="structs_8h.html#af33ed1e66e8541a08bed257124f50f31">CHAR_DATA</a> *ch, <a class="el" href="structs_8h.html#af33ed1e66e8541a08bed257124f50f31">CHAR_DATA</a> *target)</td></tr>
 <tr class="separator:abe038eeabeb3649d5b44e794f26934a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac84c9a3b8aa2b12737bbc38c5133fabf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac84c9a3b8aa2b12737bbc38c5133fabf"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>reportIncident</b> (<a class="el" href="structchar__data.html">CHAR_DATA</a> *ch, <a class="el" href="structchar__data.html">CHAR_DATA</a> *target, int crime)</td></tr>
+<tr class="memitem:ac84c9a3b8aa2b12737bbc38c5133fabf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeighbourhood.html#ac84c9a3b8aa2b12737bbc38c5133fabf">reportIncident</a> (<a class="el" href="structs_8h.html#af33ed1e66e8541a08bed257124f50f31">CHAR_DATA</a> *ch, <a class="el" href="structs_8h.html#af33ed1e66e8541a08bed257124f50f31">CHAR_DATA</a> *target, int crime)</td></tr>
 <tr class="separator:ac84c9a3b8aa2b12737bbc38c5133fabf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada6d36dd1065108114d9fd6dedd361f5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ada6d36dd1065108114d9fd6dedd361f5"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>contestHood</b> (void)</td></tr>
+<tr class="memitem:ada6d36dd1065108114d9fd6dedd361f5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeighbourhood.html#ada6d36dd1065108114d9fd6dedd361f5">contestHood</a> (void)</td></tr>
 <tr class="separator:ada6d36dd1065108114d9fd6dedd361f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9752e1b2ba0291e6d12e764f9097b4f7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9752e1b2ba0291e6d12e764f9097b4f7"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>rewardHood</b> (void)</td></tr>
+<tr class="memitem:a9752e1b2ba0291e6d12e764f9097b4f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeighbourhood.html#a9752e1b2ba0291e6d12e764f9097b4f7">rewardHood</a> (void)</td></tr>
 <tr class="separator:a9752e1b2ba0291e6d12e764f9097b4f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e0f4674d7a3017c17e43b50372a8a4b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6e0f4674d7a3017c17e43b50372a8a4b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>updateHood</b> (void)</td></tr>
+<tr class="memitem:a6e0f4674d7a3017c17e43b50372a8a4b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeighbourhood.html#a6e0f4674d7a3017c17e43b50372a8a4b">updateHood</a> (void)</td></tr>
 <tr class="separator:a6e0f4674d7a3017c17e43b50372a8a4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a399aae8e5b17b27b0d39502a7beae6a5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a399aae8e5b17b27b0d39502a7beae6a5"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>saveHood</b> (void)</td></tr>
+<tr class="memitem:a399aae8e5b17b27b0d39502a7beae6a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeighbourhood.html#a399aae8e5b17b27b0d39502a7beae6a5">saveHood</a> (void)</td></tr>
 <tr class="separator:a399aae8e5b17b27b0d39502a7beae6a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7559d6a8784f5026c21f7ab7077b7cde"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7559d6a8784f5026c21f7ab7077b7cde"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>determineHeart</b> (void)</td></tr>
+<tr class="memitem:a7559d6a8784f5026c21f7ab7077b7cde"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeighbourhood.html#a7559d6a8784f5026c21f7ab7077b7cde">determineHeart</a> (void)</td></tr>
 <tr class="separator:a7559d6a8784f5026c21f7ab7077b7cde"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a53602ff6f2061754528a29a44a579349"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a53602ff6f2061754528a29a44a579349"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>hoodId</b></td></tr>
+<tr class="memitem:a53602ff6f2061754528a29a44a579349"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeighbourhood.html#a53602ff6f2061754528a29a44a579349">hoodId</a></td></tr>
 <tr class="separator:a53602ff6f2061754528a29a44a579349"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad053336c8ee1f8c76a85209736aa8623"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad053336c8ee1f8c76a85209736aa8623"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>hoodLoyalty</b></td></tr>
+<tr class="memitem:ad053336c8ee1f8c76a85209736aa8623"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeighbourhood.html#ad053336c8ee1f8c76a85209736aa8623">hoodLoyalty</a></td></tr>
 <tr class="separator:ad053336c8ee1f8c76a85209736aa8623"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aace0c7358a67b0ba20a34cdfdc82571b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aace0c7358a67b0ba20a34cdfdc82571b"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>systemId</b></td></tr>
+<tr class="memitem:aace0c7358a67b0ba20a34cdfdc82571b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeighbourhood.html#aace0c7358a67b0ba20a34cdfdc82571b">systemId</a></td></tr>
 <tr class="separator:aace0c7358a67b0ba20a34cdfdc82571b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a10e20b14e890c7babb413585fa197bd2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a10e20b14e890c7babb413585fa197bd2"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>dumpRoom</b></td></tr>
+<tr class="memitem:a10e20b14e890c7babb413585fa197bd2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeighbourhood.html#a10e20b14e890c7babb413585fa197bd2">dumpRoom</a></td></tr>
 <tr class="separator:a10e20b14e890c7babb413585fa197bd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82bbd15ea0bdccee88d398070b707a04"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a82bbd15ea0bdccee88d398070b707a04"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>name</b></td></tr>
+<tr class="memitem:a82bbd15ea0bdccee88d398070b707a04"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeighbourhood.html#a82bbd15ea0bdccee88d398070b707a04">name</a></td></tr>
 <tr class="separator:a82bbd15ea0bdccee88d398070b707a04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7babc46bba2f997a9fd577d273bbd94f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7babc46bba2f997a9fd577d273bbd94f"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>npc_coldload_first</b></td></tr>
+<tr class="memitem:a7babc46bba2f997a9fd577d273bbd94f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeighbourhood.html#a7babc46bba2f997a9fd577d273bbd94f">npc_coldload_first</a></td></tr>
 <tr class="separator:a7babc46bba2f997a9fd577d273bbd94f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a555736237cc2685a9aa2c16c707b8816"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a555736237cc2685a9aa2c16c707b8816"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>npc_coldload_second</b></td></tr>
+<tr class="memitem:a555736237cc2685a9aa2c16c707b8816"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeighbourhood.html#a555736237cc2685a9aa2c16c707b8816">npc_coldload_second</a></td></tr>
 <tr class="separator:a555736237cc2685a9aa2c16c707b8816"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa75a3f4a3a1adb513bfef041f900ad5b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa75a3f4a3a1adb513bfef041f900ad5b"></a>
-std::map&lt; int, <a class="el" href="classBlock.html">Block</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>hoodBlocks</b></td></tr>
+<tr class="memitem:aa75a3f4a3a1adb513bfef041f900ad5b"><td class="memItemLeft" align="right" valign="top">std::map&lt; int, <a class="el" href="classBlock.html">Block</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeighbourhood.html#aa75a3f4a3a1adb513bfef041f900ad5b">hoodBlocks</a></td></tr>
 <tr class="separator:aa75a3f4a3a1adb513bfef041f900ad5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="aabf34537b600d0c13cdb7e1ff945095f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Neighbourhood::Neighbourhood </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ada6d36dd1065108114d9fd6dedd361f5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a> Neighbourhood::contestHood </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7559d6a8784f5026c21f7ab7077b7cde"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Neighbourhood::determineHeart </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aeb02b940fc9cc8b8442a0bb95e642737"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Neighbourhood::initialize </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abe038eeabeb3649d5b44e794f26934a2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Neighbourhood::loadEnforcers </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structs_8h.html#af33ed1e66e8541a08bed257124f50f31">CHAR_DATA</a> *&#160;</td>
+          <td class="paramname"><em>ch</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structs_8h.html#af33ed1e66e8541a08bed257124f50f31">CHAR_DATA</a> *&#160;</td>
+          <td class="paramname"><em>target</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac84c9a3b8aa2b12737bbc38c5133fabf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Neighbourhood::reportIncident </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structs_8h.html#af33ed1e66e8541a08bed257124f50f31">CHAR_DATA</a> *&#160;</td>
+          <td class="paramname"><em>ch</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structs_8h.html#af33ed1e66e8541a08bed257124f50f31">CHAR_DATA</a> *&#160;</td>
+          <td class="paramname"><em>target</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>crime</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9752e1b2ba0291e6d12e764f9097b4f7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Neighbourhood::rewardHood </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a399aae8e5b17b27b0d39502a7beae6a5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Neighbourhood::saveHood </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3adaa96435a3f09910a2473fce4d3f63"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Neighbourhood::updateBeats </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a>&#160;</td>
+          <td class="paramname"><em>isTurn</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6e0f4674d7a3017c17e43b50372a8a4b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Neighbourhood::updateHood </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a10e20b14e890c7babb413585fa197bd2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Neighbourhood::dumpRoom</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa75a3f4a3a1adb513bfef041f900ad5b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;int, <a class="el" href="classBlock.html">Block</a>&gt; Neighbourhood::hoodBlocks</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a53602ff6f2061754528a29a44a579349"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Neighbourhood::hoodId</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad053336c8ee1f8c76a85209736aa8623"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Neighbourhood::hoodLoyalty</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a82bbd15ea0bdccee88d398070b707a04"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Neighbourhood::name</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7babc46bba2f997a9fd577d273bbd94f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Neighbourhood::npc_coldload_first</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a555736237cc2685a9aa2c16c707b8816"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Neighbourhood::npc_coldload_second</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aace0c7358a67b0ba20a34cdfdc82571b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Neighbourhood::systemId</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="structs_8h_source.html">structs.h</a></li>
-<li>turf.cpp</li>
+<li><a class="el" href="turf_8cpp.html">turf.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 17 2015 21:26:48 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 17 2015 22:02:23 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

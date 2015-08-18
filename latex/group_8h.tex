@@ -1,0 +1,140 @@
+\hypertarget{group_8h}{\section{group.\-h File Reference}
+\label{group_8h}\index{group.\-h@{group.\-h}}
+}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} \hyperlink{group_8h_a6aff3c387491f0c0f205305a064c6e60}{are\-\_\-grouped} (const \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$a, const \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$b)
+\begin{DoxyCompactList}\small\item\em \hyperlink{group_8h}{group.\-h} -\/ Character Group Utility Functions \end{DoxyCompactList}\item 
+\hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} \hyperlink{group_8h_a5e3931b7981aeb641161a4d0978bad61}{is\-\_\-group\-\_\-leader} (const \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{group_8h_a5267fc5b3d71fa5cfb6d2df15bac372b}{do\-\_\-follow} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{group_8h_ae250185184f82bf82fb5cea180fec6af}{do\-\_\-group} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+int \hyperlink{group_8h_a4c52eb1121dcb3e357163d7494ce7244}{do\-\_\-group\-\_\-size} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+int \hyperlink{group_8h_a8ccd4435420ec9fc4a82bd6cdb2e273f}{mount\-\_\-group\-\_\-size} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+char $\ast$ \hyperlink{group_8h_a7388612bb8d9d075d0f52302b77bbdff}{group\-\_\-makeup} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+\hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} \hyperlink{group_8h_a5d283d75080e7d3af7fff64a650e1361}{is\-\_\-with\-\_\-group} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{group_8h_ae105955a1ca8f68c3022b8163193a10b}{stop\-\_\-followers} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{group_8h_aa36b0a93ea70ce8b816ec8fb13544559}{followers\-\_\-follow} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int dir, int leave\-\_\-time, int arrive\-\_\-time)
+\item 
+void \hyperlink{group_8h_a8512cb5e0d00fce341066f1da81c576d}{follower\-\_\-catchup} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+int \hyperlink{group_8h_afce55114623240c6098626f141fc9a8b}{num\-\_\-followers} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structs_8h_a888de2c98dc331eca63dac1c44ba8b8c}{Q\-E\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{group_8h_a041d0defdf16f6b58b95e8089e652f07}{quarter\-\_\-event\-\_\-list}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{group_8h_a6aff3c387491f0c0f205305a064c6e60}{\index{group.\-h@{group.\-h}!are\-\_\-grouped@{are\-\_\-grouped}}
+\index{are\-\_\-grouped@{are\-\_\-grouped}!group.h@{group.\-h}}
+\subsubsection[{are\-\_\-grouped}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} are\-\_\-grouped (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{a, }
+\item[{const {\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{group_8h_a6aff3c387491f0c0f205305a064c6e60}
+
+
+\hyperlink{group_8h}{group.\-h} -\/ Character Group Utility Functions 
+
+Shadows of Isildur R\-P\-I Engine++ Copyright (C) 2004-\/2006 C. W. Mc\-Henry Authors\-: C. W. Mc\-Henry (\href{mailto:traithe@middle-earth.us}{\tt traithe@middle-\/earth.\-us}) Jonathan W. Webb (\href{mailto:sighentist@middle-earth.us}{\tt sighentist@middle-\/earth.\-us}) U\-R\-L\-: \href{http://www.middle-earth.us}{\tt http\-://www.\-middle-\/earth.\-us} May includes portions derived from Harshlands Authors\-: Charles Rand (Rassilon) U\-R\-L\-: \href{http://www.harshlands.net}{\tt http\-://www.\-harshlands.\-net} May include portions derived under license from Diku\-M\-U\-D Gamma (0.\-0) which are Copyright (C) 1990, 1991 D\-I\-K\-U Authors\-: Hans Henrik Staerfeldt (\href{mailto:bombman@freja.diku.dk}{\tt bombman@freja.\-diku.\-dk}) Tom Madson (\href{mailto:noop@freja.diku.dk}{\tt noop@freja.\-diku.\-dk}) Katja Nyboe (\href{mailto:katz@freja.diku.dk}{\tt katz@freja.\-diku.\-dk}) Michael Seifert (\href{mailto:seifert@freja.diku.dk}{\tt seifert@freja.\-diku.\-dk}) Sebastian Hammer (\href{mailto:quinn@freja.diku.dk}{\tt quinn@freja.\-diku.\-dk}) \hypertarget{group_8h_a5267fc5b3d71fa5cfb6d2df15bac372b}{\index{group.\-h@{group.\-h}!do\-\_\-follow@{do\-\_\-follow}}
+\index{do\-\_\-follow@{do\-\_\-follow}!group.h@{group.\-h}}
+\subsubsection[{do\-\_\-follow}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-follow (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{group_8h_a5267fc5b3d71fa5cfb6d2df15bac372b}
+\hypertarget{group_8h_ae250185184f82bf82fb5cea180fec6af}{\index{group.\-h@{group.\-h}!do\-\_\-group@{do\-\_\-group}}
+\index{do\-\_\-group@{do\-\_\-group}!group.h@{group.\-h}}
+\subsubsection[{do\-\_\-group}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-group (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{group_8h_ae250185184f82bf82fb5cea180fec6af}
+\hypertarget{group_8h_a4c52eb1121dcb3e357163d7494ce7244}{\index{group.\-h@{group.\-h}!do\-\_\-group\-\_\-size@{do\-\_\-group\-\_\-size}}
+\index{do\-\_\-group\-\_\-size@{do\-\_\-group\-\_\-size}!group.h@{group.\-h}}
+\subsubsection[{do\-\_\-group\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}int do\-\_\-group\-\_\-size (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{group_8h_a4c52eb1121dcb3e357163d7494ce7244}
+\hypertarget{group_8h_a8512cb5e0d00fce341066f1da81c576d}{\index{group.\-h@{group.\-h}!follower\-\_\-catchup@{follower\-\_\-catchup}}
+\index{follower\-\_\-catchup@{follower\-\_\-catchup}!group.h@{group.\-h}}
+\subsubsection[{follower\-\_\-catchup}]{\setlength{\rightskip}{0pt plus 5cm}void follower\-\_\-catchup (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{group_8h_a8512cb5e0d00fce341066f1da81c576d}
+\hypertarget{group_8h_aa36b0a93ea70ce8b816ec8fb13544559}{\index{group.\-h@{group.\-h}!followers\-\_\-follow@{followers\-\_\-follow}}
+\index{followers\-\_\-follow@{followers\-\_\-follow}!group.h@{group.\-h}}
+\subsubsection[{followers\-\_\-follow}]{\setlength{\rightskip}{0pt plus 5cm}void followers\-\_\-follow (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{dir, }
+\item[{int}]{leave\-\_\-time, }
+\item[{int}]{arrive\-\_\-time}
+\end{DoxyParamCaption}
+)}}\label{group_8h_aa36b0a93ea70ce8b816ec8fb13544559}
+\hypertarget{group_8h_a7388612bb8d9d075d0f52302b77bbdff}{\index{group.\-h@{group.\-h}!group\-\_\-makeup@{group\-\_\-makeup}}
+\index{group\-\_\-makeup@{group\-\_\-makeup}!group.h@{group.\-h}}
+\subsubsection[{group\-\_\-makeup}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ group\-\_\-makeup (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{group_8h_a7388612bb8d9d075d0f52302b77bbdff}
+\hypertarget{group_8h_a5e3931b7981aeb641161a4d0978bad61}{\index{group.\-h@{group.\-h}!is\-\_\-group\-\_\-leader@{is\-\_\-group\-\_\-leader}}
+\index{is\-\_\-group\-\_\-leader@{is\-\_\-group\-\_\-leader}!group.h@{group.\-h}}
+\subsubsection[{is\-\_\-group\-\_\-leader}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} is\-\_\-group\-\_\-leader (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{group_8h_a5e3931b7981aeb641161a4d0978bad61}
+\hypertarget{group_8h_a5d283d75080e7d3af7fff64a650e1361}{\index{group.\-h@{group.\-h}!is\-\_\-with\-\_\-group@{is\-\_\-with\-\_\-group}}
+\index{is\-\_\-with\-\_\-group@{is\-\_\-with\-\_\-group}!group.h@{group.\-h}}
+\subsubsection[{is\-\_\-with\-\_\-group}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} is\-\_\-with\-\_\-group (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{group_8h_a5d283d75080e7d3af7fff64a650e1361}
+\hypertarget{group_8h_a8ccd4435420ec9fc4a82bd6cdb2e273f}{\index{group.\-h@{group.\-h}!mount\-\_\-group\-\_\-size@{mount\-\_\-group\-\_\-size}}
+\index{mount\-\_\-group\-\_\-size@{mount\-\_\-group\-\_\-size}!group.h@{group.\-h}}
+\subsubsection[{mount\-\_\-group\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}int mount\-\_\-group\-\_\-size (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{group_8h_a8ccd4435420ec9fc4a82bd6cdb2e273f}
+\hypertarget{group_8h_afce55114623240c6098626f141fc9a8b}{\index{group.\-h@{group.\-h}!num\-\_\-followers@{num\-\_\-followers}}
+\index{num\-\_\-followers@{num\-\_\-followers}!group.h@{group.\-h}}
+\subsubsection[{num\-\_\-followers}]{\setlength{\rightskip}{0pt plus 5cm}int num\-\_\-followers (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{group_8h_afce55114623240c6098626f141fc9a8b}
+\hypertarget{group_8h_ae105955a1ca8f68c3022b8163193a10b}{\index{group.\-h@{group.\-h}!stop\-\_\-followers@{stop\-\_\-followers}}
+\index{stop\-\_\-followers@{stop\-\_\-followers}!group.h@{group.\-h}}
+\subsubsection[{stop\-\_\-followers}]{\setlength{\rightskip}{0pt plus 5cm}void stop\-\_\-followers (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{group_8h_ae105955a1ca8f68c3022b8163193a10b}
+
+
+\subsection{Variable Documentation}
+\hypertarget{group_8h_a041d0defdf16f6b58b95e8089e652f07}{\index{group.\-h@{group.\-h}!quarter\-\_\-event\-\_\-list@{quarter\-\_\-event\-\_\-list}}
+\index{quarter\-\_\-event\-\_\-list@{quarter\-\_\-event\-\_\-list}!group.h@{group.\-h}}
+\subsubsection[{quarter\-\_\-event\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\-E\-\_\-\-D\-A\-T\-A}$\ast$ quarter\-\_\-event\-\_\-list}}\label{group_8h_a041d0defdf16f6b58b95e8089e652f07}

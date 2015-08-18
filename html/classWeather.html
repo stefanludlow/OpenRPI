@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -90,54 +90,191 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Weather Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="weather_8h_source.html">weather.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ae86a7b871374468ff713e5dd2860438a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae86a7b871374468ff713e5dd2860438a"></a>
-static bool&#160;</td><td class="memItemRight" valign="bottom"><b>weather_unification</b> (int zone)</td></tr>
+<tr class="memitem:ae86a7b871374468ff713e5dd2860438a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWeather.html#ae86a7b871374468ff713e5dd2860438a">weather_unification</a> (int zone)</td></tr>
 <tr class="separator:ae86a7b871374468ff713e5dd2860438a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a01aefe5b420d80cfad47e9f284d79626"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a01aefe5b420d80cfad47e9f284d79626"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>fog</b></td></tr>
+<tr class="memitem:a01aefe5b420d80cfad47e9f284d79626"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWeather.html#a01aefe5b420d80cfad47e9f284d79626">fog</a></td></tr>
 <tr class="separator:a01aefe5b420d80cfad47e9f284d79626"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab40997fa4f5013a26576cd73f9e8befa"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab40997fa4f5013a26576cd73f9e8befa"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>sunlight</b></td></tr>
+<tr class="memitem:ab40997fa4f5013a26576cd73f9e8befa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWeather.html#ab40997fa4f5013a26576cd73f9e8befa">sunlight</a></td></tr>
 <tr class="separator:ab40997fa4f5013a26576cd73f9e8befa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa35eac1fe8923f53dd13deec24b316c4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa35eac1fe8923f53dd13deec24b316c4"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>trend</b></td></tr>
+<tr class="memitem:aa35eac1fe8923f53dd13deec24b316c4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWeather.html#aa35eac1fe8923f53dd13deec24b316c4">trend</a></td></tr>
 <tr class="separator:aa35eac1fe8923f53dd13deec24b316c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c591d262445fa81b2db1ed42c10243b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9c591d262445fa81b2db1ed42c10243b"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>temperature</b></td></tr>
+<tr class="memitem:a9c591d262445fa81b2db1ed42c10243b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWeather.html#a9c591d262445fa81b2db1ed42c10243b">temperature</a></td></tr>
 <tr class="separator:a9c591d262445fa81b2db1ed42c10243b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c7ab25a82283c8c7a2b3b952f2b3774"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4c7ab25a82283c8c7a2b3b952f2b3774"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>state</b></td></tr>
+<tr class="memitem:a4c7ab25a82283c8c7a2b3b952f2b3774"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWeather.html#a4c7ab25a82283c8c7a2b3b952f2b3774">state</a></td></tr>
 <tr class="separator:a4c7ab25a82283c8c7a2b3b952f2b3774"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f547babbc20e54f3b2867b90588b5e4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9f547babbc20e54f3b2867b90588b5e4"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>clouds</b></td></tr>
+<tr class="memitem:a9f547babbc20e54f3b2867b90588b5e4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWeather.html#a9f547babbc20e54f3b2867b90588b5e4">clouds</a></td></tr>
 <tr class="separator:a9f547babbc20e54f3b2867b90588b5e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e6daf8e8ebd008546e41d16899b38fc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2e6daf8e8ebd008546e41d16899b38fc"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>lightning</b></td></tr>
+<tr class="memitem:a2e6daf8e8ebd008546e41d16899b38fc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWeather.html#a2e6daf8e8ebd008546e41d16899b38fc">lightning</a></td></tr>
 <tr class="separator:a2e6daf8e8ebd008546e41d16899b38fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6954a350137a1f71caf7a497a9151268"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6954a350137a1f71caf7a497a9151268"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>wind_dir</b></td></tr>
+<tr class="memitem:a6954a350137a1f71caf7a497a9151268"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWeather.html#a6954a350137a1f71caf7a497a9151268">wind_dir</a></td></tr>
 <tr class="separator:a6954a350137a1f71caf7a497a9151268"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52ed27651f257fccf8781875231bdb6e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a52ed27651f257fccf8781875231bdb6e"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>wind_speed</b></td></tr>
+<tr class="memitem:a52ed27651f257fccf8781875231bdb6e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWeather.html#a52ed27651f257fccf8781875231bdb6e">wind_speed</a></td></tr>
 <tr class="separator:a52ed27651f257fccf8781875231bdb6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf92329f8976174333b59190d6f7d394"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaf92329f8976174333b59190d6f7d394"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>special_effect</b></td></tr>
+<tr class="memitem:aaf92329f8976174333b59190d6f7d394"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWeather.html#aaf92329f8976174333b59190d6f7d394">special_effect</a></td></tr>
 <tr class="separator:aaf92329f8976174333b59190d6f7d394"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ae86a7b871374468ff713e5dd2860438a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a> Weather::weather_unification </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>zone</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a9f547babbc20e54f3b2867b90588b5e4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Weather::clouds</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a01aefe5b420d80cfad47e9f284d79626"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Weather::fog</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2e6daf8e8ebd008546e41d16899b38fc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Weather::lightning</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aaf92329f8976174333b59190d6f7d394"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Weather::special_effect</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4c7ab25a82283c8c7a2b3b952f2b3774"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Weather::state</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab40997fa4f5013a26576cd73f9e8befa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Weather::sunlight</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9c591d262445fa81b2db1ed42c10243b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Weather::temperature</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa35eac1fe8923f53dd13deec24b316c4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Weather::trend</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6954a350137a1f71caf7a497a9151268"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Weather::wind_dir</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a52ed27651f257fccf8781875231bdb6e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Weather::wind_speed</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="weather_8h_source.html">weather.h</a></li>
-<li>weather.cpp</li>
+<li><a class="el" href="weather_8cpp.html">weather.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 17 2015 21:26:48 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 17 2015 22:02:23 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

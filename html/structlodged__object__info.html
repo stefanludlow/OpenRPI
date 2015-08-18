@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -89,44 +89,146 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">lodged_object_info Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="structs_8h_source.html">structs.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:abe0bd80a8b3f143aa295d14596cc7b4b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abe0bd80a8b3f143aa295d14596cc7b4b"></a>
-char *&#160;</td><td class="memItemRight" valign="bottom"><b>location</b></td></tr>
+<tr class="memitem:abe0bd80a8b3f143aa295d14596cc7b4b"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlodged__object__info.html#abe0bd80a8b3f143aa295d14596cc7b4b">location</a></td></tr>
 <tr class="separator:abe0bd80a8b3f143aa295d14596cc7b4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92eba40298d079eabeba79108fa760c6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a92eba40298d079eabeba79108fa760c6"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>vnum</b></td></tr>
+<tr class="memitem:a92eba40298d079eabeba79108fa760c6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlodged__object__info.html#a92eba40298d079eabeba79108fa760c6">vnum</a></td></tr>
 <tr class="separator:a92eba40298d079eabeba79108fa760c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3392e3e8007dce751d2f08b0f8780553"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3392e3e8007dce751d2f08b0f8780553"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>colored</b></td></tr>
+<tr class="memitem:a3392e3e8007dce751d2f08b0f8780553"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlodged__object__info.html#a3392e3e8007dce751d2f08b0f8780553">colored</a></td></tr>
 <tr class="separator:a3392e3e8007dce751d2f08b0f8780553"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aacc602b89467eb3113207959551d867c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aacc602b89467eb3113207959551d867c"></a>
-char *&#160;</td><td class="memItemRight" valign="bottom"><b>short_description</b></td></tr>
+<tr class="memitem:aacc602b89467eb3113207959551d867c"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlodged__object__info.html#aacc602b89467eb3113207959551d867c">short_description</a></td></tr>
 <tr class="separator:aacc602b89467eb3113207959551d867c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a500dde882cb024dad05652e6a74b504b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a500dde882cb024dad05652e6a74b504b"></a>
-char *&#160;</td><td class="memItemRight" valign="bottom"><b>var_color</b></td></tr>
+<tr class="memitem:a500dde882cb024dad05652e6a74b504b"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlodged__object__info.html#a500dde882cb024dad05652e6a74b504b">var_color</a></td></tr>
 <tr class="separator:a500dde882cb024dad05652e6a74b504b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8fad921ce3dd7335ff8c290d8799621"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af8fad921ce3dd7335ff8c290d8799621"></a>
-char *&#160;</td><td class="memItemRight" valign="bottom"><b>var_color2</b></td></tr>
+<tr class="memitem:af8fad921ce3dd7335ff8c290d8799621"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlodged__object__info.html#af8fad921ce3dd7335ff8c290d8799621">var_color2</a></td></tr>
 <tr class="separator:af8fad921ce3dd7335ff8c290d8799621"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7202f04109e336635884bf89a8826b60"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7202f04109e336635884bf89a8826b60"></a>
-char *&#160;</td><td class="memItemRight" valign="bottom"><b>var_color3</b></td></tr>
+<tr class="memitem:a7202f04109e336635884bf89a8826b60"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlodged__object__info.html#a7202f04109e336635884bf89a8826b60">var_color3</a></td></tr>
 <tr class="separator:a7202f04109e336635884bf89a8826b60"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4cdb34c04d17436b9bfd8551de4b61d8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4cdb34c04d17436b9bfd8551de4b61d8"></a>
-<a class="el" href="structaffected__type.html">AFFECTED_TYPE</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>bleeding</b></td></tr>
+<tr class="memitem:a4cdb34c04d17436b9bfd8551de4b61d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structs_8h.html#a0a9304fc5764d8448c93fdffdd64e1d2">AFFECTED_TYPE</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlodged__object__info.html#a4cdb34c04d17436b9bfd8551de4b61d8">bleeding</a></td></tr>
 <tr class="separator:a4cdb34c04d17436b9bfd8551de4b61d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab731d64c989dc955e95d2f17219b51bc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab731d64c989dc955e95d2f17219b51bc"></a>
-<a class="el" href="structlodged__object__info.html">LODGED_OBJECT_INFO</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>next</b></td></tr>
+<tr class="memitem:ab731d64c989dc955e95d2f17219b51bc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structs_8h.html#aa299ea0a69d123edbc3b581b10115e2b">LODGED_OBJECT_INFO</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlodged__object__info.html#ab731d64c989dc955e95d2f17219b51bc">next</a></td></tr>
 <tr class="separator:ab731d64c989dc955e95d2f17219b51bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a4cdb34c04d17436b9bfd8551de4b61d8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structs_8h.html#a0a9304fc5764d8448c93fdffdd64e1d2">AFFECTED_TYPE</a>* lodged_object_info::bleeding</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3392e3e8007dce751d2f08b0f8780553"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int lodged_object_info::colored</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abe0bd80a8b3f143aa295d14596cc7b4b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* lodged_object_info::location</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab731d64c989dc955e95d2f17219b51bc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structs_8h.html#aa299ea0a69d123edbc3b581b10115e2b">LODGED_OBJECT_INFO</a>* lodged_object_info::next</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aacc602b89467eb3113207959551d867c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* lodged_object_info::short_description</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a500dde882cb024dad05652e6a74b504b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* lodged_object_info::var_color</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af8fad921ce3dd7335ff8c290d8799621"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* lodged_object_info::var_color2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7202f04109e336635884bf89a8826b60"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* lodged_object_info::var_color3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a92eba40298d079eabeba79108fa760c6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int lodged_object_info::vnum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li><a class="el" href="structs_8h_source.html">structs.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 17 2015 21:26:48 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 17 2015 22:02:23 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

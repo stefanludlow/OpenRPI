@@ -1,0 +1,441 @@
+\hypertarget{firearms_8cpp}{\section{firearms.\-cpp File Reference}
+\label{firearms_8cpp}\index{firearms.\-cpp@{firearms.\-cpp}}
+}
+{\ttfamily \#include $<$time.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$ctype.\-h$>$}\\*
+{\ttfamily \#include $<$math.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}server.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}structs.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}net\-\_\-link.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}account.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}protos.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}decl.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}group.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utility.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}constants.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}object\-\_\-damage.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{firearms_8cpp_ad40c236828773327cf9ecdb833fe573f}{has\-\_\-firearm} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int cmd)
+\item 
+void \hyperlink{firearms_8cpp_a442aa2e66507b858b000c46c9cb8aea6}{do\-\_\-pointblank} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{firearms_8cpp_a653b914ff60c30d113461864106c926b}{delayed\-\_\-pointblank} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+int \hyperlink{firearms_8cpp_a8cddaa160e100ad9617efea0ac637d36}{broke\-\_\-aim} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int cmd)
+\item 
+void \hyperlink{firearms_8cpp_acf2e4f3acab6231749d1ed685105753f}{do\-\_\-cover} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{firearms_8cpp_aafd02f0024729040ffe9e62f0509d3cc}{delayed\-\_\-cover} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{firearms_8cpp_a042f45745edd266aa6fa0593b0f15cca}{remove\-\_\-cover} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int type)
+\item 
+int \hyperlink{firearms_8cpp_ab9c2a66cf0bb22ccfc05be7e9d9c8b5d}{under\-\_\-cover} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+int \hyperlink{firearms_8cpp_a4d4d9fa40d1c649e8f0392d4a9b26054}{count\-\_\-bullets} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj)
+\item 
+int \hyperlink{firearms_8cpp_af3d0b9dfe0595ad4dce0a724f910bd99}{count\-\_\-all\-\_\-bullets} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj)
+\item 
+\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{firearms_8cpp_a94b5a6da042bdc9d728d88d9dcaa24ae}{draw\-\_\-bullet\-\_\-from\-\_\-belt} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$bullet, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$ptr\-Belt, int $\ast$count, int caliber, int size, int $\ast$error\-\_\-msg)
+\item 
+\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{firearms_8cpp_a35ee936b0fd43f5084795acca552d314}{draw\-\_\-clip\-\_\-from\-\_\-belt} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$clip, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$ptr\-Belt, int amount, int caliber, int size, int $\ast$error\-\_\-msg)
+\item 
+void \hyperlink{firearms_8cpp_afd5eac8923c8feec489f71ba2b5e2fad}{do\-\_\-load\-\_\-clip} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{firearms_8cpp_a8f01d026bdb97875a1091d7648332818}{delayed\-\_\-load\-\_\-clip} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{firearms_8cpp_a790fc6b7368aa6cd22ad07dbbeddcf8b}{do\-\_\-unload\-\_\-clip} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{firearms_8cpp_aea231df3046c0013debc342b871b4ce4}{delayed\-\_\-unload\-\_\-clip} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{firearms_8cpp_ae74b6f13a32b0d935a4f1f3eb5fb7640}{do\-\_\-load\-\_\-firearm} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{firearms_8cpp_ae0c22ce6cb98fd5484d2eed643641d2c}{delayed\-\_\-load\-\_\-firearm} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{firearms_8cpp_a98ed941497a035cde733ef659c874f40}{do\-\_\-unload\-\_\-firearm} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{firearms_8cpp_aa07dc7eb35fbe0b5374660ca318e5060}{delayed\-\_\-unload\-\_\-firearm} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{firearms_8cpp_a6ce1d79a700d7a7eeb9968161bd4bedf}{modify\-\_\-firearm} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj)
+\item 
+int \hyperlink{firearms_8cpp_aa4c832fc67ab1ee459525c41a9347f30}{aim\-\_\-penalty} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj, int range)
+\item 
+void \hyperlink{firearms_8cpp_ae350e507f449d61005f917b125b20ffa}{firearm\-\_\-aim} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{firearms_8cpp_a1457aab2ab4ae918b0a29337a82b0477}{add\-\_\-targeted} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$target, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$aimer)
+\item 
+void \hyperlink{firearms_8cpp_a9d314c03a8e1954c1fcf4b1a0e02c980}{remove\-\_\-targeted} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$target, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$aimer)
+\item 
+void \hyperlink{firearms_8cpp_aea51826adbf49c7556913f7f82ad2ba7}{remove\-\_\-all\-\_\-targeted} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$target)
+\item 
+\hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} \hyperlink{firearms_8cpp_a0ca6c5f72bbe599f1272f905c0ae9bf6}{add\-\_\-overwatch} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$tch, int source, \hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} verbose)
+\item 
+\hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} \hyperlink{firearms_8cpp_a002e22443381e4a3ea7cf7b86b1a70ae}{check\-\_\-overwatch} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$tch, \hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} check\-\_\-only)
+\item 
+void \hyperlink{firearms_8cpp_a836026869d2bfdf5fe4604c7fb409b18}{remove\-\_\-overwatch} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{firearms_8cpp_a3e46965be9969a86fb4f81aff083ed13}{remove\-\_\-all\-\_\-overwatch} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{firearms_8cpp_a29b743dbd3c3784711442fe8e36dcfb7}{do\-\_\-overwatch} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+int \hyperlink{firearms_8cpp_a1e0bb6706685da1836452428ed4d5a97}{calculate\-\_\-firearm\-\_\-result} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int ch\-\_\-skill, int att\-\_\-modifier, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$target, int def\-\_\-modifier, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$firearm, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$bullet, \hyperlink{structs_8h_a0a9304fc5764d8448c93fdffdd64e1d2}{A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$spell, int $\ast$location, float $\ast$\hyperlink{protos_8h_ab6fab1a0d63773245da84a305bfa0407}{damage}, int $\ast$poison, float $\ast$bleed, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$$\ast$armor, int \hyperlink{protos_8h_aa9787317029094b687f9e67e3c703758}{direction}, \hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} pointblank, \hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} fighting, int dam\-\_\-mod, int cmd)
+\item 
+void \hyperlink{firearms_8cpp_afe35e695f2e214b2962df503ae2507cf}{firearm\-\_\-bang} (\hyperlink{room_8h_aede519ef65d80b5242a4a28b69d5e097}{R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$room, int fired, int target\-\_\-room)
+\item 
+void \hyperlink{firearms_8cpp_af053556a643a3f80794e6d872327f4ef}{do\-\_\-firearm\-\_\-fire} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{firearms_8cpp_acc24f441ea0c82fefac43e3a49315756}{do\-\_\-extract} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{firearms_8cpp_a5878471d57d12ead17b1b4383258bb27}{delayed\-\_\-extract\-\_\-pause} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{firearms_8cpp_a296aad1fffa894808bbb6674472ed656}{delayed\-\_\-extract} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{firearms_8cpp_ada91931721fe5365ca4c0e40a94856c2}{direct} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{firearms_8cpp_a0ca6c5f72bbe599f1272f905c0ae9bf6}{\index{firearms.\-cpp@{firearms.\-cpp}!add\-\_\-overwatch@{add\-\_\-overwatch}}
+\index{add\-\_\-overwatch@{add\-\_\-overwatch}!firearms.cpp@{firearms.\-cpp}}
+\subsubsection[{add\-\_\-overwatch}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} add\-\_\-overwatch (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{tch, }
+\item[{int}]{source, }
+\item[{{\bf bool}}]{verbose}
+\end{DoxyParamCaption}
+)}}\label{firearms_8cpp_a0ca6c5f72bbe599f1272f905c0ae9bf6}
+\hypertarget{firearms_8cpp_a1457aab2ab4ae918b0a29337a82b0477}{\index{firearms.\-cpp@{firearms.\-cpp}!add\-\_\-targeted@{add\-\_\-targeted}}
+\index{add\-\_\-targeted@{add\-\_\-targeted}!firearms.cpp@{firearms.\-cpp}}
+\subsubsection[{add\-\_\-targeted}]{\setlength{\rightskip}{0pt plus 5cm}void add\-\_\-targeted (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{target, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{aimer}
+\end{DoxyParamCaption}
+)}}\label{firearms_8cpp_a1457aab2ab4ae918b0a29337a82b0477}
+\hypertarget{firearms_8cpp_aa4c832fc67ab1ee459525c41a9347f30}{\index{firearms.\-cpp@{firearms.\-cpp}!aim\-\_\-penalty@{aim\-\_\-penalty}}
+\index{aim\-\_\-penalty@{aim\-\_\-penalty}!firearms.cpp@{firearms.\-cpp}}
+\subsubsection[{aim\-\_\-penalty}]{\setlength{\rightskip}{0pt plus 5cm}int aim\-\_\-penalty (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj, }
+\item[{int}]{range}
+\end{DoxyParamCaption}
+)}}\label{firearms_8cpp_aa4c832fc67ab1ee459525c41a9347f30}
+\hypertarget{firearms_8cpp_a8cddaa160e100ad9617efea0ac637d36}{\index{firearms.\-cpp@{firearms.\-cpp}!broke\-\_\-aim@{broke\-\_\-aim}}
+\index{broke\-\_\-aim@{broke\-\_\-aim}!firearms.cpp@{firearms.\-cpp}}
+\subsubsection[{broke\-\_\-aim}]{\setlength{\rightskip}{0pt plus 5cm}int broke\-\_\-aim (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{firearms_8cpp_a8cddaa160e100ad9617efea0ac637d36}
+\hypertarget{firearms_8cpp_a1e0bb6706685da1836452428ed4d5a97}{\index{firearms.\-cpp@{firearms.\-cpp}!calculate\-\_\-firearm\-\_\-result@{calculate\-\_\-firearm\-\_\-result}}
+\index{calculate\-\_\-firearm\-\_\-result@{calculate\-\_\-firearm\-\_\-result}!firearms.cpp@{firearms.\-cpp}}
+\subsubsection[{calculate\-\_\-firearm\-\_\-result}]{\setlength{\rightskip}{0pt plus 5cm}int calculate\-\_\-firearm\-\_\-result (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{ch\-\_\-skill, }
+\item[{int}]{att\-\_\-modifier, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{target, }
+\item[{int}]{def\-\_\-modifier, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{firearm, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{bullet, }
+\item[{{\bf A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$}]{spell, }
+\item[{int $\ast$}]{location, }
+\item[{float $\ast$}]{damage, }
+\item[{int $\ast$}]{poison, }
+\item[{float $\ast$}]{bleed, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$$\ast$}]{armor, }
+\item[{int}]{direction, }
+\item[{{\bf bool}}]{pointblank, }
+\item[{{\bf bool}}]{fighting, }
+\item[{int}]{dam\-\_\-mod, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{firearms_8cpp_a1e0bb6706685da1836452428ed4d5a97}
+\hypertarget{firearms_8cpp_a002e22443381e4a3ea7cf7b86b1a70ae}{\index{firearms.\-cpp@{firearms.\-cpp}!check\-\_\-overwatch@{check\-\_\-overwatch}}
+\index{check\-\_\-overwatch@{check\-\_\-overwatch}!firearms.cpp@{firearms.\-cpp}}
+\subsubsection[{check\-\_\-overwatch}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} check\-\_\-overwatch (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{tch, }
+\item[{{\bf bool}}]{check\-\_\-only}
+\end{DoxyParamCaption}
+)}}\label{firearms_8cpp_a002e22443381e4a3ea7cf7b86b1a70ae}
+\hypertarget{firearms_8cpp_af3d0b9dfe0595ad4dce0a724f910bd99}{\index{firearms.\-cpp@{firearms.\-cpp}!count\-\_\-all\-\_\-bullets@{count\-\_\-all\-\_\-bullets}}
+\index{count\-\_\-all\-\_\-bullets@{count\-\_\-all\-\_\-bullets}!firearms.cpp@{firearms.\-cpp}}
+\subsubsection[{count\-\_\-all\-\_\-bullets}]{\setlength{\rightskip}{0pt plus 5cm}int count\-\_\-all\-\_\-bullets (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj}
+\end{DoxyParamCaption}
+)}}\label{firearms_8cpp_af3d0b9dfe0595ad4dce0a724f910bd99}
+\hypertarget{firearms_8cpp_a4d4d9fa40d1c649e8f0392d4a9b26054}{\index{firearms.\-cpp@{firearms.\-cpp}!count\-\_\-bullets@{count\-\_\-bullets}}
+\index{count\-\_\-bullets@{count\-\_\-bullets}!firearms.cpp@{firearms.\-cpp}}
+\subsubsection[{count\-\_\-bullets}]{\setlength{\rightskip}{0pt plus 5cm}int count\-\_\-bullets (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj}
+\end{DoxyParamCaption}
+)}}\label{firearms_8cpp_a4d4d9fa40d1c649e8f0392d4a9b26054}
+\hypertarget{firearms_8cpp_aafd02f0024729040ffe9e62f0509d3cc}{\index{firearms.\-cpp@{firearms.\-cpp}!delayed\-\_\-cover@{delayed\-\_\-cover}}
+\index{delayed\-\_\-cover@{delayed\-\_\-cover}!firearms.cpp@{firearms.\-cpp}}
+\subsubsection[{delayed\-\_\-cover}]{\setlength{\rightskip}{0pt plus 5cm}void delayed\-\_\-cover (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{firearms_8cpp_aafd02f0024729040ffe9e62f0509d3cc}
+\hypertarget{firearms_8cpp_a296aad1fffa894808bbb6674472ed656}{\index{firearms.\-cpp@{firearms.\-cpp}!delayed\-\_\-extract@{delayed\-\_\-extract}}
+\index{delayed\-\_\-extract@{delayed\-\_\-extract}!firearms.cpp@{firearms.\-cpp}}
+\subsubsection[{delayed\-\_\-extract}]{\setlength{\rightskip}{0pt plus 5cm}void delayed\-\_\-extract (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{firearms_8cpp_a296aad1fffa894808bbb6674472ed656}
+\hypertarget{firearms_8cpp_a5878471d57d12ead17b1b4383258bb27}{\index{firearms.\-cpp@{firearms.\-cpp}!delayed\-\_\-extract\-\_\-pause@{delayed\-\_\-extract\-\_\-pause}}
+\index{delayed\-\_\-extract\-\_\-pause@{delayed\-\_\-extract\-\_\-pause}!firearms.cpp@{firearms.\-cpp}}
+\subsubsection[{delayed\-\_\-extract\-\_\-pause}]{\setlength{\rightskip}{0pt plus 5cm}void delayed\-\_\-extract\-\_\-pause (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{firearms_8cpp_a5878471d57d12ead17b1b4383258bb27}
+\hypertarget{firearms_8cpp_a8f01d026bdb97875a1091d7648332818}{\index{firearms.\-cpp@{firearms.\-cpp}!delayed\-\_\-load\-\_\-clip@{delayed\-\_\-load\-\_\-clip}}
+\index{delayed\-\_\-load\-\_\-clip@{delayed\-\_\-load\-\_\-clip}!firearms.cpp@{firearms.\-cpp}}
+\subsubsection[{delayed\-\_\-load\-\_\-clip}]{\setlength{\rightskip}{0pt plus 5cm}void delayed\-\_\-load\-\_\-clip (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{firearms_8cpp_a8f01d026bdb97875a1091d7648332818}
+\hypertarget{firearms_8cpp_ae0c22ce6cb98fd5484d2eed643641d2c}{\index{firearms.\-cpp@{firearms.\-cpp}!delayed\-\_\-load\-\_\-firearm@{delayed\-\_\-load\-\_\-firearm}}
+\index{delayed\-\_\-load\-\_\-firearm@{delayed\-\_\-load\-\_\-firearm}!firearms.cpp@{firearms.\-cpp}}
+\subsubsection[{delayed\-\_\-load\-\_\-firearm}]{\setlength{\rightskip}{0pt plus 5cm}void delayed\-\_\-load\-\_\-firearm (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{firearms_8cpp_ae0c22ce6cb98fd5484d2eed643641d2c}
+\hypertarget{firearms_8cpp_a653b914ff60c30d113461864106c926b}{\index{firearms.\-cpp@{firearms.\-cpp}!delayed\-\_\-pointblank@{delayed\-\_\-pointblank}}
+\index{delayed\-\_\-pointblank@{delayed\-\_\-pointblank}!firearms.cpp@{firearms.\-cpp}}
+\subsubsection[{delayed\-\_\-pointblank}]{\setlength{\rightskip}{0pt plus 5cm}void delayed\-\_\-pointblank (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{firearms_8cpp_a653b914ff60c30d113461864106c926b}
+\hypertarget{firearms_8cpp_aea231df3046c0013debc342b871b4ce4}{\index{firearms.\-cpp@{firearms.\-cpp}!delayed\-\_\-unload\-\_\-clip@{delayed\-\_\-unload\-\_\-clip}}
+\index{delayed\-\_\-unload\-\_\-clip@{delayed\-\_\-unload\-\_\-clip}!firearms.cpp@{firearms.\-cpp}}
+\subsubsection[{delayed\-\_\-unload\-\_\-clip}]{\setlength{\rightskip}{0pt plus 5cm}void delayed\-\_\-unload\-\_\-clip (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{firearms_8cpp_aea231df3046c0013debc342b871b4ce4}
+\hypertarget{firearms_8cpp_aa07dc7eb35fbe0b5374660ca318e5060}{\index{firearms.\-cpp@{firearms.\-cpp}!delayed\-\_\-unload\-\_\-firearm@{delayed\-\_\-unload\-\_\-firearm}}
+\index{delayed\-\_\-unload\-\_\-firearm@{delayed\-\_\-unload\-\_\-firearm}!firearms.cpp@{firearms.\-cpp}}
+\subsubsection[{delayed\-\_\-unload\-\_\-firearm}]{\setlength{\rightskip}{0pt plus 5cm}void delayed\-\_\-unload\-\_\-firearm (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{firearms_8cpp_aa07dc7eb35fbe0b5374660ca318e5060}
+\hypertarget{firearms_8cpp_acf2e4f3acab6231749d1ed685105753f}{\index{firearms.\-cpp@{firearms.\-cpp}!do\-\_\-cover@{do\-\_\-cover}}
+\index{do\-\_\-cover@{do\-\_\-cover}!firearms.cpp@{firearms.\-cpp}}
+\subsubsection[{do\-\_\-cover}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-cover (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{firearms_8cpp_acf2e4f3acab6231749d1ed685105753f}
+\hypertarget{firearms_8cpp_acc24f441ea0c82fefac43e3a49315756}{\index{firearms.\-cpp@{firearms.\-cpp}!do\-\_\-extract@{do\-\_\-extract}}
+\index{do\-\_\-extract@{do\-\_\-extract}!firearms.cpp@{firearms.\-cpp}}
+\subsubsection[{do\-\_\-extract}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-extract (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{firearms_8cpp_acc24f441ea0c82fefac43e3a49315756}
+remove target object\hypertarget{firearms_8cpp_af053556a643a3f80794e6d872327f4ef}{\index{firearms.\-cpp@{firearms.\-cpp}!do\-\_\-firearm\-\_\-fire@{do\-\_\-firearm\-\_\-fire}}
+\index{do\-\_\-firearm\-\_\-fire@{do\-\_\-firearm\-\_\-fire}!firearms.cpp@{firearms.\-cpp}}
+\subsubsection[{do\-\_\-firearm\-\_\-fire}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-firearm\-\_\-fire (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{firearms_8cpp_af053556a643a3f80794e6d872327f4ef}
+\hypertarget{firearms_8cpp_afd5eac8923c8feec489f71ba2b5e2fad}{\index{firearms.\-cpp@{firearms.\-cpp}!do\-\_\-load\-\_\-clip@{do\-\_\-load\-\_\-clip}}
+\index{do\-\_\-load\-\_\-clip@{do\-\_\-load\-\_\-clip}!firearms.cpp@{firearms.\-cpp}}
+\subsubsection[{do\-\_\-load\-\_\-clip}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-load\-\_\-clip (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{firearms_8cpp_afd5eac8923c8feec489f71ba2b5e2fad}
+\hypertarget{firearms_8cpp_ae74b6f13a32b0d935a4f1f3eb5fb7640}{\index{firearms.\-cpp@{firearms.\-cpp}!do\-\_\-load\-\_\-firearm@{do\-\_\-load\-\_\-firearm}}
+\index{do\-\_\-load\-\_\-firearm@{do\-\_\-load\-\_\-firearm}!firearms.cpp@{firearms.\-cpp}}
+\subsubsection[{do\-\_\-load\-\_\-firearm}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-load\-\_\-firearm (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{firearms_8cpp_ae74b6f13a32b0d935a4f1f3eb5fb7640}
+\hypertarget{firearms_8cpp_a29b743dbd3c3784711442fe8e36dcfb7}{\index{firearms.\-cpp@{firearms.\-cpp}!do\-\_\-overwatch@{do\-\_\-overwatch}}
+\index{do\-\_\-overwatch@{do\-\_\-overwatch}!firearms.cpp@{firearms.\-cpp}}
+\subsubsection[{do\-\_\-overwatch}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-overwatch (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{firearms_8cpp_a29b743dbd3c3784711442fe8e36dcfb7}
+\hypertarget{firearms_8cpp_a442aa2e66507b858b000c46c9cb8aea6}{\index{firearms.\-cpp@{firearms.\-cpp}!do\-\_\-pointblank@{do\-\_\-pointblank}}
+\index{do\-\_\-pointblank@{do\-\_\-pointblank}!firearms.cpp@{firearms.\-cpp}}
+\subsubsection[{do\-\_\-pointblank}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-pointblank (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{firearms_8cpp_a442aa2e66507b858b000c46c9cb8aea6}
+\hypertarget{firearms_8cpp_a790fc6b7368aa6cd22ad07dbbeddcf8b}{\index{firearms.\-cpp@{firearms.\-cpp}!do\-\_\-unload\-\_\-clip@{do\-\_\-unload\-\_\-clip}}
+\index{do\-\_\-unload\-\_\-clip@{do\-\_\-unload\-\_\-clip}!firearms.cpp@{firearms.\-cpp}}
+\subsubsection[{do\-\_\-unload\-\_\-clip}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-unload\-\_\-clip (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{firearms_8cpp_a790fc6b7368aa6cd22ad07dbbeddcf8b}
+\hypertarget{firearms_8cpp_a98ed941497a035cde733ef659c874f40}{\index{firearms.\-cpp@{firearms.\-cpp}!do\-\_\-unload\-\_\-firearm@{do\-\_\-unload\-\_\-firearm}}
+\index{do\-\_\-unload\-\_\-firearm@{do\-\_\-unload\-\_\-firearm}!firearms.cpp@{firearms.\-cpp}}
+\subsubsection[{do\-\_\-unload\-\_\-firearm}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-unload\-\_\-firearm (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{firearms_8cpp_a98ed941497a035cde733ef659c874f40}
+\hypertarget{firearms_8cpp_a94b5a6da042bdc9d728d88d9dcaa24ae}{\index{firearms.\-cpp@{firearms.\-cpp}!draw\-\_\-bullet\-\_\-from\-\_\-belt@{draw\-\_\-bullet\-\_\-from\-\_\-belt}}
+\index{draw\-\_\-bullet\-\_\-from\-\_\-belt@{draw\-\_\-bullet\-\_\-from\-\_\-belt}!firearms.cpp@{firearms.\-cpp}}
+\subsubsection[{draw\-\_\-bullet\-\_\-from\-\_\-belt}]{\setlength{\rightskip}{0pt plus 5cm}{\bf O\-B\-J\-\_\-\-D\-A\-T\-A}$\ast$ draw\-\_\-bullet\-\_\-from\-\_\-belt (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{bullet, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{ptr\-Belt, }
+\item[{int $\ast$}]{count, }
+\item[{int}]{caliber, }
+\item[{int}]{size, }
+\item[{int $\ast$}]{error\-\_\-msg}
+\end{DoxyParamCaption}
+)}}\label{firearms_8cpp_a94b5a6da042bdc9d728d88d9dcaa24ae}
+\hypertarget{firearms_8cpp_a35ee936b0fd43f5084795acca552d314}{\index{firearms.\-cpp@{firearms.\-cpp}!draw\-\_\-clip\-\_\-from\-\_\-belt@{draw\-\_\-clip\-\_\-from\-\_\-belt}}
+\index{draw\-\_\-clip\-\_\-from\-\_\-belt@{draw\-\_\-clip\-\_\-from\-\_\-belt}!firearms.cpp@{firearms.\-cpp}}
+\subsubsection[{draw\-\_\-clip\-\_\-from\-\_\-belt}]{\setlength{\rightskip}{0pt plus 5cm}{\bf O\-B\-J\-\_\-\-D\-A\-T\-A}$\ast$ draw\-\_\-clip\-\_\-from\-\_\-belt (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{clip, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{ptr\-Belt, }
+\item[{int}]{amount, }
+\item[{int}]{caliber, }
+\item[{int}]{size, }
+\item[{int $\ast$}]{error\-\_\-msg}
+\end{DoxyParamCaption}
+)}}\label{firearms_8cpp_a35ee936b0fd43f5084795acca552d314}
+\hypertarget{firearms_8cpp_ae350e507f449d61005f917b125b20ffa}{\index{firearms.\-cpp@{firearms.\-cpp}!firearm\-\_\-aim@{firearm\-\_\-aim}}
+\index{firearm\-\_\-aim@{firearm\-\_\-aim}!firearms.cpp@{firearms.\-cpp}}
+\subsubsection[{firearm\-\_\-aim}]{\setlength{\rightskip}{0pt plus 5cm}void firearm\-\_\-aim (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{firearms_8cpp_ae350e507f449d61005f917b125b20ffa}
+\hypertarget{firearms_8cpp_afe35e695f2e214b2962df503ae2507cf}{\index{firearms.\-cpp@{firearms.\-cpp}!firearm\-\_\-bang@{firearm\-\_\-bang}}
+\index{firearm\-\_\-bang@{firearm\-\_\-bang}!firearms.cpp@{firearms.\-cpp}}
+\subsubsection[{firearm\-\_\-bang}]{\setlength{\rightskip}{0pt plus 5cm}void firearm\-\_\-bang (
+\begin{DoxyParamCaption}
+\item[{{\bf R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$}]{room, }
+\item[{int}]{fired, }
+\item[{int}]{target\-\_\-room}
+\end{DoxyParamCaption}
+)}}\label{firearms_8cpp_afe35e695f2e214b2962df503ae2507cf}
+\hypertarget{firearms_8cpp_ad40c236828773327cf9ecdb833fe573f}{\index{firearms.\-cpp@{firearms.\-cpp}!has\-\_\-firearm@{has\-\_\-firearm}}
+\index{has\-\_\-firearm@{has\-\_\-firearm}!firearms.cpp@{firearms.\-cpp}}
+\subsubsection[{has\-\_\-firearm}]{\setlength{\rightskip}{0pt plus 5cm}{\bf O\-B\-J\-\_\-\-D\-A\-T\-A}$\ast$ has\-\_\-firearm (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{firearms_8cpp_ad40c236828773327cf9ecdb833fe573f}
+\hypertarget{firearms_8cpp_a6ce1d79a700d7a7eeb9968161bd4bedf}{\index{firearms.\-cpp@{firearms.\-cpp}!modify\-\_\-firearm@{modify\-\_\-firearm}}
+\index{modify\-\_\-firearm@{modify\-\_\-firearm}!firearms.cpp@{firearms.\-cpp}}
+\subsubsection[{modify\-\_\-firearm}]{\setlength{\rightskip}{0pt plus 5cm}void modify\-\_\-firearm (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj}
+\end{DoxyParamCaption}
+)}}\label{firearms_8cpp_a6ce1d79a700d7a7eeb9968161bd4bedf}
+\hypertarget{firearms_8cpp_a3e46965be9969a86fb4f81aff083ed13}{\index{firearms.\-cpp@{firearms.\-cpp}!remove\-\_\-all\-\_\-overwatch@{remove\-\_\-all\-\_\-overwatch}}
+\index{remove\-\_\-all\-\_\-overwatch@{remove\-\_\-all\-\_\-overwatch}!firearms.cpp@{firearms.\-cpp}}
+\subsubsection[{remove\-\_\-all\-\_\-overwatch}]{\setlength{\rightskip}{0pt plus 5cm}void remove\-\_\-all\-\_\-overwatch (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{firearms_8cpp_a3e46965be9969a86fb4f81aff083ed13}
+\hypertarget{firearms_8cpp_aea51826adbf49c7556913f7f82ad2ba7}{\index{firearms.\-cpp@{firearms.\-cpp}!remove\-\_\-all\-\_\-targeted@{remove\-\_\-all\-\_\-targeted}}
+\index{remove\-\_\-all\-\_\-targeted@{remove\-\_\-all\-\_\-targeted}!firearms.cpp@{firearms.\-cpp}}
+\subsubsection[{remove\-\_\-all\-\_\-targeted}]{\setlength{\rightskip}{0pt plus 5cm}void remove\-\_\-all\-\_\-targeted (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{target}
+\end{DoxyParamCaption}
+)}}\label{firearms_8cpp_aea51826adbf49c7556913f7f82ad2ba7}
+\hypertarget{firearms_8cpp_a042f45745edd266aa6fa0593b0f15cca}{\index{firearms.\-cpp@{firearms.\-cpp}!remove\-\_\-cover@{remove\-\_\-cover}}
+\index{remove\-\_\-cover@{remove\-\_\-cover}!firearms.cpp@{firearms.\-cpp}}
+\subsubsection[{remove\-\_\-cover}]{\setlength{\rightskip}{0pt plus 5cm}void remove\-\_\-cover (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{type}
+\end{DoxyParamCaption}
+)}}\label{firearms_8cpp_a042f45745edd266aa6fa0593b0f15cca}
+\hypertarget{firearms_8cpp_a836026869d2bfdf5fe4604c7fb409b18}{\index{firearms.\-cpp@{firearms.\-cpp}!remove\-\_\-overwatch@{remove\-\_\-overwatch}}
+\index{remove\-\_\-overwatch@{remove\-\_\-overwatch}!firearms.cpp@{firearms.\-cpp}}
+\subsubsection[{remove\-\_\-overwatch}]{\setlength{\rightskip}{0pt plus 5cm}void remove\-\_\-overwatch (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{firearms_8cpp_a836026869d2bfdf5fe4604c7fb409b18}
+\hypertarget{firearms_8cpp_a9d314c03a8e1954c1fcf4b1a0e02c980}{\index{firearms.\-cpp@{firearms.\-cpp}!remove\-\_\-targeted@{remove\-\_\-targeted}}
+\index{remove\-\_\-targeted@{remove\-\_\-targeted}!firearms.cpp@{firearms.\-cpp}}
+\subsubsection[{remove\-\_\-targeted}]{\setlength{\rightskip}{0pt plus 5cm}void remove\-\_\-targeted (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{target, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{aimer}
+\end{DoxyParamCaption}
+)}}\label{firearms_8cpp_a9d314c03a8e1954c1fcf4b1a0e02c980}
+\hypertarget{firearms_8cpp_ab9c2a66cf0bb22ccfc05be7e9d9c8b5d}{\index{firearms.\-cpp@{firearms.\-cpp}!under\-\_\-cover@{under\-\_\-cover}}
+\index{under\-\_\-cover@{under\-\_\-cover}!firearms.cpp@{firearms.\-cpp}}
+\subsubsection[{under\-\_\-cover}]{\setlength{\rightskip}{0pt plus 5cm}int under\-\_\-cover (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{firearms_8cpp_ab9c2a66cf0bb22ccfc05be7e9d9c8b5d}
+
+
+\subsection{Variable Documentation}
+\hypertarget{firearms_8cpp_ada91931721fe5365ca4c0e40a94856c2}{\index{firearms.\-cpp@{firearms.\-cpp}!direct@{direct}}
+\index{direct@{direct}!firearms.cpp@{firearms.\-cpp}}
+\subsubsection[{direct}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ direct\mbox{[}$\,$\mbox{]}}}\label{firearms_8cpp_ada91931721fe5365ca4c0e40a94856c2}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{ \textcolor{stringliteral}{"north"}, \textcolor{stringliteral}{"east"}, \textcolor{stringliteral}{"south"}, \textcolor{stringliteral}{"west"}, \textcolor{stringliteral}{"up"}, \textcolor{stringliteral}{"down"}, \textcolor{stringliteral}{"area"}, \textcolor{stringliteral}{"\(\backslash\)n"} \}
+\end{DoxyCode}

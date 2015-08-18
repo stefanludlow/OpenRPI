@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -89,41 +89,132 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">mobprog_data Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="structs_8h_source.html">structs.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a8c82dd5e0c02cf72982f88cd482cd974"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8c82dd5e0c02cf72982f88cd482cd974"></a>
-char *&#160;</td><td class="memItemRight" valign="bottom"><b>trigger_name</b></td></tr>
+<tr class="memitem:a8c82dd5e0c02cf72982f88cd482cd974"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmobprog__data.html#a8c82dd5e0c02cf72982f88cd482cd974">trigger_name</a></td></tr>
 <tr class="separator:a8c82dd5e0c02cf72982f88cd482cd974"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad47f07fae4eb7e609d5afd35b2355b1d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad47f07fae4eb7e609d5afd35b2355b1d"></a>
-char *&#160;</td><td class="memItemRight" valign="bottom"><b>prog</b></td></tr>
+<tr class="memitem:ad47f07fae4eb7e609d5afd35b2355b1d"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmobprog__data.html#ad47f07fae4eb7e609d5afd35b2355b1d">prog</a></td></tr>
 <tr class="separator:ad47f07fae4eb7e609d5afd35b2355b1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d82709d17bf2744c6e14cb836d70a72"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4d82709d17bf2744c6e14cb836d70a72"></a>
-char *&#160;</td><td class="memItemRight" valign="bottom"><b>line</b></td></tr>
+<tr class="memitem:a4d82709d17bf2744c6e14cb836d70a72"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmobprog__data.html#a4d82709d17bf2744c6e14cb836d70a72">line</a></td></tr>
 <tr class="separator:a4d82709d17bf2744c6e14cb836d70a72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed5b719664a71a6802a9853d1a1c613c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aed5b719664a71a6802a9853d1a1c613c"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>busy</b></td></tr>
+<tr class="memitem:aed5b719664a71a6802a9853d1a1c613c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmobprog__data.html#aed5b719664a71a6802a9853d1a1c613c">busy</a></td></tr>
 <tr class="separator:aed5b719664a71a6802a9853d1a1c613c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ff527d51c7f34baf992f26576c26e9b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8ff527d51c7f34baf992f26576c26e9b"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>flags</b></td></tr>
+<tr class="memitem:a8ff527d51c7f34baf992f26576c26e9b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmobprog__data.html#a8ff527d51c7f34baf992f26576c26e9b">flags</a></td></tr>
 <tr class="separator:a8ff527d51c7f34baf992f26576c26e9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49bbc3e41c8fdcd14c08729e1fc1b6fb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a49bbc3e41c8fdcd14c08729e1fc1b6fb"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>mob_virtual</b></td></tr>
+<tr class="memitem:a49bbc3e41c8fdcd14c08729e1fc1b6fb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmobprog__data.html#a49bbc3e41c8fdcd14c08729e1fc1b6fb">mob_virtual</a></td></tr>
 <tr class="separator:a49bbc3e41c8fdcd14c08729e1fc1b6fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa16ae74c608143c69ef7ecb080db55b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaa16ae74c608143c69ef7ecb080db55b"></a>
-struct <a class="el" href="structmobprog__data.html">mobprog_data</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>next</b></td></tr>
+<tr class="memitem:aaa16ae74c608143c69ef7ecb080db55b"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structmobprog__data.html">mobprog_data</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmobprog__data.html#aaa16ae74c608143c69ef7ecb080db55b">next</a></td></tr>
 <tr class="separator:aaa16ae74c608143c69ef7ecb080db55b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adba12d3319a1406d6ff96e3d2803efd0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adba12d3319a1406d6ff96e3d2803efd0"></a>
-struct <a class="el" href="structmobprog__data.html">mobprog_data</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>next_full_prog</b></td></tr>
+<tr class="memitem:adba12d3319a1406d6ff96e3d2803efd0"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structmobprog__data.html">mobprog_data</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmobprog__data.html#adba12d3319a1406d6ff96e3d2803efd0">next_full_prog</a></td></tr>
 <tr class="separator:adba12d3319a1406d6ff96e3d2803efd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="aed5b719664a71a6802a9853d1a1c613c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mobprog_data::busy</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8ff527d51c7f34baf992f26576c26e9b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mobprog_data::flags</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4d82709d17bf2744c6e14cb836d70a72"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* mobprog_data::line</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a49bbc3e41c8fdcd14c08729e1fc1b6fb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mobprog_data::mob_virtual</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aaa16ae74c608143c69ef7ecb080db55b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structmobprog__data.html">mobprog_data</a>* mobprog_data::next</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="adba12d3319a1406d6ff96e3d2803efd0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structmobprog__data.html">mobprog_data</a>* mobprog_data::next_full_prog</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad47f07fae4eb7e609d5afd35b2355b1d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* mobprog_data::prog</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8c82dd5e0c02cf72982f88cd482cd974"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* mobprog_data::trigger_name</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li><a class="el" href="structs_8h_source.html">structs.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 17 2015 21:26:48 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 17 2015 22:02:23 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

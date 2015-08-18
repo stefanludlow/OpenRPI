@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -91,216 +91,1553 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">account Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="account_8h_source.html">account.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a7f9fc489391ffeeb0ac8b3edbd896852"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7f9fc489391ffeeb0ac8b3edbd896852"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>account</b> (const char *acct_name)</td></tr>
+<tr class="memitem:a86c420d904da93e17a0f079597ea3c18"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#a86c420d904da93e17a0f079597ea3c18">account</a> (void)</td></tr>
+<tr class="separator:a86c420d904da93e17a0f079597ea3c18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f9fc489391ffeeb0ac8b3edbd896852"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#a7f9fc489391ffeeb0ac8b3edbd896852">account</a> (const char *acct_name)</td></tr>
 <tr class="separator:a7f9fc489391ffeeb0ac8b3edbd896852"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0013a4b341ccb94d950b58dc9e40370c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0013a4b341ccb94d950b58dc9e40370c"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>get_id</b> () const </td></tr>
+<tr class="memitem:aa6a7f7655faa4f0b1722d0b8dc45dd0e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#aa6a7f7655faa4f0b1722d0b8dc45dd0e">~account</a> (void)</td></tr>
+<tr class="separator:aa6a7f7655faa4f0b1722d0b8dc45dd0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0013a4b341ccb94d950b58dc9e40370c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#a0013a4b341ccb94d950b58dc9e40370c">get_id</a> () const </td></tr>
 <tr class="separator:a0013a4b341ccb94d950b58dc9e40370c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55c4677963ad0cbad3df2ae17da15db0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a55c4677963ad0cbad3df2ae17da15db0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>get_name_sql_safe</b> (std::string &amp;safe_name) const </td></tr>
+<tr class="memitem:a55c4677963ad0cbad3df2ae17da15db0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#a55c4677963ad0cbad3df2ae17da15db0">get_name_sql_safe</a> (std::string &amp;safe_name) const </td></tr>
 <tr class="separator:a55c4677963ad0cbad3df2ae17da15db0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4aefad9867c8cb9393563f65c2956333"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4aefad9867c8cb9393563f65c2956333"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>get_email_sql_safe</b> (std::string &amp;safe_email) const </td></tr>
+<tr class="memitem:a4aefad9867c8cb9393563f65c2956333"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#a4aefad9867c8cb9393563f65c2956333">get_email_sql_safe</a> (std::string &amp;safe_email) const </td></tr>
 <tr class="separator:a4aefad9867c8cb9393563f65c2956333"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c96518fefa89811fe96c5778c300acd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2c96518fefa89811fe96c5778c300acd"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>get_password_sql_safe</b> (std::string &amp;safe_password) const </td></tr>
+<tr class="memitem:a2c96518fefa89811fe96c5778c300acd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#a2c96518fefa89811fe96c5778c300acd">get_password_sql_safe</a> (std::string &amp;safe_password) const </td></tr>
 <tr class="separator:a2c96518fefa89811fe96c5778c300acd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5693551c1a997ccf3b8ac3a627c2782d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5693551c1a997ccf3b8ac3a627c2782d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>get_last_ip_sql_safe</b> (std::string &amp;safe_ip) const </td></tr>
+<tr class="memitem:a5693551c1a997ccf3b8ac3a627c2782d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#a5693551c1a997ccf3b8ac3a627c2782d">get_last_ip_sql_safe</a> (std::string &amp;safe_ip) const </td></tr>
 <tr class="separator:a5693551c1a997ccf3b8ac3a627c2782d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd67b6a6eabbbe2e666f86ee74795a8f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acd67b6a6eabbbe2e666f86ee74795a8f"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>get_rpp</b> (void) const </td></tr>
+<tr class="memitem:acd67b6a6eabbbe2e666f86ee74795a8f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#acd67b6a6eabbbe2e666f86ee74795a8f">get_rpp</a> (void) const </td></tr>
 <tr class="separator:acd67b6a6eabbbe2e666f86ee74795a8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45f9b78f6ce59aa596d550cc6c68c15a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a45f9b78f6ce59aa596d550cc6c68c15a"></a>
-time_t&#160;</td><td class="memItemRight" valign="bottom"><b>get_last_rpp_date</b> (void) const </td></tr>
+<tr class="memitem:a45f9b78f6ce59aa596d550cc6c68c15a"><td class="memItemLeft" align="right" valign="top">time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#a45f9b78f6ce59aa596d550cc6c68c15a">get_last_rpp_date</a> (void) const </td></tr>
 <tr class="separator:a45f9b78f6ce59aa596d550cc6c68c15a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac7207c93ae1ceb659166c113a0950907"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac7207c93ae1ceb659166c113a0950907"></a>
-time_t&#160;</td><td class="memItemRight" valign="bottom"><b>get_last_nominate</b> (void) const </td></tr>
+<tr class="memitem:ac7207c93ae1ceb659166c113a0950907"><td class="memItemLeft" align="right" valign="top">time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#ac7207c93ae1ceb659166c113a0950907">get_last_nominate</a> (void) const </td></tr>
 <tr class="separator:ac7207c93ae1ceb659166c113a0950907"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae31cdc39d0e78b6e745b049f7557560d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae31cdc39d0e78b6e745b049f7557560d"></a>
-const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>get_last_rpp_date_string</b> (void) const </td></tr>
+<tr class="memitem:ae31cdc39d0e78b6e745b049f7557560d"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#ae31cdc39d0e78b6e745b049f7557560d">get_last_rpp_date_string</a> (void) const </td></tr>
 <tr class="separator:ae31cdc39d0e78b6e745b049f7557560d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86bd584f41fc85cdf6b5c08f5d646bae"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a86bd584f41fc85cdf6b5c08f5d646bae"></a>
-const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>get_nominate_rpp_date_string</b> (void) const </td></tr>
+<tr class="memitem:a86bd584f41fc85cdf6b5c08f5d646bae"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#a86bd584f41fc85cdf6b5c08f5d646bae">get_nominate_rpp_date_string</a> (void) const </td></tr>
 <tr class="separator:a86bd584f41fc85cdf6b5c08f5d646bae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca26766792b246602bae438cbeca3428"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aca26766792b246602bae438cbeca3428"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_registered</b> (void) const </td></tr>
+<tr class="memitem:aca26766792b246602bae438cbeca3428"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#aca26766792b246602bae438cbeca3428">is_registered</a> (void) const </td></tr>
 <tr class="separator:aca26766792b246602bae438cbeca3428"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64fd2bc0153983a53c19950b88cdc7a7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a64fd2bc0153983a53c19950b88cdc7a7"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_psionic_capable</b> (void) const </td></tr>
+<tr class="memitem:a64fd2bc0153983a53c19950b88cdc7a7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#a64fd2bc0153983a53c19950b88cdc7a7">is_psionic_capable</a> (void) const </td></tr>
 <tr class="separator:a64fd2bc0153983a53c19950b88cdc7a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84b9499eb811cc859ecd1825906b6b49"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a84b9499eb811cc859ecd1825906b6b49"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>initialize</b> (void)</td></tr>
+<tr class="memitem:a84b9499eb811cc859ecd1825906b6b49"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#a84b9499eb811cc859ecd1825906b6b49">initialize</a> (void)</td></tr>
 <tr class="separator:a84b9499eb811cc859ecd1825906b6b49"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8ddeefc071a39f28a778c7e353c22e2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab8ddeefc071a39f28a778c7e353c22e2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_name</b> (const char *account_name)</td></tr>
+<tr class="memitem:ab8ddeefc071a39f28a778c7e353c22e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#ab8ddeefc071a39f28a778c7e353c22e2">set_name</a> (const char *account_name)</td></tr>
 <tr class="separator:ab8ddeefc071a39f28a778c7e353c22e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a055dd7ec6b8b20d6a25ba99e8a756162"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a055dd7ec6b8b20d6a25ba99e8a756162"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_email</b> (const char *account_email)</td></tr>
+<tr class="memitem:a055dd7ec6b8b20d6a25ba99e8a756162"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#a055dd7ec6b8b20d6a25ba99e8a756162">set_email</a> (const char *account_email)</td></tr>
 <tr class="separator:a055dd7ec6b8b20d6a25ba99e8a756162"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c387f44d3f77c3261c88346417940e0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6c387f44d3f77c3261c88346417940e0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_email</b> (const std::string account_email)</td></tr>
+<tr class="memitem:a6c387f44d3f77c3261c88346417940e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#a6c387f44d3f77c3261c88346417940e0">set_email</a> (const std::string account_email)</td></tr>
 <tr class="separator:a6c387f44d3f77c3261c88346417940e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24a3091030b376ed6ce5e9191f6869d0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a24a3091030b376ed6ce5e9191f6869d0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_password</b> (const char *account_password)</td></tr>
+<tr class="memitem:a24a3091030b376ed6ce5e9191f6869d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#a24a3091030b376ed6ce5e9191f6869d0">set_password</a> (const char *account_password)</td></tr>
 <tr class="separator:a24a3091030b376ed6ce5e9191f6869d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a50bc1922ef23018fc1e09ae4844c906a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a50bc1922ef23018fc1e09ae4844c906a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_password</b> (const std::string account_password)</td></tr>
+<tr class="memitem:a50bc1922ef23018fc1e09ae4844c906a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#a50bc1922ef23018fc1e09ae4844c906a">set_password</a> (const std::string account_password)</td></tr>
 <tr class="separator:a50bc1922ef23018fc1e09ae4844c906a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e5fab61ce141ebb4ad25e27ccacbcf1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2e5fab61ce141ebb4ad25e27ccacbcf1"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_last_ip</b> (const char *account_last_ip)</td></tr>
+<tr class="memitem:a2e5fab61ce141ebb4ad25e27ccacbcf1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#a2e5fab61ce141ebb4ad25e27ccacbcf1">set_last_ip</a> (const char *account_last_ip)</td></tr>
 <tr class="separator:a2e5fab61ce141ebb4ad25e27ccacbcf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5de1f206c48cd36e5442c6ac70846bc4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5de1f206c48cd36e5442c6ac70846bc4"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_last_ip</b> (const std::string account_last_ip)</td></tr>
+<tr class="memitem:a5de1f206c48cd36e5442c6ac70846bc4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#a5de1f206c48cd36e5442c6ac70846bc4">set_last_ip</a> (const std::string account_last_ip)</td></tr>
 <tr class="separator:a5de1f206c48cd36e5442c6ac70846bc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a841ded037dd27811984898165f085281"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a841ded037dd27811984898165f085281"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_color_flag</b> (bool account_color)</td></tr>
+<tr class="memitem:a841ded037dd27811984898165f085281"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#a841ded037dd27811984898165f085281">set_color_flag</a> (<a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a> account_color)</td></tr>
 <tr class="separator:a841ded037dd27811984898165f085281"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac02f709994fdedeb88d038f9303b51ec"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac02f709994fdedeb88d038f9303b51ec"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_sound_flag</b> (bool account_sound)</td></tr>
+<tr class="memitem:ac02f709994fdedeb88d038f9303b51ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#ac02f709994fdedeb88d038f9303b51ec">set_sound_flag</a> (<a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a> account_sound)</td></tr>
 <tr class="separator:ac02f709994fdedeb88d038f9303b51ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf2fe805f4d715a3a94911d4125b30d5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acf2fe805f4d715a3a94911d4125b30d5"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_guide_flag</b> (bool account_guide)</td></tr>
+<tr class="memitem:acf2fe805f4d715a3a94911d4125b30d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#acf2fe805f4d715a3a94911d4125b30d5">set_guide_flag</a> (<a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a> account_guide)</td></tr>
 <tr class="separator:acf2fe805f4d715a3a94911d4125b30d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb0f7811000fa54ef1bcf2ba8a271921"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeb0f7811000fa54ef1bcf2ba8a271921"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_newsletter_flag</b> (bool account_newsletter)</td></tr>
+<tr class="memitem:aeb0f7811000fa54ef1bcf2ba8a271921"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#aeb0f7811000fa54ef1bcf2ba8a271921">set_newsletter_flag</a> (<a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a> account_newsletter)</td></tr>
 <tr class="separator:aeb0f7811000fa54ef1bcf2ba8a271921"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42fc12e16ea1ef1faff7b926a676cdf1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a42fc12e16ea1ef1faff7b926a676cdf1"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>update_email</b> (const char *account_email)</td></tr>
+<tr class="memitem:a42fc12e16ea1ef1faff7b926a676cdf1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#a42fc12e16ea1ef1faff7b926a676cdf1">update_email</a> (const char *account_email)</td></tr>
 <tr class="separator:a42fc12e16ea1ef1faff7b926a676cdf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e01213fc90e19ada49964f7876ea880"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9e01213fc90e19ada49964f7876ea880"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>update_password</b> (const char *account_password)</td></tr>
+<tr class="memitem:a9e01213fc90e19ada49964f7876ea880"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#a9e01213fc90e19ada49964f7876ea880">update_password</a> (const char *account_password)</td></tr>
 <tr class="separator:a9e01213fc90e19ada49964f7876ea880"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a599986e5db6cebafb398690c7d4a98e6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a599986e5db6cebafb398690c7d4a98e6"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>update_last_ip</b> (const char *account_last_ip)</td></tr>
+<tr class="memitem:a599986e5db6cebafb398690c7d4a98e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#a599986e5db6cebafb398690c7d4a98e6">update_last_ip</a> (const char *account_last_ip)</td></tr>
 <tr class="separator:a599986e5db6cebafb398690c7d4a98e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7eccafbf3cb4466ea52ce68d320d2646"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7eccafbf3cb4466ea52ce68d320d2646"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_rpp</b> (int account_rpp)</td></tr>
+<tr class="memitem:a7eccafbf3cb4466ea52ce68d320d2646"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#a7eccafbf3cb4466ea52ce68d320d2646">set_rpp</a> (int account_rpp)</td></tr>
 <tr class="separator:a7eccafbf3cb4466ea52ce68d320d2646"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae40fb30ed0caf778d2f6b4582c1038f6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae40fb30ed0caf778d2f6b4582c1038f6"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_last_rpp</b> (time_t account_last_rpp)</td></tr>
+<tr class="memitem:ae40fb30ed0caf778d2f6b4582c1038f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#ae40fb30ed0caf778d2f6b4582c1038f6">set_last_rpp</a> (time_t account_last_rpp)</td></tr>
 <tr class="separator:ae40fb30ed0caf778d2f6b4582c1038f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace99c5470133f2226e7e211eb5367f48"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ace99c5470133f2226e7e211eb5367f48"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_last_nominate</b> (time_t account_last_nominate)</td></tr>
+<tr class="memitem:ace99c5470133f2226e7e211eb5367f48"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#ace99c5470133f2226e7e211eb5367f48">set_last_nominate</a> (time_t account_last_nominate)</td></tr>
 <tr class="separator:ace99c5470133f2226e7e211eb5367f48"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae92bb9373261e35aee1530697443afdc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae92bb9373261e35aee1530697443afdc"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_flags</b> (int account_flags)</td></tr>
+<tr class="memitem:ae92bb9373261e35aee1530697443afdc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#ae92bb9373261e35aee1530697443afdc">set_flags</a> (int account_flags)</td></tr>
 <tr class="separator:ae92bb9373261e35aee1530697443afdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60bfacc5d1d16bb84fe77d64e473b9d8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a60bfacc5d1d16bb84fe77d64e473b9d8"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>toggle_color_flag</b> ()</td></tr>
+<tr class="memitem:a60bfacc5d1d16bb84fe77d64e473b9d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#a60bfacc5d1d16bb84fe77d64e473b9d8">toggle_color_flag</a> ()</td></tr>
 <tr class="separator:a60bfacc5d1d16bb84fe77d64e473b9d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a808b325e109c6fb8dd16ae750b8a6aef"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a808b325e109c6fb8dd16ae750b8a6aef"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>toggle_sound_flag</b> ()</td></tr>
+<tr class="memitem:a808b325e109c6fb8dd16ae750b8a6aef"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#a808b325e109c6fb8dd16ae750b8a6aef">toggle_sound_flag</a> ()</td></tr>
 <tr class="separator:a808b325e109c6fb8dd16ae750b8a6aef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a432124b99cf1dd11873d546697a7cc8c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a432124b99cf1dd11873d546697a7cc8c"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>toggle_guide_flag</b> ()</td></tr>
+<tr class="memitem:a432124b99cf1dd11873d546697a7cc8c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#a432124b99cf1dd11873d546697a7cc8c">toggle_guide_flag</a> ()</td></tr>
 <tr class="separator:a432124b99cf1dd11873d546697a7cc8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d8cdd02f9bebd123b369ada7dc83656"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0d8cdd02f9bebd123b369ada7dc83656"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>toggle_newsletter_flag</b> ()</td></tr>
+<tr class="memitem:a0d8cdd02f9bebd123b369ada7dc83656"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#a0d8cdd02f9bebd123b369ada7dc83656">toggle_newsletter_flag</a> ()</td></tr>
 <tr class="separator:a0d8cdd02f9bebd123b369ada7dc83656"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31043390e24a539df779e806c1faaec5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a31043390e24a539df779e806c1faaec5"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>toggle_petition_ban</b> ()</td></tr>
+<tr class="memitem:a31043390e24a539df779e806c1faaec5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#a31043390e24a539df779e806c1faaec5">toggle_petition_ban</a> ()</td></tr>
 <tr class="separator:a31043390e24a539df779e806c1faaec5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9ecc609d8f4fa1f84f7bf64e68a280c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af9ecc609d8f4fa1f84f7bf64e68a280c"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>toggle_ban_pass</b> ()</td></tr>
+<tr class="memitem:af9ecc609d8f4fa1f84f7bf64e68a280c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#af9ecc609d8f4fa1f84f7bf64e68a280c">toggle_ban_pass</a> ()</td></tr>
 <tr class="separator:af9ecc609d8f4fa1f84f7bf64e68a280c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5665e374e84979e1a44deaa21aa64425"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5665e374e84979e1a44deaa21aa64425"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>toggle_guest_ban</b> ()</td></tr>
+<tr class="memitem:a5665e374e84979e1a44deaa21aa64425"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#a5665e374e84979e1a44deaa21aa64425">toggle_guest_ban</a> ()</td></tr>
 <tr class="separator:a5665e374e84979e1a44deaa21aa64425"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55ffa6cc79590c1ad7bcdcc34773ad40"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a55ffa6cc79590c1ad7bcdcc34773ad40"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>toggle_psionics_ban</b> ()</td></tr>
+<tr class="memitem:a55ffa6cc79590c1ad7bcdcc34773ad40"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#a55ffa6cc79590c1ad7bcdcc34773ad40">toggle_psionics_ban</a> ()</td></tr>
 <tr class="separator:a55ffa6cc79590c1ad7bcdcc34773ad40"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6b872530fb10d791bb65461f5d75bef"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad6b872530fb10d791bb65461f5d75bef"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>toggle_retirement_ban</b> ()</td></tr>
+<tr class="memitem:ad6b872530fb10d791bb65461f5d75bef"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#ad6b872530fb10d791bb65461f5d75bef">toggle_retirement_ban</a> ()</td></tr>
 <tr class="separator:ad6b872530fb10d791bb65461f5d75bef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1620f171e4ce24029ec022bde96b87a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af1620f171e4ce24029ec022bde96b87a"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>toggle_ignore_vote_notes</b> ()</td></tr>
+<tr class="memitem:af1620f171e4ce24029ec022bde96b87a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#af1620f171e4ce24029ec022bde96b87a">toggle_ignore_vote_notes</a> ()</td></tr>
 <tr class="separator:af1620f171e4ce24029ec022bde96b87a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ce6cc28b05a5a25001d2b367e902426"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6ce6cc28b05a5a25001d2b367e902426"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>toggle_ip_sharing</b> ()</td></tr>
+<tr class="memitem:a6ce6cc28b05a5a25001d2b367e902426"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#a6ce6cc28b05a5a25001d2b367e902426">toggle_ip_sharing</a> ()</td></tr>
 <tr class="separator:a6ce6cc28b05a5a25001d2b367e902426"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb8ff878e54dacc069ec9281b1d85700"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afb8ff878e54dacc069ec9281b1d85700"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>toggle_rpp_visibility</b> ()</td></tr>
+<tr class="memitem:afb8ff878e54dacc069ec9281b1d85700"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#afb8ff878e54dacc069ec9281b1d85700">toggle_rpp_visibility</a> ()</td></tr>
 <tr class="separator:afb8ff878e54dacc069ec9281b1d85700"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9404079c48a6a7634d58bb8c651a6f8d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9404079c48a6a7634d58bb8c651a6f8d"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>toggle_ooc_ban</b> ()</td></tr>
+<tr class="memitem:a9404079c48a6a7634d58bb8c651a6f8d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#a9404079c48a6a7634d58bb8c651a6f8d">toggle_ooc_ban</a> ()</td></tr>
 <tr class="separator:a9404079c48a6a7634d58bb8c651a6f8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a29e4034d96e5beae49163df114458772"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a29e4034d96e5beae49163df114458772"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>award_rpp</b> ()</td></tr>
+<tr class="memitem:a29e4034d96e5beae49163df114458772"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#a29e4034d96e5beae49163df114458772">award_rpp</a> ()</td></tr>
 <tr class="separator:a29e4034d96e5beae49163df114458772"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84d07d9e4fbc89bf7caba589437968f8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a84d07d9e4fbc89bf7caba589437968f8"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>nominate_rpp</b> ()</td></tr>
+<tr class="memitem:a84d07d9e4fbc89bf7caba589437968f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#a84d07d9e4fbc89bf7caba589437968f8">nominate_rpp</a> ()</td></tr>
 <tr class="separator:a84d07d9e4fbc89bf7caba589437968f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab06de856e2c3c2cb433e810ce27dcba7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab06de856e2c3c2cb433e810ce27dcba7"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>deduct_rpp</b> (unsigned int deduction)</td></tr>
+<tr class="memitem:ab06de856e2c3c2cb433e810ce27dcba7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#ab06de856e2c3c2cb433e810ce27dcba7">deduct_rpp</a> (unsigned int deduction)</td></tr>
 <tr class="separator:ab06de856e2c3c2cb433e810ce27dcba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afbb5827b42878259de2c5843331b00a2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afbb5827b42878259de2c5843331b00a2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>pay_application_cost</b> (unsigned int application_cost)</td></tr>
+<tr class="memitem:afbb5827b42878259de2c5843331b00a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#afbb5827b42878259de2c5843331b00a2">pay_application_cost</a> (unsigned int application_cost)</td></tr>
 <tr class="separator:afbb5827b42878259de2c5843331b00a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a794e867a84315ec47bbc948e5b89c4c2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a794e867a84315ec47bbc948e5b89c4c2"></a>
-static bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_psionic_capable</b> (const char *account_name)</td></tr>
+<tr class="memitem:a794e867a84315ec47bbc948e5b89c4c2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#a794e867a84315ec47bbc948e5b89c4c2">is_psionic_capable</a> (const char *account_name)</td></tr>
 <tr class="separator:a794e867a84315ec47bbc948e5b89c4c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a783452af8647af9c866fc34500d7f3bf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a783452af8647af9c866fc34500d7f3bf"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>name</b></td></tr>
+<tr class="memitem:a783452af8647af9c866fc34500d7f3bf"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#a783452af8647af9c866fc34500d7f3bf">name</a></td></tr>
 <tr class="separator:a783452af8647af9c866fc34500d7f3bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5065b11fa126577408a795baaee55c9a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5065b11fa126577408a795baaee55c9a"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>password</b></td></tr>
+<tr class="memitem:a5065b11fa126577408a795baaee55c9a"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#a5065b11fa126577408a795baaee55c9a">password</a></td></tr>
 <tr class="separator:a5065b11fa126577408a795baaee55c9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4162d542188272c7b0d8fa23f3cd1d8d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4162d542188272c7b0d8fa23f3cd1d8d"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>email</b></td></tr>
+<tr class="memitem:a4162d542188272c7b0d8fa23f3cd1d8d"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#a4162d542188272c7b0d8fa23f3cd1d8d">email</a></td></tr>
 <tr class="separator:a4162d542188272c7b0d8fa23f3cd1d8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3e0f8aeca928fac0382524f6aecd23d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae3e0f8aeca928fac0382524f6aecd23d"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>last_ip</b></td></tr>
+<tr class="memitem:ae3e0f8aeca928fac0382524f6aecd23d"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#ae3e0f8aeca928fac0382524f6aecd23d">last_ip</a></td></tr>
 <tr class="separator:ae3e0f8aeca928fac0382524f6aecd23d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a417252386b992dd5fb40e89c03da57c8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a417252386b992dd5fb40e89c03da57c8"></a>
-time_t&#160;</td><td class="memItemRight" valign="bottom"><b>created_on</b></td></tr>
+<tr class="memitem:a417252386b992dd5fb40e89c03da57c8"><td class="memItemLeft" align="right" valign="top">time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#a417252386b992dd5fb40e89c03da57c8">created_on</a></td></tr>
 <tr class="separator:a417252386b992dd5fb40e89c03da57c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af922bcf652c2840a54d1d2fbb2bb2f31"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af922bcf652c2840a54d1d2fbb2bb2f31"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>password_attempt</b></td></tr>
+<tr class="memitem:af922bcf652c2840a54d1d2fbb2bb2f31"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#af922bcf652c2840a54d1d2fbb2bb2f31">password_attempt</a></td></tr>
 <tr class="separator:af922bcf652c2840a54d1d2fbb2bb2f31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afcc62d878922a73bb9b4207682ee9308"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afcc62d878922a73bb9b4207682ee9308"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>color</b></td></tr>
+<tr class="memitem:afcc62d878922a73bb9b4207682ee9308"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#afcc62d878922a73bb9b4207682ee9308">color</a></td></tr>
 <tr class="separator:afcc62d878922a73bb9b4207682ee9308"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abfa6841eb5aa7765512ce8ca2e15c2d5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abfa6841eb5aa7765512ce8ca2e15c2d5"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>sound</b></td></tr>
+<tr class="memitem:abfa6841eb5aa7765512ce8ca2e15c2d5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#abfa6841eb5aa7765512ce8ca2e15c2d5">sound</a></td></tr>
 <tr class="separator:abfa6841eb5aa7765512ce8ca2e15c2d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24cfe23c99afd8e2dd1c5eb479c5099a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a24cfe23c99afd8e2dd1c5eb479c5099a"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>guide</b></td></tr>
+<tr class="memitem:a24cfe23c99afd8e2dd1c5eb479c5099a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#a24cfe23c99afd8e2dd1c5eb479c5099a">guide</a></td></tr>
 <tr class="separator:a24cfe23c99afd8e2dd1c5eb479c5099a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac79e04b34415777a4ca74fffd0999c32"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac79e04b34415777a4ca74fffd0999c32"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>newsletter</b></td></tr>
+<tr class="memitem:ac79e04b34415777a4ca74fffd0999c32"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#ac79e04b34415777a4ca74fffd0999c32">newsletter</a></td></tr>
 <tr class="separator:ac79e04b34415777a4ca74fffd0999c32"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a252c3f2ba9386ca20fc3c48bf87f43"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9a252c3f2ba9386ca20fc3c48bf87f43"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>flags</b></td></tr>
+<tr class="memitem:a9a252c3f2ba9386ca20fc3c48bf87f43"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#a9a252c3f2ba9386ca20fc3c48bf87f43">flags</a></td></tr>
 <tr class="separator:a9a252c3f2ba9386ca20fc3c48bf87f43"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf8a77ab282ed9ba8a45bccf97cd30f8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acf8a77ab282ed9ba8a45bccf97cd30f8"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>forum_posts</b></td></tr>
+<tr class="memitem:acf8a77ab282ed9ba8a45bccf97cd30f8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#acf8a77ab282ed9ba8a45bccf97cd30f8">forum_posts</a></td></tr>
 <tr class="separator:acf8a77ab282ed9ba8a45bccf97cd30f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7eb216076728b85fb3ce1dc89b794f87"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7eb216076728b85fb3ce1dc89b794f87"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>timezone</b></td></tr>
+<tr class="memitem:a7eb216076728b85fb3ce1dc89b794f87"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#a7eb216076728b85fb3ce1dc89b794f87">timezone</a></td></tr>
 <tr class="separator:a7eb216076728b85fb3ce1dc89b794f87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adfc7ed36bceef7a04d39e6ba19bc001c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adfc7ed36bceef7a04d39e6ba19bc001c"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>code</b></td></tr>
+<tr class="memitem:adfc7ed36bceef7a04d39e6ba19bc001c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaccount.html#adfc7ed36bceef7a04d39e6ba19bc001c">code</a></td></tr>
 <tr class="separator:adfc7ed36bceef7a04d39e6ba19bc001c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a86c420d904da93e17a0f079597ea3c18"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">account::account </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7f9fc489391ffeeb0ac8b3edbd896852"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">account::account </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>acct_name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa6a7f7655faa4f0b1722d0b8dc45dd0e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">account::~account </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a29e4034d96e5beae49163df114458772"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void account::award_rpp </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab06de856e2c3c2cb433e810ce27dcba7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void account::deduct_rpp </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>deduction</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4aefad9867c8cb9393563f65c2956333"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void account::get_email_sql_safe </td>
+          <td>(</td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>safe_email</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0013a4b341ccb94d950b58dc9e40370c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int account::get_id </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5693551c1a997ccf3b8ac3a627c2782d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void account::get_last_ip_sql_safe </td>
+          <td>(</td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>safe_ip</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac7207c93ae1ceb659166c113a0950907"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">time_t account::get_last_nominate </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a45f9b78f6ce59aa596d550cc6c68c15a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">time_t account::get_last_rpp_date </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae31cdc39d0e78b6e745b049f7557560d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string account::get_last_rpp_date_string </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a55c4677963ad0cbad3df2ae17da15db0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void account::get_name_sql_safe </td>
+          <td>(</td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>safe_name</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a86bd584f41fc85cdf6b5c08f5d646bae"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string account::get_nominate_rpp_date_string </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2c96518fefa89811fe96c5778c300acd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void account::get_password_sql_safe </td>
+          <td>(</td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>safe_password</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="acd67b6a6eabbbe2e666f86ee74795a8f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int account::get_rpp </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a84b9499eb811cc859ecd1825906b6b49"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void account::initialize </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a64fd2bc0153983a53c19950b88cdc7a7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a> account::is_psionic_capable </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a794e867a84315ec47bbc948e5b89c4c2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a> account::is_psionic_capable </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>account_name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aca26766792b246602bae438cbeca3428"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a> account::is_registered </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a84d07d9e4fbc89bf7caba589437968f8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void account::nominate_rpp </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="afbb5827b42878259de2c5843331b00a2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void account::pay_application_cost </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>application_cost</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a841ded037dd27811984898165f085281"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void account::set_color_flag </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a>&#160;</td>
+          <td class="paramname"><em>account_color</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a055dd7ec6b8b20d6a25ba99e8a756162"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void account::set_email </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>account_email</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6c387f44d3f77c3261c88346417940e0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void account::set_email </td>
+          <td>(</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>account_email</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae92bb9373261e35aee1530697443afdc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void account::set_flags </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>account_flags</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="acf2fe805f4d715a3a94911d4125b30d5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void account::set_guide_flag </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a>&#160;</td>
+          <td class="paramname"><em>account_guide</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2e5fab61ce141ebb4ad25e27ccacbcf1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void account::set_last_ip </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>account_last_ip</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5de1f206c48cd36e5442c6ac70846bc4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void account::set_last_ip </td>
+          <td>(</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>account_last_ip</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ace99c5470133f2226e7e211eb5367f48"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void account::set_last_nominate </td>
+          <td>(</td>
+          <td class="paramtype">time_t&#160;</td>
+          <td class="paramname"><em>account_last_nominate</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae40fb30ed0caf778d2f6b4582c1038f6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void account::set_last_rpp </td>
+          <td>(</td>
+          <td class="paramtype">time_t&#160;</td>
+          <td class="paramname"><em>account_last_rpp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab8ddeefc071a39f28a778c7e353c22e2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void account::set_name </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>account_name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aeb0f7811000fa54ef1bcf2ba8a271921"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void account::set_newsletter_flag </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a>&#160;</td>
+          <td class="paramname"><em>account_newsletter</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a24a3091030b376ed6ce5e9191f6869d0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void account::set_password </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>account_password</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a50bc1922ef23018fc1e09ae4844c906a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void account::set_password </td>
+          <td>(</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>account_password</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7eccafbf3cb4466ea52ce68d320d2646"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void account::set_rpp </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>account_rpp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac02f709994fdedeb88d038f9303b51ec"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void account::set_sound_flag </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a>&#160;</td>
+          <td class="paramname"><em>account_sound</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af9ecc609d8f4fa1f84f7bf64e68a280c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a> account::toggle_ban_pass </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a60bfacc5d1d16bb84fe77d64e473b9d8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a> account::toggle_color_flag </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5665e374e84979e1a44deaa21aa64425"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a> account::toggle_guest_ban </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a432124b99cf1dd11873d546697a7cc8c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a> account::toggle_guide_flag </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af1620f171e4ce24029ec022bde96b87a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a> account::toggle_ignore_vote_notes </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6ce6cc28b05a5a25001d2b367e902426"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a> account::toggle_ip_sharing </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0d8cdd02f9bebd123b369ada7dc83656"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a> account::toggle_newsletter_flag </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9404079c48a6a7634d58bb8c651a6f8d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a> account::toggle_ooc_ban </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a31043390e24a539df779e806c1faaec5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a> account::toggle_petition_ban </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a55ffa6cc79590c1ad7bcdcc34773ad40"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a> account::toggle_psionics_ban </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad6b872530fb10d791bb65461f5d75bef"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a> account::toggle_retirement_ban </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="afb8ff878e54dacc069ec9281b1d85700"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a> account::toggle_rpp_visibility </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a808b325e109c6fb8dd16ae750b8a6aef"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a> account::toggle_sound_flag </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a42fc12e16ea1ef1faff7b926a676cdf1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void account::update_email </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>account_email</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a599986e5db6cebafb398690c7d4a98e6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void account::update_last_ip </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>account_last_ip</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9e01213fc90e19ada49964f7876ea880"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void account::update_password </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>account_password</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="adfc7ed36bceef7a04d39e6ba19bc001c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int account::code</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="afcc62d878922a73bb9b4207682ee9308"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a> account::color</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a417252386b992dd5fb40e89c03da57c8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">time_t account::created_on</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4162d542188272c7b0d8fa23f3cd1d8d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string account::email</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9a252c3f2ba9386ca20fc3c48bf87f43"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int account::flags</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="acf8a77ab282ed9ba8a45bccf97cd30f8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int account::forum_posts</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a24cfe23c99afd8e2dd1c5eb479c5099a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a> account::guide</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae3e0f8aeca928fac0382524f6aecd23d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string account::last_ip</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a783452af8647af9c866fc34500d7f3bf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string account::name</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac79e04b34415777a4ca74fffd0999c32"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a> account::newsletter</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5065b11fa126577408a795baaee55c9a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string account::password</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af922bcf652c2840a54d1d2fbb2bb2f31"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int account::password_attempt</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abfa6841eb5aa7765512ce8ca2e15c2d5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a> account::sound</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7eb216076728b85fb3ce1dc89b794f87"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float account::timezone</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="account_8h_source.html">account.h</a></li>
-<li>account.cpp</li>
+<li><a class="el" href="account_8cpp.html">account.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 17 2015 21:26:48 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 17 2015 22:02:23 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

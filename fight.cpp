@@ -454,7 +454,7 @@ add_criminal_time(CHAR_DATA* ch, int zone, int penalty_time)
 
 // criminalize
 //
-// Refrences:
+// References:
 // * act.movement.c - do_pick() on failed door pick
 // * act.offensive.c - do_throw() on ch!fighting and damage > 3
 // * act.offensive.c - fire_sling() on ch!fighting and damage > 3

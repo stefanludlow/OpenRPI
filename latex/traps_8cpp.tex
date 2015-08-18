@@ -1,0 +1,237 @@
+\hypertarget{traps_8cpp}{\section{traps.\-cpp File Reference}
+\label{traps_8cpp}\index{traps.\-cpp@{traps.\-cpp}}
+}
+{\ttfamily \#include $<$time.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$ctype.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}server.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}structs.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}net\-\_\-link.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}account.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}protos.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}decl.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}group.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utility.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}object\-\_\-damage.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{traps_8cpp_a59b84c8be174067695e385b30ddb9384}{trap\-\_\-obj\-\_\-release} (\hyperlink{room_8h_aede519ef65d80b5242a4a28b69d5e097}{R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$room, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj)
+\item 
+void \hyperlink{traps_8cpp_a24a8f02f60930a9cbd49cb1939ce8d45}{delayed\-\_\-trapped} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+int \hyperlink{traps_8cpp_a1247412b4ea662ea55027a6f50bedf57}{trap\-\_\-component\-\_\-result} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$tobj, \hyperlink{room_8h_aede519ef65d80b5242a4a28b69d5e097}{R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$room)
+\item 
+int \hyperlink{traps_8cpp_a2672fdfeb5afd2dac954aeb576915c4e}{trap\-\_\-component\-\_\-affect} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$tobj)
+\item 
+int \hyperlink{traps_8cpp_affe32af33b2c9536012932874ffa1651}{trap\-\_\-component\-\_\-blank} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$tobj, int size)
+\item 
+int \hyperlink{traps_8cpp_a1a6bc676cb5a6651191c9908ee7ff6e3}{trap\-\_\-component\-\_\-rounds} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$tobj, int size, \hyperlink{room_8h_aede519ef65d80b5242a4a28b69d5e097}{R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$room)
+\item 
+void \hyperlink{traps_8cpp_ab83c3781cd4074e7b04174b48c1af888}{trap\-\_\-assemble} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{traps_8cpp_a3c6798a7c4d88a01f3b73a766654219b}{delayed\-\_\-trap\-\_\-assemble} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{traps_8cpp_af90cc0145d4a3cf5aa24f64132c5342f}{delayed\-\_\-trap\-\_\-assemble2} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{traps_8cpp_a5ebbf8dc5f32f7f641d1b2a19da35148}{trap\-\_\-detect} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{traps_8cpp_a88d1c2307d083550bf45f06868c1b767}{delayed\-\_\-trap\-\_\-search} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{traps_8cpp_a45da8518915e31ac4783427840d7d0cf}{trap\-\_\-disassemble} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{traps_8cpp_ab818395d9efc3175e6401dd97829ba37}{delayed\-\_\-trap\-\_\-dissamble} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{traps_8cpp_a6191effbfb282ea647af0f6723f9f482}{trap\-\_\-examine} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{traps_8cpp_a063c449610d9d1879827066e9d64e806}{trap\-\_\-defuse} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+int \hyperlink{traps_8cpp_a5cf38167deeab6a6f48b2f9ea12bd794}{trap\-\_\-enact} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$tch, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj, int cmd, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$tobj)
+\item 
+void \hyperlink{traps_8cpp_af4db73f4d49e5c7f9d8ef26c4765545f}{trap\-\_\-release} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{traps_8cpp_aa3fcfb36b3e02a25b7e3991cd1a7b727}{do\-\_\-trap} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{traps_8cpp_a63ff23cb40f5368f9ed7890021ccd588}{trap\-\_\-attrs2} \mbox{[}8\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{traps_8cpp_a3c6798a7c4d88a01f3b73a766654219b}{\index{traps.\-cpp@{traps.\-cpp}!delayed\-\_\-trap\-\_\-assemble@{delayed\-\_\-trap\-\_\-assemble}}
+\index{delayed\-\_\-trap\-\_\-assemble@{delayed\-\_\-trap\-\_\-assemble}!traps.cpp@{traps.\-cpp}}
+\subsubsection[{delayed\-\_\-trap\-\_\-assemble}]{\setlength{\rightskip}{0pt plus 5cm}void delayed\-\_\-trap\-\_\-assemble (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{traps_8cpp_a3c6798a7c4d88a01f3b73a766654219b}
+\hypertarget{traps_8cpp_af90cc0145d4a3cf5aa24f64132c5342f}{\index{traps.\-cpp@{traps.\-cpp}!delayed\-\_\-trap\-\_\-assemble2@{delayed\-\_\-trap\-\_\-assemble2}}
+\index{delayed\-\_\-trap\-\_\-assemble2@{delayed\-\_\-trap\-\_\-assemble2}!traps.cpp@{traps.\-cpp}}
+\subsubsection[{delayed\-\_\-trap\-\_\-assemble2}]{\setlength{\rightskip}{0pt plus 5cm}void delayed\-\_\-trap\-\_\-assemble2 (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{traps_8cpp_af90cc0145d4a3cf5aa24f64132c5342f}
+\hypertarget{traps_8cpp_ab818395d9efc3175e6401dd97829ba37}{\index{traps.\-cpp@{traps.\-cpp}!delayed\-\_\-trap\-\_\-dissamble@{delayed\-\_\-trap\-\_\-dissamble}}
+\index{delayed\-\_\-trap\-\_\-dissamble@{delayed\-\_\-trap\-\_\-dissamble}!traps.cpp@{traps.\-cpp}}
+\subsubsection[{delayed\-\_\-trap\-\_\-dissamble}]{\setlength{\rightskip}{0pt plus 5cm}void delayed\-\_\-trap\-\_\-dissamble (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{traps_8cpp_ab818395d9efc3175e6401dd97829ba37}
+\hypertarget{traps_8cpp_a88d1c2307d083550bf45f06868c1b767}{\index{traps.\-cpp@{traps.\-cpp}!delayed\-\_\-trap\-\_\-search@{delayed\-\_\-trap\-\_\-search}}
+\index{delayed\-\_\-trap\-\_\-search@{delayed\-\_\-trap\-\_\-search}!traps.cpp@{traps.\-cpp}}
+\subsubsection[{delayed\-\_\-trap\-\_\-search}]{\setlength{\rightskip}{0pt plus 5cm}void delayed\-\_\-trap\-\_\-search (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{traps_8cpp_a88d1c2307d083550bf45f06868c1b767}
+\hypertarget{traps_8cpp_a24a8f02f60930a9cbd49cb1939ce8d45}{\index{traps.\-cpp@{traps.\-cpp}!delayed\-\_\-trapped@{delayed\-\_\-trapped}}
+\index{delayed\-\_\-trapped@{delayed\-\_\-trapped}!traps.cpp@{traps.\-cpp}}
+\subsubsection[{delayed\-\_\-trapped}]{\setlength{\rightskip}{0pt plus 5cm}void delayed\-\_\-trapped (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{traps_8cpp_a24a8f02f60930a9cbd49cb1939ce8d45}
+\hypertarget{traps_8cpp_aa3fcfb36b3e02a25b7e3991cd1a7b727}{\index{traps.\-cpp@{traps.\-cpp}!do\-\_\-trap@{do\-\_\-trap}}
+\index{do\-\_\-trap@{do\-\_\-trap}!traps.cpp@{traps.\-cpp}}
+\subsubsection[{do\-\_\-trap}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-trap (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{traps_8cpp_aa3fcfb36b3e02a25b7e3991cd1a7b727}
+\hypertarget{traps_8cpp_ab83c3781cd4074e7b04174b48c1af888}{\index{traps.\-cpp@{traps.\-cpp}!trap\-\_\-assemble@{trap\-\_\-assemble}}
+\index{trap\-\_\-assemble@{trap\-\_\-assemble}!traps.cpp@{traps.\-cpp}}
+\subsubsection[{trap\-\_\-assemble}]{\setlength{\rightskip}{0pt plus 5cm}void trap\-\_\-assemble (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{traps_8cpp_ab83c3781cd4074e7b04174b48c1af888}
+\hypertarget{traps_8cpp_a2672fdfeb5afd2dac954aeb576915c4e}{\index{traps.\-cpp@{traps.\-cpp}!trap\-\_\-component\-\_\-affect@{trap\-\_\-component\-\_\-affect}}
+\index{trap\-\_\-component\-\_\-affect@{trap\-\_\-component\-\_\-affect}!traps.cpp@{traps.\-cpp}}
+\subsubsection[{trap\-\_\-component\-\_\-affect}]{\setlength{\rightskip}{0pt plus 5cm}int trap\-\_\-component\-\_\-affect (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{tobj}
+\end{DoxyParamCaption}
+)}}\label{traps_8cpp_a2672fdfeb5afd2dac954aeb576915c4e}
+\hypertarget{traps_8cpp_affe32af33b2c9536012932874ffa1651}{\index{traps.\-cpp@{traps.\-cpp}!trap\-\_\-component\-\_\-blank@{trap\-\_\-component\-\_\-blank}}
+\index{trap\-\_\-component\-\_\-blank@{trap\-\_\-component\-\_\-blank}!traps.cpp@{traps.\-cpp}}
+\subsubsection[{trap\-\_\-component\-\_\-blank}]{\setlength{\rightskip}{0pt plus 5cm}int trap\-\_\-component\-\_\-blank (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{tobj, }
+\item[{int}]{size}
+\end{DoxyParamCaption}
+)}}\label{traps_8cpp_affe32af33b2c9536012932874ffa1651}
+\hypertarget{traps_8cpp_a1247412b4ea662ea55027a6f50bedf57}{\index{traps.\-cpp@{traps.\-cpp}!trap\-\_\-component\-\_\-result@{trap\-\_\-component\-\_\-result}}
+\index{trap\-\_\-component\-\_\-result@{trap\-\_\-component\-\_\-result}!traps.cpp@{traps.\-cpp}}
+\subsubsection[{trap\-\_\-component\-\_\-result}]{\setlength{\rightskip}{0pt plus 5cm}int trap\-\_\-component\-\_\-result (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{tobj, }
+\item[{{\bf R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$}]{room}
+\end{DoxyParamCaption}
+)}}\label{traps_8cpp_a1247412b4ea662ea55027a6f50bedf57}
+\hypertarget{traps_8cpp_a1a6bc676cb5a6651191c9908ee7ff6e3}{\index{traps.\-cpp@{traps.\-cpp}!trap\-\_\-component\-\_\-rounds@{trap\-\_\-component\-\_\-rounds}}
+\index{trap\-\_\-component\-\_\-rounds@{trap\-\_\-component\-\_\-rounds}!traps.cpp@{traps.\-cpp}}
+\subsubsection[{trap\-\_\-component\-\_\-rounds}]{\setlength{\rightskip}{0pt plus 5cm}int trap\-\_\-component\-\_\-rounds (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{tobj, }
+\item[{int}]{size, }
+\item[{{\bf R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$}]{room}
+\end{DoxyParamCaption}
+)}}\label{traps_8cpp_a1a6bc676cb5a6651191c9908ee7ff6e3}
+\hypertarget{traps_8cpp_a063c449610d9d1879827066e9d64e806}{\index{traps.\-cpp@{traps.\-cpp}!trap\-\_\-defuse@{trap\-\_\-defuse}}
+\index{trap\-\_\-defuse@{trap\-\_\-defuse}!traps.cpp@{traps.\-cpp}}
+\subsubsection[{trap\-\_\-defuse}]{\setlength{\rightskip}{0pt plus 5cm}void trap\-\_\-defuse (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{traps_8cpp_a063c449610d9d1879827066e9d64e806}
+\hypertarget{traps_8cpp_a5ebbf8dc5f32f7f641d1b2a19da35148}{\index{traps.\-cpp@{traps.\-cpp}!trap\-\_\-detect@{trap\-\_\-detect}}
+\index{trap\-\_\-detect@{trap\-\_\-detect}!traps.cpp@{traps.\-cpp}}
+\subsubsection[{trap\-\_\-detect}]{\setlength{\rightskip}{0pt plus 5cm}void trap\-\_\-detect (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{traps_8cpp_a5ebbf8dc5f32f7f641d1b2a19da35148}
+\hypertarget{traps_8cpp_a45da8518915e31ac4783427840d7d0cf}{\index{traps.\-cpp@{traps.\-cpp}!trap\-\_\-disassemble@{trap\-\_\-disassemble}}
+\index{trap\-\_\-disassemble@{trap\-\_\-disassemble}!traps.cpp@{traps.\-cpp}}
+\subsubsection[{trap\-\_\-disassemble}]{\setlength{\rightskip}{0pt plus 5cm}void trap\-\_\-disassemble (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{traps_8cpp_a45da8518915e31ac4783427840d7d0cf}
+\hypertarget{traps_8cpp_a5cf38167deeab6a6f48b2f9ea12bd794}{\index{traps.\-cpp@{traps.\-cpp}!trap\-\_\-enact@{trap\-\_\-enact}}
+\index{trap\-\_\-enact@{trap\-\_\-enact}!traps.cpp@{traps.\-cpp}}
+\subsubsection[{trap\-\_\-enact}]{\setlength{\rightskip}{0pt plus 5cm}int trap\-\_\-enact (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{tch, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj, }
+\item[{int}]{cmd, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{tobj}
+\end{DoxyParamCaption}
+)}}\label{traps_8cpp_a5cf38167deeab6a6f48b2f9ea12bd794}
+\hypertarget{traps_8cpp_a6191effbfb282ea647af0f6723f9f482}{\index{traps.\-cpp@{traps.\-cpp}!trap\-\_\-examine@{trap\-\_\-examine}}
+\index{trap\-\_\-examine@{trap\-\_\-examine}!traps.cpp@{traps.\-cpp}}
+\subsubsection[{trap\-\_\-examine}]{\setlength{\rightskip}{0pt plus 5cm}void trap\-\_\-examine (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{traps_8cpp_a6191effbfb282ea647af0f6723f9f482}
+\hypertarget{traps_8cpp_a59b84c8be174067695e385b30ddb9384}{\index{traps.\-cpp@{traps.\-cpp}!trap\-\_\-obj\-\_\-release@{trap\-\_\-obj\-\_\-release}}
+\index{trap\-\_\-obj\-\_\-release@{trap\-\_\-obj\-\_\-release}!traps.cpp@{traps.\-cpp}}
+\subsubsection[{trap\-\_\-obj\-\_\-release}]{\setlength{\rightskip}{0pt plus 5cm}void trap\-\_\-obj\-\_\-release (
+\begin{DoxyParamCaption}
+\item[{{\bf R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$}]{room, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj}
+\end{DoxyParamCaption}
+)}}\label{traps_8cpp_a59b84c8be174067695e385b30ddb9384}
+\hypertarget{traps_8cpp_af4db73f4d49e5c7f9d8ef26c4765545f}{\index{traps.\-cpp@{traps.\-cpp}!trap\-\_\-release@{trap\-\_\-release}}
+\index{trap\-\_\-release@{trap\-\_\-release}!traps.cpp@{traps.\-cpp}}
+\subsubsection[{trap\-\_\-release}]{\setlength{\rightskip}{0pt plus 5cm}void trap\-\_\-release (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{traps_8cpp_af4db73f4d49e5c7f9d8ef26c4765545f}
+
+
+\subsection{Variable Documentation}
+\hypertarget{traps_8cpp_a63ff23cb40f5368f9ed7890021ccd588}{\index{traps.\-cpp@{traps.\-cpp}!trap\-\_\-attrs2@{trap\-\_\-attrs2}}
+\index{trap\-\_\-attrs2@{trap\-\_\-attrs2}!traps.cpp@{traps.\-cpp}}
+\subsubsection[{trap\-\_\-attrs2}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ trap\-\_\-attrs2\mbox{[}8\mbox{]}}}\label{traps_8cpp_a63ff23cb40f5368f9ed7890021ccd588}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"None"},
+    \textcolor{stringliteral}{"strength"},
+    \textcolor{stringliteral}{"dexterity"},
+    \textcolor{stringliteral}{"constitution"},
+    \textcolor{stringliteral}{"intelligence"},
+    \textcolor{stringliteral}{"willpower"},
+    \textcolor{stringliteral}{"mutations"},
+    \textcolor{stringliteral}{"agility"}
+\}
+\end{DoxyCode}

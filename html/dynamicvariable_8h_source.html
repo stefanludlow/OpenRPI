@@ -62,6 +62,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -70,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -84,38 +85,38 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">dynamicvariable.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<a href="dynamicvariable_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
 <div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="classDynamicVariable.html">    4</a></span>&#160;<span class="keyword">class </span><a class="code" href="classDynamicVariable.html">DynamicVariable</a></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;{</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    DynamicVariable::DynamicVariable(std::string Name, std::string Contents)</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="classDynamicVariable.html#a8e38eae3957a9898e185b39890d836b9">    7</a></span>&#160;    <a class="code" href="classDynamicVariable.html#a8e38eae3957a9898e185b39890d836b9">DynamicVariable::DynamicVariable</a>(std::string Name, std::string Contents)</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    {</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        this.VariableName = Name;</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        this.VariableContents = Contents;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    }</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    DynamicVariable::DynamicVariable(std::string Name)</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classDynamicVariable.html#a4c373222540fc9afb4f60c3cd5c3083c">   12</a></span>&#160;    <a class="code" href="classDynamicVariable.html#a8e38eae3957a9898e185b39890d836b9">DynamicVariable::DynamicVariable</a>(std::string Name)</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    {</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        this.VariableName = Name;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        this.VariableContents = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    }</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    DynamicVariable::~DynamicVariable()</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classDynamicVariable.html#af8f8237d328007c2fd13eeaf458e5bdb">   17</a></span>&#160;    <a class="code" href="classDynamicVariable.html#af8f8237d328007c2fd13eeaf458e5bdb">DynamicVariable::~DynamicVariable</a>()</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    {</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    }</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    std::string DynamicVariable::GetVariableName()</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classDynamicVariable.html#ae693b792fcc5aa86a12fe7d0316536c4">   20</a></span>&#160;    std::string <a class="code" href="classDynamicVariable.html#ae693b792fcc5aa86a12fe7d0316536c4">DynamicVariable::GetVariableName</a>()</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    {</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordflow">return</span> this.VariableName;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    }</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    std::string DynamicVariable::GetVariableContents()</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classDynamicVariable.html#a55d8bc325247917dbc35d0eb6127a818">   24</a></span>&#160;    std::string <a class="code" href="classDynamicVariable.html#a55d8bc325247917dbc35d0eb6127a818">DynamicVariable::GetVariableContents</a>()</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    {</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">return</span> this.VariableContents;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    }</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">void</span> DynamicVariable::SetVariableContents(std::string Contents)</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classDynamicVariable.html#a5073b6d461882be7b83e7eff0618442c">   28</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classDynamicVariable.html#a5073b6d461882be7b83e7eff0618442c">DynamicVariable::SetVariableContents</a>(std::string Contents)</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    {</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        this.VariableContents.Assign(Contents);</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> DynamicVariable::SetVariableName(std::string Name)</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classDynamicVariable.html#a3f56edd55dd554b8cf822b2d6c16be7f">   32</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classDynamicVariable.html#a3f56edd55dd554b8cf822b2d6c16be7f">DynamicVariable::SetVariableName</a>(std::string Name)</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    {</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        this.VariableName.Assign(Name);</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
@@ -127,7 +128,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">class </span>DynamicVariableList : Public list&lt;DynamicVariable&gt;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="classDynamicVariable.html">DynamicVariable</a> *GetNamedVariable(std::string Name)</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="dynamicvariable_8h.html#a738eed0319ce9b7757f4697e4ed1f2dd">   44</a></span>&#160;    <a class="code" href="classDynamicVariable.html">DynamicVariable</a> *<a class="code" href="dynamicvariable_8h.html#a738eed0319ce9b7757f4697e4ed1f2dd">GetNamedVariable</a>(std::string Name)</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    {</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">if</span> (this.empty() || Name.empty())</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keywordflow">return</span> NULL;</div>
@@ -146,11 +147,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
+<div class="ttc" id="classDynamicVariable_html_af8f8237d328007c2fd13eeaf458e5bdb"><div class="ttname"><a href="classDynamicVariable.html#af8f8237d328007c2fd13eeaf458e5bdb">DynamicVariable::~DynamicVariable</a></div><div class="ttdeci">~DynamicVariable()</div><div class="ttdef"><b>Definition:</b> dynamicvariable.h:17</div></div>
 <div class="ttc" id="classDynamicVariable_html"><div class="ttname"><a href="classDynamicVariable.html">DynamicVariable</a></div><div class="ttdef"><b>Definition:</b> dynamicvariable.h:4</div></div>
+<div class="ttc" id="dynamicvariable_8h_html_a738eed0319ce9b7757f4697e4ed1f2dd"><div class="ttname"><a href="dynamicvariable_8h.html#a738eed0319ce9b7757f4697e4ed1f2dd">GetNamedVariable</a></div><div class="ttdeci">class DynamicVariable GetNamedVariable(std::string Name)</div><div class="ttdef"><b>Definition:</b> dynamicvariable.h:44</div></div>
+<div class="ttc" id="classDynamicVariable_html_a5073b6d461882be7b83e7eff0618442c"><div class="ttname"><a href="classDynamicVariable.html#a5073b6d461882be7b83e7eff0618442c">DynamicVariable::SetVariableContents</a></div><div class="ttdeci">void SetVariableContents(std::string Contents)</div><div class="ttdef"><b>Definition:</b> dynamicvariable.h:28</div></div>
+<div class="ttc" id="classDynamicVariable_html_a55d8bc325247917dbc35d0eb6127a818"><div class="ttname"><a href="classDynamicVariable.html#a55d8bc325247917dbc35d0eb6127a818">DynamicVariable::GetVariableContents</a></div><div class="ttdeci">std::string GetVariableContents()</div><div class="ttdef"><b>Definition:</b> dynamicvariable.h:24</div></div>
+<div class="ttc" id="classDynamicVariable_html_a3f56edd55dd554b8cf822b2d6c16be7f"><div class="ttname"><a href="classDynamicVariable.html#a3f56edd55dd554b8cf822b2d6c16be7f">DynamicVariable::SetVariableName</a></div><div class="ttdeci">void SetVariableName(std::string Name)</div><div class="ttdef"><b>Definition:</b> dynamicvariable.h:32</div></div>
+<div class="ttc" id="classDynamicVariable_html_a8e38eae3957a9898e185b39890d836b9"><div class="ttname"><a href="classDynamicVariable.html#a8e38eae3957a9898e185b39890d836b9">DynamicVariable::DynamicVariable</a></div><div class="ttdeci">DynamicVariable(std::string Name, std::string Contents)</div><div class="ttdef"><b>Definition:</b> dynamicvariable.h:7</div></div>
+<div class="ttc" id="classDynamicVariable_html_ae693b792fcc5aa86a12fe7d0316536c4"><div class="ttname"><a href="classDynamicVariable.html#ae693b792fcc5aa86a12fe7d0316536c4">DynamicVariable::GetVariableName</a></div><div class="ttdeci">std::string GetVariableName()</div><div class="ttdef"><b>Definition:</b> dynamicvariable.h:20</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 17 2015 21:26:48 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 17 2015 22:02:22 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -1,0 +1,419 @@
+\hypertarget{arena_8cpp}{\section{arena.\-cpp File Reference}
+\label{arena_8cpp}\index{arena.\-cpp@{arena.\-cpp}}
+}
+{\ttfamily \#include $<$stdarg.\-h$>$}\\*
+{\ttfamily \#include $<$unistd.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$signal.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$ctype.\-h$>$}\\*
+{\ttfamily \#include $<$time.\-h$>$}\\*
+{\ttfamily \#include $<$mysql/mysql.\-h$>$}\\*
+{\ttfamily \#include $<$dirent.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}server.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}structs.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}net\-\_\-link.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}account.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}protos.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utility.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}decl.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{arena_8cpp_a4168c9a6578745ef5256c4646b5561e6}{P\-I\-T\-B\-A\-G\-\_\-\-D\-E\-S\-C\-\_\-\-P\-R\-E\-P\-E\-N\-D}~\char`\"{}Belongings for\char`\"{}
+\item 
+\#define \hyperlink{arena_8cpp_a9df3fbdcec43782354b2ca96d5268316}{V\-N\-U\-M\-\_\-\-P\-I\-T\-B\-A\-G}~55000
+\item 
+\#define \hyperlink{arena_8cpp_ad121744bc1cdea6ac0ada5a118c89ea6}{A\-R\-E\-N\-A\-\_\-\-N\-O\-T\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-E\-D}~\char`\"{}You need to register before you can fight in the Arena. Ask me how by typing \#6\-A\-R\-E\-N\-A R\-E\-G\-I\-S\-T\-E\-R\#0.\char`\"{}
+\item 
+\#define \hyperlink{arena_8cpp_ab33ac8e93cbf545cae2b1ce3be96036c}{A\-R\-E\-N\-A\-\_\-\-T\-O\-O\-\_\-\-I\-N\-J\-U\-R\-E\-D}~\char`\"{}I'\hyperlink{utility_8cpp_aa2e3edb156b8116204fda5c7cd008e98}{m} not letting you fight like that -\/ you're too injured to give people a decent show. You need to be in prime condition to make it worth my while.\char`\"{}
+\item 
+\#define \hyperlink{arena_8cpp_a76428407c912721aa8860c70408a803e}{A\-R\-E\-N\-A\-\_\-\-T\-O\-O\-\_\-\-F\-U\-L\-L}~\char`\"{}I'd love to let you fight, but all the arenas are full right now.\char`\"{}
+\item 
+\#define \hyperlink{arena_8cpp_adbb9859baa0cf536f80cce5bce5c2dce}{A\-R\-E\-N\-A\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-W\-E\-A\-P\-O\-N\-S}~\char`\"{}You need to tell me what weapons you want to fight with -\/-\/ options are longblade, polearm, bludgeon, smallblade, longblade-\/only or bludgeon-\/only.\char`\"{}
+\item 
+\#define \hyperlink{arena_8cpp_aba57cba0407120525c4566ac40959bf4}{A\-R\-E\-N\-A\-\_\-\-R\-E\-A\-D\-Y\-\_\-\-F\-I\-G\-H\-T}~\char`\"{}Yes, yes, you look ready to fight. Remember to see \#6\-H\-E\-L\-P A\-R\-E\-N\-A\#0 if you have any problems.\char`\"{}
+\item 
+\#define \hyperlink{arena_8cpp_ab24cdbdda42304a83299b2bb24094438}{A\-R\-E\-N\-A\-\_\-\-N\-O\-\_\-\-C\-R\-O\-W\-D}~\char`\"{}You missed the deadline for entrants for the latest crowd fight. It should be an hour or so before we have another one -\/-\/ come back here then.\char`\"{}
+\item 
+\#define \hyperlink{arena_8cpp_a02adabf8a126fc7aafb8ccd05e870396}{A\-R\-E\-N\-A\-\_\-\-F\-I\-G\-H\-T\-\_\-\-T\-Y\-P\-E}~\char`\"{}You need to tell me what kind of what you want -\/ a \#6crowd\#0 fight, or a \#6personal\#0 fight.\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{arena_8cpp_a5da1a3c111d04f1d85a8ec9a493e65f2}{equip\-\_\-slave} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$tmob, int cmd)
+\item 
+int \hyperlink{arena_8cpp_a3f01998e960f4bde77313674f14ce4c3}{in\-\_\-arena\-\_\-room} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+int \hyperlink{arena_8cpp_adbb8123afee747680ff1ecf29e8324a2}{is\-\_\-arena\-\_\-room} (int vnum)
+\item 
+void \hyperlink{arena_8cpp_a2eebc4a197ca6557482e637abf0a3f35}{arena\-\_\-strip} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{arena_8cpp_a7d60245e0b80196f4c4565e601b34404}{grunge\-\_\-arena\-\_\-barkers} (void)
+\item 
+void \hyperlink{arena_8cpp_a5e293b4b51db0bbfe4c0ae6060d594b8}{arena\-\_\-equip\-\_\-pc\-\_\-fighter} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int cmd)
+\item 
+void \hyperlink{arena_8cpp_a438e41d6ff69da54d515df5593ef9fb7}{do\-\_\-arena} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{arena_8cpp_a00aa42343dc48de3f034a535a8e4c664}{grunge\-\_\-arena\-\_\-last} (void)
+\item 
+void \hyperlink{arena_8cpp_ae6d350d67628839d06b4ca9b8664380d}{grunge\-\_\-arena\-\_\-third} (void)
+\item 
+void \hyperlink{arena_8cpp_adcda4ea8b000d38127ef36aa1d741b41}{grunge\-\_\-arena\-\_\-second} (void)
+\item 
+void \hyperlink{arena_8cpp_a94ce04638fe582a85bf92ee255839b58}{grunge\-\_\-arena\-\_\-first} (void)
+\item 
+void \hyperlink{arena_8cpp_a887cf9507ffb2226603ef0ff010fd026}{grunge\-\_\-arena} (void)
+\item 
+int \hyperlink{arena_8cpp_ab384362c104048bb20de598119f1404d}{is\-\_\-grunge\-\_\-arena\-\_\-clear} (void)
+\item 
+void \hyperlink{arena_8cpp_a9b212b56a7505eab90414352645f84d6}{grunge\-\_\-arena\-\_\-cleanup} (void)
+\item 
+void \hyperlink{arena_8cpp_abcdb1f5aa431cbcf21a4a9f32333e515}{grunge\-\_\-arena\-\_\-\-\_\-leave} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{arena_8cpp_adfff845e2f3ccad084950c3d79e056ba}{grunge\-\_\-arena\-\_\-\-\_\-defeat} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{arena_8cpp_a84ef705ecd6cded109019d669a46e741}{grunge\-\_\-arena\-\_\-\-\_\-death} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{arena_8cpp_aa3235484e8a10edb5f7ce600cdd8eb60}{grunge\-\_\-combat\-\_\-message} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$src, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$tar, char $\ast$location, int \hyperlink{protos_8h_ab6fab1a0d63773245da84a305bfa0407}{damage}, int room)
+\item 
+void \hyperlink{arena_8cpp_a22b6bbfa68240eafd25dc8fa13297059}{grunge\-\_\-arena\-\_\-\-\_\-update\-\_\-delays} (void)
+\item 
+void \hyperlink{arena_8cpp_abc3870ce2fc02535329c24083ba78bb4}{grunge\-\_\-arena\-\_\-\-\_\-do\-\_\-shout} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{arena_8cpp_a61e1c703e6fb94b39feae5c0e540172c}{grunge\-\_\-arena\-\_\-\-\_\-do\-\_\-look} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{arena_8cpp_a0e166c724da352a056ed2eec0b8ae905}{grunge\-\_\-arena\-\_\-\-\_\-do\-\_\-enter} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \hyperlink{arena_8cpp_a8f0a8d6f595df263c9a48ba9bc7f9dec}{grunge\-\_\-arena\-\_\-rooms} \mbox{[}4\mbox{]}
+\item 
+const int \hyperlink{arena_8cpp_aacb38d911deb065c98cb5ba6cb5e323a}{grunge\-\_\-private\-\_\-arena\-\_\-rooms} \mbox{[}4\mbox{]}
+\item 
+\hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} \hyperlink{arena_8cpp_a3436c53d8e181866f6051bcb8a44d4e7}{grunge\-\_\-arena\-\_\-first\-\_\-fight} = false
+\item 
+int \hyperlink{arena_8cpp_a645b64972fdd6b6609c6644a0cd8e7ae}{grunge\-\_\-arena\-\_\-first\-\_\-fighters} = 0
+\item 
+\hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} \hyperlink{arena_8cpp_ac3407a9f0de4360de0a7baefdb88d7bb}{grunge\-\_\-arena\-\_\-second\-\_\-fight} = false
+\item 
+int \hyperlink{arena_8cpp_a7c464fc4433e06d25f60af4a33932571}{grunge\-\_\-arena\-\_\-second\-\_\-fighters} = 0
+\item 
+\hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} \hyperlink{arena_8cpp_a9ce8e9dd4ecfd5c729019926d67e922d}{grunge\-\_\-arena\-\_\-stopped} = false
+\item 
+\hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} \hyperlink{arena_8cpp_aac1ad249a8d312c288a3fb4a59d3113b}{grunge\-\_\-arena\-\_\-fight} = false
+\item 
+\hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} \hyperlink{arena_8cpp_a2edc93f9cfa5e0d52739a9a464384b39}{grunge\-\_\-arena\-\_\-barker\-\_\-check} = false
+\item 
+int \hyperlink{arena_8cpp_a61138a140ce27b1bb74639ff76900f11}{grunge\-\_\-arena\-\_\-second\-\_\-echo} = 0
+\item 
+int \hyperlink{arena_8cpp_a5cc9ce5c556a333e4b4f0f21c2f23b0d}{grunge\-\_\-arena\-\_\-third\-\_\-echo} = 0
+\item 
+int \hyperlink{arena_8cpp_a4b8f4a29ec64e00147de4255866d06a8}{grunge\-\_\-arena\-\_\-cleanup\-\_\-echo} = 0
+\item 
+int \hyperlink{arena_8cpp_ab684b8c4edb5b6eb34dadb8b4e29c3d1}{grunge\-\_\-arena\-\_\-last\-\_\-echo} = 0
+\item 
+int \hyperlink{arena_8cpp_a6761340706096510fd89edca40a63b9b}{red} = 0
+\item 
+int \hyperlink{arena_8cpp_a16043f28bf0a6b55db852853f0683fc2}{blue} = 0
+\item 
+int \hyperlink{arena_8cpp_a3c572136a28005caf9bbc4a43acca67c}{barkers} = 0
+\item 
+int \hyperlink{arena_8cpp_af4c253729b4397982a6be52ac3db3986}{grunge\-\_\-blue\-\_\-max} = 5
+\item 
+int \hyperlink{arena_8cpp_a1d8325999605ef9f2e554f97b10779c4}{grune\-\_\-red\-\_\-max} = 5
+\item 
+\hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} \hyperlink{arena_8cpp_a202b093a6b289d34e1bd2ddf2f0e396f}{blue\-\_\-win} = false
+\item 
+\hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} \hyperlink{arena_8cpp_afa43eeb4bb0bb56250b2bf85e831a053}{red\-\_\-win} = false
+\item 
+\hyperlink{classrpie_1_1server}{rpie\-::server} \hyperlink{arena_8cpp_a55c71990ee4162ebec6abe401996cf15}{engine}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{arena_8cpp_adbb9859baa0cf536f80cce5bce5c2dce}{\index{arena.\-cpp@{arena.\-cpp}!A\-R\-E\-N\-A\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-W\-E\-A\-P\-O\-N\-S@{A\-R\-E\-N\-A\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-W\-E\-A\-P\-O\-N\-S}}
+\index{A\-R\-E\-N\-A\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-W\-E\-A\-P\-O\-N\-S@{A\-R\-E\-N\-A\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-W\-E\-A\-P\-O\-N\-S}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{A\-R\-E\-N\-A\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-W\-E\-A\-P\-O\-N\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-R\-E\-N\-A\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-W\-E\-A\-P\-O\-N\-S~\char`\"{}You need to tell me what weapons you want to fight with -\/-\/ options are longblade, polearm, bludgeon, smallblade, longblade-\/only or bludgeon-\/only.\char`\"{}}}\label{arena_8cpp_adbb9859baa0cf536f80cce5bce5c2dce}
+\hypertarget{arena_8cpp_a02adabf8a126fc7aafb8ccd05e870396}{\index{arena.\-cpp@{arena.\-cpp}!A\-R\-E\-N\-A\-\_\-\-F\-I\-G\-H\-T\-\_\-\-T\-Y\-P\-E@{A\-R\-E\-N\-A\-\_\-\-F\-I\-G\-H\-T\-\_\-\-T\-Y\-P\-E}}
+\index{A\-R\-E\-N\-A\-\_\-\-F\-I\-G\-H\-T\-\_\-\-T\-Y\-P\-E@{A\-R\-E\-N\-A\-\_\-\-F\-I\-G\-H\-T\-\_\-\-T\-Y\-P\-E}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{A\-R\-E\-N\-A\-\_\-\-F\-I\-G\-H\-T\-\_\-\-T\-Y\-P\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-R\-E\-N\-A\-\_\-\-F\-I\-G\-H\-T\-\_\-\-T\-Y\-P\-E~\char`\"{}You need to tell me what kind of what you want -\/ a \#6crowd\#0 fight, or a \#6personal\#0 fight.\char`\"{}}}\label{arena_8cpp_a02adabf8a126fc7aafb8ccd05e870396}
+\hypertarget{arena_8cpp_ab24cdbdda42304a83299b2bb24094438}{\index{arena.\-cpp@{arena.\-cpp}!A\-R\-E\-N\-A\-\_\-\-N\-O\-\_\-\-C\-R\-O\-W\-D@{A\-R\-E\-N\-A\-\_\-\-N\-O\-\_\-\-C\-R\-O\-W\-D}}
+\index{A\-R\-E\-N\-A\-\_\-\-N\-O\-\_\-\-C\-R\-O\-W\-D@{A\-R\-E\-N\-A\-\_\-\-N\-O\-\_\-\-C\-R\-O\-W\-D}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{A\-R\-E\-N\-A\-\_\-\-N\-O\-\_\-\-C\-R\-O\-W\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-R\-E\-N\-A\-\_\-\-N\-O\-\_\-\-C\-R\-O\-W\-D~\char`\"{}You missed the deadline for entrants for the latest crowd fight. It should be an hour or so before we have another one -\/-\/ come back here then.\char`\"{}}}\label{arena_8cpp_ab24cdbdda42304a83299b2bb24094438}
+\hypertarget{arena_8cpp_ad121744bc1cdea6ac0ada5a118c89ea6}{\index{arena.\-cpp@{arena.\-cpp}!A\-R\-E\-N\-A\-\_\-\-N\-O\-T\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-E\-D@{A\-R\-E\-N\-A\-\_\-\-N\-O\-T\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-E\-D}}
+\index{A\-R\-E\-N\-A\-\_\-\-N\-O\-T\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-E\-D@{A\-R\-E\-N\-A\-\_\-\-N\-O\-T\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-E\-D}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{A\-R\-E\-N\-A\-\_\-\-N\-O\-T\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-R\-E\-N\-A\-\_\-\-N\-O\-T\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-E\-D~\char`\"{}You need to register before you can fight in the Arena. Ask me how by typing \#6\-A\-R\-E\-N\-A R\-E\-G\-I\-S\-T\-E\-R\#0.\char`\"{}}}\label{arena_8cpp_ad121744bc1cdea6ac0ada5a118c89ea6}
+\hypertarget{arena_8cpp_aba57cba0407120525c4566ac40959bf4}{\index{arena.\-cpp@{arena.\-cpp}!A\-R\-E\-N\-A\-\_\-\-R\-E\-A\-D\-Y\-\_\-\-F\-I\-G\-H\-T@{A\-R\-E\-N\-A\-\_\-\-R\-E\-A\-D\-Y\-\_\-\-F\-I\-G\-H\-T}}
+\index{A\-R\-E\-N\-A\-\_\-\-R\-E\-A\-D\-Y\-\_\-\-F\-I\-G\-H\-T@{A\-R\-E\-N\-A\-\_\-\-R\-E\-A\-D\-Y\-\_\-\-F\-I\-G\-H\-T}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{A\-R\-E\-N\-A\-\_\-\-R\-E\-A\-D\-Y\-\_\-\-F\-I\-G\-H\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-R\-E\-N\-A\-\_\-\-R\-E\-A\-D\-Y\-\_\-\-F\-I\-G\-H\-T~\char`\"{}Yes, yes, you look ready to fight. Remember to see \#6\-H\-E\-L\-P A\-R\-E\-N\-A\#0 if you have any problems.\char`\"{}}}\label{arena_8cpp_aba57cba0407120525c4566ac40959bf4}
+\hypertarget{arena_8cpp_a76428407c912721aa8860c70408a803e}{\index{arena.\-cpp@{arena.\-cpp}!A\-R\-E\-N\-A\-\_\-\-T\-O\-O\-\_\-\-F\-U\-L\-L@{A\-R\-E\-N\-A\-\_\-\-T\-O\-O\-\_\-\-F\-U\-L\-L}}
+\index{A\-R\-E\-N\-A\-\_\-\-T\-O\-O\-\_\-\-F\-U\-L\-L@{A\-R\-E\-N\-A\-\_\-\-T\-O\-O\-\_\-\-F\-U\-L\-L}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{A\-R\-E\-N\-A\-\_\-\-T\-O\-O\-\_\-\-F\-U\-L\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-R\-E\-N\-A\-\_\-\-T\-O\-O\-\_\-\-F\-U\-L\-L~\char`\"{}I'd love to let you fight, but all the arenas are full right now.\char`\"{}}}\label{arena_8cpp_a76428407c912721aa8860c70408a803e}
+\hypertarget{arena_8cpp_ab33ac8e93cbf545cae2b1ce3be96036c}{\index{arena.\-cpp@{arena.\-cpp}!A\-R\-E\-N\-A\-\_\-\-T\-O\-O\-\_\-\-I\-N\-J\-U\-R\-E\-D@{A\-R\-E\-N\-A\-\_\-\-T\-O\-O\-\_\-\-I\-N\-J\-U\-R\-E\-D}}
+\index{A\-R\-E\-N\-A\-\_\-\-T\-O\-O\-\_\-\-I\-N\-J\-U\-R\-E\-D@{A\-R\-E\-N\-A\-\_\-\-T\-O\-O\-\_\-\-I\-N\-J\-U\-R\-E\-D}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{A\-R\-E\-N\-A\-\_\-\-T\-O\-O\-\_\-\-I\-N\-J\-U\-R\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-R\-E\-N\-A\-\_\-\-T\-O\-O\-\_\-\-I\-N\-J\-U\-R\-E\-D~\char`\"{}I'{\bf m} not letting you fight like that -\/ you're too injured to give people a decent show. You need to be in prime condition to make it worth my while.\char`\"{}}}\label{arena_8cpp_ab33ac8e93cbf545cae2b1ce3be96036c}
+\hypertarget{arena_8cpp_a4168c9a6578745ef5256c4646b5561e6}{\index{arena.\-cpp@{arena.\-cpp}!P\-I\-T\-B\-A\-G\-\_\-\-D\-E\-S\-C\-\_\-\-P\-R\-E\-P\-E\-N\-D@{P\-I\-T\-B\-A\-G\-\_\-\-D\-E\-S\-C\-\_\-\-P\-R\-E\-P\-E\-N\-D}}
+\index{P\-I\-T\-B\-A\-G\-\_\-\-D\-E\-S\-C\-\_\-\-P\-R\-E\-P\-E\-N\-D@{P\-I\-T\-B\-A\-G\-\_\-\-D\-E\-S\-C\-\_\-\-P\-R\-E\-P\-E\-N\-D}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{P\-I\-T\-B\-A\-G\-\_\-\-D\-E\-S\-C\-\_\-\-P\-R\-E\-P\-E\-N\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-I\-T\-B\-A\-G\-\_\-\-D\-E\-S\-C\-\_\-\-P\-R\-E\-P\-E\-N\-D~\char`\"{}Belongings for\char`\"{}}}\label{arena_8cpp_a4168c9a6578745ef5256c4646b5561e6}
+\hypertarget{arena_8cpp_a9df3fbdcec43782354b2ca96d5268316}{\index{arena.\-cpp@{arena.\-cpp}!V\-N\-U\-M\-\_\-\-P\-I\-T\-B\-A\-G@{V\-N\-U\-M\-\_\-\-P\-I\-T\-B\-A\-G}}
+\index{V\-N\-U\-M\-\_\-\-P\-I\-T\-B\-A\-G@{V\-N\-U\-M\-\_\-\-P\-I\-T\-B\-A\-G}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{V\-N\-U\-M\-\_\-\-P\-I\-T\-B\-A\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define V\-N\-U\-M\-\_\-\-P\-I\-T\-B\-A\-G~55000}}\label{arena_8cpp_a9df3fbdcec43782354b2ca96d5268316}
+
+
+\subsection{Function Documentation}
+\hypertarget{arena_8cpp_a5e293b4b51db0bbfe4c0ae6060d594b8}{\index{arena.\-cpp@{arena.\-cpp}!arena\-\_\-equip\-\_\-pc\-\_\-fighter@{arena\-\_\-equip\-\_\-pc\-\_\-fighter}}
+\index{arena\-\_\-equip\-\_\-pc\-\_\-fighter@{arena\-\_\-equip\-\_\-pc\-\_\-fighter}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{arena\-\_\-equip\-\_\-pc\-\_\-fighter}]{\setlength{\rightskip}{0pt plus 5cm}void arena\-\_\-equip\-\_\-pc\-\_\-fighter (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{arena_8cpp_a5e293b4b51db0bbfe4c0ae6060d594b8}
+\hypertarget{arena_8cpp_a2eebc4a197ca6557482e637abf0a3f35}{\index{arena.\-cpp@{arena.\-cpp}!arena\-\_\-strip@{arena\-\_\-strip}}
+\index{arena\-\_\-strip@{arena\-\_\-strip}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{arena\-\_\-strip}]{\setlength{\rightskip}{0pt plus 5cm}void arena\-\_\-strip (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{arena_8cpp_a2eebc4a197ca6557482e637abf0a3f35}
+\hypertarget{arena_8cpp_a438e41d6ff69da54d515df5593ef9fb7}{\index{arena.\-cpp@{arena.\-cpp}!do\-\_\-arena@{do\-\_\-arena}}
+\index{do\-\_\-arena@{do\-\_\-arena}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{do\-\_\-arena}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-arena (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{arena_8cpp_a438e41d6ff69da54d515df5593ef9fb7}
+\hypertarget{arena_8cpp_a5da1a3c111d04f1d85a8ec9a493e65f2}{\index{arena.\-cpp@{arena.\-cpp}!equip\-\_\-slave@{equip\-\_\-slave}}
+\index{equip\-\_\-slave@{equip\-\_\-slave}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{equip\-\_\-slave}]{\setlength{\rightskip}{0pt plus 5cm}void equip\-\_\-slave (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{tmob, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{arena_8cpp_a5da1a3c111d04f1d85a8ec9a493e65f2}
+\hypertarget{arena_8cpp_a887cf9507ffb2226603ef0ff010fd026}{\index{arena.\-cpp@{arena.\-cpp}!grunge\-\_\-arena@{grunge\-\_\-arena}}
+\index{grunge\-\_\-arena@{grunge\-\_\-arena}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{grunge\-\_\-arena}]{\setlength{\rightskip}{0pt plus 5cm}void grunge\-\_\-arena (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{arena_8cpp_a887cf9507ffb2226603ef0ff010fd026}
+\hypertarget{arena_8cpp_a84ef705ecd6cded109019d669a46e741}{\index{arena.\-cpp@{arena.\-cpp}!grunge\-\_\-arena\-\_\-\-\_\-death@{grunge\-\_\-arena\-\_\-\-\_\-death}}
+\index{grunge\-\_\-arena\-\_\-\-\_\-death@{grunge\-\_\-arena\-\_\-\-\_\-death}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{grunge\-\_\-arena\-\_\-\-\_\-death}]{\setlength{\rightskip}{0pt plus 5cm}void grunge\-\_\-arena\-\_\-\-\_\-death (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{arena_8cpp_a84ef705ecd6cded109019d669a46e741}
+\hypertarget{arena_8cpp_adfff845e2f3ccad084950c3d79e056ba}{\index{arena.\-cpp@{arena.\-cpp}!grunge\-\_\-arena\-\_\-\-\_\-defeat@{grunge\-\_\-arena\-\_\-\-\_\-defeat}}
+\index{grunge\-\_\-arena\-\_\-\-\_\-defeat@{grunge\-\_\-arena\-\_\-\-\_\-defeat}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{grunge\-\_\-arena\-\_\-\-\_\-defeat}]{\setlength{\rightskip}{0pt plus 5cm}void grunge\-\_\-arena\-\_\-\-\_\-defeat (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{arena_8cpp_adfff845e2f3ccad084950c3d79e056ba}
+\hypertarget{arena_8cpp_a0e166c724da352a056ed2eec0b8ae905}{\index{arena.\-cpp@{arena.\-cpp}!grunge\-\_\-arena\-\_\-\-\_\-do\-\_\-enter@{grunge\-\_\-arena\-\_\-\-\_\-do\-\_\-enter}}
+\index{grunge\-\_\-arena\-\_\-\-\_\-do\-\_\-enter@{grunge\-\_\-arena\-\_\-\-\_\-do\-\_\-enter}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{grunge\-\_\-arena\-\_\-\-\_\-do\-\_\-enter}]{\setlength{\rightskip}{0pt plus 5cm}void grunge\-\_\-arena\-\_\-\-\_\-do\-\_\-enter (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{arena_8cpp_a0e166c724da352a056ed2eec0b8ae905}
+\hypertarget{arena_8cpp_a61e1c703e6fb94b39feae5c0e540172c}{\index{arena.\-cpp@{arena.\-cpp}!grunge\-\_\-arena\-\_\-\-\_\-do\-\_\-look@{grunge\-\_\-arena\-\_\-\-\_\-do\-\_\-look}}
+\index{grunge\-\_\-arena\-\_\-\-\_\-do\-\_\-look@{grunge\-\_\-arena\-\_\-\-\_\-do\-\_\-look}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{grunge\-\_\-arena\-\_\-\-\_\-do\-\_\-look}]{\setlength{\rightskip}{0pt plus 5cm}void grunge\-\_\-arena\-\_\-\-\_\-do\-\_\-look (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{arena_8cpp_a61e1c703e6fb94b39feae5c0e540172c}
+\hypertarget{arena_8cpp_abc3870ce2fc02535329c24083ba78bb4}{\index{arena.\-cpp@{arena.\-cpp}!grunge\-\_\-arena\-\_\-\-\_\-do\-\_\-shout@{grunge\-\_\-arena\-\_\-\-\_\-do\-\_\-shout}}
+\index{grunge\-\_\-arena\-\_\-\-\_\-do\-\_\-shout@{grunge\-\_\-arena\-\_\-\-\_\-do\-\_\-shout}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{grunge\-\_\-arena\-\_\-\-\_\-do\-\_\-shout}]{\setlength{\rightskip}{0pt plus 5cm}void grunge\-\_\-arena\-\_\-\-\_\-do\-\_\-shout (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{arena_8cpp_abc3870ce2fc02535329c24083ba78bb4}
+\hypertarget{arena_8cpp_abcdb1f5aa431cbcf21a4a9f32333e515}{\index{arena.\-cpp@{arena.\-cpp}!grunge\-\_\-arena\-\_\-\-\_\-leave@{grunge\-\_\-arena\-\_\-\-\_\-leave}}
+\index{grunge\-\_\-arena\-\_\-\-\_\-leave@{grunge\-\_\-arena\-\_\-\-\_\-leave}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{grunge\-\_\-arena\-\_\-\-\_\-leave}]{\setlength{\rightskip}{0pt plus 5cm}void grunge\-\_\-arena\-\_\-\-\_\-leave (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{arena_8cpp_abcdb1f5aa431cbcf21a4a9f32333e515}
+\hypertarget{arena_8cpp_a22b6bbfa68240eafd25dc8fa13297059}{\index{arena.\-cpp@{arena.\-cpp}!grunge\-\_\-arena\-\_\-\-\_\-update\-\_\-delays@{grunge\-\_\-arena\-\_\-\-\_\-update\-\_\-delays}}
+\index{grunge\-\_\-arena\-\_\-\-\_\-update\-\_\-delays@{grunge\-\_\-arena\-\_\-\-\_\-update\-\_\-delays}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{grunge\-\_\-arena\-\_\-\-\_\-update\-\_\-delays}]{\setlength{\rightskip}{0pt plus 5cm}void grunge\-\_\-arena\-\_\-\-\_\-update\-\_\-delays (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{arena_8cpp_a22b6bbfa68240eafd25dc8fa13297059}
+\hypertarget{arena_8cpp_a7d60245e0b80196f4c4565e601b34404}{\index{arena.\-cpp@{arena.\-cpp}!grunge\-\_\-arena\-\_\-barkers@{grunge\-\_\-arena\-\_\-barkers}}
+\index{grunge\-\_\-arena\-\_\-barkers@{grunge\-\_\-arena\-\_\-barkers}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{grunge\-\_\-arena\-\_\-barkers}]{\setlength{\rightskip}{0pt plus 5cm}void grunge\-\_\-arena\-\_\-barkers (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{arena_8cpp_a7d60245e0b80196f4c4565e601b34404}
+\hypertarget{arena_8cpp_a9b212b56a7505eab90414352645f84d6}{\index{arena.\-cpp@{arena.\-cpp}!grunge\-\_\-arena\-\_\-cleanup@{grunge\-\_\-arena\-\_\-cleanup}}
+\index{grunge\-\_\-arena\-\_\-cleanup@{grunge\-\_\-arena\-\_\-cleanup}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{grunge\-\_\-arena\-\_\-cleanup}]{\setlength{\rightskip}{0pt plus 5cm}void grunge\-\_\-arena\-\_\-cleanup (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{arena_8cpp_a9b212b56a7505eab90414352645f84d6}
+\hypertarget{arena_8cpp_a94ce04638fe582a85bf92ee255839b58}{\index{arena.\-cpp@{arena.\-cpp}!grunge\-\_\-arena\-\_\-first@{grunge\-\_\-arena\-\_\-first}}
+\index{grunge\-\_\-arena\-\_\-first@{grunge\-\_\-arena\-\_\-first}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{grunge\-\_\-arena\-\_\-first}]{\setlength{\rightskip}{0pt plus 5cm}void grunge\-\_\-arena\-\_\-first (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{arena_8cpp_a94ce04638fe582a85bf92ee255839b58}
+\hypertarget{arena_8cpp_a00aa42343dc48de3f034a535a8e4c664}{\index{arena.\-cpp@{arena.\-cpp}!grunge\-\_\-arena\-\_\-last@{grunge\-\_\-arena\-\_\-last}}
+\index{grunge\-\_\-arena\-\_\-last@{grunge\-\_\-arena\-\_\-last}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{grunge\-\_\-arena\-\_\-last}]{\setlength{\rightskip}{0pt plus 5cm}void grunge\-\_\-arena\-\_\-last (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{arena_8cpp_a00aa42343dc48de3f034a535a8e4c664}
+\hypertarget{arena_8cpp_adcda4ea8b000d38127ef36aa1d741b41}{\index{arena.\-cpp@{arena.\-cpp}!grunge\-\_\-arena\-\_\-second@{grunge\-\_\-arena\-\_\-second}}
+\index{grunge\-\_\-arena\-\_\-second@{grunge\-\_\-arena\-\_\-second}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{grunge\-\_\-arena\-\_\-second}]{\setlength{\rightskip}{0pt plus 5cm}void grunge\-\_\-arena\-\_\-second (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{arena_8cpp_adcda4ea8b000d38127ef36aa1d741b41}
+\hypertarget{arena_8cpp_ae6d350d67628839d06b4ca9b8664380d}{\index{arena.\-cpp@{arena.\-cpp}!grunge\-\_\-arena\-\_\-third@{grunge\-\_\-arena\-\_\-third}}
+\index{grunge\-\_\-arena\-\_\-third@{grunge\-\_\-arena\-\_\-third}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{grunge\-\_\-arena\-\_\-third}]{\setlength{\rightskip}{0pt plus 5cm}void grunge\-\_\-arena\-\_\-third (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{arena_8cpp_ae6d350d67628839d06b4ca9b8664380d}
+\hypertarget{arena_8cpp_aa3235484e8a10edb5f7ce600cdd8eb60}{\index{arena.\-cpp@{arena.\-cpp}!grunge\-\_\-combat\-\_\-message@{grunge\-\_\-combat\-\_\-message}}
+\index{grunge\-\_\-combat\-\_\-message@{grunge\-\_\-combat\-\_\-message}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{grunge\-\_\-combat\-\_\-message}]{\setlength{\rightskip}{0pt plus 5cm}void grunge\-\_\-combat\-\_\-message (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{src, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{tar, }
+\item[{char $\ast$}]{location, }
+\item[{int}]{damage, }
+\item[{int}]{room}
+\end{DoxyParamCaption}
+)}}\label{arena_8cpp_aa3235484e8a10edb5f7ce600cdd8eb60}
+\hypertarget{arena_8cpp_a3f01998e960f4bde77313674f14ce4c3}{\index{arena.\-cpp@{arena.\-cpp}!in\-\_\-arena\-\_\-room@{in\-\_\-arena\-\_\-room}}
+\index{in\-\_\-arena\-\_\-room@{in\-\_\-arena\-\_\-room}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{in\-\_\-arena\-\_\-room}]{\setlength{\rightskip}{0pt plus 5cm}int in\-\_\-arena\-\_\-room (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{arena_8cpp_a3f01998e960f4bde77313674f14ce4c3}
+\hypertarget{arena_8cpp_adbb8123afee747680ff1ecf29e8324a2}{\index{arena.\-cpp@{arena.\-cpp}!is\-\_\-arena\-\_\-room@{is\-\_\-arena\-\_\-room}}
+\index{is\-\_\-arena\-\_\-room@{is\-\_\-arena\-\_\-room}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{is\-\_\-arena\-\_\-room}]{\setlength{\rightskip}{0pt plus 5cm}int is\-\_\-arena\-\_\-room (
+\begin{DoxyParamCaption}
+\item[{int}]{vnum}
+\end{DoxyParamCaption}
+)}}\label{arena_8cpp_adbb8123afee747680ff1ecf29e8324a2}
+\hypertarget{arena_8cpp_ab384362c104048bb20de598119f1404d}{\index{arena.\-cpp@{arena.\-cpp}!is\-\_\-grunge\-\_\-arena\-\_\-clear@{is\-\_\-grunge\-\_\-arena\-\_\-clear}}
+\index{is\-\_\-grunge\-\_\-arena\-\_\-clear@{is\-\_\-grunge\-\_\-arena\-\_\-clear}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{is\-\_\-grunge\-\_\-arena\-\_\-clear}]{\setlength{\rightskip}{0pt plus 5cm}int is\-\_\-grunge\-\_\-arena\-\_\-clear (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{arena_8cpp_ab384362c104048bb20de598119f1404d}
+
+
+\subsection{Variable Documentation}
+\hypertarget{arena_8cpp_a3c572136a28005caf9bbc4a43acca67c}{\index{arena.\-cpp@{arena.\-cpp}!barkers@{barkers}}
+\index{barkers@{barkers}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{barkers}]{\setlength{\rightskip}{0pt plus 5cm}int barkers = 0}}\label{arena_8cpp_a3c572136a28005caf9bbc4a43acca67c}
+\hypertarget{arena_8cpp_a16043f28bf0a6b55db852853f0683fc2}{\index{arena.\-cpp@{arena.\-cpp}!blue@{blue}}
+\index{blue@{blue}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{blue}]{\setlength{\rightskip}{0pt plus 5cm}int blue = 0}}\label{arena_8cpp_a16043f28bf0a6b55db852853f0683fc2}
+\hypertarget{arena_8cpp_a202b093a6b289d34e1bd2ddf2f0e396f}{\index{arena.\-cpp@{arena.\-cpp}!blue\-\_\-win@{blue\-\_\-win}}
+\index{blue\-\_\-win@{blue\-\_\-win}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{blue\-\_\-win}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} blue\-\_\-win = false}}\label{arena_8cpp_a202b093a6b289d34e1bd2ddf2f0e396f}
+\hypertarget{arena_8cpp_a55c71990ee4162ebec6abe401996cf15}{\index{arena.\-cpp@{arena.\-cpp}!engine@{engine}}
+\index{engine@{engine}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{engine}]{\setlength{\rightskip}{0pt plus 5cm}{\bf rpie\-::server} engine}}\label{arena_8cpp_a55c71990ee4162ebec6abe401996cf15}
+\hypertarget{arena_8cpp_a1d8325999605ef9f2e554f97b10779c4}{\index{arena.\-cpp@{arena.\-cpp}!grune\-\_\-red\-\_\-max@{grune\-\_\-red\-\_\-max}}
+\index{grune\-\_\-red\-\_\-max@{grune\-\_\-red\-\_\-max}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{grune\-\_\-red\-\_\-max}]{\setlength{\rightskip}{0pt plus 5cm}int grune\-\_\-red\-\_\-max = 5}}\label{arena_8cpp_a1d8325999605ef9f2e554f97b10779c4}
+\hypertarget{arena_8cpp_a2edc93f9cfa5e0d52739a9a464384b39}{\index{arena.\-cpp@{arena.\-cpp}!grunge\-\_\-arena\-\_\-barker\-\_\-check@{grunge\-\_\-arena\-\_\-barker\-\_\-check}}
+\index{grunge\-\_\-arena\-\_\-barker\-\_\-check@{grunge\-\_\-arena\-\_\-barker\-\_\-check}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{grunge\-\_\-arena\-\_\-barker\-\_\-check}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} grunge\-\_\-arena\-\_\-barker\-\_\-check = false}}\label{arena_8cpp_a2edc93f9cfa5e0d52739a9a464384b39}
+\hypertarget{arena_8cpp_a4b8f4a29ec64e00147de4255866d06a8}{\index{arena.\-cpp@{arena.\-cpp}!grunge\-\_\-arena\-\_\-cleanup\-\_\-echo@{grunge\-\_\-arena\-\_\-cleanup\-\_\-echo}}
+\index{grunge\-\_\-arena\-\_\-cleanup\-\_\-echo@{grunge\-\_\-arena\-\_\-cleanup\-\_\-echo}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{grunge\-\_\-arena\-\_\-cleanup\-\_\-echo}]{\setlength{\rightskip}{0pt plus 5cm}int grunge\-\_\-arena\-\_\-cleanup\-\_\-echo = 0}}\label{arena_8cpp_a4b8f4a29ec64e00147de4255866d06a8}
+\hypertarget{arena_8cpp_aac1ad249a8d312c288a3fb4a59d3113b}{\index{arena.\-cpp@{arena.\-cpp}!grunge\-\_\-arena\-\_\-fight@{grunge\-\_\-arena\-\_\-fight}}
+\index{grunge\-\_\-arena\-\_\-fight@{grunge\-\_\-arena\-\_\-fight}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{grunge\-\_\-arena\-\_\-fight}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} grunge\-\_\-arena\-\_\-fight = false}}\label{arena_8cpp_aac1ad249a8d312c288a3fb4a59d3113b}
+\hypertarget{arena_8cpp_a3436c53d8e181866f6051bcb8a44d4e7}{\index{arena.\-cpp@{arena.\-cpp}!grunge\-\_\-arena\-\_\-first\-\_\-fight@{grunge\-\_\-arena\-\_\-first\-\_\-fight}}
+\index{grunge\-\_\-arena\-\_\-first\-\_\-fight@{grunge\-\_\-arena\-\_\-first\-\_\-fight}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{grunge\-\_\-arena\-\_\-first\-\_\-fight}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} grunge\-\_\-arena\-\_\-first\-\_\-fight = false}}\label{arena_8cpp_a3436c53d8e181866f6051bcb8a44d4e7}
+\hypertarget{arena_8cpp_a645b64972fdd6b6609c6644a0cd8e7ae}{\index{arena.\-cpp@{arena.\-cpp}!grunge\-\_\-arena\-\_\-first\-\_\-fighters@{grunge\-\_\-arena\-\_\-first\-\_\-fighters}}
+\index{grunge\-\_\-arena\-\_\-first\-\_\-fighters@{grunge\-\_\-arena\-\_\-first\-\_\-fighters}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{grunge\-\_\-arena\-\_\-first\-\_\-fighters}]{\setlength{\rightskip}{0pt plus 5cm}int grunge\-\_\-arena\-\_\-first\-\_\-fighters = 0}}\label{arena_8cpp_a645b64972fdd6b6609c6644a0cd8e7ae}
+\hypertarget{arena_8cpp_ab684b8c4edb5b6eb34dadb8b4e29c3d1}{\index{arena.\-cpp@{arena.\-cpp}!grunge\-\_\-arena\-\_\-last\-\_\-echo@{grunge\-\_\-arena\-\_\-last\-\_\-echo}}
+\index{grunge\-\_\-arena\-\_\-last\-\_\-echo@{grunge\-\_\-arena\-\_\-last\-\_\-echo}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{grunge\-\_\-arena\-\_\-last\-\_\-echo}]{\setlength{\rightskip}{0pt plus 5cm}int grunge\-\_\-arena\-\_\-last\-\_\-echo = 0}}\label{arena_8cpp_ab684b8c4edb5b6eb34dadb8b4e29c3d1}
+\hypertarget{arena_8cpp_a8f0a8d6f595df263c9a48ba9bc7f9dec}{\index{arena.\-cpp@{arena.\-cpp}!grunge\-\_\-arena\-\_\-rooms@{grunge\-\_\-arena\-\_\-rooms}}
+\index{grunge\-\_\-arena\-\_\-rooms@{grunge\-\_\-arena\-\_\-rooms}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{grunge\-\_\-arena\-\_\-rooms}]{\setlength{\rightskip}{0pt plus 5cm}const int grunge\-\_\-arena\-\_\-rooms\mbox{[}4\mbox{]}}}\label{arena_8cpp_a8f0a8d6f595df263c9a48ba9bc7f9dec}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \hyperlink{protos_8h_a7f974b592c8f10a7265d48a7a8d8d057}{GRUNGE\_ARENA1},
+    \hyperlink{protos_8h_a62a5d92d74da98a34ff9fb3ca6f1baa2}{GRUNGE\_ARENA2},
+    \hyperlink{protos_8h_af55ae79036fe1d7cba173c3196ae22b8}{GRUNGE\_ARENA3},
+    \hyperlink{protos_8h_a6f96c853e9e11021119d797535dd1da1}{GRUNGE\_ARENA4}
+\}
+\end{DoxyCode}
+\hypertarget{arena_8cpp_a61138a140ce27b1bb74639ff76900f11}{\index{arena.\-cpp@{arena.\-cpp}!grunge\-\_\-arena\-\_\-second\-\_\-echo@{grunge\-\_\-arena\-\_\-second\-\_\-echo}}
+\index{grunge\-\_\-arena\-\_\-second\-\_\-echo@{grunge\-\_\-arena\-\_\-second\-\_\-echo}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{grunge\-\_\-arena\-\_\-second\-\_\-echo}]{\setlength{\rightskip}{0pt plus 5cm}int grunge\-\_\-arena\-\_\-second\-\_\-echo = 0}}\label{arena_8cpp_a61138a140ce27b1bb74639ff76900f11}
+\hypertarget{arena_8cpp_ac3407a9f0de4360de0a7baefdb88d7bb}{\index{arena.\-cpp@{arena.\-cpp}!grunge\-\_\-arena\-\_\-second\-\_\-fight@{grunge\-\_\-arena\-\_\-second\-\_\-fight}}
+\index{grunge\-\_\-arena\-\_\-second\-\_\-fight@{grunge\-\_\-arena\-\_\-second\-\_\-fight}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{grunge\-\_\-arena\-\_\-second\-\_\-fight}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} grunge\-\_\-arena\-\_\-second\-\_\-fight = false}}\label{arena_8cpp_ac3407a9f0de4360de0a7baefdb88d7bb}
+\hypertarget{arena_8cpp_a7c464fc4433e06d25f60af4a33932571}{\index{arena.\-cpp@{arena.\-cpp}!grunge\-\_\-arena\-\_\-second\-\_\-fighters@{grunge\-\_\-arena\-\_\-second\-\_\-fighters}}
+\index{grunge\-\_\-arena\-\_\-second\-\_\-fighters@{grunge\-\_\-arena\-\_\-second\-\_\-fighters}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{grunge\-\_\-arena\-\_\-second\-\_\-fighters}]{\setlength{\rightskip}{0pt plus 5cm}int grunge\-\_\-arena\-\_\-second\-\_\-fighters = 0}}\label{arena_8cpp_a7c464fc4433e06d25f60af4a33932571}
+\hypertarget{arena_8cpp_a9ce8e9dd4ecfd5c729019926d67e922d}{\index{arena.\-cpp@{arena.\-cpp}!grunge\-\_\-arena\-\_\-stopped@{grunge\-\_\-arena\-\_\-stopped}}
+\index{grunge\-\_\-arena\-\_\-stopped@{grunge\-\_\-arena\-\_\-stopped}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{grunge\-\_\-arena\-\_\-stopped}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} grunge\-\_\-arena\-\_\-stopped = false}}\label{arena_8cpp_a9ce8e9dd4ecfd5c729019926d67e922d}
+\hypertarget{arena_8cpp_a5cc9ce5c556a333e4b4f0f21c2f23b0d}{\index{arena.\-cpp@{arena.\-cpp}!grunge\-\_\-arena\-\_\-third\-\_\-echo@{grunge\-\_\-arena\-\_\-third\-\_\-echo}}
+\index{grunge\-\_\-arena\-\_\-third\-\_\-echo@{grunge\-\_\-arena\-\_\-third\-\_\-echo}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{grunge\-\_\-arena\-\_\-third\-\_\-echo}]{\setlength{\rightskip}{0pt plus 5cm}int grunge\-\_\-arena\-\_\-third\-\_\-echo = 0}}\label{arena_8cpp_a5cc9ce5c556a333e4b4f0f21c2f23b0d}
+\hypertarget{arena_8cpp_af4c253729b4397982a6be52ac3db3986}{\index{arena.\-cpp@{arena.\-cpp}!grunge\-\_\-blue\-\_\-max@{grunge\-\_\-blue\-\_\-max}}
+\index{grunge\-\_\-blue\-\_\-max@{grunge\-\_\-blue\-\_\-max}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{grunge\-\_\-blue\-\_\-max}]{\setlength{\rightskip}{0pt plus 5cm}int grunge\-\_\-blue\-\_\-max = 5}}\label{arena_8cpp_af4c253729b4397982a6be52ac3db3986}
+\hypertarget{arena_8cpp_aacb38d911deb065c98cb5ba6cb5e323a}{\index{arena.\-cpp@{arena.\-cpp}!grunge\-\_\-private\-\_\-arena\-\_\-rooms@{grunge\-\_\-private\-\_\-arena\-\_\-rooms}}
+\index{grunge\-\_\-private\-\_\-arena\-\_\-rooms@{grunge\-\_\-private\-\_\-arena\-\_\-rooms}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{grunge\-\_\-private\-\_\-arena\-\_\-rooms}]{\setlength{\rightskip}{0pt plus 5cm}const int grunge\-\_\-private\-\_\-arena\-\_\-rooms\mbox{[}4\mbox{]}}}\label{arena_8cpp_aacb38d911deb065c98cb5ba6cb5e323a}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \hyperlink{protos_8h_a9cd0f614afcfcf8cf36685200f3281f6}{GRUNGE\_SMALL1},
+    \hyperlink{protos_8h_ad95199fde598c878eb18852b136e37f6}{GRUNGE\_SMALL2}
+\}
+\end{DoxyCode}
+\hypertarget{arena_8cpp_a6761340706096510fd89edca40a63b9b}{\index{arena.\-cpp@{arena.\-cpp}!red@{red}}
+\index{red@{red}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{red}]{\setlength{\rightskip}{0pt plus 5cm}int red = 0}}\label{arena_8cpp_a6761340706096510fd89edca40a63b9b}
+\hypertarget{arena_8cpp_afa43eeb4bb0bb56250b2bf85e831a053}{\index{arena.\-cpp@{arena.\-cpp}!red\-\_\-win@{red\-\_\-win}}
+\index{red\-\_\-win@{red\-\_\-win}!arena.cpp@{arena.\-cpp}}
+\subsubsection[{red\-\_\-win}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} red\-\_\-win = false}}\label{arena_8cpp_afa43eeb4bb0bb56250b2bf85e831a053}

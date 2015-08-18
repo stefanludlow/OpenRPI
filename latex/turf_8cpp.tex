@@ -1,0 +1,136 @@
+\hypertarget{turf_8cpp}{\section{turf.\-cpp File Reference}
+\label{turf_8cpp}\index{turf.\-cpp@{turf.\-cpp}}
+}
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$ctype.\-h$>$}\\*
+{\ttfamily \#include $<$math.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$unistd.\-h$>$}\\*
+{\ttfamily \#include $<$mysql/mysql.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}server.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}structs.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}constants.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}account.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}protos.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}group.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utility.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}net\-\_\-link.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}decl.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}turf.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{turf_8cpp_ac27279c24cb1b1d024428a89252eae5d}{load\-\_\-turf\-\_\-hoods} (void)
+\item 
+void \hyperlink{turf_8cpp_a74d2eab128c6026ddb7df1d005988d0a}{load\-\_\-turf\-\_\-systems} (void)
+\item 
+void \hyperlink{turf_8cpp_abac70a09902ae961ed9a4cb4c3e1472c}{turf\-\_\-update} (void)
+\item 
+void \hyperlink{turf_8cpp_a650ca4a8d4c74f379bd8261de4fbe5c6}{do\-\_\-setturf} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+int \hyperlink{turf_8cpp_a1222e891819f2cdecde3465b2228df58}{num\-\_\-undelayed\-\_\-followers} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{turf_8cpp_a5260bff5b05ff052b2b7981b59325f23}{do\-\_\-turf} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{turf_8cpp_a314c40e759689268f158bc8fd192a33b}{delayed\-\_\-turfaction} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+int \hyperlink{turf_8cpp_ac835a0430e0b7423aa73fed6354bf132}{is\-\_\-turf\-\_\-clan} (char $\ast$clan\-\_\-name, \hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} include\-\_\-willies)
+\item 
+void \hyperlink{turf_8cpp_aedb2d4cea49db258a6f7b632bb710084}{do\-\_\-immturf} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+std\-::vector$<$ \hyperlink{classTurfSystem}{Turf\-System} $\ast$ $>$ \hyperlink{turf_8cpp_acb835a0cbcc63a390f2c0ec8d6cba8b0}{Turf\-Systems}
+\item 
+std\-::vector$<$ \hyperlink{classNeighbourhood}{Neighbourhood} $\ast$ $>$ \hyperlink{turf_8cpp_a7a520abe7bd1045b5eec7ee3f17636ba}{Neighbourhoods}
+\item 
+\hyperlink{classrpie_1_1server}{rpie\-::server} \hyperlink{turf_8cpp_a55c71990ee4162ebec6abe401996cf15}{engine}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{turf_8cpp_a314c40e759689268f158bc8fd192a33b}{\index{turf.\-cpp@{turf.\-cpp}!delayed\-\_\-turfaction@{delayed\-\_\-turfaction}}
+\index{delayed\-\_\-turfaction@{delayed\-\_\-turfaction}!turf.cpp@{turf.\-cpp}}
+\subsubsection[{delayed\-\_\-turfaction}]{\setlength{\rightskip}{0pt plus 5cm}void delayed\-\_\-turfaction (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{turf_8cpp_a314c40e759689268f158bc8fd192a33b}
+\hypertarget{turf_8cpp_aedb2d4cea49db258a6f7b632bb710084}{\index{turf.\-cpp@{turf.\-cpp}!do\-\_\-immturf@{do\-\_\-immturf}}
+\index{do\-\_\-immturf@{do\-\_\-immturf}!turf.cpp@{turf.\-cpp}}
+\subsubsection[{do\-\_\-immturf}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-immturf (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{turf_8cpp_aedb2d4cea49db258a6f7b632bb710084}
+\hypertarget{turf_8cpp_a650ca4a8d4c74f379bd8261de4fbe5c6}{\index{turf.\-cpp@{turf.\-cpp}!do\-\_\-setturf@{do\-\_\-setturf}}
+\index{do\-\_\-setturf@{do\-\_\-setturf}!turf.cpp@{turf.\-cpp}}
+\subsubsection[{do\-\_\-setturf}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-setturf (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{turf_8cpp_a650ca4a8d4c74f379bd8261de4fbe5c6}
+\hypertarget{turf_8cpp_a5260bff5b05ff052b2b7981b59325f23}{\index{turf.\-cpp@{turf.\-cpp}!do\-\_\-turf@{do\-\_\-turf}}
+\index{do\-\_\-turf@{do\-\_\-turf}!turf.cpp@{turf.\-cpp}}
+\subsubsection[{do\-\_\-turf}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-turf (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{turf_8cpp_a5260bff5b05ff052b2b7981b59325f23}
+\hypertarget{turf_8cpp_ac835a0430e0b7423aa73fed6354bf132}{\index{turf.\-cpp@{turf.\-cpp}!is\-\_\-turf\-\_\-clan@{is\-\_\-turf\-\_\-clan}}
+\index{is\-\_\-turf\-\_\-clan@{is\-\_\-turf\-\_\-clan}!turf.cpp@{turf.\-cpp}}
+\subsubsection[{is\-\_\-turf\-\_\-clan}]{\setlength{\rightskip}{0pt plus 5cm}int is\-\_\-turf\-\_\-clan (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{clan\-\_\-name, }
+\item[{{\bf bool}}]{include\-\_\-willies}
+\end{DoxyParamCaption}
+)}}\label{turf_8cpp_ac835a0430e0b7423aa73fed6354bf132}
+\hypertarget{turf_8cpp_ac27279c24cb1b1d024428a89252eae5d}{\index{turf.\-cpp@{turf.\-cpp}!load\-\_\-turf\-\_\-hoods@{load\-\_\-turf\-\_\-hoods}}
+\index{load\-\_\-turf\-\_\-hoods@{load\-\_\-turf\-\_\-hoods}!turf.cpp@{turf.\-cpp}}
+\subsubsection[{load\-\_\-turf\-\_\-hoods}]{\setlength{\rightskip}{0pt plus 5cm}void load\-\_\-turf\-\_\-hoods (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{turf_8cpp_ac27279c24cb1b1d024428a89252eae5d}
+\hypertarget{turf_8cpp_a74d2eab128c6026ddb7df1d005988d0a}{\index{turf.\-cpp@{turf.\-cpp}!load\-\_\-turf\-\_\-systems@{load\-\_\-turf\-\_\-systems}}
+\index{load\-\_\-turf\-\_\-systems@{load\-\_\-turf\-\_\-systems}!turf.cpp@{turf.\-cpp}}
+\subsubsection[{load\-\_\-turf\-\_\-systems}]{\setlength{\rightskip}{0pt plus 5cm}void load\-\_\-turf\-\_\-systems (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{turf_8cpp_a74d2eab128c6026ddb7df1d005988d0a}
+\hypertarget{turf_8cpp_a1222e891819f2cdecde3465b2228df58}{\index{turf.\-cpp@{turf.\-cpp}!num\-\_\-undelayed\-\_\-followers@{num\-\_\-undelayed\-\_\-followers}}
+\index{num\-\_\-undelayed\-\_\-followers@{num\-\_\-undelayed\-\_\-followers}!turf.cpp@{turf.\-cpp}}
+\subsubsection[{num\-\_\-undelayed\-\_\-followers}]{\setlength{\rightskip}{0pt plus 5cm}int num\-\_\-undelayed\-\_\-followers (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{turf_8cpp_a1222e891819f2cdecde3465b2228df58}
+\hypertarget{turf_8cpp_abac70a09902ae961ed9a4cb4c3e1472c}{\index{turf.\-cpp@{turf.\-cpp}!turf\-\_\-update@{turf\-\_\-update}}
+\index{turf\-\_\-update@{turf\-\_\-update}!turf.cpp@{turf.\-cpp}}
+\subsubsection[{turf\-\_\-update}]{\setlength{\rightskip}{0pt plus 5cm}void turf\-\_\-update (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{turf_8cpp_abac70a09902ae961ed9a4cb4c3e1472c}
+
+
+\subsection{Variable Documentation}
+\hypertarget{turf_8cpp_a55c71990ee4162ebec6abe401996cf15}{\index{turf.\-cpp@{turf.\-cpp}!engine@{engine}}
+\index{engine@{engine}!turf.cpp@{turf.\-cpp}}
+\subsubsection[{engine}]{\setlength{\rightskip}{0pt plus 5cm}{\bf rpie\-::server} engine}}\label{turf_8cpp_a55c71990ee4162ebec6abe401996cf15}
+\hypertarget{turf_8cpp_a7a520abe7bd1045b5eec7ee3f17636ba}{\index{turf.\-cpp@{turf.\-cpp}!Neighbourhoods@{Neighbourhoods}}
+\index{Neighbourhoods@{Neighbourhoods}!turf.cpp@{turf.\-cpp}}
+\subsubsection[{Neighbourhoods}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf Neighbourhood}$\ast$$>$ Neighbourhoods}}\label{turf_8cpp_a7a520abe7bd1045b5eec7ee3f17636ba}
+\hypertarget{turf_8cpp_acb835a0cbcc63a390f2c0ec8d6cba8b0}{\index{turf.\-cpp@{turf.\-cpp}!Turf\-Systems@{Turf\-Systems}}
+\index{Turf\-Systems@{Turf\-Systems}!turf.cpp@{turf.\-cpp}}
+\subsubsection[{Turf\-Systems}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf Turf\-System}$\ast$$>$ Turf\-Systems}}\label{turf_8cpp_acb835a0cbcc63a390f2c0ec8d6cba8b0}

@@ -1,0 +1,311 @@
+\hypertarget{hash_8cpp}{\section{hash.\-cpp File Reference}
+\label{hash_8cpp}\index{hash.\-cpp@{hash.\-cpp}}
+}
+{\ttfamily \#include $<$ctype.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$time.\-h$>$}\\*
+{\ttfamily \#include $<$unistd.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}server.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}structs.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}protos.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utility.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}decl.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}room.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{hash_8cpp_a34e93b55a345d2ddd5cb71f5ae19b7c0}{C\-H\-E\-C\-K\-\_\-\-D\-O\-U\-B\-L\-E\-\_\-\-D\-E\-F\-S}~1
+\item 
+\#define \hyperlink{hash_8cpp_af0aa4d680a73645903a2c9677c85859a}{Z\-C\-M\-D}~\hyperlink{protos_8h_a05fe590640e6e476685743f356f74360}{zone\-\_\-table}\mbox{[}zone\mbox{]}.cmd\mbox{[}cmd\-\_\-no\mbox{]}
+\item 
+\#define \hyperlink{hash_8cpp_af0aa4d680a73645903a2c9677c85859a}{Z\-C\-M\-D}~\hyperlink{protos_8h_a05fe590640e6e476685743f356f74360}{zone\-\_\-table}\mbox{[}zone\mbox{]}.cmd\mbox{[}cmd\-\_\-no\mbox{]}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{hash_8cpp_ad7178ab938d66d751fefc6a3a91ec570}{mobile\-\_\-load\-\_\-cues} (\hyperlink{structs_8h_a22df42ea12f8103efe61fe6aa34085e0}{M\-O\-B\-\_\-\-D\-A\-T\-A} $\ast$mob)
+\item 
+void \hyperlink{hash_8cpp_abf87fad2223e47d367d12e61afcaae91}{object\-\_\-load\-\_\-cues} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj)
+\item 
+\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{hash_8cpp_ae76ee33ed1c3f130db9439d69a550f97}{fread\-\_\-mobile} (int vnum, const int $\ast$n\-Zone, F\-I\-L\-E $\ast$fp)
+\item 
+\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{hash_8cpp_a88ce4ddea02552433c72757721ec1398}{load\-\_\-mobile} (int vnum)
+\item 
+int \hyperlink{hash_8cpp_a46c64236130f825d3a7dfccce9e301a2}{is\-\_\-variable\-\_\-color} (char $\ast$string)
+\item 
+void \hyperlink{hash_8cpp_a2689488a4e0f4974967cc27efb8a4fcc}{insert\-\_\-exact\-\_\-string\-\_\-variables} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$new\-\_\-obj, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$proto, char $\ast$string0, char $\ast$string1, char $\ast$string2, char $\ast$string3, char $\ast$string4, char $\ast$string5, char $\ast$string6, char $\ast$string7, char $\ast$string8, char $\ast$string9, char $\ast$st\-\_\-cat0, char $\ast$st\-\_\-cat1, char $\ast$st\-\_\-cat2, char $\ast$st\-\_\-cat3, char $\ast$st\-\_\-cat4, char $\ast$st\-\_\-cat5, char $\ast$st\-\_\-cat6, char $\ast$st\-\_\-cat7, char $\ast$st\-\_\-cat8, char $\ast$st\-\_\-cat9)
+\item 
+void \hyperlink{hash_8cpp_aa91e297b1d6c6e39103f28f0781b0e72}{insert\-\_\-string\-\_\-variables} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$new\-\_\-obj, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$proto, char $\ast$string0, char $\ast$string1, char $\ast$string2, char $\ast$string3, char $\ast$string4, char $\ast$string5, char $\ast$string6, char $\ast$string7, char $\ast$string8, char $\ast$string9)
+\item 
+\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{hash_8cpp_a77f0dcecd5f93590ae5fd5d005c05128}{load\-\_\-object} (int vnum)
+\item 
+\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{hash_8cpp_a764770bad056b0cf1196dd17b92aa557}{load\-\_\-exact\-\_\-colored\-\_\-object} (int vnum, char $\ast$color0, char $\ast$color1, char $\ast$color2, char $\ast$color3, char $\ast$color4, char $\ast$color5, char $\ast$color6, char $\ast$color7, char $\ast$color8, char $\ast$color9, char $\ast$cat0, char $\ast$cat1, char $\ast$cat2, char $\ast$cat3, char $\ast$cat4, char $\ast$cat5, char $\ast$cat6, char $\ast$cat7, char $\ast$cat8, char $\ast$cat9)
+\item 
+\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{hash_8cpp_ae4ee528402eb5e897c663c5e061d7935}{load\-\_\-colored\-\_\-object} (int vnum, char $\ast$color0, char $\ast$color1, char $\ast$color2, char $\ast$color3, char $\ast$color4, char $\ast$color5, char $\ast$color6, char $\ast$color7, char $\ast$color8, char $\ast$color9)
+\item 
+\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{hash_8cpp_aecf77334b0dc6774e254cbf73f5f4fa1}{fread\-\_\-object} (int vnum, int n\-Zone, F\-I\-L\-E $\ast$fp)
+\item 
+int \hyperlink{hash_8cpp_aea1d3af8ff8908808729b3b66a6a56b6}{calculate\-\_\-race\-\_\-height} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$tch)
+\item 
+int \hyperlink{hash_8cpp_ae64701c1ff3cf300e06444206017d231}{calculate\-\_\-size\-\_\-height} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$tch)
+\item 
+void \hyperlink{hash_8cpp_aa3853b5620990acbe3fcffcf5351cd7b}{make\-\_\-height} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$mob)
+\item 
+void \hyperlink{hash_8cpp_acb8947368e1dc1b48e9fec7561688a84}{make\-\_\-frame} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$mob)
+\item 
+void \hyperlink{hash_8cpp_a2a85d61d9194651578efa574cd7a6102}{reset\-\_\-zone} (int zone)
+\item 
+void \hyperlink{hash_8cpp_aa7ba9de2b700e8544630acae1dd7da20}{list\-\_\-validate} (char $\ast$name)
+\item 
+void \hyperlink{hash_8cpp_ac0cb83fccfe9e8e445bba64fe1bfcb71}{cleanup\-\_\-the\-\_\-dead} (int mode)
+\item 
+void \hyperlink{hash_8cpp_aa366bc30bacd943467f72e31fd1e0773}{refresh\-\_\-zone} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classrpie_1_1server}{rpie\-::server} \hyperlink{hash_8cpp_a55c71990ee4162ebec6abe401996cf15}{engine}
+\item 
+struct \hyperlink{structchar__data}{char\-\_\-data} $\ast$ \hyperlink{hash_8cpp_aca8b15ec0c0552686debd33ea77c97f3}{character\-\_\-list}
+\item 
+struct \hyperlink{structobj__data}{obj\-\_\-data} $\ast$ \hyperlink{hash_8cpp_a93cb20ebbc8b1577f272090ecc807ab1}{object\-\_\-list}
+\item 
+int \hyperlink{hash_8cpp_a77a168c21a665dea747dc19a4ffae73b}{top\-\_\-of\-\_\-zone\-\_\-table}
+\item 
+struct \hyperlink{structzone__data}{zone\-\_\-data} $\ast$ \hyperlink{hash_8cpp_a05fe590640e6e476685743f356f74360}{zone\-\_\-table}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{hash_8cpp_a34e93b55a345d2ddd5cb71f5ae19b7c0}{\index{hash.\-cpp@{hash.\-cpp}!C\-H\-E\-C\-K\-\_\-\-D\-O\-U\-B\-L\-E\-\_\-\-D\-E\-F\-S@{C\-H\-E\-C\-K\-\_\-\-D\-O\-U\-B\-L\-E\-\_\-\-D\-E\-F\-S}}
+\index{C\-H\-E\-C\-K\-\_\-\-D\-O\-U\-B\-L\-E\-\_\-\-D\-E\-F\-S@{C\-H\-E\-C\-K\-\_\-\-D\-O\-U\-B\-L\-E\-\_\-\-D\-E\-F\-S}!hash.cpp@{hash.\-cpp}}
+\subsubsection[{C\-H\-E\-C\-K\-\_\-\-D\-O\-U\-B\-L\-E\-\_\-\-D\-E\-F\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-H\-E\-C\-K\-\_\-\-D\-O\-U\-B\-L\-E\-\_\-\-D\-E\-F\-S~1}}\label{hash_8cpp_a34e93b55a345d2ddd5cb71f5ae19b7c0}
+\hypertarget{hash_8cpp_af0aa4d680a73645903a2c9677c85859a}{\index{hash.\-cpp@{hash.\-cpp}!Z\-C\-M\-D@{Z\-C\-M\-D}}
+\index{Z\-C\-M\-D@{Z\-C\-M\-D}!hash.cpp@{hash.\-cpp}}
+\subsubsection[{Z\-C\-M\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define Z\-C\-M\-D~{\bf zone\-\_\-table}\mbox{[}zone\mbox{]}.cmd\mbox{[}cmd\-\_\-no\mbox{]}}}\label{hash_8cpp_af0aa4d680a73645903a2c9677c85859a}
+\hypertarget{hash_8cpp_af0aa4d680a73645903a2c9677c85859a}{\index{hash.\-cpp@{hash.\-cpp}!Z\-C\-M\-D@{Z\-C\-M\-D}}
+\index{Z\-C\-M\-D@{Z\-C\-M\-D}!hash.cpp@{hash.\-cpp}}
+\subsubsection[{Z\-C\-M\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define Z\-C\-M\-D~{\bf zone\-\_\-table}\mbox{[}zone\mbox{]}.cmd\mbox{[}cmd\-\_\-no\mbox{]}}}\label{hash_8cpp_af0aa4d680a73645903a2c9677c85859a}
+
+
+\subsection{Function Documentation}
+\hypertarget{hash_8cpp_aea1d3af8ff8908808729b3b66a6a56b6}{\index{hash.\-cpp@{hash.\-cpp}!calculate\-\_\-race\-\_\-height@{calculate\-\_\-race\-\_\-height}}
+\index{calculate\-\_\-race\-\_\-height@{calculate\-\_\-race\-\_\-height}!hash.cpp@{hash.\-cpp}}
+\subsubsection[{calculate\-\_\-race\-\_\-height}]{\setlength{\rightskip}{0pt plus 5cm}int calculate\-\_\-race\-\_\-height (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{tch}
+\end{DoxyParamCaption}
+)}}\label{hash_8cpp_aea1d3af8ff8908808729b3b66a6a56b6}
+\hypertarget{hash_8cpp_ae64701c1ff3cf300e06444206017d231}{\index{hash.\-cpp@{hash.\-cpp}!calculate\-\_\-size\-\_\-height@{calculate\-\_\-size\-\_\-height}}
+\index{calculate\-\_\-size\-\_\-height@{calculate\-\_\-size\-\_\-height}!hash.cpp@{hash.\-cpp}}
+\subsubsection[{calculate\-\_\-size\-\_\-height}]{\setlength{\rightskip}{0pt plus 5cm}int calculate\-\_\-size\-\_\-height (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{tch}
+\end{DoxyParamCaption}
+)}}\label{hash_8cpp_ae64701c1ff3cf300e06444206017d231}
+\hypertarget{hash_8cpp_ac0cb83fccfe9e8e445bba64fe1bfcb71}{\index{hash.\-cpp@{hash.\-cpp}!cleanup\-\_\-the\-\_\-dead@{cleanup\-\_\-the\-\_\-dead}}
+\index{cleanup\-\_\-the\-\_\-dead@{cleanup\-\_\-the\-\_\-dead}!hash.cpp@{hash.\-cpp}}
+\subsubsection[{cleanup\-\_\-the\-\_\-dead}]{\setlength{\rightskip}{0pt plus 5cm}void cleanup\-\_\-the\-\_\-dead (
+\begin{DoxyParamCaption}
+\item[{int}]{mode}
+\end{DoxyParamCaption}
+)}}\label{hash_8cpp_ac0cb83fccfe9e8e445bba64fe1bfcb71}
+\hypertarget{hash_8cpp_ae76ee33ed1c3f130db9439d69a550f97}{\index{hash.\-cpp@{hash.\-cpp}!fread\-\_\-mobile@{fread\-\_\-mobile}}
+\index{fread\-\_\-mobile@{fread\-\_\-mobile}!hash.cpp@{hash.\-cpp}}
+\subsubsection[{fread\-\_\-mobile}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A}$\ast$ fread\-\_\-mobile (
+\begin{DoxyParamCaption}
+\item[{int}]{vnum, }
+\item[{const int $\ast$}]{n\-Zone, }
+\item[{F\-I\-L\-E $\ast$}]{fp}
+\end{DoxyParamCaption}
+)}}\label{hash_8cpp_ae76ee33ed1c3f130db9439d69a550f97}
+\hypertarget{hash_8cpp_aecf77334b0dc6774e254cbf73f5f4fa1}{\index{hash.\-cpp@{hash.\-cpp}!fread\-\_\-object@{fread\-\_\-object}}
+\index{fread\-\_\-object@{fread\-\_\-object}!hash.cpp@{hash.\-cpp}}
+\subsubsection[{fread\-\_\-object}]{\setlength{\rightskip}{0pt plus 5cm}{\bf O\-B\-J\-\_\-\-D\-A\-T\-A}$\ast$ fread\-\_\-object (
+\begin{DoxyParamCaption}
+\item[{int}]{vnum, }
+\item[{int}]{n\-Zone, }
+\item[{F\-I\-L\-E $\ast$}]{fp}
+\end{DoxyParamCaption}
+)}}\label{hash_8cpp_aecf77334b0dc6774e254cbf73f5f4fa1}
+\hypertarget{hash_8cpp_a2689488a4e0f4974967cc27efb8a4fcc}{\index{hash.\-cpp@{hash.\-cpp}!insert\-\_\-exact\-\_\-string\-\_\-variables@{insert\-\_\-exact\-\_\-string\-\_\-variables}}
+\index{insert\-\_\-exact\-\_\-string\-\_\-variables@{insert\-\_\-exact\-\_\-string\-\_\-variables}!hash.cpp@{hash.\-cpp}}
+\subsubsection[{insert\-\_\-exact\-\_\-string\-\_\-variables}]{\setlength{\rightskip}{0pt plus 5cm}void insert\-\_\-exact\-\_\-string\-\_\-variables (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{new\-\_\-obj, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{proto, }
+\item[{char $\ast$}]{string0, }
+\item[{char $\ast$}]{string1, }
+\item[{char $\ast$}]{string2, }
+\item[{char $\ast$}]{string3, }
+\item[{char $\ast$}]{string4, }
+\item[{char $\ast$}]{string5, }
+\item[{char $\ast$}]{string6, }
+\item[{char $\ast$}]{string7, }
+\item[{char $\ast$}]{string8, }
+\item[{char $\ast$}]{string9, }
+\item[{char $\ast$}]{st\-\_\-cat0, }
+\item[{char $\ast$}]{st\-\_\-cat1, }
+\item[{char $\ast$}]{st\-\_\-cat2, }
+\item[{char $\ast$}]{st\-\_\-cat3, }
+\item[{char $\ast$}]{st\-\_\-cat4, }
+\item[{char $\ast$}]{st\-\_\-cat5, }
+\item[{char $\ast$}]{st\-\_\-cat6, }
+\item[{char $\ast$}]{st\-\_\-cat7, }
+\item[{char $\ast$}]{st\-\_\-cat8, }
+\item[{char $\ast$}]{st\-\_\-cat9}
+\end{DoxyParamCaption}
+)}}\label{hash_8cpp_a2689488a4e0f4974967cc27efb8a4fcc}
+\hypertarget{hash_8cpp_aa91e297b1d6c6e39103f28f0781b0e72}{\index{hash.\-cpp@{hash.\-cpp}!insert\-\_\-string\-\_\-variables@{insert\-\_\-string\-\_\-variables}}
+\index{insert\-\_\-string\-\_\-variables@{insert\-\_\-string\-\_\-variables}!hash.cpp@{hash.\-cpp}}
+\subsubsection[{insert\-\_\-string\-\_\-variables}]{\setlength{\rightskip}{0pt plus 5cm}void insert\-\_\-string\-\_\-variables (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{new\-\_\-obj, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{proto, }
+\item[{char $\ast$}]{string0, }
+\item[{char $\ast$}]{string1, }
+\item[{char $\ast$}]{string2, }
+\item[{char $\ast$}]{string3, }
+\item[{char $\ast$}]{string4, }
+\item[{char $\ast$}]{string5, }
+\item[{char $\ast$}]{string6, }
+\item[{char $\ast$}]{string7, }
+\item[{char $\ast$}]{string8, }
+\item[{char $\ast$}]{string9}
+\end{DoxyParamCaption}
+)}}\label{hash_8cpp_aa91e297b1d6c6e39103f28f0781b0e72}
+\hypertarget{hash_8cpp_a46c64236130f825d3a7dfccce9e301a2}{\index{hash.\-cpp@{hash.\-cpp}!is\-\_\-variable\-\_\-color@{is\-\_\-variable\-\_\-color}}
+\index{is\-\_\-variable\-\_\-color@{is\-\_\-variable\-\_\-color}!hash.cpp@{hash.\-cpp}}
+\subsubsection[{is\-\_\-variable\-\_\-color}]{\setlength{\rightskip}{0pt plus 5cm}int is\-\_\-variable\-\_\-color (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{string}
+\end{DoxyParamCaption}
+)}}\label{hash_8cpp_a46c64236130f825d3a7dfccce9e301a2}
+\hypertarget{hash_8cpp_aa7ba9de2b700e8544630acae1dd7da20}{\index{hash.\-cpp@{hash.\-cpp}!list\-\_\-validate@{list\-\_\-validate}}
+\index{list\-\_\-validate@{list\-\_\-validate}!hash.cpp@{hash.\-cpp}}
+\subsubsection[{list\-\_\-validate}]{\setlength{\rightskip}{0pt plus 5cm}void list\-\_\-validate (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}}\label{hash_8cpp_aa7ba9de2b700e8544630acae1dd7da20}
+\hypertarget{hash_8cpp_ae4ee528402eb5e897c663c5e061d7935}{\index{hash.\-cpp@{hash.\-cpp}!load\-\_\-colored\-\_\-object@{load\-\_\-colored\-\_\-object}}
+\index{load\-\_\-colored\-\_\-object@{load\-\_\-colored\-\_\-object}!hash.cpp@{hash.\-cpp}}
+\subsubsection[{load\-\_\-colored\-\_\-object}]{\setlength{\rightskip}{0pt plus 5cm}{\bf O\-B\-J\-\_\-\-D\-A\-T\-A}$\ast$ load\-\_\-colored\-\_\-object (
+\begin{DoxyParamCaption}
+\item[{int}]{vnum, }
+\item[{char $\ast$}]{color0, }
+\item[{char $\ast$}]{color1, }
+\item[{char $\ast$}]{color2, }
+\item[{char $\ast$}]{color3, }
+\item[{char $\ast$}]{color4, }
+\item[{char $\ast$}]{color5, }
+\item[{char $\ast$}]{color6, }
+\item[{char $\ast$}]{color7, }
+\item[{char $\ast$}]{color8, }
+\item[{char $\ast$}]{color9}
+\end{DoxyParamCaption}
+)}}\label{hash_8cpp_ae4ee528402eb5e897c663c5e061d7935}
+\hypertarget{hash_8cpp_a764770bad056b0cf1196dd17b92aa557}{\index{hash.\-cpp@{hash.\-cpp}!load\-\_\-exact\-\_\-colored\-\_\-object@{load\-\_\-exact\-\_\-colored\-\_\-object}}
+\index{load\-\_\-exact\-\_\-colored\-\_\-object@{load\-\_\-exact\-\_\-colored\-\_\-object}!hash.cpp@{hash.\-cpp}}
+\subsubsection[{load\-\_\-exact\-\_\-colored\-\_\-object}]{\setlength{\rightskip}{0pt plus 5cm}{\bf O\-B\-J\-\_\-\-D\-A\-T\-A}$\ast$ load\-\_\-exact\-\_\-colored\-\_\-object (
+\begin{DoxyParamCaption}
+\item[{int}]{vnum, }
+\item[{char $\ast$}]{color0, }
+\item[{char $\ast$}]{color1, }
+\item[{char $\ast$}]{color2, }
+\item[{char $\ast$}]{color3, }
+\item[{char $\ast$}]{color4, }
+\item[{char $\ast$}]{color5, }
+\item[{char $\ast$}]{color6, }
+\item[{char $\ast$}]{color7, }
+\item[{char $\ast$}]{color8, }
+\item[{char $\ast$}]{color9, }
+\item[{char $\ast$}]{cat0, }
+\item[{char $\ast$}]{cat1, }
+\item[{char $\ast$}]{cat2, }
+\item[{char $\ast$}]{cat3, }
+\item[{char $\ast$}]{cat4, }
+\item[{char $\ast$}]{cat5, }
+\item[{char $\ast$}]{cat6, }
+\item[{char $\ast$}]{cat7, }
+\item[{char $\ast$}]{cat8, }
+\item[{char $\ast$}]{cat9}
+\end{DoxyParamCaption}
+)}}\label{hash_8cpp_a764770bad056b0cf1196dd17b92aa557}
+\hypertarget{hash_8cpp_a88ce4ddea02552433c72757721ec1398}{\index{hash.\-cpp@{hash.\-cpp}!load\-\_\-mobile@{load\-\_\-mobile}}
+\index{load\-\_\-mobile@{load\-\_\-mobile}!hash.cpp@{hash.\-cpp}}
+\subsubsection[{load\-\_\-mobile}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A}$\ast$ load\-\_\-mobile (
+\begin{DoxyParamCaption}
+\item[{int}]{vnum}
+\end{DoxyParamCaption}
+)}}\label{hash_8cpp_a88ce4ddea02552433c72757721ec1398}
+\hypertarget{hash_8cpp_a77f0dcecd5f93590ae5fd5d005c05128}{\index{hash.\-cpp@{hash.\-cpp}!load\-\_\-object@{load\-\_\-object}}
+\index{load\-\_\-object@{load\-\_\-object}!hash.cpp@{hash.\-cpp}}
+\subsubsection[{load\-\_\-object}]{\setlength{\rightskip}{0pt plus 5cm}{\bf O\-B\-J\-\_\-\-D\-A\-T\-A}$\ast$ load\-\_\-object (
+\begin{DoxyParamCaption}
+\item[{int}]{vnum}
+\end{DoxyParamCaption}
+)}}\label{hash_8cpp_a77f0dcecd5f93590ae5fd5d005c05128}
+\hypertarget{hash_8cpp_acb8947368e1dc1b48e9fec7561688a84}{\index{hash.\-cpp@{hash.\-cpp}!make\-\_\-frame@{make\-\_\-frame}}
+\index{make\-\_\-frame@{make\-\_\-frame}!hash.cpp@{hash.\-cpp}}
+\subsubsection[{make\-\_\-frame}]{\setlength{\rightskip}{0pt plus 5cm}void make\-\_\-frame (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{mob}
+\end{DoxyParamCaption}
+)}}\label{hash_8cpp_acb8947368e1dc1b48e9fec7561688a84}
+\hypertarget{hash_8cpp_aa3853b5620990acbe3fcffcf5351cd7b}{\index{hash.\-cpp@{hash.\-cpp}!make\-\_\-height@{make\-\_\-height}}
+\index{make\-\_\-height@{make\-\_\-height}!hash.cpp@{hash.\-cpp}}
+\subsubsection[{make\-\_\-height}]{\setlength{\rightskip}{0pt plus 5cm}void make\-\_\-height (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{mob}
+\end{DoxyParamCaption}
+)}}\label{hash_8cpp_aa3853b5620990acbe3fcffcf5351cd7b}
+\hypertarget{hash_8cpp_ad7178ab938d66d751fefc6a3a91ec570}{\index{hash.\-cpp@{hash.\-cpp}!mobile\-\_\-load\-\_\-cues@{mobile\-\_\-load\-\_\-cues}}
+\index{mobile\-\_\-load\-\_\-cues@{mobile\-\_\-load\-\_\-cues}!hash.cpp@{hash.\-cpp}}
+\subsubsection[{mobile\-\_\-load\-\_\-cues}]{\setlength{\rightskip}{0pt plus 5cm}void mobile\-\_\-load\-\_\-cues (
+\begin{DoxyParamCaption}
+\item[{{\bf M\-O\-B\-\_\-\-D\-A\-T\-A} $\ast$}]{mob}
+\end{DoxyParamCaption}
+)}}\label{hash_8cpp_ad7178ab938d66d751fefc6a3a91ec570}
+\hypertarget{hash_8cpp_abf87fad2223e47d367d12e61afcaae91}{\index{hash.\-cpp@{hash.\-cpp}!object\-\_\-load\-\_\-cues@{object\-\_\-load\-\_\-cues}}
+\index{object\-\_\-load\-\_\-cues@{object\-\_\-load\-\_\-cues}!hash.cpp@{hash.\-cpp}}
+\subsubsection[{object\-\_\-load\-\_\-cues}]{\setlength{\rightskip}{0pt plus 5cm}void object\-\_\-load\-\_\-cues (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj}
+\end{DoxyParamCaption}
+)}}\label{hash_8cpp_abf87fad2223e47d367d12e61afcaae91}
+\hypertarget{hash_8cpp_aa366bc30bacd943467f72e31fd1e0773}{\index{hash.\-cpp@{hash.\-cpp}!refresh\-\_\-zone@{refresh\-\_\-zone}}
+\index{refresh\-\_\-zone@{refresh\-\_\-zone}!hash.cpp@{hash.\-cpp}}
+\subsubsection[{refresh\-\_\-zone}]{\setlength{\rightskip}{0pt plus 5cm}void refresh\-\_\-zone (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{hash_8cpp_aa366bc30bacd943467f72e31fd1e0773}
+\hypertarget{hash_8cpp_a2a85d61d9194651578efa574cd7a6102}{\index{hash.\-cpp@{hash.\-cpp}!reset\-\_\-zone@{reset\-\_\-zone}}
+\index{reset\-\_\-zone@{reset\-\_\-zone}!hash.cpp@{hash.\-cpp}}
+\subsubsection[{reset\-\_\-zone}]{\setlength{\rightskip}{0pt plus 5cm}void reset\-\_\-zone (
+\begin{DoxyParamCaption}
+\item[{int}]{zone}
+\end{DoxyParamCaption}
+)}}\label{hash_8cpp_a2a85d61d9194651578efa574cd7a6102}
+
+
+\subsection{Variable Documentation}
+\hypertarget{hash_8cpp_aca8b15ec0c0552686debd33ea77c97f3}{\index{hash.\-cpp@{hash.\-cpp}!character\-\_\-list@{character\-\_\-list}}
+\index{character\-\_\-list@{character\-\_\-list}!hash.cpp@{hash.\-cpp}}
+\subsubsection[{character\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf char\-\_\-data}$\ast$ character\-\_\-list}}\label{hash_8cpp_aca8b15ec0c0552686debd33ea77c97f3}
+\hypertarget{hash_8cpp_a55c71990ee4162ebec6abe401996cf15}{\index{hash.\-cpp@{hash.\-cpp}!engine@{engine}}
+\index{engine@{engine}!hash.cpp@{hash.\-cpp}}
+\subsubsection[{engine}]{\setlength{\rightskip}{0pt plus 5cm}{\bf rpie\-::server} engine}}\label{hash_8cpp_a55c71990ee4162ebec6abe401996cf15}
+\hypertarget{hash_8cpp_a93cb20ebbc8b1577f272090ecc807ab1}{\index{hash.\-cpp@{hash.\-cpp}!object\-\_\-list@{object\-\_\-list}}
+\index{object\-\_\-list@{object\-\_\-list}!hash.cpp@{hash.\-cpp}}
+\subsubsection[{object\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf obj\-\_\-data}$\ast$ object\-\_\-list}}\label{hash_8cpp_a93cb20ebbc8b1577f272090ecc807ab1}
+\hypertarget{hash_8cpp_a77a168c21a665dea747dc19a4ffae73b}{\index{hash.\-cpp@{hash.\-cpp}!top\-\_\-of\-\_\-zone\-\_\-table@{top\-\_\-of\-\_\-zone\-\_\-table}}
+\index{top\-\_\-of\-\_\-zone\-\_\-table@{top\-\_\-of\-\_\-zone\-\_\-table}!hash.cpp@{hash.\-cpp}}
+\subsubsection[{top\-\_\-of\-\_\-zone\-\_\-table}]{\setlength{\rightskip}{0pt plus 5cm}int top\-\_\-of\-\_\-zone\-\_\-table}}\label{hash_8cpp_a77a168c21a665dea747dc19a4ffae73b}
+\hypertarget{hash_8cpp_a05fe590640e6e476685743f356f74360}{\index{hash.\-cpp@{hash.\-cpp}!zone\-\_\-table@{zone\-\_\-table}}
+\index{zone\-\_\-table@{zone\-\_\-table}!hash.cpp@{hash.\-cpp}}
+\subsubsection[{zone\-\_\-table}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf zone\-\_\-data}$\ast$ zone\-\_\-table}}\label{hash_8cpp_a05fe590640e6e476685743f356f74360}

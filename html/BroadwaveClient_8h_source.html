@@ -62,6 +62,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -70,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -84,7 +85,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">BroadwaveClient.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<a href="BroadwaveClient_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;fcntl.h&gt;</span>  </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;signal.h&gt;</span></div>
@@ -128,13 +129,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> NO_SOCKET = -1; </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">// Don&#39;t change these two!</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#define BROADWAVE_IP &quot;149.106.192.52&quot; </span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define BROADWAVE_PORT 4242</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="BroadwaveClient_8h.html#aefbaabfe76731941f769f0d7a1c27ccf">   45</a></span>&#160;<span class="preprocessor">#define BROADWAVE_IP &quot;149.106.192.52&quot; </span></div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="BroadwaveClient_8h.html#a762da26cab7104a17aa24a1c2886ce36">   46</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define BROADWAVE_PORT 4242</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#define BROADWAVE_USERNAME &quot;Atonement&quot;</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define BROADWAVE_PASSWORD &quot;testing1234&quot;</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="BroadwaveClient_8h.html#acbda98d731a2e29da1c3f86d3b23681b">   48</a></span>&#160;<span class="preprocessor">#define BROADWAVE_USERNAME &quot;Atonement&quot;</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="BroadwaveClient_8h.html#a34d4e65de321746232496212a974e6a7">   49</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define BROADWAVE_PASSWORD &quot;testing1234&quot;</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#define THIS_REALM &quot;Atonement&quot;</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="BroadwaveClient_8h.html#a913876b679e97eb100d43b2168ca4cb7">   51</a></span>&#160;<span class="preprocessor">#define THIS_REALM &quot;Atonement&quot;</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">#define TELOPT_MXP          &#39;\x5B&#39;</span></div>
@@ -158,16 +159,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#elif defined LINUX_GCC</span></div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor"></span>    <span class="keywordtype">int</span> m_socket;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor"></span>    sockaddr_in clientService;</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classtBroadwave.html#adff4bca86536a98a70666d4a6151f0c0">   75</a></span>&#160;<span class="preprocessor"></span>    sockaddr_in <a class="code" href="classtBroadwave.html#adff4bca86536a98a70666d4a6151f0c0">clientService</a>;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">bool</span> initialised;</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="classtBroadwave.html#a870c289fd02820e7398ee604675c9783">   77</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classtBroadwave.html#a870c289fd02820e7398ee604675c9783">initialised</a>;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="classtBroadwave.html">tBroadwave</a> () : initialised (<span class="keyword">false</span>) {this-&gt;initialiseBroadwave();}</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    ~<a class="code" href="classtBroadwave.html">tBroadwave</a> () {</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="classtBroadwave.html#a49e6459acc422e1e50ea686dc57d2908">   83</a></span>&#160;    <a class="code" href="classtBroadwave.html#a49e6459acc422e1e50ea686dc57d2908">tBroadwave</a> () : <a class="code" href="BroadwaveClient_8cpp.html#add529d9b40461ec4b6b4f2e2eb8c7d48">initialised</a> (false) {this-&gt;initialiseBroadwave();}</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classtBroadwave.html#a5fb9bf57c5957e26c961a5acc00d732a">   84</a></span>&#160;    <a class="code" href="classtBroadwave.html#a5fb9bf57c5957e26c961a5acc00d732a">~tBroadwave</a> () {</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#if defined VISUAL_STUDIO</span></div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor"></span>        closesocket(this-&gt;m_socket);</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor">#elif defined LINUX_GCC</span></div>
@@ -181,11 +182,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordtype">void</span> loginBroadwave ();</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">void</span> systemBroadwave (<span class="keywordtype">string</span> password, <span class="keywordtype">string</span> remainder);</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;};</div>
+<div class="ttc" id="classtBroadwave_html_a870c289fd02820e7398ee604675c9783"><div class="ttname"><a href="classtBroadwave.html#a870c289fd02820e7398ee604675c9783">tBroadwave::initialised</a></div><div class="ttdeci">bool initialised</div><div class="ttdef"><b>Definition:</b> BroadwaveClient.h:77</div></div>
+<div class="ttc" id="classtBroadwave_html_a5fb9bf57c5957e26c961a5acc00d732a"><div class="ttname"><a href="classtBroadwave.html#a5fb9bf57c5957e26c961a5acc00d732a">tBroadwave::~tBroadwave</a></div><div class="ttdeci">~tBroadwave()</div><div class="ttdef"><b>Definition:</b> BroadwaveClient.h:84</div></div>
+<div class="ttc" id="BroadwaveClient_8cpp_html_add529d9b40461ec4b6b4f2e2eb8c7d48"><div class="ttname"><a href="BroadwaveClient_8cpp.html#add529d9b40461ec4b6b4f2e2eb8c7d48">initialised</a></div><div class="ttdeci">this initialised</div><div class="ttdef"><b>Definition:</b> BroadwaveClient.cpp:93</div></div>
+<div class="ttc" id="classtBroadwave_html_a49e6459acc422e1e50ea686dc57d2908"><div class="ttname"><a href="classtBroadwave.html#a49e6459acc422e1e50ea686dc57d2908">tBroadwave::tBroadwave</a></div><div class="ttdeci">tBroadwave()</div><div class="ttdef"><b>Definition:</b> BroadwaveClient.h:83</div></div>
 <div class="ttc" id="classtBroadwave_html"><div class="ttname"><a href="classtBroadwave.html">tBroadwave</a></div><div class="ttdef"><b>Definition:</b> BroadwaveClient.h:66</div></div>
+<div class="ttc" id="classtBroadwave_html_adff4bca86536a98a70666d4a6151f0c0"><div class="ttname"><a href="classtBroadwave.html#adff4bca86536a98a70666d4a6151f0c0">tBroadwave::clientService</a></div><div class="ttdeci">sockaddr_in clientService</div><div class="ttdef"><b>Definition:</b> BroadwaveClient.h:75</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 17 2015 21:26:48 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 17 2015 22:02:22 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

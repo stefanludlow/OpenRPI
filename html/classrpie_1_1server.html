@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -94,79 +94,473 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">rpie::server Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="server_8h_source.html">server.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0878d4b792bf0419e9771260734259f3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0878d4b792bf0419e9771260734259f3"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>enable_timer_abort</b> ()</td></tr>
+<tr class="memitem:a4d7e80c010ab839b337fd486343fdd37"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrpie_1_1server.html#a4d7e80c010ab839b337fd486343fdd37">server</a> ()</td></tr>
+<tr class="separator:a4d7e80c010ab839b337fd486343fdd37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0878d4b792bf0419e9771260734259f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrpie_1_1server.html#a0878d4b792bf0419e9771260734259f3">enable_timer_abort</a> ()</td></tr>
 <tr class="separator:a0878d4b792bf0419e9771260734259f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7dbbbef5b5fc6a5a2e9de920e656c3ab"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7dbbbef5b5fc6a5a2e9de920e656c3ab"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>disable_timer_abort</b> ()</td></tr>
+<tr class="memitem:a7dbbbef5b5fc6a5a2e9de920e656c3ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrpie_1_1server.html#a7dbbbef5b5fc6a5a2e9de920e656c3ab">disable_timer_abort</a> ()</td></tr>
 <tr class="separator:a7dbbbef5b5fc6a5a2e9de920e656c3ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00a169982369b9b421d088a282cc0e97"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a00a169982369b9b421d088a282cc0e97"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_abort_threshold_pre_booting</b> ()</td></tr>
+<tr class="memitem:a00a169982369b9b421d088a282cc0e97"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrpie_1_1server.html#a00a169982369b9b421d088a282cc0e97">set_abort_threshold_pre_booting</a> ()</td></tr>
 <tr class="separator:a00a169982369b9b421d088a282cc0e97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89750323d0889e6fd34072577cc8ddea"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a89750323d0889e6fd34072577cc8ddea"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_abort_threshold_post_booting</b> ()</td></tr>
+<tr class="memitem:a89750323d0889e6fd34072577cc8ddea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrpie_1_1server.html#a89750323d0889e6fd34072577cc8ddea">set_abort_threshold_post_booting</a> ()</td></tr>
 <tr class="separator:a89750323d0889e6fd34072577cc8ddea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc04d858a407001f5bf907cad65255eb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adc04d858a407001f5bf907cad65255eb"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>loop_detect</b> ()</td></tr>
+<tr class="memitem:adc04d858a407001f5bf907cad65255eb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrpie_1_1server.html#adc04d858a407001f5bf907cad65255eb">loop_detect</a> ()</td></tr>
 <tr class="separator:adc04d858a407001f5bf907cad65255eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6bed490717d2450853502414d32bb6a9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6bed490717d2450853502414d32bb6a9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrpie_1_1server.html#a6bed490717d2450853502414d32bb6a9">load_config_files</a> ()</td></tr>
-<tr class="memdesc:a6bed490717d2450853502414d32bb6a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load configuration files from the usual places. <br/></td></tr>
+<tr class="memitem:a6bed490717d2450853502414d32bb6a9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrpie_1_1server.html#a6bed490717d2450853502414d32bb6a9">load_config_files</a> ()</td></tr>
+<tr class="memdesc:a6bed490717d2450853502414d32bb6a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load configuration files from the usual places.  <a href="#a6bed490717d2450853502414d32bb6a9">More...</a><br/></td></tr>
 <tr class="separator:a6bed490717d2450853502414d32bb6a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a777008330eb6140447cc7f83aac3173d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a777008330eb6140447cc7f83aac3173d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrpie_1_1server.html#a777008330eb6140447cc7f83aac3173d">load_config_file</a> (std::ifstream &amp;config_file)</td></tr>
-<tr class="memdesc:a777008330eb6140447cc7f83aac3173d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the db connection info from the configuration file. <br/></td></tr>
+<tr class="memitem:a777008330eb6140447cc7f83aac3173d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrpie_1_1server.html#a777008330eb6140447cc7f83aac3173d">load_config_file</a> (std::ifstream &amp;config_file)</td></tr>
+<tr class="memdesc:a777008330eb6140447cc7f83aac3173d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the db connection info from the configuration file.  <a href="#a777008330eb6140447cc7f83aac3173d">More...</a><br/></td></tr>
 <tr class="separator:a777008330eb6140447cc7f83aac3173d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79b7cfd755ff68761de7d8b4aa6ed5c4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a79b7cfd755ff68761de7d8b4aa6ed5c4"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_config</b> (std::string var_name, std::string var_value)</td></tr>
+<tr class="memitem:a79b7cfd755ff68761de7d8b4aa6ed5c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrpie_1_1server.html#a79b7cfd755ff68761de7d8b4aa6ed5c4">set_config</a> (std::string var_name, std::string var_value)</td></tr>
 <tr class="separator:a79b7cfd755ff68761de7d8b4aa6ed5c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a76549ab2136a685e9b84ae8bc6bf5a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0a76549ab2136a685e9b84ae8bc6bf5a"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>get_config</b> ()</td></tr>
+<tr class="memitem:a0a76549ab2136a685e9b84ae8bc6bf5a"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrpie_1_1server.html#a0a76549ab2136a685e9b84ae8bc6bf5a">get_config</a> ()</td></tr>
 <tr class="separator:a0a76549ab2136a685e9b84ae8bc6bf5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3db1b71f9fd132bccc92c71451a29f61"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3db1b71f9fd132bccc92c71451a29f61"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>get_config</b> (std::string var_name)</td></tr>
+<tr class="memitem:a3db1b71f9fd132bccc92c71451a29f61"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrpie_1_1server.html#a3db1b71f9fd132bccc92c71451a29f61">get_config</a> (std::string var_name)</td></tr>
 <tr class="separator:a3db1b71f9fd132bccc92c71451a29f61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a122efa348d71c17be7def0a2569b5857"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a122efa348d71c17be7def0a2569b5857"></a>
-server_modes&#160;</td><td class="memItemRight" valign="bottom"><b>get_mode</b> ()</td></tr>
+<tr class="memitem:a122efa348d71c17be7def0a2569b5857"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerpie.html#a54d73f12f21f2462f5c243b3de21d943">server_modes</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrpie_1_1server.html#a122efa348d71c17be7def0a2569b5857">get_mode</a> ()</td></tr>
 <tr class="separator:a122efa348d71c17be7def0a2569b5857"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a59fdd2b750ce6f44849457555bf545"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1a59fdd2b750ce6f44849457555bf545"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>in_play_mode</b> ()</td></tr>
+<tr class="memitem:a1a59fdd2b750ce6f44849457555bf545"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrpie_1_1server.html#a1a59fdd2b750ce6f44849457555bf545">in_play_mode</a> ()</td></tr>
 <tr class="separator:a1a59fdd2b750ce6f44849457555bf545"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1197ec8dd887726c6a5ae0158aecd69d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1197ec8dd887726c6a5ae0158aecd69d"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>in_build_mode</b> ()</td></tr>
+<tr class="memitem:a1197ec8dd887726c6a5ae0158aecd69d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrpie_1_1server.html#a1197ec8dd887726c6a5ae0158aecd69d">in_build_mode</a> ()</td></tr>
 <tr class="separator:a1197ec8dd887726c6a5ae0158aecd69d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a279755eaeae1526dcfb7c3382f154e60"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a279755eaeae1526dcfb7c3382f154e60"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>in_test_mode</b> ()</td></tr>
+<tr class="memitem:a279755eaeae1526dcfb7c3382f154e60"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrpie_1_1server.html#a279755eaeae1526dcfb7c3382f154e60">in_test_mode</a> ()</td></tr>
 <tr class="separator:a279755eaeae1526dcfb7c3382f154e60"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab88c2d9b84f0288f3d0ebbd44f4f3983"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab88c2d9b84f0288f3d0ebbd44f4f3983"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>get_port</b> ()</td></tr>
+<tr class="memitem:ab88c2d9b84f0288f3d0ebbd44f4f3983"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrpie_1_1server.html#ab88c2d9b84f0288f3d0ebbd44f4f3983">get_port</a> ()</td></tr>
 <tr class="separator:ab88c2d9b84f0288f3d0ebbd44f4f3983"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48096cd3ff72978503226eaddd8f8780"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a48096cd3ff72978503226eaddd8f8780"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>get_base_path</b> (std::string req_mode=&quot;current&quot;)</td></tr>
+<tr class="memitem:a48096cd3ff72978503226eaddd8f8780"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrpie_1_1server.html#a48096cd3ff72978503226eaddd8f8780">get_base_path</a> (std::string req_mode=&quot;current&quot;)</td></tr>
 <tr class="separator:a48096cd3ff72978503226eaddd8f8780"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:a1173d2e4cbb1f0d6c91f04766bdc0802"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1173d2e4cbb1f0d6c91f04766bdc0802"></a>
-static const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrpie_1_1server.html#a1173d2e4cbb1f0d6c91f04766bdc0802">MAX_NAME_LENGTH</a> = 15</td></tr>
-<tr class="memdesc:a1173d2e4cbb1f0d6c91f04766bdc0802"><td class="mdescLeft">&#160;</td><td class="mdescRight">Username string length. <br/></td></tr>
+<tr class="memitem:a1173d2e4cbb1f0d6c91f04766bdc0802"><td class="memItemLeft" align="right" valign="top">static const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrpie_1_1server.html#a1173d2e4cbb1f0d6c91f04766bdc0802">MAX_NAME_LENGTH</a> = 15</td></tr>
+<tr class="memdesc:a1173d2e4cbb1f0d6c91f04766bdc0802"><td class="mdescLeft">&#160;</td><td class="mdescRight">Username string length.  <a href="#a1173d2e4cbb1f0d6c91f04766bdc0802">More...</a><br/></td></tr>
 <tr class="separator:a1173d2e4cbb1f0d6c91f04766bdc0802"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3dec19e76bb1aeb96cbd4b6286cd9286"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3dec19e76bb1aeb96cbd4b6286cd9286"></a>
-static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrpie_1_1server.html#a3dec19e76bb1aeb96cbd4b6286cd9286">ALARM_FREQUENCY</a> = 20</td></tr>
-<tr class="memdesc:a3dec19e76bb1aeb96cbd4b6286cd9286"><td class="mdescLeft">&#160;</td><td class="mdescRight">ITimer frequency in seconds. <br/></td></tr>
+<tr class="memitem:a3dec19e76bb1aeb96cbd4b6286cd9286"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrpie_1_1server.html#a3dec19e76bb1aeb96cbd4b6286cd9286">ALARM_FREQUENCY</a> = 20</td></tr>
+<tr class="memdesc:a3dec19e76bb1aeb96cbd4b6286cd9286"><td class="mdescLeft">&#160;</td><td class="mdescRight">ITimer frequency in seconds.  <a href="#a3dec19e76bb1aeb96cbd4b6286cd9286">More...</a><br/></td></tr>
 <tr class="separator:a3dec19e76bb1aeb96cbd4b6286cd9286"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a4d7e80c010ab839b337fd486343fdd37"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">rpie::server::server </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a7dbbbef5b5fc6a5a2e9de920e656c3ab"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rpie::server::disable_timer_abort </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0878d4b792bf0419e9771260734259f3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rpie::server::enable_timer_abort </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a48096cd3ff72978503226eaddd8f8780"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string rpie::server::get_base_path </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>req_mode</em> = <code>&quot;current&quot;</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0a76549ab2136a685e9b84ae8bc6bf5a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string rpie::server::get_config </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3db1b71f9fd132bccc92c71451a29f61"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string rpie::server::get_config </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>var_name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a122efa348d71c17be7def0a2569b5857"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacerpie.html#a54d73f12f21f2462f5c243b3de21d943">server_modes</a> rpie::server::get_mode </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab88c2d9b84f0288f3d0ebbd44f4f3983"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rpie::server::get_port </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1197ec8dd887726c6a5ae0158aecd69d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a> rpie::server::in_build_mode </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1a59fdd2b750ce6f44849457555bf545"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a> rpie::server::in_play_mode </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a279755eaeae1526dcfb7c3382f154e60"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a> rpie::server::in_test_mode </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a777008330eb6140447cc7f83aac3173d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rpie::server::load_config_file </td>
+          <td>(</td>
+          <td class="paramtype">std::ifstream &amp;&#160;</td>
+          <td class="paramname"><em>config_file</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the db connection info from the configuration file. </p>
+
+</div>
+</div>
+<a class="anchor" id="a6bed490717d2450853502414d32bb6a9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rpie::server::load_config_files </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Load configuration files from the usual places. </p>
+
+</div>
+</div>
+<a class="anchor" id="adc04d858a407001f5bf907cad65255eb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a> rpie::server::loop_detect </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a89750323d0889e6fd34072577cc8ddea"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rpie::server::set_abort_threshold_post_booting </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a00a169982369b9b421d088a282cc0e97"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rpie::server::set_abort_threshold_pre_booting </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a79b7cfd755ff68761de7d8b4aa6ed5c4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rpie::server::set_config </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>var_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>var_value</em> = <code>&quot;true&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a3dec19e76bb1aeb96cbd4b6286cd9286"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int rpie::server::ALARM_FREQUENCY = 20</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ITimer frequency in seconds. </p>
+
+</div>
+</div>
+<a class="anchor" id="a1173d2e4cbb1f0d6c91f04766bdc0802"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const size_t rpie::server::MAX_NAME_LENGTH = 15</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Username string length. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="server_8h_source.html">server.h</a></li>
-<li>server.cpp</li>
+<li><a class="el" href="server_8cpp.html">server.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 17 2015 21:26:48 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 17 2015 22:02:23 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

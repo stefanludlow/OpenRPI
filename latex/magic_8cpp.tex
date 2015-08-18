@@ -1,0 +1,1243 @@
+\hypertarget{magic_8cpp}{\section{magic.\-cpp File Reference}
+\label{magic_8cpp}\index{magic.\-cpp@{magic.\-cpp}}
+}
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$time.\-h$>$}\\*
+{\ttfamily \#include $<$malloc.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$ctype.\-h$>$}\\*
+{\ttfamily \#include $<$unistd.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}structs.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}net\-\_\-link.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}account.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}protos.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}decl.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utility.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{magic_8cpp_a1b3d0481a7741b1fed73df389c9990c6}{s}(a)~\hyperlink{protos_8h_a9c8a5aa90c25577cd77fbbbab531800c}{send\-\_\-to\-\_\-char} (a \char`\"{}\textbackslash{}n\textbackslash{}r\char`\"{}, ch);
+\item 
+\#define \hyperlink{magic_8cpp_a843a2f912dfe1cb6906ca192107dc026}{F\-R\-I\-E\-N\-D\-\_\-\-C\-H\-A\-R\-M}~1
+\item 
+\#define \hyperlink{magic_8cpp_a86c765b31b48a5f8533470d064b35a72}{F\-R\-I\-E\-N\-D\-\_\-\-G\-R\-O\-U\-P}~2
+\item 
+\#define \hyperlink{magic_8cpp_a355880d513a27d2ff68a27d55d51a6e5}{F\-R\-I\-E\-N\-D\-\_\-\-S\-E\-L\-F}~4
+\item 
+\#define \hyperlink{magic_8cpp_a2dcee5fb1dc65cb14819f75b1e9469fe}{F\-R\-I\-E\-N\-D\-\_\-\-C\-H\-U\-R\-C\-H}~16
+\item 
+\#define \hyperlink{magic_8cpp_a4df792be5044e7bd1b14f87bb9ec69a1}{N\-U\-M\-\_\-\-N\-I\-G\-H\-T\-M\-A\-R\-E\-S}~0
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{magic_8cpp_ad8fd4ca76e4f16a7cbf07c72f8f12ecd}{spell\-\_\-blend} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$victim, int sn)
+\item 
+int \hyperlink{magic_8cpp_a3323c7a2f8a90422eaeacca70ae34db5}{spell\-\_\-infravision} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$victim, int sn)
+\item 
+void \hyperlink{magic_8cpp_a4903a77d6a5a7f1854b883b8dfca420b}{magic\-\_\-cure\-\_\-poison} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$target)
+\item 
+void \hyperlink{magic_8cpp_a065d53565009a445525fbee6d58bc597}{magic\-\_\-infravision} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$victim)
+\item 
+void \hyperlink{magic_8cpp_a574b7366deb1a59340a3b9f8ac4690b6}{magic\-\_\-slipperiness} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$victim)
+\item 
+void \hyperlink{magic_8cpp_a065844ebae3fc58888a1ba852bebdcf4}{magic\-\_\-invulnerability} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$victim)
+\item 
+char $\ast$ \hyperlink{magic_8cpp_a735c5c659a1151bbd6e8507ca9f92813}{spell\-\_\-activity\-\_\-echo} (int id, int affect\-\_\-type)
+\item 
+char $\ast$ \hyperlink{magic_8cpp_a9f97fb2fc8668a55d180c9a4710574dc}{spell\-\_\-fade\-\_\-echo} (int id, int affect\-\_\-type)
+\item 
+int \hyperlink{magic_8cpp_acb62e50884ce250b8238cb8e795ce954}{knows\-\_\-spell} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int id)
+\item 
+void \hyperlink{magic_8cpp_a02b7ba003b9da04b5d07a2afc23fcdf9}{set\-\_\-spell\-\_\-proficiency} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int id, int set\-\_\-to)
+\item 
+void \hyperlink{magic_8cpp_a7897def189765c3c08c68a381fd6c144}{remove\-\_\-spell} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int id)
+\item 
+int \hyperlink{magic_8cpp_aa961d96f26d9b662dc50310d89e5ca66}{spell\-\_\-lookup} (char $\ast$spell\-\_\-name)
+\item 
+int \hyperlink{magic_8cpp_a80fea969d9339da76ef667903413b4b3}{caster\-\_\-type} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+int \hyperlink{magic_8cpp_ab4e62335cd513b210edea79a3fd47df1}{caster\-\_\-magic\-\_\-skill} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{magic_8cpp_abfe86fed192f62ea63f11ec7bff9eb5c}{do\-\_\-prepare} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+int \hyperlink{magic_8cpp_a0eb20a33bf81297c54f2dd5db61e4a17}{get\-\_\-discipline\-\_\-creation} (\hyperlink{structs_8h_a0a9304fc5764d8448c93fdffdd64e1d2}{A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$spell)
+\item 
+int \hyperlink{magic_8cpp_a544bf2944a92beba032d0d1610ea1ba9}{get\-\_\-discipline\-\_\-destruction} (\hyperlink{structs_8h_a0a9304fc5764d8448c93fdffdd64e1d2}{A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$spell)
+\item 
+int \hyperlink{magic_8cpp_aab02b072488fa8f32fda54f1b8308355}{get\-\_\-discipline\-\_\-transformation} (\hyperlink{structs_8h_a0a9304fc5764d8448c93fdffdd64e1d2}{A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$spell)
+\item 
+int \hyperlink{magic_8cpp_af7dfdf286b021db1ae8367c7b4e8d7eb}{get\-\_\-discipline\-\_\-control} (\hyperlink{structs_8h_a0a9304fc5764d8448c93fdffdd64e1d2}{A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$spell)
+\item 
+int \hyperlink{magic_8cpp_af8082c3bcdedcd5434797b91f81157f2}{get\-\_\-discipline\-\_\-perception} (\hyperlink{structs_8h_a0a9304fc5764d8448c93fdffdd64e1d2}{A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$spell)
+\item 
+int \hyperlink{magic_8cpp_acfad2fa12e518a75c54321a81e347e7d}{get\-\_\-discipline} (\hyperlink{structs_8h_a0a9304fc5764d8448c93fdffdd64e1d2}{A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$spell)
+\item 
+int \hyperlink{magic_8cpp_acd99fe6c35ba73f51a83689054c418fb}{get\-\_\-magnitude} (char $\ast$word)
+\item 
+int \hyperlink{magic_8cpp_a546dd6c28ac46c4f6b394475c2ceec2a}{get\-\_\-form} (char $\ast$word)
+\item 
+int \hyperlink{magic_8cpp_a64d48141915897a3184883e0e1eca644}{get\-\_\-technique} (char $\ast$word)
+\item 
+int \hyperlink{magic_8cpp_aa3fc0a10b4d8a4bf4ddaa67d2f49e6d6}{calculate\-\_\-mana\-\_\-cost} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_a0a9304fc5764d8448c93fdffdd64e1d2}{A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$spell)
+\item 
+void \hyperlink{magic_8cpp_a2d65cc0bbbbefb0428fbdc191a094513}{prepare\-\_\-magic} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int technique, int form, int magnitude)
+\item 
+void \hyperlink{magic_8cpp_a4c3bad899c167caa6be35f1edd053c2d}{determine\-\_\-form} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int technique)
+\item 
+void \hyperlink{magic_8cpp_a8f9e58432ad2c5ebc19334e1ce97d89e}{determine\-\_\-technique} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+void \hyperlink{magic_8cpp_aa1df72686276e6b819477ddbf82aa138}{magic\-\_\-incantation} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument)
+\item 
+int \hyperlink{magic_8cpp_a0c75d9ac65ab33322321fcfe60570b4f}{is\-\_\-incantation} (char $\ast$argument)
+\item 
+char $\ast$ \hyperlink{magic_8cpp_a797d49c19c4f5cf36a81260003a36ec1}{show\-\_\-enchantment} (\hyperlink{structs_8h_aa9887f2349529f20dd17249da8b9f960}{E\-N\-C\-H\-A\-N\-T\-M\-E\-N\-T\-\_\-\-D\-A\-T\-A} $\ast$enchantment)
+\item 
+void \hyperlink{magic_8cpp_a62a269501532e9bdf1159306aa1a26f9}{creation\-\_\-spell} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_a0a9304fc5764d8448c93fdffdd64e1d2}{A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$spell, void $\ast$target, int target\-\_\-type)
+\item 
+void \hyperlink{magic_8cpp_a27128d940573f33b47da1f4401c0cbc0}{destruction\-\_\-spell} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_a0a9304fc5764d8448c93fdffdd64e1d2}{A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$spell, void $\ast$target, int target\-\_\-type)
+\item 
+void \hyperlink{magic_8cpp_afe134f799d766f2a1441cec7b303bedd}{transformation\-\_\-spell} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_a0a9304fc5764d8448c93fdffdd64e1d2}{A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$spell, void $\ast$target, int target\-\_\-type)
+\item 
+void \hyperlink{magic_8cpp_a709de07f7bc4ce34b95a5e9d7a1dddf1}{perception\-\_\-spell} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_a0a9304fc5764d8448c93fdffdd64e1d2}{A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$spell, void $\ast$target, int target\-\_\-type)
+\item 
+void \hyperlink{magic_8cpp_a87285e596d0837b977eba2c52cd131dd}{control\-\_\-spell} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_a0a9304fc5764d8448c93fdffdd64e1d2}{A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$spell, void $\ast$target, int target\-\_\-type)
+\item 
+void \hyperlink{magic_8cpp_af412660b5a8c10398316193d9431032c}{parse\-\_\-spell\-\_\-technique} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_a0a9304fc5764d8448c93fdffdd64e1d2}{A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$spell, void $\ast$target, int target\-\_\-type)
+\item 
+int \hyperlink{magic_8cpp_aee643730640b401ea3701a38ddc29ec9}{get\-\_\-form\-\_\-propensities} (int discipline, int form)
+\item 
+int \hyperlink{magic_8cpp_ab83488b37d457d2725d12baf0b691c46}{get\-\_\-technique\-\_\-propensities} (int discipline, int technique)
+\item 
+int \hyperlink{magic_8cpp_a5202e49bfc5a77c78f4884f254bd2ba4}{spell\-\_\-failed} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_a0a9304fc5764d8448c93fdffdd64e1d2}{A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$spell)
+\item 
+int \hyperlink{magic_8cpp_af5aef68888e93154f4c99405a099e83a}{is\-\_\-direction} (char $\ast$argument)
+\item 
+void \hyperlink{magic_8cpp_af0aca76d212a045e514c3ea788f3304f}{process\-\_\-spell\-\_\-damage} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$tch, int id, int saved, int which)
+\item 
+void \hyperlink{magic_8cpp_a953dfc10e09a6219e02573ae20894948}{process\-\_\-spell\-\_\-healing} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$tch, int id, int saved, int which)
+\item 
+void \hyperlink{magic_8cpp_a0e7373f308587779b09c749a52d7f2d1}{update\-\_\-target} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$tch, int affect\-\_\-type)
+\item 
+void \hyperlink{magic_8cpp_a5baec15004dd35e1c1ddabd93cdf4459}{process\-\_\-spell\-\_\-effect} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$tch, int id, int saved, int affect\-\_\-type, int which)
+\item 
+void \hyperlink{magic_8cpp_afcf55e0625d729b116c4efe298d0ef2a}{process\-\_\-spell\-\_\-results} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$tch, int id, int saved)
+\item 
+void \hyperlink{magic_8cpp_a1ce6f2f4f72d0e9c5bb35b930f509219}{process\-\_\-spell\-\_\-save} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, void $\ast$target, int id, int target\-\_\-type)
+\item 
+void \hyperlink{magic_8cpp_abc6958ccc2e0179cd71c72a144df10d1}{process\-\_\-spell\-\_\-casting} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, void $\ast$target, int id, int target\-\_\-type)
+\item 
+void \hyperlink{magic_8cpp_a1bf78e57b1ca3c216706543a891a2095}{do\-\_\-cast} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{magic_8cpp_a70c01d048019e5213b1239571c4ccd2f}{do\-\_\-invoke} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{magic_8cpp_ad11607f7f2715ef32197218efafd02b6}{remove\-\_\-enchantment} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_aa9887f2349529f20dd17249da8b9f960}{E\-N\-C\-H\-A\-N\-T\-M\-E\-N\-T\-\_\-\-D\-A\-T\-A} $\ast$ench)
+\item 
+void \hyperlink{magic_8cpp_af9ae00652eb924612d33e0eedb5aa5c5}{apply\-\_\-enchantment} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$caster, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$victim, char $\ast$name, int duration, int source)
+\item 
+int \hyperlink{magic_8cpp_ab957fd87e08a287eae621c3391c22dfc}{is\-\_\-enchanted} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$victim, char $\ast$enchantment\-\_\-name)
+\item 
+int \hyperlink{magic_8cpp_a6cda7e411e2af49b598f9d215abf937d}{armor\-\_\-absorption} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$target, char $\ast$location)
+\item 
+char $\ast$ \hyperlink{magic_8cpp_abe11ecb7f55a0f6edbeba5ed7411e54a}{rating\-\_\-adj} (\hyperlink{structs_8h_a9cf9c4f7c57175f1977322a4f0985c0e}{K\-N\-O\-W\-N\-\_\-\-S\-P\-E\-L\-L\-\_\-\-D\-A\-T\-A} $\ast$spell)
+\item 
+void \hyperlink{magic_8cpp_ad5b05009e18642a79c61d8b76d36b332}{do\-\_\-spells} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{magic_8cpp_ac009f13c49cf1df1a1ce14b7c3314192}{email\-\_\-acceptance} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d)
+\item 
+void \hyperlink{magic_8cpp_a793f0052f0f0dc3b9798ba035413019b}{email\-\_\-rejection} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d)
+\item 
+void \hyperlink{magic_8cpp_a105a99bb24ad9feef4ca970fbb7e486c}{check\-\_\-psionic\-\_\-talents} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{magic_8cpp_a8240a9178ec705d73f7d73a9ef0887c4}{starting\-\_\-skill\-\_\-boost} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int skill, int num)
+\item 
+void \hyperlink{magic_8cpp_ae6d936b91b20021eeab9f4fa0ae0a4c9}{setup\-\_\-new\-\_\-character} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$tch)
+\item 
+void \hyperlink{magic_8cpp_a42cc97576223752d04e1829f90684ed6}{answer\-\_\-application} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{magic_8cpp_a8efba827a35b446b9c552fdf5b9fc077}{do\-\_\-accept} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{magic_8cpp_a36ff29eb5b90cf2e1246bbce334c96dd}{activate\-\_\-refresh} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{magic_8cpp_a6cc4b251350050e29c7f1f78bc93e725}{act\-\_\-black\-\_\-curse} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{magic_8cpp_a648dfde9b1b4be91c6d1a1858940c4bd}{do\-\_\-decline} (struct \hyperlink{structchar__data}{char\-\_\-data} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{magic_8cpp_af65e74dc2b6b86a94641e8be0a7c5be2}{do\-\_\-dreams} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{magic_8cpp_af96aa97ad71916b392b8b3b3aa475d2b}{dream} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{magic_8cpp_a2cc8a3eb523b1353c1c74b949ad102cc}{post\-\_\-dream} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d)
+\item 
+void \hyperlink{magic_8cpp_a9ee9b2634303a8968f59790114438a9b}{do\-\_\-givedream} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{magic_8cpp_a60c046cf8cc6ca6d33c2ffeb98af2965}{delayed\-\_\-cast} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+int \hyperlink{magic_8cpp_ab5ffadc8844efdc00ccbb612ee85d14b}{friendly} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$friend\-Ptr, int friendship)
+\item 
+int \hyperlink{magic_8cpp_a6bad0cb13606da63fdad671090de8e64}{resisted} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$enemy, int spell)
+\item 
+void \hyperlink{magic_8cpp_aa40a6d6fb66d2ddb08d551858b35dc10}{magic\-\_\-cure\-\_\-infection} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{magic_8cpp_ab541bd34c7280a51180786afc14d6c94}{heal\-\_\-wound} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_acd99076446b10c8cfc2d23d4bfc40211}{W\-O\-U\-N\-D\-\_\-\-D\-A\-T\-A} $\ast$wound, int \hyperlink{protos_8h_ab6fab1a0d63773245da84a305bfa0407}{damage})
+\item 
+void \hyperlink{magic_8cpp_a76c515cd4ad50e2008a22516da15c829}{magic\-\_\-heal1} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{magic_8cpp_a40e41c2b9173a67301fbd4bb470fcd8a}{magic\-\_\-heal2} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{magic_8cpp_a58eeb628327a897298fd961592b1988b}{magic\-\_\-heal3} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{magic_8cpp_a171de5c50282e2434d9a82aa30f7a879}{magic\-\_\-heal4} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{magic_8cpp_a6032de5a618c4792b4c8bd4c2bf6a85f}{magic\-\_\-heal5} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{magic_8cpp_a9bf8631ac87da9ca5d095d326833b8a3}{magic\-\_\-heal6} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{magic_8cpp_ae256da322f84fc826c860ddc66457672}{magic\-\_\-heal7} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{magic_8cpp_aeb229540b4e5c4c5068a27bada00ba0c}{magic\-\_\-heal8} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{magic_8cpp_a40e28e914d6a5f7bb04f01c9046ee43c}{magic\-\_\-heal9} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{magic_8cpp_a111dd8e2c9a7e83be1eb71c2885c31c9}{magic\-\_\-heal10} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+int \hyperlink{magic_8cpp_ada40c77321e99880f077d4814920c340}{apply\-\_\-affect} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int type, int duration, int power)
+\item 
+int \hyperlink{magic_8cpp_ab259bfb558044eddafc89804845772df}{magic\-\_\-add\-\_\-affect} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int type, int duration, int modifier, int location, int bitvector, int sn)
+\item 
+int \hyperlink{magic_8cpp_a56edab8bd531fc39b4b822bb2bfb8adf}{add\-\_\-affect} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int type, int uu1, int uu2, int uu3, int uu4, int uu5, int uu6)
+\item 
+void \hyperlink{magic_8cpp_a3ad83dc8a9ef6bd4705b77cc77b0d294}{job\-\_\-add\-\_\-affect} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int type, int days, int pay\-\_\-date, int cash, int count, int object\-\_\-vnum, int employer)
+\item 
+int \hyperlink{magic_8cpp_a85a3a612ddddcd3014fe82e7f3668d9e}{magic\-\_\-add\-\_\-obj\-\_\-affect} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj, int type, int duration, int modifier, int location, int bitvector, int sn)
+\item 
+void \hyperlink{magic_8cpp_af3f86067752672fd95921951339d6b29}{magic\-\_\-affect} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int magic)
+\item 
+void \hyperlink{magic_8cpp_a64808b5d195dea22be0eb165d6a57fc1}{apply\-\_\-perfume} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$victim, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj)
+\item 
+void \hyperlink{magic_8cpp_ae2bb9c29e10a199d09ec5f39532bdf71}{do\-\_\-see} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{magic_8cpp_a46ac0102ce1480e877f625e43eb4b802}{do\-\_\-heal} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{magic_8cpp_af7bf7ade1ddf82e0e2a1e40262276a83}{reset\-\_\-heal\-\_\-delay} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$tch)
+\item 
+void \hyperlink{magic_8cpp_ab8662814a0847f24ceb5248b36a58093}{delayed\-\_\-heal} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{magic_8cpp_a205956dc550225536c2ebc72bc90dee0}{sense\-\_\-activity} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$user, int talent)
+\item 
+void \hyperlink{magic_8cpp_a7849755b8701f860fc6b881973c6058c}{do\-\_\-sense} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{magic_8cpp_ac89d401706c65673c061d93671779a3e}{do\-\_\-bolt} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{magic_8cpp_ab1eab2370e3b2f894b1186429c88ce70}{delayed\-\_\-bolt} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{magic_8cpp_ae151a45abe3628e792304d39f2840dbd}{do\-\_\-prescience} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{magic_8cpp_a56b28fc0db08a9af31ccb9ac26474bab}{post\-\_\-prescience} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d)
+\item 
+void \hyperlink{magic_8cpp_ae970fcbab66b5d3d2fdf97180b1fa1ab}{do\-\_\-reach} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{magic_8cpp_a7a47419205e7b6cb2a58d063b9e9e69e}{magnitudes} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{magic_8cpp_a7a2eb66baf9a0f87a8ce0059cb4fd5b9}{techniques} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{magic_8cpp_a721020736678b1e413a8e5ecb6484552}{forms} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{magic_8cpp_a834282ed23119fca57be4f197bcb1e02}{forms2} \mbox{[}$\,$\mbox{]}
+\item 
+char $\ast$ \hyperlink{magic_8cpp_a9adcc06c562fadb3687207085abdb055}{nightmare} \mbox{[}$\,$\mbox{]}
+\item 
+struct \hyperlink{structspell__data}{spell\-\_\-data} \hyperlink{magic_8cpp_a2dadc9f5331f04c8554d1dd431c12dd6}{spell\-\_\-table} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{magic_8cpp_a843a2f912dfe1cb6906ca192107dc026}{\index{magic.\-cpp@{magic.\-cpp}!F\-R\-I\-E\-N\-D\-\_\-\-C\-H\-A\-R\-M@{F\-R\-I\-E\-N\-D\-\_\-\-C\-H\-A\-R\-M}}
+\index{F\-R\-I\-E\-N\-D\-\_\-\-C\-H\-A\-R\-M@{F\-R\-I\-E\-N\-D\-\_\-\-C\-H\-A\-R\-M}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{F\-R\-I\-E\-N\-D\-\_\-\-C\-H\-A\-R\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\-R\-I\-E\-N\-D\-\_\-\-C\-H\-A\-R\-M~1}}\label{magic_8cpp_a843a2f912dfe1cb6906ca192107dc026}
+\hypertarget{magic_8cpp_a2dcee5fb1dc65cb14819f75b1e9469fe}{\index{magic.\-cpp@{magic.\-cpp}!F\-R\-I\-E\-N\-D\-\_\-\-C\-H\-U\-R\-C\-H@{F\-R\-I\-E\-N\-D\-\_\-\-C\-H\-U\-R\-C\-H}}
+\index{F\-R\-I\-E\-N\-D\-\_\-\-C\-H\-U\-R\-C\-H@{F\-R\-I\-E\-N\-D\-\_\-\-C\-H\-U\-R\-C\-H}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{F\-R\-I\-E\-N\-D\-\_\-\-C\-H\-U\-R\-C\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\-R\-I\-E\-N\-D\-\_\-\-C\-H\-U\-R\-C\-H~16}}\label{magic_8cpp_a2dcee5fb1dc65cb14819f75b1e9469fe}
+\hypertarget{magic_8cpp_a86c765b31b48a5f8533470d064b35a72}{\index{magic.\-cpp@{magic.\-cpp}!F\-R\-I\-E\-N\-D\-\_\-\-G\-R\-O\-U\-P@{F\-R\-I\-E\-N\-D\-\_\-\-G\-R\-O\-U\-P}}
+\index{F\-R\-I\-E\-N\-D\-\_\-\-G\-R\-O\-U\-P@{F\-R\-I\-E\-N\-D\-\_\-\-G\-R\-O\-U\-P}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{F\-R\-I\-E\-N\-D\-\_\-\-G\-R\-O\-U\-P}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\-R\-I\-E\-N\-D\-\_\-\-G\-R\-O\-U\-P~2}}\label{magic_8cpp_a86c765b31b48a5f8533470d064b35a72}
+\hypertarget{magic_8cpp_a355880d513a27d2ff68a27d55d51a6e5}{\index{magic.\-cpp@{magic.\-cpp}!F\-R\-I\-E\-N\-D\-\_\-\-S\-E\-L\-F@{F\-R\-I\-E\-N\-D\-\_\-\-S\-E\-L\-F}}
+\index{F\-R\-I\-E\-N\-D\-\_\-\-S\-E\-L\-F@{F\-R\-I\-E\-N\-D\-\_\-\-S\-E\-L\-F}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{F\-R\-I\-E\-N\-D\-\_\-\-S\-E\-L\-F}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\-R\-I\-E\-N\-D\-\_\-\-S\-E\-L\-F~4}}\label{magic_8cpp_a355880d513a27d2ff68a27d55d51a6e5}
+\hypertarget{magic_8cpp_a4df792be5044e7bd1b14f87bb9ec69a1}{\index{magic.\-cpp@{magic.\-cpp}!N\-U\-M\-\_\-\-N\-I\-G\-H\-T\-M\-A\-R\-E\-S@{N\-U\-M\-\_\-\-N\-I\-G\-H\-T\-M\-A\-R\-E\-S}}
+\index{N\-U\-M\-\_\-\-N\-I\-G\-H\-T\-M\-A\-R\-E\-S@{N\-U\-M\-\_\-\-N\-I\-G\-H\-T\-M\-A\-R\-E\-S}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{N\-U\-M\-\_\-\-N\-I\-G\-H\-T\-M\-A\-R\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-U\-M\-\_\-\-N\-I\-G\-H\-T\-M\-A\-R\-E\-S~0}}\label{magic_8cpp_a4df792be5044e7bd1b14f87bb9ec69a1}
+\hypertarget{magic_8cpp_a1b3d0481a7741b1fed73df389c9990c6}{\index{magic.\-cpp@{magic.\-cpp}!s@{s}}
+\index{s@{s}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{s}]{\setlength{\rightskip}{0pt plus 5cm}\#define s(
+\begin{DoxyParamCaption}
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf send\-\_\-to\-\_\-char} (a \char`\"{}\textbackslash{}n\textbackslash{}r\char`\"{}, ch);}}\label{magic_8cpp_a1b3d0481a7741b1fed73df389c9990c6}
+
+
+\subsection{Function Documentation}
+\hypertarget{magic_8cpp_a6cc4b251350050e29c7f1f78bc93e725}{\index{magic.\-cpp@{magic.\-cpp}!act\-\_\-black\-\_\-curse@{act\-\_\-black\-\_\-curse}}
+\index{act\-\_\-black\-\_\-curse@{act\-\_\-black\-\_\-curse}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{act\-\_\-black\-\_\-curse}]{\setlength{\rightskip}{0pt plus 5cm}void act\-\_\-black\-\_\-curse (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a6cc4b251350050e29c7f1f78bc93e725}
+\hypertarget{magic_8cpp_a36ff29eb5b90cf2e1246bbce334c96dd}{\index{magic.\-cpp@{magic.\-cpp}!activate\-\_\-refresh@{activate\-\_\-refresh}}
+\index{activate\-\_\-refresh@{activate\-\_\-refresh}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{activate\-\_\-refresh}]{\setlength{\rightskip}{0pt plus 5cm}void activate\-\_\-refresh (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a36ff29eb5b90cf2e1246bbce334c96dd}
+\hypertarget{magic_8cpp_a56edab8bd531fc39b4b822bb2bfb8adf}{\index{magic.\-cpp@{magic.\-cpp}!add\-\_\-affect@{add\-\_\-affect}}
+\index{add\-\_\-affect@{add\-\_\-affect}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{add\-\_\-affect}]{\setlength{\rightskip}{0pt plus 5cm}int add\-\_\-affect (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{type, }
+\item[{int}]{uu1, }
+\item[{int}]{uu2, }
+\item[{int}]{uu3, }
+\item[{int}]{uu4, }
+\item[{int}]{uu5, }
+\item[{int}]{uu6}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a56edab8bd531fc39b4b822bb2bfb8adf}
+\hypertarget{magic_8cpp_a42cc97576223752d04e1829f90684ed6}{\index{magic.\-cpp@{magic.\-cpp}!answer\-\_\-application@{answer\-\_\-application}}
+\index{answer\-\_\-application@{answer\-\_\-application}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{answer\-\_\-application}]{\setlength{\rightskip}{0pt plus 5cm}void answer\-\_\-application (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a42cc97576223752d04e1829f90684ed6}
+\hypertarget{magic_8cpp_ada40c77321e99880f077d4814920c340}{\index{magic.\-cpp@{magic.\-cpp}!apply\-\_\-affect@{apply\-\_\-affect}}
+\index{apply\-\_\-affect@{apply\-\_\-affect}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{apply\-\_\-affect}]{\setlength{\rightskip}{0pt plus 5cm}int apply\-\_\-affect (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{type, }
+\item[{int}]{duration, }
+\item[{int}]{power}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_ada40c77321e99880f077d4814920c340}
+\hypertarget{magic_8cpp_af9ae00652eb924612d33e0eedb5aa5c5}{\index{magic.\-cpp@{magic.\-cpp}!apply\-\_\-enchantment@{apply\-\_\-enchantment}}
+\index{apply\-\_\-enchantment@{apply\-\_\-enchantment}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{apply\-\_\-enchantment}]{\setlength{\rightskip}{0pt plus 5cm}void apply\-\_\-enchantment (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{caster, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{victim, }
+\item[{char $\ast$}]{name, }
+\item[{int}]{duration, }
+\item[{int}]{source}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_af9ae00652eb924612d33e0eedb5aa5c5}
+\hypertarget{magic_8cpp_a64808b5d195dea22be0eb165d6a57fc1}{\index{magic.\-cpp@{magic.\-cpp}!apply\-\_\-perfume@{apply\-\_\-perfume}}
+\index{apply\-\_\-perfume@{apply\-\_\-perfume}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{apply\-\_\-perfume}]{\setlength{\rightskip}{0pt plus 5cm}void apply\-\_\-perfume (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{victim, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a64808b5d195dea22be0eb165d6a57fc1}
+\hypertarget{magic_8cpp_a6cda7e411e2af49b598f9d215abf937d}{\index{magic.\-cpp@{magic.\-cpp}!armor\-\_\-absorption@{armor\-\_\-absorption}}
+\index{armor\-\_\-absorption@{armor\-\_\-absorption}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{armor\-\_\-absorption}]{\setlength{\rightskip}{0pt plus 5cm}int armor\-\_\-absorption (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{target, }
+\item[{char $\ast$}]{location}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a6cda7e411e2af49b598f9d215abf937d}
+\hypertarget{magic_8cpp_aa3fc0a10b4d8a4bf4ddaa67d2f49e6d6}{\index{magic.\-cpp@{magic.\-cpp}!calculate\-\_\-mana\-\_\-cost@{calculate\-\_\-mana\-\_\-cost}}
+\index{calculate\-\_\-mana\-\_\-cost@{calculate\-\_\-mana\-\_\-cost}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{calculate\-\_\-mana\-\_\-cost}]{\setlength{\rightskip}{0pt plus 5cm}int calculate\-\_\-mana\-\_\-cost (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$}]{spell}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_aa3fc0a10b4d8a4bf4ddaa67d2f49e6d6}
+\hypertarget{magic_8cpp_ab4e62335cd513b210edea79a3fd47df1}{\index{magic.\-cpp@{magic.\-cpp}!caster\-\_\-magic\-\_\-skill@{caster\-\_\-magic\-\_\-skill}}
+\index{caster\-\_\-magic\-\_\-skill@{caster\-\_\-magic\-\_\-skill}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{caster\-\_\-magic\-\_\-skill}]{\setlength{\rightskip}{0pt plus 5cm}int caster\-\_\-magic\-\_\-skill (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_ab4e62335cd513b210edea79a3fd47df1}
+\hypertarget{magic_8cpp_a80fea969d9339da76ef667903413b4b3}{\index{magic.\-cpp@{magic.\-cpp}!caster\-\_\-type@{caster\-\_\-type}}
+\index{caster\-\_\-type@{caster\-\_\-type}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{caster\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}int caster\-\_\-type (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a80fea969d9339da76ef667903413b4b3}
+\hypertarget{magic_8cpp_a105a99bb24ad9feef4ca970fbb7e486c}{\index{magic.\-cpp@{magic.\-cpp}!check\-\_\-psionic\-\_\-talents@{check\-\_\-psionic\-\_\-talents}}
+\index{check\-\_\-psionic\-\_\-talents@{check\-\_\-psionic\-\_\-talents}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{check\-\_\-psionic\-\_\-talents}]{\setlength{\rightskip}{0pt plus 5cm}void check\-\_\-psionic\-\_\-talents (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a105a99bb24ad9feef4ca970fbb7e486c}
+\hypertarget{magic_8cpp_a87285e596d0837b977eba2c52cd131dd}{\index{magic.\-cpp@{magic.\-cpp}!control\-\_\-spell@{control\-\_\-spell}}
+\index{control\-\_\-spell@{control\-\_\-spell}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{control\-\_\-spell}]{\setlength{\rightskip}{0pt plus 5cm}void control\-\_\-spell (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$}]{spell, }
+\item[{void $\ast$}]{target, }
+\item[{int}]{target\-\_\-type}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a87285e596d0837b977eba2c52cd131dd}
+\hypertarget{magic_8cpp_a62a269501532e9bdf1159306aa1a26f9}{\index{magic.\-cpp@{magic.\-cpp}!creation\-\_\-spell@{creation\-\_\-spell}}
+\index{creation\-\_\-spell@{creation\-\_\-spell}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{creation\-\_\-spell}]{\setlength{\rightskip}{0pt plus 5cm}void creation\-\_\-spell (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$}]{spell, }
+\item[{void $\ast$}]{target, }
+\item[{int}]{target\-\_\-type}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a62a269501532e9bdf1159306aa1a26f9}
+\hypertarget{magic_8cpp_ab1eab2370e3b2f894b1186429c88ce70}{\index{magic.\-cpp@{magic.\-cpp}!delayed\-\_\-bolt@{delayed\-\_\-bolt}}
+\index{delayed\-\_\-bolt@{delayed\-\_\-bolt}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{delayed\-\_\-bolt}]{\setlength{\rightskip}{0pt plus 5cm}void delayed\-\_\-bolt (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_ab1eab2370e3b2f894b1186429c88ce70}
+\hypertarget{magic_8cpp_a60c046cf8cc6ca6d33c2ffeb98af2965}{\index{magic.\-cpp@{magic.\-cpp}!delayed\-\_\-cast@{delayed\-\_\-cast}}
+\index{delayed\-\_\-cast@{delayed\-\_\-cast}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{delayed\-\_\-cast}]{\setlength{\rightskip}{0pt plus 5cm}void delayed\-\_\-cast (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a60c046cf8cc6ca6d33c2ffeb98af2965}
+\hypertarget{magic_8cpp_ab8662814a0847f24ceb5248b36a58093}{\index{magic.\-cpp@{magic.\-cpp}!delayed\-\_\-heal@{delayed\-\_\-heal}}
+\index{delayed\-\_\-heal@{delayed\-\_\-heal}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{delayed\-\_\-heal}]{\setlength{\rightskip}{0pt plus 5cm}void delayed\-\_\-heal (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_ab8662814a0847f24ceb5248b36a58093}
+\hypertarget{magic_8cpp_a27128d940573f33b47da1f4401c0cbc0}{\index{magic.\-cpp@{magic.\-cpp}!destruction\-\_\-spell@{destruction\-\_\-spell}}
+\index{destruction\-\_\-spell@{destruction\-\_\-spell}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{destruction\-\_\-spell}]{\setlength{\rightskip}{0pt plus 5cm}void destruction\-\_\-spell (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$}]{spell, }
+\item[{void $\ast$}]{target, }
+\item[{int}]{target\-\_\-type}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a27128d940573f33b47da1f4401c0cbc0}
+\hypertarget{magic_8cpp_a4c3bad899c167caa6be35f1edd053c2d}{\index{magic.\-cpp@{magic.\-cpp}!determine\-\_\-form@{determine\-\_\-form}}
+\index{determine\-\_\-form@{determine\-\_\-form}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{determine\-\_\-form}]{\setlength{\rightskip}{0pt plus 5cm}void determine\-\_\-form (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{technique}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a4c3bad899c167caa6be35f1edd053c2d}
+\hypertarget{magic_8cpp_a8f9e58432ad2c5ebc19334e1ce97d89e}{\index{magic.\-cpp@{magic.\-cpp}!determine\-\_\-technique@{determine\-\_\-technique}}
+\index{determine\-\_\-technique@{determine\-\_\-technique}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{determine\-\_\-technique}]{\setlength{\rightskip}{0pt plus 5cm}void determine\-\_\-technique (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a8f9e58432ad2c5ebc19334e1ce97d89e}
+\hypertarget{magic_8cpp_a8efba827a35b446b9c552fdf5b9fc077}{\index{magic.\-cpp@{magic.\-cpp}!do\-\_\-accept@{do\-\_\-accept}}
+\index{do\-\_\-accept@{do\-\_\-accept}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{do\-\_\-accept}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-accept (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a8efba827a35b446b9c552fdf5b9fc077}
+\hypertarget{magic_8cpp_ac89d401706c65673c061d93671779a3e}{\index{magic.\-cpp@{magic.\-cpp}!do\-\_\-bolt@{do\-\_\-bolt}}
+\index{do\-\_\-bolt@{do\-\_\-bolt}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{do\-\_\-bolt}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-bolt (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_ac89d401706c65673c061d93671779a3e}
+\hypertarget{magic_8cpp_a1bf78e57b1ca3c216706543a891a2095}{\index{magic.\-cpp@{magic.\-cpp}!do\-\_\-cast@{do\-\_\-cast}}
+\index{do\-\_\-cast@{do\-\_\-cast}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{do\-\_\-cast}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-cast (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a1bf78e57b1ca3c216706543a891a2095}
+\hypertarget{magic_8cpp_a648dfde9b1b4be91c6d1a1858940c4bd}{\index{magic.\-cpp@{magic.\-cpp}!do\-\_\-decline@{do\-\_\-decline}}
+\index{do\-\_\-decline@{do\-\_\-decline}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{do\-\_\-decline}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-decline (
+\begin{DoxyParamCaption}
+\item[{struct {\bf char\-\_\-data} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a648dfde9b1b4be91c6d1a1858940c4bd}
+\hypertarget{magic_8cpp_af65e74dc2b6b86a94641e8be0a7c5be2}{\index{magic.\-cpp@{magic.\-cpp}!do\-\_\-dreams@{do\-\_\-dreams}}
+\index{do\-\_\-dreams@{do\-\_\-dreams}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{do\-\_\-dreams}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-dreams (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_af65e74dc2b6b86a94641e8be0a7c5be2}
+\hypertarget{magic_8cpp_a9ee9b2634303a8968f59790114438a9b}{\index{magic.\-cpp@{magic.\-cpp}!do\-\_\-givedream@{do\-\_\-givedream}}
+\index{do\-\_\-givedream@{do\-\_\-givedream}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{do\-\_\-givedream}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-givedream (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a9ee9b2634303a8968f59790114438a9b}
+\hypertarget{magic_8cpp_a46ac0102ce1480e877f625e43eb4b802}{\index{magic.\-cpp@{magic.\-cpp}!do\-\_\-heal@{do\-\_\-heal}}
+\index{do\-\_\-heal@{do\-\_\-heal}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{do\-\_\-heal}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-heal (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a46ac0102ce1480e877f625e43eb4b802}
+\hypertarget{magic_8cpp_a70c01d048019e5213b1239571c4ccd2f}{\index{magic.\-cpp@{magic.\-cpp}!do\-\_\-invoke@{do\-\_\-invoke}}
+\index{do\-\_\-invoke@{do\-\_\-invoke}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{do\-\_\-invoke}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-invoke (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a70c01d048019e5213b1239571c4ccd2f}
+\hypertarget{magic_8cpp_abfe86fed192f62ea63f11ec7bff9eb5c}{\index{magic.\-cpp@{magic.\-cpp}!do\-\_\-prepare@{do\-\_\-prepare}}
+\index{do\-\_\-prepare@{do\-\_\-prepare}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{do\-\_\-prepare}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-prepare (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_abfe86fed192f62ea63f11ec7bff9eb5c}
+\hypertarget{magic_8cpp_ae151a45abe3628e792304d39f2840dbd}{\index{magic.\-cpp@{magic.\-cpp}!do\-\_\-prescience@{do\-\_\-prescience}}
+\index{do\-\_\-prescience@{do\-\_\-prescience}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{do\-\_\-prescience}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-prescience (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_ae151a45abe3628e792304d39f2840dbd}
+\hypertarget{magic_8cpp_ae970fcbab66b5d3d2fdf97180b1fa1ab}{\index{magic.\-cpp@{magic.\-cpp}!do\-\_\-reach@{do\-\_\-reach}}
+\index{do\-\_\-reach@{do\-\_\-reach}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{do\-\_\-reach}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-reach (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_ae970fcbab66b5d3d2fdf97180b1fa1ab}
+\hypertarget{magic_8cpp_ae2bb9c29e10a199d09ec5f39532bdf71}{\index{magic.\-cpp@{magic.\-cpp}!do\-\_\-see@{do\-\_\-see}}
+\index{do\-\_\-see@{do\-\_\-see}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{do\-\_\-see}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-see (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_ae2bb9c29e10a199d09ec5f39532bdf71}
+\hypertarget{magic_8cpp_a7849755b8701f860fc6b881973c6058c}{\index{magic.\-cpp@{magic.\-cpp}!do\-\_\-sense@{do\-\_\-sense}}
+\index{do\-\_\-sense@{do\-\_\-sense}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{do\-\_\-sense}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-sense (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a7849755b8701f860fc6b881973c6058c}
+\hypertarget{magic_8cpp_ad5b05009e18642a79c61d8b76d36b332}{\index{magic.\-cpp@{magic.\-cpp}!do\-\_\-spells@{do\-\_\-spells}}
+\index{do\-\_\-spells@{do\-\_\-spells}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{do\-\_\-spells}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-spells (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_ad5b05009e18642a79c61d8b76d36b332}
+\hypertarget{magic_8cpp_af96aa97ad71916b392b8b3b3aa475d2b}{\index{magic.\-cpp@{magic.\-cpp}!dream@{dream}}
+\index{dream@{dream}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{dream}]{\setlength{\rightskip}{0pt plus 5cm}void dream (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_af96aa97ad71916b392b8b3b3aa475d2b}
+\hypertarget{magic_8cpp_ac009f13c49cf1df1a1ce14b7c3314192}{\index{magic.\-cpp@{magic.\-cpp}!email\-\_\-acceptance@{email\-\_\-acceptance}}
+\index{email\-\_\-acceptance@{email\-\_\-acceptance}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{email\-\_\-acceptance}]{\setlength{\rightskip}{0pt plus 5cm}void email\-\_\-acceptance (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_ac009f13c49cf1df1a1ce14b7c3314192}
+\hypertarget{magic_8cpp_a793f0052f0f0dc3b9798ba035413019b}{\index{magic.\-cpp@{magic.\-cpp}!email\-\_\-rejection@{email\-\_\-rejection}}
+\index{email\-\_\-rejection@{email\-\_\-rejection}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{email\-\_\-rejection}]{\setlength{\rightskip}{0pt plus 5cm}void email\-\_\-rejection (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a793f0052f0f0dc3b9798ba035413019b}
+\hypertarget{magic_8cpp_ab5ffadc8844efdc00ccbb612ee85d14b}{\index{magic.\-cpp@{magic.\-cpp}!friendly@{friendly}}
+\index{friendly@{friendly}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{friendly}]{\setlength{\rightskip}{0pt plus 5cm}int friendly (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{friend\-Ptr, }
+\item[{int}]{friendship}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_ab5ffadc8844efdc00ccbb612ee85d14b}
+\hypertarget{magic_8cpp_acfad2fa12e518a75c54321a81e347e7d}{\index{magic.\-cpp@{magic.\-cpp}!get\-\_\-discipline@{get\-\_\-discipline}}
+\index{get\-\_\-discipline@{get\-\_\-discipline}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{get\-\_\-discipline}]{\setlength{\rightskip}{0pt plus 5cm}int get\-\_\-discipline (
+\begin{DoxyParamCaption}
+\item[{{\bf A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$}]{spell}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_acfad2fa12e518a75c54321a81e347e7d}
+\hypertarget{magic_8cpp_af7dfdf286b021db1ae8367c7b4e8d7eb}{\index{magic.\-cpp@{magic.\-cpp}!get\-\_\-discipline\-\_\-control@{get\-\_\-discipline\-\_\-control}}
+\index{get\-\_\-discipline\-\_\-control@{get\-\_\-discipline\-\_\-control}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{get\-\_\-discipline\-\_\-control}]{\setlength{\rightskip}{0pt plus 5cm}int get\-\_\-discipline\-\_\-control (
+\begin{DoxyParamCaption}
+\item[{{\bf A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$}]{spell}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_af7dfdf286b021db1ae8367c7b4e8d7eb}
+\hypertarget{magic_8cpp_a0eb20a33bf81297c54f2dd5db61e4a17}{\index{magic.\-cpp@{magic.\-cpp}!get\-\_\-discipline\-\_\-creation@{get\-\_\-discipline\-\_\-creation}}
+\index{get\-\_\-discipline\-\_\-creation@{get\-\_\-discipline\-\_\-creation}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{get\-\_\-discipline\-\_\-creation}]{\setlength{\rightskip}{0pt plus 5cm}int get\-\_\-discipline\-\_\-creation (
+\begin{DoxyParamCaption}
+\item[{{\bf A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$}]{spell}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a0eb20a33bf81297c54f2dd5db61e4a17}
+\hypertarget{magic_8cpp_a544bf2944a92beba032d0d1610ea1ba9}{\index{magic.\-cpp@{magic.\-cpp}!get\-\_\-discipline\-\_\-destruction@{get\-\_\-discipline\-\_\-destruction}}
+\index{get\-\_\-discipline\-\_\-destruction@{get\-\_\-discipline\-\_\-destruction}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{get\-\_\-discipline\-\_\-destruction}]{\setlength{\rightskip}{0pt plus 5cm}int get\-\_\-discipline\-\_\-destruction (
+\begin{DoxyParamCaption}
+\item[{{\bf A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$}]{spell}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a544bf2944a92beba032d0d1610ea1ba9}
+\hypertarget{magic_8cpp_af8082c3bcdedcd5434797b91f81157f2}{\index{magic.\-cpp@{magic.\-cpp}!get\-\_\-discipline\-\_\-perception@{get\-\_\-discipline\-\_\-perception}}
+\index{get\-\_\-discipline\-\_\-perception@{get\-\_\-discipline\-\_\-perception}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{get\-\_\-discipline\-\_\-perception}]{\setlength{\rightskip}{0pt plus 5cm}int get\-\_\-discipline\-\_\-perception (
+\begin{DoxyParamCaption}
+\item[{{\bf A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$}]{spell}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_af8082c3bcdedcd5434797b91f81157f2}
+\hypertarget{magic_8cpp_aab02b072488fa8f32fda54f1b8308355}{\index{magic.\-cpp@{magic.\-cpp}!get\-\_\-discipline\-\_\-transformation@{get\-\_\-discipline\-\_\-transformation}}
+\index{get\-\_\-discipline\-\_\-transformation@{get\-\_\-discipline\-\_\-transformation}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{get\-\_\-discipline\-\_\-transformation}]{\setlength{\rightskip}{0pt plus 5cm}int get\-\_\-discipline\-\_\-transformation (
+\begin{DoxyParamCaption}
+\item[{{\bf A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$}]{spell}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_aab02b072488fa8f32fda54f1b8308355}
+\hypertarget{magic_8cpp_a546dd6c28ac46c4f6b394475c2ceec2a}{\index{magic.\-cpp@{magic.\-cpp}!get\-\_\-form@{get\-\_\-form}}
+\index{get\-\_\-form@{get\-\_\-form}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{get\-\_\-form}]{\setlength{\rightskip}{0pt plus 5cm}int get\-\_\-form (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{word}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a546dd6c28ac46c4f6b394475c2ceec2a}
+\hypertarget{magic_8cpp_aee643730640b401ea3701a38ddc29ec9}{\index{magic.\-cpp@{magic.\-cpp}!get\-\_\-form\-\_\-propensities@{get\-\_\-form\-\_\-propensities}}
+\index{get\-\_\-form\-\_\-propensities@{get\-\_\-form\-\_\-propensities}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{get\-\_\-form\-\_\-propensities}]{\setlength{\rightskip}{0pt plus 5cm}int get\-\_\-form\-\_\-propensities (
+\begin{DoxyParamCaption}
+\item[{int}]{discipline, }
+\item[{int}]{form}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_aee643730640b401ea3701a38ddc29ec9}
+\hypertarget{magic_8cpp_acd99fe6c35ba73f51a83689054c418fb}{\index{magic.\-cpp@{magic.\-cpp}!get\-\_\-magnitude@{get\-\_\-magnitude}}
+\index{get\-\_\-magnitude@{get\-\_\-magnitude}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{get\-\_\-magnitude}]{\setlength{\rightskip}{0pt plus 5cm}int get\-\_\-magnitude (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{word}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_acd99fe6c35ba73f51a83689054c418fb}
+\hypertarget{magic_8cpp_a64d48141915897a3184883e0e1eca644}{\index{magic.\-cpp@{magic.\-cpp}!get\-\_\-technique@{get\-\_\-technique}}
+\index{get\-\_\-technique@{get\-\_\-technique}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{get\-\_\-technique}]{\setlength{\rightskip}{0pt plus 5cm}int get\-\_\-technique (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{word}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a64d48141915897a3184883e0e1eca644}
+\hypertarget{magic_8cpp_ab83488b37d457d2725d12baf0b691c46}{\index{magic.\-cpp@{magic.\-cpp}!get\-\_\-technique\-\_\-propensities@{get\-\_\-technique\-\_\-propensities}}
+\index{get\-\_\-technique\-\_\-propensities@{get\-\_\-technique\-\_\-propensities}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{get\-\_\-technique\-\_\-propensities}]{\setlength{\rightskip}{0pt plus 5cm}int get\-\_\-technique\-\_\-propensities (
+\begin{DoxyParamCaption}
+\item[{int}]{discipline, }
+\item[{int}]{technique}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_ab83488b37d457d2725d12baf0b691c46}
+\hypertarget{magic_8cpp_ab541bd34c7280a51180786afc14d6c94}{\index{magic.\-cpp@{magic.\-cpp}!heal\-\_\-wound@{heal\-\_\-wound}}
+\index{heal\-\_\-wound@{heal\-\_\-wound}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{heal\-\_\-wound}]{\setlength{\rightskip}{0pt plus 5cm}void heal\-\_\-wound (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf W\-O\-U\-N\-D\-\_\-\-D\-A\-T\-A} $\ast$}]{wound, }
+\item[{int}]{damage}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_ab541bd34c7280a51180786afc14d6c94}
+\hypertarget{magic_8cpp_af5aef68888e93154f4c99405a099e83a}{\index{magic.\-cpp@{magic.\-cpp}!is\-\_\-direction@{is\-\_\-direction}}
+\index{is\-\_\-direction@{is\-\_\-direction}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{is\-\_\-direction}]{\setlength{\rightskip}{0pt plus 5cm}int is\-\_\-direction (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_af5aef68888e93154f4c99405a099e83a}
+\hypertarget{magic_8cpp_ab957fd87e08a287eae621c3391c22dfc}{\index{magic.\-cpp@{magic.\-cpp}!is\-\_\-enchanted@{is\-\_\-enchanted}}
+\index{is\-\_\-enchanted@{is\-\_\-enchanted}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{is\-\_\-enchanted}]{\setlength{\rightskip}{0pt plus 5cm}int is\-\_\-enchanted (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{victim, }
+\item[{char $\ast$}]{enchantment\-\_\-name}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_ab957fd87e08a287eae621c3391c22dfc}
+\hypertarget{magic_8cpp_a0c75d9ac65ab33322321fcfe60570b4f}{\index{magic.\-cpp@{magic.\-cpp}!is\-\_\-incantation@{is\-\_\-incantation}}
+\index{is\-\_\-incantation@{is\-\_\-incantation}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{is\-\_\-incantation}]{\setlength{\rightskip}{0pt plus 5cm}int is\-\_\-incantation (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a0c75d9ac65ab33322321fcfe60570b4f}
+\hypertarget{magic_8cpp_a3ad83dc8a9ef6bd4705b77cc77b0d294}{\index{magic.\-cpp@{magic.\-cpp}!job\-\_\-add\-\_\-affect@{job\-\_\-add\-\_\-affect}}
+\index{job\-\_\-add\-\_\-affect@{job\-\_\-add\-\_\-affect}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{job\-\_\-add\-\_\-affect}]{\setlength{\rightskip}{0pt plus 5cm}void job\-\_\-add\-\_\-affect (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{type, }
+\item[{int}]{days, }
+\item[{int}]{pay\-\_\-date, }
+\item[{int}]{cash, }
+\item[{int}]{count, }
+\item[{int}]{object\-\_\-vnum, }
+\item[{int}]{employer}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a3ad83dc8a9ef6bd4705b77cc77b0d294}
+\hypertarget{magic_8cpp_acb62e50884ce250b8238cb8e795ce954}{\index{magic.\-cpp@{magic.\-cpp}!knows\-\_\-spell@{knows\-\_\-spell}}
+\index{knows\-\_\-spell@{knows\-\_\-spell}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{knows\-\_\-spell}]{\setlength{\rightskip}{0pt plus 5cm}int knows\-\_\-spell (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_acb62e50884ce250b8238cb8e795ce954}
+\hypertarget{magic_8cpp_ab259bfb558044eddafc89804845772df}{\index{magic.\-cpp@{magic.\-cpp}!magic\-\_\-add\-\_\-affect@{magic\-\_\-add\-\_\-affect}}
+\index{magic\-\_\-add\-\_\-affect@{magic\-\_\-add\-\_\-affect}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{magic\-\_\-add\-\_\-affect}]{\setlength{\rightskip}{0pt plus 5cm}int magic\-\_\-add\-\_\-affect (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{type, }
+\item[{int}]{duration, }
+\item[{int}]{modifier, }
+\item[{int}]{location, }
+\item[{int}]{bitvector, }
+\item[{int}]{sn}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_ab259bfb558044eddafc89804845772df}
+\hypertarget{magic_8cpp_a85a3a612ddddcd3014fe82e7f3668d9e}{\index{magic.\-cpp@{magic.\-cpp}!magic\-\_\-add\-\_\-obj\-\_\-affect@{magic\-\_\-add\-\_\-obj\-\_\-affect}}
+\index{magic\-\_\-add\-\_\-obj\-\_\-affect@{magic\-\_\-add\-\_\-obj\-\_\-affect}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{magic\-\_\-add\-\_\-obj\-\_\-affect}]{\setlength{\rightskip}{0pt plus 5cm}int magic\-\_\-add\-\_\-obj\-\_\-affect (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj, }
+\item[{int}]{type, }
+\item[{int}]{duration, }
+\item[{int}]{modifier, }
+\item[{int}]{location, }
+\item[{int}]{bitvector, }
+\item[{int}]{sn}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a85a3a612ddddcd3014fe82e7f3668d9e}
+\hypertarget{magic_8cpp_af3f86067752672fd95921951339d6b29}{\index{magic.\-cpp@{magic.\-cpp}!magic\-\_\-affect@{magic\-\_\-affect}}
+\index{magic\-\_\-affect@{magic\-\_\-affect}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{magic\-\_\-affect}]{\setlength{\rightskip}{0pt plus 5cm}void magic\-\_\-affect (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{magic}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_af3f86067752672fd95921951339d6b29}
+\hypertarget{magic_8cpp_aa40a6d6fb66d2ddb08d551858b35dc10}{\index{magic.\-cpp@{magic.\-cpp}!magic\-\_\-cure\-\_\-infection@{magic\-\_\-cure\-\_\-infection}}
+\index{magic\-\_\-cure\-\_\-infection@{magic\-\_\-cure\-\_\-infection}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{magic\-\_\-cure\-\_\-infection}]{\setlength{\rightskip}{0pt plus 5cm}void magic\-\_\-cure\-\_\-infection (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_aa40a6d6fb66d2ddb08d551858b35dc10}
+\hypertarget{magic_8cpp_a4903a77d6a5a7f1854b883b8dfca420b}{\index{magic.\-cpp@{magic.\-cpp}!magic\-\_\-cure\-\_\-poison@{magic\-\_\-cure\-\_\-poison}}
+\index{magic\-\_\-cure\-\_\-poison@{magic\-\_\-cure\-\_\-poison}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{magic\-\_\-cure\-\_\-poison}]{\setlength{\rightskip}{0pt plus 5cm}void magic\-\_\-cure\-\_\-poison (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{target}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a4903a77d6a5a7f1854b883b8dfca420b}
+\hypertarget{magic_8cpp_a76c515cd4ad50e2008a22516da15c829}{\index{magic.\-cpp@{magic.\-cpp}!magic\-\_\-heal1@{magic\-\_\-heal1}}
+\index{magic\-\_\-heal1@{magic\-\_\-heal1}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{magic\-\_\-heal1}]{\setlength{\rightskip}{0pt plus 5cm}void magic\-\_\-heal1 (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a76c515cd4ad50e2008a22516da15c829}
+\hypertarget{magic_8cpp_a111dd8e2c9a7e83be1eb71c2885c31c9}{\index{magic.\-cpp@{magic.\-cpp}!magic\-\_\-heal10@{magic\-\_\-heal10}}
+\index{magic\-\_\-heal10@{magic\-\_\-heal10}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{magic\-\_\-heal10}]{\setlength{\rightskip}{0pt plus 5cm}void magic\-\_\-heal10 (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a111dd8e2c9a7e83be1eb71c2885c31c9}
+\hypertarget{magic_8cpp_a40e41c2b9173a67301fbd4bb470fcd8a}{\index{magic.\-cpp@{magic.\-cpp}!magic\-\_\-heal2@{magic\-\_\-heal2}}
+\index{magic\-\_\-heal2@{magic\-\_\-heal2}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{magic\-\_\-heal2}]{\setlength{\rightskip}{0pt plus 5cm}void magic\-\_\-heal2 (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a40e41c2b9173a67301fbd4bb470fcd8a}
+\hypertarget{magic_8cpp_a58eeb628327a897298fd961592b1988b}{\index{magic.\-cpp@{magic.\-cpp}!magic\-\_\-heal3@{magic\-\_\-heal3}}
+\index{magic\-\_\-heal3@{magic\-\_\-heal3}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{magic\-\_\-heal3}]{\setlength{\rightskip}{0pt plus 5cm}void magic\-\_\-heal3 (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a58eeb628327a897298fd961592b1988b}
+\hypertarget{magic_8cpp_a171de5c50282e2434d9a82aa30f7a879}{\index{magic.\-cpp@{magic.\-cpp}!magic\-\_\-heal4@{magic\-\_\-heal4}}
+\index{magic\-\_\-heal4@{magic\-\_\-heal4}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{magic\-\_\-heal4}]{\setlength{\rightskip}{0pt plus 5cm}void magic\-\_\-heal4 (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a171de5c50282e2434d9a82aa30f7a879}
+\hypertarget{magic_8cpp_a6032de5a618c4792b4c8bd4c2bf6a85f}{\index{magic.\-cpp@{magic.\-cpp}!magic\-\_\-heal5@{magic\-\_\-heal5}}
+\index{magic\-\_\-heal5@{magic\-\_\-heal5}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{magic\-\_\-heal5}]{\setlength{\rightskip}{0pt plus 5cm}void magic\-\_\-heal5 (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a6032de5a618c4792b4c8bd4c2bf6a85f}
+\hypertarget{magic_8cpp_a9bf8631ac87da9ca5d095d326833b8a3}{\index{magic.\-cpp@{magic.\-cpp}!magic\-\_\-heal6@{magic\-\_\-heal6}}
+\index{magic\-\_\-heal6@{magic\-\_\-heal6}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{magic\-\_\-heal6}]{\setlength{\rightskip}{0pt plus 5cm}void magic\-\_\-heal6 (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a9bf8631ac87da9ca5d095d326833b8a3}
+\hypertarget{magic_8cpp_ae256da322f84fc826c860ddc66457672}{\index{magic.\-cpp@{magic.\-cpp}!magic\-\_\-heal7@{magic\-\_\-heal7}}
+\index{magic\-\_\-heal7@{magic\-\_\-heal7}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{magic\-\_\-heal7}]{\setlength{\rightskip}{0pt plus 5cm}void magic\-\_\-heal7 (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_ae256da322f84fc826c860ddc66457672}
+\hypertarget{magic_8cpp_aeb229540b4e5c4c5068a27bada00ba0c}{\index{magic.\-cpp@{magic.\-cpp}!magic\-\_\-heal8@{magic\-\_\-heal8}}
+\index{magic\-\_\-heal8@{magic\-\_\-heal8}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{magic\-\_\-heal8}]{\setlength{\rightskip}{0pt plus 5cm}void magic\-\_\-heal8 (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_aeb229540b4e5c4c5068a27bada00ba0c}
+\hypertarget{magic_8cpp_a40e28e914d6a5f7bb04f01c9046ee43c}{\index{magic.\-cpp@{magic.\-cpp}!magic\-\_\-heal9@{magic\-\_\-heal9}}
+\index{magic\-\_\-heal9@{magic\-\_\-heal9}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{magic\-\_\-heal9}]{\setlength{\rightskip}{0pt plus 5cm}void magic\-\_\-heal9 (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a40e28e914d6a5f7bb04f01c9046ee43c}
+\hypertarget{magic_8cpp_aa1df72686276e6b819477ddbf82aa138}{\index{magic.\-cpp@{magic.\-cpp}!magic\-\_\-incantation@{magic\-\_\-incantation}}
+\index{magic\-\_\-incantation@{magic\-\_\-incantation}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{magic\-\_\-incantation}]{\setlength{\rightskip}{0pt plus 5cm}void magic\-\_\-incantation (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_aa1df72686276e6b819477ddbf82aa138}
+\hypertarget{magic_8cpp_a065d53565009a445525fbee6d58bc597}{\index{magic.\-cpp@{magic.\-cpp}!magic\-\_\-infravision@{magic\-\_\-infravision}}
+\index{magic\-\_\-infravision@{magic\-\_\-infravision}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{magic\-\_\-infravision}]{\setlength{\rightskip}{0pt plus 5cm}void magic\-\_\-infravision (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{victim}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a065d53565009a445525fbee6d58bc597}
+\hypertarget{magic_8cpp_a065844ebae3fc58888a1ba852bebdcf4}{\index{magic.\-cpp@{magic.\-cpp}!magic\-\_\-invulnerability@{magic\-\_\-invulnerability}}
+\index{magic\-\_\-invulnerability@{magic\-\_\-invulnerability}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{magic\-\_\-invulnerability}]{\setlength{\rightskip}{0pt plus 5cm}void magic\-\_\-invulnerability (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{victim}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a065844ebae3fc58888a1ba852bebdcf4}
+\hypertarget{magic_8cpp_a574b7366deb1a59340a3b9f8ac4690b6}{\index{magic.\-cpp@{magic.\-cpp}!magic\-\_\-slipperiness@{magic\-\_\-slipperiness}}
+\index{magic\-\_\-slipperiness@{magic\-\_\-slipperiness}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{magic\-\_\-slipperiness}]{\setlength{\rightskip}{0pt plus 5cm}void magic\-\_\-slipperiness (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{victim}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a574b7366deb1a59340a3b9f8ac4690b6}
+\hypertarget{magic_8cpp_af412660b5a8c10398316193d9431032c}{\index{magic.\-cpp@{magic.\-cpp}!parse\-\_\-spell\-\_\-technique@{parse\-\_\-spell\-\_\-technique}}
+\index{parse\-\_\-spell\-\_\-technique@{parse\-\_\-spell\-\_\-technique}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{parse\-\_\-spell\-\_\-technique}]{\setlength{\rightskip}{0pt plus 5cm}void parse\-\_\-spell\-\_\-technique (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$}]{spell, }
+\item[{void $\ast$}]{target, }
+\item[{int}]{target\-\_\-type}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_af412660b5a8c10398316193d9431032c}
+\hypertarget{magic_8cpp_a709de07f7bc4ce34b95a5e9d7a1dddf1}{\index{magic.\-cpp@{magic.\-cpp}!perception\-\_\-spell@{perception\-\_\-spell}}
+\index{perception\-\_\-spell@{perception\-\_\-spell}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{perception\-\_\-spell}]{\setlength{\rightskip}{0pt plus 5cm}void perception\-\_\-spell (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$}]{spell, }
+\item[{void $\ast$}]{target, }
+\item[{int}]{target\-\_\-type}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a709de07f7bc4ce34b95a5e9d7a1dddf1}
+\hypertarget{magic_8cpp_a2cc8a3eb523b1353c1c74b949ad102cc}{\index{magic.\-cpp@{magic.\-cpp}!post\-\_\-dream@{post\-\_\-dream}}
+\index{post\-\_\-dream@{post\-\_\-dream}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{post\-\_\-dream}]{\setlength{\rightskip}{0pt plus 5cm}void post\-\_\-dream (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a2cc8a3eb523b1353c1c74b949ad102cc}
+\hypertarget{magic_8cpp_a56b28fc0db08a9af31ccb9ac26474bab}{\index{magic.\-cpp@{magic.\-cpp}!post\-\_\-prescience@{post\-\_\-prescience}}
+\index{post\-\_\-prescience@{post\-\_\-prescience}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{post\-\_\-prescience}]{\setlength{\rightskip}{0pt plus 5cm}void post\-\_\-prescience (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a56b28fc0db08a9af31ccb9ac26474bab}
+\hypertarget{magic_8cpp_a2d65cc0bbbbefb0428fbdc191a094513}{\index{magic.\-cpp@{magic.\-cpp}!prepare\-\_\-magic@{prepare\-\_\-magic}}
+\index{prepare\-\_\-magic@{prepare\-\_\-magic}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{prepare\-\_\-magic}]{\setlength{\rightskip}{0pt plus 5cm}void prepare\-\_\-magic (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{technique, }
+\item[{int}]{form, }
+\item[{int}]{magnitude}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a2d65cc0bbbbefb0428fbdc191a094513}
+\hypertarget{magic_8cpp_abc6958ccc2e0179cd71c72a144df10d1}{\index{magic.\-cpp@{magic.\-cpp}!process\-\_\-spell\-\_\-casting@{process\-\_\-spell\-\_\-casting}}
+\index{process\-\_\-spell\-\_\-casting@{process\-\_\-spell\-\_\-casting}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{process\-\_\-spell\-\_\-casting}]{\setlength{\rightskip}{0pt plus 5cm}void process\-\_\-spell\-\_\-casting (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{void $\ast$}]{target, }
+\item[{int}]{id, }
+\item[{int}]{target\-\_\-type}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_abc6958ccc2e0179cd71c72a144df10d1}
+\hypertarget{magic_8cpp_af0aca76d212a045e514c3ea788f3304f}{\index{magic.\-cpp@{magic.\-cpp}!process\-\_\-spell\-\_\-damage@{process\-\_\-spell\-\_\-damage}}
+\index{process\-\_\-spell\-\_\-damage@{process\-\_\-spell\-\_\-damage}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{process\-\_\-spell\-\_\-damage}]{\setlength{\rightskip}{0pt plus 5cm}void process\-\_\-spell\-\_\-damage (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{tch, }
+\item[{int}]{id, }
+\item[{int}]{saved, }
+\item[{int}]{which}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_af0aca76d212a045e514c3ea788f3304f}
+\hypertarget{magic_8cpp_a5baec15004dd35e1c1ddabd93cdf4459}{\index{magic.\-cpp@{magic.\-cpp}!process\-\_\-spell\-\_\-effect@{process\-\_\-spell\-\_\-effect}}
+\index{process\-\_\-spell\-\_\-effect@{process\-\_\-spell\-\_\-effect}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{process\-\_\-spell\-\_\-effect}]{\setlength{\rightskip}{0pt plus 5cm}void process\-\_\-spell\-\_\-effect (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{tch, }
+\item[{int}]{id, }
+\item[{int}]{saved, }
+\item[{int}]{affect\-\_\-type, }
+\item[{int}]{which}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a5baec15004dd35e1c1ddabd93cdf4459}
+\hypertarget{magic_8cpp_a953dfc10e09a6219e02573ae20894948}{\index{magic.\-cpp@{magic.\-cpp}!process\-\_\-spell\-\_\-healing@{process\-\_\-spell\-\_\-healing}}
+\index{process\-\_\-spell\-\_\-healing@{process\-\_\-spell\-\_\-healing}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{process\-\_\-spell\-\_\-healing}]{\setlength{\rightskip}{0pt plus 5cm}void process\-\_\-spell\-\_\-healing (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{tch, }
+\item[{int}]{id, }
+\item[{int}]{saved, }
+\item[{int}]{which}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a953dfc10e09a6219e02573ae20894948}
+\hypertarget{magic_8cpp_afcf55e0625d729b116c4efe298d0ef2a}{\index{magic.\-cpp@{magic.\-cpp}!process\-\_\-spell\-\_\-results@{process\-\_\-spell\-\_\-results}}
+\index{process\-\_\-spell\-\_\-results@{process\-\_\-spell\-\_\-results}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{process\-\_\-spell\-\_\-results}]{\setlength{\rightskip}{0pt plus 5cm}void process\-\_\-spell\-\_\-results (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{tch, }
+\item[{int}]{id, }
+\item[{int}]{saved}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_afcf55e0625d729b116c4efe298d0ef2a}
+\hypertarget{magic_8cpp_a1ce6f2f4f72d0e9c5bb35b930f509219}{\index{magic.\-cpp@{magic.\-cpp}!process\-\_\-spell\-\_\-save@{process\-\_\-spell\-\_\-save}}
+\index{process\-\_\-spell\-\_\-save@{process\-\_\-spell\-\_\-save}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{process\-\_\-spell\-\_\-save}]{\setlength{\rightskip}{0pt plus 5cm}void process\-\_\-spell\-\_\-save (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{void $\ast$}]{target, }
+\item[{int}]{id, }
+\item[{int}]{target\-\_\-type}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a1ce6f2f4f72d0e9c5bb35b930f509219}
+\hypertarget{magic_8cpp_abe11ecb7f55a0f6edbeba5ed7411e54a}{\index{magic.\-cpp@{magic.\-cpp}!rating\-\_\-adj@{rating\-\_\-adj}}
+\index{rating\-\_\-adj@{rating\-\_\-adj}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{rating\-\_\-adj}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ rating\-\_\-adj (
+\begin{DoxyParamCaption}
+\item[{{\bf K\-N\-O\-W\-N\-\_\-\-S\-P\-E\-L\-L\-\_\-\-D\-A\-T\-A} $\ast$}]{spell}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_abe11ecb7f55a0f6edbeba5ed7411e54a}
+\hypertarget{magic_8cpp_ad11607f7f2715ef32197218efafd02b6}{\index{magic.\-cpp@{magic.\-cpp}!remove\-\_\-enchantment@{remove\-\_\-enchantment}}
+\index{remove\-\_\-enchantment@{remove\-\_\-enchantment}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{remove\-\_\-enchantment}]{\setlength{\rightskip}{0pt plus 5cm}void remove\-\_\-enchantment (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf E\-N\-C\-H\-A\-N\-T\-M\-E\-N\-T\-\_\-\-D\-A\-T\-A} $\ast$}]{ench}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_ad11607f7f2715ef32197218efafd02b6}
+\hypertarget{magic_8cpp_a7897def189765c3c08c68a381fd6c144}{\index{magic.\-cpp@{magic.\-cpp}!remove\-\_\-spell@{remove\-\_\-spell}}
+\index{remove\-\_\-spell@{remove\-\_\-spell}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{remove\-\_\-spell}]{\setlength{\rightskip}{0pt plus 5cm}void remove\-\_\-spell (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a7897def189765c3c08c68a381fd6c144}
+\hypertarget{magic_8cpp_af7bf7ade1ddf82e0e2a1e40262276a83}{\index{magic.\-cpp@{magic.\-cpp}!reset\-\_\-heal\-\_\-delay@{reset\-\_\-heal\-\_\-delay}}
+\index{reset\-\_\-heal\-\_\-delay@{reset\-\_\-heal\-\_\-delay}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{reset\-\_\-heal\-\_\-delay}]{\setlength{\rightskip}{0pt plus 5cm}void reset\-\_\-heal\-\_\-delay (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{tch}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_af7bf7ade1ddf82e0e2a1e40262276a83}
+\hypertarget{magic_8cpp_a6bad0cb13606da63fdad671090de8e64}{\index{magic.\-cpp@{magic.\-cpp}!resisted@{resisted}}
+\index{resisted@{resisted}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{resisted}]{\setlength{\rightskip}{0pt plus 5cm}int resisted (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{enemy, }
+\item[{int}]{spell}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a6bad0cb13606da63fdad671090de8e64}
+\hypertarget{magic_8cpp_a205956dc550225536c2ebc72bc90dee0}{\index{magic.\-cpp@{magic.\-cpp}!sense\-\_\-activity@{sense\-\_\-activity}}
+\index{sense\-\_\-activity@{sense\-\_\-activity}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{sense\-\_\-activity}]{\setlength{\rightskip}{0pt plus 5cm}void sense\-\_\-activity (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{user, }
+\item[{int}]{talent}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a205956dc550225536c2ebc72bc90dee0}
+\hypertarget{magic_8cpp_a02b7ba003b9da04b5d07a2afc23fcdf9}{\index{magic.\-cpp@{magic.\-cpp}!set\-\_\-spell\-\_\-proficiency@{set\-\_\-spell\-\_\-proficiency}}
+\index{set\-\_\-spell\-\_\-proficiency@{set\-\_\-spell\-\_\-proficiency}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{set\-\_\-spell\-\_\-proficiency}]{\setlength{\rightskip}{0pt plus 5cm}void set\-\_\-spell\-\_\-proficiency (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{id, }
+\item[{int}]{set\-\_\-to}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a02b7ba003b9da04b5d07a2afc23fcdf9}
+\hypertarget{magic_8cpp_ae6d936b91b20021eeab9f4fa0ae0a4c9}{\index{magic.\-cpp@{magic.\-cpp}!setup\-\_\-new\-\_\-character@{setup\-\_\-new\-\_\-character}}
+\index{setup\-\_\-new\-\_\-character@{setup\-\_\-new\-\_\-character}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{setup\-\_\-new\-\_\-character}]{\setlength{\rightskip}{0pt plus 5cm}void setup\-\_\-new\-\_\-character (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{tch}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_ae6d936b91b20021eeab9f4fa0ae0a4c9}
+\hypertarget{magic_8cpp_a797d49c19c4f5cf36a81260003a36ec1}{\index{magic.\-cpp@{magic.\-cpp}!show\-\_\-enchantment@{show\-\_\-enchantment}}
+\index{show\-\_\-enchantment@{show\-\_\-enchantment}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{show\-\_\-enchantment}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ show\-\_\-enchantment (
+\begin{DoxyParamCaption}
+\item[{{\bf E\-N\-C\-H\-A\-N\-T\-M\-E\-N\-T\-\_\-\-D\-A\-T\-A} $\ast$}]{enchantment}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a797d49c19c4f5cf36a81260003a36ec1}
+\hypertarget{magic_8cpp_a735c5c659a1151bbd6e8507ca9f92813}{\index{magic.\-cpp@{magic.\-cpp}!spell\-\_\-activity\-\_\-echo@{spell\-\_\-activity\-\_\-echo}}
+\index{spell\-\_\-activity\-\_\-echo@{spell\-\_\-activity\-\_\-echo}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{spell\-\_\-activity\-\_\-echo}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ spell\-\_\-activity\-\_\-echo (
+\begin{DoxyParamCaption}
+\item[{int}]{id, }
+\item[{int}]{affect\-\_\-type}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a735c5c659a1151bbd6e8507ca9f92813}
+\hypertarget{magic_8cpp_ad8fd4ca76e4f16a7cbf07c72f8f12ecd}{\index{magic.\-cpp@{magic.\-cpp}!spell\-\_\-blend@{spell\-\_\-blend}}
+\index{spell\-\_\-blend@{spell\-\_\-blend}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{spell\-\_\-blend}]{\setlength{\rightskip}{0pt plus 5cm}int spell\-\_\-blend (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{victim, }
+\item[{int}]{sn}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_ad8fd4ca76e4f16a7cbf07c72f8f12ecd}
+\hypertarget{magic_8cpp_a9f97fb2fc8668a55d180c9a4710574dc}{\index{magic.\-cpp@{magic.\-cpp}!spell\-\_\-fade\-\_\-echo@{spell\-\_\-fade\-\_\-echo}}
+\index{spell\-\_\-fade\-\_\-echo@{spell\-\_\-fade\-\_\-echo}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{spell\-\_\-fade\-\_\-echo}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ spell\-\_\-fade\-\_\-echo (
+\begin{DoxyParamCaption}
+\item[{int}]{id, }
+\item[{int}]{affect\-\_\-type}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a9f97fb2fc8668a55d180c9a4710574dc}
+\hypertarget{magic_8cpp_a5202e49bfc5a77c78f4884f254bd2ba4}{\index{magic.\-cpp@{magic.\-cpp}!spell\-\_\-failed@{spell\-\_\-failed}}
+\index{spell\-\_\-failed@{spell\-\_\-failed}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{spell\-\_\-failed}]{\setlength{\rightskip}{0pt plus 5cm}int spell\-\_\-failed (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$}]{spell}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a5202e49bfc5a77c78f4884f254bd2ba4}
+\hypertarget{magic_8cpp_a3323c7a2f8a90422eaeacca70ae34db5}{\index{magic.\-cpp@{magic.\-cpp}!spell\-\_\-infravision@{spell\-\_\-infravision}}
+\index{spell\-\_\-infravision@{spell\-\_\-infravision}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{spell\-\_\-infravision}]{\setlength{\rightskip}{0pt plus 5cm}int spell\-\_\-infravision (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{victim, }
+\item[{int}]{sn}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a3323c7a2f8a90422eaeacca70ae34db5}
+\hypertarget{magic_8cpp_aa961d96f26d9b662dc50310d89e5ca66}{\index{magic.\-cpp@{magic.\-cpp}!spell\-\_\-lookup@{spell\-\_\-lookup}}
+\index{spell\-\_\-lookup@{spell\-\_\-lookup}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{spell\-\_\-lookup}]{\setlength{\rightskip}{0pt plus 5cm}int spell\-\_\-lookup (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{spell\-\_\-name}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_aa961d96f26d9b662dc50310d89e5ca66}
+\hypertarget{magic_8cpp_a8240a9178ec705d73f7d73a9ef0887c4}{\index{magic.\-cpp@{magic.\-cpp}!starting\-\_\-skill\-\_\-boost@{starting\-\_\-skill\-\_\-boost}}
+\index{starting\-\_\-skill\-\_\-boost@{starting\-\_\-skill\-\_\-boost}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{starting\-\_\-skill\-\_\-boost}]{\setlength{\rightskip}{0pt plus 5cm}void starting\-\_\-skill\-\_\-boost (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{skill, }
+\item[{int}]{num}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a8240a9178ec705d73f7d73a9ef0887c4}
+\hypertarget{magic_8cpp_afe134f799d766f2a1441cec7b303bedd}{\index{magic.\-cpp@{magic.\-cpp}!transformation\-\_\-spell@{transformation\-\_\-spell}}
+\index{transformation\-\_\-spell@{transformation\-\_\-spell}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{transformation\-\_\-spell}]{\setlength{\rightskip}{0pt plus 5cm}void transformation\-\_\-spell (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$}]{spell, }
+\item[{void $\ast$}]{target, }
+\item[{int}]{target\-\_\-type}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_afe134f799d766f2a1441cec7b303bedd}
+\hypertarget{magic_8cpp_a0e7373f308587779b09c749a52d7f2d1}{\index{magic.\-cpp@{magic.\-cpp}!update\-\_\-target@{update\-\_\-target}}
+\index{update\-\_\-target@{update\-\_\-target}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{update\-\_\-target}]{\setlength{\rightskip}{0pt plus 5cm}void update\-\_\-target (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{tch, }
+\item[{int}]{affect\-\_\-type}
+\end{DoxyParamCaption}
+)}}\label{magic_8cpp_a0e7373f308587779b09c749a52d7f2d1}
+
+
+\subsection{Variable Documentation}
+\hypertarget{magic_8cpp_a721020736678b1e413a8e5ecb6484552}{\index{magic.\-cpp@{magic.\-cpp}!forms@{forms}}
+\index{forms@{forms}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{forms}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ forms\mbox{[}$\,$\mbox{]}}}\label{magic_8cpp_a721020736678b1e413a8e5ecb6484552}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \{
+  \textcolor{stringliteral}{"Not Found"},
+  \textcolor{stringliteral}{"Animal"},
+  \textcolor{stringliteral}{"Plant"},
+  \textcolor{stringliteral}{"Image"},
+  \textcolor{stringliteral}{"Light"},
+  \textcolor{stringliteral}{"Darkness"},
+  \textcolor{stringliteral}{"Power"},
+  \textcolor{stringliteral}{"Mind"},
+  \textcolor{stringliteral}{"Spirit"},
+  \textcolor{stringliteral}{"Air"},
+  \textcolor{stringliteral}{"Earth"},
+  \textcolor{stringliteral}{"Fire"},
+  \textcolor{stringliteral}{"Water"},
+  \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}
+\hypertarget{magic_8cpp_a834282ed23119fca57be4f197bcb1e02}{\index{magic.\-cpp@{magic.\-cpp}!forms2@{forms2}}
+\index{forms2@{forms2}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{forms2}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ forms2\mbox{[}$\,$\mbox{]}}}\label{magic_8cpp_a834282ed23119fca57be4f197bcb1e02}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \{
+  \textcolor{stringliteral}{"Not Found"},
+  \textcolor{stringliteral}{"Animal"},
+  \textcolor{stringliteral}{"Vegetation"},
+  \textcolor{stringliteral}{"Illusion"},
+  \textcolor{stringliteral}{"Radiance"},
+  \textcolor{stringliteral}{"Shadow"},
+  \textcolor{stringliteral}{"Power"},
+  \textcolor{stringliteral}{"Intellect"},
+  \textcolor{stringliteral}{"Soul"},
+  \textcolor{stringliteral}{"Wind"},
+  \textcolor{stringliteral}{"Earth"},
+  \textcolor{stringliteral}{"Flame"},
+  \textcolor{stringliteral}{"Water"},
+  \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}
+\hypertarget{magic_8cpp_a7a47419205e7b6cb2a58d063b9e9e69e}{\index{magic.\-cpp@{magic.\-cpp}!magnitudes@{magnitudes}}
+\index{magnitudes@{magnitudes}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{magnitudes}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ magnitudes\mbox{[}$\,$\mbox{]}}}\label{magic_8cpp_a7a47419205e7b6cb2a58d063b9e9e69e}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \{
+  \textcolor{stringliteral}{"Not Found"},
+  \textcolor{stringliteral}{"Subtle"},
+  \textcolor{stringliteral}{"Gentle"},
+  \textcolor{stringliteral}{"Soft"},
+  \textcolor{stringliteral}{"Stolid"},
+  \textcolor{stringliteral}{"Staunch"},
+  \textcolor{stringliteral}{"Vigorous"},
+  \textcolor{stringliteral}{"Vibrant"},
+  \textcolor{stringliteral}{"Potent"},
+  \textcolor{stringliteral}{"Powerful"},
+  \textcolor{stringliteral}{"Dire"},
+  \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}
+\hypertarget{magic_8cpp_a9adcc06c562fadb3687207085abdb055}{\index{magic.\-cpp@{magic.\-cpp}!nightmare@{nightmare}}
+\index{nightmare@{nightmare}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{nightmare}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ nightmare\mbox{[}$\,$\mbox{]}}}\label{magic_8cpp_a9adcc06c562fadb3687207085abdb055}
+\hypertarget{magic_8cpp_a2dadc9f5331f04c8554d1dd431c12dd6}{\index{magic.\-cpp@{magic.\-cpp}!spell\-\_\-table@{spell\-\_\-table}}
+\index{spell\-\_\-table@{spell\-\_\-table}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{spell\-\_\-table}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf spell\-\_\-data} spell\-\_\-table\mbox{[}$\,$\mbox{]}}}\label{magic_8cpp_a2dadc9f5331f04c8554d1dd431c12dd6}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \{
+\}
+\end{DoxyCode}
+\hypertarget{magic_8cpp_a7a2eb66baf9a0f87a8ce0059cb4fd5b9}{\index{magic.\-cpp@{magic.\-cpp}!techniques@{techniques}}
+\index{techniques@{techniques}!magic.cpp@{magic.\-cpp}}
+\subsubsection[{techniques}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ techniques\mbox{[}$\,$\mbox{]}}}\label{magic_8cpp_a7a2eb66baf9a0f87a8ce0059cb4fd5b9}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \{
+  \textcolor{stringliteral}{"Not Found"},
+  \textcolor{stringliteral}{"Create"},
+  \textcolor{stringliteral}{"Destroy"},
+  \textcolor{stringliteral}{"Transform"},
+  \textcolor{stringliteral}{"Perceive"},
+  \textcolor{stringliteral}{"Control"},
+  \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}

@@ -1,0 +1,1064 @@
+\hypertarget{mysql_8cpp}{\section{mysql.\-cpp File Reference}
+\label{mysql_8cpp}\index{mysql.\-cpp@{mysql.\-cpp}}
+}
+{\ttfamily \#include $<$stdarg.\-h$>$}\\*
+{\ttfamily \#include $<$unistd.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$signal.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$ctype.\-h$>$}\\*
+{\ttfamily \#include $<$time.\-h$>$}\\*
+{\ttfamily \#include $<$mysql/mysql.\-h$>$}\\*
+{\ttfamily \#include $<$dirent.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}server.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}structs.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}net\-\_\-link.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}account.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}protos.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utility.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}decl.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{mysql_8cpp_a62bf033abb6943179075d36f983c2c49}{init\-\_\-mysql} (void)
+\item 
+void \hyperlink{mysql_8cpp_a69180cdf0502ee2c2e9e86a7c2912e61}{refresh\-\_\-db\-\_\-connection} (void)
+\item 
+int \hyperlink{mysql_8cpp_a240ac79e1082dc0b5ace512da8dd0cb5}{mysql\-\_\-safe\-\_\-query} (char $\ast$fmt,...)
+\item 
+void \hyperlink{mysql_8cpp_a1cd210eead0d1e015d02a080a78f7b3b}{test\-\_\-db\-\_\-init} (void)
+\item 
+void \hyperlink{mysql_8cpp_adecf05c818d5b6d3934c2e73aba96021}{load\-\_\-foraged\-\_\-goods} (void)
+\item 
+void \hyperlink{mysql_8cpp_a93c7a9c22af543268570398662662eb5}{save\-\_\-foraged\-\_\-goods} (void)
+\item 
+void \hyperlink{mysql_8cpp_a2ba2e3a155b35c1491d311be6a4c6903}{load\-\_\-foraged\-\_\-zone\-\_\-info} (void)
+\item 
+void \hyperlink{mysql_8cpp_af5efaa7d0508870a75cf85260f52da06}{save\-\_\-foraged\-\_\-zones} (void)
+\item 
+void \hyperlink{mysql_8cpp_ac7084ac69383ec308f89ad5de2f8a371}{load\-\_\-defined\-\_\-scents} (void)
+\item 
+void \hyperlink{mysql_8cpp_ac5f7b420de8b8c12aba0c42da31375a5}{save\-\_\-defined\-\_\-scents} (void)
+\item 
+void \hyperlink{mysql_8cpp_aeb8553b184225f7c7953af8de04f3237}{load\-\_\-obj\-\_\-variables} (void)
+\item 
+void \hyperlink{mysql_8cpp_a3b58869a6de251c78408ce31ef316912}{load\-\_\-mob\-\_\-variables} (void)
+\item 
+void \hyperlink{mysql_8cpp_ab1dbc5cb36a82cd5edf2e16db9f77df9}{save\-\_\-mob\-\_\-variables} (void)
+\item 
+void \hyperlink{mysql_8cpp_a9ebe293905d72474caaa8c73e4073f0f}{save\-\_\-obj\-\_\-variables} (void)
+\item 
+void \hyperlink{mysql_8cpp_a364531db807ef388609ad7101cb6f56b}{load\-\_\-mob\-\_\-ais} (void)
+\item 
+void \hyperlink{mysql_8cpp_a4ae7e3c5a8152e7193d38f7b250287e8}{save\-\_\-mob\-\_\-ais} (void)
+\item 
+void \hyperlink{mysql_8cpp_a555405b7dd9298097c45c980551dd9b2}{load\-\_\-obj\-\_\-progs} (void)
+\item 
+void \hyperlink{mysql_8cpp_a88aaeaeb54f3aaf773310b4b31655333}{save\-\_\-obj\-\_\-progs} (void)
+\item 
+void \hyperlink{mysql_8cpp_a8e2223aad926a3f846f1e9920b02c878}{load\-\_\-mob\-\_\-progs} (void)
+\item 
+void \hyperlink{mysql_8cpp_a7319b068a08590a84a470ff281f7af8c}{save\-\_\-mob\-\_\-progs} (void)
+\item 
+void \hyperlink{mysql_8cpp_aec6a4a792abad1eab9c77301416fa7de}{load\-\_\-craft\-\_\-progs} (void)
+\item 
+void \hyperlink{mysql_8cpp_a4370baf026fc36789b1f8fb07a5f888f}{save\-\_\-craft\-\_\-progs} (void)
+\item 
+void \hyperlink{mysql_8cpp_a612cbe4208533d129493d11ed01e5531}{update\-\_\-family\-\_\-clanning} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d)
+\item 
+void \hyperlink{mysql_8cpp_a026c7a05383e7c43cc9c22343528a758}{load\-\_\-race\-\_\-table} (void)
+\item 
+char $\ast$ \hyperlink{mysql_8cpp_ad560fe47bc55a30e288307bbcb76c907}{lookup\-\_\-poison\-\_\-variable} (int id, int which\-\_\-var)
+\item 
+int \hyperlink{mysql_8cpp_a163d6f4e8a426c6e2cf18c0f1c38af4c}{lookup\-\_\-race\-\_\-id} (const char $\ast$name)
+\item 
+int \hyperlink{mysql_8cpp_a100d01b5334fe5d5d96085cb49277a6c}{lookup\-\_\-race\-\_\-int} (int id, int which\-\_\-var)
+\item 
+char $\ast$ \hyperlink{mysql_8cpp_acdd33aa567998442b38bdb1ad20aad5d}{lookup\-\_\-race\-\_\-variable} (int id, int which\-\_\-var)
+\item 
+M\-Y\-S\-Q\-L\-\_\-\-R\-E\-S $\ast$ \hyperlink{mysql_8cpp_a29f15279aed1ccef891628652c707c6f}{mysql\-\_\-player\-\_\-search} (int search\-\_\-type, char $\ast$string, int timeframe)
+\item 
+char $\ast$ \hyperlink{mysql_8cpp_af561028471302cd971ad535cd8c1d462}{lookup\-\_\-spell\-\_\-variable} (int id, int which\-\_\-var)
+\item 
+int \hyperlink{mysql_8cpp_a4c055732a5df35ccf5d1bff2d1c39590}{lookup\-\_\-spell\-\_\-id} (char $\ast$name)
+\item 
+char $\ast$ \hyperlink{mysql_8cpp_a6dcc22244511b5448e18809b96c184f7}{spell\-\_\-name\-\_\-lookup} (int id)
+\item 
+void \hyperlink{mysql_8cpp_a84a16f74790ef1711bc72fdb9b2aebda}{system\-\_\-log} (const char $\ast$str, \hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} error)
+\item 
+void \hyperlink{mysql_8cpp_a01e42a4af258a02453c8fac10dc70c8c}{player\-\_\-log} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$command, char $\ast$str)
+\item 
+void \hyperlink{mysql_8cpp_a8e1adf3c1bb2ba8d3a7442eaa44cdab4}{add\-\_\-profession\-\_\-skills} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$skill\-\_\-list)
+\item 
+char $\ast$ \hyperlink{mysql_8cpp_a998c847979582a91e61499e5658d621b}{get\-\_\-profession\-\_\-desc} (int prof\-\_\-id)
+\item 
+char $\ast$ \hyperlink{mysql_8cpp_a23cca08a2b5c7dd00f9aa298fd7c6fe6}{get\-\_\-profession\-\_\-choice} (int prof\-\_\-id, int num)
+\item 
+char $\ast$ \hyperlink{mysql_8cpp_ac603ec6016a719d659b7f38bc6b650e8}{get\-\_\-profession\-\_\-skills} (int prof\-\_\-id, int num, int i)
+\item 
+char $\ast$ \hyperlink{mysql_8cpp_ae66fae3fcd0b643ea863bd5ce62f7162}{get\-\_\-profession\-\_\-attr} (int prof\-\_\-id)
+\item 
+char $\ast$ \hyperlink{mysql_8cpp_ac34851c2b4adf3d6c6fcfa28be59e35d}{get\-\_\-profession\-\_\-name} (int prof\-\_\-id)
+\item 
+int \hyperlink{mysql_8cpp_a131871f499c3abe4c148bdea5b742eb9}{is\-\_\-restricted\-\_\-profession} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$skill\-\_\-list)
+\item 
+void \hyperlink{mysql_8cpp_a3f32d52238ecf568c8cd4b8765470d47}{do\-\_\-professions} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{mysql_8cpp_a296e3a15c1e588f4a0fff676958b12bd}{set\-\_\-hobbitmail\-\_\-flags} (int id, int flag)
+\item 
+void \hyperlink{mysql_8cpp_af8ee5883bbeb313894c3d39053f6ff8b}{update\-\_\-weapon\-\_\-skills} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj)
+\item 
+void \hyperlink{mysql_8cpp_abb445eaa983573345c1a97a8992bc0b1}{reload\-\_\-mob\-\_\-resets} (void)
+\item 
+std\-::string \hyperlink{mysql_8cpp_a13a842bc86faac00bf54558f74c615ba}{resolved\-\_\-host} (char $\ast$ip)
+\item 
+void \hyperlink{mysql_8cpp_a29655905775b9448eb00a106eca83034}{reload\-\_\-sitebans} ()
+\item 
+void \hyperlink{mysql_8cpp_a3278ec18aa411a3b2afe60a5848b1504}{save\-\_\-banned\-\_\-sites} ()
+\item 
+\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{mysql_8cpp_a4e531560710c83a8f6dce812f1c5fe25}{read\-\_\-saved\-\_\-obj} (M\-Y\-S\-Q\-L\-\_\-\-R\-O\-W row)
+\item 
+void \hyperlink{mysql_8cpp_a7a6d77d8ca7139040f6f71d0dd42cbe8}{load\-\_\-mysql\-\_\-save\-\_\-rooms} ()
+\item 
+int \hyperlink{mysql_8cpp_a736758e393cef0b498f9a58d1fd3edf7}{is\-\_\-newbie} (const \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+\hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} \hyperlink{mysql_8cpp_a55f447431b199d7c76ace0d3b01d53a0}{is\-\_\-newbie} (const char $\ast$account\-\_\-name)
+\item 
+int \hyperlink{mysql_8cpp_a8544e7f5e4d72ef5f9711efc210c51d8}{is\-\_\-yours} (const char $\ast$name, const char $\ast$account\-\_\-name)
+\item 
+int \hyperlink{mysql_8cpp_a3f56d630281e4e5d5988d37ecd9b4748}{is\-\_\-being\-\_\-reviewed} (const char $\ast$name, const char $\ast$account\-\_\-name)
+\item 
+int \hyperlink{mysql_8cpp_a05ae046a96809d5499bb8c8eadbfdc05}{is\-\_\-admin} (const char $\ast$username)
+\item 
+void \hyperlink{mysql_8cpp_a6fb9315b93bd728ae7aef4164bdfdf3a}{do\-\_\-history} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{mysql_8cpp_a822c7da4bf948df2cf9e1b259a235724}{do\-\_\-writings} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{mysql_8cpp_a1f371ce3a47b62f953528a3fb79669de}{load\-\_\-all\-\_\-writing} (void)
+\item 
+void \hyperlink{mysql_8cpp_abc749e1b4c9f707fe476639832841e7b}{load\-\_\-writing} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj)
+\item 
+void \hyperlink{mysql_8cpp_a6a083efd6c0624a89a6c457c3aac1b5a}{save\-\_\-writing} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj)
+\item 
+int \hyperlink{mysql_8cpp_acee513a8ab6e65f2c9dbdaea25480ffa}{unused\-\_\-writing\-\_\-id} (void)
+\item 
+void \hyperlink{mysql_8cpp_af0b09104b07db880c7a7e5816e0bbca3}{save\-\_\-dreams} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{mysql_8cpp_af34003ade0d0be9c1cf6df7a88bf0663}{load\-\_\-dreams} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{mysql_8cpp_a6a9482a1b26e450b6f5a120288797311}{perform\-\_\-pfile\-\_\-update} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{mysql_8cpp_ae9171cb9be8bddba74baa805be5df738}{process\-\_\-queued\-\_\-review} (M\-Y\-S\-Q\-L\-\_\-\-R\-O\-W row)
+\item 
+void \hyperlink{mysql_8cpp_a11de89739ba60f5809943f868c048fec}{process\-\_\-reviews} (void)
+\item 
+int \hyperlink{mysql_8cpp_aa2f1e5a40c4c055bd088796588ea6390}{num\-\_\-starting\-\_\-locs} (int race)
+\item 
+void \hyperlink{mysql_8cpp_af81d9fbdc614f22e1c0ccd1512427460}{apply\-\_\-race\-\_\-affects} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$tch)
+\item 
+void \hyperlink{mysql_8cpp_a587f1149dfc983be92da74af7252d91d}{refresh\-\_\-race\-\_\-configuration} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$tch)
+\item 
+\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{mysql_8cpp_ad7d4199955d570c98785a30b2438e02d}{load\-\_\-char\-\_\-mysql} (const char $\ast$name)
+\item 
+void \hyperlink{mysql_8cpp_afb22219f8b13bd0daa250e660b16550e}{save\-\_\-char\-\_\-mysql} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+int \hyperlink{mysql_8cpp_ab64b13be6bd3ec43734e9d26c530ea6a}{check\-\_\-account\-\_\-flags} (char $\ast$host)
+\item 
+char $\ast$ \hyperlink{mysql_8cpp_a867c8c44d705efb7e7c10727ffac8ea5}{reference\-\_\-ip} (char $\ast$guest\-\_\-name, char $\ast$host)
+\item 
+void \hyperlink{mysql_8cpp_a6ec88121aafe625d7859a47cd7579fc4}{load\-\_\-reboot\-\_\-mobiles} ()
+\item 
+void \hyperlink{mysql_8cpp_a294d4974ec3bc682c8b4756a6085d9b7}{load\-\_\-stayput\-\_\-mobiles} ()
+\item 
+void \hyperlink{mysql_8cpp_a803efc5d53d496e0035d25202351014c}{save\-\_\-reboot\-\_\-mobiles} ()
+\item 
+void \hyperlink{mysql_8cpp_abf1d215b17170ed634bed97f1e7ad66d}{save\-\_\-stayput\-\_\-mobiles} ()
+\item 
+void \hyperlink{mysql_8cpp_a98bef9c3ed4c1440436d64caba91780f}{insert\-\_\-newsletter\-\_\-into\-\_\-website} (int timestamp, char $\ast$newsletter)
+\item 
+void \hyperlink{mysql_8cpp_a3c164dff45aa67dcf33aa22a31885c52}{update\-\_\-website\-\_\-statistics} (void)
+\item 
+void \hyperlink{mysql_8cpp_aa892067ee46d0f489643c5517c031126}{load\-\_\-tracks} (void)
+\item 
+void \hyperlink{mysql_8cpp_a1d8a695614c158a935cf1736433260cf}{save\-\_\-tracks} (void)
+\item 
+void \hyperlink{mysql_8cpp_a263f0dead3574dd9d58f2dcfce826e8e}{save\-\_\-hobbitmail\-\_\-message} (\hyperlink{classaccount}{account} $\ast$acct, \hyperlink{structs_8h_a7bddf45d6afddee3794ae45b18620e5f}{M\-U\-D\-M\-A\-I\-L\-\_\-\-D\-A\-T\-A} $\ast$message)
+\item 
+void \hyperlink{mysql_8cpp_aae005360ee60dd134134e1cb0cfbe892}{mark\-\_\-as\-\_\-read} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int \hyperlink{utility_8cpp_a64e42eea1f3c3fbcb3e64b2c6c547428}{number})
+\item 
+void \hyperlink{mysql_8cpp_a6d6f93430fb6ae73a1d3d2e3fba2c448}{display\-\_\-mysql\-\_\-board\-\_\-message} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$board\-\_\-name, int msg\-\_\-num, \hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} b\-Hide\-Header)
+\item 
+char $\ast$ \hyperlink{mysql_8cpp_ad4ed8c8856a10092a5703c72577aadce}{retrieve\-\_\-mysql\-\_\-board\-\_\-message} (char $\ast$board\-\_\-name, int msg\-\_\-num)
+\item 
+void \hyperlink{mysql_8cpp_ab32c16c02d1e2693c908776f3a2ba134}{retrieve\-\_\-mysql\-\_\-board\-\_\-listing} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$board\-\_\-name)
+\item 
+void \hyperlink{mysql_8cpp_a97336e3b80b78a2b6b8cad36fea48d82}{post\-\_\-to\-\_\-mysql\-\_\-board} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d)
+\item 
+void \hyperlink{mysql_8cpp_a3565a6dbeae3c80a8ba206cc017385d4}{post\-\_\-straight\-\_\-to\-\_\-mysql\-\_\-board} (char $\ast$board\-\_\-name, char $\ast$title, char $\ast$author, char $\ast$msg)
+\item 
+void \hyperlink{mysql_8cpp_a44a760007702067367bc51d607bfc5ea}{do\-\_\-mysql} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+\hyperlink{net__link_8h_a6dcb25657cf374dfb1488686bd4c70b8}{M\-E\-S\-S\-A\-G\-E\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{mysql_8cpp_ac49791ea70dd5b247549bc7ca6bf908c}{load\-\_\-mysql\-\_\-message} (char $\ast$msg\-\_\-name, int board\-\_\-type, int msg\-\_\-number)
+\item 
+int \hyperlink{mysql_8cpp_aba305560d0e3098ca933094ac82e5a07}{erase\-\_\-mysql\-\_\-board\-\_\-post} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$name, int board\-\_\-type, char $\ast$argument)
+\item 
+int \hyperlink{mysql_8cpp_afd20bfac35571865d8ba8f2d315d262a}{get\-\_\-mysql\-\_\-board\-\_\-listing} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int board\-\_\-type, char $\ast$name)
+\item 
+void \hyperlink{mysql_8cpp_a18c94bfa5c7e437603d915f738107b17}{post\-\_\-to\-\_\-mysql\-\_\-virtual\-\_\-board} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d)
+\item 
+void \hyperlink{mysql_8cpp_a6f4d8bf3177651233b1b181b8d702b0d}{post\-\_\-to\-\_\-mysql\-\_\-journal} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d)
+\item 
+void \hyperlink{mysql_8cpp_a4562e981cd86e5ed9aca8f19d9da6ada}{post\-\_\-to\-\_\-mysql\-\_\-player\-\_\-board} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d)
+\item 
+void \hyperlink{mysql_8cpp_a2351a8704f8b966c4980e875b83348f1}{add\-\_\-message\-\_\-to\-\_\-mysql\-\_\-player\-\_\-notes} (const char $\ast$name, const char $\ast$poster, \hyperlink{net__link_8h_a6dcb25657cf374dfb1488686bd4c70b8}{M\-E\-S\-S\-A\-G\-E\-\_\-\-D\-A\-T\-A} $\ast$message)
+\item 
+void \hyperlink{mysql_8cpp_ad72746a4041fe2d3578d376d55a1e674}{add\-\_\-message\-\_\-to\-\_\-mysql\-\_\-vboard} (const char $\ast$name, const char $\ast$poster, \hyperlink{net__link_8h_a6dcb25657cf374dfb1488686bd4c70b8}{M\-E\-S\-S\-A\-G\-E\-\_\-\-D\-A\-T\-A} $\ast$message)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structs_8h_a80a16874fb7cfcb03a38218a0cdb90c1}{R\-A\-C\-E\-\_\-\-T\-A\-B\-L\-E\-\_\-\-E\-N\-T\-R\-Y} $\ast$ \hyperlink{mysql_8cpp_af8801d8b7c58111aa48639763d2cc9b6}{entry}
+\item 
+\hyperlink{structs_8h_a80a16874fb7cfcb03a38218a0cdb90c1}{R\-A\-C\-E\-\_\-\-T\-A\-B\-L\-E\-\_\-\-E\-N\-T\-R\-Y} $\ast$ \hyperlink{mysql_8cpp_a8fcb406a8f555748fdbd9e7fbde7e637}{race\-\_\-table} = N\-U\-L\-L
+\item 
+M\-Y\-S\-Q\-L $\ast$ \hyperlink{mysql_8cpp_a2268e9cf6f41e9588095db09ad3e5ac1}{database}
+\item 
+\hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} \hyperlink{mysql_8cpp_acdb55f5f8c8a46be02824126fe819acf}{mysql\-\_\-logging} = true
+\item 
+int \hyperlink{mysql_8cpp_ab4903bf695e3aa07975e4d1daa1e8312}{booting}
+\item 
+int \hyperlink{mysql_8cpp_a005b5a7d45ea7a8814064682a1fac032}{finished\-\_\-booting}
+\item 
+\hyperlink{classrpie_1_1server}{rpie\-::server} \hyperlink{mysql_8cpp_a55c71990ee4162ebec6abe401996cf15}{engine}
+\item 
+std\-::multimap$<$ int, \hyperlink{structroom__prog}{room\-\_\-prog} $>$ \hyperlink{mysql_8cpp_a6b52b20d33b731a299259fb542ca737d}{mob\-\_\-prog\-\_\-list}
+\item 
+std\-::multimap$<$ int, \hyperlink{structroom__prog}{room\-\_\-prog} $>$ \hyperlink{mysql_8cpp_aae764fe386f6d62720e9a5f6d31d59d3}{obj\-\_\-prog\-\_\-list}
+\item 
+std\-::multimap$<$ std\-::string, \\*
+\hyperlink{structroom__prog}{room\-\_\-prog} $>$ \hyperlink{mysql_8cpp_a39fd0cdb4bb68f290ba0ca60f6c35809}{craft\-\_\-prog\-\_\-list}
+\item 
+std\-::multimap$<$ int, \hyperlink{structvariable__data}{variable\-\_\-data} $>$ \hyperlink{mysql_8cpp_a0648ea431a490ba9090b5a71a099283b}{obj\-\_\-variable\-\_\-list}
+\item 
+std\-::multimap$<$ int, \\*
+\hyperlink{structmvariable__data}{mvariable\-\_\-data} $>$ \hyperlink{mysql_8cpp_ad26bde3c2f68d86ae308ee7c59e88223}{mvariable\-\_\-list}
+\item 
+std\-::multimap$<$ int, std\-::string $>$ \hyperlink{mysql_8cpp_a388a9b052cfa85e2de421c447839c258}{variable\-\_\-categories}
+\item 
+std\-::multimap$<$ int, std\-::string $>$ \hyperlink{mysql_8cpp_af577646b635687ef9f42d7a5308977c9}{mvariable\-\_\-categories}
+\item 
+std\-::vector$<$ \hyperlink{structforaged__good}{foraged\-\_\-good} $\ast$ $>$ \hyperlink{mysql_8cpp_a57a0639d605235c48cb733c1048869fe}{foraged\-\_\-goods\-\_\-list}
+\item 
+std\-::vector$<$ \hyperlink{classforaged__zone}{foraged\-\_\-zone} $\ast$ $>$ \hyperlink{mysql_8cpp_a317153a6279806876ffec52a24a8486d}{foraged\-\_\-zones\-\_\-list}
+\item 
+std\-::vector$<$ \hyperlink{structdefined__scent}{defined\-\_\-scent} $\ast$ $>$ \hyperlink{mysql_8cpp_a02c156366e7198466aa0335de3bd392e}{defined\-\_\-scent\-\_\-list}
+\item 
+std\-::vector$<$ \hyperlink{classarena__gladiators}{arena\-\_\-gladiators} $\ast$ $>$ \hyperlink{mysql_8cpp_a62b083c9d653a8867ba2f496cccc07dc}{arena\-\_\-gladiators\-\_\-list}
+\item 
+std\-::vector$<$ \hyperlink{classarena__fights}{arena\-\_\-fights} $\ast$ $>$ \hyperlink{mysql_8cpp_a151aa5fbb04e8ccc92d06102864e73ce}{arena\-\_\-fights\-\_\-list}
+\item 
+std\-::vector$<$ \hyperlink{classarena__bets}{arena\-\_\-bets} $\ast$ $>$ \hyperlink{mysql_8cpp_a0670a7d43859874e62fe67117cdb2c60}{arena\-\_\-bets\-\_\-list}
+\item 
+std\-::map$<$ int, \hyperlink{structmobile__ai}{mobile\-\_\-ai} $>$ \hyperlink{mysql_8cpp_a0ceb050e53a82d8dec4a75723cba0fee}{mob\-\_\-ai\-\_\-list}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{mysql_8cpp_a2351a8704f8b966c4980e875b83348f1}{\index{mysql.\-cpp@{mysql.\-cpp}!add\-\_\-message\-\_\-to\-\_\-mysql\-\_\-player\-\_\-notes@{add\-\_\-message\-\_\-to\-\_\-mysql\-\_\-player\-\_\-notes}}
+\index{add\-\_\-message\-\_\-to\-\_\-mysql\-\_\-player\-\_\-notes@{add\-\_\-message\-\_\-to\-\_\-mysql\-\_\-player\-\_\-notes}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{add\-\_\-message\-\_\-to\-\_\-mysql\-\_\-player\-\_\-notes}]{\setlength{\rightskip}{0pt plus 5cm}void add\-\_\-message\-\_\-to\-\_\-mysql\-\_\-player\-\_\-notes (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name, }
+\item[{const char $\ast$}]{poster, }
+\item[{{\bf M\-E\-S\-S\-A\-G\-E\-\_\-\-D\-A\-T\-A} $\ast$}]{message}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a2351a8704f8b966c4980e875b83348f1}
+\hypertarget{mysql_8cpp_ad72746a4041fe2d3578d376d55a1e674}{\index{mysql.\-cpp@{mysql.\-cpp}!add\-\_\-message\-\_\-to\-\_\-mysql\-\_\-vboard@{add\-\_\-message\-\_\-to\-\_\-mysql\-\_\-vboard}}
+\index{add\-\_\-message\-\_\-to\-\_\-mysql\-\_\-vboard@{add\-\_\-message\-\_\-to\-\_\-mysql\-\_\-vboard}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{add\-\_\-message\-\_\-to\-\_\-mysql\-\_\-vboard}]{\setlength{\rightskip}{0pt plus 5cm}void add\-\_\-message\-\_\-to\-\_\-mysql\-\_\-vboard (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name, }
+\item[{const char $\ast$}]{poster, }
+\item[{{\bf M\-E\-S\-S\-A\-G\-E\-\_\-\-D\-A\-T\-A} $\ast$}]{message}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_ad72746a4041fe2d3578d376d55a1e674}
+\hypertarget{mysql_8cpp_a8e1adf3c1bb2ba8d3a7442eaa44cdab4}{\index{mysql.\-cpp@{mysql.\-cpp}!add\-\_\-profession\-\_\-skills@{add\-\_\-profession\-\_\-skills}}
+\index{add\-\_\-profession\-\_\-skills@{add\-\_\-profession\-\_\-skills}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{add\-\_\-profession\-\_\-skills}]{\setlength{\rightskip}{0pt plus 5cm}void add\-\_\-profession\-\_\-skills (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{skill\-\_\-list}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a8e1adf3c1bb2ba8d3a7442eaa44cdab4}
+\hypertarget{mysql_8cpp_af81d9fbdc614f22e1c0ccd1512427460}{\index{mysql.\-cpp@{mysql.\-cpp}!apply\-\_\-race\-\_\-affects@{apply\-\_\-race\-\_\-affects}}
+\index{apply\-\_\-race\-\_\-affects@{apply\-\_\-race\-\_\-affects}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{apply\-\_\-race\-\_\-affects}]{\setlength{\rightskip}{0pt plus 5cm}void apply\-\_\-race\-\_\-affects (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{tch}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_af81d9fbdc614f22e1c0ccd1512427460}
+\hypertarget{mysql_8cpp_ab64b13be6bd3ec43734e9d26c530ea6a}{\index{mysql.\-cpp@{mysql.\-cpp}!check\-\_\-account\-\_\-flags@{check\-\_\-account\-\_\-flags}}
+\index{check\-\_\-account\-\_\-flags@{check\-\_\-account\-\_\-flags}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{check\-\_\-account\-\_\-flags}]{\setlength{\rightskip}{0pt plus 5cm}int check\-\_\-account\-\_\-flags (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{host}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_ab64b13be6bd3ec43734e9d26c530ea6a}
+\hypertarget{mysql_8cpp_a6d6f93430fb6ae73a1d3d2e3fba2c448}{\index{mysql.\-cpp@{mysql.\-cpp}!display\-\_\-mysql\-\_\-board\-\_\-message@{display\-\_\-mysql\-\_\-board\-\_\-message}}
+\index{display\-\_\-mysql\-\_\-board\-\_\-message@{display\-\_\-mysql\-\_\-board\-\_\-message}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{display\-\_\-mysql\-\_\-board\-\_\-message}]{\setlength{\rightskip}{0pt plus 5cm}void display\-\_\-mysql\-\_\-board\-\_\-message (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{board\-\_\-name, }
+\item[{int}]{msg\-\_\-num, }
+\item[{{\bf bool}}]{b\-Hide\-Header}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a6d6f93430fb6ae73a1d3d2e3fba2c448}
+\hypertarget{mysql_8cpp_a6fb9315b93bd728ae7aef4164bdfdf3a}{\index{mysql.\-cpp@{mysql.\-cpp}!do\-\_\-history@{do\-\_\-history}}
+\index{do\-\_\-history@{do\-\_\-history}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{do\-\_\-history}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-history (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a6fb9315b93bd728ae7aef4164bdfdf3a}
+\hypertarget{mysql_8cpp_a44a760007702067367bc51d607bfc5ea}{\index{mysql.\-cpp@{mysql.\-cpp}!do\-\_\-mysql@{do\-\_\-mysql}}
+\index{do\-\_\-mysql@{do\-\_\-mysql}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{do\-\_\-mysql}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-mysql (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a44a760007702067367bc51d607bfc5ea}
+\hypertarget{mysql_8cpp_a3f32d52238ecf568c8cd4b8765470d47}{\index{mysql.\-cpp@{mysql.\-cpp}!do\-\_\-professions@{do\-\_\-professions}}
+\index{do\-\_\-professions@{do\-\_\-professions}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{do\-\_\-professions}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-professions (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a3f32d52238ecf568c8cd4b8765470d47}
+\hypertarget{mysql_8cpp_a822c7da4bf948df2cf9e1b259a235724}{\index{mysql.\-cpp@{mysql.\-cpp}!do\-\_\-writings@{do\-\_\-writings}}
+\index{do\-\_\-writings@{do\-\_\-writings}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{do\-\_\-writings}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-writings (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a822c7da4bf948df2cf9e1b259a235724}
+\hypertarget{mysql_8cpp_aba305560d0e3098ca933094ac82e5a07}{\index{mysql.\-cpp@{mysql.\-cpp}!erase\-\_\-mysql\-\_\-board\-\_\-post@{erase\-\_\-mysql\-\_\-board\-\_\-post}}
+\index{erase\-\_\-mysql\-\_\-board\-\_\-post@{erase\-\_\-mysql\-\_\-board\-\_\-post}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{erase\-\_\-mysql\-\_\-board\-\_\-post}]{\setlength{\rightskip}{0pt plus 5cm}int erase\-\_\-mysql\-\_\-board\-\_\-post (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{name, }
+\item[{int}]{board\-\_\-type, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_aba305560d0e3098ca933094ac82e5a07}
+\hypertarget{mysql_8cpp_afd20bfac35571865d8ba8f2d315d262a}{\index{mysql.\-cpp@{mysql.\-cpp}!get\-\_\-mysql\-\_\-board\-\_\-listing@{get\-\_\-mysql\-\_\-board\-\_\-listing}}
+\index{get\-\_\-mysql\-\_\-board\-\_\-listing@{get\-\_\-mysql\-\_\-board\-\_\-listing}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{get\-\_\-mysql\-\_\-board\-\_\-listing}]{\setlength{\rightskip}{0pt plus 5cm}int get\-\_\-mysql\-\_\-board\-\_\-listing (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{board\-\_\-type, }
+\item[{char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_afd20bfac35571865d8ba8f2d315d262a}
+\hypertarget{mysql_8cpp_ae66fae3fcd0b643ea863bd5ce62f7162}{\index{mysql.\-cpp@{mysql.\-cpp}!get\-\_\-profession\-\_\-attr@{get\-\_\-profession\-\_\-attr}}
+\index{get\-\_\-profession\-\_\-attr@{get\-\_\-profession\-\_\-attr}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{get\-\_\-profession\-\_\-attr}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ get\-\_\-profession\-\_\-attr (
+\begin{DoxyParamCaption}
+\item[{int}]{prof\-\_\-id}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_ae66fae3fcd0b643ea863bd5ce62f7162}
+\hypertarget{mysql_8cpp_a23cca08a2b5c7dd00f9aa298fd7c6fe6}{\index{mysql.\-cpp@{mysql.\-cpp}!get\-\_\-profession\-\_\-choice@{get\-\_\-profession\-\_\-choice}}
+\index{get\-\_\-profession\-\_\-choice@{get\-\_\-profession\-\_\-choice}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{get\-\_\-profession\-\_\-choice}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ get\-\_\-profession\-\_\-choice (
+\begin{DoxyParamCaption}
+\item[{int}]{prof\-\_\-id, }
+\item[{int}]{num}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a23cca08a2b5c7dd00f9aa298fd7c6fe6}
+\hypertarget{mysql_8cpp_a998c847979582a91e61499e5658d621b}{\index{mysql.\-cpp@{mysql.\-cpp}!get\-\_\-profession\-\_\-desc@{get\-\_\-profession\-\_\-desc}}
+\index{get\-\_\-profession\-\_\-desc@{get\-\_\-profession\-\_\-desc}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{get\-\_\-profession\-\_\-desc}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ get\-\_\-profession\-\_\-desc (
+\begin{DoxyParamCaption}
+\item[{int}]{prof\-\_\-id}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a998c847979582a91e61499e5658d621b}
+\hypertarget{mysql_8cpp_ac34851c2b4adf3d6c6fcfa28be59e35d}{\index{mysql.\-cpp@{mysql.\-cpp}!get\-\_\-profession\-\_\-name@{get\-\_\-profession\-\_\-name}}
+\index{get\-\_\-profession\-\_\-name@{get\-\_\-profession\-\_\-name}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{get\-\_\-profession\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ get\-\_\-profession\-\_\-name (
+\begin{DoxyParamCaption}
+\item[{int}]{prof\-\_\-id}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_ac34851c2b4adf3d6c6fcfa28be59e35d}
+\hypertarget{mysql_8cpp_ac603ec6016a719d659b7f38bc6b650e8}{\index{mysql.\-cpp@{mysql.\-cpp}!get\-\_\-profession\-\_\-skills@{get\-\_\-profession\-\_\-skills}}
+\index{get\-\_\-profession\-\_\-skills@{get\-\_\-profession\-\_\-skills}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{get\-\_\-profession\-\_\-skills}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ get\-\_\-profession\-\_\-skills (
+\begin{DoxyParamCaption}
+\item[{int}]{prof\-\_\-id, }
+\item[{int}]{num, }
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_ac603ec6016a719d659b7f38bc6b650e8}
+\hypertarget{mysql_8cpp_a62bf033abb6943179075d36f983c2c49}{\index{mysql.\-cpp@{mysql.\-cpp}!init\-\_\-mysql@{init\-\_\-mysql}}
+\index{init\-\_\-mysql@{init\-\_\-mysql}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{init\-\_\-mysql}]{\setlength{\rightskip}{0pt plus 5cm}void init\-\_\-mysql (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a62bf033abb6943179075d36f983c2c49}
+\hypertarget{mysql_8cpp_a98bef9c3ed4c1440436d64caba91780f}{\index{mysql.\-cpp@{mysql.\-cpp}!insert\-\_\-newsletter\-\_\-into\-\_\-website@{insert\-\_\-newsletter\-\_\-into\-\_\-website}}
+\index{insert\-\_\-newsletter\-\_\-into\-\_\-website@{insert\-\_\-newsletter\-\_\-into\-\_\-website}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{insert\-\_\-newsletter\-\_\-into\-\_\-website}]{\setlength{\rightskip}{0pt plus 5cm}void insert\-\_\-newsletter\-\_\-into\-\_\-website (
+\begin{DoxyParamCaption}
+\item[{int}]{timestamp, }
+\item[{char $\ast$}]{newsletter}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a98bef9c3ed4c1440436d64caba91780f}
+\hypertarget{mysql_8cpp_a05ae046a96809d5499bb8c8eadbfdc05}{\index{mysql.\-cpp@{mysql.\-cpp}!is\-\_\-admin@{is\-\_\-admin}}
+\index{is\-\_\-admin@{is\-\_\-admin}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{is\-\_\-admin}]{\setlength{\rightskip}{0pt plus 5cm}int is\-\_\-admin (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{username}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a05ae046a96809d5499bb8c8eadbfdc05}
+\hypertarget{mysql_8cpp_a3f56d630281e4e5d5988d37ecd9b4748}{\index{mysql.\-cpp@{mysql.\-cpp}!is\-\_\-being\-\_\-reviewed@{is\-\_\-being\-\_\-reviewed}}
+\index{is\-\_\-being\-\_\-reviewed@{is\-\_\-being\-\_\-reviewed}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{is\-\_\-being\-\_\-reviewed}]{\setlength{\rightskip}{0pt plus 5cm}int is\-\_\-being\-\_\-reviewed (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name, }
+\item[{const char $\ast$}]{account\-\_\-name}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a3f56d630281e4e5d5988d37ecd9b4748}
+\hypertarget{mysql_8cpp_a736758e393cef0b498f9a58d1fd3edf7}{\index{mysql.\-cpp@{mysql.\-cpp}!is\-\_\-newbie@{is\-\_\-newbie}}
+\index{is\-\_\-newbie@{is\-\_\-newbie}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{is\-\_\-newbie}]{\setlength{\rightskip}{0pt plus 5cm}int is\-\_\-newbie (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a736758e393cef0b498f9a58d1fd3edf7}
+\hypertarget{mysql_8cpp_a55f447431b199d7c76ace0d3b01d53a0}{\index{mysql.\-cpp@{mysql.\-cpp}!is\-\_\-newbie@{is\-\_\-newbie}}
+\index{is\-\_\-newbie@{is\-\_\-newbie}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{is\-\_\-newbie}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} is\-\_\-newbie (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{account\-\_\-name}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a55f447431b199d7c76ace0d3b01d53a0}
+\hypertarget{mysql_8cpp_a131871f499c3abe4c148bdea5b742eb9}{\index{mysql.\-cpp@{mysql.\-cpp}!is\-\_\-restricted\-\_\-profession@{is\-\_\-restricted\-\_\-profession}}
+\index{is\-\_\-restricted\-\_\-profession@{is\-\_\-restricted\-\_\-profession}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{is\-\_\-restricted\-\_\-profession}]{\setlength{\rightskip}{0pt plus 5cm}int is\-\_\-restricted\-\_\-profession (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{skill\-\_\-list}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a131871f499c3abe4c148bdea5b742eb9}
+\hypertarget{mysql_8cpp_a8544e7f5e4d72ef5f9711efc210c51d8}{\index{mysql.\-cpp@{mysql.\-cpp}!is\-\_\-yours@{is\-\_\-yours}}
+\index{is\-\_\-yours@{is\-\_\-yours}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{is\-\_\-yours}]{\setlength{\rightskip}{0pt plus 5cm}int is\-\_\-yours (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name, }
+\item[{const char $\ast$}]{account\-\_\-name}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a8544e7f5e4d72ef5f9711efc210c51d8}
+\hypertarget{mysql_8cpp_a1f371ce3a47b62f953528a3fb79669de}{\index{mysql.\-cpp@{mysql.\-cpp}!load\-\_\-all\-\_\-writing@{load\-\_\-all\-\_\-writing}}
+\index{load\-\_\-all\-\_\-writing@{load\-\_\-all\-\_\-writing}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{load\-\_\-all\-\_\-writing}]{\setlength{\rightskip}{0pt plus 5cm}void load\-\_\-all\-\_\-writing (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a1f371ce3a47b62f953528a3fb79669de}
+\hypertarget{mysql_8cpp_ad7d4199955d570c98785a30b2438e02d}{\index{mysql.\-cpp@{mysql.\-cpp}!load\-\_\-char\-\_\-mysql@{load\-\_\-char\-\_\-mysql}}
+\index{load\-\_\-char\-\_\-mysql@{load\-\_\-char\-\_\-mysql}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{load\-\_\-char\-\_\-mysql}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A}$\ast$ load\-\_\-char\-\_\-mysql (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_ad7d4199955d570c98785a30b2438e02d}
+\hypertarget{mysql_8cpp_aec6a4a792abad1eab9c77301416fa7de}{\index{mysql.\-cpp@{mysql.\-cpp}!load\-\_\-craft\-\_\-progs@{load\-\_\-craft\-\_\-progs}}
+\index{load\-\_\-craft\-\_\-progs@{load\-\_\-craft\-\_\-progs}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{load\-\_\-craft\-\_\-progs}]{\setlength{\rightskip}{0pt plus 5cm}void load\-\_\-craft\-\_\-progs (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_aec6a4a792abad1eab9c77301416fa7de}
+\hypertarget{mysql_8cpp_ac7084ac69383ec308f89ad5de2f8a371}{\index{mysql.\-cpp@{mysql.\-cpp}!load\-\_\-defined\-\_\-scents@{load\-\_\-defined\-\_\-scents}}
+\index{load\-\_\-defined\-\_\-scents@{load\-\_\-defined\-\_\-scents}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{load\-\_\-defined\-\_\-scents}]{\setlength{\rightskip}{0pt plus 5cm}void load\-\_\-defined\-\_\-scents (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_ac7084ac69383ec308f89ad5de2f8a371}
+\hypertarget{mysql_8cpp_af34003ade0d0be9c1cf6df7a88bf0663}{\index{mysql.\-cpp@{mysql.\-cpp}!load\-\_\-dreams@{load\-\_\-dreams}}
+\index{load\-\_\-dreams@{load\-\_\-dreams}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{load\-\_\-dreams}]{\setlength{\rightskip}{0pt plus 5cm}void load\-\_\-dreams (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_af34003ade0d0be9c1cf6df7a88bf0663}
+\hypertarget{mysql_8cpp_adecf05c818d5b6d3934c2e73aba96021}{\index{mysql.\-cpp@{mysql.\-cpp}!load\-\_\-foraged\-\_\-goods@{load\-\_\-foraged\-\_\-goods}}
+\index{load\-\_\-foraged\-\_\-goods@{load\-\_\-foraged\-\_\-goods}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{load\-\_\-foraged\-\_\-goods}]{\setlength{\rightskip}{0pt plus 5cm}void load\-\_\-foraged\-\_\-goods (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_adecf05c818d5b6d3934c2e73aba96021}
+\hypertarget{mysql_8cpp_a2ba2e3a155b35c1491d311be6a4c6903}{\index{mysql.\-cpp@{mysql.\-cpp}!load\-\_\-foraged\-\_\-zone\-\_\-info@{load\-\_\-foraged\-\_\-zone\-\_\-info}}
+\index{load\-\_\-foraged\-\_\-zone\-\_\-info@{load\-\_\-foraged\-\_\-zone\-\_\-info}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{load\-\_\-foraged\-\_\-zone\-\_\-info}]{\setlength{\rightskip}{0pt plus 5cm}void load\-\_\-foraged\-\_\-zone\-\_\-info (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a2ba2e3a155b35c1491d311be6a4c6903}
+\hypertarget{mysql_8cpp_a364531db807ef388609ad7101cb6f56b}{\index{mysql.\-cpp@{mysql.\-cpp}!load\-\_\-mob\-\_\-ais@{load\-\_\-mob\-\_\-ais}}
+\index{load\-\_\-mob\-\_\-ais@{load\-\_\-mob\-\_\-ais}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{load\-\_\-mob\-\_\-ais}]{\setlength{\rightskip}{0pt plus 5cm}void load\-\_\-mob\-\_\-ais (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a364531db807ef388609ad7101cb6f56b}
+\hypertarget{mysql_8cpp_a8e2223aad926a3f846f1e9920b02c878}{\index{mysql.\-cpp@{mysql.\-cpp}!load\-\_\-mob\-\_\-progs@{load\-\_\-mob\-\_\-progs}}
+\index{load\-\_\-mob\-\_\-progs@{load\-\_\-mob\-\_\-progs}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{load\-\_\-mob\-\_\-progs}]{\setlength{\rightskip}{0pt plus 5cm}void load\-\_\-mob\-\_\-progs (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a8e2223aad926a3f846f1e9920b02c878}
+\hypertarget{mysql_8cpp_a3b58869a6de251c78408ce31ef316912}{\index{mysql.\-cpp@{mysql.\-cpp}!load\-\_\-mob\-\_\-variables@{load\-\_\-mob\-\_\-variables}}
+\index{load\-\_\-mob\-\_\-variables@{load\-\_\-mob\-\_\-variables}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{load\-\_\-mob\-\_\-variables}]{\setlength{\rightskip}{0pt plus 5cm}void load\-\_\-mob\-\_\-variables (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a3b58869a6de251c78408ce31ef316912}
+\hypertarget{mysql_8cpp_ac49791ea70dd5b247549bc7ca6bf908c}{\index{mysql.\-cpp@{mysql.\-cpp}!load\-\_\-mysql\-\_\-message@{load\-\_\-mysql\-\_\-message}}
+\index{load\-\_\-mysql\-\_\-message@{load\-\_\-mysql\-\_\-message}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{load\-\_\-mysql\-\_\-message}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\-E\-S\-S\-A\-G\-E\-\_\-\-D\-A\-T\-A}$\ast$ load\-\_\-mysql\-\_\-message (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{msg\-\_\-name, }
+\item[{int}]{board\-\_\-type, }
+\item[{int}]{msg\-\_\-number}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_ac49791ea70dd5b247549bc7ca6bf908c}
+\hypertarget{mysql_8cpp_a7a6d77d8ca7139040f6f71d0dd42cbe8}{\index{mysql.\-cpp@{mysql.\-cpp}!load\-\_\-mysql\-\_\-save\-\_\-rooms@{load\-\_\-mysql\-\_\-save\-\_\-rooms}}
+\index{load\-\_\-mysql\-\_\-save\-\_\-rooms@{load\-\_\-mysql\-\_\-save\-\_\-rooms}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{load\-\_\-mysql\-\_\-save\-\_\-rooms}]{\setlength{\rightskip}{0pt plus 5cm}void load\-\_\-mysql\-\_\-save\-\_\-rooms (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a7a6d77d8ca7139040f6f71d0dd42cbe8}
+\hypertarget{mysql_8cpp_a555405b7dd9298097c45c980551dd9b2}{\index{mysql.\-cpp@{mysql.\-cpp}!load\-\_\-obj\-\_\-progs@{load\-\_\-obj\-\_\-progs}}
+\index{load\-\_\-obj\-\_\-progs@{load\-\_\-obj\-\_\-progs}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{load\-\_\-obj\-\_\-progs}]{\setlength{\rightskip}{0pt plus 5cm}void load\-\_\-obj\-\_\-progs (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a555405b7dd9298097c45c980551dd9b2}
+\hypertarget{mysql_8cpp_aeb8553b184225f7c7953af8de04f3237}{\index{mysql.\-cpp@{mysql.\-cpp}!load\-\_\-obj\-\_\-variables@{load\-\_\-obj\-\_\-variables}}
+\index{load\-\_\-obj\-\_\-variables@{load\-\_\-obj\-\_\-variables}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{load\-\_\-obj\-\_\-variables}]{\setlength{\rightskip}{0pt plus 5cm}void load\-\_\-obj\-\_\-variables (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_aeb8553b184225f7c7953af8de04f3237}
+\hypertarget{mysql_8cpp_a026c7a05383e7c43cc9c22343528a758}{\index{mysql.\-cpp@{mysql.\-cpp}!load\-\_\-race\-\_\-table@{load\-\_\-race\-\_\-table}}
+\index{load\-\_\-race\-\_\-table@{load\-\_\-race\-\_\-table}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{load\-\_\-race\-\_\-table}]{\setlength{\rightskip}{0pt plus 5cm}void load\-\_\-race\-\_\-table (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a026c7a05383e7c43cc9c22343528a758}
+\hypertarget{mysql_8cpp_a6ec88121aafe625d7859a47cd7579fc4}{\index{mysql.\-cpp@{mysql.\-cpp}!load\-\_\-reboot\-\_\-mobiles@{load\-\_\-reboot\-\_\-mobiles}}
+\index{load\-\_\-reboot\-\_\-mobiles@{load\-\_\-reboot\-\_\-mobiles}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{load\-\_\-reboot\-\_\-mobiles}]{\setlength{\rightskip}{0pt plus 5cm}void load\-\_\-reboot\-\_\-mobiles (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a6ec88121aafe625d7859a47cd7579fc4}
+\hypertarget{mysql_8cpp_a294d4974ec3bc682c8b4756a6085d9b7}{\index{mysql.\-cpp@{mysql.\-cpp}!load\-\_\-stayput\-\_\-mobiles@{load\-\_\-stayput\-\_\-mobiles}}
+\index{load\-\_\-stayput\-\_\-mobiles@{load\-\_\-stayput\-\_\-mobiles}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{load\-\_\-stayput\-\_\-mobiles}]{\setlength{\rightskip}{0pt plus 5cm}void load\-\_\-stayput\-\_\-mobiles (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a294d4974ec3bc682c8b4756a6085d9b7}
+\hypertarget{mysql_8cpp_aa892067ee46d0f489643c5517c031126}{\index{mysql.\-cpp@{mysql.\-cpp}!load\-\_\-tracks@{load\-\_\-tracks}}
+\index{load\-\_\-tracks@{load\-\_\-tracks}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{load\-\_\-tracks}]{\setlength{\rightskip}{0pt plus 5cm}void load\-\_\-tracks (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_aa892067ee46d0f489643c5517c031126}
+\hypertarget{mysql_8cpp_abc749e1b4c9f707fe476639832841e7b}{\index{mysql.\-cpp@{mysql.\-cpp}!load\-\_\-writing@{load\-\_\-writing}}
+\index{load\-\_\-writing@{load\-\_\-writing}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{load\-\_\-writing}]{\setlength{\rightskip}{0pt plus 5cm}void load\-\_\-writing (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_abc749e1b4c9f707fe476639832841e7b}
+\hypertarget{mysql_8cpp_ad560fe47bc55a30e288307bbcb76c907}{\index{mysql.\-cpp@{mysql.\-cpp}!lookup\-\_\-poison\-\_\-variable@{lookup\-\_\-poison\-\_\-variable}}
+\index{lookup\-\_\-poison\-\_\-variable@{lookup\-\_\-poison\-\_\-variable}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{lookup\-\_\-poison\-\_\-variable}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ lookup\-\_\-poison\-\_\-variable (
+\begin{DoxyParamCaption}
+\item[{int}]{id, }
+\item[{int}]{which\-\_\-var}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_ad560fe47bc55a30e288307bbcb76c907}
+\hypertarget{mysql_8cpp_a163d6f4e8a426c6e2cf18c0f1c38af4c}{\index{mysql.\-cpp@{mysql.\-cpp}!lookup\-\_\-race\-\_\-id@{lookup\-\_\-race\-\_\-id}}
+\index{lookup\-\_\-race\-\_\-id@{lookup\-\_\-race\-\_\-id}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{lookup\-\_\-race\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}int lookup\-\_\-race\-\_\-id (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a163d6f4e8a426c6e2cf18c0f1c38af4c}
+\hypertarget{mysql_8cpp_a100d01b5334fe5d5d96085cb49277a6c}{\index{mysql.\-cpp@{mysql.\-cpp}!lookup\-\_\-race\-\_\-int@{lookup\-\_\-race\-\_\-int}}
+\index{lookup\-\_\-race\-\_\-int@{lookup\-\_\-race\-\_\-int}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{lookup\-\_\-race\-\_\-int}]{\setlength{\rightskip}{0pt plus 5cm}int lookup\-\_\-race\-\_\-int (
+\begin{DoxyParamCaption}
+\item[{int}]{id, }
+\item[{int}]{which\-\_\-var}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a100d01b5334fe5d5d96085cb49277a6c}
+\hypertarget{mysql_8cpp_acdd33aa567998442b38bdb1ad20aad5d}{\index{mysql.\-cpp@{mysql.\-cpp}!lookup\-\_\-race\-\_\-variable@{lookup\-\_\-race\-\_\-variable}}
+\index{lookup\-\_\-race\-\_\-variable@{lookup\-\_\-race\-\_\-variable}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{lookup\-\_\-race\-\_\-variable}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ lookup\-\_\-race\-\_\-variable (
+\begin{DoxyParamCaption}
+\item[{int}]{id, }
+\item[{int}]{which\-\_\-var}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_acdd33aa567998442b38bdb1ad20aad5d}
+\hypertarget{mysql_8cpp_a4c055732a5df35ccf5d1bff2d1c39590}{\index{mysql.\-cpp@{mysql.\-cpp}!lookup\-\_\-spell\-\_\-id@{lookup\-\_\-spell\-\_\-id}}
+\index{lookup\-\_\-spell\-\_\-id@{lookup\-\_\-spell\-\_\-id}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{lookup\-\_\-spell\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}int lookup\-\_\-spell\-\_\-id (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a4c055732a5df35ccf5d1bff2d1c39590}
+\hypertarget{mysql_8cpp_af561028471302cd971ad535cd8c1d462}{\index{mysql.\-cpp@{mysql.\-cpp}!lookup\-\_\-spell\-\_\-variable@{lookup\-\_\-spell\-\_\-variable}}
+\index{lookup\-\_\-spell\-\_\-variable@{lookup\-\_\-spell\-\_\-variable}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{lookup\-\_\-spell\-\_\-variable}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ lookup\-\_\-spell\-\_\-variable (
+\begin{DoxyParamCaption}
+\item[{int}]{id, }
+\item[{int}]{which\-\_\-var}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_af561028471302cd971ad535cd8c1d462}
+\hypertarget{mysql_8cpp_aae005360ee60dd134134e1cb0cfbe892}{\index{mysql.\-cpp@{mysql.\-cpp}!mark\-\_\-as\-\_\-read@{mark\-\_\-as\-\_\-read}}
+\index{mark\-\_\-as\-\_\-read@{mark\-\_\-as\-\_\-read}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{mark\-\_\-as\-\_\-read}]{\setlength{\rightskip}{0pt plus 5cm}void mark\-\_\-as\-\_\-read (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{number}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_aae005360ee60dd134134e1cb0cfbe892}
+\hypertarget{mysql_8cpp_a29f15279aed1ccef891628652c707c6f}{\index{mysql.\-cpp@{mysql.\-cpp}!mysql\-\_\-player\-\_\-search@{mysql\-\_\-player\-\_\-search}}
+\index{mysql\-\_\-player\-\_\-search@{mysql\-\_\-player\-\_\-search}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{mysql\-\_\-player\-\_\-search}]{\setlength{\rightskip}{0pt plus 5cm}M\-Y\-S\-Q\-L\-\_\-\-R\-E\-S$\ast$ mysql\-\_\-player\-\_\-search (
+\begin{DoxyParamCaption}
+\item[{int}]{search\-\_\-type, }
+\item[{char $\ast$}]{string, }
+\item[{int}]{timeframe}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a29f15279aed1ccef891628652c707c6f}
+\hypertarget{mysql_8cpp_a240ac79e1082dc0b5ace512da8dd0cb5}{\index{mysql.\-cpp@{mysql.\-cpp}!mysql\-\_\-safe\-\_\-query@{mysql\-\_\-safe\-\_\-query}}
+\index{mysql\-\_\-safe\-\_\-query@{mysql\-\_\-safe\-\_\-query}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{mysql\-\_\-safe\-\_\-query}]{\setlength{\rightskip}{0pt plus 5cm}int mysql\-\_\-safe\-\_\-query (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{fmt, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a240ac79e1082dc0b5ace512da8dd0cb5}
+\hypertarget{mysql_8cpp_aa2f1e5a40c4c055bd088796588ea6390}{\index{mysql.\-cpp@{mysql.\-cpp}!num\-\_\-starting\-\_\-locs@{num\-\_\-starting\-\_\-locs}}
+\index{num\-\_\-starting\-\_\-locs@{num\-\_\-starting\-\_\-locs}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{num\-\_\-starting\-\_\-locs}]{\setlength{\rightskip}{0pt plus 5cm}int num\-\_\-starting\-\_\-locs (
+\begin{DoxyParamCaption}
+\item[{int}]{race}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_aa2f1e5a40c4c055bd088796588ea6390}
+\hypertarget{mysql_8cpp_a6a9482a1b26e450b6f5a120288797311}{\index{mysql.\-cpp@{mysql.\-cpp}!perform\-\_\-pfile\-\_\-update@{perform\-\_\-pfile\-\_\-update}}
+\index{perform\-\_\-pfile\-\_\-update@{perform\-\_\-pfile\-\_\-update}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{perform\-\_\-pfile\-\_\-update}]{\setlength{\rightskip}{0pt plus 5cm}void perform\-\_\-pfile\-\_\-update (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a6a9482a1b26e450b6f5a120288797311}
+\hypertarget{mysql_8cpp_a01e42a4af258a02453c8fac10dc70c8c}{\index{mysql.\-cpp@{mysql.\-cpp}!player\-\_\-log@{player\-\_\-log}}
+\index{player\-\_\-log@{player\-\_\-log}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{player\-\_\-log}]{\setlength{\rightskip}{0pt plus 5cm}void player\-\_\-log (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{command, }
+\item[{char $\ast$}]{str}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a01e42a4af258a02453c8fac10dc70c8c}
+\hypertarget{mysql_8cpp_a3565a6dbeae3c80a8ba206cc017385d4}{\index{mysql.\-cpp@{mysql.\-cpp}!post\-\_\-straight\-\_\-to\-\_\-mysql\-\_\-board@{post\-\_\-straight\-\_\-to\-\_\-mysql\-\_\-board}}
+\index{post\-\_\-straight\-\_\-to\-\_\-mysql\-\_\-board@{post\-\_\-straight\-\_\-to\-\_\-mysql\-\_\-board}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{post\-\_\-straight\-\_\-to\-\_\-mysql\-\_\-board}]{\setlength{\rightskip}{0pt plus 5cm}void post\-\_\-straight\-\_\-to\-\_\-mysql\-\_\-board (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{board\-\_\-name, }
+\item[{char $\ast$}]{title, }
+\item[{char $\ast$}]{author, }
+\item[{char $\ast$}]{msg}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a3565a6dbeae3c80a8ba206cc017385d4}
+\hypertarget{mysql_8cpp_a97336e3b80b78a2b6b8cad36fea48d82}{\index{mysql.\-cpp@{mysql.\-cpp}!post\-\_\-to\-\_\-mysql\-\_\-board@{post\-\_\-to\-\_\-mysql\-\_\-board}}
+\index{post\-\_\-to\-\_\-mysql\-\_\-board@{post\-\_\-to\-\_\-mysql\-\_\-board}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{post\-\_\-to\-\_\-mysql\-\_\-board}]{\setlength{\rightskip}{0pt plus 5cm}void post\-\_\-to\-\_\-mysql\-\_\-board (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a97336e3b80b78a2b6b8cad36fea48d82}
+\hypertarget{mysql_8cpp_a6f4d8bf3177651233b1b181b8d702b0d}{\index{mysql.\-cpp@{mysql.\-cpp}!post\-\_\-to\-\_\-mysql\-\_\-journal@{post\-\_\-to\-\_\-mysql\-\_\-journal}}
+\index{post\-\_\-to\-\_\-mysql\-\_\-journal@{post\-\_\-to\-\_\-mysql\-\_\-journal}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{post\-\_\-to\-\_\-mysql\-\_\-journal}]{\setlength{\rightskip}{0pt plus 5cm}void post\-\_\-to\-\_\-mysql\-\_\-journal (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a6f4d8bf3177651233b1b181b8d702b0d}
+\hypertarget{mysql_8cpp_a4562e981cd86e5ed9aca8f19d9da6ada}{\index{mysql.\-cpp@{mysql.\-cpp}!post\-\_\-to\-\_\-mysql\-\_\-player\-\_\-board@{post\-\_\-to\-\_\-mysql\-\_\-player\-\_\-board}}
+\index{post\-\_\-to\-\_\-mysql\-\_\-player\-\_\-board@{post\-\_\-to\-\_\-mysql\-\_\-player\-\_\-board}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{post\-\_\-to\-\_\-mysql\-\_\-player\-\_\-board}]{\setlength{\rightskip}{0pt plus 5cm}void post\-\_\-to\-\_\-mysql\-\_\-player\-\_\-board (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a4562e981cd86e5ed9aca8f19d9da6ada}
+\hypertarget{mysql_8cpp_a18c94bfa5c7e437603d915f738107b17}{\index{mysql.\-cpp@{mysql.\-cpp}!post\-\_\-to\-\_\-mysql\-\_\-virtual\-\_\-board@{post\-\_\-to\-\_\-mysql\-\_\-virtual\-\_\-board}}
+\index{post\-\_\-to\-\_\-mysql\-\_\-virtual\-\_\-board@{post\-\_\-to\-\_\-mysql\-\_\-virtual\-\_\-board}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{post\-\_\-to\-\_\-mysql\-\_\-virtual\-\_\-board}]{\setlength{\rightskip}{0pt plus 5cm}void post\-\_\-to\-\_\-mysql\-\_\-virtual\-\_\-board (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a18c94bfa5c7e437603d915f738107b17}
+\hypertarget{mysql_8cpp_ae9171cb9be8bddba74baa805be5df738}{\index{mysql.\-cpp@{mysql.\-cpp}!process\-\_\-queued\-\_\-review@{process\-\_\-queued\-\_\-review}}
+\index{process\-\_\-queued\-\_\-review@{process\-\_\-queued\-\_\-review}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{process\-\_\-queued\-\_\-review}]{\setlength{\rightskip}{0pt plus 5cm}void process\-\_\-queued\-\_\-review (
+\begin{DoxyParamCaption}
+\item[{M\-Y\-S\-Q\-L\-\_\-\-R\-O\-W}]{row}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_ae9171cb9be8bddba74baa805be5df738}
+\hypertarget{mysql_8cpp_a11de89739ba60f5809943f868c048fec}{\index{mysql.\-cpp@{mysql.\-cpp}!process\-\_\-reviews@{process\-\_\-reviews}}
+\index{process\-\_\-reviews@{process\-\_\-reviews}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{process\-\_\-reviews}]{\setlength{\rightskip}{0pt plus 5cm}void process\-\_\-reviews (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a11de89739ba60f5809943f868c048fec}
+\hypertarget{mysql_8cpp_a4e531560710c83a8f6dce812f1c5fe25}{\index{mysql.\-cpp@{mysql.\-cpp}!read\-\_\-saved\-\_\-obj@{read\-\_\-saved\-\_\-obj}}
+\index{read\-\_\-saved\-\_\-obj@{read\-\_\-saved\-\_\-obj}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{read\-\_\-saved\-\_\-obj}]{\setlength{\rightskip}{0pt plus 5cm}{\bf O\-B\-J\-\_\-\-D\-A\-T\-A}$\ast$ read\-\_\-saved\-\_\-obj (
+\begin{DoxyParamCaption}
+\item[{M\-Y\-S\-Q\-L\-\_\-\-R\-O\-W}]{row}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a4e531560710c83a8f6dce812f1c5fe25}
+\hypertarget{mysql_8cpp_a867c8c44d705efb7e7c10727ffac8ea5}{\index{mysql.\-cpp@{mysql.\-cpp}!reference\-\_\-ip@{reference\-\_\-ip}}
+\index{reference\-\_\-ip@{reference\-\_\-ip}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{reference\-\_\-ip}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ reference\-\_\-ip (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{guest\-\_\-name, }
+\item[{char $\ast$}]{host}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a867c8c44d705efb7e7c10727ffac8ea5}
+\hypertarget{mysql_8cpp_a69180cdf0502ee2c2e9e86a7c2912e61}{\index{mysql.\-cpp@{mysql.\-cpp}!refresh\-\_\-db\-\_\-connection@{refresh\-\_\-db\-\_\-connection}}
+\index{refresh\-\_\-db\-\_\-connection@{refresh\-\_\-db\-\_\-connection}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{refresh\-\_\-db\-\_\-connection}]{\setlength{\rightskip}{0pt plus 5cm}void refresh\-\_\-db\-\_\-connection (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a69180cdf0502ee2c2e9e86a7c2912e61}
+\hypertarget{mysql_8cpp_a587f1149dfc983be92da74af7252d91d}{\index{mysql.\-cpp@{mysql.\-cpp}!refresh\-\_\-race\-\_\-configuration@{refresh\-\_\-race\-\_\-configuration}}
+\index{refresh\-\_\-race\-\_\-configuration@{refresh\-\_\-race\-\_\-configuration}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{refresh\-\_\-race\-\_\-configuration}]{\setlength{\rightskip}{0pt plus 5cm}void refresh\-\_\-race\-\_\-configuration (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{tch}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a587f1149dfc983be92da74af7252d91d}
+\hypertarget{mysql_8cpp_abb445eaa983573345c1a97a8992bc0b1}{\index{mysql.\-cpp@{mysql.\-cpp}!reload\-\_\-mob\-\_\-resets@{reload\-\_\-mob\-\_\-resets}}
+\index{reload\-\_\-mob\-\_\-resets@{reload\-\_\-mob\-\_\-resets}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{reload\-\_\-mob\-\_\-resets}]{\setlength{\rightskip}{0pt plus 5cm}void reload\-\_\-mob\-\_\-resets (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_abb445eaa983573345c1a97a8992bc0b1}
+\hypertarget{mysql_8cpp_a29655905775b9448eb00a106eca83034}{\index{mysql.\-cpp@{mysql.\-cpp}!reload\-\_\-sitebans@{reload\-\_\-sitebans}}
+\index{reload\-\_\-sitebans@{reload\-\_\-sitebans}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{reload\-\_\-sitebans}]{\setlength{\rightskip}{0pt plus 5cm}void reload\-\_\-sitebans (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a29655905775b9448eb00a106eca83034}
+\hypertarget{mysql_8cpp_a13a842bc86faac00bf54558f74c615ba}{\index{mysql.\-cpp@{mysql.\-cpp}!resolved\-\_\-host@{resolved\-\_\-host}}
+\index{resolved\-\_\-host@{resolved\-\_\-host}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{resolved\-\_\-host}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string resolved\-\_\-host (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{ip}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a13a842bc86faac00bf54558f74c615ba}
+\hypertarget{mysql_8cpp_ab32c16c02d1e2693c908776f3a2ba134}{\index{mysql.\-cpp@{mysql.\-cpp}!retrieve\-\_\-mysql\-\_\-board\-\_\-listing@{retrieve\-\_\-mysql\-\_\-board\-\_\-listing}}
+\index{retrieve\-\_\-mysql\-\_\-board\-\_\-listing@{retrieve\-\_\-mysql\-\_\-board\-\_\-listing}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{retrieve\-\_\-mysql\-\_\-board\-\_\-listing}]{\setlength{\rightskip}{0pt plus 5cm}void retrieve\-\_\-mysql\-\_\-board\-\_\-listing (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{board\-\_\-name}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_ab32c16c02d1e2693c908776f3a2ba134}
+\hypertarget{mysql_8cpp_ad4ed8c8856a10092a5703c72577aadce}{\index{mysql.\-cpp@{mysql.\-cpp}!retrieve\-\_\-mysql\-\_\-board\-\_\-message@{retrieve\-\_\-mysql\-\_\-board\-\_\-message}}
+\index{retrieve\-\_\-mysql\-\_\-board\-\_\-message@{retrieve\-\_\-mysql\-\_\-board\-\_\-message}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{retrieve\-\_\-mysql\-\_\-board\-\_\-message}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ retrieve\-\_\-mysql\-\_\-board\-\_\-message (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{board\-\_\-name, }
+\item[{int}]{msg\-\_\-num}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_ad4ed8c8856a10092a5703c72577aadce}
+\hypertarget{mysql_8cpp_a3278ec18aa411a3b2afe60a5848b1504}{\index{mysql.\-cpp@{mysql.\-cpp}!save\-\_\-banned\-\_\-sites@{save\-\_\-banned\-\_\-sites}}
+\index{save\-\_\-banned\-\_\-sites@{save\-\_\-banned\-\_\-sites}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{save\-\_\-banned\-\_\-sites}]{\setlength{\rightskip}{0pt plus 5cm}void save\-\_\-banned\-\_\-sites (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a3278ec18aa411a3b2afe60a5848b1504}
+\hypertarget{mysql_8cpp_afb22219f8b13bd0daa250e660b16550e}{\index{mysql.\-cpp@{mysql.\-cpp}!save\-\_\-char\-\_\-mysql@{save\-\_\-char\-\_\-mysql}}
+\index{save\-\_\-char\-\_\-mysql@{save\-\_\-char\-\_\-mysql}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{save\-\_\-char\-\_\-mysql}]{\setlength{\rightskip}{0pt plus 5cm}void save\-\_\-char\-\_\-mysql (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_afb22219f8b13bd0daa250e660b16550e}
+\hypertarget{mysql_8cpp_a4370baf026fc36789b1f8fb07a5f888f}{\index{mysql.\-cpp@{mysql.\-cpp}!save\-\_\-craft\-\_\-progs@{save\-\_\-craft\-\_\-progs}}
+\index{save\-\_\-craft\-\_\-progs@{save\-\_\-craft\-\_\-progs}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{save\-\_\-craft\-\_\-progs}]{\setlength{\rightskip}{0pt plus 5cm}void save\-\_\-craft\-\_\-progs (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a4370baf026fc36789b1f8fb07a5f888f}
+\hypertarget{mysql_8cpp_ac5f7b420de8b8c12aba0c42da31375a5}{\index{mysql.\-cpp@{mysql.\-cpp}!save\-\_\-defined\-\_\-scents@{save\-\_\-defined\-\_\-scents}}
+\index{save\-\_\-defined\-\_\-scents@{save\-\_\-defined\-\_\-scents}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{save\-\_\-defined\-\_\-scents}]{\setlength{\rightskip}{0pt plus 5cm}void save\-\_\-defined\-\_\-scents (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_ac5f7b420de8b8c12aba0c42da31375a5}
+\hypertarget{mysql_8cpp_af0b09104b07db880c7a7e5816e0bbca3}{\index{mysql.\-cpp@{mysql.\-cpp}!save\-\_\-dreams@{save\-\_\-dreams}}
+\index{save\-\_\-dreams@{save\-\_\-dreams}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{save\-\_\-dreams}]{\setlength{\rightskip}{0pt plus 5cm}void save\-\_\-dreams (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_af0b09104b07db880c7a7e5816e0bbca3}
+\hypertarget{mysql_8cpp_a93c7a9c22af543268570398662662eb5}{\index{mysql.\-cpp@{mysql.\-cpp}!save\-\_\-foraged\-\_\-goods@{save\-\_\-foraged\-\_\-goods}}
+\index{save\-\_\-foraged\-\_\-goods@{save\-\_\-foraged\-\_\-goods}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{save\-\_\-foraged\-\_\-goods}]{\setlength{\rightskip}{0pt plus 5cm}void save\-\_\-foraged\-\_\-goods (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a93c7a9c22af543268570398662662eb5}
+\hypertarget{mysql_8cpp_af5efaa7d0508870a75cf85260f52da06}{\index{mysql.\-cpp@{mysql.\-cpp}!save\-\_\-foraged\-\_\-zones@{save\-\_\-foraged\-\_\-zones}}
+\index{save\-\_\-foraged\-\_\-zones@{save\-\_\-foraged\-\_\-zones}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{save\-\_\-foraged\-\_\-zones}]{\setlength{\rightskip}{0pt plus 5cm}void save\-\_\-foraged\-\_\-zones (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_af5efaa7d0508870a75cf85260f52da06}
+\hypertarget{mysql_8cpp_a263f0dead3574dd9d58f2dcfce826e8e}{\index{mysql.\-cpp@{mysql.\-cpp}!save\-\_\-hobbitmail\-\_\-message@{save\-\_\-hobbitmail\-\_\-message}}
+\index{save\-\_\-hobbitmail\-\_\-message@{save\-\_\-hobbitmail\-\_\-message}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{save\-\_\-hobbitmail\-\_\-message}]{\setlength{\rightskip}{0pt plus 5cm}void save\-\_\-hobbitmail\-\_\-message (
+\begin{DoxyParamCaption}
+\item[{{\bf account} $\ast$}]{acct, }
+\item[{{\bf M\-U\-D\-M\-A\-I\-L\-\_\-\-D\-A\-T\-A} $\ast$}]{message}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a263f0dead3574dd9d58f2dcfce826e8e}
+\hypertarget{mysql_8cpp_a4ae7e3c5a8152e7193d38f7b250287e8}{\index{mysql.\-cpp@{mysql.\-cpp}!save\-\_\-mob\-\_\-ais@{save\-\_\-mob\-\_\-ais}}
+\index{save\-\_\-mob\-\_\-ais@{save\-\_\-mob\-\_\-ais}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{save\-\_\-mob\-\_\-ais}]{\setlength{\rightskip}{0pt plus 5cm}void save\-\_\-mob\-\_\-ais (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a4ae7e3c5a8152e7193d38f7b250287e8}
+\hypertarget{mysql_8cpp_a7319b068a08590a84a470ff281f7af8c}{\index{mysql.\-cpp@{mysql.\-cpp}!save\-\_\-mob\-\_\-progs@{save\-\_\-mob\-\_\-progs}}
+\index{save\-\_\-mob\-\_\-progs@{save\-\_\-mob\-\_\-progs}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{save\-\_\-mob\-\_\-progs}]{\setlength{\rightskip}{0pt plus 5cm}void save\-\_\-mob\-\_\-progs (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a7319b068a08590a84a470ff281f7af8c}
+\hypertarget{mysql_8cpp_ab1dbc5cb36a82cd5edf2e16db9f77df9}{\index{mysql.\-cpp@{mysql.\-cpp}!save\-\_\-mob\-\_\-variables@{save\-\_\-mob\-\_\-variables}}
+\index{save\-\_\-mob\-\_\-variables@{save\-\_\-mob\-\_\-variables}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{save\-\_\-mob\-\_\-variables}]{\setlength{\rightskip}{0pt plus 5cm}void save\-\_\-mob\-\_\-variables (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_ab1dbc5cb36a82cd5edf2e16db9f77df9}
+\hypertarget{mysql_8cpp_a88aaeaeb54f3aaf773310b4b31655333}{\index{mysql.\-cpp@{mysql.\-cpp}!save\-\_\-obj\-\_\-progs@{save\-\_\-obj\-\_\-progs}}
+\index{save\-\_\-obj\-\_\-progs@{save\-\_\-obj\-\_\-progs}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{save\-\_\-obj\-\_\-progs}]{\setlength{\rightskip}{0pt plus 5cm}void save\-\_\-obj\-\_\-progs (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a88aaeaeb54f3aaf773310b4b31655333}
+\hypertarget{mysql_8cpp_a9ebe293905d72474caaa8c73e4073f0f}{\index{mysql.\-cpp@{mysql.\-cpp}!save\-\_\-obj\-\_\-variables@{save\-\_\-obj\-\_\-variables}}
+\index{save\-\_\-obj\-\_\-variables@{save\-\_\-obj\-\_\-variables}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{save\-\_\-obj\-\_\-variables}]{\setlength{\rightskip}{0pt plus 5cm}void save\-\_\-obj\-\_\-variables (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a9ebe293905d72474caaa8c73e4073f0f}
+\hypertarget{mysql_8cpp_a803efc5d53d496e0035d25202351014c}{\index{mysql.\-cpp@{mysql.\-cpp}!save\-\_\-reboot\-\_\-mobiles@{save\-\_\-reboot\-\_\-mobiles}}
+\index{save\-\_\-reboot\-\_\-mobiles@{save\-\_\-reboot\-\_\-mobiles}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{save\-\_\-reboot\-\_\-mobiles}]{\setlength{\rightskip}{0pt plus 5cm}void save\-\_\-reboot\-\_\-mobiles (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a803efc5d53d496e0035d25202351014c}
+\hypertarget{mysql_8cpp_abf1d215b17170ed634bed97f1e7ad66d}{\index{mysql.\-cpp@{mysql.\-cpp}!save\-\_\-stayput\-\_\-mobiles@{save\-\_\-stayput\-\_\-mobiles}}
+\index{save\-\_\-stayput\-\_\-mobiles@{save\-\_\-stayput\-\_\-mobiles}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{save\-\_\-stayput\-\_\-mobiles}]{\setlength{\rightskip}{0pt plus 5cm}void save\-\_\-stayput\-\_\-mobiles (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_abf1d215b17170ed634bed97f1e7ad66d}
+\hypertarget{mysql_8cpp_a1d8a695614c158a935cf1736433260cf}{\index{mysql.\-cpp@{mysql.\-cpp}!save\-\_\-tracks@{save\-\_\-tracks}}
+\index{save\-\_\-tracks@{save\-\_\-tracks}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{save\-\_\-tracks}]{\setlength{\rightskip}{0pt plus 5cm}void save\-\_\-tracks (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a1d8a695614c158a935cf1736433260cf}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000017}{Todo}]Find out why this is turned off \end{DoxyRefDesc}
+\hypertarget{mysql_8cpp_a6a083efd6c0624a89a6c457c3aac1b5a}{\index{mysql.\-cpp@{mysql.\-cpp}!save\-\_\-writing@{save\-\_\-writing}}
+\index{save\-\_\-writing@{save\-\_\-writing}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{save\-\_\-writing}]{\setlength{\rightskip}{0pt plus 5cm}void save\-\_\-writing (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a6a083efd6c0624a89a6c457c3aac1b5a}
+\hypertarget{mysql_8cpp_a296e3a15c1e588f4a0fff676958b12bd}{\index{mysql.\-cpp@{mysql.\-cpp}!set\-\_\-hobbitmail\-\_\-flags@{set\-\_\-hobbitmail\-\_\-flags}}
+\index{set\-\_\-hobbitmail\-\_\-flags@{set\-\_\-hobbitmail\-\_\-flags}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{set\-\_\-hobbitmail\-\_\-flags}]{\setlength{\rightskip}{0pt plus 5cm}void set\-\_\-hobbitmail\-\_\-flags (
+\begin{DoxyParamCaption}
+\item[{int}]{id, }
+\item[{int}]{flag}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a296e3a15c1e588f4a0fff676958b12bd}
+\hypertarget{mysql_8cpp_a6dcc22244511b5448e18809b96c184f7}{\index{mysql.\-cpp@{mysql.\-cpp}!spell\-\_\-name\-\_\-lookup@{spell\-\_\-name\-\_\-lookup}}
+\index{spell\-\_\-name\-\_\-lookup@{spell\-\_\-name\-\_\-lookup}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{spell\-\_\-name\-\_\-lookup}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ spell\-\_\-name\-\_\-lookup (
+\begin{DoxyParamCaption}
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a6dcc22244511b5448e18809b96c184f7}
+\hypertarget{mysql_8cpp_a84a16f74790ef1711bc72fdb9b2aebda}{\index{mysql.\-cpp@{mysql.\-cpp}!system\-\_\-log@{system\-\_\-log}}
+\index{system\-\_\-log@{system\-\_\-log}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{system\-\_\-log}]{\setlength{\rightskip}{0pt plus 5cm}void system\-\_\-log (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{str, }
+\item[{{\bf bool}}]{error}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a84a16f74790ef1711bc72fdb9b2aebda}
+\hypertarget{mysql_8cpp_a1cd210eead0d1e015d02a080a78f7b3b}{\index{mysql.\-cpp@{mysql.\-cpp}!test\-\_\-db\-\_\-init@{test\-\_\-db\-\_\-init}}
+\index{test\-\_\-db\-\_\-init@{test\-\_\-db\-\_\-init}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{test\-\_\-db\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void test\-\_\-db\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a1cd210eead0d1e015d02a080a78f7b3b}
+\hypertarget{mysql_8cpp_acee513a8ab6e65f2c9dbdaea25480ffa}{\index{mysql.\-cpp@{mysql.\-cpp}!unused\-\_\-writing\-\_\-id@{unused\-\_\-writing\-\_\-id}}
+\index{unused\-\_\-writing\-\_\-id@{unused\-\_\-writing\-\_\-id}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{unused\-\_\-writing\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}int unused\-\_\-writing\-\_\-id (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_acee513a8ab6e65f2c9dbdaea25480ffa}
+\hypertarget{mysql_8cpp_a612cbe4208533d129493d11ed01e5531}{\index{mysql.\-cpp@{mysql.\-cpp}!update\-\_\-family\-\_\-clanning@{update\-\_\-family\-\_\-clanning}}
+\index{update\-\_\-family\-\_\-clanning@{update\-\_\-family\-\_\-clanning}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{update\-\_\-family\-\_\-clanning}]{\setlength{\rightskip}{0pt plus 5cm}void update\-\_\-family\-\_\-clanning (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a612cbe4208533d129493d11ed01e5531}
+\hypertarget{mysql_8cpp_af8ee5883bbeb313894c3d39053f6ff8b}{\index{mysql.\-cpp@{mysql.\-cpp}!update\-\_\-weapon\-\_\-skills@{update\-\_\-weapon\-\_\-skills}}
+\index{update\-\_\-weapon\-\_\-skills@{update\-\_\-weapon\-\_\-skills}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{update\-\_\-weapon\-\_\-skills}]{\setlength{\rightskip}{0pt plus 5cm}void update\-\_\-weapon\-\_\-skills (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_af8ee5883bbeb313894c3d39053f6ff8b}
+\hypertarget{mysql_8cpp_a3c164dff45aa67dcf33aa22a31885c52}{\index{mysql.\-cpp@{mysql.\-cpp}!update\-\_\-website\-\_\-statistics@{update\-\_\-website\-\_\-statistics}}
+\index{update\-\_\-website\-\_\-statistics@{update\-\_\-website\-\_\-statistics}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{update\-\_\-website\-\_\-statistics}]{\setlength{\rightskip}{0pt plus 5cm}void update\-\_\-website\-\_\-statistics (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mysql_8cpp_a3c164dff45aa67dcf33aa22a31885c52}
+
+
+\subsection{Variable Documentation}
+\hypertarget{mysql_8cpp_a0670a7d43859874e62fe67117cdb2c60}{\index{mysql.\-cpp@{mysql.\-cpp}!arena\-\_\-bets\-\_\-list@{arena\-\_\-bets\-\_\-list}}
+\index{arena\-\_\-bets\-\_\-list@{arena\-\_\-bets\-\_\-list}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{arena\-\_\-bets\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf arena\-\_\-bets}$\ast$$>$ arena\-\_\-bets\-\_\-list}}\label{mysql_8cpp_a0670a7d43859874e62fe67117cdb2c60}
+\hypertarget{mysql_8cpp_a151aa5fbb04e8ccc92d06102864e73ce}{\index{mysql.\-cpp@{mysql.\-cpp}!arena\-\_\-fights\-\_\-list@{arena\-\_\-fights\-\_\-list}}
+\index{arena\-\_\-fights\-\_\-list@{arena\-\_\-fights\-\_\-list}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{arena\-\_\-fights\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf arena\-\_\-fights}$\ast$$>$ arena\-\_\-fights\-\_\-list}}\label{mysql_8cpp_a151aa5fbb04e8ccc92d06102864e73ce}
+\hypertarget{mysql_8cpp_a62b083c9d653a8867ba2f496cccc07dc}{\index{mysql.\-cpp@{mysql.\-cpp}!arena\-\_\-gladiators\-\_\-list@{arena\-\_\-gladiators\-\_\-list}}
+\index{arena\-\_\-gladiators\-\_\-list@{arena\-\_\-gladiators\-\_\-list}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{arena\-\_\-gladiators\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf arena\-\_\-gladiators}$\ast$$>$ arena\-\_\-gladiators\-\_\-list}}\label{mysql_8cpp_a62b083c9d653a8867ba2f496cccc07dc}
+\hypertarget{mysql_8cpp_ab4903bf695e3aa07975e4d1daa1e8312}{\index{mysql.\-cpp@{mysql.\-cpp}!booting@{booting}}
+\index{booting@{booting}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{booting}]{\setlength{\rightskip}{0pt plus 5cm}int booting}}\label{mysql_8cpp_ab4903bf695e3aa07975e4d1daa1e8312}
+\hypertarget{mysql_8cpp_a39fd0cdb4bb68f290ba0ca60f6c35809}{\index{mysql.\-cpp@{mysql.\-cpp}!craft\-\_\-prog\-\_\-list@{craft\-\_\-prog\-\_\-list}}
+\index{craft\-\_\-prog\-\_\-list@{craft\-\_\-prog\-\_\-list}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{craft\-\_\-prog\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}std\-::multimap$<$std\-::string, {\bf room\-\_\-prog}$>$ craft\-\_\-prog\-\_\-list}}\label{mysql_8cpp_a39fd0cdb4bb68f290ba0ca60f6c35809}
+\hypertarget{mysql_8cpp_a2268e9cf6f41e9588095db09ad3e5ac1}{\index{mysql.\-cpp@{mysql.\-cpp}!database@{database}}
+\index{database@{database}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{database}]{\setlength{\rightskip}{0pt plus 5cm}M\-Y\-S\-Q\-L $\ast$ database}}\label{mysql_8cpp_a2268e9cf6f41e9588095db09ad3e5ac1}
+\hypertarget{mysql_8cpp_a02c156366e7198466aa0335de3bd392e}{\index{mysql.\-cpp@{mysql.\-cpp}!defined\-\_\-scent\-\_\-list@{defined\-\_\-scent\-\_\-list}}
+\index{defined\-\_\-scent\-\_\-list@{defined\-\_\-scent\-\_\-list}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{defined\-\_\-scent\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf defined\-\_\-scent}$\ast$$>$ defined\-\_\-scent\-\_\-list}}\label{mysql_8cpp_a02c156366e7198466aa0335de3bd392e}
+\hypertarget{mysql_8cpp_a55c71990ee4162ebec6abe401996cf15}{\index{mysql.\-cpp@{mysql.\-cpp}!engine@{engine}}
+\index{engine@{engine}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{engine}]{\setlength{\rightskip}{0pt plus 5cm}{\bf rpie\-::server} engine}}\label{mysql_8cpp_a55c71990ee4162ebec6abe401996cf15}
+\hypertarget{mysql_8cpp_af8801d8b7c58111aa48639763d2cc9b6}{\index{mysql.\-cpp@{mysql.\-cpp}!entry@{entry}}
+\index{entry@{entry}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{entry}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\-A\-C\-E\-\_\-\-T\-A\-B\-L\-E\-\_\-\-E\-N\-T\-R\-Y}$\ast$ entry}}\label{mysql_8cpp_af8801d8b7c58111aa48639763d2cc9b6}
+\hypertarget{mysql_8cpp_a005b5a7d45ea7a8814064682a1fac032}{\index{mysql.\-cpp@{mysql.\-cpp}!finished\-\_\-booting@{finished\-\_\-booting}}
+\index{finished\-\_\-booting@{finished\-\_\-booting}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{finished\-\_\-booting}]{\setlength{\rightskip}{0pt plus 5cm}int finished\-\_\-booting}}\label{mysql_8cpp_a005b5a7d45ea7a8814064682a1fac032}
+\hypertarget{mysql_8cpp_a57a0639d605235c48cb733c1048869fe}{\index{mysql.\-cpp@{mysql.\-cpp}!foraged\-\_\-goods\-\_\-list@{foraged\-\_\-goods\-\_\-list}}
+\index{foraged\-\_\-goods\-\_\-list@{foraged\-\_\-goods\-\_\-list}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{foraged\-\_\-goods\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf foraged\-\_\-good}$\ast$$>$ foraged\-\_\-goods\-\_\-list}}\label{mysql_8cpp_a57a0639d605235c48cb733c1048869fe}
+\hypertarget{mysql_8cpp_a317153a6279806876ffec52a24a8486d}{\index{mysql.\-cpp@{mysql.\-cpp}!foraged\-\_\-zones\-\_\-list@{foraged\-\_\-zones\-\_\-list}}
+\index{foraged\-\_\-zones\-\_\-list@{foraged\-\_\-zones\-\_\-list}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{foraged\-\_\-zones\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf foraged\-\_\-zone}$\ast$$>$ foraged\-\_\-zones\-\_\-list}}\label{mysql_8cpp_a317153a6279806876ffec52a24a8486d}
+\hypertarget{mysql_8cpp_a0ceb050e53a82d8dec4a75723cba0fee}{\index{mysql.\-cpp@{mysql.\-cpp}!mob\-\_\-ai\-\_\-list@{mob\-\_\-ai\-\_\-list}}
+\index{mob\-\_\-ai\-\_\-list@{mob\-\_\-ai\-\_\-list}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{mob\-\_\-ai\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$int, {\bf mobile\-\_\-ai}$>$ mob\-\_\-ai\-\_\-list}}\label{mysql_8cpp_a0ceb050e53a82d8dec4a75723cba0fee}
+\hypertarget{mysql_8cpp_a6b52b20d33b731a299259fb542ca737d}{\index{mysql.\-cpp@{mysql.\-cpp}!mob\-\_\-prog\-\_\-list@{mob\-\_\-prog\-\_\-list}}
+\index{mob\-\_\-prog\-\_\-list@{mob\-\_\-prog\-\_\-list}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{mob\-\_\-prog\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}std\-::multimap$<$int, {\bf room\-\_\-prog}$>$ mob\-\_\-prog\-\_\-list}}\label{mysql_8cpp_a6b52b20d33b731a299259fb542ca737d}
+\hypertarget{mysql_8cpp_af577646b635687ef9f42d7a5308977c9}{\index{mysql.\-cpp@{mysql.\-cpp}!mvariable\-\_\-categories@{mvariable\-\_\-categories}}
+\index{mvariable\-\_\-categories@{mvariable\-\_\-categories}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{mvariable\-\_\-categories}]{\setlength{\rightskip}{0pt plus 5cm}std\-::multimap$<$int, std\-::string$>$ mvariable\-\_\-categories}}\label{mysql_8cpp_af577646b635687ef9f42d7a5308977c9}
+\hypertarget{mysql_8cpp_ad26bde3c2f68d86ae308ee7c59e88223}{\index{mysql.\-cpp@{mysql.\-cpp}!mvariable\-\_\-list@{mvariable\-\_\-list}}
+\index{mvariable\-\_\-list@{mvariable\-\_\-list}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{mvariable\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}std\-::multimap$<$int, {\bf mvariable\-\_\-data}$>$ mvariable\-\_\-list}}\label{mysql_8cpp_ad26bde3c2f68d86ae308ee7c59e88223}
+\hypertarget{mysql_8cpp_acdb55f5f8c8a46be02824126fe819acf}{\index{mysql.\-cpp@{mysql.\-cpp}!mysql\-\_\-logging@{mysql\-\_\-logging}}
+\index{mysql\-\_\-logging@{mysql\-\_\-logging}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{mysql\-\_\-logging}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} mysql\-\_\-logging = true}}\label{mysql_8cpp_acdb55f5f8c8a46be02824126fe819acf}
+\hypertarget{mysql_8cpp_aae764fe386f6d62720e9a5f6d31d59d3}{\index{mysql.\-cpp@{mysql.\-cpp}!obj\-\_\-prog\-\_\-list@{obj\-\_\-prog\-\_\-list}}
+\index{obj\-\_\-prog\-\_\-list@{obj\-\_\-prog\-\_\-list}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{obj\-\_\-prog\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}std\-::multimap$<$int, {\bf room\-\_\-prog}$>$ obj\-\_\-prog\-\_\-list}}\label{mysql_8cpp_aae764fe386f6d62720e9a5f6d31d59d3}
+\hypertarget{mysql_8cpp_a0648ea431a490ba9090b5a71a099283b}{\index{mysql.\-cpp@{mysql.\-cpp}!obj\-\_\-variable\-\_\-list@{obj\-\_\-variable\-\_\-list}}
+\index{obj\-\_\-variable\-\_\-list@{obj\-\_\-variable\-\_\-list}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{obj\-\_\-variable\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}std\-::multimap$<$int, {\bf variable\-\_\-data}$>$ obj\-\_\-variable\-\_\-list}}\label{mysql_8cpp_a0648ea431a490ba9090b5a71a099283b}
+\hypertarget{mysql_8cpp_a8fcb406a8f555748fdbd9e7fbde7e637}{\index{mysql.\-cpp@{mysql.\-cpp}!race\-\_\-table@{race\-\_\-table}}
+\index{race\-\_\-table@{race\-\_\-table}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{race\-\_\-table}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\-A\-C\-E\-\_\-\-T\-A\-B\-L\-E\-\_\-\-E\-N\-T\-R\-Y}$\ast$ race\-\_\-table = N\-U\-L\-L}}\label{mysql_8cpp_a8fcb406a8f555748fdbd9e7fbde7e637}
+\hypertarget{mysql_8cpp_a388a9b052cfa85e2de421c447839c258}{\index{mysql.\-cpp@{mysql.\-cpp}!variable\-\_\-categories@{variable\-\_\-categories}}
+\index{variable\-\_\-categories@{variable\-\_\-categories}!mysql.cpp@{mysql.\-cpp}}
+\subsubsection[{variable\-\_\-categories}]{\setlength{\rightskip}{0pt plus 5cm}std\-::multimap$<$int, std\-::string$>$ variable\-\_\-categories}}\label{mysql_8cpp_a388a9b052cfa85e2de421c447839c258}

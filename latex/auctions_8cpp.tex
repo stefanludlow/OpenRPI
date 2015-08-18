@@ -1,0 +1,344 @@
+\hypertarget{auctions_8cpp}{\section{auctions.\-cpp File Reference}
+\label{auctions_8cpp}\index{auctions.\-cpp@{auctions.\-cpp}}
+}
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$ctype.\-h$>$}\\*
+{\ttfamily \#include $<$math.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$unistd.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}server.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}structs.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}constants.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}account.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}protos.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}group.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utility.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}net\-\_\-link.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}decl.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{auctions_8cpp_a17f57a0c930e948601a7bd7bc315b211}{A\-U\-C\-T\-I\-O\-N\-\_\-\-W\-H\-A\-T}~\char`\"{}What exactly did you wish to list for auction?\char`\"{}
+\begin{DoxyCompactList}\small\item\em \hyperlink{auctions_8cpp}{auctions.\-cpp} -\/ Shadows of Isildur's automated auction house routines \end{DoxyCompactList}\item 
+\#define \hyperlink{auctions_8cpp_a32be6cbaecb67a6fc616eaff01115b62}{N\-O\-\_\-\-S\-U\-C\-H\-\_\-\-I\-T\-E\-M}~\char`\"{}Perhaps you are mistaken -\/ I do not see the merchandise you are referring to.\char`\"{}
+\item 
+\#define \hyperlink{auctions_8cpp_aa48b02ed128be5774fea0f46b3d0736f}{I\-L\-L\-E\-G\-A\-L\-\_\-\-I\-T\-E\-M}~\char`\"{}Such ... merchandise ... cannot be auctioned here, I am afraid.\char`\"{}
+\item 
+\#define \hyperlink{auctions_8cpp_a0bef16a4f93b71fa12e494c2d8fa0a44}{N\-O\-\_\-\-M\-I\-N\-\_\-\-B\-I\-D}~\char`\"{}What was the minimum bid in credits you wished to list for this item?\char`\"{}
+\item 
+\#define \hyperlink{auctions_8cpp_ab366b7c7018e24f6f6d9dfa5b424bb8f}{N\-O\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-B\-O}~\char`\"{}Very well -\/ but I will also need to know the buyout you wish to place on the listing, the length in days of the auction, or both.\char`\"{}
+\item 
+\#define \hyperlink{auctions_8cpp_a83753f44aa70423f9f9e012c9f8c4cae}{N\-O\-\_\-\-L\-E\-N\-G\-T\-H}~\char`\"{}How many days did you wish the auction to be listed for?\char`\"{}
+\item 
+\#define \hyperlink{auctions_8cpp_ab616e7c04ed0ceb574f90bcbc93e546b}{G\-I\-V\-E\-\_\-\-A\-W\-A\-Y}~\char`\"{}If you simply wish to give your merchandise away, do not waste my time!\char`\"{}
+\item 
+\#define \hyperlink{auctions_8cpp_ac8e503b2079d4023f8f42c477ac2f444}{B\-O\-\_\-\-T\-O\-O\-\_\-\-L\-O\-W}~\char`\"{}The buyout price for your item must be set higher than its minimum bid.\char`\"{}
+\item 
+\#define \hyperlink{auctions_8cpp_aeaeb0085bc58a66e0818c97d5a93bf7c}{L\-E\-N\-G\-T\-H\-\_\-\-S\-A\-N\-I\-T\-Y}~\char`\"{}I am afraid we will only list merchandise for a period of one to sixty days.\char`\"{}
+\item 
+\#define \hyperlink{auctions_8cpp_a8658026e4b42e1360dbd1cc88e4ef2aa}{M\-I\-S\-S\-I\-N\-G\-\_\-\-C\-A\-S\-H}~\char`\"{}You seem to be a bit ... short ... to cover your deposit fee today.\char`\"{}
+\item 
+\#define \hyperlink{auctions_8cpp_ad0c31336be193c6ea8a2e4cc55183bb1}{N\-O\-T\-\_\-\-E\-M\-P\-T\-Y}~\char`\"{}You'll need to empty that before you can place it up for auction.\char`\"{}
+\item 
+\#define \hyperlink{auctions_8cpp_a9d917843484550167e8a461fe6d2c0ef}{A\-U\-C\-T\-I\-O\-N\-\_\-\-A\-C\-C\-E\-P\-T\-E\-D}~\char`\"{}Thank you! Best of luck with your auction.\char`\"{}
+\item 
+\#define \hyperlink{auctions_8cpp_a4cdf900b615216de811b86816f9b404d}{W\-H\-I\-C\-H\-\_\-\-A\-U\-C\-T\-I\-O\-N}~\char`\"{}Which auction did you wish to place a bid on?\char`\"{}
+\item 
+\#define \hyperlink{auctions_8cpp_a4fb06e4a2064ded15460f1a21c399214}{H\-O\-W\-\_\-\-M\-U\-C\-H}~\char`\"{}How many credits did you wish to bid on this auction?\char`\"{}
+\item 
+\#define \hyperlink{auctions_8cpp_ab0fbfd9466ce1f5d0b52f41a4afa43c1}{N\-O\-\_\-\-S\-U\-C\-H\-\_\-\-A\-U\-C\-T\-I\-O\-N}~\char`\"{}I'\hyperlink{utility_8cpp_aa2e3edb156b8116204fda5c7cd008e98}{m} sorry, but I do not see any such auction listed with this establishment.\char`\"{}
+\item 
+\#define \hyperlink{auctions_8cpp_a4826f9c3c70b406d853828f605ce21d2}{N\-O\-\_\-\-S\-U\-C\-H\-\_\-\-A\-U\-C\-T\-I\-O\-N\-C}~\char`\"{}I'\hyperlink{utility_8cpp_aa2e3edb156b8116204fda5c7cd008e98}{m} sorry, but I do not see any such auction that you have posted.\char`\"{}
+\item 
+\#define \hyperlink{auctions_8cpp_a1fdb4cb1b2a8e9af85af06e134e60a59}{M\-I\-S\-S\-I\-N\-G\-\_\-\-C\-A\-S\-H\-\_\-\-B\-I\-D}~\char`\"{}Bah! Come back when you can back up your bids with something more than words.\char`\"{}
+\item 
+\#define \hyperlink{auctions_8cpp_a9d6228cd213929b0b285f18c3f6db254}{B\-I\-D\-\_\-\-A\-C\-C\-E\-P\-T\-E\-D}~\char`\"{}Thank you for your bid! Good luck winning your auction.\char`\"{}
+\item 
+\#define \hyperlink{auctions_8cpp_aecef411bbac8aac4a25c657fbf21d1aa}{O\-W\-N\-\_\-\-A\-U\-C\-T\-I\-O\-N}~\char`\"{}You can't bid on your own auctions!\char`\"{}
+\item 
+\#define \hyperlink{auctions_8cpp_a215a75599df18ec4a07753e238ce3503}{A\-L\-R\-E\-A\-D\-Y\-\_\-\-W\-I\-N\-N\-I\-N\-G}~\char`\"{}You are already the high bidder on that item.\char`\"{}
+\item 
+\#define \hyperlink{auctions_8cpp_af59cc176a9ebb6a69fb1d082d54bcb19}{B\-U\-Y\-O\-U\-T\-\_\-\-A\-C\-C\-E\-P\-T\-E\-D}~\char`\"{}Congratulations! The auction is yours. Well done! Be sure to \#6\-R\-E\-T\-R\-I\-E\-V\-E\#0 your winnings from me at your earliest convenience.\char`\"{}
+\item 
+\#define \hyperlink{auctions_8cpp_ac70cb53a9c1401bca29c2d327be89c01}{N\-O\-\_\-\-W\-I\-N\-N\-I\-N\-G\-S}~\char`\"{}This establishment is not storing any auction winnings or returned merchandise for you at this time. Perhaps you are mistaken?\char`\"{}
+\item 
+\#define \hyperlink{auctions_8cpp_a48410f5a9a0adc7b6253e6d457aa20a1}{N\-O\-\_\-\-H\-A\-N\-D\-S\-\_\-\-F\-R\-E\-E}~\char`\"{}I have something for you here, but I'll hang onto it until you free up your hands.\char`\"{}
+\item 
+\#define \hyperlink{auctions_8cpp_a355907061cf6522db256022235fc5d8f}{W\-H\-I\-C\-H\-\_\-\-A\-U\-C\-T\-I\-O\-N\-P}~\char`\"{}Which auction did you wish to preview?\char`\"{}
+\item 
+\#define \hyperlink{auctions_8cpp_ae7a45c92fd76efafe099350822e58150}{L\-O\-O\-K\-I\-N\-G\-\_\-\-F\-O\-R}~\char`\"{}I'\hyperlink{utility_8cpp_aa2e3edb156b8116204fda5c7cd008e98}{m} sorry -\/ I don't understand exactly what you were looking for.\char`\"{}
+\item 
+\#define \hyperlink{auctions_8cpp_a5e51c1c9672dd11269acf2be11f6332e}{W\-H\-I\-C\-H\-\_\-\-A\-U\-C\-T\-I\-O\-N\-C}~\char`\"{}Which auction did you wish to cancel?\char`\"{}
+\item 
+\#define \hyperlink{auctions_8cpp_af21325031e2c04cafdabd23b5cf2f39e}{N\-O\-T\-\_\-\-Y\-O\-U\-R\-\_\-\-A\-U\-C\-T\-I\-O\-N}~\char`\"{}I'\hyperlink{utility_8cpp_aa2e3edb156b8116204fda5c7cd008e98}{m} afraid that isn't your auction to cancel!\char`\"{}
+\item 
+\#define \hyperlink{auctions_8cpp_add3fdfaae08d0c62a28b5039f899348d}{A\-U\-C\-T\-I\-O\-N\-\_\-\-B\-I\-D}~1
+\item 
+\#define \hyperlink{auctions_8cpp_a95787aa9d78382ed82c9e5d2c5d744f5}{A\-U\-C\-T\-I\-O\-N\-\_\-\-S\-A\-L\-E}~2
+\item 
+\#define \hyperlink{auctions_8cpp_adc7f38b5d1511dd91cf25f55fa871b47}{A\-U\-C\-T\-I\-O\-N\-\_\-\-E\-X\-P\-I\-R\-E\-D}~3
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{auctions_8cpp_ae6afdf0d20a3872786f5625bd235a253}{auction\-\_\-notify} (int id, int type)
+\item 
+void \hyperlink{auctions_8cpp_a66168c8222c33c26f3624907ec982073}{cancel\-\_\-auction} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$auctioneer, int id, \hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} confirmed)
+\item 
+void \hyperlink{auctions_8cpp_a6e5a69a02510c6aa235ee7c20d3529c7}{preview\-\_\-auction} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$auctioneer, int id)
+\item 
+int \hyperlink{auctions_8cpp_aa9fc44c82eeed14230167f23d10d3a12}{retrieve\-\_\-expiries} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$auctioneer)
+\item 
+int \hyperlink{auctions_8cpp_aedfd64e30905b1288a52c3fe519a5842}{retrieve\-\_\-winnings} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$auctioneer)
+\item 
+void \hyperlink{auctions_8cpp_a96e0f3495b9a5efe7c7c3185b250279e}{record\-\_\-bid} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$auctioneer, int id, int bid, \hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} bought\-\_\-out, int buyout)
+\item 
+void \hyperlink{auctions_8cpp_a312bfd88b0c2544755f94deed70925e0}{place\-\_\-bid} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$auctioneer, int id, int bid, \hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} confirmed)
+\item 
+void \hyperlink{auctions_8cpp_a295e603a7d2fc91396654d31bb18fb2b}{list\-\_\-auctions} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$auctioneer, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{auctions_8cpp_aa33aca60c74d78580d9b6b4eb5665f2a}{record\-\_\-auction} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$auctioneer, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj, int min\-\_\-bid, int buyout, int length, int deposit)
+\item 
+void \hyperlink{auctions_8cpp_ac7e757dc2dcf3da531b0c849b4f3b3f4}{place\-\_\-auction} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$auctioneer, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj, int min\-\_\-bid, int buyout, int length, \hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} confirmed)
+\item 
+void \hyperlink{auctions_8cpp_a84f12b18b9eb54eca3753d7c8118e63f}{do\-\_\-auction} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{auctions_8cpp_afdd1db36b411d65b9b284b0c22d4823b}{new\-\_\-auctions} = 0
+\item 
+int \hyperlink{auctions_8cpp_a83de05f50cb010b299a1eb422dff0e69}{sold\-\_\-auctions} = 0
+\item 
+int \hyperlink{auctions_8cpp_a2a07d10cda6b39e4f33bf2d30a31696c}{auction\-\_\-bids} = 0
+\item 
+\hyperlink{classrpie_1_1server}{rpie\-::server} \hyperlink{auctions_8cpp_a55c71990ee4162ebec6abe401996cf15}{engine}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{auctions_8cpp_a215a75599df18ec4a07753e238ce3503}{\index{auctions.\-cpp@{auctions.\-cpp}!A\-L\-R\-E\-A\-D\-Y\-\_\-\-W\-I\-N\-N\-I\-N\-G@{A\-L\-R\-E\-A\-D\-Y\-\_\-\-W\-I\-N\-N\-I\-N\-G}}
+\index{A\-L\-R\-E\-A\-D\-Y\-\_\-\-W\-I\-N\-N\-I\-N\-G@{A\-L\-R\-E\-A\-D\-Y\-\_\-\-W\-I\-N\-N\-I\-N\-G}!auctions.cpp@{auctions.\-cpp}}
+\subsubsection[{A\-L\-R\-E\-A\-D\-Y\-\_\-\-W\-I\-N\-N\-I\-N\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-L\-R\-E\-A\-D\-Y\-\_\-\-W\-I\-N\-N\-I\-N\-G~\char`\"{}You are already the high bidder on that item.\char`\"{}}}\label{auctions_8cpp_a215a75599df18ec4a07753e238ce3503}
+\hypertarget{auctions_8cpp_a9d917843484550167e8a461fe6d2c0ef}{\index{auctions.\-cpp@{auctions.\-cpp}!A\-U\-C\-T\-I\-O\-N\-\_\-\-A\-C\-C\-E\-P\-T\-E\-D@{A\-U\-C\-T\-I\-O\-N\-\_\-\-A\-C\-C\-E\-P\-T\-E\-D}}
+\index{A\-U\-C\-T\-I\-O\-N\-\_\-\-A\-C\-C\-E\-P\-T\-E\-D@{A\-U\-C\-T\-I\-O\-N\-\_\-\-A\-C\-C\-E\-P\-T\-E\-D}!auctions.cpp@{auctions.\-cpp}}
+\subsubsection[{A\-U\-C\-T\-I\-O\-N\-\_\-\-A\-C\-C\-E\-P\-T\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-U\-C\-T\-I\-O\-N\-\_\-\-A\-C\-C\-E\-P\-T\-E\-D~\char`\"{}Thank you! Best of luck with your auction.\char`\"{}}}\label{auctions_8cpp_a9d917843484550167e8a461fe6d2c0ef}
+\hypertarget{auctions_8cpp_add3fdfaae08d0c62a28b5039f899348d}{\index{auctions.\-cpp@{auctions.\-cpp}!A\-U\-C\-T\-I\-O\-N\-\_\-\-B\-I\-D@{A\-U\-C\-T\-I\-O\-N\-\_\-\-B\-I\-D}}
+\index{A\-U\-C\-T\-I\-O\-N\-\_\-\-B\-I\-D@{A\-U\-C\-T\-I\-O\-N\-\_\-\-B\-I\-D}!auctions.cpp@{auctions.\-cpp}}
+\subsubsection[{A\-U\-C\-T\-I\-O\-N\-\_\-\-B\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-U\-C\-T\-I\-O\-N\-\_\-\-B\-I\-D~1}}\label{auctions_8cpp_add3fdfaae08d0c62a28b5039f899348d}
+\hypertarget{auctions_8cpp_adc7f38b5d1511dd91cf25f55fa871b47}{\index{auctions.\-cpp@{auctions.\-cpp}!A\-U\-C\-T\-I\-O\-N\-\_\-\-E\-X\-P\-I\-R\-E\-D@{A\-U\-C\-T\-I\-O\-N\-\_\-\-E\-X\-P\-I\-R\-E\-D}}
+\index{A\-U\-C\-T\-I\-O\-N\-\_\-\-E\-X\-P\-I\-R\-E\-D@{A\-U\-C\-T\-I\-O\-N\-\_\-\-E\-X\-P\-I\-R\-E\-D}!auctions.cpp@{auctions.\-cpp}}
+\subsubsection[{A\-U\-C\-T\-I\-O\-N\-\_\-\-E\-X\-P\-I\-R\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-U\-C\-T\-I\-O\-N\-\_\-\-E\-X\-P\-I\-R\-E\-D~3}}\label{auctions_8cpp_adc7f38b5d1511dd91cf25f55fa871b47}
+\hypertarget{auctions_8cpp_a95787aa9d78382ed82c9e5d2c5d744f5}{\index{auctions.\-cpp@{auctions.\-cpp}!A\-U\-C\-T\-I\-O\-N\-\_\-\-S\-A\-L\-E@{A\-U\-C\-T\-I\-O\-N\-\_\-\-S\-A\-L\-E}}
+\index{A\-U\-C\-T\-I\-O\-N\-\_\-\-S\-A\-L\-E@{A\-U\-C\-T\-I\-O\-N\-\_\-\-S\-A\-L\-E}!auctions.cpp@{auctions.\-cpp}}
+\subsubsection[{A\-U\-C\-T\-I\-O\-N\-\_\-\-S\-A\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-U\-C\-T\-I\-O\-N\-\_\-\-S\-A\-L\-E~2}}\label{auctions_8cpp_a95787aa9d78382ed82c9e5d2c5d744f5}
+\hypertarget{auctions_8cpp_a17f57a0c930e948601a7bd7bc315b211}{\index{auctions.\-cpp@{auctions.\-cpp}!A\-U\-C\-T\-I\-O\-N\-\_\-\-W\-H\-A\-T@{A\-U\-C\-T\-I\-O\-N\-\_\-\-W\-H\-A\-T}}
+\index{A\-U\-C\-T\-I\-O\-N\-\_\-\-W\-H\-A\-T@{A\-U\-C\-T\-I\-O\-N\-\_\-\-W\-H\-A\-T}!auctions.cpp@{auctions.\-cpp}}
+\subsubsection[{A\-U\-C\-T\-I\-O\-N\-\_\-\-W\-H\-A\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-U\-C\-T\-I\-O\-N\-\_\-\-W\-H\-A\-T~\char`\"{}What exactly did you wish to list for auction?\char`\"{}}}\label{auctions_8cpp_a17f57a0c930e948601a7bd7bc315b211}
+
+
+\hyperlink{auctions_8cpp}{auctions.\-cpp} -\/ Shadows of Isildur's automated auction house routines 
+
+Shadows of Isildur R\-P\-I Engine++ Copyright (C) 2005-\/2006 C. W. Mc\-Henry Authors\-: C. W. Mc\-Henry (\href{mailto:traithe@middle-earth.us}{\tt traithe@middle-\/earth.\-us}) Jonathan W. Webb (\href{mailto:sighentist@middle-earth.us}{\tt sighentist@middle-\/earth.\-us}) U\-R\-L\-: \href{http://www.middle-earth.us}{\tt http\-://www.\-middle-\/earth.\-us} May includes portions derived from Harshlands Authors\-: Charles Rand (Rassilon) U\-R\-L\-: \href{http://www.harshlands.net}{\tt http\-://www.\-harshlands.\-net} May include portions derived under license from Diku\-M\-U\-D Gamma (0.\-0) which are Copyright (C) 1990, 1991 D\-I\-K\-U Authors\-: Hans Henrik Staerfeldt (\href{mailto:bombman@freja.diku.dk}{\tt bombman@freja.\-diku.\-dk}) Tom Madson (\href{mailto:noop@freja.diku.dk}{\tt noop@freja.\-diku.\-dk}) Katja Nyboe (\href{mailto:katz@freja.diku.dk}{\tt katz@freja.\-diku.\-dk}) Michael Seifert (\href{mailto:seifert@freja.diku.dk}{\tt seifert@freja.\-diku.\-dk}) Sebastian Hammer (\href{mailto:quinn@freja.diku.dk}{\tt quinn@freja.\-diku.\-dk}) \hypertarget{auctions_8cpp_a9d6228cd213929b0b285f18c3f6db254}{\index{auctions.\-cpp@{auctions.\-cpp}!B\-I\-D\-\_\-\-A\-C\-C\-E\-P\-T\-E\-D@{B\-I\-D\-\_\-\-A\-C\-C\-E\-P\-T\-E\-D}}
+\index{B\-I\-D\-\_\-\-A\-C\-C\-E\-P\-T\-E\-D@{B\-I\-D\-\_\-\-A\-C\-C\-E\-P\-T\-E\-D}!auctions.cpp@{auctions.\-cpp}}
+\subsubsection[{B\-I\-D\-\_\-\-A\-C\-C\-E\-P\-T\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-I\-D\-\_\-\-A\-C\-C\-E\-P\-T\-E\-D~\char`\"{}Thank you for your bid! Good luck winning your auction.\char`\"{}}}\label{auctions_8cpp_a9d6228cd213929b0b285f18c3f6db254}
+\hypertarget{auctions_8cpp_ac8e503b2079d4023f8f42c477ac2f444}{\index{auctions.\-cpp@{auctions.\-cpp}!B\-O\-\_\-\-T\-O\-O\-\_\-\-L\-O\-W@{B\-O\-\_\-\-T\-O\-O\-\_\-\-L\-O\-W}}
+\index{B\-O\-\_\-\-T\-O\-O\-\_\-\-L\-O\-W@{B\-O\-\_\-\-T\-O\-O\-\_\-\-L\-O\-W}!auctions.cpp@{auctions.\-cpp}}
+\subsubsection[{B\-O\-\_\-\-T\-O\-O\-\_\-\-L\-O\-W}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-O\-\_\-\-T\-O\-O\-\_\-\-L\-O\-W~\char`\"{}The buyout price for your item must be set higher than its minimum bid.\char`\"{}}}\label{auctions_8cpp_ac8e503b2079d4023f8f42c477ac2f444}
+\hypertarget{auctions_8cpp_af59cc176a9ebb6a69fb1d082d54bcb19}{\index{auctions.\-cpp@{auctions.\-cpp}!B\-U\-Y\-O\-U\-T\-\_\-\-A\-C\-C\-E\-P\-T\-E\-D@{B\-U\-Y\-O\-U\-T\-\_\-\-A\-C\-C\-E\-P\-T\-E\-D}}
+\index{B\-U\-Y\-O\-U\-T\-\_\-\-A\-C\-C\-E\-P\-T\-E\-D@{B\-U\-Y\-O\-U\-T\-\_\-\-A\-C\-C\-E\-P\-T\-E\-D}!auctions.cpp@{auctions.\-cpp}}
+\subsubsection[{B\-U\-Y\-O\-U\-T\-\_\-\-A\-C\-C\-E\-P\-T\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-U\-Y\-O\-U\-T\-\_\-\-A\-C\-C\-E\-P\-T\-E\-D~\char`\"{}Congratulations! The auction is yours. Well done! Be sure to \#6\-R\-E\-T\-R\-I\-E\-V\-E\#0 your winnings from me at your earliest convenience.\char`\"{}}}\label{auctions_8cpp_af59cc176a9ebb6a69fb1d082d54bcb19}
+\hypertarget{auctions_8cpp_ab616e7c04ed0ceb574f90bcbc93e546b}{\index{auctions.\-cpp@{auctions.\-cpp}!G\-I\-V\-E\-\_\-\-A\-W\-A\-Y@{G\-I\-V\-E\-\_\-\-A\-W\-A\-Y}}
+\index{G\-I\-V\-E\-\_\-\-A\-W\-A\-Y@{G\-I\-V\-E\-\_\-\-A\-W\-A\-Y}!auctions.cpp@{auctions.\-cpp}}
+\subsubsection[{G\-I\-V\-E\-\_\-\-A\-W\-A\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\-I\-V\-E\-\_\-\-A\-W\-A\-Y~\char`\"{}If you simply wish to give your merchandise away, do not waste my time!\char`\"{}}}\label{auctions_8cpp_ab616e7c04ed0ceb574f90bcbc93e546b}
+\hypertarget{auctions_8cpp_a4fb06e4a2064ded15460f1a21c399214}{\index{auctions.\-cpp@{auctions.\-cpp}!H\-O\-W\-\_\-\-M\-U\-C\-H@{H\-O\-W\-\_\-\-M\-U\-C\-H}}
+\index{H\-O\-W\-\_\-\-M\-U\-C\-H@{H\-O\-W\-\_\-\-M\-U\-C\-H}!auctions.cpp@{auctions.\-cpp}}
+\subsubsection[{H\-O\-W\-\_\-\-M\-U\-C\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-O\-W\-\_\-\-M\-U\-C\-H~\char`\"{}How many credits did you wish to bid on this auction?\char`\"{}}}\label{auctions_8cpp_a4fb06e4a2064ded15460f1a21c399214}
+\hypertarget{auctions_8cpp_aa48b02ed128be5774fea0f46b3d0736f}{\index{auctions.\-cpp@{auctions.\-cpp}!I\-L\-L\-E\-G\-A\-L\-\_\-\-I\-T\-E\-M@{I\-L\-L\-E\-G\-A\-L\-\_\-\-I\-T\-E\-M}}
+\index{I\-L\-L\-E\-G\-A\-L\-\_\-\-I\-T\-E\-M@{I\-L\-L\-E\-G\-A\-L\-\_\-\-I\-T\-E\-M}!auctions.cpp@{auctions.\-cpp}}
+\subsubsection[{I\-L\-L\-E\-G\-A\-L\-\_\-\-I\-T\-E\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-L\-L\-E\-G\-A\-L\-\_\-\-I\-T\-E\-M~\char`\"{}Such ... merchandise ... cannot be auctioned here, I am afraid.\char`\"{}}}\label{auctions_8cpp_aa48b02ed128be5774fea0f46b3d0736f}
+\hypertarget{auctions_8cpp_aeaeb0085bc58a66e0818c97d5a93bf7c}{\index{auctions.\-cpp@{auctions.\-cpp}!L\-E\-N\-G\-T\-H\-\_\-\-S\-A\-N\-I\-T\-Y@{L\-E\-N\-G\-T\-H\-\_\-\-S\-A\-N\-I\-T\-Y}}
+\index{L\-E\-N\-G\-T\-H\-\_\-\-S\-A\-N\-I\-T\-Y@{L\-E\-N\-G\-T\-H\-\_\-\-S\-A\-N\-I\-T\-Y}!auctions.cpp@{auctions.\-cpp}}
+\subsubsection[{L\-E\-N\-G\-T\-H\-\_\-\-S\-A\-N\-I\-T\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-E\-N\-G\-T\-H\-\_\-\-S\-A\-N\-I\-T\-Y~\char`\"{}I am afraid we will only list merchandise for a period of one to sixty days.\char`\"{}}}\label{auctions_8cpp_aeaeb0085bc58a66e0818c97d5a93bf7c}
+\hypertarget{auctions_8cpp_ae7a45c92fd76efafe099350822e58150}{\index{auctions.\-cpp@{auctions.\-cpp}!L\-O\-O\-K\-I\-N\-G\-\_\-\-F\-O\-R@{L\-O\-O\-K\-I\-N\-G\-\_\-\-F\-O\-R}}
+\index{L\-O\-O\-K\-I\-N\-G\-\_\-\-F\-O\-R@{L\-O\-O\-K\-I\-N\-G\-\_\-\-F\-O\-R}!auctions.cpp@{auctions.\-cpp}}
+\subsubsection[{L\-O\-O\-K\-I\-N\-G\-\_\-\-F\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-O\-O\-K\-I\-N\-G\-\_\-\-F\-O\-R~\char`\"{}I'{\bf m} sorry -\/ I don't understand exactly what you were looking for.\char`\"{}}}\label{auctions_8cpp_ae7a45c92fd76efafe099350822e58150}
+\hypertarget{auctions_8cpp_a8658026e4b42e1360dbd1cc88e4ef2aa}{\index{auctions.\-cpp@{auctions.\-cpp}!M\-I\-S\-S\-I\-N\-G\-\_\-\-C\-A\-S\-H@{M\-I\-S\-S\-I\-N\-G\-\_\-\-C\-A\-S\-H}}
+\index{M\-I\-S\-S\-I\-N\-G\-\_\-\-C\-A\-S\-H@{M\-I\-S\-S\-I\-N\-G\-\_\-\-C\-A\-S\-H}!auctions.cpp@{auctions.\-cpp}}
+\subsubsection[{M\-I\-S\-S\-I\-N\-G\-\_\-\-C\-A\-S\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-I\-S\-S\-I\-N\-G\-\_\-\-C\-A\-S\-H~\char`\"{}You seem to be a bit ... short ... to cover your deposit fee today.\char`\"{}}}\label{auctions_8cpp_a8658026e4b42e1360dbd1cc88e4ef2aa}
+\hypertarget{auctions_8cpp_a1fdb4cb1b2a8e9af85af06e134e60a59}{\index{auctions.\-cpp@{auctions.\-cpp}!M\-I\-S\-S\-I\-N\-G\-\_\-\-C\-A\-S\-H\-\_\-\-B\-I\-D@{M\-I\-S\-S\-I\-N\-G\-\_\-\-C\-A\-S\-H\-\_\-\-B\-I\-D}}
+\index{M\-I\-S\-S\-I\-N\-G\-\_\-\-C\-A\-S\-H\-\_\-\-B\-I\-D@{M\-I\-S\-S\-I\-N\-G\-\_\-\-C\-A\-S\-H\-\_\-\-B\-I\-D}!auctions.cpp@{auctions.\-cpp}}
+\subsubsection[{M\-I\-S\-S\-I\-N\-G\-\_\-\-C\-A\-S\-H\-\_\-\-B\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-I\-S\-S\-I\-N\-G\-\_\-\-C\-A\-S\-H\-\_\-\-B\-I\-D~\char`\"{}Bah! Come back when you can back up your bids with something more than words.\char`\"{}}}\label{auctions_8cpp_a1fdb4cb1b2a8e9af85af06e134e60a59}
+\hypertarget{auctions_8cpp_a48410f5a9a0adc7b6253e6d457aa20a1}{\index{auctions.\-cpp@{auctions.\-cpp}!N\-O\-\_\-\-H\-A\-N\-D\-S\-\_\-\-F\-R\-E\-E@{N\-O\-\_\-\-H\-A\-N\-D\-S\-\_\-\-F\-R\-E\-E}}
+\index{N\-O\-\_\-\-H\-A\-N\-D\-S\-\_\-\-F\-R\-E\-E@{N\-O\-\_\-\-H\-A\-N\-D\-S\-\_\-\-F\-R\-E\-E}!auctions.cpp@{auctions.\-cpp}}
+\subsubsection[{N\-O\-\_\-\-H\-A\-N\-D\-S\-\_\-\-F\-R\-E\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-O\-\_\-\-H\-A\-N\-D\-S\-\_\-\-F\-R\-E\-E~\char`\"{}I have something for you here, but I'll hang onto it until you free up your hands.\char`\"{}}}\label{auctions_8cpp_a48410f5a9a0adc7b6253e6d457aa20a1}
+\hypertarget{auctions_8cpp_a83753f44aa70423f9f9e012c9f8c4cae}{\index{auctions.\-cpp@{auctions.\-cpp}!N\-O\-\_\-\-L\-E\-N\-G\-T\-H@{N\-O\-\_\-\-L\-E\-N\-G\-T\-H}}
+\index{N\-O\-\_\-\-L\-E\-N\-G\-T\-H@{N\-O\-\_\-\-L\-E\-N\-G\-T\-H}!auctions.cpp@{auctions.\-cpp}}
+\subsubsection[{N\-O\-\_\-\-L\-E\-N\-G\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-O\-\_\-\-L\-E\-N\-G\-T\-H~\char`\"{}How many days did you wish the auction to be listed for?\char`\"{}}}\label{auctions_8cpp_a83753f44aa70423f9f9e012c9f8c4cae}
+\hypertarget{auctions_8cpp_ab366b7c7018e24f6f6d9dfa5b424bb8f}{\index{auctions.\-cpp@{auctions.\-cpp}!N\-O\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-B\-O@{N\-O\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-B\-O}}
+\index{N\-O\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-B\-O@{N\-O\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-B\-O}!auctions.cpp@{auctions.\-cpp}}
+\subsubsection[{N\-O\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-B\-O}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-O\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-B\-O~\char`\"{}Very well -\/ but I will also need to know the buyout you wish to place on the listing, the length in days of the auction, or both.\char`\"{}}}\label{auctions_8cpp_ab366b7c7018e24f6f6d9dfa5b424bb8f}
+\hypertarget{auctions_8cpp_a0bef16a4f93b71fa12e494c2d8fa0a44}{\index{auctions.\-cpp@{auctions.\-cpp}!N\-O\-\_\-\-M\-I\-N\-\_\-\-B\-I\-D@{N\-O\-\_\-\-M\-I\-N\-\_\-\-B\-I\-D}}
+\index{N\-O\-\_\-\-M\-I\-N\-\_\-\-B\-I\-D@{N\-O\-\_\-\-M\-I\-N\-\_\-\-B\-I\-D}!auctions.cpp@{auctions.\-cpp}}
+\subsubsection[{N\-O\-\_\-\-M\-I\-N\-\_\-\-B\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-O\-\_\-\-M\-I\-N\-\_\-\-B\-I\-D~\char`\"{}What was the minimum bid in credits you wished to list for this item?\char`\"{}}}\label{auctions_8cpp_a0bef16a4f93b71fa12e494c2d8fa0a44}
+\hypertarget{auctions_8cpp_ab0fbfd9466ce1f5d0b52f41a4afa43c1}{\index{auctions.\-cpp@{auctions.\-cpp}!N\-O\-\_\-\-S\-U\-C\-H\-\_\-\-A\-U\-C\-T\-I\-O\-N@{N\-O\-\_\-\-S\-U\-C\-H\-\_\-\-A\-U\-C\-T\-I\-O\-N}}
+\index{N\-O\-\_\-\-S\-U\-C\-H\-\_\-\-A\-U\-C\-T\-I\-O\-N@{N\-O\-\_\-\-S\-U\-C\-H\-\_\-\-A\-U\-C\-T\-I\-O\-N}!auctions.cpp@{auctions.\-cpp}}
+\subsubsection[{N\-O\-\_\-\-S\-U\-C\-H\-\_\-\-A\-U\-C\-T\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-O\-\_\-\-S\-U\-C\-H\-\_\-\-A\-U\-C\-T\-I\-O\-N~\char`\"{}I'{\bf m} sorry, but I do not see any such auction listed with this establishment.\char`\"{}}}\label{auctions_8cpp_ab0fbfd9466ce1f5d0b52f41a4afa43c1}
+\hypertarget{auctions_8cpp_a4826f9c3c70b406d853828f605ce21d2}{\index{auctions.\-cpp@{auctions.\-cpp}!N\-O\-\_\-\-S\-U\-C\-H\-\_\-\-A\-U\-C\-T\-I\-O\-N\-C@{N\-O\-\_\-\-S\-U\-C\-H\-\_\-\-A\-U\-C\-T\-I\-O\-N\-C}}
+\index{N\-O\-\_\-\-S\-U\-C\-H\-\_\-\-A\-U\-C\-T\-I\-O\-N\-C@{N\-O\-\_\-\-S\-U\-C\-H\-\_\-\-A\-U\-C\-T\-I\-O\-N\-C}!auctions.cpp@{auctions.\-cpp}}
+\subsubsection[{N\-O\-\_\-\-S\-U\-C\-H\-\_\-\-A\-U\-C\-T\-I\-O\-N\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-O\-\_\-\-S\-U\-C\-H\-\_\-\-A\-U\-C\-T\-I\-O\-N\-C~\char`\"{}I'{\bf m} sorry, but I do not see any such auction that you have posted.\char`\"{}}}\label{auctions_8cpp_a4826f9c3c70b406d853828f605ce21d2}
+\hypertarget{auctions_8cpp_a32be6cbaecb67a6fc616eaff01115b62}{\index{auctions.\-cpp@{auctions.\-cpp}!N\-O\-\_\-\-S\-U\-C\-H\-\_\-\-I\-T\-E\-M@{N\-O\-\_\-\-S\-U\-C\-H\-\_\-\-I\-T\-E\-M}}
+\index{N\-O\-\_\-\-S\-U\-C\-H\-\_\-\-I\-T\-E\-M@{N\-O\-\_\-\-S\-U\-C\-H\-\_\-\-I\-T\-E\-M}!auctions.cpp@{auctions.\-cpp}}
+\subsubsection[{N\-O\-\_\-\-S\-U\-C\-H\-\_\-\-I\-T\-E\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-O\-\_\-\-S\-U\-C\-H\-\_\-\-I\-T\-E\-M~\char`\"{}Perhaps you are mistaken -\/ I do not see the merchandise you are referring to.\char`\"{}}}\label{auctions_8cpp_a32be6cbaecb67a6fc616eaff01115b62}
+\hypertarget{auctions_8cpp_ac70cb53a9c1401bca29c2d327be89c01}{\index{auctions.\-cpp@{auctions.\-cpp}!N\-O\-\_\-\-W\-I\-N\-N\-I\-N\-G\-S@{N\-O\-\_\-\-W\-I\-N\-N\-I\-N\-G\-S}}
+\index{N\-O\-\_\-\-W\-I\-N\-N\-I\-N\-G\-S@{N\-O\-\_\-\-W\-I\-N\-N\-I\-N\-G\-S}!auctions.cpp@{auctions.\-cpp}}
+\subsubsection[{N\-O\-\_\-\-W\-I\-N\-N\-I\-N\-G\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-O\-\_\-\-W\-I\-N\-N\-I\-N\-G\-S~\char`\"{}This establishment is not storing any auction winnings or returned merchandise for you at this time. Perhaps you are mistaken?\char`\"{}}}\label{auctions_8cpp_ac70cb53a9c1401bca29c2d327be89c01}
+\hypertarget{auctions_8cpp_ad0c31336be193c6ea8a2e4cc55183bb1}{\index{auctions.\-cpp@{auctions.\-cpp}!N\-O\-T\-\_\-\-E\-M\-P\-T\-Y@{N\-O\-T\-\_\-\-E\-M\-P\-T\-Y}}
+\index{N\-O\-T\-\_\-\-E\-M\-P\-T\-Y@{N\-O\-T\-\_\-\-E\-M\-P\-T\-Y}!auctions.cpp@{auctions.\-cpp}}
+\subsubsection[{N\-O\-T\-\_\-\-E\-M\-P\-T\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-O\-T\-\_\-\-E\-M\-P\-T\-Y~\char`\"{}You'll need to empty that before you can place it up for auction.\char`\"{}}}\label{auctions_8cpp_ad0c31336be193c6ea8a2e4cc55183bb1}
+\hypertarget{auctions_8cpp_af21325031e2c04cafdabd23b5cf2f39e}{\index{auctions.\-cpp@{auctions.\-cpp}!N\-O\-T\-\_\-\-Y\-O\-U\-R\-\_\-\-A\-U\-C\-T\-I\-O\-N@{N\-O\-T\-\_\-\-Y\-O\-U\-R\-\_\-\-A\-U\-C\-T\-I\-O\-N}}
+\index{N\-O\-T\-\_\-\-Y\-O\-U\-R\-\_\-\-A\-U\-C\-T\-I\-O\-N@{N\-O\-T\-\_\-\-Y\-O\-U\-R\-\_\-\-A\-U\-C\-T\-I\-O\-N}!auctions.cpp@{auctions.\-cpp}}
+\subsubsection[{N\-O\-T\-\_\-\-Y\-O\-U\-R\-\_\-\-A\-U\-C\-T\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-O\-T\-\_\-\-Y\-O\-U\-R\-\_\-\-A\-U\-C\-T\-I\-O\-N~\char`\"{}I'{\bf m} afraid that isn't your auction to cancel!\char`\"{}}}\label{auctions_8cpp_af21325031e2c04cafdabd23b5cf2f39e}
+\hypertarget{auctions_8cpp_aecef411bbac8aac4a25c657fbf21d1aa}{\index{auctions.\-cpp@{auctions.\-cpp}!O\-W\-N\-\_\-\-A\-U\-C\-T\-I\-O\-N@{O\-W\-N\-\_\-\-A\-U\-C\-T\-I\-O\-N}}
+\index{O\-W\-N\-\_\-\-A\-U\-C\-T\-I\-O\-N@{O\-W\-N\-\_\-\-A\-U\-C\-T\-I\-O\-N}!auctions.cpp@{auctions.\-cpp}}
+\subsubsection[{O\-W\-N\-\_\-\-A\-U\-C\-T\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\-W\-N\-\_\-\-A\-U\-C\-T\-I\-O\-N~\char`\"{}You can't bid on your own auctions!\char`\"{}}}\label{auctions_8cpp_aecef411bbac8aac4a25c657fbf21d1aa}
+\hypertarget{auctions_8cpp_a4cdf900b615216de811b86816f9b404d}{\index{auctions.\-cpp@{auctions.\-cpp}!W\-H\-I\-C\-H\-\_\-\-A\-U\-C\-T\-I\-O\-N@{W\-H\-I\-C\-H\-\_\-\-A\-U\-C\-T\-I\-O\-N}}
+\index{W\-H\-I\-C\-H\-\_\-\-A\-U\-C\-T\-I\-O\-N@{W\-H\-I\-C\-H\-\_\-\-A\-U\-C\-T\-I\-O\-N}!auctions.cpp@{auctions.\-cpp}}
+\subsubsection[{W\-H\-I\-C\-H\-\_\-\-A\-U\-C\-T\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\-H\-I\-C\-H\-\_\-\-A\-U\-C\-T\-I\-O\-N~\char`\"{}Which auction did you wish to place a bid on?\char`\"{}}}\label{auctions_8cpp_a4cdf900b615216de811b86816f9b404d}
+\hypertarget{auctions_8cpp_a5e51c1c9672dd11269acf2be11f6332e}{\index{auctions.\-cpp@{auctions.\-cpp}!W\-H\-I\-C\-H\-\_\-\-A\-U\-C\-T\-I\-O\-N\-C@{W\-H\-I\-C\-H\-\_\-\-A\-U\-C\-T\-I\-O\-N\-C}}
+\index{W\-H\-I\-C\-H\-\_\-\-A\-U\-C\-T\-I\-O\-N\-C@{W\-H\-I\-C\-H\-\_\-\-A\-U\-C\-T\-I\-O\-N\-C}!auctions.cpp@{auctions.\-cpp}}
+\subsubsection[{W\-H\-I\-C\-H\-\_\-\-A\-U\-C\-T\-I\-O\-N\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\-H\-I\-C\-H\-\_\-\-A\-U\-C\-T\-I\-O\-N\-C~\char`\"{}Which auction did you wish to cancel?\char`\"{}}}\label{auctions_8cpp_a5e51c1c9672dd11269acf2be11f6332e}
+\hypertarget{auctions_8cpp_a355907061cf6522db256022235fc5d8f}{\index{auctions.\-cpp@{auctions.\-cpp}!W\-H\-I\-C\-H\-\_\-\-A\-U\-C\-T\-I\-O\-N\-P@{W\-H\-I\-C\-H\-\_\-\-A\-U\-C\-T\-I\-O\-N\-P}}
+\index{W\-H\-I\-C\-H\-\_\-\-A\-U\-C\-T\-I\-O\-N\-P@{W\-H\-I\-C\-H\-\_\-\-A\-U\-C\-T\-I\-O\-N\-P}!auctions.cpp@{auctions.\-cpp}}
+\subsubsection[{W\-H\-I\-C\-H\-\_\-\-A\-U\-C\-T\-I\-O\-N\-P}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\-H\-I\-C\-H\-\_\-\-A\-U\-C\-T\-I\-O\-N\-P~\char`\"{}Which auction did you wish to preview?\char`\"{}}}\label{auctions_8cpp_a355907061cf6522db256022235fc5d8f}
+
+
+\subsection{Function Documentation}
+\hypertarget{auctions_8cpp_ae6afdf0d20a3872786f5625bd235a253}{\index{auctions.\-cpp@{auctions.\-cpp}!auction\-\_\-notify@{auction\-\_\-notify}}
+\index{auction\-\_\-notify@{auction\-\_\-notify}!auctions.cpp@{auctions.\-cpp}}
+\subsubsection[{auction\-\_\-notify}]{\setlength{\rightskip}{0pt plus 5cm}void auction\-\_\-notify (
+\begin{DoxyParamCaption}
+\item[{int}]{id, }
+\item[{int}]{type}
+\end{DoxyParamCaption}
+)}}\label{auctions_8cpp_ae6afdf0d20a3872786f5625bd235a253}
+\hypertarget{auctions_8cpp_a66168c8222c33c26f3624907ec982073}{\index{auctions.\-cpp@{auctions.\-cpp}!cancel\-\_\-auction@{cancel\-\_\-auction}}
+\index{cancel\-\_\-auction@{cancel\-\_\-auction}!auctions.cpp@{auctions.\-cpp}}
+\subsubsection[{cancel\-\_\-auction}]{\setlength{\rightskip}{0pt plus 5cm}void cancel\-\_\-auction (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{auctioneer, }
+\item[{int}]{id, }
+\item[{{\bf bool}}]{confirmed}
+\end{DoxyParamCaption}
+)}}\label{auctions_8cpp_a66168c8222c33c26f3624907ec982073}
+\hypertarget{auctions_8cpp_a84f12b18b9eb54eca3753d7c8118e63f}{\index{auctions.\-cpp@{auctions.\-cpp}!do\-\_\-auction@{do\-\_\-auction}}
+\index{do\-\_\-auction@{do\-\_\-auction}!auctions.cpp@{auctions.\-cpp}}
+\subsubsection[{do\-\_\-auction}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-auction (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{auctions_8cpp_a84f12b18b9eb54eca3753d7c8118e63f}
+\hypertarget{auctions_8cpp_a295e603a7d2fc91396654d31bb18fb2b}{\index{auctions.\-cpp@{auctions.\-cpp}!list\-\_\-auctions@{list\-\_\-auctions}}
+\index{list\-\_\-auctions@{list\-\_\-auctions}!auctions.cpp@{auctions.\-cpp}}
+\subsubsection[{list\-\_\-auctions}]{\setlength{\rightskip}{0pt plus 5cm}void list\-\_\-auctions (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{auctioneer, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{auctions_8cpp_a295e603a7d2fc91396654d31bb18fb2b}
+\hypertarget{auctions_8cpp_ac7e757dc2dcf3da531b0c849b4f3b3f4}{\index{auctions.\-cpp@{auctions.\-cpp}!place\-\_\-auction@{place\-\_\-auction}}
+\index{place\-\_\-auction@{place\-\_\-auction}!auctions.cpp@{auctions.\-cpp}}
+\subsubsection[{place\-\_\-auction}]{\setlength{\rightskip}{0pt plus 5cm}void place\-\_\-auction (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{auctioneer, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj, }
+\item[{int}]{min\-\_\-bid, }
+\item[{int}]{buyout, }
+\item[{int}]{length, }
+\item[{{\bf bool}}]{confirmed}
+\end{DoxyParamCaption}
+)}}\label{auctions_8cpp_ac7e757dc2dcf3da531b0c849b4f3b3f4}
+\hypertarget{auctions_8cpp_a312bfd88b0c2544755f94deed70925e0}{\index{auctions.\-cpp@{auctions.\-cpp}!place\-\_\-bid@{place\-\_\-bid}}
+\index{place\-\_\-bid@{place\-\_\-bid}!auctions.cpp@{auctions.\-cpp}}
+\subsubsection[{place\-\_\-bid}]{\setlength{\rightskip}{0pt plus 5cm}void place\-\_\-bid (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{auctioneer, }
+\item[{int}]{id, }
+\item[{int}]{bid, }
+\item[{{\bf bool}}]{confirmed}
+\end{DoxyParamCaption}
+)}}\label{auctions_8cpp_a312bfd88b0c2544755f94deed70925e0}
+\hypertarget{auctions_8cpp_a6e5a69a02510c6aa235ee7c20d3529c7}{\index{auctions.\-cpp@{auctions.\-cpp}!preview\-\_\-auction@{preview\-\_\-auction}}
+\index{preview\-\_\-auction@{preview\-\_\-auction}!auctions.cpp@{auctions.\-cpp}}
+\subsubsection[{preview\-\_\-auction}]{\setlength{\rightskip}{0pt plus 5cm}void preview\-\_\-auction (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{auctioneer, }
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)}}\label{auctions_8cpp_a6e5a69a02510c6aa235ee7c20d3529c7}
+\hypertarget{auctions_8cpp_aa33aca60c74d78580d9b6b4eb5665f2a}{\index{auctions.\-cpp@{auctions.\-cpp}!record\-\_\-auction@{record\-\_\-auction}}
+\index{record\-\_\-auction@{record\-\_\-auction}!auctions.cpp@{auctions.\-cpp}}
+\subsubsection[{record\-\_\-auction}]{\setlength{\rightskip}{0pt plus 5cm}void record\-\_\-auction (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{auctioneer, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj, }
+\item[{int}]{min\-\_\-bid, }
+\item[{int}]{buyout, }
+\item[{int}]{length, }
+\item[{int}]{deposit}
+\end{DoxyParamCaption}
+)}}\label{auctions_8cpp_aa33aca60c74d78580d9b6b4eb5665f2a}
+\hypertarget{auctions_8cpp_a96e0f3495b9a5efe7c7c3185b250279e}{\index{auctions.\-cpp@{auctions.\-cpp}!record\-\_\-bid@{record\-\_\-bid}}
+\index{record\-\_\-bid@{record\-\_\-bid}!auctions.cpp@{auctions.\-cpp}}
+\subsubsection[{record\-\_\-bid}]{\setlength{\rightskip}{0pt plus 5cm}void record\-\_\-bid (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{auctioneer, }
+\item[{int}]{id, }
+\item[{int}]{bid, }
+\item[{{\bf bool}}]{bought\-\_\-out, }
+\item[{int}]{buyout}
+\end{DoxyParamCaption}
+)}}\label{auctions_8cpp_a96e0f3495b9a5efe7c7c3185b250279e}
+\hypertarget{auctions_8cpp_aa9fc44c82eeed14230167f23d10d3a12}{\index{auctions.\-cpp@{auctions.\-cpp}!retrieve\-\_\-expiries@{retrieve\-\_\-expiries}}
+\index{retrieve\-\_\-expiries@{retrieve\-\_\-expiries}!auctions.cpp@{auctions.\-cpp}}
+\subsubsection[{retrieve\-\_\-expiries}]{\setlength{\rightskip}{0pt plus 5cm}int retrieve\-\_\-expiries (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{auctioneer}
+\end{DoxyParamCaption}
+)}}\label{auctions_8cpp_aa9fc44c82eeed14230167f23d10d3a12}
+\hypertarget{auctions_8cpp_aedfd64e30905b1288a52c3fe519a5842}{\index{auctions.\-cpp@{auctions.\-cpp}!retrieve\-\_\-winnings@{retrieve\-\_\-winnings}}
+\index{retrieve\-\_\-winnings@{retrieve\-\_\-winnings}!auctions.cpp@{auctions.\-cpp}}
+\subsubsection[{retrieve\-\_\-winnings}]{\setlength{\rightskip}{0pt plus 5cm}int retrieve\-\_\-winnings (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{auctioneer}
+\end{DoxyParamCaption}
+)}}\label{auctions_8cpp_aedfd64e30905b1288a52c3fe519a5842}
+
+
+\subsection{Variable Documentation}
+\hypertarget{auctions_8cpp_a2a07d10cda6b39e4f33bf2d30a31696c}{\index{auctions.\-cpp@{auctions.\-cpp}!auction\-\_\-bids@{auction\-\_\-bids}}
+\index{auction\-\_\-bids@{auction\-\_\-bids}!auctions.cpp@{auctions.\-cpp}}
+\subsubsection[{auction\-\_\-bids}]{\setlength{\rightskip}{0pt plus 5cm}int auction\-\_\-bids = 0}}\label{auctions_8cpp_a2a07d10cda6b39e4f33bf2d30a31696c}
+\hypertarget{auctions_8cpp_a55c71990ee4162ebec6abe401996cf15}{\index{auctions.\-cpp@{auctions.\-cpp}!engine@{engine}}
+\index{engine@{engine}!auctions.cpp@{auctions.\-cpp}}
+\subsubsection[{engine}]{\setlength{\rightskip}{0pt plus 5cm}{\bf rpie\-::server} engine}}\label{auctions_8cpp_a55c71990ee4162ebec6abe401996cf15}
+\hypertarget{auctions_8cpp_afdd1db36b411d65b9b284b0c22d4823b}{\index{auctions.\-cpp@{auctions.\-cpp}!new\-\_\-auctions@{new\-\_\-auctions}}
+\index{new\-\_\-auctions@{new\-\_\-auctions}!auctions.cpp@{auctions.\-cpp}}
+\subsubsection[{new\-\_\-auctions}]{\setlength{\rightskip}{0pt plus 5cm}int new\-\_\-auctions = 0}}\label{auctions_8cpp_afdd1db36b411d65b9b284b0c22d4823b}
+\hypertarget{auctions_8cpp_a83de05f50cb010b299a1eb422dff0e69}{\index{auctions.\-cpp@{auctions.\-cpp}!sold\-\_\-auctions@{sold\-\_\-auctions}}
+\index{sold\-\_\-auctions@{sold\-\_\-auctions}!auctions.cpp@{auctions.\-cpp}}
+\subsubsection[{sold\-\_\-auctions}]{\setlength{\rightskip}{0pt plus 5cm}int sold\-\_\-auctions = 0}}\label{auctions_8cpp_a83de05f50cb010b299a1eb422dff0e69}

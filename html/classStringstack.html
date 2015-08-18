@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -90,160 +90,1070 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Stringstack Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="stringstack_8h_source.html">stringstack.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aad1e45b6c7f4992135b1eff99c4fb96b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aad1e45b6c7f4992135b1eff99c4fb96b"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Stringstack</b> (std::string input)</td></tr>
+<tr class="memitem:afab20605ad4777f27403444335a958a6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringstack.html#afab20605ad4777f27403444335a958a6">Stringstack</a> ()</td></tr>
+<tr class="separator:afab20605ad4777f27403444335a958a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad1e45b6c7f4992135b1eff99c4fb96b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringstack.html#aad1e45b6c7f4992135b1eff99c4fb96b">Stringstack</a> (std::string input)</td></tr>
 <tr class="separator:aad1e45b6c7f4992135b1eff99c4fb96b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6951276915a18f6581fa2fe1f233130f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6951276915a18f6581fa2fe1f233130f"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Stringstack</b> (const char *input)</td></tr>
+<tr class="memitem:a6951276915a18f6581fa2fe1f233130f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringstack.html#a6951276915a18f6581fa2fe1f233130f">Stringstack</a> (const char *input)</td></tr>
 <tr class="separator:a6951276915a18f6581fa2fe1f233130f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a340cb8b0e983570d65548a6c49736569"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a340cb8b0e983570d65548a6c49736569"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Stringstack</b> (std::istream &amp;input)</td></tr>
+<tr class="memitem:a340cb8b0e983570d65548a6c49736569"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringstack.html#a340cb8b0e983570d65548a6c49736569">Stringstack</a> (std::istream &amp;input)</td></tr>
 <tr class="separator:a340cb8b0e983570d65548a6c49736569"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a964c8db56fa0bc1337fbde2c11456fdc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a964c8db56fa0bc1337fbde2c11456fdc"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Stringstack</b> (std::string input, bool removeSpaces)</td></tr>
+<tr class="memitem:a964c8db56fa0bc1337fbde2c11456fdc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringstack.html#a964c8db56fa0bc1337fbde2c11456fdc">Stringstack</a> (std::string input, <a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a> removeSpaces)</td></tr>
 <tr class="separator:a964c8db56fa0bc1337fbde2c11456fdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af26bb77483c372e9c27d145e1cfe4f8d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af26bb77483c372e9c27d145e1cfe4f8d"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Stringstack</b> (const char *input, bool removeSpaces)</td></tr>
+<tr class="memitem:af26bb77483c372e9c27d145e1cfe4f8d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringstack.html#af26bb77483c372e9c27d145e1cfe4f8d">Stringstack</a> (const char *input, <a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a> removeSpaces)</td></tr>
 <tr class="separator:af26bb77483c372e9c27d145e1cfe4f8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60d383777a7789d2a3d7f6b901a755da"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a60d383777a7789d2a3d7f6b901a755da"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Stringstack</b> (std::istream &amp;input, bool removeSpaces)</td></tr>
+<tr class="memitem:a60d383777a7789d2a3d7f6b901a755da"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringstack.html#a60d383777a7789d2a3d7f6b901a755da">Stringstack</a> (std::istream &amp;input, <a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a> removeSpaces)</td></tr>
 <tr class="separator:a60d383777a7789d2a3d7f6b901a755da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2197bda2738d2f687f4b90575b1bf7e1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2197bda2738d2f687f4b90575b1bf7e1"></a>
-<a class="el" href="classStringstack.html">Stringstack</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const std::string &amp;newString)</td></tr>
+<tr class="memitem:a2197bda2738d2f687f4b90575b1bf7e1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classStringstack.html">Stringstack</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringstack.html#a2197bda2738d2f687f4b90575b1bf7e1">operator=</a> (const std::string &amp;newString)</td></tr>
 <tr class="separator:a2197bda2738d2f687f4b90575b1bf7e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab46ad119cb84606eaed0654bde436542"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab46ad119cb84606eaed0654bde436542"></a>
-<a class="el" href="classStringstack.html">Stringstack</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const char *newString)</td></tr>
+<tr class="memitem:ab46ad119cb84606eaed0654bde436542"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classStringstack.html">Stringstack</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringstack.html#ab46ad119cb84606eaed0654bde436542">operator=</a> (const char *newString)</td></tr>
 <tr class="separator:ab46ad119cb84606eaed0654bde436542"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8afc987bc55cf92fcf9eadcbb8c978b8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8afc987bc55cf92fcf9eadcbb8c978b8"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const std::string compare) const </td></tr>
+<tr class="memitem:a8afc987bc55cf92fcf9eadcbb8c978b8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringstack.html#a8afc987bc55cf92fcf9eadcbb8c978b8">operator==</a> (const std::string <a class="el" href="classStringstack.html#a3a92a82a838b77bedc268372e8fe7a41">compare</a>) const </td></tr>
 <tr class="separator:a8afc987bc55cf92fcf9eadcbb8c978b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53a36a2da20ea60f2c9df67506f3748b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a53a36a2da20ea60f2c9df67506f3748b"></a>
-std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator[]</b> (const int index)</td></tr>
+<tr class="memitem:a53a36a2da20ea60f2c9df67506f3748b"><td class="memItemLeft" align="right" valign="top">std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringstack.html#a53a36a2da20ea60f2c9df67506f3748b">operator[]</a> (const int index)</td></tr>
 <tr class="separator:a53a36a2da20ea60f2c9df67506f3748b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a9777f29361b6e493108a234f89b81d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8a9777f29361b6e493108a234f89b81d"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>pop</b> ()</td></tr>
+<tr class="memitem:a8a9777f29361b6e493108a234f89b81d"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringstack.html#a8a9777f29361b6e493108a234f89b81d">pop</a> ()</td></tr>
 <tr class="separator:a8a9777f29361b6e493108a234f89b81d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a991eff1393a30e44e8b327501c10c417"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a991eff1393a30e44e8b327501c10c417"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>pop</b> (std::string firstDelimit, std::string secondDelimit)</td></tr>
+<tr class="memitem:a991eff1393a30e44e8b327501c10c417"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringstack.html#a991eff1393a30e44e8b327501c10c417">pop</a> (std::string firstDelimit, std::string secondDelimit)</td></tr>
 <tr class="separator:a991eff1393a30e44e8b327501c10c417"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa99c109a0b5c1632a6402780dbcc97d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afa99c109a0b5c1632a6402780dbcc97d"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>pop</b> (std::string firstDelimit, std::string secondDelimit, bool eraseDelimits, bool delimitsMatch)</td></tr>
+<tr class="memitem:afa99c109a0b5c1632a6402780dbcc97d"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringstack.html#afa99c109a0b5c1632a6402780dbcc97d">pop</a> (std::string firstDelimit, std::string secondDelimit, <a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a> eraseDelimits, <a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a> delimitsMatch)</td></tr>
 <tr class="separator:afa99c109a0b5c1632a6402780dbcc97d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71b03b6b0c5d15074abde46944d71864"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a71b03b6b0c5d15074abde46944d71864"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>findPop</b> (std::string firstDelimit, std::string secondDelimit)</td></tr>
+<tr class="memitem:a71b03b6b0c5d15074abde46944d71864"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringstack.html#a71b03b6b0c5d15074abde46944d71864">findPop</a> (std::string firstDelimit, std::string secondDelimit)</td></tr>
 <tr class="separator:a71b03b6b0c5d15074abde46944d71864"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad378b6dd8a9d55605d3c17b452fd5dda"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad378b6dd8a9d55605d3c17b452fd5dda"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>findPop</b> (std::string firstDelimit, std::string secondDelimit, bool eraseDelimits)</td></tr>
+<tr class="memitem:ad378b6dd8a9d55605d3c17b452fd5dda"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringstack.html#ad378b6dd8a9d55605d3c17b452fd5dda">findPop</a> (std::string firstDelimit, std::string secondDelimit, <a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a> eraseDelimits)</td></tr>
 <tr class="separator:ad378b6dd8a9d55605d3c17b452fd5dda"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1db05c3fe40c98493b6e02134eb8d64"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab1db05c3fe40c98493b6e02134eb8d64"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>popSpeech</b> ()</td></tr>
+<tr class="memitem:ab1db05c3fe40c98493b6e02134eb8d64"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringstack.html#ab1db05c3fe40c98493b6e02134eb8d64">popSpeech</a> ()</td></tr>
 <tr class="separator:ab1db05c3fe40c98493b6e02134eb8d64"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd03c9d391bfd931ffb35e544230b402"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afd03c9d391bfd931ffb35e544230b402"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>popUntil</b> (std::string delimit)</td></tr>
+<tr class="memitem:afd03c9d391bfd931ffb35e544230b402"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringstack.html#afd03c9d391bfd931ffb35e544230b402">popUntil</a> (std::string delimit)</td></tr>
 <tr class="separator:afd03c9d391bfd931ffb35e544230b402"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaad2f5dc1df9ef88da1c2e2fc676f5dd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaad2f5dc1df9ef88da1c2e2fc676f5dd"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>popUntil</b> (std::string delimit, bool eraseDelimit)</td></tr>
+<tr class="memitem:aaad2f5dc1df9ef88da1c2e2fc676f5dd"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringstack.html#aaad2f5dc1df9ef88da1c2e2fc676f5dd">popUntil</a> (std::string delimit, <a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a> eraseDelimit)</td></tr>
 <tr class="separator:aaad2f5dc1df9ef88da1c2e2fc676f5dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab657ed4278c068f32715c8b0b4d03312"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab657ed4278c068f32715c8b0b4d03312"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>find</b> (std::string specifier)</td></tr>
+<tr class="memitem:ab657ed4278c068f32715c8b0b4d03312"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringstack.html#ab657ed4278c068f32715c8b0b4d03312">find</a> (std::string specifier)</td></tr>
 <tr class="separator:ab657ed4278c068f32715c8b0b4d03312"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3b7b4445b0ea898feaea34657e00c92"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab3b7b4445b0ea898feaea34657e00c92"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>argCount</b> (std::string specifier)</td></tr>
+<tr class="memitem:ab3b7b4445b0ea898feaea34657e00c92"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringstack.html#ab3b7b4445b0ea898feaea34657e00c92">argCount</a> (std::string specifier)</td></tr>
 <tr class="separator:ab3b7b4445b0ea898feaea34657e00c92"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e9d7a9a8909e5699f935575bf15fb5c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6e9d7a9a8909e5699f935575bf15fb5c"></a>
-std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>argBatchFind</b> (const std::vector&lt; std::string &gt; &amp;strings)</td></tr>
+<tr class="memitem:a6e9d7a9a8909e5699f935575bf15fb5c"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringstack.html#a6e9d7a9a8909e5699f935575bf15fb5c">argBatchFind</a> (const std::vector&lt; std::string &gt; &amp;strings)</td></tr>
 <tr class="separator:a6e9d7a9a8909e5699f935575bf15fb5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a807cfc6a9e73c3614e1ccec547721092"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a807cfc6a9e73c3614e1ccec547721092"></a>
-std::vector&lt; std::pair<br class="typebreak"/>
-&lt; std::string, int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>argBatchCount</b> (const std::vector&lt; std::string &gt; &amp;strings)</td></tr>
+<tr class="memitem:a807cfc6a9e73c3614e1ccec547721092"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair<br class="typebreak"/>
+&lt; std::string, int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringstack.html#a807cfc6a9e73c3614e1ccec547721092">argBatchCount</a> (const std::vector&lt; std::string &gt; &amp;strings)</td></tr>
 <tr class="separator:a807cfc6a9e73c3614e1ccec547721092"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73332f209b954e23d6486a7439a1d74a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a73332f209b954e23d6486a7439a1d74a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>argReplace</b> (std::string specifier, std::string replacement)</td></tr>
+<tr class="memitem:a73332f209b954e23d6486a7439a1d74a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringstack.html#a73332f209b954e23d6486a7439a1d74a">argReplace</a> (std::string specifier, std::string replacement)</td></tr>
 <tr class="separator:a73332f209b954e23d6486a7439a1d74a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af30cd5b798f448c0d4f73b013ab62eb7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af30cd5b798f448c0d4f73b013ab62eb7"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>argReplace</b> (std::string specifier, std::string replacement, bool replaceAll, bool replaceReverseOrder)</td></tr>
+<tr class="memitem:af30cd5b798f448c0d4f73b013ab62eb7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringstack.html#af30cd5b798f448c0d4f73b013ab62eb7">argReplace</a> (std::string specifier, std::string replacement, <a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a> replaceAll, <a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a> replaceReverseOrder)</td></tr>
 <tr class="separator:af30cd5b798f448c0d4f73b013ab62eb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a405bd0c49154f672b01474697a2dac45"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a405bd0c49154f672b01474697a2dac45"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>argReplaceOnce</b> (std::string specifier, std::string replacement)</td></tr>
+<tr class="memitem:a405bd0c49154f672b01474697a2dac45"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringstack.html#a405bd0c49154f672b01474697a2dac45">argReplaceOnce</a> (std::string specifier, std::string replacement)</td></tr>
 <tr class="separator:a405bd0c49154f672b01474697a2dac45"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1082f1a7d5d0669b2249dae76ac3a06"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa1082f1a7d5d0669b2249dae76ac3a06"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>argReplaceOnce</b> (std::string specifier, std::string replacement, bool replaceReverseOrder)</td></tr>
+<tr class="memitem:aa1082f1a7d5d0669b2249dae76ac3a06"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringstack.html#aa1082f1a7d5d0669b2249dae76ac3a06">argReplaceOnce</a> (std::string specifier, std::string replacement, <a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a> replaceReverseOrder)</td></tr>
 <tr class="separator:aa1082f1a7d5d0669b2249dae76ac3a06"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ffee5cf0fac3be196cb6a2da5248c68"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1ffee5cf0fac3be196cb6a2da5248c68"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>recall</b> (size_t indexArg)</td></tr>
+<tr class="memitem:a1ffee5cf0fac3be196cb6a2da5248c68"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringstack.html#a1ffee5cf0fac3be196cb6a2da5248c68">recall</a> (size_t indexArg)</td></tr>
 <tr class="separator:a1ffee5cf0fac3be196cb6a2da5248c68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6451d4ae727082e186bc1e823787cfcd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6451d4ae727082e186bc1e823787cfcd"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>last</b> ()</td></tr>
+<tr class="memitem:a6451d4ae727082e186bc1e823787cfcd"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringstack.html#a6451d4ae727082e186bc1e823787cfcd">last</a> ()</td></tr>
 <tr class="separator:a6451d4ae727082e186bc1e823787cfcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e8b15949b4e1a48c0b64f7631a17e5b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8e8b15949b4e1a48c0b64f7631a17e5b"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>toInt</b> ()</td></tr>
+<tr class="memitem:a8e8b15949b4e1a48c0b64f7631a17e5b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringstack.html#a8e8b15949b4e1a48c0b64f7631a17e5b">toInt</a> ()</td></tr>
 <tr class="separator:a8e8b15949b4e1a48c0b64f7631a17e5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a225f2ec993cdc23513eddc64eec914b8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a225f2ec993cdc23513eddc64eec914b8"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>toInt</b> (std::string integerString)</td></tr>
+<tr class="memitem:a225f2ec993cdc23513eddc64eec914b8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringstack.html#a225f2ec993cdc23513eddc64eec914b8">toInt</a> (std::string integerString)</td></tr>
 <tr class="separator:a225f2ec993cdc23513eddc64eec914b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2bf7ea8186405b71cf4c401bd9593708"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2bf7ea8186405b71cf4c401bd9593708"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>toInt</b> (size_t indexArg)</td></tr>
+<tr class="memitem:a2bf7ea8186405b71cf4c401bd9593708"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringstack.html#a2bf7ea8186405b71cf4c401bd9593708">toInt</a> (size_t indexArg)</td></tr>
 <tr class="separator:a2bf7ea8186405b71cf4c401bd9593708"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ba9b3e887c482b2dab3fe3f4010fa2d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3ba9b3e887c482b2dab3fe3f4010fa2d"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>toDouble</b> ()</td></tr>
+<tr class="memitem:a3ba9b3e887c482b2dab3fe3f4010fa2d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringstack.html#a3ba9b3e887c482b2dab3fe3f4010fa2d">toDouble</a> ()</td></tr>
 <tr class="separator:a3ba9b3e887c482b2dab3fe3f4010fa2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a743b4fca4f2dde9b593cc4d4cb8d3a3d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a743b4fca4f2dde9b593cc4d4cb8d3a3d"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>toDouble</b> (std::string doubleString)</td></tr>
+<tr class="memitem:a743b4fca4f2dde9b593cc4d4cb8d3a3d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringstack.html#a743b4fca4f2dde9b593cc4d4cb8d3a3d">toDouble</a> (std::string doubleString)</td></tr>
 <tr class="separator:a743b4fca4f2dde9b593cc4d4cb8d3a3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b4ee6ffffd6b0686854e20d4c126c8d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3b4ee6ffffd6b0686854e20d4c126c8d"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>toDouble</b> (size_t indexArg)</td></tr>
+<tr class="memitem:a3b4ee6ffffd6b0686854e20d4c126c8d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringstack.html#a3b4ee6ffffd6b0686854e20d4c126c8d">toDouble</a> (size_t indexArg)</td></tr>
 <tr class="separator:a3b4ee6ffffd6b0686854e20d4c126c8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac6c5200c1210f181f9c84885e85dc75"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aac6c5200c1210f181f9c84885e85dc75"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>recallPartialString</b> (size_t begin)</td></tr>
+<tr class="memitem:aac6c5200c1210f181f9c84885e85dc75"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringstack.html#aac6c5200c1210f181f9c84885e85dc75">recallPartialString</a> (size_t begin)</td></tr>
 <tr class="separator:aac6c5200c1210f181f9c84885e85dc75"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd25b981a984a4bfc23eaff79fa6006e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abd25b981a984a4bfc23eaff79fa6006e"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>recallPartialString</b> (size_t begin, size_t arguments)</td></tr>
+<tr class="memitem:abd25b981a984a4bfc23eaff79fa6006e"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringstack.html#abd25b981a984a4bfc23eaff79fa6006e">recallPartialString</a> (size_t begin, size_t arguments)</td></tr>
 <tr class="separator:abd25b981a984a4bfc23eaff79fa6006e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf7895e4f440740cc8170980c1140be3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaf7895e4f440740cc8170980c1140be3"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>recallString</b> ()</td></tr>
+<tr class="memitem:aaf7895e4f440740cc8170980c1140be3"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringstack.html#aaf7895e4f440740cc8170980c1140be3">recallString</a> ()</td></tr>
 <tr class="separator:aaf7895e4f440740cc8170980c1140be3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a787094ae6c979c8d1f81498b0743f4ad"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a787094ae6c979c8d1f81498b0743f4ad"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>popAll</b> ()</td></tr>
+<tr class="memitem:a787094ae6c979c8d1f81498b0743f4ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringstack.html#a787094ae6c979c8d1f81498b0743f4ad">popAll</a> ()</td></tr>
 <tr class="separator:a787094ae6c979c8d1f81498b0743f4ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a867ab3e162e7ae1012d105b8a210df50"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a867ab3e162e7ae1012d105b8a210df50"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>popAllSpeech</b> ()</td></tr>
+<tr class="memitem:a867ab3e162e7ae1012d105b8a210df50"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringstack.html#a867ab3e162e7ae1012d105b8a210df50">popAllSpeech</a> ()</td></tr>
 <tr class="separator:a867ab3e162e7ae1012d105b8a210df50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe0023a8e89792617fd595d400571faa"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afe0023a8e89792617fd595d400571faa"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isFinished</b> ()</td></tr>
+<tr class="memitem:afe0023a8e89792617fd595d400571faa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringstack.html#afe0023a8e89792617fd595d400571faa">isFinished</a> ()</td></tr>
 <tr class="separator:afe0023a8e89792617fd595d400571faa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97dbddf508815857bf97c7310b70c913"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a97dbddf508815857bf97c7310b70c913"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getArg</b> ()</td></tr>
+<tr class="memitem:a97dbddf508815857bf97c7310b70c913"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringstack.html#a97dbddf508815857bf97c7310b70c913">getArg</a> ()</td></tr>
 <tr class="separator:a97dbddf508815857bf97c7310b70c913"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a246ba7090b700205b9e8321902fa6e5c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a246ba7090b700205b9e8321902fa6e5c"></a>
-const char *&#160;</td><td class="memItemRight" valign="bottom"><b>getCArg</b> ()</td></tr>
+<tr class="memitem:a246ba7090b700205b9e8321902fa6e5c"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringstack.html#a246ba7090b700205b9e8321902fa6e5c">getCArg</a> ()</td></tr>
 <tr class="separator:a246ba7090b700205b9e8321902fa6e5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaeea1c99e035be5237e18477f5a00afd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaeea1c99e035be5237e18477f5a00afd"></a>
-const char *&#160;</td><td class="memItemRight" valign="bottom"><b>getCArg</b> (const std::string input)</td></tr>
+<tr class="memitem:aaeea1c99e035be5237e18477f5a00afd"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringstack.html#aaeea1c99e035be5237e18477f5a00afd">getCArg</a> (const std::string input)</td></tr>
 <tr class="separator:aaeea1c99e035be5237e18477f5a00afd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a3a92a82a838b77bedc268372e8fe7a41"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3a92a82a838b77bedc268372e8fe7a41"></a>
-static bool&#160;</td><td class="memItemRight" valign="bottom"><b>compare</b> (const std::string compare, const std::string compare2)</td></tr>
+<tr class="memitem:a3a92a82a838b77bedc268372e8fe7a41"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringstack.html#a3a92a82a838b77bedc268372e8fe7a41">compare</a> (const std::string compare, const std::string compare2)</td></tr>
 <tr class="separator:a3a92a82a838b77bedc268372e8fe7a41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d8758c37734f6f45d6f5177dcc1a922"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8d8758c37734f6f45d6f5177dcc1a922"></a>
-static bool&#160;</td><td class="memItemRight" valign="bottom"><b>compare</b> (const char *compare, const char *compare2)</td></tr>
+<tr class="memitem:a8d8758c37734f6f45d6f5177dcc1a922"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringstack.html#a8d8758c37734f6f45d6f5177dcc1a922">compare</a> (const char *compare, const char *compare2)</td></tr>
 <tr class="separator:a8d8758c37734f6f45d6f5177dcc1a922"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7a1dcd59e92618fc6a52bba41e5854c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad7a1dcd59e92618fc6a52bba41e5854c"></a>
-static std::string&#160;</td><td class="memItemRight" valign="bottom"><b>trim</b> (std::string &amp;input)</td></tr>
+<tr class="memitem:ad7a1dcd59e92618fc6a52bba41e5854c"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringstack.html#ad7a1dcd59e92618fc6a52bba41e5854c">trim</a> (std::string &amp;input)</td></tr>
 <tr class="separator:ad7a1dcd59e92618fc6a52bba41e5854c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="afab20605ad4777f27403444335a958a6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Stringstack::Stringstack </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aad1e45b6c7f4992135b1eff99c4fb96b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Stringstack::Stringstack </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>input</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6951276915a18f6581fa2fe1f233130f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Stringstack::Stringstack </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>input</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a340cb8b0e983570d65548a6c49736569"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Stringstack::Stringstack </td>
+          <td>(</td>
+          <td class="paramtype">std::istream &amp;&#160;</td>
+          <td class="paramname"><em>input</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a964c8db56fa0bc1337fbde2c11456fdc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Stringstack::Stringstack </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a>&#160;</td>
+          <td class="paramname"><em>removeSpaces</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af26bb77483c372e9c27d145e1cfe4f8d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Stringstack::Stringstack </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a>&#160;</td>
+          <td class="paramname"><em>removeSpaces</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a60d383777a7789d2a3d7f6b901a755da"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Stringstack::Stringstack </td>
+          <td>(</td>
+          <td class="paramtype">std::istream &amp;&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a>&#160;</td>
+          <td class="paramname"><em>removeSpaces</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a807cfc6a9e73c3614e1ccec547721092"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::pair&lt; std::string, int &gt; &gt; Stringstack::argBatchCount </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>strings</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6e9d7a9a8909e5699f935575bf15fb5c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::string &gt; Stringstack::argBatchFind </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>strings</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab3b7b4445b0ea898feaea34657e00c92"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Stringstack::argCount </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>specifier</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a73332f209b954e23d6486a7439a1d74a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Stringstack::argReplace </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>specifier</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>replacement</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af30cd5b798f448c0d4f73b013ab62eb7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Stringstack::argReplace </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>specifier</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>replacement</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a>&#160;</td>
+          <td class="paramname"><em>replaceAll</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a>&#160;</td>
+          <td class="paramname"><em>replaceReverseOrder</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a405bd0c49154f672b01474697a2dac45"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Stringstack::argReplaceOnce </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>specifier</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>replacement</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa1082f1a7d5d0669b2249dae76ac3a06"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Stringstack::argReplaceOnce </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>specifier</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>replacement</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a>&#160;</td>
+          <td class="paramname"><em>replaceReverseOrder</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3a92a82a838b77bedc268372e8fe7a41"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a> Stringstack::compare </td>
+          <td>(</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>compare</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>compare2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8d8758c37734f6f45d6f5177dcc1a922"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a> Stringstack::compare </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>compare</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>compare2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab657ed4278c068f32715c8b0b4d03312"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a> Stringstack::find </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>specifier</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a71b03b6b0c5d15074abde46944d71864"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Stringstack::findPop </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>firstDelimit</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>secondDelimit</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad378b6dd8a9d55605d3c17b452fd5dda"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Stringstack::findPop </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>firstDelimit</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>secondDelimit</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a>&#160;</td>
+          <td class="paramname"><em>eraseDelimits</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a97dbddf508815857bf97c7310b70c913"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Stringstack::getArg </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a246ba7090b700205b9e8321902fa6e5c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * Stringstack::getCArg </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aaeea1c99e035be5237e18477f5a00afd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * Stringstack::getCArg </td>
+          <td>(</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>input</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="afe0023a8e89792617fd595d400571faa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a> Stringstack::isFinished </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6451d4ae727082e186bc1e823787cfcd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Stringstack::last </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2197bda2738d2f687f4b90575b1bf7e1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classStringstack.html">Stringstack</a> &amp; Stringstack::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>newString</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab46ad119cb84606eaed0654bde436542"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classStringstack.html">Stringstack</a> &amp; Stringstack::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>newString</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8afc987bc55cf92fcf9eadcbb8c978b8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a> Stringstack::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>compare</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a53a36a2da20ea60f2c9df67506f3748b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string &amp; Stringstack::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8a9777f29361b6e493108a234f89b81d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Stringstack::pop </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a991eff1393a30e44e8b327501c10c417"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Stringstack::pop </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>firstDelimit</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>secondDelimit</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="afa99c109a0b5c1632a6402780dbcc97d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Stringstack::pop </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>firstDelimit</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>secondDelimit</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a>&#160;</td>
+          <td class="paramname"><em>eraseDelimits</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a>&#160;</td>
+          <td class="paramname"><em>delimitsMatch</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a787094ae6c979c8d1f81498b0743f4ad"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Stringstack::popAll </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a867ab3e162e7ae1012d105b8a210df50"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Stringstack::popAllSpeech </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab1db05c3fe40c98493b6e02134eb8d64"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Stringstack::popSpeech </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="afd03c9d391bfd931ffb35e544230b402"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Stringstack::popUntil </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>delimit</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aaad2f5dc1df9ef88da1c2e2fc676f5dd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Stringstack::popUntil </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>delimit</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structs_8h.html#ad5c9d4ba3dc37783a528b0925dc981a0">bool</a>&#160;</td>
+          <td class="paramname"><em>eraseDelimit</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1ffee5cf0fac3be196cb6a2da5248c68"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Stringstack::recall </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>indexArg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aac6c5200c1210f181f9c84885e85dc75"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Stringstack::recallPartialString </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>begin</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abd25b981a984a4bfc23eaff79fa6006e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Stringstack::recallPartialString </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>begin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>arguments</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aaf7895e4f440740cc8170980c1140be3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Stringstack::recallString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3ba9b3e887c482b2dab3fe3f4010fa2d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Stringstack::toDouble </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a743b4fca4f2dde9b593cc4d4cb8d3a3d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Stringstack::toDouble </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>doubleString</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3b4ee6ffffd6b0686854e20d4c126c8d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Stringstack::toDouble </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>indexArg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8e8b15949b4e1a48c0b64f7631a17e5b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Stringstack::toInt </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a225f2ec993cdc23513eddc64eec914b8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Stringstack::toInt </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>integerString</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2bf7ea8186405b71cf4c401bd9593708"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Stringstack::toInt </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>indexArg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad7a1dcd59e92618fc6a52bba41e5854c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::string Stringstack::trim </td>
+          <td>(</td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>input</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="stringstack_8h_source.html">stringstack.h</a></li>
-<li>stringstack.cpp</li>
+<li><a class="el" href="stringstack_8cpp.html">stringstack.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 17 2015 21:26:48 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 17 2015 22:02:23 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

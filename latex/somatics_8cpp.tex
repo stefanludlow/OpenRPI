@@ -1,0 +1,315 @@
+\hypertarget{somatics_8cpp}{\section{somatics.\-cpp File Reference}
+\label{somatics_8cpp}\index{somatics.\-cpp@{somatics.\-cpp}}
+}
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$time.\-h$>$}\\*
+{\ttfamily \#include $<$malloc.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$ctype.\-h$>$}\\*
+{\ttfamily \#include $<$unistd.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}structs.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}net\-\_\-link.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}account.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}protos.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}decl.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}group.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utility.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{somatics_8cpp_a7239a29a4923e3a1d62a375e0245d5b7}{scent\-\_\-lookup} (int scent\-\_\-ref)
+\item 
+int \hyperlink{somatics_8cpp_aafc3020c702f39b92d599088cc37df01}{scent\-\_\-lookup} (char $\ast$scent\-\_\-name)
+\item 
+int \hyperlink{somatics_8cpp_a342db18010d4bcee33d3945b84b39433}{scent\-\_\-strength} (\hyperlink{structs_8h_a65372345a26d15a29af1abf6cb29f785}{S\-C\-E\-N\-T\-\_\-\-D\-A\-T\-A} $\ast$scent)
+\item 
+void \hyperlink{somatics_8cpp_a2e8cdecbd150bc12a05687a737342362}{add\-\_\-scent} (\hyperlink{room_8h_aede519ef65d80b5242a4a28b69d5e097}{R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$room, int scent\-\_\-ref, int permanent, int atm\-\_\-power, int pot\-\_\-power, int rat\-\_\-power, int create)
+\item 
+void \hyperlink{somatics_8cpp_a87ab21613d343fbb203ac3095d772a7d}{add\-\_\-scent} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj, int scent\-\_\-ref, int permanent, int atm\-\_\-power, int pot\-\_\-power, int rat\-\_\-power, int create)
+\item 
+void \hyperlink{somatics_8cpp_a9de42012ae3a60b7e20a2d4e8dce1d03}{add\-\_\-scent} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int scent\-\_\-ref, int permanent, int atm\-\_\-power, int pot\-\_\-power, int rat\-\_\-power, int create)
+\item 
+void \hyperlink{somatics_8cpp_a1a055c60b5a8da27fdda8fdbc404f87e}{soma\-\_\-stat} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_a0a9304fc5764d8448c93fdffdd64e1d2}{A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$af)
+\item 
+void \hyperlink{somatics_8cpp_a9beb73802dcd5356122a68ce67840509}{soma\-\_\-ten\-\_\-second\-\_\-affect} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_a0a9304fc5764d8448c93fdffdd64e1d2}{A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$af)
+\item 
+void \hyperlink{somatics_8cpp_a2583f060c33f364afc6843d1d820bc70}{soma\-\_\-rl\-\_\-minute\-\_\-affect} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_a0a9304fc5764d8448c93fdffdd64e1d2}{A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$af)
+\item 
+int \hyperlink{somatics_8cpp_af5a504f51acfa510ed0531bd26888476}{lookup\-\_\-soma} (char $\ast$argument)
+\item 
+int \hyperlink{somatics_8cpp_a2ee4048cef364eeaa4bde5ee96c7a0c1}{soma\-\_\-add\-\_\-affect} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int type, int duration, int latency, int minute, int max\-\_\-power, int lvl\-\_\-power, int atm\-\_\-power, int attack, int decay, int sustain, int release)
+\item 
+void \hyperlink{somatics_8cpp_ab9d6732e1c19d67e8e5c7f5bfb6d65d8}{do\-\_\-quaff} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{somatics_8cpp_ae0ca997a8e757b64e6283225f869b788}{delayed\-\_\-quaff} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{somatics_8cpp_a92d969769290cfb82c75bf9e5e868176}{do\-\_\-stink} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{somatics_8cpp_a47087a47ba71d74c302b293621f16bdf}{do\-\_\-xpoison} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{somatics_8cpp_a6acef52366e2a5ef8b6b10dfbe04dac2}{do\-\_\-spray} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{somatics_8cpp_a370658091c1207fdf791134a50be1a0a}{do\-\_\-inject} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{somatics_8cpp_a5e35d20c03afef0e0ea3e5fb4b0788b0}{delayed\-\_\-inject} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{somatics_8cpp_a44d0b844d09cb68d79a2b874d241e7bd}{do\-\_\-mix} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{somatics_8cpp_aeea797e63001b8b1daa631ae8ece0b25}{delayed\-\_\-chem\-\_\-concentrate\-\_\-mix} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{somatics_8cpp_adc206921883e2f13ddd050fb9d338045}{delayed\-\_\-chem\-\_\-combine\-\_\-mix} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{somatics_8cpp_af064ec7f3d5a93744fbcb013898175e3}{do\-\_\-apply} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{somatics_8cpp_a9ff5fe68acc5b9cf65541abcab5985ba}{do\-\_\-coat} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{somatics_8cpp_aba7ca56538f5922c2bf358c6da0203ed}{delayed\-\_\-poison} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{somatics_8cpp_a2612f612cd7bc22aafefeb773d546032}{scent\-\_\-tier} \mbox{[}11\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{somatics_8cpp_a2e8cdecbd150bc12a05687a737342362}{\index{somatics.\-cpp@{somatics.\-cpp}!add\-\_\-scent@{add\-\_\-scent}}
+\index{add\-\_\-scent@{add\-\_\-scent}!somatics.cpp@{somatics.\-cpp}}
+\subsubsection[{add\-\_\-scent}]{\setlength{\rightskip}{0pt plus 5cm}void add\-\_\-scent (
+\begin{DoxyParamCaption}
+\item[{{\bf R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$}]{room, }
+\item[{int}]{scent\-\_\-ref, }
+\item[{int}]{permanent, }
+\item[{int}]{atm\-\_\-power, }
+\item[{int}]{pot\-\_\-power, }
+\item[{int}]{rat\-\_\-power, }
+\item[{int}]{create}
+\end{DoxyParamCaption}
+)}}\label{somatics_8cpp_a2e8cdecbd150bc12a05687a737342362}
+\hypertarget{somatics_8cpp_a87ab21613d343fbb203ac3095d772a7d}{\index{somatics.\-cpp@{somatics.\-cpp}!add\-\_\-scent@{add\-\_\-scent}}
+\index{add\-\_\-scent@{add\-\_\-scent}!somatics.cpp@{somatics.\-cpp}}
+\subsubsection[{add\-\_\-scent}]{\setlength{\rightskip}{0pt plus 5cm}void add\-\_\-scent (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj, }
+\item[{int}]{scent\-\_\-ref, }
+\item[{int}]{permanent, }
+\item[{int}]{atm\-\_\-power, }
+\item[{int}]{pot\-\_\-power, }
+\item[{int}]{rat\-\_\-power, }
+\item[{int}]{create}
+\end{DoxyParamCaption}
+)}}\label{somatics_8cpp_a87ab21613d343fbb203ac3095d772a7d}
+\hypertarget{somatics_8cpp_a9de42012ae3a60b7e20a2d4e8dce1d03}{\index{somatics.\-cpp@{somatics.\-cpp}!add\-\_\-scent@{add\-\_\-scent}}
+\index{add\-\_\-scent@{add\-\_\-scent}!somatics.cpp@{somatics.\-cpp}}
+\subsubsection[{add\-\_\-scent}]{\setlength{\rightskip}{0pt plus 5cm}void add\-\_\-scent (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{scent\-\_\-ref, }
+\item[{int}]{permanent, }
+\item[{int}]{atm\-\_\-power, }
+\item[{int}]{pot\-\_\-power, }
+\item[{int}]{rat\-\_\-power, }
+\item[{int}]{create}
+\end{DoxyParamCaption}
+)}}\label{somatics_8cpp_a9de42012ae3a60b7e20a2d4e8dce1d03}
+\hypertarget{somatics_8cpp_adc206921883e2f13ddd050fb9d338045}{\index{somatics.\-cpp@{somatics.\-cpp}!delayed\-\_\-chem\-\_\-combine\-\_\-mix@{delayed\-\_\-chem\-\_\-combine\-\_\-mix}}
+\index{delayed\-\_\-chem\-\_\-combine\-\_\-mix@{delayed\-\_\-chem\-\_\-combine\-\_\-mix}!somatics.cpp@{somatics.\-cpp}}
+\subsubsection[{delayed\-\_\-chem\-\_\-combine\-\_\-mix}]{\setlength{\rightskip}{0pt plus 5cm}void delayed\-\_\-chem\-\_\-combine\-\_\-mix (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{somatics_8cpp_adc206921883e2f13ddd050fb9d338045}
+\hypertarget{somatics_8cpp_aeea797e63001b8b1daa631ae8ece0b25}{\index{somatics.\-cpp@{somatics.\-cpp}!delayed\-\_\-chem\-\_\-concentrate\-\_\-mix@{delayed\-\_\-chem\-\_\-concentrate\-\_\-mix}}
+\index{delayed\-\_\-chem\-\_\-concentrate\-\_\-mix@{delayed\-\_\-chem\-\_\-concentrate\-\_\-mix}!somatics.cpp@{somatics.\-cpp}}
+\subsubsection[{delayed\-\_\-chem\-\_\-concentrate\-\_\-mix}]{\setlength{\rightskip}{0pt plus 5cm}void delayed\-\_\-chem\-\_\-concentrate\-\_\-mix (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{somatics_8cpp_aeea797e63001b8b1daa631ae8ece0b25}
+\hypertarget{somatics_8cpp_a5e35d20c03afef0e0ea3e5fb4b0788b0}{\index{somatics.\-cpp@{somatics.\-cpp}!delayed\-\_\-inject@{delayed\-\_\-inject}}
+\index{delayed\-\_\-inject@{delayed\-\_\-inject}!somatics.cpp@{somatics.\-cpp}}
+\subsubsection[{delayed\-\_\-inject}]{\setlength{\rightskip}{0pt plus 5cm}void delayed\-\_\-inject (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{somatics_8cpp_a5e35d20c03afef0e0ea3e5fb4b0788b0}
+\hypertarget{somatics_8cpp_aba7ca56538f5922c2bf358c6da0203ed}{\index{somatics.\-cpp@{somatics.\-cpp}!delayed\-\_\-poison@{delayed\-\_\-poison}}
+\index{delayed\-\_\-poison@{delayed\-\_\-poison}!somatics.cpp@{somatics.\-cpp}}
+\subsubsection[{delayed\-\_\-poison}]{\setlength{\rightskip}{0pt plus 5cm}void delayed\-\_\-poison (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{somatics_8cpp_aba7ca56538f5922c2bf358c6da0203ed}
+\hypertarget{somatics_8cpp_ae0ca997a8e757b64e6283225f869b788}{\index{somatics.\-cpp@{somatics.\-cpp}!delayed\-\_\-quaff@{delayed\-\_\-quaff}}
+\index{delayed\-\_\-quaff@{delayed\-\_\-quaff}!somatics.cpp@{somatics.\-cpp}}
+\subsubsection[{delayed\-\_\-quaff}]{\setlength{\rightskip}{0pt plus 5cm}void delayed\-\_\-quaff (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{somatics_8cpp_ae0ca997a8e757b64e6283225f869b788}
+\hypertarget{somatics_8cpp_af064ec7f3d5a93744fbcb013898175e3}{\index{somatics.\-cpp@{somatics.\-cpp}!do\-\_\-apply@{do\-\_\-apply}}
+\index{do\-\_\-apply@{do\-\_\-apply}!somatics.cpp@{somatics.\-cpp}}
+\subsubsection[{do\-\_\-apply}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-apply (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{somatics_8cpp_af064ec7f3d5a93744fbcb013898175e3}
+\hypertarget{somatics_8cpp_a9ff5fe68acc5b9cf65541abcab5985ba}{\index{somatics.\-cpp@{somatics.\-cpp}!do\-\_\-coat@{do\-\_\-coat}}
+\index{do\-\_\-coat@{do\-\_\-coat}!somatics.cpp@{somatics.\-cpp}}
+\subsubsection[{do\-\_\-coat}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-coat (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{somatics_8cpp_a9ff5fe68acc5b9cf65541abcab5985ba}
+\hypertarget{somatics_8cpp_a370658091c1207fdf791134a50be1a0a}{\index{somatics.\-cpp@{somatics.\-cpp}!do\-\_\-inject@{do\-\_\-inject}}
+\index{do\-\_\-inject@{do\-\_\-inject}!somatics.cpp@{somatics.\-cpp}}
+\subsubsection[{do\-\_\-inject}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-inject (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{somatics_8cpp_a370658091c1207fdf791134a50be1a0a}
+\hypertarget{somatics_8cpp_a44d0b844d09cb68d79a2b874d241e7bd}{\index{somatics.\-cpp@{somatics.\-cpp}!do\-\_\-mix@{do\-\_\-mix}}
+\index{do\-\_\-mix@{do\-\_\-mix}!somatics.cpp@{somatics.\-cpp}}
+\subsubsection[{do\-\_\-mix}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-mix (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{somatics_8cpp_a44d0b844d09cb68d79a2b874d241e7bd}
+\hypertarget{somatics_8cpp_ab9d6732e1c19d67e8e5c7f5bfb6d65d8}{\index{somatics.\-cpp@{somatics.\-cpp}!do\-\_\-quaff@{do\-\_\-quaff}}
+\index{do\-\_\-quaff@{do\-\_\-quaff}!somatics.cpp@{somatics.\-cpp}}
+\subsubsection[{do\-\_\-quaff}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-quaff (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{somatics_8cpp_ab9d6732e1c19d67e8e5c7f5bfb6d65d8}
+\hypertarget{somatics_8cpp_a6acef52366e2a5ef8b6b10dfbe04dac2}{\index{somatics.\-cpp@{somatics.\-cpp}!do\-\_\-spray@{do\-\_\-spray}}
+\index{do\-\_\-spray@{do\-\_\-spray}!somatics.cpp@{somatics.\-cpp}}
+\subsubsection[{do\-\_\-spray}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-spray (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{somatics_8cpp_a6acef52366e2a5ef8b6b10dfbe04dac2}
+\hypertarget{somatics_8cpp_a92d969769290cfb82c75bf9e5e868176}{\index{somatics.\-cpp@{somatics.\-cpp}!do\-\_\-stink@{do\-\_\-stink}}
+\index{do\-\_\-stink@{do\-\_\-stink}!somatics.cpp@{somatics.\-cpp}}
+\subsubsection[{do\-\_\-stink}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-stink (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{somatics_8cpp_a92d969769290cfb82c75bf9e5e868176}
+\hypertarget{somatics_8cpp_a47087a47ba71d74c302b293621f16bdf}{\index{somatics.\-cpp@{somatics.\-cpp}!do\-\_\-xpoison@{do\-\_\-xpoison}}
+\index{do\-\_\-xpoison@{do\-\_\-xpoison}!somatics.cpp@{somatics.\-cpp}}
+\subsubsection[{do\-\_\-xpoison}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-xpoison (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{somatics_8cpp_a47087a47ba71d74c302b293621f16bdf}
+\hypertarget{somatics_8cpp_af5a504f51acfa510ed0531bd26888476}{\index{somatics.\-cpp@{somatics.\-cpp}!lookup\-\_\-soma@{lookup\-\_\-soma}}
+\index{lookup\-\_\-soma@{lookup\-\_\-soma}!somatics.cpp@{somatics.\-cpp}}
+\subsubsection[{lookup\-\_\-soma}]{\setlength{\rightskip}{0pt plus 5cm}int lookup\-\_\-soma (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{somatics_8cpp_af5a504f51acfa510ed0531bd26888476}
+\hypertarget{somatics_8cpp_a7239a29a4923e3a1d62a375e0245d5b7}{\index{somatics.\-cpp@{somatics.\-cpp}!scent\-\_\-lookup@{scent\-\_\-lookup}}
+\index{scent\-\_\-lookup@{scent\-\_\-lookup}!somatics.cpp@{somatics.\-cpp}}
+\subsubsection[{scent\-\_\-lookup}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ scent\-\_\-lookup (
+\begin{DoxyParamCaption}
+\item[{int}]{scent\-\_\-ref}
+\end{DoxyParamCaption}
+)}}\label{somatics_8cpp_a7239a29a4923e3a1d62a375e0245d5b7}
+\hypertarget{somatics_8cpp_aafc3020c702f39b92d599088cc37df01}{\index{somatics.\-cpp@{somatics.\-cpp}!scent\-\_\-lookup@{scent\-\_\-lookup}}
+\index{scent\-\_\-lookup@{scent\-\_\-lookup}!somatics.cpp@{somatics.\-cpp}}
+\subsubsection[{scent\-\_\-lookup}]{\setlength{\rightskip}{0pt plus 5cm}int scent\-\_\-lookup (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{scent\-\_\-name}
+\end{DoxyParamCaption}
+)}}\label{somatics_8cpp_aafc3020c702f39b92d599088cc37df01}
+\hypertarget{somatics_8cpp_a342db18010d4bcee33d3945b84b39433}{\index{somatics.\-cpp@{somatics.\-cpp}!scent\-\_\-strength@{scent\-\_\-strength}}
+\index{scent\-\_\-strength@{scent\-\_\-strength}!somatics.cpp@{somatics.\-cpp}}
+\subsubsection[{scent\-\_\-strength}]{\setlength{\rightskip}{0pt plus 5cm}int scent\-\_\-strength (
+\begin{DoxyParamCaption}
+\item[{{\bf S\-C\-E\-N\-T\-\_\-\-D\-A\-T\-A} $\ast$}]{scent}
+\end{DoxyParamCaption}
+)}}\label{somatics_8cpp_a342db18010d4bcee33d3945b84b39433}
+\hypertarget{somatics_8cpp_a2ee4048cef364eeaa4bde5ee96c7a0c1}{\index{somatics.\-cpp@{somatics.\-cpp}!soma\-\_\-add\-\_\-affect@{soma\-\_\-add\-\_\-affect}}
+\index{soma\-\_\-add\-\_\-affect@{soma\-\_\-add\-\_\-affect}!somatics.cpp@{somatics.\-cpp}}
+\subsubsection[{soma\-\_\-add\-\_\-affect}]{\setlength{\rightskip}{0pt plus 5cm}int soma\-\_\-add\-\_\-affect (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{type, }
+\item[{int}]{duration, }
+\item[{int}]{latency, }
+\item[{int}]{minute, }
+\item[{int}]{max\-\_\-power, }
+\item[{int}]{lvl\-\_\-power, }
+\item[{int}]{atm\-\_\-power, }
+\item[{int}]{attack, }
+\item[{int}]{decay, }
+\item[{int}]{sustain, }
+\item[{int}]{release}
+\end{DoxyParamCaption}
+)}}\label{somatics_8cpp_a2ee4048cef364eeaa4bde5ee96c7a0c1}
+\hypertarget{somatics_8cpp_a2583f060c33f364afc6843d1d820bc70}{\index{somatics.\-cpp@{somatics.\-cpp}!soma\-\_\-rl\-\_\-minute\-\_\-affect@{soma\-\_\-rl\-\_\-minute\-\_\-affect}}
+\index{soma\-\_\-rl\-\_\-minute\-\_\-affect@{soma\-\_\-rl\-\_\-minute\-\_\-affect}!somatics.cpp@{somatics.\-cpp}}
+\subsubsection[{soma\-\_\-rl\-\_\-minute\-\_\-affect}]{\setlength{\rightskip}{0pt plus 5cm}void soma\-\_\-rl\-\_\-minute\-\_\-affect (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$}]{af}
+\end{DoxyParamCaption}
+)}}\label{somatics_8cpp_a2583f060c33f364afc6843d1d820bc70}
+\hypertarget{somatics_8cpp_a1a055c60b5a8da27fdda8fdbc404f87e}{\index{somatics.\-cpp@{somatics.\-cpp}!soma\-\_\-stat@{soma\-\_\-stat}}
+\index{soma\-\_\-stat@{soma\-\_\-stat}!somatics.cpp@{somatics.\-cpp}}
+\subsubsection[{soma\-\_\-stat}]{\setlength{\rightskip}{0pt plus 5cm}void soma\-\_\-stat (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$}]{af}
+\end{DoxyParamCaption}
+)}}\label{somatics_8cpp_a1a055c60b5a8da27fdda8fdbc404f87e}
+\hypertarget{somatics_8cpp_a9beb73802dcd5356122a68ce67840509}{\index{somatics.\-cpp@{somatics.\-cpp}!soma\-\_\-ten\-\_\-second\-\_\-affect@{soma\-\_\-ten\-\_\-second\-\_\-affect}}
+\index{soma\-\_\-ten\-\_\-second\-\_\-affect@{soma\-\_\-ten\-\_\-second\-\_\-affect}!somatics.cpp@{somatics.\-cpp}}
+\subsubsection[{soma\-\_\-ten\-\_\-second\-\_\-affect}]{\setlength{\rightskip}{0pt plus 5cm}void soma\-\_\-ten\-\_\-second\-\_\-affect (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf A\-F\-F\-E\-C\-T\-E\-D\-\_\-\-T\-Y\-P\-E} $\ast$}]{af}
+\end{DoxyParamCaption}
+)}}\label{somatics_8cpp_a9beb73802dcd5356122a68ce67840509}
+
+
+\subsection{Variable Documentation}
+\hypertarget{somatics_8cpp_a2612f612cd7bc22aafefeb773d546032}{\index{somatics.\-cpp@{somatics.\-cpp}!scent\-\_\-tier@{scent\-\_\-tier}}
+\index{scent\-\_\-tier@{scent\-\_\-tier}!somatics.cpp@{somatics.\-cpp}}
+\subsubsection[{scent\-\_\-tier}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ scent\-\_\-tier\mbox{[}11\mbox{]}}}\label{somatics_8cpp_a2612f612cd7bc22aafefeb773d546032}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \{
+    \textcolor{stringliteral}{"the merest suggestion"},
+    \textcolor{stringliteral}{"a bare whiff"},
+    \textcolor{stringliteral}{"a faint essence"},
+    \textcolor{stringliteral}{"a slight hint"},
+    \textcolor{stringliteral}{"a discernible scent"},
+    \textcolor{stringliteral}{"a noticable aroma"},
+    \textcolor{stringliteral}{"a distinct odor"},
+    \textcolor{stringliteral}{"a strong smell"},
+    \textcolor{stringliteral}{"a pungent aroma"},
+    \textcolor{stringliteral}{"a heady stench"},
+    \textcolor{stringliteral}{"an overpowering stink"}
+\}
+\end{DoxyCode}

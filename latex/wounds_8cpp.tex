@@ -1,0 +1,372 @@
+\hypertarget{wounds_8cpp}{\section{wounds.\-cpp File Reference}
+\label{wounds_8cpp}\index{wounds.\-cpp@{wounds.\-cpp}}
+}
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$signal.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$sstream$>$}\\*
+{\ttfamily \#include $<$ctype.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}structs.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}protos.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}decl.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}group.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utility.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{wounds_8cpp_a5dae342fad616b80b945dd4bdb711596}{W\-O\-U\-N\-D\-\_\-\-I\-N\-F\-E\-C\-T\-I\-O\-N\-S}~1
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{wounds_8cpp_a5f8ce432d64f6d529c06975dc879ba13}{general\-\_\-damage} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int amount)
+\item 
+int \hyperlink{wounds_8cpp_a468d9b73563987fa4788e77276099500}{shock\-\_\-tier} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+int \hyperlink{wounds_8cpp_a2cc32bcea5e5cc4140998f4f701a24ff}{shock\-\_\-to\-\_\-char} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$tch, int loc, int type, int impact, int mode)
+\item 
+void \hyperlink{wounds_8cpp_acc1d98a276d551bfde984b04f8d9e626}{apply\-\_\-con\-\_\-penalties} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+int \hyperlink{wounds_8cpp_a3506e02978e70f52878f92b57b1b37bc}{wound\-\_\-to\-\_\-char} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$location, int impact, int type, int bleeding, int poison, int infection)
+\item 
+void \hyperlink{wounds_8cpp_aacfdc6c7852fe294280742064674be1d}{free\-\_\-lodged} (\hyperlink{structs_8h_aa299ea0a69d123edbc3b581b10115e2b}{L\-O\-D\-G\-E\-D\-\_\-\-O\-B\-J\-E\-C\-T\-\_\-\-I\-N\-F\-O} $\ast$lodged)
+\item 
+void \hyperlink{wounds_8cpp_acaa6964aa20f73d236631afbf11389c4}{free\-\_\-wound} (\hyperlink{structs_8h_acd99076446b10c8cfc2d23d4bfc40211}{W\-O\-U\-N\-D\-\_\-\-D\-A\-T\-A} $\ast$wound)
+\item 
+void \hyperlink{wounds_8cpp_ac3b81c8e5056b05c5c9da6a62a7923dd}{heal\-\_\-all\-\_\-wounds} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{wounds_8cpp_a3ca73172fa098642135d5c1a54ec4cb0}{lodge\-\_\-from\-\_\-char} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_aa299ea0a69d123edbc3b581b10115e2b}{L\-O\-D\-G\-E\-D\-\_\-\-O\-B\-J\-E\-C\-T\-\_\-\-I\-N\-F\-O} $\ast$lodged)
+\item 
+void \hyperlink{wounds_8cpp_ad0f3f64e915de5446e2da67f6b32d875}{lodge\-\_\-from\-\_\-obj} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj, \hyperlink{structs_8h_aa299ea0a69d123edbc3b581b10115e2b}{L\-O\-D\-G\-E\-D\-\_\-\-O\-B\-J\-E\-C\-T\-\_\-\-I\-N\-F\-O} $\ast$lodged)
+\item 
+void \hyperlink{wounds_8cpp_a84afb2c56b8e1f3f81459f5f6fde40a3}{wound\-\_\-from\-\_\-char} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_acd99076446b10c8cfc2d23d4bfc40211}{W\-O\-U\-N\-D\-\_\-\-D\-A\-T\-A} $\ast$wound)
+\item 
+void \hyperlink{wounds_8cpp_a3b59d682a3069b478db4fef32326301f}{wound\-\_\-from\-\_\-obj} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj, \hyperlink{structs_8h_acd99076446b10c8cfc2d23d4bfc40211}{W\-O\-U\-N\-D\-\_\-\-D\-A\-T\-A} $\ast$wound)
+\item 
+int \hyperlink{wounds_8cpp_a37edba4781f2391cf41979e92b77d54a}{is\-\_\-proper\-\_\-kit} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$kit, \hyperlink{structs_8h_acd99076446b10c8cfc2d23d4bfc40211}{W\-O\-U\-N\-D\-\_\-\-D\-A\-T\-A} $\ast$wound)
+\item 
+void \hyperlink{wounds_8cpp_aad30a394ff388bf279e090ac36f62f2f}{begin\-\_\-treatment} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$tch, char $\ast$location, int mode)
+\item 
+int \hyperlink{wounds_8cpp_a3a7b8856fbdf1baf15a5f70b28a2b8d2}{adjust\-\_\-wound} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_acd99076446b10c8cfc2d23d4bfc40211}{W\-O\-U\-N\-D\-\_\-\-D\-A\-T\-A} $\ast$wound, int amount)
+\item 
+void \hyperlink{wounds_8cpp_a36ef632ec3faa8a15eb6f426cb8f97bf}{delayed\-\_\-treatment} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{wounds_8cpp_ad2a2f5133e3c4d73d6cc21b1c3917bde}{npc\-\_\-treatment} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$mob, char $\ast$argument)
+\item 
+void \hyperlink{wounds_8cpp_ac91afbb0ea1bbe5ffa31bfbe9e7f5909}{do\-\_\-treat} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{wounds_8cpp_a4a64a8989c14f6169e804dd49aae58d2}{do\-\_\-health} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+int \hyperlink{wounds_8cpp_a13ae4e7634cadf92df25969788f12a7e}{woundloc\-\_\-to\-\_\-hitloc} (char $\ast$location)
+\item 
+char $\ast$ \hyperlink{wounds_8cpp_a3fcf30515eaafed3533df786142f76f0}{expand\-\_\-wound\-\_\-loc} (char $\ast$location)
+\item 
+char $\ast$ \hyperlink{wounds_8cpp_ad8cee1782b7d54412acbc3d34cf7f323}{show\-\_\-wounds} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int mode)
+\item 
+void \hyperlink{wounds_8cpp_a3ffda80f315f08236a0e3bdd6caa768f}{do\-\_\-diagnose} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+char $\ast$ \hyperlink{wounds_8cpp_a2701f78199786ec3e267fed043884b1f}{wound\-\_\-total} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} prompt)
+\item 
+char $\ast$ \hyperlink{wounds_8cpp_a45b2bf1a5600894be8cd44257aa97d8b}{figure\-\_\-location} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$tar, int location)
+\item 
+char $\ast$ \hyperlink{wounds_8cpp_aa7e5c9ed6c5d026fe2dc60388d76319e}{downsized\-\_\-wound} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_acd99076446b10c8cfc2d23d4bfc40211}{W\-O\-U\-N\-D\-\_\-\-D\-A\-T\-A} $\ast$wound)
+\item 
+int \hyperlink{wounds_8cpp_a6abc67f04c7f3aa5f70f4bf90401f3c6}{natural\-\_\-healing\-\_\-check} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_acd99076446b10c8cfc2d23d4bfc40211}{W\-O\-U\-N\-D\-\_\-\-D\-A\-T\-A} $\ast$wound)
+\item 
+void \hyperlink{wounds_8cpp_a5f5843136f8936b8512186dea5eda779}{offline\-\_\-healing} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int since)
+\item 
+void \hyperlink{wounds_8cpp_a5c1c1246c55d57474a72c0023c7a1970}{char\-\_\-\-\_\-do\-\_\-bind} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$this\-Ptr, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{wounds_8cpp_a0f34887f7deb9fc721c3b69daebc39a7}{delayed\-\_\-long\-\_\-bind} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$this\-Ptr)
+\item 
+void \hyperlink{wounds_8cpp_a70770a5aba4fd9703027b5276cd09ca0}{delayed\-\_\-bind} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$this\-Ptr)
+\item 
+char $\ast$ \hyperlink{wounds_8cpp_a3c782e3f3802f544eb8f26a914ca2989}{strip\-\_\-small\-\_\-minor} (char $\ast$wounds, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{wounds_8cpp_a5dae342fad616b80b945dd4bdb711596}{\index{wounds.\-cpp@{wounds.\-cpp}!W\-O\-U\-N\-D\-\_\-\-I\-N\-F\-E\-C\-T\-I\-O\-N\-S@{W\-O\-U\-N\-D\-\_\-\-I\-N\-F\-E\-C\-T\-I\-O\-N\-S}}
+\index{W\-O\-U\-N\-D\-\_\-\-I\-N\-F\-E\-C\-T\-I\-O\-N\-S@{W\-O\-U\-N\-D\-\_\-\-I\-N\-F\-E\-C\-T\-I\-O\-N\-S}!wounds.cpp@{wounds.\-cpp}}
+\subsubsection[{W\-O\-U\-N\-D\-\_\-\-I\-N\-F\-E\-C\-T\-I\-O\-N\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\-O\-U\-N\-D\-\_\-\-I\-N\-F\-E\-C\-T\-I\-O\-N\-S~1}}\label{wounds_8cpp_a5dae342fad616b80b945dd4bdb711596}
+
+
+\subsection{Function Documentation}
+\hypertarget{wounds_8cpp_a3a7b8856fbdf1baf15a5f70b28a2b8d2}{\index{wounds.\-cpp@{wounds.\-cpp}!adjust\-\_\-wound@{adjust\-\_\-wound}}
+\index{adjust\-\_\-wound@{adjust\-\_\-wound}!wounds.cpp@{wounds.\-cpp}}
+\subsubsection[{adjust\-\_\-wound}]{\setlength{\rightskip}{0pt plus 5cm}int adjust\-\_\-wound (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf W\-O\-U\-N\-D\-\_\-\-D\-A\-T\-A} $\ast$}]{wound, }
+\item[{int}]{amount}
+\end{DoxyParamCaption}
+)}}\label{wounds_8cpp_a3a7b8856fbdf1baf15a5f70b28a2b8d2}
+\hypertarget{wounds_8cpp_acc1d98a276d551bfde984b04f8d9e626}{\index{wounds.\-cpp@{wounds.\-cpp}!apply\-\_\-con\-\_\-penalties@{apply\-\_\-con\-\_\-penalties}}
+\index{apply\-\_\-con\-\_\-penalties@{apply\-\_\-con\-\_\-penalties}!wounds.cpp@{wounds.\-cpp}}
+\subsubsection[{apply\-\_\-con\-\_\-penalties}]{\setlength{\rightskip}{0pt plus 5cm}void apply\-\_\-con\-\_\-penalties (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{wounds_8cpp_acc1d98a276d551bfde984b04f8d9e626}
+\hypertarget{wounds_8cpp_aad30a394ff388bf279e090ac36f62f2f}{\index{wounds.\-cpp@{wounds.\-cpp}!begin\-\_\-treatment@{begin\-\_\-treatment}}
+\index{begin\-\_\-treatment@{begin\-\_\-treatment}!wounds.cpp@{wounds.\-cpp}}
+\subsubsection[{begin\-\_\-treatment}]{\setlength{\rightskip}{0pt plus 5cm}void begin\-\_\-treatment (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{tch, }
+\item[{char $\ast$}]{location, }
+\item[{int}]{mode}
+\end{DoxyParamCaption}
+)}}\label{wounds_8cpp_aad30a394ff388bf279e090ac36f62f2f}
+\hypertarget{wounds_8cpp_a5c1c1246c55d57474a72c0023c7a1970}{\index{wounds.\-cpp@{wounds.\-cpp}!char\-\_\-\-\_\-do\-\_\-bind@{char\-\_\-\-\_\-do\-\_\-bind}}
+\index{char\-\_\-\-\_\-do\-\_\-bind@{char\-\_\-\-\_\-do\-\_\-bind}!wounds.cpp@{wounds.\-cpp}}
+\subsubsection[{char\-\_\-\-\_\-do\-\_\-bind}]{\setlength{\rightskip}{0pt plus 5cm}void char\-\_\-\-\_\-do\-\_\-bind (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{this\-Ptr, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{wounds_8cpp_a5c1c1246c55d57474a72c0023c7a1970}
+\hypertarget{wounds_8cpp_a70770a5aba4fd9703027b5276cd09ca0}{\index{wounds.\-cpp@{wounds.\-cpp}!delayed\-\_\-bind@{delayed\-\_\-bind}}
+\index{delayed\-\_\-bind@{delayed\-\_\-bind}!wounds.cpp@{wounds.\-cpp}}
+\subsubsection[{delayed\-\_\-bind}]{\setlength{\rightskip}{0pt plus 5cm}void delayed\-\_\-bind (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{this\-Ptr}
+\end{DoxyParamCaption}
+)}}\label{wounds_8cpp_a70770a5aba4fd9703027b5276cd09ca0}
+\hypertarget{wounds_8cpp_a0f34887f7deb9fc721c3b69daebc39a7}{\index{wounds.\-cpp@{wounds.\-cpp}!delayed\-\_\-long\-\_\-bind@{delayed\-\_\-long\-\_\-bind}}
+\index{delayed\-\_\-long\-\_\-bind@{delayed\-\_\-long\-\_\-bind}!wounds.cpp@{wounds.\-cpp}}
+\subsubsection[{delayed\-\_\-long\-\_\-bind}]{\setlength{\rightskip}{0pt plus 5cm}void delayed\-\_\-long\-\_\-bind (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{this\-Ptr}
+\end{DoxyParamCaption}
+)}}\label{wounds_8cpp_a0f34887f7deb9fc721c3b69daebc39a7}
+\hypertarget{wounds_8cpp_a36ef632ec3faa8a15eb6f426cb8f97bf}{\index{wounds.\-cpp@{wounds.\-cpp}!delayed\-\_\-treatment@{delayed\-\_\-treatment}}
+\index{delayed\-\_\-treatment@{delayed\-\_\-treatment}!wounds.cpp@{wounds.\-cpp}}
+\subsubsection[{delayed\-\_\-treatment}]{\setlength{\rightskip}{0pt plus 5cm}void delayed\-\_\-treatment (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{wounds_8cpp_a36ef632ec3faa8a15eb6f426cb8f97bf}
+A roll is made against the skill level of the P\-C to determine how good or bad they are.
+
+A second skill\-\_\-use check is then made to give the P\-C a chance to increase thier skill, although the result has no bearing on the code below.
+
+To show that this is an expertly treated wound
+
+To show that this is an expertly treated wound
+
+To show that this is an adroitly treated wound
+
+To show that this is an adroitly treated wound
+
+Poor healers try hard, but they can't do much more than stop the bleeding and sort of make the wound look better. At least they don't cause infections.\hypertarget{wounds_8cpp_a3ffda80f315f08236a0e3bdd6caa768f}{\index{wounds.\-cpp@{wounds.\-cpp}!do\-\_\-diagnose@{do\-\_\-diagnose}}
+\index{do\-\_\-diagnose@{do\-\_\-diagnose}!wounds.cpp@{wounds.\-cpp}}
+\subsubsection[{do\-\_\-diagnose}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-diagnose (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{wounds_8cpp_a3ffda80f315f08236a0e3bdd6caa768f}
+\hypertarget{wounds_8cpp_a4a64a8989c14f6169e804dd49aae58d2}{\index{wounds.\-cpp@{wounds.\-cpp}!do\-\_\-health@{do\-\_\-health}}
+\index{do\-\_\-health@{do\-\_\-health}!wounds.cpp@{wounds.\-cpp}}
+\subsubsection[{do\-\_\-health}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-health (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{wounds_8cpp_a4a64a8989c14f6169e804dd49aae58d2}
+\hypertarget{wounds_8cpp_ac91afbb0ea1bbe5ffa31bfbe9e7f5909}{\index{wounds.\-cpp@{wounds.\-cpp}!do\-\_\-treat@{do\-\_\-treat}}
+\index{do\-\_\-treat@{do\-\_\-treat}!wounds.cpp@{wounds.\-cpp}}
+\subsubsection[{do\-\_\-treat}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-treat (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{wounds_8cpp_ac91afbb0ea1bbe5ffa31bfbe9e7f5909}
+\hypertarget{wounds_8cpp_aa7e5c9ed6c5d026fe2dc60388d76319e}{\index{wounds.\-cpp@{wounds.\-cpp}!downsized\-\_\-wound@{downsized\-\_\-wound}}
+\index{downsized\-\_\-wound@{downsized\-\_\-wound}!wounds.cpp@{wounds.\-cpp}}
+\subsubsection[{downsized\-\_\-wound}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ downsized\-\_\-wound (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf W\-O\-U\-N\-D\-\_\-\-D\-A\-T\-A} $\ast$}]{wound}
+\end{DoxyParamCaption}
+)}}\label{wounds_8cpp_aa7e5c9ed6c5d026fe2dc60388d76319e}
+\hypertarget{wounds_8cpp_a3fcf30515eaafed3533df786142f76f0}{\index{wounds.\-cpp@{wounds.\-cpp}!expand\-\_\-wound\-\_\-loc@{expand\-\_\-wound\-\_\-loc}}
+\index{expand\-\_\-wound\-\_\-loc@{expand\-\_\-wound\-\_\-loc}!wounds.cpp@{wounds.\-cpp}}
+\subsubsection[{expand\-\_\-wound\-\_\-loc}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ expand\-\_\-wound\-\_\-loc (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{location}
+\end{DoxyParamCaption}
+)}}\label{wounds_8cpp_a3fcf30515eaafed3533df786142f76f0}
+\hypertarget{wounds_8cpp_a45b2bf1a5600894be8cd44257aa97d8b}{\index{wounds.\-cpp@{wounds.\-cpp}!figure\-\_\-location@{figure\-\_\-location}}
+\index{figure\-\_\-location@{figure\-\_\-location}!wounds.cpp@{wounds.\-cpp}}
+\subsubsection[{figure\-\_\-location}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ figure\-\_\-location (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{tar, }
+\item[{int}]{location}
+\end{DoxyParamCaption}
+)}}\label{wounds_8cpp_a45b2bf1a5600894be8cd44257aa97d8b}
+\hypertarget{wounds_8cpp_aacfdc6c7852fe294280742064674be1d}{\index{wounds.\-cpp@{wounds.\-cpp}!free\-\_\-lodged@{free\-\_\-lodged}}
+\index{free\-\_\-lodged@{free\-\_\-lodged}!wounds.cpp@{wounds.\-cpp}}
+\subsubsection[{free\-\_\-lodged}]{\setlength{\rightskip}{0pt plus 5cm}void free\-\_\-lodged (
+\begin{DoxyParamCaption}
+\item[{{\bf L\-O\-D\-G\-E\-D\-\_\-\-O\-B\-J\-E\-C\-T\-\_\-\-I\-N\-F\-O} $\ast$}]{lodged}
+\end{DoxyParamCaption}
+)}}\label{wounds_8cpp_aacfdc6c7852fe294280742064674be1d}
+\hypertarget{wounds_8cpp_acaa6964aa20f73d236631afbf11389c4}{\index{wounds.\-cpp@{wounds.\-cpp}!free\-\_\-wound@{free\-\_\-wound}}
+\index{free\-\_\-wound@{free\-\_\-wound}!wounds.cpp@{wounds.\-cpp}}
+\subsubsection[{free\-\_\-wound}]{\setlength{\rightskip}{0pt plus 5cm}void free\-\_\-wound (
+\begin{DoxyParamCaption}
+\item[{{\bf W\-O\-U\-N\-D\-\_\-\-D\-A\-T\-A} $\ast$}]{wound}
+\end{DoxyParamCaption}
+)}}\label{wounds_8cpp_acaa6964aa20f73d236631afbf11389c4}
+\hypertarget{wounds_8cpp_a5f8ce432d64f6d529c06975dc879ba13}{\index{wounds.\-cpp@{wounds.\-cpp}!general\-\_\-damage@{general\-\_\-damage}}
+\index{general\-\_\-damage@{general\-\_\-damage}!wounds.cpp@{wounds.\-cpp}}
+\subsubsection[{general\-\_\-damage}]{\setlength{\rightskip}{0pt plus 5cm}int general\-\_\-damage (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{amount}
+\end{DoxyParamCaption}
+)}}\label{wounds_8cpp_a5f8ce432d64f6d529c06975dc879ba13}
+\hypertarget{wounds_8cpp_ac3b81c8e5056b05c5c9da6a62a7923dd}{\index{wounds.\-cpp@{wounds.\-cpp}!heal\-\_\-all\-\_\-wounds@{heal\-\_\-all\-\_\-wounds}}
+\index{heal\-\_\-all\-\_\-wounds@{heal\-\_\-all\-\_\-wounds}!wounds.cpp@{wounds.\-cpp}}
+\subsubsection[{heal\-\_\-all\-\_\-wounds}]{\setlength{\rightskip}{0pt plus 5cm}void heal\-\_\-all\-\_\-wounds (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{wounds_8cpp_ac3b81c8e5056b05c5c9da6a62a7923dd}
+\hypertarget{wounds_8cpp_a37edba4781f2391cf41979e92b77d54a}{\index{wounds.\-cpp@{wounds.\-cpp}!is\-\_\-proper\-\_\-kit@{is\-\_\-proper\-\_\-kit}}
+\index{is\-\_\-proper\-\_\-kit@{is\-\_\-proper\-\_\-kit}!wounds.cpp@{wounds.\-cpp}}
+\subsubsection[{is\-\_\-proper\-\_\-kit}]{\setlength{\rightskip}{0pt plus 5cm}int is\-\_\-proper\-\_\-kit (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{kit, }
+\item[{{\bf W\-O\-U\-N\-D\-\_\-\-D\-A\-T\-A} $\ast$}]{wound}
+\end{DoxyParamCaption}
+)}}\label{wounds_8cpp_a37edba4781f2391cf41979e92b77d54a}
+\hypertarget{wounds_8cpp_a3ca73172fa098642135d5c1a54ec4cb0}{\index{wounds.\-cpp@{wounds.\-cpp}!lodge\-\_\-from\-\_\-char@{lodge\-\_\-from\-\_\-char}}
+\index{lodge\-\_\-from\-\_\-char@{lodge\-\_\-from\-\_\-char}!wounds.cpp@{wounds.\-cpp}}
+\subsubsection[{lodge\-\_\-from\-\_\-char}]{\setlength{\rightskip}{0pt plus 5cm}void lodge\-\_\-from\-\_\-char (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf L\-O\-D\-G\-E\-D\-\_\-\-O\-B\-J\-E\-C\-T\-\_\-\-I\-N\-F\-O} $\ast$}]{lodged}
+\end{DoxyParamCaption}
+)}}\label{wounds_8cpp_a3ca73172fa098642135d5c1a54ec4cb0}
+\hypertarget{wounds_8cpp_ad0f3f64e915de5446e2da67f6b32d875}{\index{wounds.\-cpp@{wounds.\-cpp}!lodge\-\_\-from\-\_\-obj@{lodge\-\_\-from\-\_\-obj}}
+\index{lodge\-\_\-from\-\_\-obj@{lodge\-\_\-from\-\_\-obj}!wounds.cpp@{wounds.\-cpp}}
+\subsubsection[{lodge\-\_\-from\-\_\-obj}]{\setlength{\rightskip}{0pt plus 5cm}void lodge\-\_\-from\-\_\-obj (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj, }
+\item[{{\bf L\-O\-D\-G\-E\-D\-\_\-\-O\-B\-J\-E\-C\-T\-\_\-\-I\-N\-F\-O} $\ast$}]{lodged}
+\end{DoxyParamCaption}
+)}}\label{wounds_8cpp_ad0f3f64e915de5446e2da67f6b32d875}
+\hypertarget{wounds_8cpp_a6abc67f04c7f3aa5f70f4bf90401f3c6}{\index{wounds.\-cpp@{wounds.\-cpp}!natural\-\_\-healing\-\_\-check@{natural\-\_\-healing\-\_\-check}}
+\index{natural\-\_\-healing\-\_\-check@{natural\-\_\-healing\-\_\-check}!wounds.cpp@{wounds.\-cpp}}
+\subsubsection[{natural\-\_\-healing\-\_\-check}]{\setlength{\rightskip}{0pt plus 5cm}int natural\-\_\-healing\-\_\-check (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf W\-O\-U\-N\-D\-\_\-\-D\-A\-T\-A} $\ast$}]{wound}
+\end{DoxyParamCaption}
+)}}\label{wounds_8cpp_a6abc67f04c7f3aa5f70f4bf90401f3c6}
+\hypertarget{wounds_8cpp_ad2a2f5133e3c4d73d6cc21b1c3917bde}{\index{wounds.\-cpp@{wounds.\-cpp}!npc\-\_\-treatment@{npc\-\_\-treatment}}
+\index{npc\-\_\-treatment@{npc\-\_\-treatment}!wounds.cpp@{wounds.\-cpp}}
+\subsubsection[{npc\-\_\-treatment}]{\setlength{\rightskip}{0pt plus 5cm}void npc\-\_\-treatment (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{mob, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{wounds_8cpp_ad2a2f5133e3c4d73d6cc21b1c3917bde}
+\hypertarget{wounds_8cpp_a5f5843136f8936b8512186dea5eda779}{\index{wounds.\-cpp@{wounds.\-cpp}!offline\-\_\-healing@{offline\-\_\-healing}}
+\index{offline\-\_\-healing@{offline\-\_\-healing}!wounds.cpp@{wounds.\-cpp}}
+\subsubsection[{offline\-\_\-healing}]{\setlength{\rightskip}{0pt plus 5cm}void offline\-\_\-healing (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{since}
+\end{DoxyParamCaption}
+)}}\label{wounds_8cpp_a5f5843136f8936b8512186dea5eda779}
+\hypertarget{wounds_8cpp_a468d9b73563987fa4788e77276099500}{\index{wounds.\-cpp@{wounds.\-cpp}!shock\-\_\-tier@{shock\-\_\-tier}}
+\index{shock\-\_\-tier@{shock\-\_\-tier}!wounds.cpp@{wounds.\-cpp}}
+\subsubsection[{shock\-\_\-tier}]{\setlength{\rightskip}{0pt plus 5cm}int shock\-\_\-tier (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{wounds_8cpp_a468d9b73563987fa4788e77276099500}
+\hypertarget{wounds_8cpp_a2cc32bcea5e5cc4140998f4f701a24ff}{\index{wounds.\-cpp@{wounds.\-cpp}!shock\-\_\-to\-\_\-char@{shock\-\_\-to\-\_\-char}}
+\index{shock\-\_\-to\-\_\-char@{shock\-\_\-to\-\_\-char}!wounds.cpp@{wounds.\-cpp}}
+\subsubsection[{shock\-\_\-to\-\_\-char}]{\setlength{\rightskip}{0pt plus 5cm}int shock\-\_\-to\-\_\-char (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{tch, }
+\item[{int}]{loc, }
+\item[{int}]{type, }
+\item[{int}]{impact, }
+\item[{int}]{mode}
+\end{DoxyParamCaption}
+)}}\label{wounds_8cpp_a2cc32bcea5e5cc4140998f4f701a24ff}
+\hypertarget{wounds_8cpp_ad8cee1782b7d54412acbc3d34cf7f323}{\index{wounds.\-cpp@{wounds.\-cpp}!show\-\_\-wounds@{show\-\_\-wounds}}
+\index{show\-\_\-wounds@{show\-\_\-wounds}!wounds.cpp@{wounds.\-cpp}}
+\subsubsection[{show\-\_\-wounds}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ show\-\_\-wounds (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{mode}
+\end{DoxyParamCaption}
+)}}\label{wounds_8cpp_ad8cee1782b7d54412acbc3d34cf7f323}
+\hypertarget{wounds_8cpp_a3c782e3f3802f544eb8f26a914ca2989}{\index{wounds.\-cpp@{wounds.\-cpp}!strip\-\_\-small\-\_\-minor@{strip\-\_\-small\-\_\-minor}}
+\index{strip\-\_\-small\-\_\-minor@{strip\-\_\-small\-\_\-minor}!wounds.cpp@{wounds.\-cpp}}
+\subsubsection[{strip\-\_\-small\-\_\-minor}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ strip\-\_\-small\-\_\-minor (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{wounds, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{wounds_8cpp_a3c782e3f3802f544eb8f26a914ca2989}
+\hypertarget{wounds_8cpp_a84afb2c56b8e1f3f81459f5f6fde40a3}{\index{wounds.\-cpp@{wounds.\-cpp}!wound\-\_\-from\-\_\-char@{wound\-\_\-from\-\_\-char}}
+\index{wound\-\_\-from\-\_\-char@{wound\-\_\-from\-\_\-char}!wounds.cpp@{wounds.\-cpp}}
+\subsubsection[{wound\-\_\-from\-\_\-char}]{\setlength{\rightskip}{0pt plus 5cm}void wound\-\_\-from\-\_\-char (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf W\-O\-U\-N\-D\-\_\-\-D\-A\-T\-A} $\ast$}]{wound}
+\end{DoxyParamCaption}
+)}}\label{wounds_8cpp_a84afb2c56b8e1f3f81459f5f6fde40a3}
+\hypertarget{wounds_8cpp_a3b59d682a3069b478db4fef32326301f}{\index{wounds.\-cpp@{wounds.\-cpp}!wound\-\_\-from\-\_\-obj@{wound\-\_\-from\-\_\-obj}}
+\index{wound\-\_\-from\-\_\-obj@{wound\-\_\-from\-\_\-obj}!wounds.cpp@{wounds.\-cpp}}
+\subsubsection[{wound\-\_\-from\-\_\-obj}]{\setlength{\rightskip}{0pt plus 5cm}void wound\-\_\-from\-\_\-obj (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj, }
+\item[{{\bf W\-O\-U\-N\-D\-\_\-\-D\-A\-T\-A} $\ast$}]{wound}
+\end{DoxyParamCaption}
+)}}\label{wounds_8cpp_a3b59d682a3069b478db4fef32326301f}
+\hypertarget{wounds_8cpp_a3506e02978e70f52878f92b57b1b37bc}{\index{wounds.\-cpp@{wounds.\-cpp}!wound\-\_\-to\-\_\-char@{wound\-\_\-to\-\_\-char}}
+\index{wound\-\_\-to\-\_\-char@{wound\-\_\-to\-\_\-char}!wounds.cpp@{wounds.\-cpp}}
+\subsubsection[{wound\-\_\-to\-\_\-char}]{\setlength{\rightskip}{0pt plus 5cm}int wound\-\_\-to\-\_\-char (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{location, }
+\item[{int}]{impact, }
+\item[{int}]{type, }
+\item[{int}]{bleeding, }
+\item[{int}]{poison, }
+\item[{int}]{infection}
+\end{DoxyParamCaption}
+)}}\label{wounds_8cpp_a3506e02978e70f52878f92b57b1b37bc}
+\hypertarget{wounds_8cpp_a2701f78199786ec3e267fed043884b1f}{\index{wounds.\-cpp@{wounds.\-cpp}!wound\-\_\-total@{wound\-\_\-total}}
+\index{wound\-\_\-total@{wound\-\_\-total}!wounds.cpp@{wounds.\-cpp}}
+\subsubsection[{wound\-\_\-total}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ wound\-\_\-total (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf bool}}]{prompt}
+\end{DoxyParamCaption}
+)}}\label{wounds_8cpp_a2701f78199786ec3e267fed043884b1f}
+\hypertarget{wounds_8cpp_a13ae4e7634cadf92df25969788f12a7e}{\index{wounds.\-cpp@{wounds.\-cpp}!woundloc\-\_\-to\-\_\-hitloc@{woundloc\-\_\-to\-\_\-hitloc}}
+\index{woundloc\-\_\-to\-\_\-hitloc@{woundloc\-\_\-to\-\_\-hitloc}!wounds.cpp@{wounds.\-cpp}}
+\subsubsection[{woundloc\-\_\-to\-\_\-hitloc}]{\setlength{\rightskip}{0pt plus 5cm}int woundloc\-\_\-to\-\_\-hitloc (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{location}
+\end{DoxyParamCaption}
+)}}\label{wounds_8cpp_a13ae4e7634cadf92df25969788f12a7e}

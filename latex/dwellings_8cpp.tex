@@ -1,0 +1,138 @@
+\hypertarget{dwellings_8cpp}{\section{dwellings.\-cpp File Reference}
+\label{dwellings_8cpp}\index{dwellings.\-cpp@{dwellings.\-cpp}}
+}
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$ctype.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}server.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}structs.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}protos.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utils.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{dwellings_8cpp_a61644a3af3837aa0e6ac6a1c8fbfed5b}{clone\-\_\-room} (\hyperlink{room_8h_aede519ef65d80b5242a4a28b69d5e097}{R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$source\-\_\-room, \hyperlink{room_8h_aede519ef65d80b5242a4a28b69d5e097}{R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$targ\-\_\-room, \hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} clone\-\_\-exits, \hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} copy\-\_\-objs)
+\item 
+int \hyperlink{dwellings_8cpp_ad40d50d7af337fb23907b82d7c345dfb}{delete\-\_\-contiguous\-\_\-temporary\-\_\-rblock} (\hyperlink{room_8h_aede519ef65d80b5242a4a28b69d5e097}{R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$start\-\_\-room, int from\-\_\-dir, int outside\-\_\-vnum)
+\item 
+int \hyperlink{dwellings_8cpp_adb557508d9bcb02bb823b8eabc57a6ba}{delete\-\_\-contiguous\-\_\-rblock} (\hyperlink{room_8h_aede519ef65d80b5242a4a28b69d5e097}{R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$start\-\_\-room, int from\-\_\-dir, int outside\-\_\-vnum)
+\item 
+int \hyperlink{dwellings_8cpp_a15d8c90950c0c1a876c5f43b266a0034}{clone\-\_\-contiguous\-\_\-rblock} (\hyperlink{room_8h_aede519ef65d80b5242a4a28b69d5e097}{R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$start\-\_\-room, int from\-\_\-dir, \hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} copy\-\_\-objs)
+\item 
+\hyperlink{room_8h_aede519ef65d80b5242a4a28b69d5e097}{R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{dwellings_8cpp_aa3b2a9a5fac2e9b8d3c90d02a8750d8f}{generate\-\_\-dwelling\-\_\-room} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$dwelling)
+\item 
+\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{dwellings_8cpp_a6543a364d7306012f45508f0f8b69d5f}{find\-\_\-dwelling\-\_\-obj} (int dwelling\-\_\-room)
+\item 
+void \hyperlink{dwellings_8cpp_a678f2ef884dd8b420943d20ca1bba8ae}{do\-\_\-pitch} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{dwellings_8cpp_a7cbf0d68b752c7eeaf4b8ca17fd816a9}{delayed\-\_\-pitch} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{dwellings_8cpp_a5db491adeab6ffe0d6f03e25f1b150ec}{do\-\_\-dismantle} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{dwellings_8cpp_a2caf8d8ea67ee375b560736c4c1cbde8}{fwrite\-\_\-dwelling\-\_\-room} (\hyperlink{room_8h_aede519ef65d80b5242a4a28b69d5e097}{R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$troom, F\-I\-L\-E $\ast$fp)
+\item 
+int \hyperlink{dwellings_8cpp_a8fc80ff1641595b3d110728fccf9d9f8}{save\-\_\-dwelling\-\_\-rooms} ()
+\item 
+void \hyperlink{dwellings_8cpp_a7fef0f02a91e2eb7f8b03346135b6abb}{load\-\_\-dwelling\-\_\-rooms} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{dwellings_8cpp_a15d8c90950c0c1a876c5f43b266a0034}{\index{dwellings.\-cpp@{dwellings.\-cpp}!clone\-\_\-contiguous\-\_\-rblock@{clone\-\_\-contiguous\-\_\-rblock}}
+\index{clone\-\_\-contiguous\-\_\-rblock@{clone\-\_\-contiguous\-\_\-rblock}!dwellings.cpp@{dwellings.\-cpp}}
+\subsubsection[{clone\-\_\-contiguous\-\_\-rblock}]{\setlength{\rightskip}{0pt plus 5cm}int clone\-\_\-contiguous\-\_\-rblock (
+\begin{DoxyParamCaption}
+\item[{{\bf R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$}]{start\-\_\-room, }
+\item[{int}]{from\-\_\-dir, }
+\item[{{\bf bool}}]{copy\-\_\-objs}
+\end{DoxyParamCaption}
+)}}\label{dwellings_8cpp_a15d8c90950c0c1a876c5f43b266a0034}
+\hypertarget{dwellings_8cpp_a61644a3af3837aa0e6ac6a1c8fbfed5b}{\index{dwellings.\-cpp@{dwellings.\-cpp}!clone\-\_\-room@{clone\-\_\-room}}
+\index{clone\-\_\-room@{clone\-\_\-room}!dwellings.cpp@{dwellings.\-cpp}}
+\subsubsection[{clone\-\_\-room}]{\setlength{\rightskip}{0pt plus 5cm}void clone\-\_\-room (
+\begin{DoxyParamCaption}
+\item[{{\bf R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$}]{source\-\_\-room, }
+\item[{{\bf R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$}]{targ\-\_\-room, }
+\item[{{\bf bool}}]{clone\-\_\-exits, }
+\item[{{\bf bool}}]{copy\-\_\-objs}
+\end{DoxyParamCaption}
+)}}\label{dwellings_8cpp_a61644a3af3837aa0e6ac6a1c8fbfed5b}
+\hypertarget{dwellings_8cpp_a7cbf0d68b752c7eeaf4b8ca17fd816a9}{\index{dwellings.\-cpp@{dwellings.\-cpp}!delayed\-\_\-pitch@{delayed\-\_\-pitch}}
+\index{delayed\-\_\-pitch@{delayed\-\_\-pitch}!dwellings.cpp@{dwellings.\-cpp}}
+\subsubsection[{delayed\-\_\-pitch}]{\setlength{\rightskip}{0pt plus 5cm}void delayed\-\_\-pitch (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{dwellings_8cpp_a7cbf0d68b752c7eeaf4b8ca17fd816a9}
+\hypertarget{dwellings_8cpp_adb557508d9bcb02bb823b8eabc57a6ba}{\index{dwellings.\-cpp@{dwellings.\-cpp}!delete\-\_\-contiguous\-\_\-rblock@{delete\-\_\-contiguous\-\_\-rblock}}
+\index{delete\-\_\-contiguous\-\_\-rblock@{delete\-\_\-contiguous\-\_\-rblock}!dwellings.cpp@{dwellings.\-cpp}}
+\subsubsection[{delete\-\_\-contiguous\-\_\-rblock}]{\setlength{\rightskip}{0pt plus 5cm}int delete\-\_\-contiguous\-\_\-rblock (
+\begin{DoxyParamCaption}
+\item[{{\bf R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$}]{start\-\_\-room, }
+\item[{int}]{from\-\_\-dir, }
+\item[{int}]{outside\-\_\-vnum}
+\end{DoxyParamCaption}
+)}}\label{dwellings_8cpp_adb557508d9bcb02bb823b8eabc57a6ba}
+\hypertarget{dwellings_8cpp_ad40d50d7af337fb23907b82d7c345dfb}{\index{dwellings.\-cpp@{dwellings.\-cpp}!delete\-\_\-contiguous\-\_\-temporary\-\_\-rblock@{delete\-\_\-contiguous\-\_\-temporary\-\_\-rblock}}
+\index{delete\-\_\-contiguous\-\_\-temporary\-\_\-rblock@{delete\-\_\-contiguous\-\_\-temporary\-\_\-rblock}!dwellings.cpp@{dwellings.\-cpp}}
+\subsubsection[{delete\-\_\-contiguous\-\_\-temporary\-\_\-rblock}]{\setlength{\rightskip}{0pt plus 5cm}int delete\-\_\-contiguous\-\_\-temporary\-\_\-rblock (
+\begin{DoxyParamCaption}
+\item[{{\bf R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$}]{start\-\_\-room, }
+\item[{int}]{from\-\_\-dir, }
+\item[{int}]{outside\-\_\-vnum}
+\end{DoxyParamCaption}
+)}}\label{dwellings_8cpp_ad40d50d7af337fb23907b82d7c345dfb}
+\hypertarget{dwellings_8cpp_a5db491adeab6ffe0d6f03e25f1b150ec}{\index{dwellings.\-cpp@{dwellings.\-cpp}!do\-\_\-dismantle@{do\-\_\-dismantle}}
+\index{do\-\_\-dismantle@{do\-\_\-dismantle}!dwellings.cpp@{dwellings.\-cpp}}
+\subsubsection[{do\-\_\-dismantle}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-dismantle (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{dwellings_8cpp_a5db491adeab6ffe0d6f03e25f1b150ec}
+\hypertarget{dwellings_8cpp_a678f2ef884dd8b420943d20ca1bba8ae}{\index{dwellings.\-cpp@{dwellings.\-cpp}!do\-\_\-pitch@{do\-\_\-pitch}}
+\index{do\-\_\-pitch@{do\-\_\-pitch}!dwellings.cpp@{dwellings.\-cpp}}
+\subsubsection[{do\-\_\-pitch}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-pitch (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{dwellings_8cpp_a678f2ef884dd8b420943d20ca1bba8ae}
+\hypertarget{dwellings_8cpp_a6543a364d7306012f45508f0f8b69d5f}{\index{dwellings.\-cpp@{dwellings.\-cpp}!find\-\_\-dwelling\-\_\-obj@{find\-\_\-dwelling\-\_\-obj}}
+\index{find\-\_\-dwelling\-\_\-obj@{find\-\_\-dwelling\-\_\-obj}!dwellings.cpp@{dwellings.\-cpp}}
+\subsubsection[{find\-\_\-dwelling\-\_\-obj}]{\setlength{\rightskip}{0pt plus 5cm}{\bf O\-B\-J\-\_\-\-D\-A\-T\-A}$\ast$ find\-\_\-dwelling\-\_\-obj (
+\begin{DoxyParamCaption}
+\item[{int}]{dwelling\-\_\-room}
+\end{DoxyParamCaption}
+)}}\label{dwellings_8cpp_a6543a364d7306012f45508f0f8b69d5f}
+\hypertarget{dwellings_8cpp_a2caf8d8ea67ee375b560736c4c1cbde8}{\index{dwellings.\-cpp@{dwellings.\-cpp}!fwrite\-\_\-dwelling\-\_\-room@{fwrite\-\_\-dwelling\-\_\-room}}
+\index{fwrite\-\_\-dwelling\-\_\-room@{fwrite\-\_\-dwelling\-\_\-room}!dwellings.cpp@{dwellings.\-cpp}}
+\subsubsection[{fwrite\-\_\-dwelling\-\_\-room}]{\setlength{\rightskip}{0pt plus 5cm}void fwrite\-\_\-dwelling\-\_\-room (
+\begin{DoxyParamCaption}
+\item[{{\bf R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$}]{troom, }
+\item[{F\-I\-L\-E $\ast$}]{fp}
+\end{DoxyParamCaption}
+)}}\label{dwellings_8cpp_a2caf8d8ea67ee375b560736c4c1cbde8}
+\hypertarget{dwellings_8cpp_aa3b2a9a5fac2e9b8d3c90d02a8750d8f}{\index{dwellings.\-cpp@{dwellings.\-cpp}!generate\-\_\-dwelling\-\_\-room@{generate\-\_\-dwelling\-\_\-room}}
+\index{generate\-\_\-dwelling\-\_\-room@{generate\-\_\-dwelling\-\_\-room}!dwellings.cpp@{dwellings.\-cpp}}
+\subsubsection[{generate\-\_\-dwelling\-\_\-room}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\-O\-O\-M\-\_\-\-D\-A\-T\-A}$\ast$ generate\-\_\-dwelling\-\_\-room (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{dwelling}
+\end{DoxyParamCaption}
+)}}\label{dwellings_8cpp_aa3b2a9a5fac2e9b8d3c90d02a8750d8f}
+\hypertarget{dwellings_8cpp_a7fef0f02a91e2eb7f8b03346135b6abb}{\index{dwellings.\-cpp@{dwellings.\-cpp}!load\-\_\-dwelling\-\_\-rooms@{load\-\_\-dwelling\-\_\-rooms}}
+\index{load\-\_\-dwelling\-\_\-rooms@{load\-\_\-dwelling\-\_\-rooms}!dwellings.cpp@{dwellings.\-cpp}}
+\subsubsection[{load\-\_\-dwelling\-\_\-rooms}]{\setlength{\rightskip}{0pt plus 5cm}void load\-\_\-dwelling\-\_\-rooms (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{dwellings_8cpp_a7fef0f02a91e2eb7f8b03346135b6abb}
+\hypertarget{dwellings_8cpp_a8fc80ff1641595b3d110728fccf9d9f8}{\index{dwellings.\-cpp@{dwellings.\-cpp}!save\-\_\-dwelling\-\_\-rooms@{save\-\_\-dwelling\-\_\-rooms}}
+\index{save\-\_\-dwelling\-\_\-rooms@{save\-\_\-dwelling\-\_\-rooms}!dwellings.cpp@{dwellings.\-cpp}}
+\subsubsection[{save\-\_\-dwelling\-\_\-rooms}]{\setlength{\rightskip}{0pt plus 5cm}int save\-\_\-dwelling\-\_\-rooms (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{dwellings_8cpp_a8fc80ff1641595b3d110728fccf9d9f8}

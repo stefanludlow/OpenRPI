@@ -1,0 +1,1050 @@
+\hypertarget{act_8informative_8cpp}{\section{act.\-informative.\-cpp File Reference}
+\label{act_8informative_8cpp}\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}}
+}
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$sstream$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$ctype.\-h$>$}\\*
+{\ttfamily \#include $<$time.\-h$>$}\\*
+{\ttfamily \#include $<$unistd.\-h$>$}\\*
+{\ttfamily \#include $<$dirent.\-h$>$}\\*
+{\ttfamily \#include $<$sys/stat.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}server.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}structs.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}net\-\_\-link.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}account.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}protos.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}decl.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}clan.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}group.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utility.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{act_8informative_8cpp_a5c29b92b3ac5581d2ce0ab44627020ec}{L\-A\-S\-T\-\_\-\-S\-T\-A\-B\-L\-E\-\_\-\-T\-I\-C\-K\-E\-T}~1000
+\item 
+\#define \hyperlink{act_8informative_8cpp_a04370c5825a489b5b76667fe1a01c3ac}{skill\-\_\-lev}(val)~val $>$= 90 ? \char`\"{} Legend \char`\"{} \-: val $>$= 80 ? \char`\"{} Heroic \char`\"{} \-: val $>$= 70 ? \char`\"{} Master \char`\"{} \-: val $>$= 60 ? \char`\"{} Adroit \char`\"{} \-: val $>$= 50 ? \char`\"{}Talented\char`\"{} \-: val $>$= 40 ? \char`\"{}Familiar\char`\"{} \-: val $>$= 30 ? \char`\"{}Amateur \char`\"{} \-: val $>$= 20 ? \char`\"{} Novice \char`\"{} \-: \char`\"{}Beginner\char`\"{}
+\item 
+\#define \hyperlink{act_8informative_8cpp_afc90d167be08e1b59f961f3126b55bd8}{skill\-\_\-lev2}(val)~val $>$= 90 ? \char`\"{} (Legend) \char`\"{} \-: val $>$= 80 ? \char`\"{} (Heroic) \char`\"{} \-: val $>$= 70 ? \char`\"{} (Master) \char`\"{} \-: val $>$= 60 ? \char`\"{} (Adroit) \char`\"{} \-: val $>$= 50 ? \char`\"{} (Talented) \char`\"{} \-: val $>$= 40 ? \char`\"{} (Familiar) \char`\"{} \-: val $>$= 30 ? \char`\"{}(Amateur) \char`\"{} \-: val $>$= 20 ? \char`\"{} (Novice) \char`\"{} \-: \char`\"{} (Beginner) \char`\"{}
+\item 
+\#define \hyperlink{act_8informative_8cpp_a5e9f3eb93fe0aefbda3f45f0899813c9}{skill\-\_\-lev3}(val)~val $>$= 90 ? \char`\"{} \mbox{[}Legend\mbox{]} \char`\"{} \-: val $>$= 80 ? \char`\"{} \mbox{[}Heroic\mbox{]} \char`\"{} \-: val $>$= 70 ? \char`\"{} \mbox{[}Master\mbox{]} \char`\"{} \-: val $>$= 60 ? \char`\"{} \mbox{[}Adroit\mbox{]} \char`\"{} \-: val $>$= 50 ? \char`\"{} \mbox{[}Talented\mbox{]} \char`\"{} \-: val $>$= 40 ? \char`\"{} \mbox{[}Familiar\mbox{]} \char`\"{} \-: val $>$= 30 ? \char`\"{}\mbox{[}Amateur\mbox{]} \char`\"{} \-: val $>$= 20 ? \char`\"{} \mbox{[}Novice\mbox{]} \char`\"{} \-: \char`\"{} \mbox{[}Beginner\mbox{]} \char`\"{}
+\item 
+\#define \hyperlink{act_8informative_8cpp_ae1c809d19c003161031a1f07a9ce5482}{W\-H\-E\-R\-E\-\_\-\-L\-I\-N\-E\-\_\-\-L\-E\-N}~77
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{act_8informative_8cpp_ada0d4e7ae73767259351020a29eff126}{do\-\_\-credits} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8informative_8cpp_a0ba88c4cf6be5a5b9e68f22d62dcc617}{target\-\_\-sighted} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$target)
+\item 
+void \hyperlink{act_8informative_8cpp_a97792f33634a97003a9eb254629305ea}{target\-\_\-sighted\-\_\-reaction} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$target)
+\item 
+void \hyperlink{act_8informative_8cpp_a0397dd8820f56cf4366649b166bcc22a}{do\-\_\-point} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8informative_8cpp_aa40d5ec6f258081294cba1d30e568f71}{do\-\_\-title} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+char $\ast$ \hyperlink{act_8informative_8cpp_a955bbf379cef653fa1abc9c644fa79c0}{parse\-\_\-room\-\_\-description} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$desc)
+\item 
+void \hyperlink{act_8informative_8cpp_a308b3068e41e6069afdfc4bb60133449}{do\-\_\-timeconvert} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8informative_8cpp_a9359472ae89648376735d24dd039f3db}{post\-\_\-message} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d)
+\item 
+int \hyperlink{act_8informative_8cpp_aaf7690ba1b8d61dcdf83f460dada609a}{armor\-\_\-total} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+char $\ast$ \hyperlink{act_8informative_8cpp_a14353a29d5fc2faa532b14641091a63c}{tilde\-\_\-eliminator} (char $\ast$string)
+\item 
+char $\ast$ \hyperlink{act_8informative_8cpp_a34512fec772cf8b9f07e1950a022fc51}{carry\-\_\-desc} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj)
+\item 
+char $\ast$ \hyperlink{act_8informative_8cpp_aae72f5f2f9e3f68019c66744609b5608}{shock\-\_\-bar} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} prompt)
+\item 
+char $\ast$ \hyperlink{act_8informative_8cpp_a880d12939394fc02ad06ff45bf6a501a}{fatigue\-\_\-bar} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} prompt)
+\item 
+char $\ast$ \hyperlink{act_8informative_8cpp_a08a65ab845d9d9331967fbdf726f54ea}{choke\-\_\-bar} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} prompt)
+\item 
+char $\ast$ \hyperlink{act_8informative_8cpp_adaddd1776807ac62f07ec842c69a5f11}{breath\-\_\-bar} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} prompt)
+\item 
+void \hyperlink{act_8informative_8cpp_a7611f8975a1eef5320b10ddb6e3de10a}{argument\-\_\-split\-\_\-2} (char $\ast$argument, char $\ast$first\-\_\-arg, char $\ast$second\-\_\-arg)
+\item 
+char $\ast$ \hyperlink{act_8informative_8cpp_ae3bea926d78f984deb58d686559d12ac}{find\-\_\-ex\-\_\-description} (char $\ast$word, \hyperlink{structs_8h_a23e61a3ec169d1e601ef3325a7daa744}{E\-X\-T\-R\-A\-\_\-\-D\-E\-S\-C\-R\-\_\-\-D\-A\-T\-A} $\ast$list)
+\item 
+void \hyperlink{act_8informative_8cpp_a5cffde6aed06044a6de508409cd0880e}{do\-\_\-compare} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+char $\ast$ \hyperlink{act_8informative_8cpp_a35be5e357016fb0144767902cf5e6eae}{writing\-\_\-adj} (int skill)
+\item 
+int \hyperlink{act_8informative_8cpp_a02f62f305a52506b834adaba7b00446c}{decipher\-\_\-script} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int script, int language, int skill)
+\item 
+void \hyperlink{act_8informative_8cpp_a99e6365884cb61717cbfccb711cd7685}{reading\-\_\-check} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj, \hyperlink{structs_8h_aa211db6b081f782264d7abea0ab25025}{W\-R\-I\-T\-I\-N\-G\-\_\-\-D\-A\-T\-A} $\ast$writing, int page)
+\item 
+char $\ast$ \hyperlink{act_8informative_8cpp_a9ae50dfe2292afe52a61a886e120b6cf}{article} (const char $\ast$string)
+\item 
+void \hyperlink{act_8informative_8cpp_a13b970aee1c866e69faf4bb8b7e94120}{show\-\_\-obj\-\_\-to\-\_\-char} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int mode)
+\item 
+int \hyperlink{act_8informative_8cpp_a09c2cb8764587f2b00ac7629ff13f5e5}{list\-\_\-obj\-\_\-to\-\_\-char} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$list, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int mode, int show)
+\item 
+int \hyperlink{act_8informative_8cpp_a9b75cdf0e1ab28c22fa0a90041cc0269}{list\-\_\-char\-\_\-to\-\_\-char} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$list, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int mode)
+\item 
+void \hyperlink{act_8informative_8cpp_ad3fde4b11bd7a26e7f4472450d871d32}{show\-\_\-contents} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8informative_8cpp_a0a6a96f731312ac5044d91ec0ce7a971}{do\-\_\-contents} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+int \hyperlink{act_8informative_8cpp_a1bd354a6b6da8cd36deacf47329e4caa}{enter\-\_\-exit\-\_\-msg} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$buffer)
+\item 
+char $\ast$ \hyperlink{act_8informative_8cpp_ada4eeaf9076ea023adadc1c2bcbde460}{height\-\_\-phrase} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+char $\ast$ \hyperlink{act_8informative_8cpp_a1fba8b7971d94a6cf0fd63e1dcf74fd3}{char\-\_\-short} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+char $\ast$ \hyperlink{act_8informative_8cpp_a3d07673db30db25c31c89fe95917689e}{char\-\_\-long} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int show\-\_\-tname)
+\item 
+char $\ast$ \hyperlink{act_8informative_8cpp_a09b53a5726451858142eb6063621a8bb}{left\-\_\-right\-\_\-grip} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+char $\ast$ \hyperlink{act_8informative_8cpp_a9414df534a3cc984ce2f95bc55ea9a63}{worn\-\_\-third\-\_\-loc} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj)
+\item 
+void \hyperlink{act_8informative_8cpp_aed028cf773c54ab0a4ec5d799ded4612}{show\-\_\-char\-\_\-to\-\_\-char} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$i, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int mode)
+\item 
+void \hyperlink{act_8informative_8cpp_a0697cd6862a9ca5bf12deca4efe03d2c}{do\-\_\-search} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8informative_8cpp_abd3244bfedee535a91dec21d1cc8192b}{delayed\-\_\-search} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+char $\ast$ \hyperlink{act_8informative_8cpp_a0f96a6e6977865a0f64088cc6460d8fc}{room\-\_\-\-\_\-get\-\_\-description} (\hyperlink{room_8h_aede519ef65d80b5242a4a28b69d5e097}{R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$room)
+\begin{DoxyCompactList}\small\item\em Obtain the current room description. \end{DoxyCompactList}\item 
+void \hyperlink{act_8informative_8cpp_a1a8274ecd00bc7c14f8253406894ee4a}{do\-\_\-look} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+int \hyperlink{act_8informative_8cpp_af3882ed7fd8ac9af04bfd2f62da84074}{read\-\_\-pc\-\_\-message} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$name, char $\ast$argument)
+\item 
+int \hyperlink{act_8informative_8cpp_a48baff7d459ac4fcc7a399bcb6dbc541}{read\-\_\-virtual\-\_\-message} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$name, char $\ast$argument)
+\item 
+void \hyperlink{act_8informative_8cpp_a634709395ac34fba64e5177e719830ff}{do\-\_\-read} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8informative_8cpp_a163336542edb73500aec023b57af0555}{do\-\_\-examine} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8informative_8cpp_a56e404dad4b84db5bacdf13d7daf7917}{do\-\_\-exits} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+int \hyperlink{act_8informative_8cpp_a19ce0db46ee6eab5f4c972b4af7f7e06}{get\-\_\-stat\-\_\-range} (int score)
+\item 
+int \hyperlink{act_8informative_8cpp_af78683c9b073c9c92c87d7ced649183a}{get\-\_\-comestible\-\_\-range} (int num)
+\item 
+int \hyperlink{act_8informative_8cpp_adbcfe175c5ab85ede316b3901eac7a24}{get\-\_\-hunger\-\_\-comestible\-\_\-range} (int num)
+\item 
+void \hyperlink{act_8informative_8cpp_a3a11359f5d89c793b52acc7a1d058500}{hunger\-\_\-thirst\-\_\-process} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+char $\ast$ \hyperlink{act_8informative_8cpp_a273834113d1ba941b3f9b6ac96aa4096}{suffix} (int \hyperlink{utility_8cpp_a64e42eea1f3c3fbcb3e64b2c6c547428}{number})
+\item 
+void \hyperlink{act_8informative_8cpp_af67ef3c182b1e3d6051d492e26401a85}{do\-\_\-info} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8informative_8cpp_abff64736776893dd9aa028acb326f730}{print\-\_\-score\-\_\-mote} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, const char $\ast$const field, const char $\ast$index)
+\item 
+void \hyperlink{act_8informative_8cpp_a087c3dddea28bb6314e585042098eb07}{do\-\_\-score} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8informative_8cpp_a820b00b92b04766e8cea9d02c70264ac}{do\-\_\-skills} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{act_8informative_8cpp_a7a68267c31bf7d31a30c20766cbc9a22}{do\-\_\-talents} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+char $\ast$ \hyperlink{act_8informative_8cpp_a250befd8c9322c9b39cecb6bf9fea70f}{time\-\_\-string} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classrpie_1_1server}{rpie\-::server} \hyperlink{act_8informative_8cpp_a55c71990ee4162ebec6abe401996cf15}{engine}
+\item 
+const char $\ast$ \hyperlink{act_8informative_8cpp_a8e457eb86df54c0f75b9529b85f4f109}{skills} \mbox{[}$\,$\mbox{]}
+\item 
+\hyperlink{structs_8h_a42a06ba95496dda84ff65f3f584fffed}{B\-O\-A\-R\-D\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{act_8informative_8cpp_a241f48984e9c5fa9be74ab37c58ee749}{full\-\_\-board\-\_\-list} = N\-U\-L\-L
+\item 
+int \hyperlink{act_8informative_8cpp_a3a3de318a710619cb48c7d2bf46639b2}{snowstorm} = 0
+\item 
+const char $\ast$ \hyperlink{act_8informative_8cpp_a1234d1e00c3c9dbece35f55b0392f967}{dec\-\_\-conditions} \mbox{[}5\mbox{]}
+\item 
+const char $\ast$ \hyperlink{act_8informative_8cpp_ae6c8e11994b4f67801d828f938291ca4}{dec\-\_\-skills} \mbox{[}9\mbox{]}
+\item 
+const char $\ast$ \hyperlink{act_8informative_8cpp_a9155cd47892d16d768dd5db5839150aa}{dec\-\_\-short\-\_\-skills} \mbox{[}9\mbox{]}
+\item 
+const char $\ast$ \hyperlink{act_8informative_8cpp_af9e5b2e3327b23076d8e6ea60c1f4d26}{dec\-\_\-size} \mbox{[}4\mbox{]}
+\item 
+const char $\ast$ \hyperlink{act_8informative_8cpp_ab4dcc1e359a36fd3261a7d4fce9e1e28}{dec\-\_\-short} \mbox{[}12\mbox{]}
+\item 
+const char $\ast$ \hyperlink{act_8informative_8cpp_a16af6bff6a2536b2619fbc2a783923c3}{month\-\_\-name} \mbox{[}12\mbox{]}
+\item 
+const char $\ast$ \hyperlink{act_8informative_8cpp_a66dfbcad23cf999fe53cc9653c5a8426}{short\-\_\-month\-\_\-name} \mbox{[}12\mbox{]}
+\item 
+const char $\ast$ \hyperlink{act_8informative_8cpp_a92a78ad044536095141d421ac742b032}{season\-\_\-name} \mbox{[}4\mbox{]}
+\item 
+const char $\ast$ \hyperlink{act_8informative_8cpp_a90ff175d841e76ede060428d7aa94292}{day\-\_\-name} \mbox{[}6\mbox{]}
+\item 
+int \hyperlink{act_8informative_8cpp_a1408ecf54d853da66a0ebf5e567cd18c}{loc\-\_\-order} \mbox{[}\hyperlink{structs_8h_a58071048ff90ccac681351757b22ec5f}{M\-A\-X\-\_\-\-W\-E\-A\-R}\mbox{]}
+\item 
+const char $\ast$ \hyperlink{act_8informative_8cpp_a696412ed2c3c1e97217f8b60fe76fc8c}{fog\-\_\-states} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{act_8informative_8cpp_abbe427a5be5cb3aeb07ecc44ae81ad55}{weather\-\_\-states} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{act_8informative_8cpp_a1f1e84c03a866e819cc1bbc7accb218e}{weather\-\_\-clouds} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{act_8informative_8cpp_a48c470aa75c4f486bdc7b6ac56605472}{wind\-\_\-speeds} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{act_8informative_8cpp_a9e154fb146756fcee3d8e126141a5626}{holiday\-\_\-names} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{act_8informative_8cpp_a8e881e7399f4175c0d8993ba39b6a9ab}{holiday\-\_\-short\-\_\-names} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{act_8informative_8cpp_a5f60b72e7e7d51a3087205e40d575834}{trap\-\_\-desc\-\_\-bits} \mbox{[}$\,$\mbox{]}
+\item 
+char $\ast$ \hyperlink{act_8informative_8cpp_a92fc8e59f1143c9160c7cca4f0bc0f68}{frame\-\_\-built} \mbox{[}$\,$\mbox{]}
+\item 
+char $\ast$ \hyperlink{act_8informative_8cpp_a6a6437b5fa8d438b34f82f1c8118e558}{verbal\-\_\-intox} \mbox{[}$\,$\mbox{]}
+\item 
+char $\ast$ \hyperlink{act_8informative_8cpp_ae74d12d457efb2697bbe021b4a719c50}{verbal\-\_\-hunger} \mbox{[}$\,$\mbox{]}
+\item 
+char $\ast$ \hyperlink{act_8informative_8cpp_a5a1177acf2d63f80298830abbde16c63}{verbal\-\_\-thirst} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{act_8informative_8cpp_a5c29b92b3ac5581d2ce0ab44627020ec}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!L\-A\-S\-T\-\_\-\-S\-T\-A\-B\-L\-E\-\_\-\-T\-I\-C\-K\-E\-T@{L\-A\-S\-T\-\_\-\-S\-T\-A\-B\-L\-E\-\_\-\-T\-I\-C\-K\-E\-T}}
+\index{L\-A\-S\-T\-\_\-\-S\-T\-A\-B\-L\-E\-\_\-\-T\-I\-C\-K\-E\-T@{L\-A\-S\-T\-\_\-\-S\-T\-A\-B\-L\-E\-\_\-\-T\-I\-C\-K\-E\-T}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{L\-A\-S\-T\-\_\-\-S\-T\-A\-B\-L\-E\-\_\-\-T\-I\-C\-K\-E\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-A\-S\-T\-\_\-\-S\-T\-A\-B\-L\-E\-\_\-\-T\-I\-C\-K\-E\-T~1000}}\label{act_8informative_8cpp_a5c29b92b3ac5581d2ce0ab44627020ec}
+\hypertarget{act_8informative_8cpp_a04370c5825a489b5b76667fe1a01c3ac}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!skill\-\_\-lev@{skill\-\_\-lev}}
+\index{skill\-\_\-lev@{skill\-\_\-lev}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{skill\-\_\-lev}]{\setlength{\rightskip}{0pt plus 5cm}\#define skill\-\_\-lev(
+\begin{DoxyParamCaption}
+\item[{}]{val}
+\end{DoxyParamCaption}
+)~val $>$= 90 ? \char`\"{} Legend \char`\"{} \-: val $>$= 80 ? \char`\"{} Heroic \char`\"{} \-: val $>$= 70 ? \char`\"{} Master \char`\"{} \-: val $>$= 60 ? \char`\"{} Adroit \char`\"{} \-: val $>$= 50 ? \char`\"{}Talented\char`\"{} \-: val $>$= 40 ? \char`\"{}Familiar\char`\"{} \-: val $>$= 30 ? \char`\"{}Amateur \char`\"{} \-: val $>$= 20 ? \char`\"{} Novice \char`\"{} \-: \char`\"{}Beginner\char`\"{}}}\label{act_8informative_8cpp_a04370c5825a489b5b76667fe1a01c3ac}
+\hypertarget{act_8informative_8cpp_afc90d167be08e1b59f961f3126b55bd8}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!skill\-\_\-lev2@{skill\-\_\-lev2}}
+\index{skill\-\_\-lev2@{skill\-\_\-lev2}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{skill\-\_\-lev2}]{\setlength{\rightskip}{0pt plus 5cm}\#define skill\-\_\-lev2(
+\begin{DoxyParamCaption}
+\item[{}]{val}
+\end{DoxyParamCaption}
+)~val $>$= 90 ? \char`\"{} (Legend) \char`\"{} \-: val $>$= 80 ? \char`\"{} (Heroic) \char`\"{} \-: val $>$= 70 ? \char`\"{} (Master) \char`\"{} \-: val $>$= 60 ? \char`\"{} (Adroit) \char`\"{} \-: val $>$= 50 ? \char`\"{} (Talented) \char`\"{} \-: val $>$= 40 ? \char`\"{} (Familiar) \char`\"{} \-: val $>$= 30 ? \char`\"{}(Amateur) \char`\"{} \-: val $>$= 20 ? \char`\"{} (Novice) \char`\"{} \-: \char`\"{} (Beginner) \char`\"{}}}\label{act_8informative_8cpp_afc90d167be08e1b59f961f3126b55bd8}
+\hypertarget{act_8informative_8cpp_a5e9f3eb93fe0aefbda3f45f0899813c9}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!skill\-\_\-lev3@{skill\-\_\-lev3}}
+\index{skill\-\_\-lev3@{skill\-\_\-lev3}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{skill\-\_\-lev3}]{\setlength{\rightskip}{0pt plus 5cm}\#define skill\-\_\-lev3(
+\begin{DoxyParamCaption}
+\item[{}]{val}
+\end{DoxyParamCaption}
+)~val $>$= 90 ? \char`\"{} \mbox{[}Legend\mbox{]} \char`\"{} \-: val $>$= 80 ? \char`\"{} \mbox{[}Heroic\mbox{]} \char`\"{} \-: val $>$= 70 ? \char`\"{} \mbox{[}Master\mbox{]} \char`\"{} \-: val $>$= 60 ? \char`\"{} \mbox{[}Adroit\mbox{]} \char`\"{} \-: val $>$= 50 ? \char`\"{} \mbox{[}Talented\mbox{]} \char`\"{} \-: val $>$= 40 ? \char`\"{} \mbox{[}Familiar\mbox{]} \char`\"{} \-: val $>$= 30 ? \char`\"{}\mbox{[}Amateur\mbox{]} \char`\"{} \-: val $>$= 20 ? \char`\"{} \mbox{[}Novice\mbox{]} \char`\"{} \-: \char`\"{} \mbox{[}Beginner\mbox{]} \char`\"{}}}\label{act_8informative_8cpp_a5e9f3eb93fe0aefbda3f45f0899813c9}
+\hypertarget{act_8informative_8cpp_ae1c809d19c003161031a1f07a9ce5482}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!W\-H\-E\-R\-E\-\_\-\-L\-I\-N\-E\-\_\-\-L\-E\-N@{W\-H\-E\-R\-E\-\_\-\-L\-I\-N\-E\-\_\-\-L\-E\-N}}
+\index{W\-H\-E\-R\-E\-\_\-\-L\-I\-N\-E\-\_\-\-L\-E\-N@{W\-H\-E\-R\-E\-\_\-\-L\-I\-N\-E\-\_\-\-L\-E\-N}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{W\-H\-E\-R\-E\-\_\-\-L\-I\-N\-E\-\_\-\-L\-E\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\-H\-E\-R\-E\-\_\-\-L\-I\-N\-E\-\_\-\-L\-E\-N~77}}\label{act_8informative_8cpp_ae1c809d19c003161031a1f07a9ce5482}
+
+
+\subsection{Function Documentation}
+\hypertarget{act_8informative_8cpp_a7611f8975a1eef5320b10ddb6e3de10a}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!argument\-\_\-split\-\_\-2@{argument\-\_\-split\-\_\-2}}
+\index{argument\-\_\-split\-\_\-2@{argument\-\_\-split\-\_\-2}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{argument\-\_\-split\-\_\-2}]{\setlength{\rightskip}{0pt plus 5cm}void argument\-\_\-split\-\_\-2 (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{argument, }
+\item[{char $\ast$}]{first\-\_\-arg, }
+\item[{char $\ast$}]{second\-\_\-arg}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_a7611f8975a1eef5320b10ddb6e3de10a}
+\hypertarget{act_8informative_8cpp_aaf7690ba1b8d61dcdf83f460dada609a}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!armor\-\_\-total@{armor\-\_\-total}}
+\index{armor\-\_\-total@{armor\-\_\-total}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{armor\-\_\-total}]{\setlength{\rightskip}{0pt plus 5cm}int armor\-\_\-total (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_aaf7690ba1b8d61dcdf83f460dada609a}
+\hypertarget{act_8informative_8cpp_a9ae50dfe2292afe52a61a886e120b6cf}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!article@{article}}
+\index{article@{article}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{article}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ article (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{string}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_a9ae50dfe2292afe52a61a886e120b6cf}
+\hypertarget{act_8informative_8cpp_adaddd1776807ac62f07ec842c69a5f11}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!breath\-\_\-bar@{breath\-\_\-bar}}
+\index{breath\-\_\-bar@{breath\-\_\-bar}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{breath\-\_\-bar}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ breath\-\_\-bar (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf bool}}]{prompt}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_adaddd1776807ac62f07ec842c69a5f11}
+\hypertarget{act_8informative_8cpp_a34512fec772cf8b9f07e1950a022fc51}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!carry\-\_\-desc@{carry\-\_\-desc}}
+\index{carry\-\_\-desc@{carry\-\_\-desc}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{carry\-\_\-desc}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ carry\-\_\-desc (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_a34512fec772cf8b9f07e1950a022fc51}
+\hypertarget{act_8informative_8cpp_a3d07673db30db25c31c89fe95917689e}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!char\-\_\-long@{char\-\_\-long}}
+\index{char\-\_\-long@{char\-\_\-long}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{char\-\_\-long}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ char\-\_\-long (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{show\-\_\-tname}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_a3d07673db30db25c31c89fe95917689e}
+\hypertarget{act_8informative_8cpp_a1fba8b7971d94a6cf0fd63e1dcf74fd3}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!char\-\_\-short@{char\-\_\-short}}
+\index{char\-\_\-short@{char\-\_\-short}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{char\-\_\-short}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ char\-\_\-short (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_a1fba8b7971d94a6cf0fd63e1dcf74fd3}
+\hypertarget{act_8informative_8cpp_a08a65ab845d9d9331967fbdf726f54ea}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!choke\-\_\-bar@{choke\-\_\-bar}}
+\index{choke\-\_\-bar@{choke\-\_\-bar}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{choke\-\_\-bar}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ choke\-\_\-bar (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf bool}}]{prompt}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_a08a65ab845d9d9331967fbdf726f54ea}
+\hypertarget{act_8informative_8cpp_a02f62f305a52506b834adaba7b00446c}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!decipher\-\_\-script@{decipher\-\_\-script}}
+\index{decipher\-\_\-script@{decipher\-\_\-script}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{decipher\-\_\-script}]{\setlength{\rightskip}{0pt plus 5cm}int decipher\-\_\-script (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{script, }
+\item[{int}]{language, }
+\item[{int}]{skill}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_a02f62f305a52506b834adaba7b00446c}
+\hypertarget{act_8informative_8cpp_abd3244bfedee535a91dec21d1cc8192b}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!delayed\-\_\-search@{delayed\-\_\-search}}
+\index{delayed\-\_\-search@{delayed\-\_\-search}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{delayed\-\_\-search}]{\setlength{\rightskip}{0pt plus 5cm}void delayed\-\_\-search (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_abd3244bfedee535a91dec21d1cc8192b}
+\hypertarget{act_8informative_8cpp_a5cffde6aed06044a6de508409cd0880e}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!do\-\_\-compare@{do\-\_\-compare}}
+\index{do\-\_\-compare@{do\-\_\-compare}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{do\-\_\-compare}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-compare (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_a5cffde6aed06044a6de508409cd0880e}
+\hypertarget{act_8informative_8cpp_a0a6a96f731312ac5044d91ec0ce7a971}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!do\-\_\-contents@{do\-\_\-contents}}
+\index{do\-\_\-contents@{do\-\_\-contents}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{do\-\_\-contents}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-contents (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_a0a6a96f731312ac5044d91ec0ce7a971}
+\hypertarget{act_8informative_8cpp_ada0d4e7ae73767259351020a29eff126}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!do\-\_\-credits@{do\-\_\-credits}}
+\index{do\-\_\-credits@{do\-\_\-credits}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{do\-\_\-credits}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-credits (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_ada0d4e7ae73767259351020a29eff126}
+\hypertarget{act_8informative_8cpp_a163336542edb73500aec023b57af0555}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!do\-\_\-examine@{do\-\_\-examine}}
+\index{do\-\_\-examine@{do\-\_\-examine}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{do\-\_\-examine}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-examine (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_a163336542edb73500aec023b57af0555}
+\hypertarget{act_8informative_8cpp_a56e404dad4b84db5bacdf13d7daf7917}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!do\-\_\-exits@{do\-\_\-exits}}
+\index{do\-\_\-exits@{do\-\_\-exits}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{do\-\_\-exits}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-exits (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_a56e404dad4b84db5bacdf13d7daf7917}
+\hypertarget{act_8informative_8cpp_af67ef3c182b1e3d6051d492e26401a85}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!do\-\_\-info@{do\-\_\-info}}
+\index{do\-\_\-info@{do\-\_\-info}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{do\-\_\-info}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-info (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_af67ef3c182b1e3d6051d492e26401a85}
+\hypertarget{act_8informative_8cpp_a1a8274ecd00bc7c14f8253406894ee4a}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!do\-\_\-look@{do\-\_\-look}}
+\index{do\-\_\-look@{do\-\_\-look}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{do\-\_\-look}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-look (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_a1a8274ecd00bc7c14f8253406894ee4a}
+Arena
+
+Window
+
+B\-O\-A\-R\-D\-S \hypertarget{act_8informative_8cpp_a0397dd8820f56cf4366649b166bcc22a}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!do\-\_\-point@{do\-\_\-point}}
+\index{do\-\_\-point@{do\-\_\-point}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{do\-\_\-point}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-point (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_a0397dd8820f56cf4366649b166bcc22a}
+\hypertarget{act_8informative_8cpp_a634709395ac34fba64e5177e719830ff}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!do\-\_\-read@{do\-\_\-read}}
+\index{do\-\_\-read@{do\-\_\-read}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{do\-\_\-read}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-read (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_a634709395ac34fba64e5177e719830ff}
+\hypertarget{act_8informative_8cpp_a087c3dddea28bb6314e585042098eb07}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!do\-\_\-score@{do\-\_\-score}}
+\index{do\-\_\-score@{do\-\_\-score}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{do\-\_\-score}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-score (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_a087c3dddea28bb6314e585042098eb07}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000001}{Todo}]Check this as dead code \end{DoxyRefDesc}
+\hypertarget{act_8informative_8cpp_a0697cd6862a9ca5bf12deca4efe03d2c}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!do\-\_\-search@{do\-\_\-search}}
+\index{do\-\_\-search@{do\-\_\-search}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{do\-\_\-search}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-search (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_a0697cd6862a9ca5bf12deca4efe03d2c}
+\hypertarget{act_8informative_8cpp_a820b00b92b04766e8cea9d02c70264ac}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!do\-\_\-skills@{do\-\_\-skills}}
+\index{do\-\_\-skills@{do\-\_\-skills}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{do\-\_\-skills}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-skills (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_a820b00b92b04766e8cea9d02c70264ac}
+\hypertarget{act_8informative_8cpp_a7a68267c31bf7d31a30c20766cbc9a22}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!do\-\_\-talents@{do\-\_\-talents}}
+\index{do\-\_\-talents@{do\-\_\-talents}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{do\-\_\-talents}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-talents (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_a7a68267c31bf7d31a30c20766cbc9a22}
+\hypertarget{act_8informative_8cpp_a308b3068e41e6069afdfc4bb60133449}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!do\-\_\-timeconvert@{do\-\_\-timeconvert}}
+\index{do\-\_\-timeconvert@{do\-\_\-timeconvert}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{do\-\_\-timeconvert}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-timeconvert (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_a308b3068e41e6069afdfc4bb60133449}
+\#else (int) temp\-\_\-time = (((int) mktime (\&real\-\_\-date))
+\begin{DoxyItemize}
+\item ((int) (ch-\/$>$desc-\/$>$acct-\/$>$timezone $\ast$ 60.\-0 $\ast$ 60.\-0)))
+\item (int) timezone; \#endif 
+\end{DoxyItemize}\hypertarget{act_8informative_8cpp_aa40d5ec6f258081294cba1d30e568f71}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!do\-\_\-title@{do\-\_\-title}}
+\index{do\-\_\-title@{do\-\_\-title}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{do\-\_\-title}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-title (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_aa40d5ec6f258081294cba1d30e568f71}
+\hypertarget{act_8informative_8cpp_a1bd354a6b6da8cd36deacf47329e4caa}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!enter\-\_\-exit\-\_\-msg@{enter\-\_\-exit\-\_\-msg}}
+\index{enter\-\_\-exit\-\_\-msg@{enter\-\_\-exit\-\_\-msg}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{enter\-\_\-exit\-\_\-msg}]{\setlength{\rightskip}{0pt plus 5cm}int enter\-\_\-exit\-\_\-msg (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{buffer}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_a1bd354a6b6da8cd36deacf47329e4caa}
+\hypertarget{act_8informative_8cpp_a880d12939394fc02ad06ff45bf6a501a}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!fatigue\-\_\-bar@{fatigue\-\_\-bar}}
+\index{fatigue\-\_\-bar@{fatigue\-\_\-bar}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{fatigue\-\_\-bar}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ fatigue\-\_\-bar (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf bool}}]{prompt}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_a880d12939394fc02ad06ff45bf6a501a}
+\hypertarget{act_8informative_8cpp_ae3bea926d78f984deb58d686559d12ac}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!find\-\_\-ex\-\_\-description@{find\-\_\-ex\-\_\-description}}
+\index{find\-\_\-ex\-\_\-description@{find\-\_\-ex\-\_\-description}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{find\-\_\-ex\-\_\-description}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ find\-\_\-ex\-\_\-description (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{word, }
+\item[{{\bf E\-X\-T\-R\-A\-\_\-\-D\-E\-S\-C\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{list}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_ae3bea926d78f984deb58d686559d12ac}
+\hypertarget{act_8informative_8cpp_af78683c9b073c9c92c87d7ced649183a}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!get\-\_\-comestible\-\_\-range@{get\-\_\-comestible\-\_\-range}}
+\index{get\-\_\-comestible\-\_\-range@{get\-\_\-comestible\-\_\-range}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{get\-\_\-comestible\-\_\-range}]{\setlength{\rightskip}{0pt plus 5cm}int get\-\_\-comestible\-\_\-range (
+\begin{DoxyParamCaption}
+\item[{int}]{num}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_af78683c9b073c9c92c87d7ced649183a}
+\hypertarget{act_8informative_8cpp_adbcfe175c5ab85ede316b3901eac7a24}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!get\-\_\-hunger\-\_\-comestible\-\_\-range@{get\-\_\-hunger\-\_\-comestible\-\_\-range}}
+\index{get\-\_\-hunger\-\_\-comestible\-\_\-range@{get\-\_\-hunger\-\_\-comestible\-\_\-range}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{get\-\_\-hunger\-\_\-comestible\-\_\-range}]{\setlength{\rightskip}{0pt plus 5cm}int get\-\_\-hunger\-\_\-comestible\-\_\-range (
+\begin{DoxyParamCaption}
+\item[{int}]{num}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_adbcfe175c5ab85ede316b3901eac7a24}
+\hypertarget{act_8informative_8cpp_a19ce0db46ee6eab5f4c972b4af7f7e06}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!get\-\_\-stat\-\_\-range@{get\-\_\-stat\-\_\-range}}
+\index{get\-\_\-stat\-\_\-range@{get\-\_\-stat\-\_\-range}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{get\-\_\-stat\-\_\-range}]{\setlength{\rightskip}{0pt plus 5cm}int get\-\_\-stat\-\_\-range (
+\begin{DoxyParamCaption}
+\item[{int}]{score}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_a19ce0db46ee6eab5f4c972b4af7f7e06}
+\hypertarget{act_8informative_8cpp_ada4eeaf9076ea023adadc1c2bcbde460}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!height\-\_\-phrase@{height\-\_\-phrase}}
+\index{height\-\_\-phrase@{height\-\_\-phrase}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{height\-\_\-phrase}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ height\-\_\-phrase (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_ada4eeaf9076ea023adadc1c2bcbde460}
+\hypertarget{act_8informative_8cpp_a3a11359f5d89c793b52acc7a1d058500}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!hunger\-\_\-thirst\-\_\-process@{hunger\-\_\-thirst\-\_\-process}}
+\index{hunger\-\_\-thirst\-\_\-process@{hunger\-\_\-thirst\-\_\-process}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{hunger\-\_\-thirst\-\_\-process}]{\setlength{\rightskip}{0pt plus 5cm}void hunger\-\_\-thirst\-\_\-process (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_a3a11359f5d89c793b52acc7a1d058500}
+\hypertarget{act_8informative_8cpp_a09b53a5726451858142eb6063621a8bb}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!left\-\_\-right\-\_\-grip@{left\-\_\-right\-\_\-grip}}
+\index{left\-\_\-right\-\_\-grip@{left\-\_\-right\-\_\-grip}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{left\-\_\-right\-\_\-grip}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ left\-\_\-right\-\_\-grip (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_a09b53a5726451858142eb6063621a8bb}
+\hypertarget{act_8informative_8cpp_a9b75cdf0e1ab28c22fa0a90041cc0269}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!list\-\_\-char\-\_\-to\-\_\-char@{list\-\_\-char\-\_\-to\-\_\-char}}
+\index{list\-\_\-char\-\_\-to\-\_\-char@{list\-\_\-char\-\_\-to\-\_\-char}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{list\-\_\-char\-\_\-to\-\_\-char}]{\setlength{\rightskip}{0pt plus 5cm}int list\-\_\-char\-\_\-to\-\_\-char (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{list, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{mode}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_a9b75cdf0e1ab28c22fa0a90041cc0269}
+\hypertarget{act_8informative_8cpp_a09c2cb8764587f2b00ac7629ff13f5e5}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!list\-\_\-obj\-\_\-to\-\_\-char@{list\-\_\-obj\-\_\-to\-\_\-char}}
+\index{list\-\_\-obj\-\_\-to\-\_\-char@{list\-\_\-obj\-\_\-to\-\_\-char}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{list\-\_\-obj\-\_\-to\-\_\-char}]{\setlength{\rightskip}{0pt plus 5cm}int list\-\_\-obj\-\_\-to\-\_\-char (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{list, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{mode, }
+\item[{int}]{show}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_a09c2cb8764587f2b00ac7629ff13f5e5}
+\hypertarget{act_8informative_8cpp_a955bbf379cef653fa1abc9c644fa79c0}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!parse\-\_\-room\-\_\-description@{parse\-\_\-room\-\_\-description}}
+\index{parse\-\_\-room\-\_\-description@{parse\-\_\-room\-\_\-description}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{parse\-\_\-room\-\_\-description}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ parse\-\_\-room\-\_\-description (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{desc}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_a955bbf379cef653fa1abc9c644fa79c0}
+\hypertarget{act_8informative_8cpp_a9359472ae89648376735d24dd039f3db}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!post\-\_\-message@{post\-\_\-message}}
+\index{post\-\_\-message@{post\-\_\-message}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{post\-\_\-message}]{\setlength{\rightskip}{0pt plus 5cm}void post\-\_\-message (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_a9359472ae89648376735d24dd039f3db}
+\hypertarget{act_8informative_8cpp_abff64736776893dd9aa028acb326f730}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!print\-\_\-score\-\_\-mote@{print\-\_\-score\-\_\-mote}}
+\index{print\-\_\-score\-\_\-mote@{print\-\_\-score\-\_\-mote}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{print\-\_\-score\-\_\-mote}]{\setlength{\rightskip}{0pt plus 5cm}void print\-\_\-score\-\_\-mote (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{const char $\ast$const}]{field, }
+\item[{const char $\ast$}]{index}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_abff64736776893dd9aa028acb326f730}
+\hypertarget{act_8informative_8cpp_af3882ed7fd8ac9af04bfd2f62da84074}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!read\-\_\-pc\-\_\-message@{read\-\_\-pc\-\_\-message}}
+\index{read\-\_\-pc\-\_\-message@{read\-\_\-pc\-\_\-message}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{read\-\_\-pc\-\_\-message}]{\setlength{\rightskip}{0pt plus 5cm}int read\-\_\-pc\-\_\-message (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{name, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_af3882ed7fd8ac9af04bfd2f62da84074}
+\hypertarget{act_8informative_8cpp_a48baff7d459ac4fcc7a399bcb6dbc541}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!read\-\_\-virtual\-\_\-message@{read\-\_\-virtual\-\_\-message}}
+\index{read\-\_\-virtual\-\_\-message@{read\-\_\-virtual\-\_\-message}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{read\-\_\-virtual\-\_\-message}]{\setlength{\rightskip}{0pt plus 5cm}int read\-\_\-virtual\-\_\-message (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{name, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_a48baff7d459ac4fcc7a399bcb6dbc541}
+\hypertarget{act_8informative_8cpp_a99e6365884cb61717cbfccb711cd7685}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!reading\-\_\-check@{reading\-\_\-check}}
+\index{reading\-\_\-check@{reading\-\_\-check}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{reading\-\_\-check}]{\setlength{\rightskip}{0pt plus 5cm}void reading\-\_\-check (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj, }
+\item[{{\bf W\-R\-I\-T\-I\-N\-G\-\_\-\-D\-A\-T\-A} $\ast$}]{writing, }
+\item[{int}]{page}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_a99e6365884cb61717cbfccb711cd7685}
+\hypertarget{act_8informative_8cpp_a0f96a6e6977865a0f64088cc6460d8fc}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!room\-\_\-\-\_\-get\-\_\-description@{room\-\_\-\-\_\-get\-\_\-description}}
+\index{room\-\_\-\-\_\-get\-\_\-description@{room\-\_\-\-\_\-get\-\_\-description}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{room\-\_\-\-\_\-get\-\_\-description}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ room\-\_\-\-\_\-get\-\_\-description (
+\begin{DoxyParamCaption}
+\item[{{\bf R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$}]{room}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_a0f96a6e6977865a0f64088cc6460d8fc}
+
+
+Obtain the current room description. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em room} & The room to examine (i.\-e. \char`\"{}this-\/$>$get\-\_\-description\char`\"{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The current room description By default, return the room's description. If there are extra descriptions defined, then pick the closest case and return that instead. If you have an extra description for the current weather \& time scenario, return that.
+\end{DoxyReturn}
+Otherwise fall back on the default room description.
+
+15-\/12-\/07\-: Fixed a long standing bug that didn't display night time weather descriptions, but had to make the function somewhat messier to do so.
+\begin{DoxyItemize}
+\item Kithrater
+\end{DoxyItemize}
+
+17-\/12-\/07\-: If the room has a xerox, copy the emulated room's descs instead of our own, to save 5 meg room files.
+\begin{DoxyItemize}
+\item Kithrater 
+\end{DoxyItemize}\hypertarget{act_8informative_8cpp_aae72f5f2f9e3f68019c66744609b5608}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!shock\-\_\-bar@{shock\-\_\-bar}}
+\index{shock\-\_\-bar@{shock\-\_\-bar}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{shock\-\_\-bar}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ shock\-\_\-bar (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf bool}}]{prompt}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_aae72f5f2f9e3f68019c66744609b5608}
+\hypertarget{act_8informative_8cpp_aed028cf773c54ab0a4ec5d799ded4612}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!show\-\_\-char\-\_\-to\-\_\-char@{show\-\_\-char\-\_\-to\-\_\-char}}
+\index{show\-\_\-char\-\_\-to\-\_\-char@{show\-\_\-char\-\_\-to\-\_\-char}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{show\-\_\-char\-\_\-to\-\_\-char}]{\setlength{\rightskip}{0pt plus 5cm}void show\-\_\-char\-\_\-to\-\_\-char (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{i, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{mode}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_aed028cf773c54ab0a4ec5d799ded4612}
+\hypertarget{act_8informative_8cpp_ad3fde4b11bd7a26e7f4472450d871d32}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!show\-\_\-contents@{show\-\_\-contents}}
+\index{show\-\_\-contents@{show\-\_\-contents}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{show\-\_\-contents}]{\setlength{\rightskip}{0pt plus 5cm}void show\-\_\-contents (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_ad3fde4b11bd7a26e7f4472450d871d32}
+\hypertarget{act_8informative_8cpp_a13b970aee1c866e69faf4bb8b7e94120}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!show\-\_\-obj\-\_\-to\-\_\-char@{show\-\_\-obj\-\_\-to\-\_\-char}}
+\index{show\-\_\-obj\-\_\-to\-\_\-char@{show\-\_\-obj\-\_\-to\-\_\-char}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{show\-\_\-obj\-\_\-to\-\_\-char}]{\setlength{\rightskip}{0pt plus 5cm}void show\-\_\-obj\-\_\-to\-\_\-char (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{mode}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_a13b970aee1c866e69faf4bb8b7e94120}
+\hypertarget{act_8informative_8cpp_a273834113d1ba941b3f9b6ac96aa4096}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!suffix@{suffix}}
+\index{suffix@{suffix}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{suffix}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ suffix (
+\begin{DoxyParamCaption}
+\item[{int}]{number}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_a273834113d1ba941b3f9b6ac96aa4096}
+\hypertarget{act_8informative_8cpp_a0ba88c4cf6be5a5b9e68f22d62dcc617}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!target\-\_\-sighted@{target\-\_\-sighted}}
+\index{target\-\_\-sighted@{target\-\_\-sighted}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{target\-\_\-sighted}]{\setlength{\rightskip}{0pt plus 5cm}void target\-\_\-sighted (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{target}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_a0ba88c4cf6be5a5b9e68f22d62dcc617}
+\hypertarget{act_8informative_8cpp_a97792f33634a97003a9eb254629305ea}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!target\-\_\-sighted\-\_\-reaction@{target\-\_\-sighted\-\_\-reaction}}
+\index{target\-\_\-sighted\-\_\-reaction@{target\-\_\-sighted\-\_\-reaction}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{target\-\_\-sighted\-\_\-reaction}]{\setlength{\rightskip}{0pt plus 5cm}void target\-\_\-sighted\-\_\-reaction (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{target}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_a97792f33634a97003a9eb254629305ea}
+\hypertarget{act_8informative_8cpp_a14353a29d5fc2faa532b14641091a63c}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!tilde\-\_\-eliminator@{tilde\-\_\-eliminator}}
+\index{tilde\-\_\-eliminator@{tilde\-\_\-eliminator}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{tilde\-\_\-eliminator}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ tilde\-\_\-eliminator (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{string}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_a14353a29d5fc2faa532b14641091a63c}
+\hypertarget{act_8informative_8cpp_a250befd8c9322c9b39cecb6bf9fea70f}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!time\-\_\-string@{time\-\_\-string}}
+\index{time\-\_\-string@{time\-\_\-string}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{time\-\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ time\-\_\-string (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_a250befd8c9322c9b39cecb6bf9fea70f}
+\hypertarget{act_8informative_8cpp_a9414df534a3cc984ce2f95bc55ea9a63}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!worn\-\_\-third\-\_\-loc@{worn\-\_\-third\-\_\-loc}}
+\index{worn\-\_\-third\-\_\-loc@{worn\-\_\-third\-\_\-loc}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{worn\-\_\-third\-\_\-loc}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ worn\-\_\-third\-\_\-loc (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_a9414df534a3cc984ce2f95bc55ea9a63}
+\hypertarget{act_8informative_8cpp_a35be5e357016fb0144767902cf5e6eae}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!writing\-\_\-adj@{writing\-\_\-adj}}
+\index{writing\-\_\-adj@{writing\-\_\-adj}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{writing\-\_\-adj}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ writing\-\_\-adj (
+\begin{DoxyParamCaption}
+\item[{int}]{skill}
+\end{DoxyParamCaption}
+)}}\label{act_8informative_8cpp_a35be5e357016fb0144767902cf5e6eae}
+
+
+\subsection{Variable Documentation}
+\hypertarget{act_8informative_8cpp_a90ff175d841e76ede060428d7aa94292}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!day\-\_\-name@{day\-\_\-name}}
+\index{day\-\_\-name@{day\-\_\-name}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{day\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ day\-\_\-name\mbox{[}6\mbox{]}}}\label{act_8informative_8cpp_a90ff175d841e76ede060428d7aa94292}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"Day of the Stars"},
+    \textcolor{stringliteral}{"Day of the Sun"},
+    \textcolor{stringliteral}{"Day of the Moon"},
+    \textcolor{stringliteral}{"Day of the Two Trees"},
+    \textcolor{stringliteral}{"Day of the Heavens"},
+    \textcolor{stringliteral}{"Day of the Valar"}
+\}
+\end{DoxyCode}
+\hypertarget{act_8informative_8cpp_a1234d1e00c3c9dbece35f55b0392f967}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!dec\-\_\-conditions@{dec\-\_\-conditions}}
+\index{dec\-\_\-conditions@{dec\-\_\-conditions}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{dec\-\_\-conditions}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ dec\-\_\-conditions\mbox{[}5\mbox{]}}}\label{act_8informative_8cpp_a1234d1e00c3c9dbece35f55b0392f967}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+  \textcolor{stringliteral}{"pristine"},
+  \textcolor{stringliteral}{"fresh"},
+  \textcolor{stringliteral}{"worn"},
+  \textcolor{stringliteral}{"damaged"},
+  \textcolor{stringliteral}{"barely visible"}
+\}
+\end{DoxyCode}
+\hypertarget{act_8informative_8cpp_ab4dcc1e359a36fd3261a7d4fce9e1e28}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!dec\-\_\-short@{dec\-\_\-short}}
+\index{dec\-\_\-short@{dec\-\_\-short}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{dec\-\_\-short}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ dec\-\_\-short\mbox{[}12\mbox{]}}}\label{act_8informative_8cpp_ab4dcc1e359a36fd3261a7d4fce9e1e28}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"(none)"},
+    \textcolor{stringliteral}{"engraved"},
+    \textcolor{stringliteral}{"embossed"},
+    \textcolor{stringliteral}{"embroidered"},
+    \textcolor{stringliteral}{"etched"},
+    \textcolor{stringliteral}{"painted"},
+    \textcolor{stringliteral}{"decorated"},
+    \textcolor{stringliteral}{"enameled"},
+    \textcolor{stringliteral}{"inked"},
+    \textcolor{stringliteral}{"stenciled"},
+    \textcolor{stringliteral}{"sculpted"},
+    \textcolor{stringliteral}{"sketched"}
+\}
+\end{DoxyCode}
+\hypertarget{act_8informative_8cpp_a9155cd47892d16d768dd5db5839150aa}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!dec\-\_\-short\-\_\-skills@{dec\-\_\-short\-\_\-skills}}
+\index{dec\-\_\-short\-\_\-skills@{dec\-\_\-short\-\_\-skills}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{dec\-\_\-short\-\_\-skills}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ dec\-\_\-short\-\_\-skills\mbox{[}9\mbox{]}}}\label{act_8informative_8cpp_a9155cd47892d16d768dd5db5839150aa}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+  \textcolor{stringliteral}{"poorly"},  
+  \textcolor{stringliteral}{"poorly"},          
+  \textcolor{stringliteral}{"simply"},         
+  \textcolor{stringliteral}{"simply"},            
+  \textcolor{stringliteral}{"well"},            
+  \textcolor{stringliteral}{"well"},        
+  \textcolor{stringliteral}{"fantastically"},        
+  \textcolor{stringliteral}{"fantastically"},           
+  \textcolor{stringliteral}{"beautifully"}, 
+\}
+\end{DoxyCode}
+\hypertarget{act_8informative_8cpp_af9e5b2e3327b23076d8e6ea60c1f4d26}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!dec\-\_\-size@{dec\-\_\-size}}
+\index{dec\-\_\-size@{dec\-\_\-size}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{dec\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ dec\-\_\-size\mbox{[}4\mbox{]}}}\label{act_8informative_8cpp_af9e5b2e3327b23076d8e6ea60c1f4d26}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"small"},
+    \textcolor{stringliteral}{"large"},
+    \textcolor{stringliteral}{"tiny"},
+    \textcolor{stringliteral}{"all-encompassing"}
+\}
+\end{DoxyCode}
+\hypertarget{act_8informative_8cpp_ae6c8e11994b4f67801d828f938291ca4}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!dec\-\_\-skills@{dec\-\_\-skills}}
+\index{dec\-\_\-skills@{dec\-\_\-skills}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{dec\-\_\-skills}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ dec\-\_\-skills\mbox{[}9\mbox{]}}}\label{act_8informative_8cpp_ae6c8e11994b4f67801d828f938291ca4}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+  \textcolor{stringliteral}{"a lack of any real"},  
+  \textcolor{stringliteral}{"child-like"},          
+  \textcolor{stringliteral}{"rudimentary"},         
+  \textcolor{stringliteral}{"mediocre"},            
+  \textcolor{stringliteral}{"talented"},            
+  \textcolor{stringliteral}{"professional"},        
+  \textcolor{stringliteral}{"true artisan"},        
+  \textcolor{stringliteral}{"masterful"},           
+  \textcolor{stringliteral}{"flawlessly executed"}, 
+\}
+\end{DoxyCode}
+\hypertarget{act_8informative_8cpp_a55c71990ee4162ebec6abe401996cf15}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!engine@{engine}}
+\index{engine@{engine}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{engine}]{\setlength{\rightskip}{0pt plus 5cm}{\bf rpie\-::server} engine}}\label{act_8informative_8cpp_a55c71990ee4162ebec6abe401996cf15}
+\hypertarget{act_8informative_8cpp_a696412ed2c3c1e97217f8b60fe76fc8c}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!fog\-\_\-states@{fog\-\_\-states}}
+\index{fog\-\_\-states@{fog\-\_\-states}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{fog\-\_\-states}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ fog\-\_\-states\mbox{[}$\,$\mbox{]}}}\label{act_8informative_8cpp_a696412ed2c3c1e97217f8b60fe76fc8c}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"no fog"},
+    \textcolor{stringliteral}{"thin fog"},
+    \textcolor{stringliteral}{"thick fog"},
+    \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}
+\hypertarget{act_8informative_8cpp_a92fc8e59f1143c9160c7cca4f0bc0f68}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!frame\-\_\-built@{frame\-\_\-built}}
+\index{frame\-\_\-built@{frame\-\_\-built}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{frame\-\_\-built}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ frame\-\_\-built\mbox{[}$\,$\mbox{]}}}\label{act_8informative_8cpp_a92fc8e59f1143c9160c7cca4f0bc0f68}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"fragily-built"},
+    \textcolor{stringliteral}{"scantly-built"},
+    \textcolor{stringliteral}{"lightly-built"},
+    \textcolor{stringliteral}{"typically-built"},
+    \textcolor{stringliteral}{"heavily-built"},
+    \textcolor{stringliteral}{"massively-built"},
+    \textcolor{stringliteral}{"gigantically-built"},
+    \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}
+\hypertarget{act_8informative_8cpp_a241f48984e9c5fa9be74ab37c58ee749}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!full\-\_\-board\-\_\-list@{full\-\_\-board\-\_\-list}}
+\index{full\-\_\-board\-\_\-list@{full\-\_\-board\-\_\-list}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{full\-\_\-board\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}{\bf B\-O\-A\-R\-D\-\_\-\-D\-A\-T\-A}$\ast$ full\-\_\-board\-\_\-list = N\-U\-L\-L}}\label{act_8informative_8cpp_a241f48984e9c5fa9be74ab37c58ee749}
+\hypertarget{act_8informative_8cpp_a9e154fb146756fcee3d8e126141a5626}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!holiday\-\_\-names@{holiday\-\_\-names}}
+\index{holiday\-\_\-names@{holiday\-\_\-names}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{holiday\-\_\-names}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ holiday\-\_\-names\mbox{[}$\,$\mbox{]}}}\label{act_8informative_8cpp_a9e154fb146756fcee3d8e126141a5626}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"(null)"},
+    \textcolor{stringliteral}{"Mettare, the Last Day of the Year"},
+    \textcolor{stringliteral}{"Yestare, the First Day of the New Year"},
+    \textcolor{stringliteral}{"the First Day of Enderi, the Celebration of Winter"},
+    \textcolor{stringliteral}{"the Middle Day of Enderi, the Celebration of Winter"},
+    \textcolor{stringliteral}{"the Final Day of Enderi, the Celebration of Winter"},
+    \textcolor{stringliteral}{"the feastday of yaviere"},
+    \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}
+\hypertarget{act_8informative_8cpp_a8e881e7399f4175c0d8993ba39b6a9ab}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!holiday\-\_\-short\-\_\-names@{holiday\-\_\-short\-\_\-names}}
+\index{holiday\-\_\-short\-\_\-names@{holiday\-\_\-short\-\_\-names}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{holiday\-\_\-short\-\_\-names}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ holiday\-\_\-short\-\_\-names\mbox{[}$\,$\mbox{]}}}\label{act_8informative_8cpp_a8e881e7399f4175c0d8993ba39b6a9ab}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"(null)"},
+    \textcolor{stringliteral}{"Mettare"},
+    \textcolor{stringliteral}{"Yestare"},
+    \textcolor{stringliteral}{"Enderi"},
+    \textcolor{stringliteral}{"Enderi"},
+    \textcolor{stringliteral}{"Enderi"},
+    \textcolor{stringliteral}{"yaviere"},
+    \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}
+\hypertarget{act_8informative_8cpp_a1408ecf54d853da66a0ebf5e567cd18c}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!loc\-\_\-order@{loc\-\_\-order}}
+\index{loc\-\_\-order@{loc\-\_\-order}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{loc\-\_\-order}]{\setlength{\rightskip}{0pt plus 5cm}int loc\-\_\-order\mbox{[}{\bf M\-A\-X\-\_\-\-W\-E\-A\-R}\mbox{]}}}\label{act_8informative_8cpp_a1408ecf54d853da66a0ebf5e567cd18c}
+\hypertarget{act_8informative_8cpp_a16af6bff6a2536b2619fbc2a783923c3}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!month\-\_\-name@{month\-\_\-name}}
+\index{month\-\_\-name@{month\-\_\-name}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{month\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ month\-\_\-name\mbox{[}12\mbox{]}}}\label{act_8informative_8cpp_a16af6bff6a2536b2619fbc2a783923c3}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"January, the Freezing Cold"},
+    \textcolor{stringliteral}{"February, the Miring Month"},
+    \textcolor{stringliteral}{"March, the Month of Birches"},
+    \textcolor{stringliteral}{"April, the Month of Sprouting"},
+    \textcolor{stringliteral}{"May, the Month of Flowers"},
+    \textcolor{stringliteral}{"June, the Month of Pearls"},
+    \textcolor{stringliteral}{"July, the Month of Mutton"},
+    \textcolor{stringliteral}{"August, the Skyfall"},
+    \textcolor{stringliteral}{"September, the Harvestmath"},
+    \textcolor{stringliteral}{"October, the Yellow Month"},
+    \textcolor{stringliteral}{"November, the Culling Month"},
+    \textcolor{stringliteral}{"December, the Yuletide"}
+\}
+\end{DoxyCode}
+\hypertarget{act_8informative_8cpp_a92a78ad044536095141d421ac742b032}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!season\-\_\-name@{season\-\_\-name}}
+\index{season\-\_\-name@{season\-\_\-name}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{season\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ season\-\_\-name\mbox{[}4\mbox{]}}}\label{act_8informative_8cpp_a92a78ad044536095141d421ac742b032}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"Spring"},
+    \textcolor{stringliteral}{"Summer"},
+    \textcolor{stringliteral}{"Autumn"},
+    \textcolor{stringliteral}{"Winter"}
+\}
+\end{DoxyCode}
+\hypertarget{act_8informative_8cpp_a66dfbcad23cf999fe53cc9653c5a8426}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!short\-\_\-month\-\_\-name@{short\-\_\-month\-\_\-name}}
+\index{short\-\_\-month\-\_\-name@{short\-\_\-month\-\_\-name}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{short\-\_\-month\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ short\-\_\-month\-\_\-name\mbox{[}12\mbox{]}}}\label{act_8informative_8cpp_a66dfbcad23cf999fe53cc9653c5a8426}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"January"},
+    \textcolor{stringliteral}{"February"},
+    \textcolor{stringliteral}{"March"},
+    \textcolor{stringliteral}{"April"},
+    \textcolor{stringliteral}{"May"},
+    \textcolor{stringliteral}{"June"},
+    \textcolor{stringliteral}{"July"},
+    \textcolor{stringliteral}{"August"},
+    \textcolor{stringliteral}{"September"},
+    \textcolor{stringliteral}{"October"},
+    \textcolor{stringliteral}{"November"},
+    \textcolor{stringliteral}{"December"}
+\}
+\end{DoxyCode}
+\hypertarget{act_8informative_8cpp_a8e457eb86df54c0f75b9529b85f4f109}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!skills@{skills}}
+\index{skills@{skills}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{skills}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ skills\mbox{[}$\,$\mbox{]}}}\label{act_8informative_8cpp_a8e457eb86df54c0f75b9529b85f4f109}
+\hypertarget{act_8informative_8cpp_a3a3de318a710619cb48c7d2bf46639b2}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!snowstorm@{snowstorm}}
+\index{snowstorm@{snowstorm}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{snowstorm}]{\setlength{\rightskip}{0pt plus 5cm}int snowstorm = 0}}\label{act_8informative_8cpp_a3a3de318a710619cb48c7d2bf46639b2}
+\hypertarget{act_8informative_8cpp_a5f60b72e7e7d51a3087205e40d575834}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!trap\-\_\-desc\-\_\-bits@{trap\-\_\-desc\-\_\-bits}}
+\index{trap\-\_\-desc\-\_\-bits@{trap\-\_\-desc\-\_\-bits}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{trap\-\_\-desc\-\_\-bits}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ trap\-\_\-desc\-\_\-bits\mbox{[}$\,$\mbox{]}}}\label{act_8informative_8cpp_a5f60b72e7e7d51a3087205e40d575834}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"can be set on exits"},
+    \textcolor{stringliteral}{"can be set on objects"},
+    \textcolor{stringliteral}{"can be manually released"},
+    \textcolor{stringliteral}{"causes damage"},
+    \textcolor{stringliteral}{"trips its victims"},
+    \textcolor{stringliteral}{"binds its victims"},
+    \textcolor{stringliteral}{"causes a somatic efect"},
+    \textcolor{stringliteral}{"breaks on use"},
+    \textcolor{stringliteral}{"breaks on reset"},
+    \textcolor{stringliteral}{"must be used as the trigger"},
+    \textcolor{stringliteral}{"is able to be avoided if used as a trigger"},
+    \textcolor{stringliteral}{"will only target one person"},
+    \textcolor{stringliteral}{"will always strike even if discovered"},
+    \textcolor{stringliteral}{"cannot be found by searching or detecting"},
+    \textcolor{stringliteral}{"cannot be detected"},
+    \textcolor{stringliteral}{"DO NOT USE"},
+    \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}
+\hypertarget{act_8informative_8cpp_ae74d12d457efb2697bbe021b4a719c50}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!verbal\-\_\-hunger@{verbal\-\_\-hunger}}
+\index{verbal\-\_\-hunger@{verbal\-\_\-hunger}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{verbal\-\_\-hunger}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ verbal\-\_\-hunger\mbox{[}$\,$\mbox{]}}}\label{act_8informative_8cpp_ae74d12d457efb2697bbe021b4a719c50}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+    \{ \textcolor{stringliteral}{"almost starved to death"}, \textcolor{stringliteral}{"feeling faint from starvation"}, \textcolor{stringliteral}{"slowly starving"}, \textcolor{stringliteral}{"ravenous"}, \textcolor{stringliteral}{"famished"}
+      , \textcolor{stringliteral}{"hungry"}, \textcolor{stringliteral}{"feeling peckish"}, \textcolor{stringliteral}{"full"},
+      \textcolor{stringliteral}{"satiated"}, \textcolor{stringliteral}{"absolutely stuffed"}
+    \}
+\end{DoxyCode}
+\hypertarget{act_8informative_8cpp_a6a6437b5fa8d438b34f82f1c8118e558}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!verbal\-\_\-intox@{verbal\-\_\-intox}}
+\index{verbal\-\_\-intox@{verbal\-\_\-intox}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{verbal\-\_\-intox}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ verbal\-\_\-intox\mbox{[}$\,$\mbox{]}}}\label{act_8informative_8cpp_a6a6437b5fa8d438b34f82f1c8118e558}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+    \{ \textcolor{stringliteral}{"sober"}, \textcolor{stringliteral}{"tipsy"}, \textcolor{stringliteral}{"slightly drunk"}, \textcolor{stringliteral}{"drunk"}, \textcolor{stringliteral}{"intoxicated"},
+      \textcolor{stringliteral}{"plastered"}
+    \}
+\end{DoxyCode}
+\hypertarget{act_8informative_8cpp_a5a1177acf2d63f80298830abbde16c63}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!verbal\-\_\-thirst@{verbal\-\_\-thirst}}
+\index{verbal\-\_\-thirst@{verbal\-\_\-thirst}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{verbal\-\_\-thirst}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ verbal\-\_\-thirst\mbox{[}$\,$\mbox{]}}}\label{act_8informative_8cpp_a5a1177acf2d63f80298830abbde16c63}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+    \{ \textcolor{stringliteral}{"dying of thirst"}, \textcolor{stringliteral}{"desperately thirsty"}, \textcolor{stringliteral}{"quite parched"}, \textcolor{stringliteral}{"feeling thirsty"},
+      \textcolor{stringliteral}{"feeling slightly thirsty"}, \textcolor{stringliteral}{"not thirsty"}, \textcolor{stringliteral}{"sated"}, \textcolor{stringliteral}{"nicely quenched"}, \textcolor{stringliteral}{"completely sated"}
+    \}
+\end{DoxyCode}
+\hypertarget{act_8informative_8cpp_a1f1e84c03a866e819cc1bbc7accb218e}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!weather\-\_\-clouds@{weather\-\_\-clouds}}
+\index{weather\-\_\-clouds@{weather\-\_\-clouds}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{weather\-\_\-clouds}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ weather\-\_\-clouds\mbox{[}$\,$\mbox{]}}}\label{act_8informative_8cpp_a1f1e84c03a866e819cc1bbc7accb218e}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"clear sky"},
+    \textcolor{stringliteral}{"light clouds"},
+    \textcolor{stringliteral}{"heavy clouds"},
+    \textcolor{stringliteral}{"overcast"},
+    \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}
+\hypertarget{act_8informative_8cpp_abbe427a5be5cb3aeb07ecc44ae81ad55}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!weather\-\_\-states@{weather\-\_\-states}}
+\index{weather\-\_\-states@{weather\-\_\-states}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{weather\-\_\-states}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ weather\-\_\-states\mbox{[}$\,$\mbox{]}}}\label{act_8informative_8cpp_abbe427a5be5cb3aeb07ecc44ae81ad55}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"no rain"},
+    \textcolor{stringliteral}{"chance of rain"},
+    \textcolor{stringliteral}{"light rain"},
+    \textcolor{stringliteral}{"steady rain"},
+    \textcolor{stringliteral}{"heavy rain"},
+    \textcolor{stringliteral}{"light snow"},
+    \textcolor{stringliteral}{"steady snow"},
+    \textcolor{stringliteral}{"heavy snow"},
+    \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}
+\hypertarget{act_8informative_8cpp_a48c470aa75c4f486bdc7b6ac56605472}{\index{act.\-informative.\-cpp@{act.\-informative.\-cpp}!wind\-\_\-speeds@{wind\-\_\-speeds}}
+\index{wind\-\_\-speeds@{wind\-\_\-speeds}!act.informative.cpp@{act.\-informative.\-cpp}}
+\subsubsection[{wind\-\_\-speeds}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ wind\-\_\-speeds\mbox{[}$\,$\mbox{]}}}\label{act_8informative_8cpp_a48c470aa75c4f486bdc7b6ac56605472}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"calm"},
+    \textcolor{stringliteral}{"breeze"},
+    \textcolor{stringliteral}{"windy"},
+    \textcolor{stringliteral}{"gale"},
+    \textcolor{stringliteral}{"stormy"},
+    \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}

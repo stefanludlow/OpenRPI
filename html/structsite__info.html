@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -89,32 +89,90 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">site_info Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="structs_8h_source.html">structs.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:aeb8333222942b254f8ec2cdb141c4136"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeb8333222942b254f8ec2cdb141c4136"></a>
-char *&#160;</td><td class="memItemRight" valign="bottom"><b>name</b></td></tr>
+<tr class="memitem:aeb8333222942b254f8ec2cdb141c4136"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsite__info.html#aeb8333222942b254f8ec2cdb141c4136">name</a></td></tr>
 <tr class="separator:aeb8333222942b254f8ec2cdb141c4136"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e91d77e15687804e91f05ec61252162"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6e91d77e15687804e91f05ec61252162"></a>
-char *&#160;</td><td class="memItemRight" valign="bottom"><b>banned_by</b></td></tr>
+<tr class="memitem:a6e91d77e15687804e91f05ec61252162"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsite__info.html#a6e91d77e15687804e91f05ec61252162">banned_by</a></td></tr>
 <tr class="separator:a6e91d77e15687804e91f05ec61252162"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf2619a1a6c000e746ed8098e0a463ae"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abf2619a1a6c000e746ed8098e0a463ae"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>banned_on</b></td></tr>
+<tr class="memitem:abf2619a1a6c000e746ed8098e0a463ae"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsite__info.html#abf2619a1a6c000e746ed8098e0a463ae">banned_on</a></td></tr>
 <tr class="separator:abf2619a1a6c000e746ed8098e0a463ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af7c62b1c6c03b33ac1b853f398b3ab39"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af7c62b1c6c03b33ac1b853f398b3ab39"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>banned_until</b></td></tr>
+<tr class="memitem:af7c62b1c6c03b33ac1b853f398b3ab39"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsite__info.html#af7c62b1c6c03b33ac1b853f398b3ab39">banned_until</a></td></tr>
 <tr class="separator:af7c62b1c6c03b33ac1b853f398b3ab39"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23c00a3e8306769f4e8c759762758617"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a23c00a3e8306769f4e8c759762758617"></a>
-<a class="el" href="structsite__info.html">SITE_INFO</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>next</b></td></tr>
+<tr class="memitem:a23c00a3e8306769f4e8c759762758617"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structs_8h.html#abbdef5ffa3256b4a60e16f68ca3b949e">SITE_INFO</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsite__info.html#a23c00a3e8306769f4e8c759762758617">next</a></td></tr>
 <tr class="separator:a23c00a3e8306769f4e8c759762758617"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a6e91d77e15687804e91f05ec61252162"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* site_info::banned_by</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abf2619a1a6c000e746ed8098e0a463ae"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int site_info::banned_on</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af7c62b1c6c03b33ac1b853f398b3ab39"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int site_info::banned_until</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aeb8333222942b254f8ec2cdb141c4136"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* site_info::name</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a23c00a3e8306769f4e8c759762758617"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structs_8h.html#abbdef5ffa3256b4a60e16f68ca3b949e">SITE_INFO</a>* site_info::next</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li><a class="el" href="structs_8h_source.html">structs.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 17 2015 21:26:48 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 17 2015 22:02:23 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

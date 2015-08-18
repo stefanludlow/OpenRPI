@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -89,38 +89,118 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">negotiation_data Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="structs_8h_source.html">structs.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a6cb50dbb7c300cfce4c2dc344faf8aa9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6cb50dbb7c300cfce4c2dc344faf8aa9"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>ch_coldload_id</b></td></tr>
+<tr class="memitem:a6cb50dbb7c300cfce4c2dc344faf8aa9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnegotiation__data.html#a6cb50dbb7c300cfce4c2dc344faf8aa9">ch_coldload_id</a></td></tr>
 <tr class="separator:a6cb50dbb7c300cfce4c2dc344faf8aa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2790f175dbb74ef8e3d5f2f116fe4c0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac2790f175dbb74ef8e3d5f2f116fe4c0"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>obj_vnum</b></td></tr>
+<tr class="memitem:ac2790f175dbb74ef8e3d5f2f116fe4c0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnegotiation__data.html#ac2790f175dbb74ef8e3d5f2f116fe4c0">obj_vnum</a></td></tr>
 <tr class="separator:ac2790f175dbb74ef8e3d5f2f116fe4c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0deef4af9ec1998d699589a5fe108d82"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0deef4af9ec1998d699589a5fe108d82"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>time_when_forgotten</b></td></tr>
+<tr class="memitem:a0deef4af9ec1998d699589a5fe108d82"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnegotiation__data.html#a0deef4af9ec1998d699589a5fe108d82">time_when_forgotten</a></td></tr>
 <tr class="separator:a0deef4af9ec1998d699589a5fe108d82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f19b98b96a5b01517ef97903e1f9642"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8f19b98b96a5b01517ef97903e1f9642"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>price_delta</b></td></tr>
+<tr class="memitem:a8f19b98b96a5b01517ef97903e1f9642"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnegotiation__data.html#a8f19b98b96a5b01517ef97903e1f9642">price_delta</a></td></tr>
 <tr class="separator:a8f19b98b96a5b01517ef97903e1f9642"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af73b88881a030e61e4baca955d841fb8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af73b88881a030e61e4baca955d841fb8"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>transactions</b></td></tr>
+<tr class="memitem:af73b88881a030e61e4baca955d841fb8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnegotiation__data.html#af73b88881a030e61e4baca955d841fb8">transactions</a></td></tr>
 <tr class="separator:af73b88881a030e61e4baca955d841fb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53aae7f31645cb5fd8bcc86b5a54b00d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a53aae7f31645cb5fd8bcc86b5a54b00d"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>true_if_buying</b></td></tr>
+<tr class="memitem:a53aae7f31645cb5fd8bcc86b5a54b00d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnegotiation__data.html#a53aae7f31645cb5fd8bcc86b5a54b00d">true_if_buying</a></td></tr>
 <tr class="separator:a53aae7f31645cb5fd8bcc86b5a54b00d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63d08f24690474f04312e697f0275c22"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a63d08f24690474f04312e697f0275c22"></a>
-struct <a class="el" href="structnegotiation__data.html">negotiation_data</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>next</b></td></tr>
+<tr class="memitem:a63d08f24690474f04312e697f0275c22"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structnegotiation__data.html">negotiation_data</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnegotiation__data.html#a63d08f24690474f04312e697f0275c22">next</a></td></tr>
 <tr class="separator:a63d08f24690474f04312e697f0275c22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a6cb50dbb7c300cfce4c2dc344faf8aa9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int negotiation_data::ch_coldload_id</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a63d08f24690474f04312e697f0275c22"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structnegotiation__data.html">negotiation_data</a>* negotiation_data::next</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac2790f175dbb74ef8e3d5f2f116fe4c0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int negotiation_data::obj_vnum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8f19b98b96a5b01517ef97903e1f9642"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int negotiation_data::price_delta</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0deef4af9ec1998d699589a5fe108d82"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int negotiation_data::time_when_forgotten</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af73b88881a030e61e4baca955d841fb8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int negotiation_data::transactions</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a53aae7f31645cb5fd8bcc86b5a54b00d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int negotiation_data::true_if_buying</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li><a class="el" href="structs_8h_source.html">structs.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 17 2015 21:26:48 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 17 2015 22:02:23 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

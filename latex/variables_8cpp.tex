@@ -1,0 +1,457 @@
+\hypertarget{variables_8cpp}{\section{variables.\-cpp File Reference}
+\label{variables_8cpp}\index{variables.\-cpp@{variables.\-cpp}}
+}
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$dirent.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$unistd.\-h$>$}\\*
+{\ttfamily \#include $<$ctype.\-h$>$}\\*
+{\ttfamily \#include $<$time.\-h$>$}\\*
+{\ttfamily \#include $<$signal.\-h$>$}\\*
+{\ttfamily \#include $<$sys/time.\-h$>$}\\*
+{\ttfamily \#include $<$sys/resource.\-h$>$}\\*
+{\ttfamily \#include $<$sys/stat.\-h$>$}\\*
+{\ttfamily \#include $<$mysql/mysql.\-h$>$}\\*
+{\ttfamily \#include $<$limits.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}server.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}structs.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}net\-\_\-link.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}protos.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}account.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}decl.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}clan.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utility.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{variables_8cpp_a62b8bf79a5546b3ba4262341e630d8b9}{vd\-\_\-data} (char $\ast$shorts, char $\ast$category, int cmd)
+\item 
+int \hyperlink{variables_8cpp_a414f72aaa633942ef6298bce629fbfb2}{vd\-\_\-data} (char $\ast$shorts, int i, int cmd)
+\item 
+void \hyperlink{variables_8cpp_ac996f1c1a88dfb2e745238cc1abfcfef}{vc\-\_\-renumber} (char $\ast$category)
+\item 
+void \hyperlink{variables_8cpp_af374f48705fb8af90f951db1b26e3328}{vc\-\_\-renumber} (int j)
+\item 
+void \hyperlink{variables_8cpp_a61efab941420fd09631a06b077adc0a0}{mob\-\_\-vc\-\_\-renumber} (char $\ast$category)
+\item 
+void \hyperlink{variables_8cpp_a3cfb9ce8747fbf0016e214809a8e645b}{mob\-\_\-vc\-\_\-renumber} (int j)
+\item 
+int \hyperlink{variables_8cpp_a98d28f2710eeeb8867c6083dca5e32c1}{mob\-\_\-vc\-\_\-count} ()
+\item 
+int \hyperlink{variables_8cpp_a3cf9b516a4046f674f014146ca6237f1}{vc\-\_\-count} ()
+\item 
+int \hyperlink{variables_8cpp_a467c1d5ed0a1faf2e9e615721435dd81}{mob\-\_\-vc\-\_\-size} (int i)
+\item 
+int \hyperlink{variables_8cpp_a8aa2bf745dfc2d751083024687919a95}{vc\-\_\-size} (int i)
+\item 
+int \hyperlink{variables_8cpp_a2b1836407c7075d246db8d6a5e2e5438}{vc\-\_\-rand\-\_\-size} (int i)
+\item 
+char $\ast$ \hyperlink{variables_8cpp_ab32e828b4b30a33e560dca0c37d68721}{mob\-\_\-vc\-\_\-rand} (char $\ast$category, int $\ast$cat)
+\item 
+char $\ast$ \hyperlink{variables_8cpp_ab9842f506febf5381c25bd3078b5b970}{mob\-\_\-vc\-\_\-rand} (int i, int $\ast$cat, char $\ast$full)
+\item 
+char $\ast$ \hyperlink{variables_8cpp_ac24304395344d31738ee1050ea51f87e}{vc\-\_\-rand} (char $\ast$category, int $\ast$cat)
+\item 
+char $\ast$ \hyperlink{variables_8cpp_ae4ee8fd981788481a466973e1b1a99a3}{vc\-\_\-rand} (char $\ast$category)
+\item 
+\hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} \hyperlink{variables_8cpp_a7902306f0fbd5796d56b9cfc00fc44a5}{vc\-\_\-checkrand} (char $\ast$shorts, char $\ast$category)
+\item 
+int \hyperlink{variables_8cpp_a39943d807561a9c859169dac5e16def3}{vc\-\_\-seeable} (char $\ast$category)
+\item 
+char $\ast$ \hyperlink{variables_8cpp_a83d9b5fa40a661223f93c6546e47493c}{vc\-\_\-rand} (int i, int $\ast$cat, char $\ast$full, int $\ast$weight\-\_\-mod, int $\ast$cost\-\_\-mod)
+\item 
+int \hyperlink{variables_8cpp_a4adc738ae39c1d6a4ac45a19041370e1}{vd\-\_\-variable} (char $\ast$shorts)
+\item 
+int \hyperlink{variables_8cpp_a150d0fbb18f5c41dbeda7e4f67f47803}{mob\-\_\-vd\-\_\-variable} (char $\ast$shorts)
+\item 
+int \hyperlink{variables_8cpp_aa6a1315841634697b755e3bb4918751e}{mob\-\_\-vc\-\_\-exists} (char $\ast$shorts, char $\ast$category)
+\item 
+int \hyperlink{variables_8cpp_a8fa214cab4b8f5bd87389bcf112e386d}{mob\-\_\-vc\-\_\-exists} (char $\ast$shorts, int i)
+\item 
+int \hyperlink{variables_8cpp_a944bdd8a67912859f45c922463b0f2a9}{vc\-\_\-exists} (char $\ast$shorts, char $\ast$category)
+\item 
+int \hyperlink{variables_8cpp_a9b3534beddcffa20a994e9d8038036c7}{vc\-\_\-exists} (char $\ast$shorts, int i)
+\item 
+char $\ast$ \hyperlink{variables_8cpp_a68b381a484b09c5f1c6651963d8dc1a6}{vd\-\_\-short} (char $\ast$category, int i)
+\item 
+int \hyperlink{variables_8cpp_a652d2b655c3b2d377aad654a3fd27785}{vd\-\_\-id} (char $\ast$category, char $\ast$shorts)
+\item 
+char $\ast$ \hyperlink{variables_8cpp_ae7fea3b01f10c4a9e98d166b34b48770}{vd\-\_\-flavour} (char $\ast$category, int i)
+\item 
+char $\ast$ \hyperlink{variables_8cpp_ac7684a05f41020b3220b6b2e911ff12e}{vd\-\_\-flavour} (char $\ast$category, char $\ast$shorts)
+\item 
+char $\ast$ \hyperlink{variables_8cpp_a8e1d88228dd09a8e2d2ba5becde985c0}{vd\-\_\-full} (char $\ast$category, int i)
+\item 
+char $\ast$ \hyperlink{variables_8cpp_aa0c924d03cdde9a16565c2cf3032e7f6}{vd\-\_\-full} (char $\ast$category, char $\ast$shorts)
+\item 
+char $\ast$ \hyperlink{variables_8cpp_acb545a5a310d6c48e82e7d2022f35fb3}{mob\-\_\-vd\-\_\-full} (char $\ast$category, int i)
+\item 
+char $\ast$ \hyperlink{variables_8cpp_a9f2fb81943ce32c34b8c74af198e9c55}{mob\-\_\-vd\-\_\-full} (char $\ast$category, char $\ast$shorts)
+\item 
+int \hyperlink{variables_8cpp_a5f0c9d7399b69fdd98f695b99bd14d66}{mob\-\_\-vc\-\_\-category} (char $\ast$argument)
+\item 
+char $\ast$ \hyperlink{variables_8cpp_a66f55432dc43e938288d2003d3923a95}{mob\-\_\-vc\-\_\-category} (int i)
+\item 
+int \hyperlink{variables_8cpp_acfdc7df2e9cb9bb8c7e90edb25691f3c}{vc\-\_\-category} (char $\ast$argument)
+\item 
+char $\ast$ \hyperlink{variables_8cpp_a89a0adb5f9c838f7224583a93d605302}{vc\-\_\-category} (int i)
+\item 
+void \hyperlink{variables_8cpp_a0cf0c40ff5fff365ede28a11d1cfbe4b}{vo\-\_\-weight\-\_\-cost\-\_\-quality} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj)
+\item 
+void \hyperlink{variables_8cpp_aaabee57c269912c4070ee3cc6c96ebcd}{vo\-\_\-specify} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj)
+\item 
+int \hyperlink{variables_8cpp_ab29a59ce6f4d65ab8dda0ce857fd7e1c}{vo\-\_\-match\-\_\-color} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$tobj)
+\item 
+void \hyperlink{variables_8cpp_a89f74cb1967ce4de68b2adb3dcd49578}{do\-\_\-mvariables} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{variables_8cpp_a818a31bfa51e3f21c5dc6e3f64c7bdbc}{do\-\_\-variables} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+std\-::multimap$<$ int, \hyperlink{structvariable__data}{variable\-\_\-data} $>$ \hyperlink{variables_8cpp_a0648ea431a490ba9090b5a71a099283b}{obj\-\_\-variable\-\_\-list}
+\item 
+std\-::multimap$<$ int, std\-::string $>$ \hyperlink{variables_8cpp_a388a9b052cfa85e2de421c447839c258}{variable\-\_\-categories}
+\item 
+std\-::multimap$<$ int, \\*
+\hyperlink{structmvariable__data}{mvariable\-\_\-data} $>$ \hyperlink{variables_8cpp_ad26bde3c2f68d86ae308ee7c59e88223}{mvariable\-\_\-list}
+\item 
+std\-::multimap$<$ int, std\-::string $>$ \hyperlink{variables_8cpp_af577646b635687ef9f42d7a5308977c9}{mvariable\-\_\-categories}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{variables_8cpp_a89f74cb1967ce4de68b2adb3dcd49578}{\index{variables.\-cpp@{variables.\-cpp}!do\-\_\-mvariables@{do\-\_\-mvariables}}
+\index{do\-\_\-mvariables@{do\-\_\-mvariables}!variables.cpp@{variables.\-cpp}}
+\subsubsection[{do\-\_\-mvariables}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-mvariables (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{variables_8cpp_a89f74cb1967ce4de68b2adb3dcd49578}
+\hypertarget{variables_8cpp_a818a31bfa51e3f21c5dc6e3f64c7bdbc}{\index{variables.\-cpp@{variables.\-cpp}!do\-\_\-variables@{do\-\_\-variables}}
+\index{do\-\_\-variables@{do\-\_\-variables}!variables.cpp@{variables.\-cpp}}
+\subsubsection[{do\-\_\-variables}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-variables (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{variables_8cpp_a818a31bfa51e3f21c5dc6e3f64c7bdbc}
+\hypertarget{variables_8cpp_a5f0c9d7399b69fdd98f695b99bd14d66}{\index{variables.\-cpp@{variables.\-cpp}!mob\-\_\-vc\-\_\-category@{mob\-\_\-vc\-\_\-category}}
+\index{mob\-\_\-vc\-\_\-category@{mob\-\_\-vc\-\_\-category}!variables.cpp@{variables.\-cpp}}
+\subsubsection[{mob\-\_\-vc\-\_\-category}]{\setlength{\rightskip}{0pt plus 5cm}int mob\-\_\-vc\-\_\-category (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{variables_8cpp_a5f0c9d7399b69fdd98f695b99bd14d66}
+\hypertarget{variables_8cpp_a66f55432dc43e938288d2003d3923a95}{\index{variables.\-cpp@{variables.\-cpp}!mob\-\_\-vc\-\_\-category@{mob\-\_\-vc\-\_\-category}}
+\index{mob\-\_\-vc\-\_\-category@{mob\-\_\-vc\-\_\-category}!variables.cpp@{variables.\-cpp}}
+\subsubsection[{mob\-\_\-vc\-\_\-category}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ mob\-\_\-vc\-\_\-category (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}}\label{variables_8cpp_a66f55432dc43e938288d2003d3923a95}
+\hypertarget{variables_8cpp_a98d28f2710eeeb8867c6083dca5e32c1}{\index{variables.\-cpp@{variables.\-cpp}!mob\-\_\-vc\-\_\-count@{mob\-\_\-vc\-\_\-count}}
+\index{mob\-\_\-vc\-\_\-count@{mob\-\_\-vc\-\_\-count}!variables.cpp@{variables.\-cpp}}
+\subsubsection[{mob\-\_\-vc\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}int mob\-\_\-vc\-\_\-count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{variables_8cpp_a98d28f2710eeeb8867c6083dca5e32c1}
+\hypertarget{variables_8cpp_aa6a1315841634697b755e3bb4918751e}{\index{variables.\-cpp@{variables.\-cpp}!mob\-\_\-vc\-\_\-exists@{mob\-\_\-vc\-\_\-exists}}
+\index{mob\-\_\-vc\-\_\-exists@{mob\-\_\-vc\-\_\-exists}!variables.cpp@{variables.\-cpp}}
+\subsubsection[{mob\-\_\-vc\-\_\-exists}]{\setlength{\rightskip}{0pt plus 5cm}int mob\-\_\-vc\-\_\-exists (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{shorts, }
+\item[{char $\ast$}]{category}
+\end{DoxyParamCaption}
+)}}\label{variables_8cpp_aa6a1315841634697b755e3bb4918751e}
+\hypertarget{variables_8cpp_a8fa214cab4b8f5bd87389bcf112e386d}{\index{variables.\-cpp@{variables.\-cpp}!mob\-\_\-vc\-\_\-exists@{mob\-\_\-vc\-\_\-exists}}
+\index{mob\-\_\-vc\-\_\-exists@{mob\-\_\-vc\-\_\-exists}!variables.cpp@{variables.\-cpp}}
+\subsubsection[{mob\-\_\-vc\-\_\-exists}]{\setlength{\rightskip}{0pt plus 5cm}int mob\-\_\-vc\-\_\-exists (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{shorts, }
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}}\label{variables_8cpp_a8fa214cab4b8f5bd87389bcf112e386d}
+\hypertarget{variables_8cpp_ab32e828b4b30a33e560dca0c37d68721}{\index{variables.\-cpp@{variables.\-cpp}!mob\-\_\-vc\-\_\-rand@{mob\-\_\-vc\-\_\-rand}}
+\index{mob\-\_\-vc\-\_\-rand@{mob\-\_\-vc\-\_\-rand}!variables.cpp@{variables.\-cpp}}
+\subsubsection[{mob\-\_\-vc\-\_\-rand}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ mob\-\_\-vc\-\_\-rand (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{category, }
+\item[{int $\ast$}]{cat}
+\end{DoxyParamCaption}
+)}}\label{variables_8cpp_ab32e828b4b30a33e560dca0c37d68721}
+\hypertarget{variables_8cpp_ab9842f506febf5381c25bd3078b5b970}{\index{variables.\-cpp@{variables.\-cpp}!mob\-\_\-vc\-\_\-rand@{mob\-\_\-vc\-\_\-rand}}
+\index{mob\-\_\-vc\-\_\-rand@{mob\-\_\-vc\-\_\-rand}!variables.cpp@{variables.\-cpp}}
+\subsubsection[{mob\-\_\-vc\-\_\-rand}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ mob\-\_\-vc\-\_\-rand (
+\begin{DoxyParamCaption}
+\item[{int}]{i, }
+\item[{int $\ast$}]{cat, }
+\item[{char $\ast$}]{full}
+\end{DoxyParamCaption}
+)}}\label{variables_8cpp_ab9842f506febf5381c25bd3078b5b970}
+\hypertarget{variables_8cpp_a61efab941420fd09631a06b077adc0a0}{\index{variables.\-cpp@{variables.\-cpp}!mob\-\_\-vc\-\_\-renumber@{mob\-\_\-vc\-\_\-renumber}}
+\index{mob\-\_\-vc\-\_\-renumber@{mob\-\_\-vc\-\_\-renumber}!variables.cpp@{variables.\-cpp}}
+\subsubsection[{mob\-\_\-vc\-\_\-renumber}]{\setlength{\rightskip}{0pt plus 5cm}void mob\-\_\-vc\-\_\-renumber (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{category}
+\end{DoxyParamCaption}
+)}}\label{variables_8cpp_a61efab941420fd09631a06b077adc0a0}
+\hypertarget{variables_8cpp_a3cfb9ce8747fbf0016e214809a8e645b}{\index{variables.\-cpp@{variables.\-cpp}!mob\-\_\-vc\-\_\-renumber@{mob\-\_\-vc\-\_\-renumber}}
+\index{mob\-\_\-vc\-\_\-renumber@{mob\-\_\-vc\-\_\-renumber}!variables.cpp@{variables.\-cpp}}
+\subsubsection[{mob\-\_\-vc\-\_\-renumber}]{\setlength{\rightskip}{0pt plus 5cm}void mob\-\_\-vc\-\_\-renumber (
+\begin{DoxyParamCaption}
+\item[{int}]{j}
+\end{DoxyParamCaption}
+)}}\label{variables_8cpp_a3cfb9ce8747fbf0016e214809a8e645b}
+\hypertarget{variables_8cpp_a467c1d5ed0a1faf2e9e615721435dd81}{\index{variables.\-cpp@{variables.\-cpp}!mob\-\_\-vc\-\_\-size@{mob\-\_\-vc\-\_\-size}}
+\index{mob\-\_\-vc\-\_\-size@{mob\-\_\-vc\-\_\-size}!variables.cpp@{variables.\-cpp}}
+\subsubsection[{mob\-\_\-vc\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}int mob\-\_\-vc\-\_\-size (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}}\label{variables_8cpp_a467c1d5ed0a1faf2e9e615721435dd81}
+\hypertarget{variables_8cpp_acb545a5a310d6c48e82e7d2022f35fb3}{\index{variables.\-cpp@{variables.\-cpp}!mob\-\_\-vd\-\_\-full@{mob\-\_\-vd\-\_\-full}}
+\index{mob\-\_\-vd\-\_\-full@{mob\-\_\-vd\-\_\-full}!variables.cpp@{variables.\-cpp}}
+\subsubsection[{mob\-\_\-vd\-\_\-full}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ mob\-\_\-vd\-\_\-full (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{category, }
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}}\label{variables_8cpp_acb545a5a310d6c48e82e7d2022f35fb3}
+\hypertarget{variables_8cpp_a9f2fb81943ce32c34b8c74af198e9c55}{\index{variables.\-cpp@{variables.\-cpp}!mob\-\_\-vd\-\_\-full@{mob\-\_\-vd\-\_\-full}}
+\index{mob\-\_\-vd\-\_\-full@{mob\-\_\-vd\-\_\-full}!variables.cpp@{variables.\-cpp}}
+\subsubsection[{mob\-\_\-vd\-\_\-full}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ mob\-\_\-vd\-\_\-full (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{category, }
+\item[{char $\ast$}]{shorts}
+\end{DoxyParamCaption}
+)}}\label{variables_8cpp_a9f2fb81943ce32c34b8c74af198e9c55}
+\hypertarget{variables_8cpp_a150d0fbb18f5c41dbeda7e4f67f47803}{\index{variables.\-cpp@{variables.\-cpp}!mob\-\_\-vd\-\_\-variable@{mob\-\_\-vd\-\_\-variable}}
+\index{mob\-\_\-vd\-\_\-variable@{mob\-\_\-vd\-\_\-variable}!variables.cpp@{variables.\-cpp}}
+\subsubsection[{mob\-\_\-vd\-\_\-variable}]{\setlength{\rightskip}{0pt plus 5cm}int mob\-\_\-vd\-\_\-variable (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{shorts}
+\end{DoxyParamCaption}
+)}}\label{variables_8cpp_a150d0fbb18f5c41dbeda7e4f67f47803}
+\hypertarget{variables_8cpp_acfdc7df2e9cb9bb8c7e90edb25691f3c}{\index{variables.\-cpp@{variables.\-cpp}!vc\-\_\-category@{vc\-\_\-category}}
+\index{vc\-\_\-category@{vc\-\_\-category}!variables.cpp@{variables.\-cpp}}
+\subsubsection[{vc\-\_\-category}]{\setlength{\rightskip}{0pt plus 5cm}int vc\-\_\-category (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{variables_8cpp_acfdc7df2e9cb9bb8c7e90edb25691f3c}
+\hypertarget{variables_8cpp_a89a0adb5f9c838f7224583a93d605302}{\index{variables.\-cpp@{variables.\-cpp}!vc\-\_\-category@{vc\-\_\-category}}
+\index{vc\-\_\-category@{vc\-\_\-category}!variables.cpp@{variables.\-cpp}}
+\subsubsection[{vc\-\_\-category}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ vc\-\_\-category (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}}\label{variables_8cpp_a89a0adb5f9c838f7224583a93d605302}
+\hypertarget{variables_8cpp_a7902306f0fbd5796d56b9cfc00fc44a5}{\index{variables.\-cpp@{variables.\-cpp}!vc\-\_\-checkrand@{vc\-\_\-checkrand}}
+\index{vc\-\_\-checkrand@{vc\-\_\-checkrand}!variables.cpp@{variables.\-cpp}}
+\subsubsection[{vc\-\_\-checkrand}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} vc\-\_\-checkrand (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{shorts, }
+\item[{char $\ast$}]{category}
+\end{DoxyParamCaption}
+)}}\label{variables_8cpp_a7902306f0fbd5796d56b9cfc00fc44a5}
+\hypertarget{variables_8cpp_a3cf9b516a4046f674f014146ca6237f1}{\index{variables.\-cpp@{variables.\-cpp}!vc\-\_\-count@{vc\-\_\-count}}
+\index{vc\-\_\-count@{vc\-\_\-count}!variables.cpp@{variables.\-cpp}}
+\subsubsection[{vc\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}int vc\-\_\-count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{variables_8cpp_a3cf9b516a4046f674f014146ca6237f1}
+\hypertarget{variables_8cpp_a944bdd8a67912859f45c922463b0f2a9}{\index{variables.\-cpp@{variables.\-cpp}!vc\-\_\-exists@{vc\-\_\-exists}}
+\index{vc\-\_\-exists@{vc\-\_\-exists}!variables.cpp@{variables.\-cpp}}
+\subsubsection[{vc\-\_\-exists}]{\setlength{\rightskip}{0pt plus 5cm}int vc\-\_\-exists (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{shorts, }
+\item[{char $\ast$}]{category}
+\end{DoxyParamCaption}
+)}}\label{variables_8cpp_a944bdd8a67912859f45c922463b0f2a9}
+\hypertarget{variables_8cpp_a9b3534beddcffa20a994e9d8038036c7}{\index{variables.\-cpp@{variables.\-cpp}!vc\-\_\-exists@{vc\-\_\-exists}}
+\index{vc\-\_\-exists@{vc\-\_\-exists}!variables.cpp@{variables.\-cpp}}
+\subsubsection[{vc\-\_\-exists}]{\setlength{\rightskip}{0pt plus 5cm}int vc\-\_\-exists (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{shorts, }
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}}\label{variables_8cpp_a9b3534beddcffa20a994e9d8038036c7}
+\hypertarget{variables_8cpp_ac24304395344d31738ee1050ea51f87e}{\index{variables.\-cpp@{variables.\-cpp}!vc\-\_\-rand@{vc\-\_\-rand}}
+\index{vc\-\_\-rand@{vc\-\_\-rand}!variables.cpp@{variables.\-cpp}}
+\subsubsection[{vc\-\_\-rand}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ vc\-\_\-rand (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{category, }
+\item[{int $\ast$}]{cat}
+\end{DoxyParamCaption}
+)}}\label{variables_8cpp_ac24304395344d31738ee1050ea51f87e}
+\hypertarget{variables_8cpp_ae4ee8fd981788481a466973e1b1a99a3}{\index{variables.\-cpp@{variables.\-cpp}!vc\-\_\-rand@{vc\-\_\-rand}}
+\index{vc\-\_\-rand@{vc\-\_\-rand}!variables.cpp@{variables.\-cpp}}
+\subsubsection[{vc\-\_\-rand}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ vc\-\_\-rand (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{category}
+\end{DoxyParamCaption}
+)}}\label{variables_8cpp_ae4ee8fd981788481a466973e1b1a99a3}
+\hypertarget{variables_8cpp_a83d9b5fa40a661223f93c6546e47493c}{\index{variables.\-cpp@{variables.\-cpp}!vc\-\_\-rand@{vc\-\_\-rand}}
+\index{vc\-\_\-rand@{vc\-\_\-rand}!variables.cpp@{variables.\-cpp}}
+\subsubsection[{vc\-\_\-rand}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ vc\-\_\-rand (
+\begin{DoxyParamCaption}
+\item[{int}]{i, }
+\item[{int $\ast$}]{cat, }
+\item[{char $\ast$}]{full, }
+\item[{int $\ast$}]{weight\-\_\-mod, }
+\item[{int $\ast$}]{cost\-\_\-mod}
+\end{DoxyParamCaption}
+)}}\label{variables_8cpp_a83d9b5fa40a661223f93c6546e47493c}
+\hypertarget{variables_8cpp_a2b1836407c7075d246db8d6a5e2e5438}{\index{variables.\-cpp@{variables.\-cpp}!vc\-\_\-rand\-\_\-size@{vc\-\_\-rand\-\_\-size}}
+\index{vc\-\_\-rand\-\_\-size@{vc\-\_\-rand\-\_\-size}!variables.cpp@{variables.\-cpp}}
+\subsubsection[{vc\-\_\-rand\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}int vc\-\_\-rand\-\_\-size (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}}\label{variables_8cpp_a2b1836407c7075d246db8d6a5e2e5438}
+\hypertarget{variables_8cpp_ac996f1c1a88dfb2e745238cc1abfcfef}{\index{variables.\-cpp@{variables.\-cpp}!vc\-\_\-renumber@{vc\-\_\-renumber}}
+\index{vc\-\_\-renumber@{vc\-\_\-renumber}!variables.cpp@{variables.\-cpp}}
+\subsubsection[{vc\-\_\-renumber}]{\setlength{\rightskip}{0pt plus 5cm}void vc\-\_\-renumber (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{category}
+\end{DoxyParamCaption}
+)}}\label{variables_8cpp_ac996f1c1a88dfb2e745238cc1abfcfef}
+\hypertarget{variables_8cpp_af374f48705fb8af90f951db1b26e3328}{\index{variables.\-cpp@{variables.\-cpp}!vc\-\_\-renumber@{vc\-\_\-renumber}}
+\index{vc\-\_\-renumber@{vc\-\_\-renumber}!variables.cpp@{variables.\-cpp}}
+\subsubsection[{vc\-\_\-renumber}]{\setlength{\rightskip}{0pt plus 5cm}void vc\-\_\-renumber (
+\begin{DoxyParamCaption}
+\item[{int}]{j}
+\end{DoxyParamCaption}
+)}}\label{variables_8cpp_af374f48705fb8af90f951db1b26e3328}
+\hypertarget{variables_8cpp_a39943d807561a9c859169dac5e16def3}{\index{variables.\-cpp@{variables.\-cpp}!vc\-\_\-seeable@{vc\-\_\-seeable}}
+\index{vc\-\_\-seeable@{vc\-\_\-seeable}!variables.cpp@{variables.\-cpp}}
+\subsubsection[{vc\-\_\-seeable}]{\setlength{\rightskip}{0pt plus 5cm}int vc\-\_\-seeable (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{category}
+\end{DoxyParamCaption}
+)}}\label{variables_8cpp_a39943d807561a9c859169dac5e16def3}
+\hypertarget{variables_8cpp_a8aa2bf745dfc2d751083024687919a95}{\index{variables.\-cpp@{variables.\-cpp}!vc\-\_\-size@{vc\-\_\-size}}
+\index{vc\-\_\-size@{vc\-\_\-size}!variables.cpp@{variables.\-cpp}}
+\subsubsection[{vc\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}int vc\-\_\-size (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}}\label{variables_8cpp_a8aa2bf745dfc2d751083024687919a95}
+\hypertarget{variables_8cpp_a62b8bf79a5546b3ba4262341e630d8b9}{\index{variables.\-cpp@{variables.\-cpp}!vd\-\_\-data@{vd\-\_\-data}}
+\index{vd\-\_\-data@{vd\-\_\-data}!variables.cpp@{variables.\-cpp}}
+\subsubsection[{vd\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}int vd\-\_\-data (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{shorts, }
+\item[{char $\ast$}]{category, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{variables_8cpp_a62b8bf79a5546b3ba4262341e630d8b9}
+\hypertarget{variables_8cpp_a414f72aaa633942ef6298bce629fbfb2}{\index{variables.\-cpp@{variables.\-cpp}!vd\-\_\-data@{vd\-\_\-data}}
+\index{vd\-\_\-data@{vd\-\_\-data}!variables.cpp@{variables.\-cpp}}
+\subsubsection[{vd\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}int vd\-\_\-data (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{shorts, }
+\item[{int}]{i, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{variables_8cpp_a414f72aaa633942ef6298bce629fbfb2}
+\hypertarget{variables_8cpp_ae7fea3b01f10c4a9e98d166b34b48770}{\index{variables.\-cpp@{variables.\-cpp}!vd\-\_\-flavour@{vd\-\_\-flavour}}
+\index{vd\-\_\-flavour@{vd\-\_\-flavour}!variables.cpp@{variables.\-cpp}}
+\subsubsection[{vd\-\_\-flavour}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ vd\-\_\-flavour (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{category, }
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}}\label{variables_8cpp_ae7fea3b01f10c4a9e98d166b34b48770}
+\hypertarget{variables_8cpp_ac7684a05f41020b3220b6b2e911ff12e}{\index{variables.\-cpp@{variables.\-cpp}!vd\-\_\-flavour@{vd\-\_\-flavour}}
+\index{vd\-\_\-flavour@{vd\-\_\-flavour}!variables.cpp@{variables.\-cpp}}
+\subsubsection[{vd\-\_\-flavour}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ vd\-\_\-flavour (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{category, }
+\item[{char $\ast$}]{shorts}
+\end{DoxyParamCaption}
+)}}\label{variables_8cpp_ac7684a05f41020b3220b6b2e911ff12e}
+\hypertarget{variables_8cpp_a8e1d88228dd09a8e2d2ba5becde985c0}{\index{variables.\-cpp@{variables.\-cpp}!vd\-\_\-full@{vd\-\_\-full}}
+\index{vd\-\_\-full@{vd\-\_\-full}!variables.cpp@{variables.\-cpp}}
+\subsubsection[{vd\-\_\-full}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ vd\-\_\-full (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{category, }
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}}\label{variables_8cpp_a8e1d88228dd09a8e2d2ba5becde985c0}
+\hypertarget{variables_8cpp_aa0c924d03cdde9a16565c2cf3032e7f6}{\index{variables.\-cpp@{variables.\-cpp}!vd\-\_\-full@{vd\-\_\-full}}
+\index{vd\-\_\-full@{vd\-\_\-full}!variables.cpp@{variables.\-cpp}}
+\subsubsection[{vd\-\_\-full}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ vd\-\_\-full (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{category, }
+\item[{char $\ast$}]{shorts}
+\end{DoxyParamCaption}
+)}}\label{variables_8cpp_aa0c924d03cdde9a16565c2cf3032e7f6}
+\hypertarget{variables_8cpp_a652d2b655c3b2d377aad654a3fd27785}{\index{variables.\-cpp@{variables.\-cpp}!vd\-\_\-id@{vd\-\_\-id}}
+\index{vd\-\_\-id@{vd\-\_\-id}!variables.cpp@{variables.\-cpp}}
+\subsubsection[{vd\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}int vd\-\_\-id (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{category, }
+\item[{char $\ast$}]{shorts}
+\end{DoxyParamCaption}
+)}}\label{variables_8cpp_a652d2b655c3b2d377aad654a3fd27785}
+\hypertarget{variables_8cpp_a68b381a484b09c5f1c6651963d8dc1a6}{\index{variables.\-cpp@{variables.\-cpp}!vd\-\_\-short@{vd\-\_\-short}}
+\index{vd\-\_\-short@{vd\-\_\-short}!variables.cpp@{variables.\-cpp}}
+\subsubsection[{vd\-\_\-short}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ vd\-\_\-short (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{category, }
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}}\label{variables_8cpp_a68b381a484b09c5f1c6651963d8dc1a6}
+\hypertarget{variables_8cpp_a4adc738ae39c1d6a4ac45a19041370e1}{\index{variables.\-cpp@{variables.\-cpp}!vd\-\_\-variable@{vd\-\_\-variable}}
+\index{vd\-\_\-variable@{vd\-\_\-variable}!variables.cpp@{variables.\-cpp}}
+\subsubsection[{vd\-\_\-variable}]{\setlength{\rightskip}{0pt plus 5cm}int vd\-\_\-variable (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{shorts}
+\end{DoxyParamCaption}
+)}}\label{variables_8cpp_a4adc738ae39c1d6a4ac45a19041370e1}
+\hypertarget{variables_8cpp_ab29a59ce6f4d65ab8dda0ce857fd7e1c}{\index{variables.\-cpp@{variables.\-cpp}!vo\-\_\-match\-\_\-color@{vo\-\_\-match\-\_\-color}}
+\index{vo\-\_\-match\-\_\-color@{vo\-\_\-match\-\_\-color}!variables.cpp@{variables.\-cpp}}
+\subsubsection[{vo\-\_\-match\-\_\-color}]{\setlength{\rightskip}{0pt plus 5cm}int vo\-\_\-match\-\_\-color (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{tobj}
+\end{DoxyParamCaption}
+)}}\label{variables_8cpp_ab29a59ce6f4d65ab8dda0ce857fd7e1c}
+\hypertarget{variables_8cpp_aaabee57c269912c4070ee3cc6c96ebcd}{\index{variables.\-cpp@{variables.\-cpp}!vo\-\_\-specify@{vo\-\_\-specify}}
+\index{vo\-\_\-specify@{vo\-\_\-specify}!variables.cpp@{variables.\-cpp}}
+\subsubsection[{vo\-\_\-specify}]{\setlength{\rightskip}{0pt plus 5cm}void vo\-\_\-specify (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj}
+\end{DoxyParamCaption}
+)}}\label{variables_8cpp_aaabee57c269912c4070ee3cc6c96ebcd}
+\hypertarget{variables_8cpp_a0cf0c40ff5fff365ede28a11d1cfbe4b}{\index{variables.\-cpp@{variables.\-cpp}!vo\-\_\-weight\-\_\-cost\-\_\-quality@{vo\-\_\-weight\-\_\-cost\-\_\-quality}}
+\index{vo\-\_\-weight\-\_\-cost\-\_\-quality@{vo\-\_\-weight\-\_\-cost\-\_\-quality}!variables.cpp@{variables.\-cpp}}
+\subsubsection[{vo\-\_\-weight\-\_\-cost\-\_\-quality}]{\setlength{\rightskip}{0pt plus 5cm}void vo\-\_\-weight\-\_\-cost\-\_\-quality (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj}
+\end{DoxyParamCaption}
+)}}\label{variables_8cpp_a0cf0c40ff5fff365ede28a11d1cfbe4b}
+
+
+\subsection{Variable Documentation}
+\hypertarget{variables_8cpp_af577646b635687ef9f42d7a5308977c9}{\index{variables.\-cpp@{variables.\-cpp}!mvariable\-\_\-categories@{mvariable\-\_\-categories}}
+\index{mvariable\-\_\-categories@{mvariable\-\_\-categories}!variables.cpp@{variables.\-cpp}}
+\subsubsection[{mvariable\-\_\-categories}]{\setlength{\rightskip}{0pt plus 5cm}std\-::multimap$<$int, std\-::string$>$ mvariable\-\_\-categories}}\label{variables_8cpp_af577646b635687ef9f42d7a5308977c9}
+\hypertarget{variables_8cpp_ad26bde3c2f68d86ae308ee7c59e88223}{\index{variables.\-cpp@{variables.\-cpp}!mvariable\-\_\-list@{mvariable\-\_\-list}}
+\index{mvariable\-\_\-list@{mvariable\-\_\-list}!variables.cpp@{variables.\-cpp}}
+\subsubsection[{mvariable\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}std\-::multimap$<$int, {\bf mvariable\-\_\-data}$>$ mvariable\-\_\-list}}\label{variables_8cpp_ad26bde3c2f68d86ae308ee7c59e88223}
+\hypertarget{variables_8cpp_a0648ea431a490ba9090b5a71a099283b}{\index{variables.\-cpp@{variables.\-cpp}!obj\-\_\-variable\-\_\-list@{obj\-\_\-variable\-\_\-list}}
+\index{obj\-\_\-variable\-\_\-list@{obj\-\_\-variable\-\_\-list}!variables.cpp@{variables.\-cpp}}
+\subsubsection[{obj\-\_\-variable\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}std\-::multimap$<$int, {\bf variable\-\_\-data}$>$ obj\-\_\-variable\-\_\-list}}\label{variables_8cpp_a0648ea431a490ba9090b5a71a099283b}
+\hypertarget{variables_8cpp_a388a9b052cfa85e2de421c447839c258}{\index{variables.\-cpp@{variables.\-cpp}!variable\-\_\-categories@{variable\-\_\-categories}}
+\index{variable\-\_\-categories@{variable\-\_\-categories}!variables.cpp@{variables.\-cpp}}
+\subsubsection[{variable\-\_\-categories}]{\setlength{\rightskip}{0pt plus 5cm}std\-::multimap$<$int, std\-::string$>$ variable\-\_\-categories}}\label{variables_8cpp_a388a9b052cfa85e2de421c447839c258}

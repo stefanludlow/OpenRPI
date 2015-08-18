@@ -1,69 +1,208 @@
 \hypertarget{classrpie_1_1server}{\section{rpie\-:\-:server Class Reference}
 \label{classrpie_1_1server}\index{rpie\-::server@{rpie\-::server}}
 }
+
+
+{\ttfamily \#include $<$server.\-h$>$}
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classrpie_1_1server_a0878d4b792bf0419e9771260734259f3}{void {\bfseries enable\-\_\-timer\-\_\-abort} ()}\label{classrpie_1_1server_a0878d4b792bf0419e9771260734259f3}
-
+\hyperlink{classrpie_1_1server_a4d7e80c010ab839b337fd486343fdd37}{server} ()
 \item 
-\hypertarget{classrpie_1_1server_a7dbbbef5b5fc6a5a2e9de920e656c3ab}{void {\bfseries disable\-\_\-timer\-\_\-abort} ()}\label{classrpie_1_1server_a7dbbbef5b5fc6a5a2e9de920e656c3ab}
-
+void \hyperlink{classrpie_1_1server_a0878d4b792bf0419e9771260734259f3}{enable\-\_\-timer\-\_\-abort} ()
 \item 
-\hypertarget{classrpie_1_1server_a00a169982369b9b421d088a282cc0e97}{void {\bfseries set\-\_\-abort\-\_\-threshold\-\_\-pre\-\_\-booting} ()}\label{classrpie_1_1server_a00a169982369b9b421d088a282cc0e97}
-
+void \hyperlink{classrpie_1_1server_a7dbbbef5b5fc6a5a2e9de920e656c3ab}{disable\-\_\-timer\-\_\-abort} ()
 \item 
-\hypertarget{classrpie_1_1server_a89750323d0889e6fd34072577cc8ddea}{void {\bfseries set\-\_\-abort\-\_\-threshold\-\_\-post\-\_\-booting} ()}\label{classrpie_1_1server_a89750323d0889e6fd34072577cc8ddea}
-
+void \hyperlink{classrpie_1_1server_a00a169982369b9b421d088a282cc0e97}{set\-\_\-abort\-\_\-threshold\-\_\-pre\-\_\-booting} ()
 \item 
-\hypertarget{classrpie_1_1server_adc04d858a407001f5bf907cad65255eb}{bool {\bfseries loop\-\_\-detect} ()}\label{classrpie_1_1server_adc04d858a407001f5bf907cad65255eb}
-
+void \hyperlink{classrpie_1_1server_a89750323d0889e6fd34072577cc8ddea}{set\-\_\-abort\-\_\-threshold\-\_\-post\-\_\-booting} ()
 \item 
-\hypertarget{classrpie_1_1server_a6bed490717d2450853502414d32bb6a9}{void \hyperlink{classrpie_1_1server_a6bed490717d2450853502414d32bb6a9}{load\-\_\-config\-\_\-files} ()}\label{classrpie_1_1server_a6bed490717d2450853502414d32bb6a9}
-
+\hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} \hyperlink{classrpie_1_1server_adc04d858a407001f5bf907cad65255eb}{loop\-\_\-detect} ()
+\item 
+void \hyperlink{classrpie_1_1server_a6bed490717d2450853502414d32bb6a9}{load\-\_\-config\-\_\-files} ()
 \begin{DoxyCompactList}\small\item\em Load configuration files from the usual places. \end{DoxyCompactList}\item 
-\hypertarget{classrpie_1_1server_a777008330eb6140447cc7f83aac3173d}{void \hyperlink{classrpie_1_1server_a777008330eb6140447cc7f83aac3173d}{load\-\_\-config\-\_\-file} (std\-::ifstream \&config\-\_\-file)}\label{classrpie_1_1server_a777008330eb6140447cc7f83aac3173d}
-
+void \hyperlink{classrpie_1_1server_a777008330eb6140447cc7f83aac3173d}{load\-\_\-config\-\_\-file} (std\-::ifstream \&config\-\_\-file)
 \begin{DoxyCompactList}\small\item\em Get the db connection info from the configuration file. \end{DoxyCompactList}\item 
-\hypertarget{classrpie_1_1server_a79b7cfd755ff68761de7d8b4aa6ed5c4}{void {\bfseries set\-\_\-config} (std\-::string var\-\_\-name, std\-::string var\-\_\-value)}\label{classrpie_1_1server_a79b7cfd755ff68761de7d8b4aa6ed5c4}
-
+void \hyperlink{classrpie_1_1server_a79b7cfd755ff68761de7d8b4aa6ed5c4}{set\-\_\-config} (std\-::string var\-\_\-name, std\-::string var\-\_\-value)
 \item 
-\hypertarget{classrpie_1_1server_a0a76549ab2136a685e9b84ae8bc6bf5a}{std\-::string {\bfseries get\-\_\-config} ()}\label{classrpie_1_1server_a0a76549ab2136a685e9b84ae8bc6bf5a}
-
+std\-::string \hyperlink{classrpie_1_1server_a0a76549ab2136a685e9b84ae8bc6bf5a}{get\-\_\-config} ()
 \item 
-\hypertarget{classrpie_1_1server_a3db1b71f9fd132bccc92c71451a29f61}{std\-::string {\bfseries get\-\_\-config} (std\-::string var\-\_\-name)}\label{classrpie_1_1server_a3db1b71f9fd132bccc92c71451a29f61}
-
+std\-::string \hyperlink{classrpie_1_1server_a3db1b71f9fd132bccc92c71451a29f61}{get\-\_\-config} (std\-::string var\-\_\-name)
 \item 
-\hypertarget{classrpie_1_1server_a122efa348d71c17be7def0a2569b5857}{server\-\_\-modes {\bfseries get\-\_\-mode} ()}\label{classrpie_1_1server_a122efa348d71c17be7def0a2569b5857}
-
+\hyperlink{namespacerpie_a54d73f12f21f2462f5c243b3de21d943}{server\-\_\-modes} \hyperlink{classrpie_1_1server_a122efa348d71c17be7def0a2569b5857}{get\-\_\-mode} ()
 \item 
-\hypertarget{classrpie_1_1server_a1a59fdd2b750ce6f44849457555bf545}{bool {\bfseries in\-\_\-play\-\_\-mode} ()}\label{classrpie_1_1server_a1a59fdd2b750ce6f44849457555bf545}
-
+\hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} \hyperlink{classrpie_1_1server_a1a59fdd2b750ce6f44849457555bf545}{in\-\_\-play\-\_\-mode} ()
 \item 
-\hypertarget{classrpie_1_1server_a1197ec8dd887726c6a5ae0158aecd69d}{bool {\bfseries in\-\_\-build\-\_\-mode} ()}\label{classrpie_1_1server_a1197ec8dd887726c6a5ae0158aecd69d}
-
+\hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} \hyperlink{classrpie_1_1server_a1197ec8dd887726c6a5ae0158aecd69d}{in\-\_\-build\-\_\-mode} ()
 \item 
-\hypertarget{classrpie_1_1server_a279755eaeae1526dcfb7c3382f154e60}{bool {\bfseries in\-\_\-test\-\_\-mode} ()}\label{classrpie_1_1server_a279755eaeae1526dcfb7c3382f154e60}
-
+\hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} \hyperlink{classrpie_1_1server_a279755eaeae1526dcfb7c3382f154e60}{in\-\_\-test\-\_\-mode} ()
 \item 
-\hypertarget{classrpie_1_1server_ab88c2d9b84f0288f3d0ebbd44f4f3983}{int {\bfseries get\-\_\-port} ()}\label{classrpie_1_1server_ab88c2d9b84f0288f3d0ebbd44f4f3983}
-
+int \hyperlink{classrpie_1_1server_ab88c2d9b84f0288f3d0ebbd44f4f3983}{get\-\_\-port} ()
 \item 
-\hypertarget{classrpie_1_1server_a48096cd3ff72978503226eaddd8f8780}{std\-::string {\bfseries get\-\_\-base\-\_\-path} (std\-::string req\-\_\-mode=\char`\"{}current\char`\"{})}\label{classrpie_1_1server_a48096cd3ff72978503226eaddd8f8780}
-
+std\-::string \hyperlink{classrpie_1_1server_a48096cd3ff72978503226eaddd8f8780}{get\-\_\-base\-\_\-path} (std\-::string req\-\_\-mode=\char`\"{}current\char`\"{})
 \end{DoxyCompactItemize}
 \subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classrpie_1_1server_a1173d2e4cbb1f0d6c91f04766bdc0802}{static const size\-\_\-t \hyperlink{classrpie_1_1server_a1173d2e4cbb1f0d6c91f04766bdc0802}{M\-A\-X\-\_\-\-N\-A\-M\-E\-\_\-\-L\-E\-N\-G\-T\-H} = 15}\label{classrpie_1_1server_a1173d2e4cbb1f0d6c91f04766bdc0802}
-
+static const size\-\_\-t \hyperlink{classrpie_1_1server_a1173d2e4cbb1f0d6c91f04766bdc0802}{M\-A\-X\-\_\-\-N\-A\-M\-E\-\_\-\-L\-E\-N\-G\-T\-H} = 15
 \begin{DoxyCompactList}\small\item\em Username string length. \end{DoxyCompactList}\item 
-\hypertarget{classrpie_1_1server_a3dec19e76bb1aeb96cbd4b6286cd9286}{static const int \hyperlink{classrpie_1_1server_a3dec19e76bb1aeb96cbd4b6286cd9286}{A\-L\-A\-R\-M\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y} = 20}\label{classrpie_1_1server_a3dec19e76bb1aeb96cbd4b6286cd9286}
-
+static const int \hyperlink{classrpie_1_1server_a3dec19e76bb1aeb96cbd4b6286cd9286}{A\-L\-A\-R\-M\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y} = 20
 \begin{DoxyCompactList}\small\item\em I\-Timer frequency in seconds. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classrpie_1_1server_a4d7e80c010ab839b337fd486343fdd37}{\index{rpie\-::server@{rpie\-::server}!server@{server}}
+\index{server@{server}!rpie::server@{rpie\-::server}}
+\subsubsection[{server}]{\setlength{\rightskip}{0pt plus 5cm}rpie\-::server\-::server (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classrpie_1_1server_a4d7e80c010ab839b337fd486343fdd37}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classrpie_1_1server_a7dbbbef5b5fc6a5a2e9de920e656c3ab}{\index{rpie\-::server@{rpie\-::server}!disable\-\_\-timer\-\_\-abort@{disable\-\_\-timer\-\_\-abort}}
+\index{disable\-\_\-timer\-\_\-abort@{disable\-\_\-timer\-\_\-abort}!rpie::server@{rpie\-::server}}
+\subsubsection[{disable\-\_\-timer\-\_\-abort}]{\setlength{\rightskip}{0pt plus 5cm}void rpie\-::server\-::disable\-\_\-timer\-\_\-abort (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classrpie_1_1server_a7dbbbef5b5fc6a5a2e9de920e656c3ab}
+\hypertarget{classrpie_1_1server_a0878d4b792bf0419e9771260734259f3}{\index{rpie\-::server@{rpie\-::server}!enable\-\_\-timer\-\_\-abort@{enable\-\_\-timer\-\_\-abort}}
+\index{enable\-\_\-timer\-\_\-abort@{enable\-\_\-timer\-\_\-abort}!rpie::server@{rpie\-::server}}
+\subsubsection[{enable\-\_\-timer\-\_\-abort}]{\setlength{\rightskip}{0pt plus 5cm}void rpie\-::server\-::enable\-\_\-timer\-\_\-abort (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classrpie_1_1server_a0878d4b792bf0419e9771260734259f3}
+\hypertarget{classrpie_1_1server_a48096cd3ff72978503226eaddd8f8780}{\index{rpie\-::server@{rpie\-::server}!get\-\_\-base\-\_\-path@{get\-\_\-base\-\_\-path}}
+\index{get\-\_\-base\-\_\-path@{get\-\_\-base\-\_\-path}!rpie::server@{rpie\-::server}}
+\subsubsection[{get\-\_\-base\-\_\-path}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string rpie\-::server\-::get\-\_\-base\-\_\-path (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{req\-\_\-mode = {\ttfamily \char`\"{}current\char`\"{}}}
+\end{DoxyParamCaption}
+)}}\label{classrpie_1_1server_a48096cd3ff72978503226eaddd8f8780}
+\hypertarget{classrpie_1_1server_a0a76549ab2136a685e9b84ae8bc6bf5a}{\index{rpie\-::server@{rpie\-::server}!get\-\_\-config@{get\-\_\-config}}
+\index{get\-\_\-config@{get\-\_\-config}!rpie::server@{rpie\-::server}}
+\subsubsection[{get\-\_\-config}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string rpie\-::server\-::get\-\_\-config (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classrpie_1_1server_a0a76549ab2136a685e9b84ae8bc6bf5a}
+\hypertarget{classrpie_1_1server_a3db1b71f9fd132bccc92c71451a29f61}{\index{rpie\-::server@{rpie\-::server}!get\-\_\-config@{get\-\_\-config}}
+\index{get\-\_\-config@{get\-\_\-config}!rpie::server@{rpie\-::server}}
+\subsubsection[{get\-\_\-config}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string rpie\-::server\-::get\-\_\-config (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{var\-\_\-name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classrpie_1_1server_a3db1b71f9fd132bccc92c71451a29f61}
+\hypertarget{classrpie_1_1server_a122efa348d71c17be7def0a2569b5857}{\index{rpie\-::server@{rpie\-::server}!get\-\_\-mode@{get\-\_\-mode}}
+\index{get\-\_\-mode@{get\-\_\-mode}!rpie::server@{rpie\-::server}}
+\subsubsection[{get\-\_\-mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf server\-\_\-modes} rpie\-::server\-::get\-\_\-mode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classrpie_1_1server_a122efa348d71c17be7def0a2569b5857}
+\hypertarget{classrpie_1_1server_ab88c2d9b84f0288f3d0ebbd44f4f3983}{\index{rpie\-::server@{rpie\-::server}!get\-\_\-port@{get\-\_\-port}}
+\index{get\-\_\-port@{get\-\_\-port}!rpie::server@{rpie\-::server}}
+\subsubsection[{get\-\_\-port}]{\setlength{\rightskip}{0pt plus 5cm}int rpie\-::server\-::get\-\_\-port (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classrpie_1_1server_ab88c2d9b84f0288f3d0ebbd44f4f3983}
+\hypertarget{classrpie_1_1server_a1197ec8dd887726c6a5ae0158aecd69d}{\index{rpie\-::server@{rpie\-::server}!in\-\_\-build\-\_\-mode@{in\-\_\-build\-\_\-mode}}
+\index{in\-\_\-build\-\_\-mode@{in\-\_\-build\-\_\-mode}!rpie::server@{rpie\-::server}}
+\subsubsection[{in\-\_\-build\-\_\-mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} rpie\-::server\-::in\-\_\-build\-\_\-mode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classrpie_1_1server_a1197ec8dd887726c6a5ae0158aecd69d}
+\hypertarget{classrpie_1_1server_a1a59fdd2b750ce6f44849457555bf545}{\index{rpie\-::server@{rpie\-::server}!in\-\_\-play\-\_\-mode@{in\-\_\-play\-\_\-mode}}
+\index{in\-\_\-play\-\_\-mode@{in\-\_\-play\-\_\-mode}!rpie::server@{rpie\-::server}}
+\subsubsection[{in\-\_\-play\-\_\-mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} rpie\-::server\-::in\-\_\-play\-\_\-mode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classrpie_1_1server_a1a59fdd2b750ce6f44849457555bf545}
+\hypertarget{classrpie_1_1server_a279755eaeae1526dcfb7c3382f154e60}{\index{rpie\-::server@{rpie\-::server}!in\-\_\-test\-\_\-mode@{in\-\_\-test\-\_\-mode}}
+\index{in\-\_\-test\-\_\-mode@{in\-\_\-test\-\_\-mode}!rpie::server@{rpie\-::server}}
+\subsubsection[{in\-\_\-test\-\_\-mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} rpie\-::server\-::in\-\_\-test\-\_\-mode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classrpie_1_1server_a279755eaeae1526dcfb7c3382f154e60}
+\hypertarget{classrpie_1_1server_a777008330eb6140447cc7f83aac3173d}{\index{rpie\-::server@{rpie\-::server}!load\-\_\-config\-\_\-file@{load\-\_\-config\-\_\-file}}
+\index{load\-\_\-config\-\_\-file@{load\-\_\-config\-\_\-file}!rpie::server@{rpie\-::server}}
+\subsubsection[{load\-\_\-config\-\_\-file}]{\setlength{\rightskip}{0pt plus 5cm}void rpie\-::server\-::load\-\_\-config\-\_\-file (
+\begin{DoxyParamCaption}
+\item[{std\-::ifstream \&}]{config\-\_\-file}
+\end{DoxyParamCaption}
+)}}\label{classrpie_1_1server_a777008330eb6140447cc7f83aac3173d}
+
+
+Get the db connection info from the configuration file. 
+
+\hypertarget{classrpie_1_1server_a6bed490717d2450853502414d32bb6a9}{\index{rpie\-::server@{rpie\-::server}!load\-\_\-config\-\_\-files@{load\-\_\-config\-\_\-files}}
+\index{load\-\_\-config\-\_\-files@{load\-\_\-config\-\_\-files}!rpie::server@{rpie\-::server}}
+\subsubsection[{load\-\_\-config\-\_\-files}]{\setlength{\rightskip}{0pt plus 5cm}void rpie\-::server\-::load\-\_\-config\-\_\-files (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classrpie_1_1server_a6bed490717d2450853502414d32bb6a9}
+
+
+Load configuration files from the usual places. 
+
+\hypertarget{classrpie_1_1server_adc04d858a407001f5bf907cad65255eb}{\index{rpie\-::server@{rpie\-::server}!loop\-\_\-detect@{loop\-\_\-detect}}
+\index{loop\-\_\-detect@{loop\-\_\-detect}!rpie::server@{rpie\-::server}}
+\subsubsection[{loop\-\_\-detect}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} rpie\-::server\-::loop\-\_\-detect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classrpie_1_1server_adc04d858a407001f5bf907cad65255eb}
+\hypertarget{classrpie_1_1server_a89750323d0889e6fd34072577cc8ddea}{\index{rpie\-::server@{rpie\-::server}!set\-\_\-abort\-\_\-threshold\-\_\-post\-\_\-booting@{set\-\_\-abort\-\_\-threshold\-\_\-post\-\_\-booting}}
+\index{set\-\_\-abort\-\_\-threshold\-\_\-post\-\_\-booting@{set\-\_\-abort\-\_\-threshold\-\_\-post\-\_\-booting}!rpie::server@{rpie\-::server}}
+\subsubsection[{set\-\_\-abort\-\_\-threshold\-\_\-post\-\_\-booting}]{\setlength{\rightskip}{0pt plus 5cm}void rpie\-::server\-::set\-\_\-abort\-\_\-threshold\-\_\-post\-\_\-booting (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classrpie_1_1server_a89750323d0889e6fd34072577cc8ddea}
+\hypertarget{classrpie_1_1server_a00a169982369b9b421d088a282cc0e97}{\index{rpie\-::server@{rpie\-::server}!set\-\_\-abort\-\_\-threshold\-\_\-pre\-\_\-booting@{set\-\_\-abort\-\_\-threshold\-\_\-pre\-\_\-booting}}
+\index{set\-\_\-abort\-\_\-threshold\-\_\-pre\-\_\-booting@{set\-\_\-abort\-\_\-threshold\-\_\-pre\-\_\-booting}!rpie::server@{rpie\-::server}}
+\subsubsection[{set\-\_\-abort\-\_\-threshold\-\_\-pre\-\_\-booting}]{\setlength{\rightskip}{0pt plus 5cm}void rpie\-::server\-::set\-\_\-abort\-\_\-threshold\-\_\-pre\-\_\-booting (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classrpie_1_1server_a00a169982369b9b421d088a282cc0e97}
+\hypertarget{classrpie_1_1server_a79b7cfd755ff68761de7d8b4aa6ed5c4}{\index{rpie\-::server@{rpie\-::server}!set\-\_\-config@{set\-\_\-config}}
+\index{set\-\_\-config@{set\-\_\-config}!rpie::server@{rpie\-::server}}
+\subsubsection[{set\-\_\-config}]{\setlength{\rightskip}{0pt plus 5cm}void rpie\-::server\-::set\-\_\-config (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{var\-\_\-name, }
+\item[{std\-::string}]{var\-\_\-value = {\ttfamily \char`\"{}true\char`\"{}}}
+\end{DoxyParamCaption}
+)}}\label{classrpie_1_1server_a79b7cfd755ff68761de7d8b4aa6ed5c4}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classrpie_1_1server_a3dec19e76bb1aeb96cbd4b6286cd9286}{\index{rpie\-::server@{rpie\-::server}!A\-L\-A\-R\-M\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y@{A\-L\-A\-R\-M\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y}}
+\index{A\-L\-A\-R\-M\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y@{A\-L\-A\-R\-M\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y}!rpie::server@{rpie\-::server}}
+\subsubsection[{A\-L\-A\-R\-M\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y}]{\setlength{\rightskip}{0pt plus 5cm}const int rpie\-::server\-::\-A\-L\-A\-R\-M\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y = 20\hspace{0.3cm}{\ttfamily [static]}}}\label{classrpie_1_1server_a3dec19e76bb1aeb96cbd4b6286cd9286}
+
+
+I\-Timer frequency in seconds. 
+
+\hypertarget{classrpie_1_1server_a1173d2e4cbb1f0d6c91f04766bdc0802}{\index{rpie\-::server@{rpie\-::server}!M\-A\-X\-\_\-\-N\-A\-M\-E\-\_\-\-L\-E\-N\-G\-T\-H@{M\-A\-X\-\_\-\-N\-A\-M\-E\-\_\-\-L\-E\-N\-G\-T\-H}}
+\index{M\-A\-X\-\_\-\-N\-A\-M\-E\-\_\-\-L\-E\-N\-G\-T\-H@{M\-A\-X\-\_\-\-N\-A\-M\-E\-\_\-\-L\-E\-N\-G\-T\-H}!rpie::server@{rpie\-::server}}
+\subsubsection[{M\-A\-X\-\_\-\-N\-A\-M\-E\-\_\-\-L\-E\-N\-G\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}const size\-\_\-t rpie\-::server\-::\-M\-A\-X\-\_\-\-N\-A\-M\-E\-\_\-\-L\-E\-N\-G\-T\-H = 15\hspace{0.3cm}{\ttfamily [static]}}}\label{classrpie_1_1server_a1173d2e4cbb1f0d6c91f04766bdc0802}
+
+
+Username string length. 
+
 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-server.\-h\item 
-server.\-cpp\end{DoxyCompactItemize}
+\hyperlink{server_8h}{server.\-h}\item 
+\hyperlink{server_8cpp}{server.\-cpp}\end{DoxyCompactItemize}

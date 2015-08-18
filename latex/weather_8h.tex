@@ -1,0 +1,301 @@
+\hypertarget{weather_8h}{\section{weather.\-h File Reference}
+\label{weather_8h}\index{weather.\-h@{weather.\-h}}
+}
+{\ttfamily \#include $<$string$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classWeather}{Weather}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{weather_8h_a2d493a6698eed0d4eb78a21c10ab5f70}{W\-E\-A\-T\-H\-E\-R\-\_\-\-W\-I\-L\-D\-S}~0
+\begin{DoxyCompactList}\small\item\em \hyperlink{weather_8h}{weather.\-h} -\/ \hyperlink{classWeather}{Weather} Class Structures and Functions \end{DoxyCompactList}\item 
+\#define \hyperlink{weather_8h_a3ad8559ab300abac41e6c7836811f0c9}{W\-E\-A\-T\-H\-E\-R\-\_\-\-U\-R\-B\-A\-N}~1
+\item 
+\#define \hyperlink{weather_8h_aa91844a1d256b6a87dfcf819c6f80f1f}{W\-E\-A\-T\-H\-E\-R\-\_\-\-D\-E\-S\-E\-R\-T}~2
+\item 
+\#define \hyperlink{weather_8h_aba46dc0679c42614a3f1877a6922314e}{W\-E\-A\-T\-H\-E\-R\-\_\-\-U\-N\-D\-E\-R\-G\-R\-O\-U\-N\-D}~3
+\item 
+\#define \hyperlink{weather_8h_ab1212b7b4754634d98504b4ac5d5428d}{W\-E\-A\-T\-H\-E\-R\-\_\-\-C\-R\-A\-T\-E\-R}~4
+\item 
+\#define \hyperlink{weather_8h_a6a2fb526dd1333d4fe167c24bb3d37f8}{W\-E\-A\-T\-H\-E\-R\-\_\-\-N\-O\-L\-I\-G\-H\-T}~5
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{weather_8h_a60edb16ad6ea99362040aaef86653263}{fog\-\_\-type} \{ \hyperlink{weather_8h_a60edb16ad6ea99362040aaef86653263ae671a008facad23f774ed23ee4a304dd}{N\-O\-\_\-\-F\-O\-G}, 
+\hyperlink{weather_8h_a60edb16ad6ea99362040aaef86653263ab54e57b37217f45db78eaa0d3b50696a}{T\-H\-I\-N\-\_\-\-F\-O\-G}, 
+\hyperlink{weather_8h_a60edb16ad6ea99362040aaef86653263adbb2de985634b17cbafb015550e81e3d}{T\-H\-I\-C\-K\-\_\-\-F\-O\-G}, 
+\hyperlink{weather_8h_a60edb16ad6ea99362040aaef86653263a4b4d6cce0d8dbfc93df4ade050fdc665}{F\-O\-G}
+ \}
+\item 
+enum \hyperlink{weather_8h_a982907ad4f9584c8b75c95d858257281}{wind\-\_\-dir\-\_\-type} \{ \\*
+\hyperlink{weather_8h_a982907ad4f9584c8b75c95d858257281ade005a2487e74b55bdc905387286305f}{W\-E\-S\-T\-\_\-\-W\-I\-N\-D}, 
+\hyperlink{weather_8h_a982907ad4f9584c8b75c95d858257281a4df24121fd32222023a310e57c5cf229}{N\-O\-R\-T\-H\-W\-E\-S\-T\-\_\-\-W\-I\-N\-D}, 
+\hyperlink{weather_8h_a982907ad4f9584c8b75c95d858257281a4d072854996e8f9d856a6f2168682e9f}{N\-O\-R\-T\-H\-\_\-\-W\-I\-N\-D}, 
+\hyperlink{weather_8h_a982907ad4f9584c8b75c95d858257281a6b7517237c7bc4d385043f0f2c8e6f84}{N\-O\-R\-T\-H\-E\-A\-S\-T\-\_\-\-W\-I\-N\-D}, 
+\\*
+\hyperlink{weather_8h_a982907ad4f9584c8b75c95d858257281a7b4511307faf7ed757d35b412f910ab8}{E\-A\-S\-T\-\_\-\-W\-I\-N\-D}, 
+\hyperlink{weather_8h_a982907ad4f9584c8b75c95d858257281ae27a3073c776568214a8034d66f4e3c8}{S\-O\-U\-T\-H\-E\-A\-S\-T\-\_\-\-W\-I\-N\-D}, 
+\hyperlink{weather_8h_a982907ad4f9584c8b75c95d858257281aee27990931b7632c23b9ad2afa0f73af}{S\-O\-U\-T\-H\-\_\-\-W\-I\-N\-D}, 
+\hyperlink{weather_8h_a982907ad4f9584c8b75c95d858257281a40e704136aec82f7752744dc4a40b4be}{S\-O\-U\-T\-H\-W\-E\-S\-T\-\_\-\-W\-I\-N\-D}
+ \}
+\item 
+enum \hyperlink{weather_8h_ac8a11cda50e327cef399b96e21ea147f}{wind\-\_\-str\-\_\-type} \{ \\*
+\hyperlink{weather_8h_ac8a11cda50e327cef399b96e21ea147fa10773cf7fe0cbe9e8788f4e5e701d6b2}{C\-A\-L\-M}, 
+\hyperlink{weather_8h_ac8a11cda50e327cef399b96e21ea147faf22faacf96704eac42c380de23c8d2db}{B\-R\-E\-E\-Z\-E}, 
+\hyperlink{weather_8h_ac8a11cda50e327cef399b96e21ea147fa9426e0b230f6905ec4c38ec3bbfa40a5}{W\-I\-N\-D\-Y}, 
+\hyperlink{weather_8h_ac8a11cda50e327cef399b96e21ea147fae881d935d3cac534b5f803a1f7a0d2c2}{G\-A\-L\-E}, 
+\\*
+\hyperlink{weather_8h_ac8a11cda50e327cef399b96e21ea147fa408217fe5b06e5915a0730b8f981e48d}{S\-T\-O\-R\-M\-Y}
+ \}
+\item 
+enum \hyperlink{weather_8h_a411be48e23ce8b6e973d42d70e92a3d0}{cloud\-\_\-type} \{ \hyperlink{weather_8h_a411be48e23ce8b6e973d42d70e92a3d0acb5794a8a71cf0e16e9468ca0f97825c}{C\-L\-E\-A\-R\-\_\-\-S\-K\-Y}, 
+\hyperlink{weather_8h_a411be48e23ce8b6e973d42d70e92a3d0ab5a3a803d25440fb7dbf23c52b0f83d7}{L\-I\-G\-H\-T\-\_\-\-C\-L\-O\-U\-D\-S}, 
+\hyperlink{weather_8h_a411be48e23ce8b6e973d42d70e92a3d0aba79b5f9c0a58e6be705ea5e70285609}{H\-E\-A\-V\-Y\-\_\-\-C\-L\-O\-U\-D\-S}, 
+\hyperlink{weather_8h_a411be48e23ce8b6e973d42d70e92a3d0a39529022e3209444d46d1b8d69e67bc1}{O\-V\-E\-R\-C\-A\-S\-T}
+ \}
+\item 
+enum \hyperlink{weather_8h_a79a040e4f1d22728a2a033068b3ba560}{rain\-\_\-type} \{ \\*
+\hyperlink{weather_8h_a79a040e4f1d22728a2a033068b3ba560a9cff2f97a7f630b12fd0ecfbd6ddd7bb}{N\-O\-\_\-\-R\-A\-I\-N}, 
+\hyperlink{weather_8h_a79a040e4f1d22728a2a033068b3ba560a4ed0c154d932d3baec0c5f30bc4ac696}{C\-H\-A\-N\-C\-E\-\_\-\-R\-A\-I\-N}, 
+\hyperlink{weather_8h_a79a040e4f1d22728a2a033068b3ba560a9c864ed212702071d01e4cdf7f31cf32}{L\-I\-G\-H\-T\-\_\-\-R\-A\-I\-N}, 
+\hyperlink{weather_8h_a79a040e4f1d22728a2a033068b3ba560a2756d82cfe7bd14b40ede5f8728460c1}{S\-T\-E\-A\-D\-Y\-\_\-\-R\-A\-I\-N}, 
+\\*
+\hyperlink{weather_8h_a79a040e4f1d22728a2a033068b3ba560a1f791c384ea1d5b2b7022a41dcf4570f}{H\-E\-A\-V\-Y\-\_\-\-R\-A\-I\-N}, 
+\hyperlink{weather_8h_a79a040e4f1d22728a2a033068b3ba560aa8f72bd4c60557f3b42a19b3905c4a9c}{L\-I\-G\-H\-T\-\_\-\-S\-N\-O\-W}, 
+\hyperlink{weather_8h_a79a040e4f1d22728a2a033068b3ba560aa37ccf901e9b3f50776f70cb90c970e5}{S\-T\-E\-A\-D\-Y\-\_\-\-S\-N\-O\-W}, 
+\hyperlink{weather_8h_a79a040e4f1d22728a2a033068b3ba560a0cc9f434031980f6efb15f6fa19a2963}{H\-E\-A\-V\-Y\-\_\-\-S\-N\-O\-W}
+ \}
+\item 
+enum \hyperlink{weather_8h_aacaf57a0d28f92c52ab752924b02f008}{sun\-\_\-phase} \{ \\*
+\hyperlink{weather_8h_aacaf57a0d28f92c52ab752924b02f008af33255cd7fe3d97b4d183619bb857ff3}{P\-H\-A\-S\-E\-\_\-\-S\-E\-T}, 
+\hyperlink{weather_8h_aacaf57a0d28f92c52ab752924b02f008a545d5646820bfb7054d56cc50c46bb86}{P\-H\-A\-S\-E\-\_\-\-P\-R\-E\-D\-A\-W\-N}, 
+\hyperlink{weather_8h_aacaf57a0d28f92c52ab752924b02f008ad1ae04b593b344fde5f904767f2af52d}{P\-H\-A\-S\-E\-\_\-\-D\-A\-W\-N}, 
+\hyperlink{weather_8h_aacaf57a0d28f92c52ab752924b02f008a30b849d967f8e5787d46a6202faa9740}{P\-H\-A\-S\-E\-\_\-\-R\-I\-S\-E\-N}, 
+\\*
+\hyperlink{weather_8h_aacaf57a0d28f92c52ab752924b02f008ad0683844a33a79ea42e9aad907e61e62}{P\-H\-A\-S\-E\-\_\-\-M\-I\-D\-D\-A\-Y}, 
+\hyperlink{weather_8h_aacaf57a0d28f92c52ab752924b02f008af543b52fdfb79e9f3f31de35a8309795}{P\-H\-A\-S\-E\-\_\-\-D\-U\-S\-K}, 
+\hyperlink{weather_8h_aacaf57a0d28f92c52ab752924b02f008a52655a5e30fbe6447ac6113924fbd3de}{P\-H\-A\-S\-E\-\_\-\-E\-V\-E\-N\-I\-N\-G}
+ \}
+\item 
+enum \hyperlink{weather_8h_ab0486ff672c73f0a8952b84ec9f29b65}{earth\-\_\-phase} \{ \\*
+\hyperlink{weather_8h_ab0486ff672c73f0a8952b84ec9f29b65a609778f1ba83c4d0b4ac312de03574d8}{P\-H\-A\-S\-E\-\_\-\-F\-U\-L\-L\-\_\-\-E\-A\-R\-T\-H}, 
+\hyperlink{weather_8h_ab0486ff672c73f0a8952b84ec9f29b65a77856d3cbfc19495033465b1a95ae446}{P\-H\-A\-S\-E\-\_\-\-G\-I\-B\-B\-O\-U\-S\-\_\-\-W\-A\-N\-I\-N\-G}, 
+\hyperlink{weather_8h_ab0486ff672c73f0a8952b84ec9f29b65ab8f01ad1953d4b4830c4aa6bde39e865}{P\-H\-A\-S\-E\-\_\-\-T\-H\-R\-E\-E\-\_\-\-Q\-U\-A\-R\-T\-E\-R}, 
+\hyperlink{weather_8h_ab0486ff672c73f0a8952b84ec9f29b65adec3bad01cd9178e4e6a96d6d5dfed65}{P\-H\-A\-S\-E\-\_\-\-C\-R\-E\-S\-C\-E\-N\-T\-\_\-\-W\-A\-N\-I\-N\-G}, 
+\\*
+\hyperlink{weather_8h_ab0486ff672c73f0a8952b84ec9f29b65ac39589dfb28be230b3fd8c570900a5b6}{P\-H\-A\-S\-E\-\_\-\-N\-E\-W\-\_\-\-E\-A\-R\-T\-H}, 
+\hyperlink{weather_8h_ab0486ff672c73f0a8952b84ec9f29b65a67c5a9334745af462940c799b07c21c2}{P\-H\-A\-S\-E\-\_\-\-C\-R\-E\-S\-C\-E\-N\-T\-\_\-\-W\-A\-X\-I\-N\-G}, 
+\hyperlink{weather_8h_ab0486ff672c73f0a8952b84ec9f29b65aae8bfec91bccc4660c7d273211f0716d}{P\-H\-A\-S\-E\-\_\-\-F\-I\-R\-S\-T\-\_\-\-Q\-U\-A\-R\-T\-E\-R}, 
+\hyperlink{weather_8h_ab0486ff672c73f0a8952b84ec9f29b65a96b2a36d47762b6d6471f28b3da321b6}{P\-H\-A\-S\-E\-\_\-\-G\-I\-B\-B\-O\-U\-S\-\_\-\-W\-A\-X\-I\-N\-G}, 
+\\*
+\hyperlink{weather_8h_ab0486ff672c73f0a8952b84ec9f29b65a6dd2b01d4e3f0969374059871ddbb2a2}{P\-H\-A\-S\-E\-\_\-\-T\-E\-R\-R\-A\-\_\-\-E\-C\-L\-I\-P\-S\-E}
+ \}
+\item 
+enum \hyperlink{weather_8h_a4fc2c9b6514ac79eb0b2b92a1de9d7e7}{special\-\_\-type} \{ \hyperlink{weather_8h_a4fc2c9b6514ac79eb0b2b92a1de9d7e7a548126d587d43d3630c45cd091e095f7}{N\-O\-\_\-\-E\-F\-F\-E\-C\-T}, 
+\hyperlink{weather_8h_a4fc2c9b6514ac79eb0b2b92a1de9d7e7a014bd156d045677d24b2f8bd0b12d3bc}{F\-O\-U\-L\-\_\-\-S\-T\-E\-N\-C\-H}, 
+\hyperlink{weather_8h_a4fc2c9b6514ac79eb0b2b92a1de9d7e7a8393245c37028d3b6a277ba0104b2829}{V\-O\-L\-C\-A\-N\-I\-C\-\_\-\-S\-M\-O\-K\-E}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classWeather}{Weather} \hyperlink{weather_8h_aac78052914d24dc28b08932b5279c15a}{weather\-\_\-info} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{weather_8h_ab1212b7b4754634d98504b4ac5d5428d}{\index{weather.\-h@{weather.\-h}!W\-E\-A\-T\-H\-E\-R\-\_\-\-C\-R\-A\-T\-E\-R@{W\-E\-A\-T\-H\-E\-R\-\_\-\-C\-R\-A\-T\-E\-R}}
+\index{W\-E\-A\-T\-H\-E\-R\-\_\-\-C\-R\-A\-T\-E\-R@{W\-E\-A\-T\-H\-E\-R\-\_\-\-C\-R\-A\-T\-E\-R}!weather.h@{weather.\-h}}
+\subsubsection[{W\-E\-A\-T\-H\-E\-R\-\_\-\-C\-R\-A\-T\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\-E\-A\-T\-H\-E\-R\-\_\-\-C\-R\-A\-T\-E\-R~4}}\label{weather_8h_ab1212b7b4754634d98504b4ac5d5428d}
+\hypertarget{weather_8h_aa91844a1d256b6a87dfcf819c6f80f1f}{\index{weather.\-h@{weather.\-h}!W\-E\-A\-T\-H\-E\-R\-\_\-\-D\-E\-S\-E\-R\-T@{W\-E\-A\-T\-H\-E\-R\-\_\-\-D\-E\-S\-E\-R\-T}}
+\index{W\-E\-A\-T\-H\-E\-R\-\_\-\-D\-E\-S\-E\-R\-T@{W\-E\-A\-T\-H\-E\-R\-\_\-\-D\-E\-S\-E\-R\-T}!weather.h@{weather.\-h}}
+\subsubsection[{W\-E\-A\-T\-H\-E\-R\-\_\-\-D\-E\-S\-E\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\-E\-A\-T\-H\-E\-R\-\_\-\-D\-E\-S\-E\-R\-T~2}}\label{weather_8h_aa91844a1d256b6a87dfcf819c6f80f1f}
+\hypertarget{weather_8h_a6a2fb526dd1333d4fe167c24bb3d37f8}{\index{weather.\-h@{weather.\-h}!W\-E\-A\-T\-H\-E\-R\-\_\-\-N\-O\-L\-I\-G\-H\-T@{W\-E\-A\-T\-H\-E\-R\-\_\-\-N\-O\-L\-I\-G\-H\-T}}
+\index{W\-E\-A\-T\-H\-E\-R\-\_\-\-N\-O\-L\-I\-G\-H\-T@{W\-E\-A\-T\-H\-E\-R\-\_\-\-N\-O\-L\-I\-G\-H\-T}!weather.h@{weather.\-h}}
+\subsubsection[{W\-E\-A\-T\-H\-E\-R\-\_\-\-N\-O\-L\-I\-G\-H\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\-E\-A\-T\-H\-E\-R\-\_\-\-N\-O\-L\-I\-G\-H\-T~5}}\label{weather_8h_a6a2fb526dd1333d4fe167c24bb3d37f8}
+\hypertarget{weather_8h_aba46dc0679c42614a3f1877a6922314e}{\index{weather.\-h@{weather.\-h}!W\-E\-A\-T\-H\-E\-R\-\_\-\-U\-N\-D\-E\-R\-G\-R\-O\-U\-N\-D@{W\-E\-A\-T\-H\-E\-R\-\_\-\-U\-N\-D\-E\-R\-G\-R\-O\-U\-N\-D}}
+\index{W\-E\-A\-T\-H\-E\-R\-\_\-\-U\-N\-D\-E\-R\-G\-R\-O\-U\-N\-D@{W\-E\-A\-T\-H\-E\-R\-\_\-\-U\-N\-D\-E\-R\-G\-R\-O\-U\-N\-D}!weather.h@{weather.\-h}}
+\subsubsection[{W\-E\-A\-T\-H\-E\-R\-\_\-\-U\-N\-D\-E\-R\-G\-R\-O\-U\-N\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\-E\-A\-T\-H\-E\-R\-\_\-\-U\-N\-D\-E\-R\-G\-R\-O\-U\-N\-D~3}}\label{weather_8h_aba46dc0679c42614a3f1877a6922314e}
+\hypertarget{weather_8h_a3ad8559ab300abac41e6c7836811f0c9}{\index{weather.\-h@{weather.\-h}!W\-E\-A\-T\-H\-E\-R\-\_\-\-U\-R\-B\-A\-N@{W\-E\-A\-T\-H\-E\-R\-\_\-\-U\-R\-B\-A\-N}}
+\index{W\-E\-A\-T\-H\-E\-R\-\_\-\-U\-R\-B\-A\-N@{W\-E\-A\-T\-H\-E\-R\-\_\-\-U\-R\-B\-A\-N}!weather.h@{weather.\-h}}
+\subsubsection[{W\-E\-A\-T\-H\-E\-R\-\_\-\-U\-R\-B\-A\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\-E\-A\-T\-H\-E\-R\-\_\-\-U\-R\-B\-A\-N~1}}\label{weather_8h_a3ad8559ab300abac41e6c7836811f0c9}
+\hypertarget{weather_8h_a2d493a6698eed0d4eb78a21c10ab5f70}{\index{weather.\-h@{weather.\-h}!W\-E\-A\-T\-H\-E\-R\-\_\-\-W\-I\-L\-D\-S@{W\-E\-A\-T\-H\-E\-R\-\_\-\-W\-I\-L\-D\-S}}
+\index{W\-E\-A\-T\-H\-E\-R\-\_\-\-W\-I\-L\-D\-S@{W\-E\-A\-T\-H\-E\-R\-\_\-\-W\-I\-L\-D\-S}!weather.h@{weather.\-h}}
+\subsubsection[{W\-E\-A\-T\-H\-E\-R\-\_\-\-W\-I\-L\-D\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\-E\-A\-T\-H\-E\-R\-\_\-\-W\-I\-L\-D\-S~0}}\label{weather_8h_a2d493a6698eed0d4eb78a21c10ab5f70}
+
+
+\hyperlink{weather_8h}{weather.\-h} -\/ \hyperlink{classWeather}{Weather} Class Structures and Functions 
+
+Shadows of Isildur R\-P\-I Engine++ Copyright (C) 2004-\/2006 C. W. Mc\-Henry Authors\-: C. W. Mc\-Henry (\href{mailto:traithe@middle-earth.us}{\tt traithe@middle-\/earth.\-us}) Jonathan W. Webb (\href{mailto:sighentist@middle-earth.us}{\tt sighentist@middle-\/earth.\-us}) U\-R\-L\-: \href{http://www.middle-earth.us}{\tt http\-://www.\-middle-\/earth.\-us} May includes portions derived from Harshlands Authors\-: Charles Rand (Rassilon) U\-R\-L\-: \href{http://www.harshlands.net}{\tt http\-://www.\-harshlands.\-net} May include portions derived under license from Diku\-M\-U\-D Gamma (0.\-0) which are Copyright (C) 1990, 1991 D\-I\-K\-U Authors\-: Hans Henrik Staerfeldt (\href{mailto:bombman@freja.diku.dk}{\tt bombman@freja.\-diku.\-dk}) Tom Madson (\href{mailto:noop@freja.diku.dk}{\tt noop@freja.\-diku.\-dk}) Katja Nyboe (\href{mailto:katz@freja.diku.dk}{\tt katz@freja.\-diku.\-dk}) Michael Seifert (\href{mailto:seifert@freja.diku.dk}{\tt seifert@freja.\-diku.\-dk}) Sebastian Hammer (\href{mailto:quinn@freja.diku.dk}{\tt quinn@freja.\-diku.\-dk}) 
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{weather_8h_a411be48e23ce8b6e973d42d70e92a3d0}{\index{weather.\-h@{weather.\-h}!cloud\-\_\-type@{cloud\-\_\-type}}
+\index{cloud\-\_\-type@{cloud\-\_\-type}!weather.h@{weather.\-h}}
+\subsubsection[{cloud\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf cloud\-\_\-type}}}\label{weather_8h_a411be48e23ce8b6e973d42d70e92a3d0}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{C\-L\-E\-A\-R\-\_\-\-S\-K\-Y@{C\-L\-E\-A\-R\-\_\-\-S\-K\-Y}!weather.\-h@{weather.\-h}}\index{weather.\-h@{weather.\-h}!C\-L\-E\-A\-R\-\_\-\-S\-K\-Y@{C\-L\-E\-A\-R\-\_\-\-S\-K\-Y}}\item[{\em 
+\hypertarget{weather_8h_a411be48e23ce8b6e973d42d70e92a3d0acb5794a8a71cf0e16e9468ca0f97825c}{C\-L\-E\-A\-R\-\_\-\-S\-K\-Y}\label{weather_8h_a411be48e23ce8b6e973d42d70e92a3d0acb5794a8a71cf0e16e9468ca0f97825c}
+}]\index{L\-I\-G\-H\-T\-\_\-\-C\-L\-O\-U\-D\-S@{L\-I\-G\-H\-T\-\_\-\-C\-L\-O\-U\-D\-S}!weather.\-h@{weather.\-h}}\index{weather.\-h@{weather.\-h}!L\-I\-G\-H\-T\-\_\-\-C\-L\-O\-U\-D\-S@{L\-I\-G\-H\-T\-\_\-\-C\-L\-O\-U\-D\-S}}\item[{\em 
+\hypertarget{weather_8h_a411be48e23ce8b6e973d42d70e92a3d0ab5a3a803d25440fb7dbf23c52b0f83d7}{L\-I\-G\-H\-T\-\_\-\-C\-L\-O\-U\-D\-S}\label{weather_8h_a411be48e23ce8b6e973d42d70e92a3d0ab5a3a803d25440fb7dbf23c52b0f83d7}
+}]\index{H\-E\-A\-V\-Y\-\_\-\-C\-L\-O\-U\-D\-S@{H\-E\-A\-V\-Y\-\_\-\-C\-L\-O\-U\-D\-S}!weather.\-h@{weather.\-h}}\index{weather.\-h@{weather.\-h}!H\-E\-A\-V\-Y\-\_\-\-C\-L\-O\-U\-D\-S@{H\-E\-A\-V\-Y\-\_\-\-C\-L\-O\-U\-D\-S}}\item[{\em 
+\hypertarget{weather_8h_a411be48e23ce8b6e973d42d70e92a3d0aba79b5f9c0a58e6be705ea5e70285609}{H\-E\-A\-V\-Y\-\_\-\-C\-L\-O\-U\-D\-S}\label{weather_8h_a411be48e23ce8b6e973d42d70e92a3d0aba79b5f9c0a58e6be705ea5e70285609}
+}]\index{O\-V\-E\-R\-C\-A\-S\-T@{O\-V\-E\-R\-C\-A\-S\-T}!weather.\-h@{weather.\-h}}\index{weather.\-h@{weather.\-h}!O\-V\-E\-R\-C\-A\-S\-T@{O\-V\-E\-R\-C\-A\-S\-T}}\item[{\em 
+\hypertarget{weather_8h_a411be48e23ce8b6e973d42d70e92a3d0a39529022e3209444d46d1b8d69e67bc1}{O\-V\-E\-R\-C\-A\-S\-T}\label{weather_8h_a411be48e23ce8b6e973d42d70e92a3d0a39529022e3209444d46d1b8d69e67bc1}
+}]\end{description}
+\end{Desc}
+\hypertarget{weather_8h_ab0486ff672c73f0a8952b84ec9f29b65}{\index{weather.\-h@{weather.\-h}!earth\-\_\-phase@{earth\-\_\-phase}}
+\index{earth\-\_\-phase@{earth\-\_\-phase}!weather.h@{weather.\-h}}
+\subsubsection[{earth\-\_\-phase}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf earth\-\_\-phase}}}\label{weather_8h_ab0486ff672c73f0a8952b84ec9f29b65}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{P\-H\-A\-S\-E\-\_\-\-F\-U\-L\-L\-\_\-\-E\-A\-R\-T\-H@{P\-H\-A\-S\-E\-\_\-\-F\-U\-L\-L\-\_\-\-E\-A\-R\-T\-H}!weather.\-h@{weather.\-h}}\index{weather.\-h@{weather.\-h}!P\-H\-A\-S\-E\-\_\-\-F\-U\-L\-L\-\_\-\-E\-A\-R\-T\-H@{P\-H\-A\-S\-E\-\_\-\-F\-U\-L\-L\-\_\-\-E\-A\-R\-T\-H}}\item[{\em 
+\hypertarget{weather_8h_ab0486ff672c73f0a8952b84ec9f29b65a609778f1ba83c4d0b4ac312de03574d8}{P\-H\-A\-S\-E\-\_\-\-F\-U\-L\-L\-\_\-\-E\-A\-R\-T\-H}\label{weather_8h_ab0486ff672c73f0a8952b84ec9f29b65a609778f1ba83c4d0b4ac312de03574d8}
+}]\index{P\-H\-A\-S\-E\-\_\-\-G\-I\-B\-B\-O\-U\-S\-\_\-\-W\-A\-N\-I\-N\-G@{P\-H\-A\-S\-E\-\_\-\-G\-I\-B\-B\-O\-U\-S\-\_\-\-W\-A\-N\-I\-N\-G}!weather.\-h@{weather.\-h}}\index{weather.\-h@{weather.\-h}!P\-H\-A\-S\-E\-\_\-\-G\-I\-B\-B\-O\-U\-S\-\_\-\-W\-A\-N\-I\-N\-G@{P\-H\-A\-S\-E\-\_\-\-G\-I\-B\-B\-O\-U\-S\-\_\-\-W\-A\-N\-I\-N\-G}}\item[{\em 
+\hypertarget{weather_8h_ab0486ff672c73f0a8952b84ec9f29b65a77856d3cbfc19495033465b1a95ae446}{P\-H\-A\-S\-E\-\_\-\-G\-I\-B\-B\-O\-U\-S\-\_\-\-W\-A\-N\-I\-N\-G}\label{weather_8h_ab0486ff672c73f0a8952b84ec9f29b65a77856d3cbfc19495033465b1a95ae446}
+}]\index{P\-H\-A\-S\-E\-\_\-\-T\-H\-R\-E\-E\-\_\-\-Q\-U\-A\-R\-T\-E\-R@{P\-H\-A\-S\-E\-\_\-\-T\-H\-R\-E\-E\-\_\-\-Q\-U\-A\-R\-T\-E\-R}!weather.\-h@{weather.\-h}}\index{weather.\-h@{weather.\-h}!P\-H\-A\-S\-E\-\_\-\-T\-H\-R\-E\-E\-\_\-\-Q\-U\-A\-R\-T\-E\-R@{P\-H\-A\-S\-E\-\_\-\-T\-H\-R\-E\-E\-\_\-\-Q\-U\-A\-R\-T\-E\-R}}\item[{\em 
+\hypertarget{weather_8h_ab0486ff672c73f0a8952b84ec9f29b65ab8f01ad1953d4b4830c4aa6bde39e865}{P\-H\-A\-S\-E\-\_\-\-T\-H\-R\-E\-E\-\_\-\-Q\-U\-A\-R\-T\-E\-R}\label{weather_8h_ab0486ff672c73f0a8952b84ec9f29b65ab8f01ad1953d4b4830c4aa6bde39e865}
+}]\index{P\-H\-A\-S\-E\-\_\-\-C\-R\-E\-S\-C\-E\-N\-T\-\_\-\-W\-A\-N\-I\-N\-G@{P\-H\-A\-S\-E\-\_\-\-C\-R\-E\-S\-C\-E\-N\-T\-\_\-\-W\-A\-N\-I\-N\-G}!weather.\-h@{weather.\-h}}\index{weather.\-h@{weather.\-h}!P\-H\-A\-S\-E\-\_\-\-C\-R\-E\-S\-C\-E\-N\-T\-\_\-\-W\-A\-N\-I\-N\-G@{P\-H\-A\-S\-E\-\_\-\-C\-R\-E\-S\-C\-E\-N\-T\-\_\-\-W\-A\-N\-I\-N\-G}}\item[{\em 
+\hypertarget{weather_8h_ab0486ff672c73f0a8952b84ec9f29b65adec3bad01cd9178e4e6a96d6d5dfed65}{P\-H\-A\-S\-E\-\_\-\-C\-R\-E\-S\-C\-E\-N\-T\-\_\-\-W\-A\-N\-I\-N\-G}\label{weather_8h_ab0486ff672c73f0a8952b84ec9f29b65adec3bad01cd9178e4e6a96d6d5dfed65}
+}]\index{P\-H\-A\-S\-E\-\_\-\-N\-E\-W\-\_\-\-E\-A\-R\-T\-H@{P\-H\-A\-S\-E\-\_\-\-N\-E\-W\-\_\-\-E\-A\-R\-T\-H}!weather.\-h@{weather.\-h}}\index{weather.\-h@{weather.\-h}!P\-H\-A\-S\-E\-\_\-\-N\-E\-W\-\_\-\-E\-A\-R\-T\-H@{P\-H\-A\-S\-E\-\_\-\-N\-E\-W\-\_\-\-E\-A\-R\-T\-H}}\item[{\em 
+\hypertarget{weather_8h_ab0486ff672c73f0a8952b84ec9f29b65ac39589dfb28be230b3fd8c570900a5b6}{P\-H\-A\-S\-E\-\_\-\-N\-E\-W\-\_\-\-E\-A\-R\-T\-H}\label{weather_8h_ab0486ff672c73f0a8952b84ec9f29b65ac39589dfb28be230b3fd8c570900a5b6}
+}]\index{P\-H\-A\-S\-E\-\_\-\-C\-R\-E\-S\-C\-E\-N\-T\-\_\-\-W\-A\-X\-I\-N\-G@{P\-H\-A\-S\-E\-\_\-\-C\-R\-E\-S\-C\-E\-N\-T\-\_\-\-W\-A\-X\-I\-N\-G}!weather.\-h@{weather.\-h}}\index{weather.\-h@{weather.\-h}!P\-H\-A\-S\-E\-\_\-\-C\-R\-E\-S\-C\-E\-N\-T\-\_\-\-W\-A\-X\-I\-N\-G@{P\-H\-A\-S\-E\-\_\-\-C\-R\-E\-S\-C\-E\-N\-T\-\_\-\-W\-A\-X\-I\-N\-G}}\item[{\em 
+\hypertarget{weather_8h_ab0486ff672c73f0a8952b84ec9f29b65a67c5a9334745af462940c799b07c21c2}{P\-H\-A\-S\-E\-\_\-\-C\-R\-E\-S\-C\-E\-N\-T\-\_\-\-W\-A\-X\-I\-N\-G}\label{weather_8h_ab0486ff672c73f0a8952b84ec9f29b65a67c5a9334745af462940c799b07c21c2}
+}]\index{P\-H\-A\-S\-E\-\_\-\-F\-I\-R\-S\-T\-\_\-\-Q\-U\-A\-R\-T\-E\-R@{P\-H\-A\-S\-E\-\_\-\-F\-I\-R\-S\-T\-\_\-\-Q\-U\-A\-R\-T\-E\-R}!weather.\-h@{weather.\-h}}\index{weather.\-h@{weather.\-h}!P\-H\-A\-S\-E\-\_\-\-F\-I\-R\-S\-T\-\_\-\-Q\-U\-A\-R\-T\-E\-R@{P\-H\-A\-S\-E\-\_\-\-F\-I\-R\-S\-T\-\_\-\-Q\-U\-A\-R\-T\-E\-R}}\item[{\em 
+\hypertarget{weather_8h_ab0486ff672c73f0a8952b84ec9f29b65aae8bfec91bccc4660c7d273211f0716d}{P\-H\-A\-S\-E\-\_\-\-F\-I\-R\-S\-T\-\_\-\-Q\-U\-A\-R\-T\-E\-R}\label{weather_8h_ab0486ff672c73f0a8952b84ec9f29b65aae8bfec91bccc4660c7d273211f0716d}
+}]\index{P\-H\-A\-S\-E\-\_\-\-G\-I\-B\-B\-O\-U\-S\-\_\-\-W\-A\-X\-I\-N\-G@{P\-H\-A\-S\-E\-\_\-\-G\-I\-B\-B\-O\-U\-S\-\_\-\-W\-A\-X\-I\-N\-G}!weather.\-h@{weather.\-h}}\index{weather.\-h@{weather.\-h}!P\-H\-A\-S\-E\-\_\-\-G\-I\-B\-B\-O\-U\-S\-\_\-\-W\-A\-X\-I\-N\-G@{P\-H\-A\-S\-E\-\_\-\-G\-I\-B\-B\-O\-U\-S\-\_\-\-W\-A\-X\-I\-N\-G}}\item[{\em 
+\hypertarget{weather_8h_ab0486ff672c73f0a8952b84ec9f29b65a96b2a36d47762b6d6471f28b3da321b6}{P\-H\-A\-S\-E\-\_\-\-G\-I\-B\-B\-O\-U\-S\-\_\-\-W\-A\-X\-I\-N\-G}\label{weather_8h_ab0486ff672c73f0a8952b84ec9f29b65a96b2a36d47762b6d6471f28b3da321b6}
+}]\index{P\-H\-A\-S\-E\-\_\-\-T\-E\-R\-R\-A\-\_\-\-E\-C\-L\-I\-P\-S\-E@{P\-H\-A\-S\-E\-\_\-\-T\-E\-R\-R\-A\-\_\-\-E\-C\-L\-I\-P\-S\-E}!weather.\-h@{weather.\-h}}\index{weather.\-h@{weather.\-h}!P\-H\-A\-S\-E\-\_\-\-T\-E\-R\-R\-A\-\_\-\-E\-C\-L\-I\-P\-S\-E@{P\-H\-A\-S\-E\-\_\-\-T\-E\-R\-R\-A\-\_\-\-E\-C\-L\-I\-P\-S\-E}}\item[{\em 
+\hypertarget{weather_8h_ab0486ff672c73f0a8952b84ec9f29b65a6dd2b01d4e3f0969374059871ddbb2a2}{P\-H\-A\-S\-E\-\_\-\-T\-E\-R\-R\-A\-\_\-\-E\-C\-L\-I\-P\-S\-E}\label{weather_8h_ab0486ff672c73f0a8952b84ec9f29b65a6dd2b01d4e3f0969374059871ddbb2a2}
+}]\end{description}
+\end{Desc}
+\hypertarget{weather_8h_a60edb16ad6ea99362040aaef86653263}{\index{weather.\-h@{weather.\-h}!fog\-\_\-type@{fog\-\_\-type}}
+\index{fog\-\_\-type@{fog\-\_\-type}!weather.h@{weather.\-h}}
+\subsubsection[{fog\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf fog\-\_\-type}}}\label{weather_8h_a60edb16ad6ea99362040aaef86653263}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{N\-O\-\_\-\-F\-O\-G@{N\-O\-\_\-\-F\-O\-G}!weather.\-h@{weather.\-h}}\index{weather.\-h@{weather.\-h}!N\-O\-\_\-\-F\-O\-G@{N\-O\-\_\-\-F\-O\-G}}\item[{\em 
+\hypertarget{weather_8h_a60edb16ad6ea99362040aaef86653263ae671a008facad23f774ed23ee4a304dd}{N\-O\-\_\-\-F\-O\-G}\label{weather_8h_a60edb16ad6ea99362040aaef86653263ae671a008facad23f774ed23ee4a304dd}
+}]\index{T\-H\-I\-N\-\_\-\-F\-O\-G@{T\-H\-I\-N\-\_\-\-F\-O\-G}!weather.\-h@{weather.\-h}}\index{weather.\-h@{weather.\-h}!T\-H\-I\-N\-\_\-\-F\-O\-G@{T\-H\-I\-N\-\_\-\-F\-O\-G}}\item[{\em 
+\hypertarget{weather_8h_a60edb16ad6ea99362040aaef86653263ab54e57b37217f45db78eaa0d3b50696a}{T\-H\-I\-N\-\_\-\-F\-O\-G}\label{weather_8h_a60edb16ad6ea99362040aaef86653263ab54e57b37217f45db78eaa0d3b50696a}
+}]\index{T\-H\-I\-C\-K\-\_\-\-F\-O\-G@{T\-H\-I\-C\-K\-\_\-\-F\-O\-G}!weather.\-h@{weather.\-h}}\index{weather.\-h@{weather.\-h}!T\-H\-I\-C\-K\-\_\-\-F\-O\-G@{T\-H\-I\-C\-K\-\_\-\-F\-O\-G}}\item[{\em 
+\hypertarget{weather_8h_a60edb16ad6ea99362040aaef86653263adbb2de985634b17cbafb015550e81e3d}{T\-H\-I\-C\-K\-\_\-\-F\-O\-G}\label{weather_8h_a60edb16ad6ea99362040aaef86653263adbb2de985634b17cbafb015550e81e3d}
+}]\index{F\-O\-G@{F\-O\-G}!weather.\-h@{weather.\-h}}\index{weather.\-h@{weather.\-h}!F\-O\-G@{F\-O\-G}}\item[{\em 
+\hypertarget{weather_8h_a60edb16ad6ea99362040aaef86653263a4b4d6cce0d8dbfc93df4ade050fdc665}{F\-O\-G}\label{weather_8h_a60edb16ad6ea99362040aaef86653263a4b4d6cce0d8dbfc93df4ade050fdc665}
+}]\end{description}
+\end{Desc}
+\hypertarget{weather_8h_a79a040e4f1d22728a2a033068b3ba560}{\index{weather.\-h@{weather.\-h}!rain\-\_\-type@{rain\-\_\-type}}
+\index{rain\-\_\-type@{rain\-\_\-type}!weather.h@{weather.\-h}}
+\subsubsection[{rain\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf rain\-\_\-type}}}\label{weather_8h_a79a040e4f1d22728a2a033068b3ba560}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{N\-O\-\_\-\-R\-A\-I\-N@{N\-O\-\_\-\-R\-A\-I\-N}!weather.\-h@{weather.\-h}}\index{weather.\-h@{weather.\-h}!N\-O\-\_\-\-R\-A\-I\-N@{N\-O\-\_\-\-R\-A\-I\-N}}\item[{\em 
+\hypertarget{weather_8h_a79a040e4f1d22728a2a033068b3ba560a9cff2f97a7f630b12fd0ecfbd6ddd7bb}{N\-O\-\_\-\-R\-A\-I\-N}\label{weather_8h_a79a040e4f1d22728a2a033068b3ba560a9cff2f97a7f630b12fd0ecfbd6ddd7bb}
+}]\index{C\-H\-A\-N\-C\-E\-\_\-\-R\-A\-I\-N@{C\-H\-A\-N\-C\-E\-\_\-\-R\-A\-I\-N}!weather.\-h@{weather.\-h}}\index{weather.\-h@{weather.\-h}!C\-H\-A\-N\-C\-E\-\_\-\-R\-A\-I\-N@{C\-H\-A\-N\-C\-E\-\_\-\-R\-A\-I\-N}}\item[{\em 
+\hypertarget{weather_8h_a79a040e4f1d22728a2a033068b3ba560a4ed0c154d932d3baec0c5f30bc4ac696}{C\-H\-A\-N\-C\-E\-\_\-\-R\-A\-I\-N}\label{weather_8h_a79a040e4f1d22728a2a033068b3ba560a4ed0c154d932d3baec0c5f30bc4ac696}
+}]\index{L\-I\-G\-H\-T\-\_\-\-R\-A\-I\-N@{L\-I\-G\-H\-T\-\_\-\-R\-A\-I\-N}!weather.\-h@{weather.\-h}}\index{weather.\-h@{weather.\-h}!L\-I\-G\-H\-T\-\_\-\-R\-A\-I\-N@{L\-I\-G\-H\-T\-\_\-\-R\-A\-I\-N}}\item[{\em 
+\hypertarget{weather_8h_a79a040e4f1d22728a2a033068b3ba560a9c864ed212702071d01e4cdf7f31cf32}{L\-I\-G\-H\-T\-\_\-\-R\-A\-I\-N}\label{weather_8h_a79a040e4f1d22728a2a033068b3ba560a9c864ed212702071d01e4cdf7f31cf32}
+}]\index{S\-T\-E\-A\-D\-Y\-\_\-\-R\-A\-I\-N@{S\-T\-E\-A\-D\-Y\-\_\-\-R\-A\-I\-N}!weather.\-h@{weather.\-h}}\index{weather.\-h@{weather.\-h}!S\-T\-E\-A\-D\-Y\-\_\-\-R\-A\-I\-N@{S\-T\-E\-A\-D\-Y\-\_\-\-R\-A\-I\-N}}\item[{\em 
+\hypertarget{weather_8h_a79a040e4f1d22728a2a033068b3ba560a2756d82cfe7bd14b40ede5f8728460c1}{S\-T\-E\-A\-D\-Y\-\_\-\-R\-A\-I\-N}\label{weather_8h_a79a040e4f1d22728a2a033068b3ba560a2756d82cfe7bd14b40ede5f8728460c1}
+}]\index{H\-E\-A\-V\-Y\-\_\-\-R\-A\-I\-N@{H\-E\-A\-V\-Y\-\_\-\-R\-A\-I\-N}!weather.\-h@{weather.\-h}}\index{weather.\-h@{weather.\-h}!H\-E\-A\-V\-Y\-\_\-\-R\-A\-I\-N@{H\-E\-A\-V\-Y\-\_\-\-R\-A\-I\-N}}\item[{\em 
+\hypertarget{weather_8h_a79a040e4f1d22728a2a033068b3ba560a1f791c384ea1d5b2b7022a41dcf4570f}{H\-E\-A\-V\-Y\-\_\-\-R\-A\-I\-N}\label{weather_8h_a79a040e4f1d22728a2a033068b3ba560a1f791c384ea1d5b2b7022a41dcf4570f}
+}]\index{L\-I\-G\-H\-T\-\_\-\-S\-N\-O\-W@{L\-I\-G\-H\-T\-\_\-\-S\-N\-O\-W}!weather.\-h@{weather.\-h}}\index{weather.\-h@{weather.\-h}!L\-I\-G\-H\-T\-\_\-\-S\-N\-O\-W@{L\-I\-G\-H\-T\-\_\-\-S\-N\-O\-W}}\item[{\em 
+\hypertarget{weather_8h_a79a040e4f1d22728a2a033068b3ba560aa8f72bd4c60557f3b42a19b3905c4a9c}{L\-I\-G\-H\-T\-\_\-\-S\-N\-O\-W}\label{weather_8h_a79a040e4f1d22728a2a033068b3ba560aa8f72bd4c60557f3b42a19b3905c4a9c}
+}]\index{S\-T\-E\-A\-D\-Y\-\_\-\-S\-N\-O\-W@{S\-T\-E\-A\-D\-Y\-\_\-\-S\-N\-O\-W}!weather.\-h@{weather.\-h}}\index{weather.\-h@{weather.\-h}!S\-T\-E\-A\-D\-Y\-\_\-\-S\-N\-O\-W@{S\-T\-E\-A\-D\-Y\-\_\-\-S\-N\-O\-W}}\item[{\em 
+\hypertarget{weather_8h_a79a040e4f1d22728a2a033068b3ba560aa37ccf901e9b3f50776f70cb90c970e5}{S\-T\-E\-A\-D\-Y\-\_\-\-S\-N\-O\-W}\label{weather_8h_a79a040e4f1d22728a2a033068b3ba560aa37ccf901e9b3f50776f70cb90c970e5}
+}]\index{H\-E\-A\-V\-Y\-\_\-\-S\-N\-O\-W@{H\-E\-A\-V\-Y\-\_\-\-S\-N\-O\-W}!weather.\-h@{weather.\-h}}\index{weather.\-h@{weather.\-h}!H\-E\-A\-V\-Y\-\_\-\-S\-N\-O\-W@{H\-E\-A\-V\-Y\-\_\-\-S\-N\-O\-W}}\item[{\em 
+\hypertarget{weather_8h_a79a040e4f1d22728a2a033068b3ba560a0cc9f434031980f6efb15f6fa19a2963}{H\-E\-A\-V\-Y\-\_\-\-S\-N\-O\-W}\label{weather_8h_a79a040e4f1d22728a2a033068b3ba560a0cc9f434031980f6efb15f6fa19a2963}
+}]\end{description}
+\end{Desc}
+\hypertarget{weather_8h_a4fc2c9b6514ac79eb0b2b92a1de9d7e7}{\index{weather.\-h@{weather.\-h}!special\-\_\-type@{special\-\_\-type}}
+\index{special\-\_\-type@{special\-\_\-type}!weather.h@{weather.\-h}}
+\subsubsection[{special\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf special\-\_\-type}}}\label{weather_8h_a4fc2c9b6514ac79eb0b2b92a1de9d7e7}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{N\-O\-\_\-\-E\-F\-F\-E\-C\-T@{N\-O\-\_\-\-E\-F\-F\-E\-C\-T}!weather.\-h@{weather.\-h}}\index{weather.\-h@{weather.\-h}!N\-O\-\_\-\-E\-F\-F\-E\-C\-T@{N\-O\-\_\-\-E\-F\-F\-E\-C\-T}}\item[{\em 
+\hypertarget{weather_8h_a4fc2c9b6514ac79eb0b2b92a1de9d7e7a548126d587d43d3630c45cd091e095f7}{N\-O\-\_\-\-E\-F\-F\-E\-C\-T}\label{weather_8h_a4fc2c9b6514ac79eb0b2b92a1de9d7e7a548126d587d43d3630c45cd091e095f7}
+}]\index{F\-O\-U\-L\-\_\-\-S\-T\-E\-N\-C\-H@{F\-O\-U\-L\-\_\-\-S\-T\-E\-N\-C\-H}!weather.\-h@{weather.\-h}}\index{weather.\-h@{weather.\-h}!F\-O\-U\-L\-\_\-\-S\-T\-E\-N\-C\-H@{F\-O\-U\-L\-\_\-\-S\-T\-E\-N\-C\-H}}\item[{\em 
+\hypertarget{weather_8h_a4fc2c9b6514ac79eb0b2b92a1de9d7e7a014bd156d045677d24b2f8bd0b12d3bc}{F\-O\-U\-L\-\_\-\-S\-T\-E\-N\-C\-H}\label{weather_8h_a4fc2c9b6514ac79eb0b2b92a1de9d7e7a014bd156d045677d24b2f8bd0b12d3bc}
+}]\index{V\-O\-L\-C\-A\-N\-I\-C\-\_\-\-S\-M\-O\-K\-E@{V\-O\-L\-C\-A\-N\-I\-C\-\_\-\-S\-M\-O\-K\-E}!weather.\-h@{weather.\-h}}\index{weather.\-h@{weather.\-h}!V\-O\-L\-C\-A\-N\-I\-C\-\_\-\-S\-M\-O\-K\-E@{V\-O\-L\-C\-A\-N\-I\-C\-\_\-\-S\-M\-O\-K\-E}}\item[{\em 
+\hypertarget{weather_8h_a4fc2c9b6514ac79eb0b2b92a1de9d7e7a8393245c37028d3b6a277ba0104b2829}{V\-O\-L\-C\-A\-N\-I\-C\-\_\-\-S\-M\-O\-K\-E}\label{weather_8h_a4fc2c9b6514ac79eb0b2b92a1de9d7e7a8393245c37028d3b6a277ba0104b2829}
+}]\end{description}
+\end{Desc}
+\hypertarget{weather_8h_aacaf57a0d28f92c52ab752924b02f008}{\index{weather.\-h@{weather.\-h}!sun\-\_\-phase@{sun\-\_\-phase}}
+\index{sun\-\_\-phase@{sun\-\_\-phase}!weather.h@{weather.\-h}}
+\subsubsection[{sun\-\_\-phase}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf sun\-\_\-phase}}}\label{weather_8h_aacaf57a0d28f92c52ab752924b02f008}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{P\-H\-A\-S\-E\-\_\-\-S\-E\-T@{P\-H\-A\-S\-E\-\_\-\-S\-E\-T}!weather.\-h@{weather.\-h}}\index{weather.\-h@{weather.\-h}!P\-H\-A\-S\-E\-\_\-\-S\-E\-T@{P\-H\-A\-S\-E\-\_\-\-S\-E\-T}}\item[{\em 
+\hypertarget{weather_8h_aacaf57a0d28f92c52ab752924b02f008af33255cd7fe3d97b4d183619bb857ff3}{P\-H\-A\-S\-E\-\_\-\-S\-E\-T}\label{weather_8h_aacaf57a0d28f92c52ab752924b02f008af33255cd7fe3d97b4d183619bb857ff3}
+}]\index{P\-H\-A\-S\-E\-\_\-\-P\-R\-E\-D\-A\-W\-N@{P\-H\-A\-S\-E\-\_\-\-P\-R\-E\-D\-A\-W\-N}!weather.\-h@{weather.\-h}}\index{weather.\-h@{weather.\-h}!P\-H\-A\-S\-E\-\_\-\-P\-R\-E\-D\-A\-W\-N@{P\-H\-A\-S\-E\-\_\-\-P\-R\-E\-D\-A\-W\-N}}\item[{\em 
+\hypertarget{weather_8h_aacaf57a0d28f92c52ab752924b02f008a545d5646820bfb7054d56cc50c46bb86}{P\-H\-A\-S\-E\-\_\-\-P\-R\-E\-D\-A\-W\-N}\label{weather_8h_aacaf57a0d28f92c52ab752924b02f008a545d5646820bfb7054d56cc50c46bb86}
+}]\index{P\-H\-A\-S\-E\-\_\-\-D\-A\-W\-N@{P\-H\-A\-S\-E\-\_\-\-D\-A\-W\-N}!weather.\-h@{weather.\-h}}\index{weather.\-h@{weather.\-h}!P\-H\-A\-S\-E\-\_\-\-D\-A\-W\-N@{P\-H\-A\-S\-E\-\_\-\-D\-A\-W\-N}}\item[{\em 
+\hypertarget{weather_8h_aacaf57a0d28f92c52ab752924b02f008ad1ae04b593b344fde5f904767f2af52d}{P\-H\-A\-S\-E\-\_\-\-D\-A\-W\-N}\label{weather_8h_aacaf57a0d28f92c52ab752924b02f008ad1ae04b593b344fde5f904767f2af52d}
+}]\index{P\-H\-A\-S\-E\-\_\-\-R\-I\-S\-E\-N@{P\-H\-A\-S\-E\-\_\-\-R\-I\-S\-E\-N}!weather.\-h@{weather.\-h}}\index{weather.\-h@{weather.\-h}!P\-H\-A\-S\-E\-\_\-\-R\-I\-S\-E\-N@{P\-H\-A\-S\-E\-\_\-\-R\-I\-S\-E\-N}}\item[{\em 
+\hypertarget{weather_8h_aacaf57a0d28f92c52ab752924b02f008a30b849d967f8e5787d46a6202faa9740}{P\-H\-A\-S\-E\-\_\-\-R\-I\-S\-E\-N}\label{weather_8h_aacaf57a0d28f92c52ab752924b02f008a30b849d967f8e5787d46a6202faa9740}
+}]\index{P\-H\-A\-S\-E\-\_\-\-M\-I\-D\-D\-A\-Y@{P\-H\-A\-S\-E\-\_\-\-M\-I\-D\-D\-A\-Y}!weather.\-h@{weather.\-h}}\index{weather.\-h@{weather.\-h}!P\-H\-A\-S\-E\-\_\-\-M\-I\-D\-D\-A\-Y@{P\-H\-A\-S\-E\-\_\-\-M\-I\-D\-D\-A\-Y}}\item[{\em 
+\hypertarget{weather_8h_aacaf57a0d28f92c52ab752924b02f008ad0683844a33a79ea42e9aad907e61e62}{P\-H\-A\-S\-E\-\_\-\-M\-I\-D\-D\-A\-Y}\label{weather_8h_aacaf57a0d28f92c52ab752924b02f008ad0683844a33a79ea42e9aad907e61e62}
+}]\index{P\-H\-A\-S\-E\-\_\-\-D\-U\-S\-K@{P\-H\-A\-S\-E\-\_\-\-D\-U\-S\-K}!weather.\-h@{weather.\-h}}\index{weather.\-h@{weather.\-h}!P\-H\-A\-S\-E\-\_\-\-D\-U\-S\-K@{P\-H\-A\-S\-E\-\_\-\-D\-U\-S\-K}}\item[{\em 
+\hypertarget{weather_8h_aacaf57a0d28f92c52ab752924b02f008af543b52fdfb79e9f3f31de35a8309795}{P\-H\-A\-S\-E\-\_\-\-D\-U\-S\-K}\label{weather_8h_aacaf57a0d28f92c52ab752924b02f008af543b52fdfb79e9f3f31de35a8309795}
+}]\index{P\-H\-A\-S\-E\-\_\-\-E\-V\-E\-N\-I\-N\-G@{P\-H\-A\-S\-E\-\_\-\-E\-V\-E\-N\-I\-N\-G}!weather.\-h@{weather.\-h}}\index{weather.\-h@{weather.\-h}!P\-H\-A\-S\-E\-\_\-\-E\-V\-E\-N\-I\-N\-G@{P\-H\-A\-S\-E\-\_\-\-E\-V\-E\-N\-I\-N\-G}}\item[{\em 
+\hypertarget{weather_8h_aacaf57a0d28f92c52ab752924b02f008a52655a5e30fbe6447ac6113924fbd3de}{P\-H\-A\-S\-E\-\_\-\-E\-V\-E\-N\-I\-N\-G}\label{weather_8h_aacaf57a0d28f92c52ab752924b02f008a52655a5e30fbe6447ac6113924fbd3de}
+}]\end{description}
+\end{Desc}
+\hypertarget{weather_8h_a982907ad4f9584c8b75c95d858257281}{\index{weather.\-h@{weather.\-h}!wind\-\_\-dir\-\_\-type@{wind\-\_\-dir\-\_\-type}}
+\index{wind\-\_\-dir\-\_\-type@{wind\-\_\-dir\-\_\-type}!weather.h@{weather.\-h}}
+\subsubsection[{wind\-\_\-dir\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf wind\-\_\-dir\-\_\-type}}}\label{weather_8h_a982907ad4f9584c8b75c95d858257281}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{W\-E\-S\-T\-\_\-\-W\-I\-N\-D@{W\-E\-S\-T\-\_\-\-W\-I\-N\-D}!weather.\-h@{weather.\-h}}\index{weather.\-h@{weather.\-h}!W\-E\-S\-T\-\_\-\-W\-I\-N\-D@{W\-E\-S\-T\-\_\-\-W\-I\-N\-D}}\item[{\em 
+\hypertarget{weather_8h_a982907ad4f9584c8b75c95d858257281ade005a2487e74b55bdc905387286305f}{W\-E\-S\-T\-\_\-\-W\-I\-N\-D}\label{weather_8h_a982907ad4f9584c8b75c95d858257281ade005a2487e74b55bdc905387286305f}
+}]\index{N\-O\-R\-T\-H\-W\-E\-S\-T\-\_\-\-W\-I\-N\-D@{N\-O\-R\-T\-H\-W\-E\-S\-T\-\_\-\-W\-I\-N\-D}!weather.\-h@{weather.\-h}}\index{weather.\-h@{weather.\-h}!N\-O\-R\-T\-H\-W\-E\-S\-T\-\_\-\-W\-I\-N\-D@{N\-O\-R\-T\-H\-W\-E\-S\-T\-\_\-\-W\-I\-N\-D}}\item[{\em 
+\hypertarget{weather_8h_a982907ad4f9584c8b75c95d858257281a4df24121fd32222023a310e57c5cf229}{N\-O\-R\-T\-H\-W\-E\-S\-T\-\_\-\-W\-I\-N\-D}\label{weather_8h_a982907ad4f9584c8b75c95d858257281a4df24121fd32222023a310e57c5cf229}
+}]\index{N\-O\-R\-T\-H\-\_\-\-W\-I\-N\-D@{N\-O\-R\-T\-H\-\_\-\-W\-I\-N\-D}!weather.\-h@{weather.\-h}}\index{weather.\-h@{weather.\-h}!N\-O\-R\-T\-H\-\_\-\-W\-I\-N\-D@{N\-O\-R\-T\-H\-\_\-\-W\-I\-N\-D}}\item[{\em 
+\hypertarget{weather_8h_a982907ad4f9584c8b75c95d858257281a4d072854996e8f9d856a6f2168682e9f}{N\-O\-R\-T\-H\-\_\-\-W\-I\-N\-D}\label{weather_8h_a982907ad4f9584c8b75c95d858257281a4d072854996e8f9d856a6f2168682e9f}
+}]\index{N\-O\-R\-T\-H\-E\-A\-S\-T\-\_\-\-W\-I\-N\-D@{N\-O\-R\-T\-H\-E\-A\-S\-T\-\_\-\-W\-I\-N\-D}!weather.\-h@{weather.\-h}}\index{weather.\-h@{weather.\-h}!N\-O\-R\-T\-H\-E\-A\-S\-T\-\_\-\-W\-I\-N\-D@{N\-O\-R\-T\-H\-E\-A\-S\-T\-\_\-\-W\-I\-N\-D}}\item[{\em 
+\hypertarget{weather_8h_a982907ad4f9584c8b75c95d858257281a6b7517237c7bc4d385043f0f2c8e6f84}{N\-O\-R\-T\-H\-E\-A\-S\-T\-\_\-\-W\-I\-N\-D}\label{weather_8h_a982907ad4f9584c8b75c95d858257281a6b7517237c7bc4d385043f0f2c8e6f84}
+}]\index{E\-A\-S\-T\-\_\-\-W\-I\-N\-D@{E\-A\-S\-T\-\_\-\-W\-I\-N\-D}!weather.\-h@{weather.\-h}}\index{weather.\-h@{weather.\-h}!E\-A\-S\-T\-\_\-\-W\-I\-N\-D@{E\-A\-S\-T\-\_\-\-W\-I\-N\-D}}\item[{\em 
+\hypertarget{weather_8h_a982907ad4f9584c8b75c95d858257281a7b4511307faf7ed757d35b412f910ab8}{E\-A\-S\-T\-\_\-\-W\-I\-N\-D}\label{weather_8h_a982907ad4f9584c8b75c95d858257281a7b4511307faf7ed757d35b412f910ab8}
+}]\index{S\-O\-U\-T\-H\-E\-A\-S\-T\-\_\-\-W\-I\-N\-D@{S\-O\-U\-T\-H\-E\-A\-S\-T\-\_\-\-W\-I\-N\-D}!weather.\-h@{weather.\-h}}\index{weather.\-h@{weather.\-h}!S\-O\-U\-T\-H\-E\-A\-S\-T\-\_\-\-W\-I\-N\-D@{S\-O\-U\-T\-H\-E\-A\-S\-T\-\_\-\-W\-I\-N\-D}}\item[{\em 
+\hypertarget{weather_8h_a982907ad4f9584c8b75c95d858257281ae27a3073c776568214a8034d66f4e3c8}{S\-O\-U\-T\-H\-E\-A\-S\-T\-\_\-\-W\-I\-N\-D}\label{weather_8h_a982907ad4f9584c8b75c95d858257281ae27a3073c776568214a8034d66f4e3c8}
+}]\index{S\-O\-U\-T\-H\-\_\-\-W\-I\-N\-D@{S\-O\-U\-T\-H\-\_\-\-W\-I\-N\-D}!weather.\-h@{weather.\-h}}\index{weather.\-h@{weather.\-h}!S\-O\-U\-T\-H\-\_\-\-W\-I\-N\-D@{S\-O\-U\-T\-H\-\_\-\-W\-I\-N\-D}}\item[{\em 
+\hypertarget{weather_8h_a982907ad4f9584c8b75c95d858257281aee27990931b7632c23b9ad2afa0f73af}{S\-O\-U\-T\-H\-\_\-\-W\-I\-N\-D}\label{weather_8h_a982907ad4f9584c8b75c95d858257281aee27990931b7632c23b9ad2afa0f73af}
+}]\index{S\-O\-U\-T\-H\-W\-E\-S\-T\-\_\-\-W\-I\-N\-D@{S\-O\-U\-T\-H\-W\-E\-S\-T\-\_\-\-W\-I\-N\-D}!weather.\-h@{weather.\-h}}\index{weather.\-h@{weather.\-h}!S\-O\-U\-T\-H\-W\-E\-S\-T\-\_\-\-W\-I\-N\-D@{S\-O\-U\-T\-H\-W\-E\-S\-T\-\_\-\-W\-I\-N\-D}}\item[{\em 
+\hypertarget{weather_8h_a982907ad4f9584c8b75c95d858257281a40e704136aec82f7752744dc4a40b4be}{S\-O\-U\-T\-H\-W\-E\-S\-T\-\_\-\-W\-I\-N\-D}\label{weather_8h_a982907ad4f9584c8b75c95d858257281a40e704136aec82f7752744dc4a40b4be}
+}]\end{description}
+\end{Desc}
+\hypertarget{weather_8h_ac8a11cda50e327cef399b96e21ea147f}{\index{weather.\-h@{weather.\-h}!wind\-\_\-str\-\_\-type@{wind\-\_\-str\-\_\-type}}
+\index{wind\-\_\-str\-\_\-type@{wind\-\_\-str\-\_\-type}!weather.h@{weather.\-h}}
+\subsubsection[{wind\-\_\-str\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf wind\-\_\-str\-\_\-type}}}\label{weather_8h_ac8a11cda50e327cef399b96e21ea147f}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{C\-A\-L\-M@{C\-A\-L\-M}!weather.\-h@{weather.\-h}}\index{weather.\-h@{weather.\-h}!C\-A\-L\-M@{C\-A\-L\-M}}\item[{\em 
+\hypertarget{weather_8h_ac8a11cda50e327cef399b96e21ea147fa10773cf7fe0cbe9e8788f4e5e701d6b2}{C\-A\-L\-M}\label{weather_8h_ac8a11cda50e327cef399b96e21ea147fa10773cf7fe0cbe9e8788f4e5e701d6b2}
+}]\index{B\-R\-E\-E\-Z\-E@{B\-R\-E\-E\-Z\-E}!weather.\-h@{weather.\-h}}\index{weather.\-h@{weather.\-h}!B\-R\-E\-E\-Z\-E@{B\-R\-E\-E\-Z\-E}}\item[{\em 
+\hypertarget{weather_8h_ac8a11cda50e327cef399b96e21ea147faf22faacf96704eac42c380de23c8d2db}{B\-R\-E\-E\-Z\-E}\label{weather_8h_ac8a11cda50e327cef399b96e21ea147faf22faacf96704eac42c380de23c8d2db}
+}]\index{W\-I\-N\-D\-Y@{W\-I\-N\-D\-Y}!weather.\-h@{weather.\-h}}\index{weather.\-h@{weather.\-h}!W\-I\-N\-D\-Y@{W\-I\-N\-D\-Y}}\item[{\em 
+\hypertarget{weather_8h_ac8a11cda50e327cef399b96e21ea147fa9426e0b230f6905ec4c38ec3bbfa40a5}{W\-I\-N\-D\-Y}\label{weather_8h_ac8a11cda50e327cef399b96e21ea147fa9426e0b230f6905ec4c38ec3bbfa40a5}
+}]\index{G\-A\-L\-E@{G\-A\-L\-E}!weather.\-h@{weather.\-h}}\index{weather.\-h@{weather.\-h}!G\-A\-L\-E@{G\-A\-L\-E}}\item[{\em 
+\hypertarget{weather_8h_ac8a11cda50e327cef399b96e21ea147fae881d935d3cac534b5f803a1f7a0d2c2}{G\-A\-L\-E}\label{weather_8h_ac8a11cda50e327cef399b96e21ea147fae881d935d3cac534b5f803a1f7a0d2c2}
+}]\index{S\-T\-O\-R\-M\-Y@{S\-T\-O\-R\-M\-Y}!weather.\-h@{weather.\-h}}\index{weather.\-h@{weather.\-h}!S\-T\-O\-R\-M\-Y@{S\-T\-O\-R\-M\-Y}}\item[{\em 
+\hypertarget{weather_8h_ac8a11cda50e327cef399b96e21ea147fa408217fe5b06e5915a0730b8f981e48d}{S\-T\-O\-R\-M\-Y}\label{weather_8h_ac8a11cda50e327cef399b96e21ea147fa408217fe5b06e5915a0730b8f981e48d}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Variable Documentation}
+\hypertarget{weather_8h_aac78052914d24dc28b08932b5279c15a}{\index{weather.\-h@{weather.\-h}!weather\-\_\-info@{weather\-\_\-info}}
+\index{weather\-\_\-info@{weather\-\_\-info}!weather.h@{weather.\-h}}
+\subsubsection[{weather\-\_\-info}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Weather} weather\-\_\-info\mbox{[}$\,$\mbox{]}}}\label{weather_8h_aac78052914d24dc28b08932b5279c15a}

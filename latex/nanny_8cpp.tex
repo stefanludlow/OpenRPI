@@ -1,0 +1,1095 @@
+\hypertarget{nanny_8cpp}{\section{nanny.\-cpp File Reference}
+\label{nanny_8cpp}\index{nanny.\-cpp@{nanny.\-cpp}}
+}
+{\ttfamily \#include $<$time.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$ctype.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$sys/types.\-h$>$}\\*
+{\ttfamily \#include $<$sys/stat.\-h$>$}\\*
+{\ttfamily \#include $<$unistd.\-h$>$}\\*
+{\ttfamily \#include $<$arpa/telnet.\-h$>$}\\*
+{\ttfamily \#include $<$mysql/mysql.\-h$>$}\\*
+{\ttfamily \#include $<$sstream$>$}\\*
+{\ttfamily \#include \char`\"{}server.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}net\-\_\-link.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}structs.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}account.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}protos.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}decl.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utility.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{nanny_8cpp_a08af0c06f34eae27aa8e72cb8f078527}{E\-C\-H\-O\-\_\-\-O\-F\-F}~\hyperlink{utils_8h_a775d2e0eabc8c44ef3279ffc86de1d92}{S\-E\-N\-D\-\_\-\-T\-O\-\_\-\-Q} (\hyperlink{nanny_8cpp_abb07f7777c2ecbebef204cf7935c79e6}{echo\-\_\-off\-\_\-str}, d);
+\item 
+\#define \hyperlink{nanny_8cpp_a6d0746bf4eed0a1e70f769e345b8d591}{E\-C\-H\-O\-\_\-\-O\-N}~\hyperlink{utils_8h_a775d2e0eabc8c44ef3279ffc86de1d92}{S\-E\-N\-D\-\_\-\-T\-O\-\_\-\-Q} (\hyperlink{nanny_8cpp_a5f027825b0546ad253ae2406b4b938d3}{echo\-\_\-on\-\_\-str}, d);
+\item 
+\#define \hyperlink{nanny_8cpp_a21e4e7a2fad7f8fa226f6ca3ca02a180}{M\-A\-X\-\_\-\-P\-C\-\_\-\-L\-I\-M\-I\-T}~100
+\item 
+\#define \hyperlink{nanny_8cpp_a3e713592b0994afadca2864780b7defc}{P\-F\-I\-L\-E\-\_\-\-Q\-U\-E\-R\-Y}~\char`\"{}S\-E\-L\-E\-C\-T name,create\-\_\-state F\-R\-O\-M \%s.\-pfiles W\-H\-E\-R\-E \hyperlink{classaccount}{account} = '\%\hyperlink{staff_8cpp_a1b3d0481a7741b1fed73df389c9990c6}{s}' A\-N\-D create\-\_\-state $<$ 4 O\-R\-D\-E\-R B\-Y birth A\-S\-C\char`\"{}
+\item 
+\#define \hyperlink{nanny_8cpp_a04370c5825a489b5b76667fe1a01c3ac}{skill\-\_\-lev}(val)~val $>$= 70 ? \char`\"{} Master \char`\"{} \-: val $>$= 50 ? \char`\"{} Adroit \char`\"{} \-: val $>$= 30 ? \char`\"{}Familiar\char`\"{} \-: \char`\"{} Novice \char`\"{}
+\item 
+\#define \hyperlink{nanny_8cpp_ac034b165512dc698202cdc10e14934f9}{A\-D\-D\-B\-U\-F}~buf + strlen (buf)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} \hyperlink{nanny_8cpp_a6256424fdb3343b94c012abcce942c58}{is\-\_\-banned} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d)
+\item 
+void \hyperlink{nanny_8cpp_a3bf05525a68b476f9b9a34d3ffc7f383}{display\-\_\-unread\-\_\-messages} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d)
+\item 
+void \hyperlink{nanny_8cpp_afe8de8f6960ca96eb78a1dddad127096}{display\-\_\-main\-\_\-menu} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d)
+\item 
+char $\ast$ \hyperlink{nanny_8cpp_a9245bcdf63906a647aa4ddb546f5e25b}{encrypt\-\_\-buf} (const char $\ast$buf)
+\item 
+int \hyperlink{nanny_8cpp_af4adbb4fff2ecb5423a72e0d9fcb9f6e}{check\-\_\-password} (const char $\ast$pass, const char $\ast$encrypted)
+\item 
+void \hyperlink{nanny_8cpp_afedf120ba1c6ff64d295c15be5f77871}{nanny\-\_\-login\-\_\-choice} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_acc02ffc5979f6a5df6819c8a461c252a}{nanny\-\_\-create\-\_\-guest} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_a8e10fadde2f01dc5a548f61210210ddc}{nanny\-\_\-ask\-\_\-password} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_a228bf77952897626c9cee185a98e2d22}{nanny\-\_\-check\-\_\-password} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_ac2316c67aac6067be4086d7c55ff5ff4}{nanny\-\_\-new\-\_\-account} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_a665a22822ad054d9080a466f6ec59ff5}{nanny\-\_\-account\-\_\-policies} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_a7f862cafe4be37954127f3a099b7962a}{nanny\-\_\-account\-\_\-referral} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_af09ee92f091d2f8f22ebfd24e52cfa63}{nanny\-\_\-account\-\_\-email} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_a6cceb996abd52cf6b24f1907428bcbc8}{nanny\-\_\-account\-\_\-email\-\_\-confirm} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_a64a5c2fa7f276ac6e14372f3ac11fc08}{nanny\-\_\-new\-\_\-password} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_af0036529d4526f9255be5276e69e7d2b}{nanny\-\_\-change\-\_\-password} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_af945d7ea9b10996e921cf6e14cf8597a}{nanny\-\_\-conf\-\_\-change\-\_\-password} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_ac978c7c7b8887ef03ac0e5da2eb0003e}{nanny\-\_\-disconnect} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_a936533fc0f21f930967a7a3d58bbfe3a}{setup\-\_\-new\-\_\-account} (\hyperlink{classaccount}{account} $\ast$acct)
+\item 
+void \hyperlink{nanny_8cpp_adb4b9bd00b266b833ee5eb809b074b56}{nanny\-\_\-account\-\_\-setup} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_a6e3816726c6abafbff2de99746026db8}{nanny\-\_\-name\-\_\-confirm} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_a2dce0da0b9627b54d29883f25a088b26}{nanny\-\_\-reject\-\_\-message} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_ae644cb91026ea8dc2f45c5abb82166c4}{post\-\_\-retirement} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d)
+\item 
+void \hyperlink{nanny_8cpp_a6d0f450c3f3764e2b65a98f9d9b3cea1}{nanny\-\_\-retire} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_a01b77b5fdafd723f81cca834faccc292}{nanny\-\_\-terminate} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_ae69110a497e4f983ebed81f9bb4331f6}{display\-\_\-hobbitmail\-\_\-inbox} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, \hyperlink{classaccount}{account} $\ast$acct)
+\item 
+void \hyperlink{nanny_8cpp_a4990359fef3a8fdeb71b83c1ceba728a}{nanny\-\_\-composing\-\_\-message} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_a4f729fd43eec5338950e048ef7a1dccd}{nanny\-\_\-compose\-\_\-message} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_ae29d9035bc22ff7467929e7283af5594}{nanny\-\_\-compose\-\_\-subject} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_a4b16693a7479b9fee8d12c0a17d6a447}{nanny\-\_\-compose\-\_\-mail\-\_\-to} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_a5cb5ebf7e4626049257a2993fa1d67ca}{nanny\-\_\-mail\-\_\-menu} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_a2cb63209af421d32427f076058b012c1}{nanny\-\_\-read\-\_\-message} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_a596ec751f947f4e396125ad623e56c73}{nanny\-\_\-connect\-\_\-select} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_adb7f8bb72a2db6019fde215f96cd23a9}{nanny\-\_\-view\-\_\-pc} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_a09d78118618717f99a750061b2d32fc8}{nanny\-\_\-reading\-\_\-wait} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_a2f79352d97c69d9ecab9bf8e05710467}{nanny\-\_\-delete\-\_\-pc} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_af0c4e7ff82da62d0245563ece3701e37}{get\-\_\-weapon\-\_\-skills} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int $\ast$melee, int $\ast$ranged)
+\item 
+void \hyperlink{nanny_8cpp_a8d2b6c20261ff0da7b04bbfc14727b71}{equip\-\_\-newbie} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+int \hyperlink{nanny_8cpp_ada2b2f3c305c8ceafb516f4b6d93c8ad}{determine\-\_\-chargen\-\_\-stage} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{nanny_8cpp_a8ded8e0af8504d3762883742199ec801}{nanny\-\_\-choose\-\_\-pc} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_aa62ae9b1f2caa1cda6a8917d8a2af4a7}{nanny\-\_\-change\-\_\-email} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_a4b6366b4120b865f984dd47dacea43a9}{nanny\-\_\-change\-\_\-email\-\_\-confirm} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+char $\ast$ \hyperlink{nanny_8cpp_a7a4b96400132a5412e8f643fccd874b1}{role\-\_\-flag\-\_\-descs} (int \hyperlink{structs_8h_af5b34f10bae6d3b8f168d5eb6fab2925}{bitflag})
+\item 
+void \hyperlink{nanny_8cpp_ad00145d23b1695e902d5c93174888568}{spitstat} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$recipient)
+\item 
+void \hyperlink{nanny_8cpp_a958324535bf0e5e4946432915df7062b}{create\-\_\-menu\-\_\-options} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d)
+\item 
+void \hyperlink{nanny_8cpp_a41b84be6669ee1105fa5e2167252ceda}{attribute\-\_\-priorities} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$arg)
+\item 
+void \hyperlink{nanny_8cpp_ab7947b5e29ee981adfe8f8824b19f9cd}{sex\-\_\-selection} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$arg)
+\item 
+void \hyperlink{nanny_8cpp_a6a5a346e63c91bb53c673c16bea38853}{race\-\_\-selection\-\_\-screen} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d)
+\item 
+void \hyperlink{nanny_8cpp_a47bda8690bef6b1b061e7bed485b35e6}{nanny\-\_\-race\-\_\-confirm} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$arg)
+\item 
+void \hyperlink{nanny_8cpp_aca5c40f3f98846d878a9bfd1dcbe0726}{nanny\-\_\-privacy\-\_\-confirm} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$arg)
+\item 
+void \hyperlink{nanny_8cpp_aacbc35b1d18b25a80399f9fb9dec2573}{nanny\-\_\-char\-\_\-name\-\_\-confirm} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$arg)
+\item 
+void \hyperlink{nanny_8cpp_adce1d16304c63898b91ed35337c07b23}{nanny\-\_\-special\-\_\-role\-\_\-selection} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$arg)
+\item 
+void \hyperlink{nanny_8cpp_ad503190261106e3403266189407136c2}{nanny\-\_\-special\-\_\-role\-\_\-confirm} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$arg)
+\item 
+void \hyperlink{nanny_8cpp_a686faf40ddcbe73820000a5bcb4ee22c}{race\-\_\-selection} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$arg)
+\item 
+void \hyperlink{nanny_8cpp_ae346cee7fe4fa2db39878182d26d9d39}{age\-\_\-selection} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$arg)
+\item 
+int \hyperlink{nanny_8cpp_a16df73c249633cd0adce9c72b7c3008d}{available\-\_\-roles} (int points)
+\item 
+void \hyperlink{nanny_8cpp_ad6aff3591b10f7453c73d9e462ad8955}{location\-\_\-selection} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_ac02072d286fe76d41021aef789851308}{height\-\_\-frame\-\_\-selection} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+int \hyperlink{nanny_8cpp_a406a3e5ec04dbce834e95c4c32e6a712}{pickable\-\_\-skill} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, const char $\ast$buf, int cmd)
+\item 
+int \hyperlink{nanny_8cpp_adc0b8abf4d8f2280b8f2c8132f9586ab}{picks\-\_\-entitled} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{nanny_8cpp_a1258666001f5071c704159c947c0d83e}{autodesc\-\_\-eyes} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d)
+\item 
+void \hyperlink{nanny_8cpp_a16425c28f0616b63ad5eb99d66274bb5}{autodesc\-\_\-eyes\-\_\-specific} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_aade5612d4076e775ba9ad93f6f438494}{autodesc\-\_\-feat\-\_\-one\-\_\-unhuman} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_ae28f0aa43bd59eeba3618da3b2b79d34}{autodesc\-\_\-feat\-\_\-one\-\_\-specify\-\_\-unhuman} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_ab30af85db66af0a3cac989940c501cac}{autodesc\-\_\-feat\-\_\-two\-\_\-unhuman} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_abbd7ab5699ffe0eaad047d6e8184d537}{autodesc\-\_\-feat\-\_\-two\-\_\-specify\-\_\-unhuman} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_aeea21f64c9f30a2586abe96c8e0d16da}{autodesc\-\_\-end\-\_\-unhuman} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_a12f205762df341b1d06c671d961a7eb6}{autodesc\-\_\-end} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_a146566dd7636bf64277a8bbc31581f81}{autodesc\-\_\-height} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d)
+\item 
+void \hyperlink{nanny_8cpp_ace72e9e2a45574eebd473e1f4bbe2d88}{autodesc\-\_\-result} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_ae1d28fc72ce88eee2b0a8d5fb6facd62}{autodesc\-\_\-frame} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_a4e0d99a92956756e6594b0413f85faa9}{autodesc\-\_\-length} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_a974bf6ca64d5c392afc1df850c542761}{autodesc\-\_\-color} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_a775d291c4157a03dd8b8711e3904c59b}{autodesc\-\_\-color\-\_\-specific} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_a87d78963ff8c2e5008eea8c74f28c1ac}{autodesc\-\_\-style} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_a4d0c29d92ddafee3373d836ddfd9133e}{autodesc\-\_\-feat\-\_\-one} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_a3c593273cceceb8eb07dca4e9638100a}{autodesc\-\_\-feat\-\_\-one\-\_\-specify} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_aba194a842adae1ebfa51bae49a1d19ec}{autodesc\-\_\-feat\-\_\-two} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_a899851f7ea3509c4f03c9e6fcc9f3645}{autodesc\-\_\-feat\-\_\-two\-\_\-specify} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_aa2609ea41588416b63e5f4d8089bbb99}{autodesc\-\_\-feat\-\_\-three} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_abb2163d18bf01a00b3a6fdbd8b18935f}{autodesc\-\_\-feat\-\_\-three\-\_\-specify} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_a30abb7cf4e8c1376e688cd4271b41f83}{autodesc\-\_\-feat\-\_\-four} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_aa697bb7fe52cc922737777a850111117}{autodesc\-\_\-feat\-\_\-four\-\_\-specify} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_a923f874f6382a0f6d2e588a667cea54d}{autodesc\-\_\-result\-\_\-second} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_af6af6e1bf0e88452db6da5c52313f39e}{autodesc\-\_\-one\-\_\-conf} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_a427c9e694906e02fbcfb1fa8a02bd490}{autodesc\-\_\-two\-\_\-conf} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_a81edeb2de0d4241cee8673c45345ad5b}{autodesc\-\_\-three\-\_\-conf} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_a13063e8cff0f13c6c105ea394d46658b}{profession\-\_\-display} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d)
+\item 
+void \hyperlink{nanny_8cpp_a59af03d0d3a4c9c938b8bb79e7183b03}{profession\-\_\-selection} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_a96d862982c7ac2309be8a94d1985392c}{profession\-\_\-confirm} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_ab1af8c6909819034fa7f840b3a885eb3}{profession\-\_\-first} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_a8b06d7e508a01420e45fc25a3aecdd4c}{profession\-\_\-second} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_ae176a214cb8a9950fea176c726cb56e9}{skill\-\_\-selection} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_a54497e5c7daaf020478148a77d333fbc}{skill\-\_\-display} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d)
+\item 
+void \hyperlink{nanny_8cpp_afccd8a0fc3d05de5a1167b097480fb8b}{create\-\_\-menu\-\_\-actions} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$arg)
+\item 
+void \hyperlink{nanny_8cpp_ae99bb33aee011e28f0ccaf9fa98ef41f}{nanny} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d, char $\ast$argument)
+\item 
+void \hyperlink{nanny_8cpp_a648acf0cfc54f20f7516be7c837b3a25}{read\-\_\-motd} (\hyperlink{net__link_8h_adaf40e7c4f580ba35192c957078f5771}{D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$d)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classrpie_1_1server}{rpie\-::server} \hyperlink{nanny_8cpp_a55c71990ee4162ebec6abe401996cf15}{engine}
+\item 
+char \hyperlink{nanny_8cpp_abb07f7777c2ecbebef204cf7935c79e6}{echo\-\_\-off\-\_\-str} \mbox{[}$\,$\mbox{]} = \{ (char) \hyperlink{BroadwaveClient_8cpp_a8eebea7e67724c49a6f97c3215a7e72d}{I\-A\-C}, (char) \hyperlink{BroadwaveClient_8cpp_a5b0d9c9bc497a710de9cb73b3aaa8e0d}{W\-I\-L\-L}, (char) T\-E\-L\-O\-P\-T\-\_\-\-E\-C\-H\-O, '\textbackslash{}0' \}
+\item 
+char \hyperlink{nanny_8cpp_a5f027825b0546ad253ae2406b4b938d3}{echo\-\_\-on\-\_\-str} \mbox{[}$\,$\mbox{]}
+\item 
+int \hyperlink{nanny_8cpp_a2a7ff9fd395ce14c00492768a957636a}{new\-\_\-accounts} = 0
+\item 
+const int \hyperlink{nanny_8cpp_ad724c9933aa97e455693b8c8f16efd80}{pregame\-\_\-furnishings} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{nanny_8cpp_a2da2bea4ab8c343fb96dc60a0c25b0b9}{color\-\_\-skill} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{nanny_8cpp_ac034b165512dc698202cdc10e14934f9}{\index{nanny.\-cpp@{nanny.\-cpp}!A\-D\-D\-B\-U\-F@{A\-D\-D\-B\-U\-F}}
+\index{A\-D\-D\-B\-U\-F@{A\-D\-D\-B\-U\-F}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{A\-D\-D\-B\-U\-F}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-D\-D\-B\-U\-F~buf + strlen (buf)}}\label{nanny_8cpp_ac034b165512dc698202cdc10e14934f9}
+\hypertarget{nanny_8cpp_a08af0c06f34eae27aa8e72cb8f078527}{\index{nanny.\-cpp@{nanny.\-cpp}!E\-C\-H\-O\-\_\-\-O\-F\-F@{E\-C\-H\-O\-\_\-\-O\-F\-F}}
+\index{E\-C\-H\-O\-\_\-\-O\-F\-F@{E\-C\-H\-O\-\_\-\-O\-F\-F}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{E\-C\-H\-O\-\_\-\-O\-F\-F}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-C\-H\-O\-\_\-\-O\-F\-F~{\bf S\-E\-N\-D\-\_\-\-T\-O\-\_\-\-Q} ({\bf echo\-\_\-off\-\_\-str}, d);}}\label{nanny_8cpp_a08af0c06f34eae27aa8e72cb8f078527}
+\hypertarget{nanny_8cpp_a6d0746bf4eed0a1e70f769e345b8d591}{\index{nanny.\-cpp@{nanny.\-cpp}!E\-C\-H\-O\-\_\-\-O\-N@{E\-C\-H\-O\-\_\-\-O\-N}}
+\index{E\-C\-H\-O\-\_\-\-O\-N@{E\-C\-H\-O\-\_\-\-O\-N}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{E\-C\-H\-O\-\_\-\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-C\-H\-O\-\_\-\-O\-N~{\bf S\-E\-N\-D\-\_\-\-T\-O\-\_\-\-Q} ({\bf echo\-\_\-on\-\_\-str}, d);}}\label{nanny_8cpp_a6d0746bf4eed0a1e70f769e345b8d591}
+\hypertarget{nanny_8cpp_a21e4e7a2fad7f8fa226f6ca3ca02a180}{\index{nanny.\-cpp@{nanny.\-cpp}!M\-A\-X\-\_\-\-P\-C\-\_\-\-L\-I\-M\-I\-T@{M\-A\-X\-\_\-\-P\-C\-\_\-\-L\-I\-M\-I\-T}}
+\index{M\-A\-X\-\_\-\-P\-C\-\_\-\-L\-I\-M\-I\-T@{M\-A\-X\-\_\-\-P\-C\-\_\-\-L\-I\-M\-I\-T}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{M\-A\-X\-\_\-\-P\-C\-\_\-\-L\-I\-M\-I\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-X\-\_\-\-P\-C\-\_\-\-L\-I\-M\-I\-T~100}}\label{nanny_8cpp_a21e4e7a2fad7f8fa226f6ca3ca02a180}
+\hypertarget{nanny_8cpp_a3e713592b0994afadca2864780b7defc}{\index{nanny.\-cpp@{nanny.\-cpp}!P\-F\-I\-L\-E\-\_\-\-Q\-U\-E\-R\-Y@{P\-F\-I\-L\-E\-\_\-\-Q\-U\-E\-R\-Y}}
+\index{P\-F\-I\-L\-E\-\_\-\-Q\-U\-E\-R\-Y@{P\-F\-I\-L\-E\-\_\-\-Q\-U\-E\-R\-Y}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{P\-F\-I\-L\-E\-\_\-\-Q\-U\-E\-R\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-F\-I\-L\-E\-\_\-\-Q\-U\-E\-R\-Y~\char`\"{}S\-E\-L\-E\-C\-T name,create\-\_\-state F\-R\-O\-M \%s.\-pfiles W\-H\-E\-R\-E {\bf account} = '\%{\bf s}' A\-N\-D create\-\_\-state $<$ 4 O\-R\-D\-E\-R B\-Y birth A\-S\-C\char`\"{}}}\label{nanny_8cpp_a3e713592b0994afadca2864780b7defc}
+\hypertarget{nanny_8cpp_a04370c5825a489b5b76667fe1a01c3ac}{\index{nanny.\-cpp@{nanny.\-cpp}!skill\-\_\-lev@{skill\-\_\-lev}}
+\index{skill\-\_\-lev@{skill\-\_\-lev}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{skill\-\_\-lev}]{\setlength{\rightskip}{0pt plus 5cm}\#define skill\-\_\-lev(
+\begin{DoxyParamCaption}
+\item[{}]{val}
+\end{DoxyParamCaption}
+)~val $>$= 70 ? \char`\"{} Master \char`\"{} \-: val $>$= 50 ? \char`\"{} Adroit \char`\"{} \-: val $>$= 30 ? \char`\"{}Familiar\char`\"{} \-: \char`\"{} Novice \char`\"{}}}\label{nanny_8cpp_a04370c5825a489b5b76667fe1a01c3ac}
+
+
+\subsection{Function Documentation}
+\hypertarget{nanny_8cpp_ae346cee7fe4fa2db39878182d26d9d39}{\index{nanny.\-cpp@{nanny.\-cpp}!age\-\_\-selection@{age\-\_\-selection}}
+\index{age\-\_\-selection@{age\-\_\-selection}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{age\-\_\-selection}]{\setlength{\rightskip}{0pt plus 5cm}void age\-\_\-selection (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{arg}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_ae346cee7fe4fa2db39878182d26d9d39}
+\hypertarget{nanny_8cpp_a41b84be6669ee1105fa5e2167252ceda}{\index{nanny.\-cpp@{nanny.\-cpp}!attribute\-\_\-priorities@{attribute\-\_\-priorities}}
+\index{attribute\-\_\-priorities@{attribute\-\_\-priorities}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{attribute\-\_\-priorities}]{\setlength{\rightskip}{0pt plus 5cm}void attribute\-\_\-priorities (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{arg}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a41b84be6669ee1105fa5e2167252ceda}
+\hypertarget{nanny_8cpp_a974bf6ca64d5c392afc1df850c542761}{\index{nanny.\-cpp@{nanny.\-cpp}!autodesc\-\_\-color@{autodesc\-\_\-color}}
+\index{autodesc\-\_\-color@{autodesc\-\_\-color}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{autodesc\-\_\-color}]{\setlength{\rightskip}{0pt plus 5cm}void autodesc\-\_\-color (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a974bf6ca64d5c392afc1df850c542761}
+\hypertarget{nanny_8cpp_a775d291c4157a03dd8b8711e3904c59b}{\index{nanny.\-cpp@{nanny.\-cpp}!autodesc\-\_\-color\-\_\-specific@{autodesc\-\_\-color\-\_\-specific}}
+\index{autodesc\-\_\-color\-\_\-specific@{autodesc\-\_\-color\-\_\-specific}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{autodesc\-\_\-color\-\_\-specific}]{\setlength{\rightskip}{0pt plus 5cm}void autodesc\-\_\-color\-\_\-specific (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a775d291c4157a03dd8b8711e3904c59b}
+\hypertarget{nanny_8cpp_a12f205762df341b1d06c671d961a7eb6}{\index{nanny.\-cpp@{nanny.\-cpp}!autodesc\-\_\-end@{autodesc\-\_\-end}}
+\index{autodesc\-\_\-end@{autodesc\-\_\-end}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{autodesc\-\_\-end}]{\setlength{\rightskip}{0pt plus 5cm}void autodesc\-\_\-end (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a12f205762df341b1d06c671d961a7eb6}
+\hypertarget{nanny_8cpp_aeea21f64c9f30a2586abe96c8e0d16da}{\index{nanny.\-cpp@{nanny.\-cpp}!autodesc\-\_\-end\-\_\-unhuman@{autodesc\-\_\-end\-\_\-unhuman}}
+\index{autodesc\-\_\-end\-\_\-unhuman@{autodesc\-\_\-end\-\_\-unhuman}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{autodesc\-\_\-end\-\_\-unhuman}]{\setlength{\rightskip}{0pt plus 5cm}void autodesc\-\_\-end\-\_\-unhuman (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_aeea21f64c9f30a2586abe96c8e0d16da}
+\hypertarget{nanny_8cpp_a1258666001f5071c704159c947c0d83e}{\index{nanny.\-cpp@{nanny.\-cpp}!autodesc\-\_\-eyes@{autodesc\-\_\-eyes}}
+\index{autodesc\-\_\-eyes@{autodesc\-\_\-eyes}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{autodesc\-\_\-eyes}]{\setlength{\rightskip}{0pt plus 5cm}void autodesc\-\_\-eyes (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a1258666001f5071c704159c947c0d83e}
+\hypertarget{nanny_8cpp_a16425c28f0616b63ad5eb99d66274bb5}{\index{nanny.\-cpp@{nanny.\-cpp}!autodesc\-\_\-eyes\-\_\-specific@{autodesc\-\_\-eyes\-\_\-specific}}
+\index{autodesc\-\_\-eyes\-\_\-specific@{autodesc\-\_\-eyes\-\_\-specific}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{autodesc\-\_\-eyes\-\_\-specific}]{\setlength{\rightskip}{0pt plus 5cm}void autodesc\-\_\-eyes\-\_\-specific (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a16425c28f0616b63ad5eb99d66274bb5}
+\hypertarget{nanny_8cpp_a30abb7cf4e8c1376e688cd4271b41f83}{\index{nanny.\-cpp@{nanny.\-cpp}!autodesc\-\_\-feat\-\_\-four@{autodesc\-\_\-feat\-\_\-four}}
+\index{autodesc\-\_\-feat\-\_\-four@{autodesc\-\_\-feat\-\_\-four}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{autodesc\-\_\-feat\-\_\-four}]{\setlength{\rightskip}{0pt plus 5cm}void autodesc\-\_\-feat\-\_\-four (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a30abb7cf4e8c1376e688cd4271b41f83}
+\hypertarget{nanny_8cpp_aa697bb7fe52cc922737777a850111117}{\index{nanny.\-cpp@{nanny.\-cpp}!autodesc\-\_\-feat\-\_\-four\-\_\-specify@{autodesc\-\_\-feat\-\_\-four\-\_\-specify}}
+\index{autodesc\-\_\-feat\-\_\-four\-\_\-specify@{autodesc\-\_\-feat\-\_\-four\-\_\-specify}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{autodesc\-\_\-feat\-\_\-four\-\_\-specify}]{\setlength{\rightskip}{0pt plus 5cm}void autodesc\-\_\-feat\-\_\-four\-\_\-specify (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_aa697bb7fe52cc922737777a850111117}
+\hypertarget{nanny_8cpp_a4d0c29d92ddafee3373d836ddfd9133e}{\index{nanny.\-cpp@{nanny.\-cpp}!autodesc\-\_\-feat\-\_\-one@{autodesc\-\_\-feat\-\_\-one}}
+\index{autodesc\-\_\-feat\-\_\-one@{autodesc\-\_\-feat\-\_\-one}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{autodesc\-\_\-feat\-\_\-one}]{\setlength{\rightskip}{0pt plus 5cm}void autodesc\-\_\-feat\-\_\-one (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a4d0c29d92ddafee3373d836ddfd9133e}
+\hypertarget{nanny_8cpp_a3c593273cceceb8eb07dca4e9638100a}{\index{nanny.\-cpp@{nanny.\-cpp}!autodesc\-\_\-feat\-\_\-one\-\_\-specify@{autodesc\-\_\-feat\-\_\-one\-\_\-specify}}
+\index{autodesc\-\_\-feat\-\_\-one\-\_\-specify@{autodesc\-\_\-feat\-\_\-one\-\_\-specify}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{autodesc\-\_\-feat\-\_\-one\-\_\-specify}]{\setlength{\rightskip}{0pt plus 5cm}void autodesc\-\_\-feat\-\_\-one\-\_\-specify (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a3c593273cceceb8eb07dca4e9638100a}
+\hypertarget{nanny_8cpp_ae28f0aa43bd59eeba3618da3b2b79d34}{\index{nanny.\-cpp@{nanny.\-cpp}!autodesc\-\_\-feat\-\_\-one\-\_\-specify\-\_\-unhuman@{autodesc\-\_\-feat\-\_\-one\-\_\-specify\-\_\-unhuman}}
+\index{autodesc\-\_\-feat\-\_\-one\-\_\-specify\-\_\-unhuman@{autodesc\-\_\-feat\-\_\-one\-\_\-specify\-\_\-unhuman}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{autodesc\-\_\-feat\-\_\-one\-\_\-specify\-\_\-unhuman}]{\setlength{\rightskip}{0pt plus 5cm}void autodesc\-\_\-feat\-\_\-one\-\_\-specify\-\_\-unhuman (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_ae28f0aa43bd59eeba3618da3b2b79d34}
+\hypertarget{nanny_8cpp_aade5612d4076e775ba9ad93f6f438494}{\index{nanny.\-cpp@{nanny.\-cpp}!autodesc\-\_\-feat\-\_\-one\-\_\-unhuman@{autodesc\-\_\-feat\-\_\-one\-\_\-unhuman}}
+\index{autodesc\-\_\-feat\-\_\-one\-\_\-unhuman@{autodesc\-\_\-feat\-\_\-one\-\_\-unhuman}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{autodesc\-\_\-feat\-\_\-one\-\_\-unhuman}]{\setlength{\rightskip}{0pt plus 5cm}void autodesc\-\_\-feat\-\_\-one\-\_\-unhuman (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_aade5612d4076e775ba9ad93f6f438494}
+\hypertarget{nanny_8cpp_aa2609ea41588416b63e5f4d8089bbb99}{\index{nanny.\-cpp@{nanny.\-cpp}!autodesc\-\_\-feat\-\_\-three@{autodesc\-\_\-feat\-\_\-three}}
+\index{autodesc\-\_\-feat\-\_\-three@{autodesc\-\_\-feat\-\_\-three}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{autodesc\-\_\-feat\-\_\-three}]{\setlength{\rightskip}{0pt plus 5cm}void autodesc\-\_\-feat\-\_\-three (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_aa2609ea41588416b63e5f4d8089bbb99}
+\hypertarget{nanny_8cpp_abb2163d18bf01a00b3a6fdbd8b18935f}{\index{nanny.\-cpp@{nanny.\-cpp}!autodesc\-\_\-feat\-\_\-three\-\_\-specify@{autodesc\-\_\-feat\-\_\-three\-\_\-specify}}
+\index{autodesc\-\_\-feat\-\_\-three\-\_\-specify@{autodesc\-\_\-feat\-\_\-three\-\_\-specify}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{autodesc\-\_\-feat\-\_\-three\-\_\-specify}]{\setlength{\rightskip}{0pt plus 5cm}void autodesc\-\_\-feat\-\_\-three\-\_\-specify (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_abb2163d18bf01a00b3a6fdbd8b18935f}
+\hypertarget{nanny_8cpp_aba194a842adae1ebfa51bae49a1d19ec}{\index{nanny.\-cpp@{nanny.\-cpp}!autodesc\-\_\-feat\-\_\-two@{autodesc\-\_\-feat\-\_\-two}}
+\index{autodesc\-\_\-feat\-\_\-two@{autodesc\-\_\-feat\-\_\-two}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{autodesc\-\_\-feat\-\_\-two}]{\setlength{\rightskip}{0pt plus 5cm}void autodesc\-\_\-feat\-\_\-two (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_aba194a842adae1ebfa51bae49a1d19ec}
+\hypertarget{nanny_8cpp_a899851f7ea3509c4f03c9e6fcc9f3645}{\index{nanny.\-cpp@{nanny.\-cpp}!autodesc\-\_\-feat\-\_\-two\-\_\-specify@{autodesc\-\_\-feat\-\_\-two\-\_\-specify}}
+\index{autodesc\-\_\-feat\-\_\-two\-\_\-specify@{autodesc\-\_\-feat\-\_\-two\-\_\-specify}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{autodesc\-\_\-feat\-\_\-two\-\_\-specify}]{\setlength{\rightskip}{0pt plus 5cm}void autodesc\-\_\-feat\-\_\-two\-\_\-specify (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a899851f7ea3509c4f03c9e6fcc9f3645}
+\hypertarget{nanny_8cpp_abbd7ab5699ffe0eaad047d6e8184d537}{\index{nanny.\-cpp@{nanny.\-cpp}!autodesc\-\_\-feat\-\_\-two\-\_\-specify\-\_\-unhuman@{autodesc\-\_\-feat\-\_\-two\-\_\-specify\-\_\-unhuman}}
+\index{autodesc\-\_\-feat\-\_\-two\-\_\-specify\-\_\-unhuman@{autodesc\-\_\-feat\-\_\-two\-\_\-specify\-\_\-unhuman}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{autodesc\-\_\-feat\-\_\-two\-\_\-specify\-\_\-unhuman}]{\setlength{\rightskip}{0pt plus 5cm}void autodesc\-\_\-feat\-\_\-two\-\_\-specify\-\_\-unhuman (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_abbd7ab5699ffe0eaad047d6e8184d537}
+\hypertarget{nanny_8cpp_ab30af85db66af0a3cac989940c501cac}{\index{nanny.\-cpp@{nanny.\-cpp}!autodesc\-\_\-feat\-\_\-two\-\_\-unhuman@{autodesc\-\_\-feat\-\_\-two\-\_\-unhuman}}
+\index{autodesc\-\_\-feat\-\_\-two\-\_\-unhuman@{autodesc\-\_\-feat\-\_\-two\-\_\-unhuman}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{autodesc\-\_\-feat\-\_\-two\-\_\-unhuman}]{\setlength{\rightskip}{0pt plus 5cm}void autodesc\-\_\-feat\-\_\-two\-\_\-unhuman (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_ab30af85db66af0a3cac989940c501cac}
+\hypertarget{nanny_8cpp_ae1d28fc72ce88eee2b0a8d5fb6facd62}{\index{nanny.\-cpp@{nanny.\-cpp}!autodesc\-\_\-frame@{autodesc\-\_\-frame}}
+\index{autodesc\-\_\-frame@{autodesc\-\_\-frame}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{autodesc\-\_\-frame}]{\setlength{\rightskip}{0pt plus 5cm}void autodesc\-\_\-frame (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_ae1d28fc72ce88eee2b0a8d5fb6facd62}
+\hypertarget{nanny_8cpp_a146566dd7636bf64277a8bbc31581f81}{\index{nanny.\-cpp@{nanny.\-cpp}!autodesc\-\_\-height@{autodesc\-\_\-height}}
+\index{autodesc\-\_\-height@{autodesc\-\_\-height}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{autodesc\-\_\-height}]{\setlength{\rightskip}{0pt plus 5cm}void autodesc\-\_\-height (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a146566dd7636bf64277a8bbc31581f81}
+\hypertarget{nanny_8cpp_a4e0d99a92956756e6594b0413f85faa9}{\index{nanny.\-cpp@{nanny.\-cpp}!autodesc\-\_\-length@{autodesc\-\_\-length}}
+\index{autodesc\-\_\-length@{autodesc\-\_\-length}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{autodesc\-\_\-length}]{\setlength{\rightskip}{0pt plus 5cm}void autodesc\-\_\-length (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a4e0d99a92956756e6594b0413f85faa9}
+\hypertarget{nanny_8cpp_af6af6e1bf0e88452db6da5c52313f39e}{\index{nanny.\-cpp@{nanny.\-cpp}!autodesc\-\_\-one\-\_\-conf@{autodesc\-\_\-one\-\_\-conf}}
+\index{autodesc\-\_\-one\-\_\-conf@{autodesc\-\_\-one\-\_\-conf}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{autodesc\-\_\-one\-\_\-conf}]{\setlength{\rightskip}{0pt plus 5cm}void autodesc\-\_\-one\-\_\-conf (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_af6af6e1bf0e88452db6da5c52313f39e}
+\hypertarget{nanny_8cpp_ace72e9e2a45574eebd473e1f4bbe2d88}{\index{nanny.\-cpp@{nanny.\-cpp}!autodesc\-\_\-result@{autodesc\-\_\-result}}
+\index{autodesc\-\_\-result@{autodesc\-\_\-result}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{autodesc\-\_\-result}]{\setlength{\rightskip}{0pt plus 5cm}void autodesc\-\_\-result (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_ace72e9e2a45574eebd473e1f4bbe2d88}
+\hypertarget{nanny_8cpp_a923f874f6382a0f6d2e588a667cea54d}{\index{nanny.\-cpp@{nanny.\-cpp}!autodesc\-\_\-result\-\_\-second@{autodesc\-\_\-result\-\_\-second}}
+\index{autodesc\-\_\-result\-\_\-second@{autodesc\-\_\-result\-\_\-second}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{autodesc\-\_\-result\-\_\-second}]{\setlength{\rightskip}{0pt plus 5cm}void autodesc\-\_\-result\-\_\-second (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a923f874f6382a0f6d2e588a667cea54d}
+\hypertarget{nanny_8cpp_a87d78963ff8c2e5008eea8c74f28c1ac}{\index{nanny.\-cpp@{nanny.\-cpp}!autodesc\-\_\-style@{autodesc\-\_\-style}}
+\index{autodesc\-\_\-style@{autodesc\-\_\-style}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{autodesc\-\_\-style}]{\setlength{\rightskip}{0pt plus 5cm}void autodesc\-\_\-style (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a87d78963ff8c2e5008eea8c74f28c1ac}
+\hypertarget{nanny_8cpp_a81edeb2de0d4241cee8673c45345ad5b}{\index{nanny.\-cpp@{nanny.\-cpp}!autodesc\-\_\-three\-\_\-conf@{autodesc\-\_\-three\-\_\-conf}}
+\index{autodesc\-\_\-three\-\_\-conf@{autodesc\-\_\-three\-\_\-conf}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{autodesc\-\_\-three\-\_\-conf}]{\setlength{\rightskip}{0pt plus 5cm}void autodesc\-\_\-three\-\_\-conf (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a81edeb2de0d4241cee8673c45345ad5b}
+\hypertarget{nanny_8cpp_a427c9e694906e02fbcfb1fa8a02bd490}{\index{nanny.\-cpp@{nanny.\-cpp}!autodesc\-\_\-two\-\_\-conf@{autodesc\-\_\-two\-\_\-conf}}
+\index{autodesc\-\_\-two\-\_\-conf@{autodesc\-\_\-two\-\_\-conf}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{autodesc\-\_\-two\-\_\-conf}]{\setlength{\rightskip}{0pt plus 5cm}void autodesc\-\_\-two\-\_\-conf (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a427c9e694906e02fbcfb1fa8a02bd490}
+\hypertarget{nanny_8cpp_a16df73c249633cd0adce9c72b7c3008d}{\index{nanny.\-cpp@{nanny.\-cpp}!available\-\_\-roles@{available\-\_\-roles}}
+\index{available\-\_\-roles@{available\-\_\-roles}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{available\-\_\-roles}]{\setlength{\rightskip}{0pt plus 5cm}int available\-\_\-roles (
+\begin{DoxyParamCaption}
+\item[{int}]{points}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a16df73c249633cd0adce9c72b7c3008d}
+\hypertarget{nanny_8cpp_af4adbb4fff2ecb5423a72e0d9fcb9f6e}{\index{nanny.\-cpp@{nanny.\-cpp}!check\-\_\-password@{check\-\_\-password}}
+\index{check\-\_\-password@{check\-\_\-password}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{check\-\_\-password}]{\setlength{\rightskip}{0pt plus 5cm}int check\-\_\-password (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{pass, }
+\item[{const char $\ast$}]{encrypted}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_af4adbb4fff2ecb5423a72e0d9fcb9f6e}
+\hypertarget{nanny_8cpp_afccd8a0fc3d05de5a1167b097480fb8b}{\index{nanny.\-cpp@{nanny.\-cpp}!create\-\_\-menu\-\_\-actions@{create\-\_\-menu\-\_\-actions}}
+\index{create\-\_\-menu\-\_\-actions@{create\-\_\-menu\-\_\-actions}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{create\-\_\-menu\-\_\-actions}]{\setlength{\rightskip}{0pt plus 5cm}void create\-\_\-menu\-\_\-actions (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{arg}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_afccd8a0fc3d05de5a1167b097480fb8b}
+\hypertarget{nanny_8cpp_a958324535bf0e5e4946432915df7062b}{\index{nanny.\-cpp@{nanny.\-cpp}!create\-\_\-menu\-\_\-options@{create\-\_\-menu\-\_\-options}}
+\index{create\-\_\-menu\-\_\-options@{create\-\_\-menu\-\_\-options}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{create\-\_\-menu\-\_\-options}]{\setlength{\rightskip}{0pt plus 5cm}void create\-\_\-menu\-\_\-options (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a958324535bf0e5e4946432915df7062b}
+\hypertarget{nanny_8cpp_ada2b2f3c305c8ceafb516f4b6d93c8ad}{\index{nanny.\-cpp@{nanny.\-cpp}!determine\-\_\-chargen\-\_\-stage@{determine\-\_\-chargen\-\_\-stage}}
+\index{determine\-\_\-chargen\-\_\-stage@{determine\-\_\-chargen\-\_\-stage}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{determine\-\_\-chargen\-\_\-stage}]{\setlength{\rightskip}{0pt plus 5cm}int determine\-\_\-chargen\-\_\-stage (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_ada2b2f3c305c8ceafb516f4b6d93c8ad}
+\hypertarget{nanny_8cpp_ae69110a497e4f983ebed81f9bb4331f6}{\index{nanny.\-cpp@{nanny.\-cpp}!display\-\_\-hobbitmail\-\_\-inbox@{display\-\_\-hobbitmail\-\_\-inbox}}
+\index{display\-\_\-hobbitmail\-\_\-inbox@{display\-\_\-hobbitmail\-\_\-inbox}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{display\-\_\-hobbitmail\-\_\-inbox}]{\setlength{\rightskip}{0pt plus 5cm}void display\-\_\-hobbitmail\-\_\-inbox (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{{\bf account} $\ast$}]{acct}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_ae69110a497e4f983ebed81f9bb4331f6}
+\hypertarget{nanny_8cpp_afe8de8f6960ca96eb78a1dddad127096}{\index{nanny.\-cpp@{nanny.\-cpp}!display\-\_\-main\-\_\-menu@{display\-\_\-main\-\_\-menu}}
+\index{display\-\_\-main\-\_\-menu@{display\-\_\-main\-\_\-menu}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{display\-\_\-main\-\_\-menu}]{\setlength{\rightskip}{0pt plus 5cm}void display\-\_\-main\-\_\-menu (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_afe8de8f6960ca96eb78a1dddad127096}
+void display\-\_\-login\-\_\-delay (D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A $\ast$ d) \{ char buf\mbox{[}M\-A\-X\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-L\-E\-N\-G\-T\-H\mbox{]}; M\-Y\-S\-Q\-L\-\_\-\-R\-E\-S $\ast$result; M\-Y\-S\-Q\-L\-\_\-\-R\-O\-W row; int tyme\-\_\-passed = 0;
+
+if (!d-\/$>$acct $\vert$$\vert$ d-\/$>$acct-\/$>$name.\-empty ()) \{ return; \}
+
+std\-::string player\-\_\-db = engine.\-get\-\_\-config (\char`\"{}player\-\_\-db\char`\"{});
+
+mysql\-\_\-safe\-\_\-query (\char`\"{}\-S\-E\-L\-E\-C\-T lastlogoff F\-R\-O\-M \%s.\-pfiles W\-H\-E\-R\-E account = '\%s'\char`\"{}, player\-\_\-db.\-c\-\_\-str (), d-\/$>$acct-\/$>$name.\-c\-\_\-str ());
+
+if ((result = mysql\-\_\-store\-\_\-result (database)) == N\-U\-L\-L) \{ sprintf (buf, \char`\"{}\-Warning\-: display\-\_\-login\-\_\-delay()\-: \%s\char`\"{}, mysql\-\_\-error (database)); system\-\_\-log (buf, true);
+
+return; \}
+
+row = mysql\-\_\-fetch\-\_\-row (result); \begin{DoxyVerb}tyme_passed = time (0) - atoi(row[0]);     // 21600 seconds in an in-game day
+
+if ( tyme_passed > 100 && tyme_passed < 21600 ) // more than 100 for people logging off
+\end{DoxyVerb}
+ \{ sprintf (buf, \char`\"{}\-Less than a day has passed in Middle-\/\-Earth since your last departure.\textbackslash{}n\char`\"{}); S\-E\-N\-D\-\_\-\-T\-O\-\_\-\-Q (buf, d); \} else if (tyme\-\_\-passed $>$ 21599 \&\& tyme\-\_\-passed $<$ 43200) \{ sprintf (buf, \char`\"{}\-A single day has passed in Middle-\/\-Earth since your last departure.\textbackslash{}n\char`\"{} ); S\-E\-N\-D\-\_\-\-T\-O\-\_\-\-Q (buf, d); \} else if (tyme\-\_\-passed $>$ 43199 \&\& tyme\-\_\-passed $<$ 2160000) \{ tyme\-\_\-passed = tyme\-\_\-passed / 21600; sprintf (buf, \char`\"{}\%d days have passed in Middle-\/\-Earth since your last departure.\textbackslash{}n\char`\"{}, tyme\-\_\-passed); S\-E\-N\-D\-\_\-\-T\-O\-\_\-\-Q (buf, d); \}
+
+mysql\-\_\-free\-\_\-result (result); result = N\-U\-L\-L;
+
+\} \hypertarget{nanny_8cpp_a3bf05525a68b476f9b9a34d3ffc7f383}{\index{nanny.\-cpp@{nanny.\-cpp}!display\-\_\-unread\-\_\-messages@{display\-\_\-unread\-\_\-messages}}
+\index{display\-\_\-unread\-\_\-messages@{display\-\_\-unread\-\_\-messages}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{display\-\_\-unread\-\_\-messages}]{\setlength{\rightskip}{0pt plus 5cm}void display\-\_\-unread\-\_\-messages (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a3bf05525a68b476f9b9a34d3ffc7f383}
+\hypertarget{nanny_8cpp_a9245bcdf63906a647aa4ddb546f5e25b}{\index{nanny.\-cpp@{nanny.\-cpp}!encrypt\-\_\-buf@{encrypt\-\_\-buf}}
+\index{encrypt\-\_\-buf@{encrypt\-\_\-buf}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{encrypt\-\_\-buf}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ encrypt\-\_\-buf (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{buf}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a9245bcdf63906a647aa4ddb546f5e25b}
+\hypertarget{nanny_8cpp_a8d2b6c20261ff0da7b04bbfc14727b71}{\index{nanny.\-cpp@{nanny.\-cpp}!equip\-\_\-newbie@{equip\-\_\-newbie}}
+\index{equip\-\_\-newbie@{equip\-\_\-newbie}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{equip\-\_\-newbie}]{\setlength{\rightskip}{0pt plus 5cm}void equip\-\_\-newbie (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a8d2b6c20261ff0da7b04bbfc14727b71}
+\hypertarget{nanny_8cpp_af0c4e7ff82da62d0245563ece3701e37}{\index{nanny.\-cpp@{nanny.\-cpp}!get\-\_\-weapon\-\_\-skills@{get\-\_\-weapon\-\_\-skills}}
+\index{get\-\_\-weapon\-\_\-skills@{get\-\_\-weapon\-\_\-skills}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{get\-\_\-weapon\-\_\-skills}]{\setlength{\rightskip}{0pt plus 5cm}void get\-\_\-weapon\-\_\-skills (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int $\ast$}]{melee, }
+\item[{int $\ast$}]{ranged}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_af0c4e7ff82da62d0245563ece3701e37}
+\hypertarget{nanny_8cpp_ac02072d286fe76d41021aef789851308}{\index{nanny.\-cpp@{nanny.\-cpp}!height\-\_\-frame\-\_\-selection@{height\-\_\-frame\-\_\-selection}}
+\index{height\-\_\-frame\-\_\-selection@{height\-\_\-frame\-\_\-selection}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{height\-\_\-frame\-\_\-selection}]{\setlength{\rightskip}{0pt plus 5cm}void height\-\_\-frame\-\_\-selection (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_ac02072d286fe76d41021aef789851308}
+\hypertarget{nanny_8cpp_a6256424fdb3343b94c012abcce942c58}{\index{nanny.\-cpp@{nanny.\-cpp}!is\-\_\-banned@{is\-\_\-banned}}
+\index{is\-\_\-banned@{is\-\_\-banned}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{is\-\_\-banned}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} is\-\_\-banned (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a6256424fdb3343b94c012abcce942c58}
+\hypertarget{nanny_8cpp_ad6aff3591b10f7453c73d9e462ad8955}{\index{nanny.\-cpp@{nanny.\-cpp}!location\-\_\-selection@{location\-\_\-selection}}
+\index{location\-\_\-selection@{location\-\_\-selection}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{location\-\_\-selection}]{\setlength{\rightskip}{0pt plus 5cm}void location\-\_\-selection (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_ad6aff3591b10f7453c73d9e462ad8955}
+\hypertarget{nanny_8cpp_ae99bb33aee011e28f0ccaf9fa98ef41f}{\index{nanny.\-cpp@{nanny.\-cpp}!nanny@{nanny}}
+\index{nanny@{nanny}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{nanny}]{\setlength{\rightskip}{0pt plus 5cm}void nanny (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_ae99bb33aee011e28f0ccaf9fa98ef41f}
+\hypertarget{nanny_8cpp_af09ee92f091d2f8f22ebfd24e52cfa63}{\index{nanny.\-cpp@{nanny.\-cpp}!nanny\-\_\-account\-\_\-email@{nanny\-\_\-account\-\_\-email}}
+\index{nanny\-\_\-account\-\_\-email@{nanny\-\_\-account\-\_\-email}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{nanny\-\_\-account\-\_\-email}]{\setlength{\rightskip}{0pt plus 5cm}void nanny\-\_\-account\-\_\-email (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_af09ee92f091d2f8f22ebfd24e52cfa63}
+\hypertarget{nanny_8cpp_a6cceb996abd52cf6b24f1907428bcbc8}{\index{nanny.\-cpp@{nanny.\-cpp}!nanny\-\_\-account\-\_\-email\-\_\-confirm@{nanny\-\_\-account\-\_\-email\-\_\-confirm}}
+\index{nanny\-\_\-account\-\_\-email\-\_\-confirm@{nanny\-\_\-account\-\_\-email\-\_\-confirm}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{nanny\-\_\-account\-\_\-email\-\_\-confirm}]{\setlength{\rightskip}{0pt plus 5cm}void nanny\-\_\-account\-\_\-email\-\_\-confirm (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a6cceb996abd52cf6b24f1907428bcbc8}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000018}{Todo}]L\-O\-G T\-H\-E\-S\-E \end{DoxyRefDesc}
+\hypertarget{nanny_8cpp_a665a22822ad054d9080a466f6ec59ff5}{\index{nanny.\-cpp@{nanny.\-cpp}!nanny\-\_\-account\-\_\-policies@{nanny\-\_\-account\-\_\-policies}}
+\index{nanny\-\_\-account\-\_\-policies@{nanny\-\_\-account\-\_\-policies}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{nanny\-\_\-account\-\_\-policies}]{\setlength{\rightskip}{0pt plus 5cm}void nanny\-\_\-account\-\_\-policies (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a665a22822ad054d9080a466f6ec59ff5}
+\hypertarget{nanny_8cpp_a7f862cafe4be37954127f3a099b7962a}{\index{nanny.\-cpp@{nanny.\-cpp}!nanny\-\_\-account\-\_\-referral@{nanny\-\_\-account\-\_\-referral}}
+\index{nanny\-\_\-account\-\_\-referral@{nanny\-\_\-account\-\_\-referral}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{nanny\-\_\-account\-\_\-referral}]{\setlength{\rightskip}{0pt plus 5cm}void nanny\-\_\-account\-\_\-referral (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a7f862cafe4be37954127f3a099b7962a}
+\hypertarget{nanny_8cpp_adb4b9bd00b266b833ee5eb809b074b56}{\index{nanny.\-cpp@{nanny.\-cpp}!nanny\-\_\-account\-\_\-setup@{nanny\-\_\-account\-\_\-setup}}
+\index{nanny\-\_\-account\-\_\-setup@{nanny\-\_\-account\-\_\-setup}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{nanny\-\_\-account\-\_\-setup}]{\setlength{\rightskip}{0pt plus 5cm}void nanny\-\_\-account\-\_\-setup (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_adb4b9bd00b266b833ee5eb809b074b56}
+\hypertarget{nanny_8cpp_a8e10fadde2f01dc5a548f61210210ddc}{\index{nanny.\-cpp@{nanny.\-cpp}!nanny\-\_\-ask\-\_\-password@{nanny\-\_\-ask\-\_\-password}}
+\index{nanny\-\_\-ask\-\_\-password@{nanny\-\_\-ask\-\_\-password}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{nanny\-\_\-ask\-\_\-password}]{\setlength{\rightskip}{0pt plus 5cm}void nanny\-\_\-ask\-\_\-password (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a8e10fadde2f01dc5a548f61210210ddc}
+\hypertarget{nanny_8cpp_aa62ae9b1f2caa1cda6a8917d8a2af4a7}{\index{nanny.\-cpp@{nanny.\-cpp}!nanny\-\_\-change\-\_\-email@{nanny\-\_\-change\-\_\-email}}
+\index{nanny\-\_\-change\-\_\-email@{nanny\-\_\-change\-\_\-email}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{nanny\-\_\-change\-\_\-email}]{\setlength{\rightskip}{0pt plus 5cm}void nanny\-\_\-change\-\_\-email (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_aa62ae9b1f2caa1cda6a8917d8a2af4a7}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000019}{Todo}]L\-O\-G T\-H\-E\-S\-E \end{DoxyRefDesc}
+\hypertarget{nanny_8cpp_a4b6366b4120b865f984dd47dacea43a9}{\index{nanny.\-cpp@{nanny.\-cpp}!nanny\-\_\-change\-\_\-email\-\_\-confirm@{nanny\-\_\-change\-\_\-email\-\_\-confirm}}
+\index{nanny\-\_\-change\-\_\-email\-\_\-confirm@{nanny\-\_\-change\-\_\-email\-\_\-confirm}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{nanny\-\_\-change\-\_\-email\-\_\-confirm}]{\setlength{\rightskip}{0pt plus 5cm}void nanny\-\_\-change\-\_\-email\-\_\-confirm (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a4b6366b4120b865f984dd47dacea43a9}
+\hypertarget{nanny_8cpp_af0036529d4526f9255be5276e69e7d2b}{\index{nanny.\-cpp@{nanny.\-cpp}!nanny\-\_\-change\-\_\-password@{nanny\-\_\-change\-\_\-password}}
+\index{nanny\-\_\-change\-\_\-password@{nanny\-\_\-change\-\_\-password}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{nanny\-\_\-change\-\_\-password}]{\setlength{\rightskip}{0pt plus 5cm}void nanny\-\_\-change\-\_\-password (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_af0036529d4526f9255be5276e69e7d2b}
+\hypertarget{nanny_8cpp_aacbc35b1d18b25a80399f9fb9dec2573}{\index{nanny.\-cpp@{nanny.\-cpp}!nanny\-\_\-char\-\_\-name\-\_\-confirm@{nanny\-\_\-char\-\_\-name\-\_\-confirm}}
+\index{nanny\-\_\-char\-\_\-name\-\_\-confirm@{nanny\-\_\-char\-\_\-name\-\_\-confirm}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{nanny\-\_\-char\-\_\-name\-\_\-confirm}]{\setlength{\rightskip}{0pt plus 5cm}void nanny\-\_\-char\-\_\-name\-\_\-confirm (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{arg}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_aacbc35b1d18b25a80399f9fb9dec2573}
+\hypertarget{nanny_8cpp_a228bf77952897626c9cee185a98e2d22}{\index{nanny.\-cpp@{nanny.\-cpp}!nanny\-\_\-check\-\_\-password@{nanny\-\_\-check\-\_\-password}}
+\index{nanny\-\_\-check\-\_\-password@{nanny\-\_\-check\-\_\-password}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{nanny\-\_\-check\-\_\-password}]{\setlength{\rightskip}{0pt plus 5cm}void nanny\-\_\-check\-\_\-password (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a228bf77952897626c9cee185a98e2d22}
+\hypertarget{nanny_8cpp_a8ded8e0af8504d3762883742199ec801}{\index{nanny.\-cpp@{nanny.\-cpp}!nanny\-\_\-choose\-\_\-pc@{nanny\-\_\-choose\-\_\-pc}}
+\index{nanny\-\_\-choose\-\_\-pc@{nanny\-\_\-choose\-\_\-pc}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{nanny\-\_\-choose\-\_\-pc}]{\setlength{\rightskip}{0pt plus 5cm}void nanny\-\_\-choose\-\_\-pc (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a8ded8e0af8504d3762883742199ec801}
+\hypertarget{nanny_8cpp_a4b16693a7479b9fee8d12c0a17d6a447}{\index{nanny.\-cpp@{nanny.\-cpp}!nanny\-\_\-compose\-\_\-mail\-\_\-to@{nanny\-\_\-compose\-\_\-mail\-\_\-to}}
+\index{nanny\-\_\-compose\-\_\-mail\-\_\-to@{nanny\-\_\-compose\-\_\-mail\-\_\-to}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{nanny\-\_\-compose\-\_\-mail\-\_\-to}]{\setlength{\rightskip}{0pt plus 5cm}void nanny\-\_\-compose\-\_\-mail\-\_\-to (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a4b16693a7479b9fee8d12c0a17d6a447}
+\hypertarget{nanny_8cpp_a4f729fd43eec5338950e048ef7a1dccd}{\index{nanny.\-cpp@{nanny.\-cpp}!nanny\-\_\-compose\-\_\-message@{nanny\-\_\-compose\-\_\-message}}
+\index{nanny\-\_\-compose\-\_\-message@{nanny\-\_\-compose\-\_\-message}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{nanny\-\_\-compose\-\_\-message}]{\setlength{\rightskip}{0pt plus 5cm}void nanny\-\_\-compose\-\_\-message (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a4f729fd43eec5338950e048ef7a1dccd}
+\hypertarget{nanny_8cpp_ae29d9035bc22ff7467929e7283af5594}{\index{nanny.\-cpp@{nanny.\-cpp}!nanny\-\_\-compose\-\_\-subject@{nanny\-\_\-compose\-\_\-subject}}
+\index{nanny\-\_\-compose\-\_\-subject@{nanny\-\_\-compose\-\_\-subject}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{nanny\-\_\-compose\-\_\-subject}]{\setlength{\rightskip}{0pt plus 5cm}void nanny\-\_\-compose\-\_\-subject (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_ae29d9035bc22ff7467929e7283af5594}
+\hypertarget{nanny_8cpp_a4990359fef3a8fdeb71b83c1ceba728a}{\index{nanny.\-cpp@{nanny.\-cpp}!nanny\-\_\-composing\-\_\-message@{nanny\-\_\-composing\-\_\-message}}
+\index{nanny\-\_\-composing\-\_\-message@{nanny\-\_\-composing\-\_\-message}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{nanny\-\_\-composing\-\_\-message}]{\setlength{\rightskip}{0pt plus 5cm}void nanny\-\_\-composing\-\_\-message (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a4990359fef3a8fdeb71b83c1ceba728a}
+\hypertarget{nanny_8cpp_af945d7ea9b10996e921cf6e14cf8597a}{\index{nanny.\-cpp@{nanny.\-cpp}!nanny\-\_\-conf\-\_\-change\-\_\-password@{nanny\-\_\-conf\-\_\-change\-\_\-password}}
+\index{nanny\-\_\-conf\-\_\-change\-\_\-password@{nanny\-\_\-conf\-\_\-change\-\_\-password}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{nanny\-\_\-conf\-\_\-change\-\_\-password}]{\setlength{\rightskip}{0pt plus 5cm}void nanny\-\_\-conf\-\_\-change\-\_\-password (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_af945d7ea9b10996e921cf6e14cf8597a}
+\hypertarget{nanny_8cpp_a596ec751f947f4e396125ad623e56c73}{\index{nanny.\-cpp@{nanny.\-cpp}!nanny\-\_\-connect\-\_\-select@{nanny\-\_\-connect\-\_\-select}}
+\index{nanny\-\_\-connect\-\_\-select@{nanny\-\_\-connect\-\_\-select}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{nanny\-\_\-connect\-\_\-select}]{\setlength{\rightskip}{0pt plus 5cm}void nanny\-\_\-connect\-\_\-select (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a596ec751f947f4e396125ad623e56c73}
+\hypertarget{nanny_8cpp_acc02ffc5979f6a5df6819c8a461c252a}{\index{nanny.\-cpp@{nanny.\-cpp}!nanny\-\_\-create\-\_\-guest@{nanny\-\_\-create\-\_\-guest}}
+\index{nanny\-\_\-create\-\_\-guest@{nanny\-\_\-create\-\_\-guest}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{nanny\-\_\-create\-\_\-guest}]{\setlength{\rightskip}{0pt plus 5cm}void nanny\-\_\-create\-\_\-guest (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_acc02ffc5979f6a5df6819c8a461c252a}
+\hypertarget{nanny_8cpp_a2f79352d97c69d9ecab9bf8e05710467}{\index{nanny.\-cpp@{nanny.\-cpp}!nanny\-\_\-delete\-\_\-pc@{nanny\-\_\-delete\-\_\-pc}}
+\index{nanny\-\_\-delete\-\_\-pc@{nanny\-\_\-delete\-\_\-pc}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{nanny\-\_\-delete\-\_\-pc}]{\setlength{\rightskip}{0pt plus 5cm}void nanny\-\_\-delete\-\_\-pc (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a2f79352d97c69d9ecab9bf8e05710467}
+\hypertarget{nanny_8cpp_ac978c7c7b8887ef03ac0e5da2eb0003e}{\index{nanny.\-cpp@{nanny.\-cpp}!nanny\-\_\-disconnect@{nanny\-\_\-disconnect}}
+\index{nanny\-\_\-disconnect@{nanny\-\_\-disconnect}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{nanny\-\_\-disconnect}]{\setlength{\rightskip}{0pt plus 5cm}void nanny\-\_\-disconnect (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_ac978c7c7b8887ef03ac0e5da2eb0003e}
+\hypertarget{nanny_8cpp_afedf120ba1c6ff64d295c15be5f77871}{\index{nanny.\-cpp@{nanny.\-cpp}!nanny\-\_\-login\-\_\-choice@{nanny\-\_\-login\-\_\-choice}}
+\index{nanny\-\_\-login\-\_\-choice@{nanny\-\_\-login\-\_\-choice}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{nanny\-\_\-login\-\_\-choice}]{\setlength{\rightskip}{0pt plus 5cm}void nanny\-\_\-login\-\_\-choice (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_afedf120ba1c6ff64d295c15be5f77871}
+\hypertarget{nanny_8cpp_a5cb5ebf7e4626049257a2993fa1d67ca}{\index{nanny.\-cpp@{nanny.\-cpp}!nanny\-\_\-mail\-\_\-menu@{nanny\-\_\-mail\-\_\-menu}}
+\index{nanny\-\_\-mail\-\_\-menu@{nanny\-\_\-mail\-\_\-menu}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{nanny\-\_\-mail\-\_\-menu}]{\setlength{\rightskip}{0pt plus 5cm}void nanny\-\_\-mail\-\_\-menu (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a5cb5ebf7e4626049257a2993fa1d67ca}
+\hypertarget{nanny_8cpp_a6e3816726c6abafbff2de99746026db8}{\index{nanny.\-cpp@{nanny.\-cpp}!nanny\-\_\-name\-\_\-confirm@{nanny\-\_\-name\-\_\-confirm}}
+\index{nanny\-\_\-name\-\_\-confirm@{nanny\-\_\-name\-\_\-confirm}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{nanny\-\_\-name\-\_\-confirm}]{\setlength{\rightskip}{0pt plus 5cm}void nanny\-\_\-name\-\_\-confirm (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a6e3816726c6abafbff2de99746026db8}
+\hypertarget{nanny_8cpp_ac2316c67aac6067be4086d7c55ff5ff4}{\index{nanny.\-cpp@{nanny.\-cpp}!nanny\-\_\-new\-\_\-account@{nanny\-\_\-new\-\_\-account}}
+\index{nanny\-\_\-new\-\_\-account@{nanny\-\_\-new\-\_\-account}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{nanny\-\_\-new\-\_\-account}]{\setlength{\rightskip}{0pt plus 5cm}void nanny\-\_\-new\-\_\-account (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_ac2316c67aac6067be4086d7c55ff5ff4}
+\hypertarget{nanny_8cpp_a64a5c2fa7f276ac6e14372f3ac11fc08}{\index{nanny.\-cpp@{nanny.\-cpp}!nanny\-\_\-new\-\_\-password@{nanny\-\_\-new\-\_\-password}}
+\index{nanny\-\_\-new\-\_\-password@{nanny\-\_\-new\-\_\-password}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{nanny\-\_\-new\-\_\-password}]{\setlength{\rightskip}{0pt plus 5cm}void nanny\-\_\-new\-\_\-password (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a64a5c2fa7f276ac6e14372f3ac11fc08}
+\hypertarget{nanny_8cpp_aca5c40f3f98846d878a9bfd1dcbe0726}{\index{nanny.\-cpp@{nanny.\-cpp}!nanny\-\_\-privacy\-\_\-confirm@{nanny\-\_\-privacy\-\_\-confirm}}
+\index{nanny\-\_\-privacy\-\_\-confirm@{nanny\-\_\-privacy\-\_\-confirm}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{nanny\-\_\-privacy\-\_\-confirm}]{\setlength{\rightskip}{0pt plus 5cm}void nanny\-\_\-privacy\-\_\-confirm (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{arg}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_aca5c40f3f98846d878a9bfd1dcbe0726}
+\hypertarget{nanny_8cpp_a47bda8690bef6b1b061e7bed485b35e6}{\index{nanny.\-cpp@{nanny.\-cpp}!nanny\-\_\-race\-\_\-confirm@{nanny\-\_\-race\-\_\-confirm}}
+\index{nanny\-\_\-race\-\_\-confirm@{nanny\-\_\-race\-\_\-confirm}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{nanny\-\_\-race\-\_\-confirm}]{\setlength{\rightskip}{0pt plus 5cm}void nanny\-\_\-race\-\_\-confirm (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{arg}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a47bda8690bef6b1b061e7bed485b35e6}
+\hypertarget{nanny_8cpp_a2cb63209af421d32427f076058b012c1}{\index{nanny.\-cpp@{nanny.\-cpp}!nanny\-\_\-read\-\_\-message@{nanny\-\_\-read\-\_\-message}}
+\index{nanny\-\_\-read\-\_\-message@{nanny\-\_\-read\-\_\-message}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{nanny\-\_\-read\-\_\-message}]{\setlength{\rightskip}{0pt plus 5cm}void nanny\-\_\-read\-\_\-message (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a2cb63209af421d32427f076058b012c1}
+\hypertarget{nanny_8cpp_a09d78118618717f99a750061b2d32fc8}{\index{nanny.\-cpp@{nanny.\-cpp}!nanny\-\_\-reading\-\_\-wait@{nanny\-\_\-reading\-\_\-wait}}
+\index{nanny\-\_\-reading\-\_\-wait@{nanny\-\_\-reading\-\_\-wait}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{nanny\-\_\-reading\-\_\-wait}]{\setlength{\rightskip}{0pt plus 5cm}void nanny\-\_\-reading\-\_\-wait (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a09d78118618717f99a750061b2d32fc8}
+\hypertarget{nanny_8cpp_a2dce0da0b9627b54d29883f25a088b26}{\index{nanny.\-cpp@{nanny.\-cpp}!nanny\-\_\-reject\-\_\-message@{nanny\-\_\-reject\-\_\-message}}
+\index{nanny\-\_\-reject\-\_\-message@{nanny\-\_\-reject\-\_\-message}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{nanny\-\_\-reject\-\_\-message}]{\setlength{\rightskip}{0pt plus 5cm}void nanny\-\_\-reject\-\_\-message (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a2dce0da0b9627b54d29883f25a088b26}
+\hypertarget{nanny_8cpp_a6d0f450c3f3764e2b65a98f9d9b3cea1}{\index{nanny.\-cpp@{nanny.\-cpp}!nanny\-\_\-retire@{nanny\-\_\-retire}}
+\index{nanny\-\_\-retire@{nanny\-\_\-retire}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{nanny\-\_\-retire}]{\setlength{\rightskip}{0pt plus 5cm}void nanny\-\_\-retire (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a6d0f450c3f3764e2b65a98f9d9b3cea1}
+\hypertarget{nanny_8cpp_ad503190261106e3403266189407136c2}{\index{nanny.\-cpp@{nanny.\-cpp}!nanny\-\_\-special\-\_\-role\-\_\-confirm@{nanny\-\_\-special\-\_\-role\-\_\-confirm}}
+\index{nanny\-\_\-special\-\_\-role\-\_\-confirm@{nanny\-\_\-special\-\_\-role\-\_\-confirm}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{nanny\-\_\-special\-\_\-role\-\_\-confirm}]{\setlength{\rightskip}{0pt plus 5cm}void nanny\-\_\-special\-\_\-role\-\_\-confirm (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{arg}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_ad503190261106e3403266189407136c2}
+\hypertarget{nanny_8cpp_adce1d16304c63898b91ed35337c07b23}{\index{nanny.\-cpp@{nanny.\-cpp}!nanny\-\_\-special\-\_\-role\-\_\-selection@{nanny\-\_\-special\-\_\-role\-\_\-selection}}
+\index{nanny\-\_\-special\-\_\-role\-\_\-selection@{nanny\-\_\-special\-\_\-role\-\_\-selection}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{nanny\-\_\-special\-\_\-role\-\_\-selection}]{\setlength{\rightskip}{0pt plus 5cm}void nanny\-\_\-special\-\_\-role\-\_\-selection (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{arg}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_adce1d16304c63898b91ed35337c07b23}
+\hypertarget{nanny_8cpp_a01b77b5fdafd723f81cca834faccc292}{\index{nanny.\-cpp@{nanny.\-cpp}!nanny\-\_\-terminate@{nanny\-\_\-terminate}}
+\index{nanny\-\_\-terminate@{nanny\-\_\-terminate}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{nanny\-\_\-terminate}]{\setlength{\rightskip}{0pt plus 5cm}void nanny\-\_\-terminate (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a01b77b5fdafd723f81cca834faccc292}
+\hypertarget{nanny_8cpp_adb7f8bb72a2db6019fde215f96cd23a9}{\index{nanny.\-cpp@{nanny.\-cpp}!nanny\-\_\-view\-\_\-pc@{nanny\-\_\-view\-\_\-pc}}
+\index{nanny\-\_\-view\-\_\-pc@{nanny\-\_\-view\-\_\-pc}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{nanny\-\_\-view\-\_\-pc}]{\setlength{\rightskip}{0pt plus 5cm}void nanny\-\_\-view\-\_\-pc (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_adb7f8bb72a2db6019fde215f96cd23a9}
+\hypertarget{nanny_8cpp_a406a3e5ec04dbce834e95c4c32e6a712}{\index{nanny.\-cpp@{nanny.\-cpp}!pickable\-\_\-skill@{pickable\-\_\-skill}}
+\index{pickable\-\_\-skill@{pickable\-\_\-skill}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{pickable\-\_\-skill}]{\setlength{\rightskip}{0pt plus 5cm}int pickable\-\_\-skill (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{const char $\ast$}]{buf, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a406a3e5ec04dbce834e95c4c32e6a712}
+\hypertarget{nanny_8cpp_adc0b8abf4d8f2280b8f2c8132f9586ab}{\index{nanny.\-cpp@{nanny.\-cpp}!picks\-\_\-entitled@{picks\-\_\-entitled}}
+\index{picks\-\_\-entitled@{picks\-\_\-entitled}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{picks\-\_\-entitled}]{\setlength{\rightskip}{0pt plus 5cm}int picks\-\_\-entitled (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_adc0b8abf4d8f2280b8f2c8132f9586ab}
+\hypertarget{nanny_8cpp_ae644cb91026ea8dc2f45c5abb82166c4}{\index{nanny.\-cpp@{nanny.\-cpp}!post\-\_\-retirement@{post\-\_\-retirement}}
+\index{post\-\_\-retirement@{post\-\_\-retirement}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{post\-\_\-retirement}]{\setlength{\rightskip}{0pt plus 5cm}void post\-\_\-retirement (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_ae644cb91026ea8dc2f45c5abb82166c4}
+\hypertarget{nanny_8cpp_a96d862982c7ac2309be8a94d1985392c}{\index{nanny.\-cpp@{nanny.\-cpp}!profession\-\_\-confirm@{profession\-\_\-confirm}}
+\index{profession\-\_\-confirm@{profession\-\_\-confirm}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{profession\-\_\-confirm}]{\setlength{\rightskip}{0pt plus 5cm}void profession\-\_\-confirm (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a96d862982c7ac2309be8a94d1985392c}
+\hypertarget{nanny_8cpp_a13063e8cff0f13c6c105ea394d46658b}{\index{nanny.\-cpp@{nanny.\-cpp}!profession\-\_\-display@{profession\-\_\-display}}
+\index{profession\-\_\-display@{profession\-\_\-display}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{profession\-\_\-display}]{\setlength{\rightskip}{0pt plus 5cm}void profession\-\_\-display (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a13063e8cff0f13c6c105ea394d46658b}
+\hypertarget{nanny_8cpp_ab1af8c6909819034fa7f840b3a885eb3}{\index{nanny.\-cpp@{nanny.\-cpp}!profession\-\_\-first@{profession\-\_\-first}}
+\index{profession\-\_\-first@{profession\-\_\-first}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{profession\-\_\-first}]{\setlength{\rightskip}{0pt plus 5cm}void profession\-\_\-first (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_ab1af8c6909819034fa7f840b3a885eb3}
+\hypertarget{nanny_8cpp_a8b06d7e508a01420e45fc25a3aecdd4c}{\index{nanny.\-cpp@{nanny.\-cpp}!profession\-\_\-second@{profession\-\_\-second}}
+\index{profession\-\_\-second@{profession\-\_\-second}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{profession\-\_\-second}]{\setlength{\rightskip}{0pt plus 5cm}void profession\-\_\-second (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a8b06d7e508a01420e45fc25a3aecdd4c}
+\hypertarget{nanny_8cpp_a59af03d0d3a4c9c938b8bb79e7183b03}{\index{nanny.\-cpp@{nanny.\-cpp}!profession\-\_\-selection@{profession\-\_\-selection}}
+\index{profession\-\_\-selection@{profession\-\_\-selection}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{profession\-\_\-selection}]{\setlength{\rightskip}{0pt plus 5cm}void profession\-\_\-selection (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a59af03d0d3a4c9c938b8bb79e7183b03}
+\hypertarget{nanny_8cpp_a686faf40ddcbe73820000a5bcb4ee22c}{\index{nanny.\-cpp@{nanny.\-cpp}!race\-\_\-selection@{race\-\_\-selection}}
+\index{race\-\_\-selection@{race\-\_\-selection}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{race\-\_\-selection}]{\setlength{\rightskip}{0pt plus 5cm}void race\-\_\-selection (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{arg}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a686faf40ddcbe73820000a5bcb4ee22c}
+\hypertarget{nanny_8cpp_a6a5a346e63c91bb53c673c16bea38853}{\index{nanny.\-cpp@{nanny.\-cpp}!race\-\_\-selection\-\_\-screen@{race\-\_\-selection\-\_\-screen}}
+\index{race\-\_\-selection\-\_\-screen@{race\-\_\-selection\-\_\-screen}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{race\-\_\-selection\-\_\-screen}]{\setlength{\rightskip}{0pt plus 5cm}void race\-\_\-selection\-\_\-screen (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a6a5a346e63c91bb53c673c16bea38853}
+\hypertarget{nanny_8cpp_a648acf0cfc54f20f7516be7c837b3a25}{\index{nanny.\-cpp@{nanny.\-cpp}!read\-\_\-motd@{read\-\_\-motd}}
+\index{read\-\_\-motd@{read\-\_\-motd}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{read\-\_\-motd}]{\setlength{\rightskip}{0pt plus 5cm}void read\-\_\-motd (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a648acf0cfc54f20f7516be7c837b3a25}
+\hypertarget{nanny_8cpp_a7a4b96400132a5412e8f643fccd874b1}{\index{nanny.\-cpp@{nanny.\-cpp}!role\-\_\-flag\-\_\-descs@{role\-\_\-flag\-\_\-descs}}
+\index{role\-\_\-flag\-\_\-descs@{role\-\_\-flag\-\_\-descs}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{role\-\_\-flag\-\_\-descs}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ role\-\_\-flag\-\_\-descs (
+\begin{DoxyParamCaption}
+\item[{int}]{bitflag}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a7a4b96400132a5412e8f643fccd874b1}
+\hypertarget{nanny_8cpp_a936533fc0f21f930967a7a3d58bbfe3a}{\index{nanny.\-cpp@{nanny.\-cpp}!setup\-\_\-new\-\_\-account@{setup\-\_\-new\-\_\-account}}
+\index{setup\-\_\-new\-\_\-account@{setup\-\_\-new\-\_\-account}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{setup\-\_\-new\-\_\-account}]{\setlength{\rightskip}{0pt plus 5cm}void setup\-\_\-new\-\_\-account (
+\begin{DoxyParamCaption}
+\item[{{\bf account} $\ast$}]{acct}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a936533fc0f21f930967a7a3d58bbfe3a}
+\hypertarget{nanny_8cpp_ab7947b5e29ee981adfe8f8824b19f9cd}{\index{nanny.\-cpp@{nanny.\-cpp}!sex\-\_\-selection@{sex\-\_\-selection}}
+\index{sex\-\_\-selection@{sex\-\_\-selection}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{sex\-\_\-selection}]{\setlength{\rightskip}{0pt plus 5cm}void sex\-\_\-selection (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{arg}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_ab7947b5e29ee981adfe8f8824b19f9cd}
+\hypertarget{nanny_8cpp_a54497e5c7daaf020478148a77d333fbc}{\index{nanny.\-cpp@{nanny.\-cpp}!skill\-\_\-display@{skill\-\_\-display}}
+\index{skill\-\_\-display@{skill\-\_\-display}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{skill\-\_\-display}]{\setlength{\rightskip}{0pt plus 5cm}void skill\-\_\-display (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_a54497e5c7daaf020478148a77d333fbc}
+\hypertarget{nanny_8cpp_ae176a214cb8a9950fea176c726cb56e9}{\index{nanny.\-cpp@{nanny.\-cpp}!skill\-\_\-selection@{skill\-\_\-selection}}
+\index{skill\-\_\-selection@{skill\-\_\-selection}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{skill\-\_\-selection}]{\setlength{\rightskip}{0pt plus 5cm}void skill\-\_\-selection (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{d, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_ae176a214cb8a9950fea176c726cb56e9}
+\hypertarget{nanny_8cpp_ad00145d23b1695e902d5c93174888568}{\index{nanny.\-cpp@{nanny.\-cpp}!spitstat@{spitstat}}
+\index{spitstat@{spitstat}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{spitstat}]{\setlength{\rightskip}{0pt plus 5cm}void spitstat (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf D\-E\-S\-C\-R\-I\-P\-T\-O\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{recipient}
+\end{DoxyParamCaption}
+)}}\label{nanny_8cpp_ad00145d23b1695e902d5c93174888568}
+
+
+\subsection{Variable Documentation}
+\hypertarget{nanny_8cpp_a2da2bea4ab8c343fb96dc60a0c25b0b9}{\index{nanny.\-cpp@{nanny.\-cpp}!color\-\_\-skill@{color\-\_\-skill}}
+\index{color\-\_\-skill@{color\-\_\-skill}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{color\-\_\-skill}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ color\-\_\-skill\mbox{[}$\,$\mbox{]}}}\label{nanny_8cpp_a2da2bea4ab8c343fb96dc60a0c25b0b9}
+\hypertarget{nanny_8cpp_abb07f7777c2ecbebef204cf7935c79e6}{\index{nanny.\-cpp@{nanny.\-cpp}!echo\-\_\-off\-\_\-str@{echo\-\_\-off\-\_\-str}}
+\index{echo\-\_\-off\-\_\-str@{echo\-\_\-off\-\_\-str}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{echo\-\_\-off\-\_\-str}]{\setlength{\rightskip}{0pt plus 5cm}char echo\-\_\-off\-\_\-str\mbox{[}$\,$\mbox{]} = \{ (char) {\bf I\-A\-C}, (char) {\bf W\-I\-L\-L}, (char) T\-E\-L\-O\-P\-T\-\_\-\-E\-C\-H\-O, '\textbackslash{}0' \}}}\label{nanny_8cpp_abb07f7777c2ecbebef204cf7935c79e6}
+\hypertarget{nanny_8cpp_a5f027825b0546ad253ae2406b4b938d3}{\index{nanny.\-cpp@{nanny.\-cpp}!echo\-\_\-on\-\_\-str@{echo\-\_\-on\-\_\-str}}
+\index{echo\-\_\-on\-\_\-str@{echo\-\_\-on\-\_\-str}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{echo\-\_\-on\-\_\-str}]{\setlength{\rightskip}{0pt plus 5cm}char echo\-\_\-on\-\_\-str\mbox{[}$\,$\mbox{]}}}\label{nanny_8cpp_a5f027825b0546ad253ae2406b4b938d3}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \{ (char) \hyperlink{BroadwaveClient_8cpp_a8eebea7e67724c49a6f97c3215a7e72d}{IAC}, (\textcolor{keywordtype}{char}) \hyperlink{BroadwaveClient_8cpp_a4e7340b8cc2e3357e46e04f80256cfa1}{WONT}, (char) TELOPT\_ECHO,
+                       \textcolor{charliteral}{'\(\backslash\)r'}, \textcolor{charliteral}{'\(\backslash\)n'}, \textcolor{charliteral}{'\(\backslash\)0'}
+                     \}
+\end{DoxyCode}
+\hypertarget{nanny_8cpp_a55c71990ee4162ebec6abe401996cf15}{\index{nanny.\-cpp@{nanny.\-cpp}!engine@{engine}}
+\index{engine@{engine}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{engine}]{\setlength{\rightskip}{0pt plus 5cm}{\bf rpie\-::server} engine}}\label{nanny_8cpp_a55c71990ee4162ebec6abe401996cf15}
+\hypertarget{nanny_8cpp_a2a7ff9fd395ce14c00492768a957636a}{\index{nanny.\-cpp@{nanny.\-cpp}!new\-\_\-accounts@{new\-\_\-accounts}}
+\index{new\-\_\-accounts@{new\-\_\-accounts}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{new\-\_\-accounts}]{\setlength{\rightskip}{0pt plus 5cm}int new\-\_\-accounts = 0}}\label{nanny_8cpp_a2a7ff9fd395ce14c00492768a957636a}
+\hypertarget{nanny_8cpp_ad724c9933aa97e455693b8c8f16efd80}{\index{nanny.\-cpp@{nanny.\-cpp}!pregame\-\_\-furnishings@{pregame\-\_\-furnishings}}
+\index{pregame\-\_\-furnishings@{pregame\-\_\-furnishings}!nanny.cpp@{nanny.\-cpp}}
+\subsubsection[{pregame\-\_\-furnishings}]{\setlength{\rightskip}{0pt plus 5cm}const int pregame\-\_\-furnishings\mbox{[}$\,$\mbox{]}}}\label{nanny_8cpp_ad724c9933aa97e455693b8c8f16efd80}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    -1
+\}
+\end{DoxyCode}

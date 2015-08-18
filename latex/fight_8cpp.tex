@@ -1,0 +1,1230 @@
+\hypertarget{fight_8cpp}{\section{fight.\-cpp File Reference}
+\label{fight_8cpp}\index{fight.\-cpp@{fight.\-cpp}}
+}
+{\ttfamily \#include $<$sys/types.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$signal.\-h$>$}\\*
+{\ttfamily \#include $<$ctype.\-h$>$}\\*
+{\ttfamily \#include $<$time.\-h$>$}\\*
+{\ttfamily \#include $<$unistd.\-h$>$}\\*
+{\ttfamily \#include $<$math.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}server.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}structs.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}net\-\_\-link.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}account.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}protos.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}decl.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}group.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utility.\-h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structstats__data}{stats\-\_\-data}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{fight_8cpp_ac8ec6274851094f112f3ef03030e9bf4}{M\-A\-X\-\_\-\-N\-P\-C\-\_\-\-C\-O\-R\-P\-S\-E\-\_\-\-T\-I\-M\-E}~192	/$\ast$ 2 R\-L day -\/-\/ corpses are saved. $\ast$/
+\item 
+\#define \hyperlink{fight_8cpp_abb7f06a3705a4159589b855d45dfc084}{M\-A\-X\-\_\-\-P\-C\-\_\-\-C\-O\-R\-P\-S\-E\-\_\-\-T\-I\-M\-E}~384	/$\ast$ 4 R\-L day -\/-\/ corpses are saved. $\ast$/
+\item 
+\#define \hyperlink{fight_8cpp_aa65016191246dbc3c7f8ec32e179f1a3}{A\-S\-H\-E\-S\-\_\-\-V\-N\-U\-M}~1651
+\item 
+\#define \hyperlink{fight_8cpp_aae597f206a8cf88b5a0593f39044b937}{S\-I\-N\-G\-L\-E}~1
+\item 
+\#define \hyperlink{fight_8cpp_a97179dcbf599e6e1d1045b14f32e8e0d}{P\-R\-I\-M\-A\-R\-Y}~2
+\item 
+\#define \hyperlink{fight_8cpp_a66c7d1be0ebbe7430fe8be2630002a87}{S\-E\-C\-O\-N\-D\-A\-R\-Y}~3
+\item 
+\#define \hyperlink{fight_8cpp_ac034b165512dc698202cdc10e14934f9}{A\-D\-D\-B\-U\-F}~debug\-\_\-buf + strlen (debug\-\_\-buf)
+\item 
+\#define \hyperlink{fight_8cpp_aa70747e23d9ebf312299930cf6b3c20d}{A\-D}~(fd + strlen (fd))
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{fight_8cpp_a210f214094b00073a9b3e145f4865ed8}{compete} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$src, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$tar, int iterations)
+\item 
+int \hyperlink{fight_8cpp_affa011ea575ac0d0c216706898557df6}{get\-\_\-damage\-\_\-total} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+int \hyperlink{fight_8cpp_af506e12c3b557b8dab82faa14c5e1f52}{would\-\_\-kill} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int \hyperlink{protos_8h_ab6fab1a0d63773245da84a305bfa0407}{damage})
+\item 
+int \hyperlink{fight_8cpp_a2a56866651df36c29326d64cbe7d7b1d}{figure\-\_\-wound\-\_\-skillcheck\-\_\-penalties} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int skill)
+\begin{DoxyCompactList}\small\item\em Used only in strike. \end{DoxyCompactList}\item 
+void \hyperlink{fight_8cpp_a9c6797813b49952dc32be7eb0875f321}{add\-\_\-criminal\-\_\-time} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int zone, int penalty\-\_\-time)
+\item 
+void \hyperlink{fight_8cpp_a7d319f7d893e456770ae4e9041a9ce1d}{criminalize} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$vict, int zone, int crime)
+\item 
+void \hyperlink{fight_8cpp_a5d3ff77fdea446d1d2e8158ae6ae0a7c}{stop\-\_\-fighting\-\_\-sounds} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{room_8h_aede519ef65d80b5242a4a28b69d5e097}{R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$room)
+\item 
+void \hyperlink{fight_8cpp_a90bfb4e44aafcb22daedebd15a649f28}{fighting\-\_\-sounds} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{room_8h_aede519ef65d80b5242a4a28b69d5e097}{R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$room)
+\item 
+void \hyperlink{fight_8cpp_a49316e1b56dea4cade7c401e5ca6c916}{set\-\_\-fighting} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$vict)
+\item 
+void \hyperlink{fight_8cpp_a8e2b8ebe6bc933a11196afce4be96679}{stop\-\_\-fighting} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{fight_8cpp_ad1c84298a4c42237aaf5e6d3d6511606}{make\-\_\-statue} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{fight_8cpp_af8b6b964832894ed67025953c28bf7dd}{make\-\_\-corpse} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{fight_8cpp_a8f49b55a2dd0e03b3625ee87031cbdb3}{remove\-\_\-guest\-\_\-skills} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{fight_8cpp_ae4fc9af839619506a97f3c1819c911a9}{death\-\_\-email} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+int \hyperlink{fight_8cpp_a9825e6c9d1d96d5a133051de80dc2e6d}{violent\-\_\-death} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{fight_8cpp_a7ac69e297926b29240e50ecc1dc72ca7}{raw\-\_\-kill} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{fight_8cpp_a6fb632a3e52eb9833cd75fbcd028249b}{die} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{fight_8cpp_a861458bebd96751cc2de334c2d7e4191}{do\-\_\-aimstrike} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{fight_8cpp_ae2f84b507f0a12f9414100d0b1f47076}{do\-\_\-combat\-\_\-feint} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{fight_8cpp_a7abcdb71f6ca50c583b3b82b17ec13f0}{do\-\_\-combat\-\_\-ward} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{fight_8cpp_ae7075583bd5a343d1918fc87acd6b307}{do\-\_\-combat\-\_\-bash} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{fight_8cpp_ad4143f8487f2726b6d44305fb9a41eb2}{hit\-\_\-char} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$victim, int strike\-\_\-parm)
+\item 
+void \hyperlink{fight_8cpp_afead6c11b997bef7e12e475f99784410}{poison\-\_\-bite} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$src, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$tar)
+\item 
+char $\ast$ \hyperlink{fight_8cpp_a0fbbc373975c2763d0d6e7fbd9c9ed38}{get\-\_\-dam\-\_\-word} (int \hyperlink{protos_8h_ab6fab1a0d63773245da84a305bfa0407}{damage}, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$tar)
+\item 
+int \hyperlink{fight_8cpp_a0a6c19b164fbf75fdf5739286dfdbb86}{combat\-\_\-roll} (int ability, int $\ast$diff, int feint)
+\item 
+void \hyperlink{fight_8cpp_a559c1b8c13fef5761d1f59a33d8c41bc}{advance} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$src, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$tar)
+\item 
+int \hyperlink{fight_8cpp_a214a6dc54fbc5252fea551e9802e9336}{strike} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$src, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$tar, int attack\-\_\-num, int mode)
+\item 
+void \hyperlink{fight_8cpp_a10c9604097c4ba7f918688b8b4252c6f}{combat\-\_\-msg\-\_\-substitute} (char $\ast$msg, char $\ast$template\-\_\-string, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$src, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$tar, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$attack\-\_\-weapon, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$defense\-\_\-weapon, char $\ast$location, int \hyperlink{protos_8h_ab6fab1a0d63773245da84a305bfa0407}{damage}, int att\-\_\-diff, int def\-\_\-diff)
+\item 
+void \hyperlink{fight_8cpp_a2d4c15da70c836c8162ff5218197f6ae}{combat\-\_\-results} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$src, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$tar, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$attack\-\_\-weapon, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$defense\-\_\-weapon, int \hyperlink{protos_8h_ab6fab1a0d63773245da84a305bfa0407}{damage}, char $\ast$location, int off\-\_\-result, int def\-\_\-result, int attack\-\_\-num, char $\ast$fd, int off\-\_\-success, int def\-\_\-success, int off\-\_\-style, int def\-\_\-style, int org\-\_\-loc, int att\-\_\-diff, int def\-\_\-diff)
+\item 
+void \hyperlink{fight_8cpp_ac74bbb3f2d2f2fa3a5cf8edb1cab36ed}{figure\-\_\-damage} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$src, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$tar, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$attack\-\_\-weapon, int off\-\_\-result, int $\ast$\hyperlink{protos_8h_ab6fab1a0d63773245da84a305bfa0407}{damage}, int $\ast$location, int $\ast$original\-\_\-damage)
+\item 
+int \hyperlink{fight_8cpp_a4b2ed30b9e4e06c06150b8d9f1bf6636}{weaken} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$victim, \hyperlink{protos_8h_a05f6b0ae8f6a6e135b0e290c25fe0e4e}{uint16} hp\-\_\-penalty, \hyperlink{protos_8h_a05f6b0ae8f6a6e135b0e290c25fe0e4e}{uint16} mp\-\_\-penalty, char $\ast$log\-\_\-msg)
+\item 
+void \hyperlink{fight_8cpp_a5ad05b5673beddfafc48fd38372843de}{spell\-\_\-defenses} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$defender, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$target)
+\item 
+void \hyperlink{fight_8cpp_a66e2dd2d87d9bd8901b062b93c0487d5}{subdue\-\_\-resync} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{fight_8cpp_ac9464a6ffe61b293e41a1fc07f6a37bc}{remove\-\_\-subduer} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{fight_8cpp_a126ad6e83ec676d5b013924d19b77f06}{subdue\-\_\-char} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$victim)
+\item 
+int \hyperlink{fight_8cpp_a91e5e60808933e52b607b619d7dd1efd}{subdue\-\_\-attempt} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$target)
+\item 
+void \hyperlink{fight_8cpp_afae839ac33f4fd6d1136dfdde6f32b36}{perform\-\_\-violence} (void)
+\item 
+void \hyperlink{fight_8cpp_a0fec6a7d4627c03a4e444531f1a262ff}{do\-\_\-stop} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{fight_8cpp_a4944c5399bc47377554982f9a1c8c6ac}{do\-\_\-release} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+int \hyperlink{fight_8cpp_af58dd5b26c62174e0cc21e3424a6ba78}{release\-\_\-prisoner} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$target)
+\item 
+int \hyperlink{fight_8cpp_a20b87c49b75b758b8f045eb64f639be1}{flee\-\_\-room} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{fight_8cpp_aa56769fdee3766251a13cf2d9618df22}{do\-\_\-subdue} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{fight_8cpp_a0774995a39673b8db5ef9ac883e4e2f7}{do\-\_\-escape} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{fight_8cpp_ac321ab52de12a6c8a9486381df2dad28}{do\-\_\-choke} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{fight_8cpp_a7f256c76eadff561444392ca29b19794}{fix\-\_\-offense} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{fight_8cpp_a36f0075afb877880bc0476049a872353}{do\-\_\-compete} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+int \hyperlink{fight_8cpp_a19b7c92abafc977a87a8a7f6c7084361}{compete\-\_\-strike} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$src, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$tar, struct \hyperlink{structstats__data}{stats\-\_\-data} $\ast$stats)
+\item 
+void \hyperlink{fight_8cpp_a4e247d68bdc3a5a83de3ea7aba37c159}{sa\-\_\-rescue} (\hyperlink{structs_8h_aa9a841dce5b261ba79a984ea3a1949cc}{S\-E\-C\-O\-N\-D\-\_\-\-A\-F\-F\-E\-C\-T} $\ast$sa)
+\item 
+int \hyperlink{fight_8cpp_a2de3f0dea435228fc31f5f8b5f84224b}{rescue\-\_\-attempt} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$friend\-Ptr)
+\item 
+void \hyperlink{fight_8cpp_add167977335417f74ccdb123c02a1389}{do\-\_\-rescue} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{fight_8cpp_a4e59d39e81604567ab86734b32279fb0}{do\-\_\-surrender} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{fight_8cpp_a804b19a5dee2231b8bad8c2e2e57cf0e}{do\-\_\-study} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{fight_8cpp_a5b75deb299a6c9743f6dde5058ea808a}{delayed\-\_\-study} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+\hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} \hyperlink{fight_8cpp_aa9a9d21ce07b5bdada6225e7de929253}{is\-\_\-loc\-\_\-covered} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int location, int want, int mode)
+\item 
+int \hyperlink{fight_8cpp_a5a3efc23db148c4038bd5eb9674f91d7}{real\-\_\-damage} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int \hyperlink{protos_8h_ab6fab1a0d63773245da84a305bfa0407}{damage}, int $\ast$location, int type, int source)
+\item 
+int \hyperlink{fight_8cpp_a4b3553025182a269add2be105dcfe698}{damage\-\_\-objects} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, int \hyperlink{protos_8h_ab6fab1a0d63773245da84a305bfa0407}{damage}, char $\ast$loc, int location, int type, int table, \hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} death\-\_\-blow)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classrpie_1_1server}{rpie\-::server} \hyperlink{fight_8cpp_a55c71990ee4162ebec6abe401996cf15}{engine}
+\item 
+\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{fight_8cpp_ac1576aa16c0ed221429dadf5fa6c6d7d}{combat\-\_\-list} = 0
+\item 
+\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{fight_8cpp_a5044785afa89e1d33114e5051f425ee7}{combat\-\_\-next\-\_\-dude} = 0
+\item 
+const int \hyperlink{fight_8cpp_aad0b1271bad0580d84c240a9ceda8d44}{shield\-\_\-parry\-\_\-offense} \mbox{[}4\mbox{]}\mbox{[}4\mbox{]}
+\item 
+const int \hyperlink{fight_8cpp_a205a983e45898b1d0ef6f816812c054a}{shield\-\_\-parry\-\_\-defense} \mbox{[}4\mbox{]}\mbox{[}4\mbox{]}
+\item 
+const int \hyperlink{fight_8cpp_a226f62b55df367a3801d18d3bb21d24a}{dodge\-\_\-offense} \mbox{[}4\mbox{]}\mbox{[}4\mbox{]}
+\item 
+const int \hyperlink{fight_8cpp_a7d0952982c7bc52806dcf0cc2b0c8fbe}{dodge\-\_\-defense} \mbox{[}4\mbox{]}\mbox{[}4\mbox{]}
+\item 
+const int \hyperlink{fight_8cpp_ac9681aadd37703cf6fcb8669f78a5f22}{ignore\-\_\-offense} \mbox{[}4\mbox{]}
+\item 
+const struct \hyperlink{structfight__data}{fight\-\_\-data} \hyperlink{fight_8cpp_a7081c156c28a58540f3ae0bd09232d0d}{fight\-\_\-tab} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{fight_8cpp_aa8e174d884b480483ea8f530ee2ac19c}{crithit} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{fight_8cpp_ac05e7d5048e0da6a76a05818a531fc77}{crithits} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{fight_8cpp_ab23a76737d797ddcafa163796ebc70af}{wtype} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{fight_8cpp_a801450d40409df3f1899a27a7a21eb23}{wtype2} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{fight_8cpp_a37199c5bda6085c47b9f9cb08b402043}{deathhit} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{fight_8cpp_a5b060535d2859d13af3254ec4ab5e0b3}{expiremsg} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{fight_8cpp_a05ec111bc10c3663ed819b6a084f1490}{cs\-\_\-name} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{fight_8cpp_a65cfdf054abf9195c010fa0b87167eef}{rs\-\_\-name} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{fight_8cpp_a4ea05913ff7ac4e90b827302b0b9f2f7}{armor\-\_\-types} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{fight_8cpp_ac2bd75a8f64f11beea7049c24fa39086}{damage\-\_\-types} \mbox{[}$\,$\mbox{]}
+\item 
+const struct \hyperlink{structbody__info}{body\-\_\-info} \hyperlink{fight_8cpp_af3c3bebe98d28736ef809e356c1f6dab}{body\-\_\-tab} \mbox{[}\hyperlink{structs_8h_a7a640dc21668c2cd0a2e64199a5c6e91}{N\-U\-M\-\_\-\-T\-A\-B\-L\-E\-S}\mbox{]}\mbox{[}\hyperlink{structs_8h_ad75186dfad7f248bdc5b76d418327aad}{M\-A\-X\-\_\-\-H\-I\-T\-L\-O\-C}\mbox{]}
+\item 
+const char $\ast$ \hyperlink{fight_8cpp_a5bef35195570c5104eb3bc1c51802f13}{attack\-\_\-names} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{fight_8cpp_acd8463a1f07830ad1eac482f0f29db7c}{attack\-\_\-names\-\_\-plural} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{fight_8cpp_a83230a19a6e89e39aac6fe4b3d05b1d6}{attack\-\_\-part} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{fight_8cpp_a9b989afb12ff9f3b26fb111b313def58}{miss\-\_\-descriptor} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{fight_8cpp_ac374c87103cb39d1dd445db9d6217eb9}{generic\-\_\-descriptor} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{fight_8cpp_a5e4d6f9554630247ac7df85341b24a0a}{block\-\_\-descriptor} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{fight_8cpp_ae112d1778b2f2cb43e52cfbb9d14af1f}{parry\-\_\-descriptor} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \hyperlink{fight_8cpp_a44823cb4b5892d2c77831850056e6306}{break\-\_\-def} \mbox{[}$\,$\mbox{]}
+\item 
+const int \hyperlink{fight_8cpp_a4242b2b09201e4f2dd080629ac5402c9}{weapon\-\_\-armor\-\_\-table} \mbox{[}10\mbox{]}\mbox{[}6\mbox{]}
+\item 
+const int \hyperlink{fight_8cpp_a9b6888c0578ce18192f3338b67323fb3}{weapon\-\_\-nat\-\_\-attack\-\_\-table} \mbox{[}8\mbox{]}\mbox{[}6\mbox{]}
+\item 
+struct \hyperlink{structstats__data}{stats\-\_\-data} \hyperlink{fight_8cpp_a3fb59046e0659e57bb5ce9a9ccce0417}{src\-\_\-stats}
+\item 
+struct \hyperlink{structstats__data}{stats\-\_\-data} \hyperlink{fight_8cpp_aa9b8dd532529e807c8b4b7b2992aaea0}{tar\-\_\-stats}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{fight_8cpp_aa70747e23d9ebf312299930cf6b3c20d}{\index{fight.\-cpp@{fight.\-cpp}!A\-D@{A\-D}}
+\index{A\-D@{A\-D}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{A\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-D~(fd + strlen (fd))}}\label{fight_8cpp_aa70747e23d9ebf312299930cf6b3c20d}
+\hypertarget{fight_8cpp_ac034b165512dc698202cdc10e14934f9}{\index{fight.\-cpp@{fight.\-cpp}!A\-D\-D\-B\-U\-F@{A\-D\-D\-B\-U\-F}}
+\index{A\-D\-D\-B\-U\-F@{A\-D\-D\-B\-U\-F}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{A\-D\-D\-B\-U\-F}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-D\-D\-B\-U\-F~debug\-\_\-buf + strlen (debug\-\_\-buf)}}\label{fight_8cpp_ac034b165512dc698202cdc10e14934f9}
+\hypertarget{fight_8cpp_aa65016191246dbc3c7f8ec32e179f1a3}{\index{fight.\-cpp@{fight.\-cpp}!A\-S\-H\-E\-S\-\_\-\-V\-N\-U\-M@{A\-S\-H\-E\-S\-\_\-\-V\-N\-U\-M}}
+\index{A\-S\-H\-E\-S\-\_\-\-V\-N\-U\-M@{A\-S\-H\-E\-S\-\_\-\-V\-N\-U\-M}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{A\-S\-H\-E\-S\-\_\-\-V\-N\-U\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-S\-H\-E\-S\-\_\-\-V\-N\-U\-M~1651}}\label{fight_8cpp_aa65016191246dbc3c7f8ec32e179f1a3}
+\hypertarget{fight_8cpp_ac8ec6274851094f112f3ef03030e9bf4}{\index{fight.\-cpp@{fight.\-cpp}!M\-A\-X\-\_\-\-N\-P\-C\-\_\-\-C\-O\-R\-P\-S\-E\-\_\-\-T\-I\-M\-E@{M\-A\-X\-\_\-\-N\-P\-C\-\_\-\-C\-O\-R\-P\-S\-E\-\_\-\-T\-I\-M\-E}}
+\index{M\-A\-X\-\_\-\-N\-P\-C\-\_\-\-C\-O\-R\-P\-S\-E\-\_\-\-T\-I\-M\-E@{M\-A\-X\-\_\-\-N\-P\-C\-\_\-\-C\-O\-R\-P\-S\-E\-\_\-\-T\-I\-M\-E}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{M\-A\-X\-\_\-\-N\-P\-C\-\_\-\-C\-O\-R\-P\-S\-E\-\_\-\-T\-I\-M\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-X\-\_\-\-N\-P\-C\-\_\-\-C\-O\-R\-P\-S\-E\-\_\-\-T\-I\-M\-E~192	/$\ast$ 2 R\-L day -\/-\/ corpses are saved. $\ast$/}}\label{fight_8cpp_ac8ec6274851094f112f3ef03030e9bf4}
+\hypertarget{fight_8cpp_abb7f06a3705a4159589b855d45dfc084}{\index{fight.\-cpp@{fight.\-cpp}!M\-A\-X\-\_\-\-P\-C\-\_\-\-C\-O\-R\-P\-S\-E\-\_\-\-T\-I\-M\-E@{M\-A\-X\-\_\-\-P\-C\-\_\-\-C\-O\-R\-P\-S\-E\-\_\-\-T\-I\-M\-E}}
+\index{M\-A\-X\-\_\-\-P\-C\-\_\-\-C\-O\-R\-P\-S\-E\-\_\-\-T\-I\-M\-E@{M\-A\-X\-\_\-\-P\-C\-\_\-\-C\-O\-R\-P\-S\-E\-\_\-\-T\-I\-M\-E}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{M\-A\-X\-\_\-\-P\-C\-\_\-\-C\-O\-R\-P\-S\-E\-\_\-\-T\-I\-M\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-X\-\_\-\-P\-C\-\_\-\-C\-O\-R\-P\-S\-E\-\_\-\-T\-I\-M\-E~384	/$\ast$ 4 R\-L day -\/-\/ corpses are saved. $\ast$/}}\label{fight_8cpp_abb7f06a3705a4159589b855d45dfc084}
+\hypertarget{fight_8cpp_a97179dcbf599e6e1d1045b14f32e8e0d}{\index{fight.\-cpp@{fight.\-cpp}!P\-R\-I\-M\-A\-R\-Y@{P\-R\-I\-M\-A\-R\-Y}}
+\index{P\-R\-I\-M\-A\-R\-Y@{P\-R\-I\-M\-A\-R\-Y}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{P\-R\-I\-M\-A\-R\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-R\-I\-M\-A\-R\-Y~2}}\label{fight_8cpp_a97179dcbf599e6e1d1045b14f32e8e0d}
+\hypertarget{fight_8cpp_a66c7d1be0ebbe7430fe8be2630002a87}{\index{fight.\-cpp@{fight.\-cpp}!S\-E\-C\-O\-N\-D\-A\-R\-Y@{S\-E\-C\-O\-N\-D\-A\-R\-Y}}
+\index{S\-E\-C\-O\-N\-D\-A\-R\-Y@{S\-E\-C\-O\-N\-D\-A\-R\-Y}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{S\-E\-C\-O\-N\-D\-A\-R\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-E\-C\-O\-N\-D\-A\-R\-Y~3}}\label{fight_8cpp_a66c7d1be0ebbe7430fe8be2630002a87}
+\hypertarget{fight_8cpp_aae597f206a8cf88b5a0593f39044b937}{\index{fight.\-cpp@{fight.\-cpp}!S\-I\-N\-G\-L\-E@{S\-I\-N\-G\-L\-E}}
+\index{S\-I\-N\-G\-L\-E@{S\-I\-N\-G\-L\-E}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{S\-I\-N\-G\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-I\-N\-G\-L\-E~1}}\label{fight_8cpp_aae597f206a8cf88b5a0593f39044b937}
+
+
+\subsection{Function Documentation}
+\hypertarget{fight_8cpp_a9c6797813b49952dc32be7eb0875f321}{\index{fight.\-cpp@{fight.\-cpp}!add\-\_\-criminal\-\_\-time@{add\-\_\-criminal\-\_\-time}}
+\index{add\-\_\-criminal\-\_\-time@{add\-\_\-criminal\-\_\-time}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{add\-\_\-criminal\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}void add\-\_\-criminal\-\_\-time (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{zone, }
+\item[{int}]{penalty\-\_\-time}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_a9c6797813b49952dc32be7eb0875f321}
+\hypertarget{fight_8cpp_a559c1b8c13fef5761d1f59a33d8c41bc}{\index{fight.\-cpp@{fight.\-cpp}!advance@{advance}}
+\index{advance@{advance}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{advance}]{\setlength{\rightskip}{0pt plus 5cm}void advance (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{src, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{tar}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_a559c1b8c13fef5761d1f59a33d8c41bc}
+\hypertarget{fight_8cpp_a10c9604097c4ba7f918688b8b4252c6f}{\index{fight.\-cpp@{fight.\-cpp}!combat\-\_\-msg\-\_\-substitute@{combat\-\_\-msg\-\_\-substitute}}
+\index{combat\-\_\-msg\-\_\-substitute@{combat\-\_\-msg\-\_\-substitute}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{combat\-\_\-msg\-\_\-substitute}]{\setlength{\rightskip}{0pt plus 5cm}void combat\-\_\-msg\-\_\-substitute (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{msg, }
+\item[{char $\ast$}]{template\-\_\-string, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{src, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{tar, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{attack\-\_\-weapon, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{defense\-\_\-weapon, }
+\item[{char $\ast$}]{location, }
+\item[{int}]{damage, }
+\item[{int}]{att\-\_\-diff, }
+\item[{int}]{def\-\_\-diff}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_a10c9604097c4ba7f918688b8b4252c6f}
+\hypertarget{fight_8cpp_a2d4c15da70c836c8162ff5218197f6ae}{\index{fight.\-cpp@{fight.\-cpp}!combat\-\_\-results@{combat\-\_\-results}}
+\index{combat\-\_\-results@{combat\-\_\-results}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{combat\-\_\-results}]{\setlength{\rightskip}{0pt plus 5cm}void combat\-\_\-results (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{src, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{tar, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{attack\-\_\-weapon, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{defense\-\_\-weapon, }
+\item[{int}]{damage, }
+\item[{char $\ast$}]{location, }
+\item[{int}]{off\-\_\-result, }
+\item[{int}]{def\-\_\-result, }
+\item[{int}]{attack\-\_\-num, }
+\item[{char $\ast$}]{fd, }
+\item[{int}]{off\-\_\-success, }
+\item[{int}]{def\-\_\-success, }
+\item[{int}]{off\-\_\-style, }
+\item[{int}]{def\-\_\-style, }
+\item[{int}]{org\-\_\-loc, }
+\item[{int}]{att\-\_\-diff, }
+\item[{int}]{def\-\_\-diff}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_a2d4c15da70c836c8162ff5218197f6ae}
+\hypertarget{fight_8cpp_a0a6c19b164fbf75fdf5739286dfdbb86}{\index{fight.\-cpp@{fight.\-cpp}!combat\-\_\-roll@{combat\-\_\-roll}}
+\index{combat\-\_\-roll@{combat\-\_\-roll}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{combat\-\_\-roll}]{\setlength{\rightskip}{0pt plus 5cm}int combat\-\_\-roll (
+\begin{DoxyParamCaption}
+\item[{int}]{ability, }
+\item[{int $\ast$}]{diff, }
+\item[{int}]{feint}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_a0a6c19b164fbf75fdf5739286dfdbb86}
+\hypertarget{fight_8cpp_a210f214094b00073a9b3e145f4865ed8}{\index{fight.\-cpp@{fight.\-cpp}!compete@{compete}}
+\index{compete@{compete}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{compete}]{\setlength{\rightskip}{0pt plus 5cm}void compete (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{src, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{tar, }
+\item[{int}]{iterations}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_a210f214094b00073a9b3e145f4865ed8}
+\hypertarget{fight_8cpp_a19b7c92abafc977a87a8a7f6c7084361}{\index{fight.\-cpp@{fight.\-cpp}!compete\-\_\-strike@{compete\-\_\-strike}}
+\index{compete\-\_\-strike@{compete\-\_\-strike}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{compete\-\_\-strike}]{\setlength{\rightskip}{0pt plus 5cm}int compete\-\_\-strike (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{src, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{tar, }
+\item[{struct {\bf stats\-\_\-data} $\ast$}]{stats}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_a19b7c92abafc977a87a8a7f6c7084361}
+\hypertarget{fight_8cpp_a7d319f7d893e456770ae4e9041a9ce1d}{\index{fight.\-cpp@{fight.\-cpp}!criminalize@{criminalize}}
+\index{criminalize@{criminalize}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{criminalize}]{\setlength{\rightskip}{0pt plus 5cm}void criminalize (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{vict, }
+\item[{int}]{zone, }
+\item[{int}]{crime}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_a7d319f7d893e456770ae4e9041a9ce1d}
+\hypertarget{fight_8cpp_a4b3553025182a269add2be105dcfe698}{\index{fight.\-cpp@{fight.\-cpp}!damage\-\_\-objects@{damage\-\_\-objects}}
+\index{damage\-\_\-objects@{damage\-\_\-objects}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{damage\-\_\-objects}]{\setlength{\rightskip}{0pt plus 5cm}int damage\-\_\-objects (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{damage, }
+\item[{char $\ast$}]{loc, }
+\item[{int}]{location, }
+\item[{int}]{type, }
+\item[{int}]{table, }
+\item[{{\bf bool}}]{death\-\_\-blow}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_a4b3553025182a269add2be105dcfe698}
+\hypertarget{fight_8cpp_ae4fc9af839619506a97f3c1819c911a9}{\index{fight.\-cpp@{fight.\-cpp}!death\-\_\-email@{death\-\_\-email}}
+\index{death\-\_\-email@{death\-\_\-email}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{death\-\_\-email}]{\setlength{\rightskip}{0pt plus 5cm}void death\-\_\-email (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_ae4fc9af839619506a97f3c1819c911a9}
+\hypertarget{fight_8cpp_a5b75deb299a6c9743f6dde5058ea808a}{\index{fight.\-cpp@{fight.\-cpp}!delayed\-\_\-study@{delayed\-\_\-study}}
+\index{delayed\-\_\-study@{delayed\-\_\-study}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{delayed\-\_\-study}]{\setlength{\rightskip}{0pt plus 5cm}void delayed\-\_\-study (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_a5b75deb299a6c9743f6dde5058ea808a}
+\hypertarget{fight_8cpp_a6fb632a3e52eb9833cd75fbcd028249b}{\index{fight.\-cpp@{fight.\-cpp}!die@{die}}
+\index{die@{die}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{die}]{\setlength{\rightskip}{0pt plus 5cm}void die (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_a6fb632a3e52eb9833cd75fbcd028249b}
+\hypertarget{fight_8cpp_a861458bebd96751cc2de334c2d7e4191}{\index{fight.\-cpp@{fight.\-cpp}!do\-\_\-aimstrike@{do\-\_\-aimstrike}}
+\index{do\-\_\-aimstrike@{do\-\_\-aimstrike}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{do\-\_\-aimstrike}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-aimstrike (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_a861458bebd96751cc2de334c2d7e4191}
+\hypertarget{fight_8cpp_ac321ab52de12a6c8a9486381df2dad28}{\index{fight.\-cpp@{fight.\-cpp}!do\-\_\-choke@{do\-\_\-choke}}
+\index{do\-\_\-choke@{do\-\_\-choke}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{do\-\_\-choke}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-choke (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_ac321ab52de12a6c8a9486381df2dad28}
+\hypertarget{fight_8cpp_ae7075583bd5a343d1918fc87acd6b307}{\index{fight.\-cpp@{fight.\-cpp}!do\-\_\-combat\-\_\-bash@{do\-\_\-combat\-\_\-bash}}
+\index{do\-\_\-combat\-\_\-bash@{do\-\_\-combat\-\_\-bash}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{do\-\_\-combat\-\_\-bash}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-combat\-\_\-bash (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_ae7075583bd5a343d1918fc87acd6b307}
+\hypertarget{fight_8cpp_ae2f84b507f0a12f9414100d0b1f47076}{\index{fight.\-cpp@{fight.\-cpp}!do\-\_\-combat\-\_\-feint@{do\-\_\-combat\-\_\-feint}}
+\index{do\-\_\-combat\-\_\-feint@{do\-\_\-combat\-\_\-feint}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{do\-\_\-combat\-\_\-feint}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-combat\-\_\-feint (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_ae2f84b507f0a12f9414100d0b1f47076}
+\hypertarget{fight_8cpp_a7abcdb71f6ca50c583b3b82b17ec13f0}{\index{fight.\-cpp@{fight.\-cpp}!do\-\_\-combat\-\_\-ward@{do\-\_\-combat\-\_\-ward}}
+\index{do\-\_\-combat\-\_\-ward@{do\-\_\-combat\-\_\-ward}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{do\-\_\-combat\-\_\-ward}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-combat\-\_\-ward (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_a7abcdb71f6ca50c583b3b82b17ec13f0}
+\hypertarget{fight_8cpp_a36f0075afb877880bc0476049a872353}{\index{fight.\-cpp@{fight.\-cpp}!do\-\_\-compete@{do\-\_\-compete}}
+\index{do\-\_\-compete@{do\-\_\-compete}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{do\-\_\-compete}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-compete (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_a36f0075afb877880bc0476049a872353}
+\hypertarget{fight_8cpp_a0774995a39673b8db5ef9ac883e4e2f7}{\index{fight.\-cpp@{fight.\-cpp}!do\-\_\-escape@{do\-\_\-escape}}
+\index{do\-\_\-escape@{do\-\_\-escape}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{do\-\_\-escape}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-escape (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_a0774995a39673b8db5ef9ac883e4e2f7}
+\hypertarget{fight_8cpp_a4944c5399bc47377554982f9a1c8c6ac}{\index{fight.\-cpp@{fight.\-cpp}!do\-\_\-release@{do\-\_\-release}}
+\index{do\-\_\-release@{do\-\_\-release}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{do\-\_\-release}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-release (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_a4944c5399bc47377554982f9a1c8c6ac}
+\hypertarget{fight_8cpp_add167977335417f74ccdb123c02a1389}{\index{fight.\-cpp@{fight.\-cpp}!do\-\_\-rescue@{do\-\_\-rescue}}
+\index{do\-\_\-rescue@{do\-\_\-rescue}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{do\-\_\-rescue}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-rescue (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_add167977335417f74ccdb123c02a1389}
+\hypertarget{fight_8cpp_a0fec6a7d4627c03a4e444531f1a262ff}{\index{fight.\-cpp@{fight.\-cpp}!do\-\_\-stop@{do\-\_\-stop}}
+\index{do\-\_\-stop@{do\-\_\-stop}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{do\-\_\-stop}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-stop (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_a0fec6a7d4627c03a4e444531f1a262ff}
+\hypertarget{fight_8cpp_a804b19a5dee2231b8bad8c2e2e57cf0e}{\index{fight.\-cpp@{fight.\-cpp}!do\-\_\-study@{do\-\_\-study}}
+\index{do\-\_\-study@{do\-\_\-study}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{do\-\_\-study}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-study (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_a804b19a5dee2231b8bad8c2e2e57cf0e}
+\hypertarget{fight_8cpp_aa56769fdee3766251a13cf2d9618df22}{\index{fight.\-cpp@{fight.\-cpp}!do\-\_\-subdue@{do\-\_\-subdue}}
+\index{do\-\_\-subdue@{do\-\_\-subdue}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{do\-\_\-subdue}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-subdue (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_aa56769fdee3766251a13cf2d9618df22}
+\hypertarget{fight_8cpp_a4e59d39e81604567ab86734b32279fb0}{\index{fight.\-cpp@{fight.\-cpp}!do\-\_\-surrender@{do\-\_\-surrender}}
+\index{do\-\_\-surrender@{do\-\_\-surrender}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{do\-\_\-surrender}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-surrender (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_a4e59d39e81604567ab86734b32279fb0}
+\hypertarget{fight_8cpp_a90bfb4e44aafcb22daedebd15a649f28}{\index{fight.\-cpp@{fight.\-cpp}!fighting\-\_\-sounds@{fighting\-\_\-sounds}}
+\index{fighting\-\_\-sounds@{fighting\-\_\-sounds}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{fighting\-\_\-sounds}]{\setlength{\rightskip}{0pt plus 5cm}void fighting\-\_\-sounds (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$}]{room}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_a90bfb4e44aafcb22daedebd15a649f28}
+\hypertarget{fight_8cpp_ac74bbb3f2d2f2fa3a5cf8edb1cab36ed}{\index{fight.\-cpp@{fight.\-cpp}!figure\-\_\-damage@{figure\-\_\-damage}}
+\index{figure\-\_\-damage@{figure\-\_\-damage}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{figure\-\_\-damage}]{\setlength{\rightskip}{0pt plus 5cm}void figure\-\_\-damage (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{src, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{tar, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{attack\-\_\-weapon, }
+\item[{int}]{off\-\_\-result, }
+\item[{int $\ast$}]{damage, }
+\item[{int $\ast$}]{location, }
+\item[{int $\ast$}]{original\-\_\-damage}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_ac74bbb3f2d2f2fa3a5cf8edb1cab36ed}
+\hypertarget{fight_8cpp_a2a56866651df36c29326d64cbe7d7b1d}{\index{fight.\-cpp@{fight.\-cpp}!figure\-\_\-wound\-\_\-skillcheck\-\_\-penalties@{figure\-\_\-wound\-\_\-skillcheck\-\_\-penalties}}
+\index{figure\-\_\-wound\-\_\-skillcheck\-\_\-penalties@{figure\-\_\-wound\-\_\-skillcheck\-\_\-penalties}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{figure\-\_\-wound\-\_\-skillcheck\-\_\-penalties}]{\setlength{\rightskip}{0pt plus 5cm}int figure\-\_\-wound\-\_\-skillcheck\-\_\-penalties (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{skill}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_a2a56866651df36c29326d64cbe7d7b1d}
+
+
+Used only in strike. 
+
+2$^\wedge$14 = 16384 gives us the best precision for our range of hp and skill. The integer math matches the correctly rounded value about 49\% of the time as opposed to casting the value from floats (which are the same 51\% of the time). Accurate within 1\% of the skill value and about 1/20th the speed of \char`\"{}nearestint\char`\"{} and about 5/6th the speed of casting floats. \hypertarget{fight_8cpp_a7f256c76eadff561444392ca29b19794}{\index{fight.\-cpp@{fight.\-cpp}!fix\-\_\-offense@{fix\-\_\-offense}}
+\index{fix\-\_\-offense@{fix\-\_\-offense}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{fix\-\_\-offense}]{\setlength{\rightskip}{0pt plus 5cm}void fix\-\_\-offense (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_a7f256c76eadff561444392ca29b19794}
+\hypertarget{fight_8cpp_a20b87c49b75b758b8f045eb64f639be1}{\index{fight.\-cpp@{fight.\-cpp}!flee\-\_\-room@{flee\-\_\-room}}
+\index{flee\-\_\-room@{flee\-\_\-room}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{flee\-\_\-room}]{\setlength{\rightskip}{0pt plus 5cm}int flee\-\_\-room (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_a20b87c49b75b758b8f045eb64f639be1}
+\hypertarget{fight_8cpp_a0fbbc373975c2763d0d6e7fbd9c9ed38}{\index{fight.\-cpp@{fight.\-cpp}!get\-\_\-dam\-\_\-word@{get\-\_\-dam\-\_\-word}}
+\index{get\-\_\-dam\-\_\-word@{get\-\_\-dam\-\_\-word}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{get\-\_\-dam\-\_\-word}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ get\-\_\-dam\-\_\-word (
+\begin{DoxyParamCaption}
+\item[{int}]{damage, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{tar}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_a0fbbc373975c2763d0d6e7fbd9c9ed38}
+\hypertarget{fight_8cpp_affa011ea575ac0d0c216706898557df6}{\index{fight.\-cpp@{fight.\-cpp}!get\-\_\-damage\-\_\-total@{get\-\_\-damage\-\_\-total}}
+\index{get\-\_\-damage\-\_\-total@{get\-\_\-damage\-\_\-total}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{get\-\_\-damage\-\_\-total}]{\setlength{\rightskip}{0pt plus 5cm}int get\-\_\-damage\-\_\-total (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_affa011ea575ac0d0c216706898557df6}
+\hypertarget{fight_8cpp_ad4143f8487f2726b6d44305fb9a41eb2}{\index{fight.\-cpp@{fight.\-cpp}!hit\-\_\-char@{hit\-\_\-char}}
+\index{hit\-\_\-char@{hit\-\_\-char}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{hit\-\_\-char}]{\setlength{\rightskip}{0pt plus 5cm}void hit\-\_\-char (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{victim, }
+\item[{int}]{strike\-\_\-parm}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_ad4143f8487f2726b6d44305fb9a41eb2}
+\hypertarget{fight_8cpp_aa9a9d21ce07b5bdada6225e7de929253}{\index{fight.\-cpp@{fight.\-cpp}!is\-\_\-loc\-\_\-covered@{is\-\_\-loc\-\_\-covered}}
+\index{is\-\_\-loc\-\_\-covered@{is\-\_\-loc\-\_\-covered}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{is\-\_\-loc\-\_\-covered}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} is\-\_\-loc\-\_\-covered (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{location, }
+\item[{int}]{want, }
+\item[{int}]{mode}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_aa9a9d21ce07b5bdada6225e7de929253}
+\hypertarget{fight_8cpp_af8b6b964832894ed67025953c28bf7dd}{\index{fight.\-cpp@{fight.\-cpp}!make\-\_\-corpse@{make\-\_\-corpse}}
+\index{make\-\_\-corpse@{make\-\_\-corpse}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{make\-\_\-corpse}]{\setlength{\rightskip}{0pt plus 5cm}void make\-\_\-corpse (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_af8b6b964832894ed67025953c28bf7dd}
+\hypertarget{fight_8cpp_ad1c84298a4c42237aaf5e6d3d6511606}{\index{fight.\-cpp@{fight.\-cpp}!make\-\_\-statue@{make\-\_\-statue}}
+\index{make\-\_\-statue@{make\-\_\-statue}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{make\-\_\-statue}]{\setlength{\rightskip}{0pt plus 5cm}void make\-\_\-statue (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_ad1c84298a4c42237aaf5e6d3d6511606}
+\hypertarget{fight_8cpp_afae839ac33f4fd6d1136dfdde6f32b36}{\index{fight.\-cpp@{fight.\-cpp}!perform\-\_\-violence@{perform\-\_\-violence}}
+\index{perform\-\_\-violence@{perform\-\_\-violence}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{perform\-\_\-violence}]{\setlength{\rightskip}{0pt plus 5cm}void perform\-\_\-violence (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_afae839ac33f4fd6d1136dfdde6f32b36}
+\hypertarget{fight_8cpp_afead6c11b997bef7e12e475f99784410}{\index{fight.\-cpp@{fight.\-cpp}!poison\-\_\-bite@{poison\-\_\-bite}}
+\index{poison\-\_\-bite@{poison\-\_\-bite}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{poison\-\_\-bite}]{\setlength{\rightskip}{0pt plus 5cm}void poison\-\_\-bite (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{src, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{tar}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_afead6c11b997bef7e12e475f99784410}
+\hypertarget{fight_8cpp_a7ac69e297926b29240e50ecc1dc72ca7}{\index{fight.\-cpp@{fight.\-cpp}!raw\-\_\-kill@{raw\-\_\-kill}}
+\index{raw\-\_\-kill@{raw\-\_\-kill}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{raw\-\_\-kill}]{\setlength{\rightskip}{0pt plus 5cm}void raw\-\_\-kill (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_a7ac69e297926b29240e50ecc1dc72ca7}
+\hypertarget{fight_8cpp_a5a3efc23db148c4038bd5eb9674f91d7}{\index{fight.\-cpp@{fight.\-cpp}!real\-\_\-damage@{real\-\_\-damage}}
+\index{real\-\_\-damage@{real\-\_\-damage}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{real\-\_\-damage}]{\setlength{\rightskip}{0pt plus 5cm}int real\-\_\-damage (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{damage, }
+\item[{int $\ast$}]{location, }
+\item[{int}]{type, }
+\item[{int}]{source}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_a5a3efc23db148c4038bd5eb9674f91d7}
+\hypertarget{fight_8cpp_af58dd5b26c62174e0cc21e3424a6ba78}{\index{fight.\-cpp@{fight.\-cpp}!release\-\_\-prisoner@{release\-\_\-prisoner}}
+\index{release\-\_\-prisoner@{release\-\_\-prisoner}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{release\-\_\-prisoner}]{\setlength{\rightskip}{0pt plus 5cm}int release\-\_\-prisoner (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{target}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_af58dd5b26c62174e0cc21e3424a6ba78}
+\hypertarget{fight_8cpp_a8f49b55a2dd0e03b3625ee87031cbdb3}{\index{fight.\-cpp@{fight.\-cpp}!remove\-\_\-guest\-\_\-skills@{remove\-\_\-guest\-\_\-skills}}
+\index{remove\-\_\-guest\-\_\-skills@{remove\-\_\-guest\-\_\-skills}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{remove\-\_\-guest\-\_\-skills}]{\setlength{\rightskip}{0pt plus 5cm}void remove\-\_\-guest\-\_\-skills (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_a8f49b55a2dd0e03b3625ee87031cbdb3}
+\hypertarget{fight_8cpp_ac9464a6ffe61b293e41a1fc07f6a37bc}{\index{fight.\-cpp@{fight.\-cpp}!remove\-\_\-subduer@{remove\-\_\-subduer}}
+\index{remove\-\_\-subduer@{remove\-\_\-subduer}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{remove\-\_\-subduer}]{\setlength{\rightskip}{0pt plus 5cm}void remove\-\_\-subduer (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_ac9464a6ffe61b293e41a1fc07f6a37bc}
+\hypertarget{fight_8cpp_a2de3f0dea435228fc31f5f8b5f84224b}{\index{fight.\-cpp@{fight.\-cpp}!rescue\-\_\-attempt@{rescue\-\_\-attempt}}
+\index{rescue\-\_\-attempt@{rescue\-\_\-attempt}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{rescue\-\_\-attempt}]{\setlength{\rightskip}{0pt plus 5cm}int rescue\-\_\-attempt (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{friend\-Ptr}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_a2de3f0dea435228fc31f5f8b5f84224b}
+\hypertarget{fight_8cpp_a4e247d68bdc3a5a83de3ea7aba37c159}{\index{fight.\-cpp@{fight.\-cpp}!sa\-\_\-rescue@{sa\-\_\-rescue}}
+\index{sa\-\_\-rescue@{sa\-\_\-rescue}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{sa\-\_\-rescue}]{\setlength{\rightskip}{0pt plus 5cm}void sa\-\_\-rescue (
+\begin{DoxyParamCaption}
+\item[{{\bf S\-E\-C\-O\-N\-D\-\_\-\-A\-F\-F\-E\-C\-T} $\ast$}]{sa}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_a4e247d68bdc3a5a83de3ea7aba37c159}
+\hypertarget{fight_8cpp_a49316e1b56dea4cade7c401e5ca6c916}{\index{fight.\-cpp@{fight.\-cpp}!set\-\_\-fighting@{set\-\_\-fighting}}
+\index{set\-\_\-fighting@{set\-\_\-fighting}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{set\-\_\-fighting}]{\setlength{\rightskip}{0pt plus 5cm}void set\-\_\-fighting (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{vict}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_a49316e1b56dea4cade7c401e5ca6c916}
+\hypertarget{fight_8cpp_a5ad05b5673beddfafc48fd38372843de}{\index{fight.\-cpp@{fight.\-cpp}!spell\-\_\-defenses@{spell\-\_\-defenses}}
+\index{spell\-\_\-defenses@{spell\-\_\-defenses}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{spell\-\_\-defenses}]{\setlength{\rightskip}{0pt plus 5cm}void spell\-\_\-defenses (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{defender, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{target}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_a5ad05b5673beddfafc48fd38372843de}
+\hypertarget{fight_8cpp_a8e2b8ebe6bc933a11196afce4be96679}{\index{fight.\-cpp@{fight.\-cpp}!stop\-\_\-fighting@{stop\-\_\-fighting}}
+\index{stop\-\_\-fighting@{stop\-\_\-fighting}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{stop\-\_\-fighting}]{\setlength{\rightskip}{0pt plus 5cm}void stop\-\_\-fighting (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_a8e2b8ebe6bc933a11196afce4be96679}
+\hypertarget{fight_8cpp_a5d3ff77fdea446d1d2e8158ae6ae0a7c}{\index{fight.\-cpp@{fight.\-cpp}!stop\-\_\-fighting\-\_\-sounds@{stop\-\_\-fighting\-\_\-sounds}}
+\index{stop\-\_\-fighting\-\_\-sounds@{stop\-\_\-fighting\-\_\-sounds}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{stop\-\_\-fighting\-\_\-sounds}]{\setlength{\rightskip}{0pt plus 5cm}void stop\-\_\-fighting\-\_\-sounds (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$}]{room}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_a5d3ff77fdea446d1d2e8158ae6ae0a7c}
+\hypertarget{fight_8cpp_a214a6dc54fbc5252fea551e9802e9336}{\index{fight.\-cpp@{fight.\-cpp}!strike@{strike}}
+\index{strike@{strike}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{strike}]{\setlength{\rightskip}{0pt plus 5cm}int strike (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{src, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{tar, }
+\item[{int}]{attack\-\_\-num, }
+\item[{int}]{mode}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_a214a6dc54fbc5252fea551e9802e9336}
+move\-\_\-cost = enc\-\_\-tab\mbox{[}i\mbox{]}.move + 2.\-0 for Frantic move\-\_\-cost = enc\-\_\-tab\mbox{[}i\mbox{]}.move + 1.\-5 for Aggressive move\-\_\-cost = enc\-\_\-tab\mbox{[}i\mbox{]}.move + 1.\-0 for Normal move\-\_\-cost = enc\-\_\-tab\mbox{[}i\mbox{]}.move + 0.\-5 for Careful move\-\_\-cost = enc\-\_\-tab\mbox{[}i\mbox{]}.move + 0.\-0 for Defensive
+
+move\-\_\-cost = enc\-\_\-tab\mbox{[}i\mbox{]}.move + 2.\-0 for Frantic move\-\_\-cost = enc\-\_\-tab\mbox{[}i\mbox{]}.move + 1.\-5 for Aggressive move\-\_\-cost = enc\-\_\-tab\mbox{[}i\mbox{]}.move + 1.\-0 for Normal move\-\_\-cost = enc\-\_\-tab\mbox{[}i\mbox{]}.move + 0.\-5 for Careful move\-\_\-cost = enc\-\_\-tab\mbox{[}i\mbox{]}.move + 0.\-0 for Defensive\hypertarget{fight_8cpp_a91e5e60808933e52b607b619d7dd1efd}{\index{fight.\-cpp@{fight.\-cpp}!subdue\-\_\-attempt@{subdue\-\_\-attempt}}
+\index{subdue\-\_\-attempt@{subdue\-\_\-attempt}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{subdue\-\_\-attempt}]{\setlength{\rightskip}{0pt plus 5cm}int subdue\-\_\-attempt (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{target}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_a91e5e60808933e52b607b619d7dd1efd}
+\hypertarget{fight_8cpp_a126ad6e83ec676d5b013924d19b77f06}{\index{fight.\-cpp@{fight.\-cpp}!subdue\-\_\-char@{subdue\-\_\-char}}
+\index{subdue\-\_\-char@{subdue\-\_\-char}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{subdue\-\_\-char}]{\setlength{\rightskip}{0pt plus 5cm}void subdue\-\_\-char (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{victim}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_a126ad6e83ec676d5b013924d19b77f06}
+\hypertarget{fight_8cpp_a66e2dd2d87d9bd8901b062b93c0487d5}{\index{fight.\-cpp@{fight.\-cpp}!subdue\-\_\-resync@{subdue\-\_\-resync}}
+\index{subdue\-\_\-resync@{subdue\-\_\-resync}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{subdue\-\_\-resync}]{\setlength{\rightskip}{0pt plus 5cm}void subdue\-\_\-resync (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_a66e2dd2d87d9bd8901b062b93c0487d5}
+\hypertarget{fight_8cpp_a9825e6c9d1d96d5a133051de80dc2e6d}{\index{fight.\-cpp@{fight.\-cpp}!violent\-\_\-death@{violent\-\_\-death}}
+\index{violent\-\_\-death@{violent\-\_\-death}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{violent\-\_\-death}]{\setlength{\rightskip}{0pt plus 5cm}int violent\-\_\-death (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_a9825e6c9d1d96d5a133051de80dc2e6d}
+\hypertarget{fight_8cpp_a4b2ed30b9e4e06c06150b8d9f1bf6636}{\index{fight.\-cpp@{fight.\-cpp}!weaken@{weaken}}
+\index{weaken@{weaken}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{weaken}]{\setlength{\rightskip}{0pt plus 5cm}int weaken (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{victim, }
+\item[{{\bf uint16}}]{hp\-\_\-penalty, }
+\item[{{\bf uint16}}]{mp\-\_\-penalty, }
+\item[{char $\ast$}]{log\-\_\-msg}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_a4b2ed30b9e4e06c06150b8d9f1bf6636}
+\hypertarget{fight_8cpp_af506e12c3b557b8dab82faa14c5e1f52}{\index{fight.\-cpp@{fight.\-cpp}!would\-\_\-kill@{would\-\_\-kill}}
+\index{would\-\_\-kill@{would\-\_\-kill}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{would\-\_\-kill}]{\setlength{\rightskip}{0pt plus 5cm}int would\-\_\-kill (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{int}]{damage}
+\end{DoxyParamCaption}
+)}}\label{fight_8cpp_af506e12c3b557b8dab82faa14c5e1f52}
+
+
+\subsection{Variable Documentation}
+\hypertarget{fight_8cpp_a4ea05913ff7ac4e90b827302b0b9f2f7}{\index{fight.\-cpp@{fight.\-cpp}!armor\-\_\-types@{armor\-\_\-types}}
+\index{armor\-\_\-types@{armor\-\_\-types}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{armor\-\_\-types}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ armor\-\_\-types\mbox{[}$\,$\mbox{]}}}\label{fight_8cpp_a4ea05913ff7ac4e90b827302b0b9f2f7}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"Cloth"},
+    \textcolor{stringliteral}{"Leather"},
+    \textcolor{stringliteral}{"Hardened Leather"},
+    \textcolor{stringliteral}{"Mail"},
+    \textcolor{stringliteral}{"Scale"},
+    \textcolor{stringliteral}{"Plate"}
+\}
+\end{DoxyCode}
+\hypertarget{fight_8cpp_a5bef35195570c5104eb3bc1c51802f13}{\index{fight.\-cpp@{fight.\-cpp}!attack\-\_\-names@{attack\-\_\-names}}
+\index{attack\-\_\-names@{attack\-\_\-names}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{attack\-\_\-names}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ attack\-\_\-names\mbox{[}$\,$\mbox{]}}}\label{fight_8cpp_a5bef35195570c5104eb3bc1c51802f13}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"punch"},
+    \textcolor{stringliteral}{"bite"},
+    \textcolor{stringliteral}{"claw"},
+    \textcolor{stringliteral}{"peck"},
+    \textcolor{stringliteral}{"trample"},
+    \textcolor{stringliteral}{"gore"},
+    \textcolor{stringliteral}{"chill"},
+    \textcolor{stringliteral}{"stab"},
+    \textcolor{stringliteral}{"burn"},
+    \textcolor{stringliteral}{"hit"},
+    \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}
+\hypertarget{fight_8cpp_acd8463a1f07830ad1eac482f0f29db7c}{\index{fight.\-cpp@{fight.\-cpp}!attack\-\_\-names\-\_\-plural@{attack\-\_\-names\-\_\-plural}}
+\index{attack\-\_\-names\-\_\-plural@{attack\-\_\-names\-\_\-plural}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{attack\-\_\-names\-\_\-plural}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ attack\-\_\-names\-\_\-plural\mbox{[}$\,$\mbox{]}}}\label{fight_8cpp_acd8463a1f07830ad1eac482f0f29db7c}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"punches"},
+    \textcolor{stringliteral}{"bites"},
+    \textcolor{stringliteral}{"claws"},
+    \textcolor{stringliteral}{"pecks"},
+    \textcolor{stringliteral}{"tramples"},
+    \textcolor{stringliteral}{"gores"},
+    \textcolor{stringliteral}{"chills"},
+    \textcolor{stringliteral}{"stabs"},
+    \textcolor{stringliteral}{"burns"},
+    \textcolor{stringliteral}{"hits"},
+\}
+\end{DoxyCode}
+\hypertarget{fight_8cpp_a83230a19a6e89e39aac6fe4b3d05b1d6}{\index{fight.\-cpp@{fight.\-cpp}!attack\-\_\-part@{attack\-\_\-part}}
+\index{attack\-\_\-part@{attack\-\_\-part}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{attack\-\_\-part}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ attack\-\_\-part\mbox{[}$\,$\mbox{]}}}\label{fight_8cpp_a83230a19a6e89e39aac6fe4b3d05b1d6}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"fist"},
+    \textcolor{stringliteral}{"sharp teeth"},
+    \textcolor{stringliteral}{"paw"},
+    \textcolor{stringliteral}{"sharp beak"},
+    \textcolor{stringliteral}{"feet"},
+    \textcolor{stringliteral}{"tusks"},
+    \textcolor{stringliteral}{"freezing touch"},
+    \textcolor{stringliteral}{"stinger"},
+    \textcolor{stringliteral}{"burning grasp"},
+    \textcolor{stringliteral}{"body"},
+\}
+\end{DoxyCode}
+\hypertarget{fight_8cpp_a5e4d6f9554630247ac7df85341b24a0a}{\index{fight.\-cpp@{fight.\-cpp}!block\-\_\-descriptor@{block\-\_\-descriptor}}
+\index{block\-\_\-descriptor@{block\-\_\-descriptor}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{block\-\_\-descriptor}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ block\-\_\-descriptor\mbox{[}$\,$\mbox{]}}}\label{fight_8cpp_a5e4d6f9554630247ac7df85341b24a0a}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"only just "}, \textcolor{stringliteral}{"clumsily "},
+    \textcolor{stringliteral}{"narrowly "}, \textcolor{stringliteral}{"hastily "},
+    \textcolor{stringliteral}{""}, \textcolor{stringliteral}{""},
+    \textcolor{stringliteral}{"deftly "}, \textcolor{stringliteral}{"easily "},
+    \textcolor{stringliteral}{"gracefully "}, \textcolor{stringliteral}{"effortlessly "},
+    \textcolor{stringliteral}{"eerily "}, \textcolor{stringliteral}{"flawlessly "}
+\}
+\end{DoxyCode}
+\hypertarget{fight_8cpp_af3c3bebe98d28736ef809e356c1f6dab}{\index{fight.\-cpp@{fight.\-cpp}!body\-\_\-tab@{body\-\_\-tab}}
+\index{body\-\_\-tab@{body\-\_\-tab}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{body\-\_\-tab}]{\setlength{\rightskip}{0pt plus 5cm}const struct {\bf body\-\_\-info} body\-\_\-tab\mbox{[}{\bf N\-U\-M\-\_\-\-T\-A\-B\-L\-E\-S}\mbox{]}\mbox{[}{\bf M\-A\-X\-\_\-\-H\-I\-T\-L\-O\-C}\mbox{]}}}\label{fight_8cpp_af3c3bebe98d28736ef809e356c1f6dab}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \{
+        \{\textcolor{stringliteral}{"body"}, 2, 1, 45, \hyperlink{structs_8h_abe7c39247a306bc091c6c04ced3774a2}{WEAR\_SHOULDER\_R}, \hyperlink{structs_8h_a5099c3f36febe617daffce46cd40c428}{WEAR\_SHOULDER\_L}, 
+      \hyperlink{structs_8h_afde2b3d88ff391fbab4c3b58eaf4eba0}{WEAR\_BODY}, \hyperlink{structs_8h_a3aacfa52078da25579e9edd3f1136db0}{WEAR\_ABOUT}, \hyperlink{structs_8h_a78f14bc26f82280a59daef30bd779e26}{WEAR\_OVER}\},
+        \{\textcolor{stringliteral}{"upper-legs"}, 6, 5, 10, \hyperlink{structs_8h_ab8be4189d8f62d75c44c19b1762ef294}{WEAR\_WAIST}, \hyperlink{structs_8h_a9902bc726ea270b5e30de5e09cb982fb}{WEAR\_LEGS}, 
+      \hyperlink{structs_8h_a78f14bc26f82280a59daef30bd779e26}{WEAR\_OVER}, 0, 0\},
+        \{\textcolor{stringliteral}{"upper-arms"}, 6, 5, 10, \hyperlink{structs_8h_a43c738bd3d35b59279fd11041b7c953f}{WEAR\_ARMBAND\_R}, \hyperlink{structs_8h_acb2142732e383ade7cb8c34400b68ab6}{WEAR\_ARMBAND\_L}, 
+      \hyperlink{structs_8h_aea079f53d646795427ac6be2b62595ef}{WEAR\_ARMS}, \hyperlink{structs_8h_a3aacfa52078da25579e9edd3f1136db0}{WEAR\_ABOUT}, \hyperlink{structs_8h_a78f14bc26f82280a59daef30bd779e26}{WEAR\_OVER}\},
+        \{\textcolor{stringliteral}{"head"}, 5, 2, 7, \hyperlink{structs_8h_a704e97cff0a1473e0d067fffeb44b0a8}{WEAR\_HEAD}, \hyperlink{structs_8h_ae3e2e84a1c53bd31db66555b2879b0a5}{WEAR\_FACE}, \hyperlink{structs_8h_ac8575f271a48e412fcfbb634a8e46d35}{WEAR\_EYES}, 0, 0\},
+        \{\textcolor{stringliteral}{"neck"}, 3, 1, 2, \hyperlink{structs_8h_aa617c15f29f54c46b0b9370e09333733}{WEAR\_NECK\_1}, \hyperlink{structs_8h_ac8bd8b65eebdf6503be11641ee3e2fc2}{WEAR\_NECK\_2}, 
+      \hyperlink{structs_8h_adfcaad9582f6dc3a99f898a57d240ae0}{WEAR\_THROAT}, 0, 0\},
+        \{\textcolor{stringliteral}{"feet"}, 1, 5, 1, \hyperlink{structs_8h_ab627f78ab45c3e3ea32e57e0bae081f1}{WEAR\_FEET}, \hyperlink{structs_8h_a7de9afd3a21f831b2a906b6942d4ae0e}{WEAR\_ANKLE\_R}, 
+      \hyperlink{structs_8h_a8412c1654d0b4bb2d8323ce832c7766c}{WEAR\_ANKLE\_L}, 0, 0\},
+        \{\textcolor{stringliteral}{"hands"}, 1, 5, 4, \hyperlink{structs_8h_aae0cd75248a7fd14e960992d6d86f023}{WEAR\_HANDS}, \hyperlink{structs_8h_a6fd4989c579de922b41d6629a24ec50f}{WEAR\_FINGER\_R}, 
+      \hyperlink{structs_8h_ae2d1410b3bf3e2892850338d8955cfca}{WEAR\_FINGER\_L}, 0, 0\},
+        \{\textcolor{stringliteral}{"eyes"}, 7, 2, 1, \hyperlink{structs_8h_ac8575f271a48e412fcfbb634a8e46d35}{WEAR\_EYES}, \hyperlink{structs_8h_ae3e2e84a1c53bd31db66555b2879b0a5}{WEAR\_FACE}, 0, 0\},
+        \{\textcolor{stringliteral}{"lower-arms"}, 3, 5, 10, \hyperlink{structs_8h_aea079f53d646795427ac6be2b62595ef}{WEAR\_ARMS}, \hyperlink{structs_8h_a416fccc3bdfdde6e22a75982c30f3163}{WEAR\_WRIST\_R}, 
+      \hyperlink{structs_8h_a5c1fe85fea27f4a627b5b1371396b37d}{WEAR\_WRIST\_L}, 0, 0\},
+        \{\textcolor{stringliteral}{"lower-legs"}, 3, 5, 10, \hyperlink{structs_8h_a9902bc726ea270b5e30de5e09cb982fb}{WEAR\_LEGS}, \hyperlink{structs_8h_a7de9afd3a21f831b2a906b6942d4ae0e}{WEAR\_ANKLE\_R}, 
+      \hyperlink{structs_8h_a8412c1654d0b4bb2d8323ce832c7766c}{WEAR\_ANKLE\_L}, 0, 0\}
+    \},
+
+    \{
+        \{\textcolor{stringliteral}{"body"}, 2, 1, 55, \hyperlink{structs_8h_abe7c39247a306bc091c6c04ced3774a2}{WEAR\_SHOULDER\_R}, \hyperlink{structs_8h_a5099c3f36febe617daffce46cd40c428}{WEAR\_SHOULDER\_L}, 
+      \hyperlink{structs_8h_afde2b3d88ff391fbab4c3b58eaf4eba0}{WEAR\_BODY}, \hyperlink{structs_8h_a3aacfa52078da25579e9edd3f1136db0}{WEAR\_ABOUT}, \hyperlink{structs_8h_a78f14bc26f82280a59daef30bd779e26}{WEAR\_OVER}\},
+        \{\textcolor{stringliteral}{"upper-legs"}, 5, 5, 10, \hyperlink{structs_8h_ab8be4189d8f62d75c44c19b1762ef294}{WEAR\_WAIST}, \hyperlink{structs_8h_a9902bc726ea270b5e30de5e09cb982fb}{WEAR\_LEGS}, 
+      \hyperlink{structs_8h_a78f14bc26f82280a59daef30bd779e26}{WEAR\_OVER}, 0, 0\},
+        \{\textcolor{stringliteral}{"upper-arms"}, 5, 5, 10, \hyperlink{structs_8h_a43c738bd3d35b59279fd11041b7c953f}{WEAR\_ARMBAND\_R}, \hyperlink{structs_8h_acb2142732e383ade7cb8c34400b68ab6}{WEAR\_ARMBAND\_L}, 
+      \hyperlink{structs_8h_aea079f53d646795427ac6be2b62595ef}{WEAR\_ARMS}, \hyperlink{structs_8h_a3aacfa52078da25579e9edd3f1136db0}{WEAR\_ABOUT}, \hyperlink{structs_8h_a78f14bc26f82280a59daef30bd779e26}{WEAR\_OVER}\},
+        \{\textcolor{stringliteral}{"head"}, 5, 2, 6, \hyperlink{structs_8h_a704e97cff0a1473e0d067fffeb44b0a8}{WEAR\_HEAD}, \hyperlink{structs_8h_ae3e2e84a1c53bd31db66555b2879b0a5}{WEAR\_FACE}, \hyperlink{structs_8h_ac8575f271a48e412fcfbb634a8e46d35}{WEAR\_EYES}, 0, 0\},
+        \{\textcolor{stringliteral}{"neck"}, 4, 1, 2, \hyperlink{structs_8h_aa617c15f29f54c46b0b9370e09333733}{WEAR\_NECK\_1}, \hyperlink{structs_8h_ac8bd8b65eebdf6503be11641ee3e2fc2}{WEAR\_NECK\_2}, 
+      \hyperlink{structs_8h_adfcaad9582f6dc3a99f898a57d240ae0}{WEAR\_THROAT}, 0, 0\},
+        \{\textcolor{stringliteral}{"feet"}, 1, 5, 2, \hyperlink{structs_8h_ab627f78ab45c3e3ea32e57e0bae081f1}{WEAR\_FEET}, \hyperlink{structs_8h_a7de9afd3a21f831b2a906b6942d4ae0e}{WEAR\_ANKLE\_R}, 
+      \hyperlink{structs_8h_a8412c1654d0b4bb2d8323ce832c7766c}{WEAR\_ANKLE\_L}, 0, 0\},
+        \{\textcolor{stringliteral}{"hands"}, 1, 5, 2, \hyperlink{structs_8h_aae0cd75248a7fd14e960992d6d86f023}{WEAR\_HANDS}, \hyperlink{structs_8h_a6fd4989c579de922b41d6629a24ec50f}{WEAR\_FINGER\_R}, 
+      \hyperlink{structs_8h_ae2d1410b3bf3e2892850338d8955cfca}{WEAR\_FINGER\_L}, 0, 0\},
+        \{\textcolor{stringliteral}{"eyes"}, 9, 2, 1, \hyperlink{structs_8h_ac8575f271a48e412fcfbb634a8e46d35}{WEAR\_EYES}, \hyperlink{structs_8h_ae3e2e84a1c53bd31db66555b2879b0a5}{WEAR\_FACE}, 0, 0, 0\},
+        \{\textcolor{stringliteral}{"lower-arms"}, 2, 5, 6, \hyperlink{structs_8h_aea079f53d646795427ac6be2b62595ef}{WEAR\_ARMS}, \hyperlink{structs_8h_a416fccc3bdfdde6e22a75982c30f3163}{WEAR\_WRIST\_R}, 
+      \hyperlink{structs_8h_a5c1fe85fea27f4a627b5b1371396b37d}{WEAR\_WRIST\_L}, 0, 0\},
+        \{\textcolor{stringliteral}{"lower-legs"}, 2, 5, 6, \hyperlink{structs_8h_a9902bc726ea270b5e30de5e09cb982fb}{WEAR\_LEGS}, \hyperlink{structs_8h_a7de9afd3a21f831b2a906b6942d4ae0e}{WEAR\_ANKLE\_R}, 
+      \hyperlink{structs_8h_a8412c1654d0b4bb2d8323ce832c7766c}{WEAR\_ANKLE\_L}, 0, 0\}
+    \}
+\}
+\end{DoxyCode}
+\hypertarget{fight_8cpp_a44823cb4b5892d2c77831850056e6306}{\index{fight.\-cpp@{fight.\-cpp}!break\-\_\-def@{break\-\_\-def}}
+\index{break\-\_\-def@{break\-\_\-def}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{break\-\_\-def}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ break\-\_\-def\mbox{[}$\,$\mbox{]}}}\label{fight_8cpp_a44823cb4b5892d2c77831850056e6306}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"slip past"}, \textcolor{stringliteral}{"slips past"}, 
+    \textcolor{stringliteral}{"thrust through"}, \textcolor{stringliteral}{"thrusts through"}, 
+    \textcolor{stringliteral}{"break down"}, \textcolor{stringliteral}{"breaks down"}, 
+    \textcolor{stringliteral}{"force through"}, \textcolor{stringliteral}{"forces through"}, 
+    \textcolor{stringliteral}{"knock aside"}, \textcolor{stringliteral}{"knocks aside"}, 
+    \textcolor{stringliteral}{"maneuver around"}, \textcolor{stringliteral}{"maneuvers around"}, 
+    \textcolor{stringliteral}{"force through"}, \textcolor{stringliteral}{"forces through"} 
+\}
+\end{DoxyCode}
+\hypertarget{fight_8cpp_ac1576aa16c0ed221429dadf5fa6c6d7d}{\index{fight.\-cpp@{fight.\-cpp}!combat\-\_\-list@{combat\-\_\-list}}
+\index{combat\-\_\-list@{combat\-\_\-list}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{combat\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A}$\ast$ combat\-\_\-list = 0}}\label{fight_8cpp_ac1576aa16c0ed221429dadf5fa6c6d7d}
+\hypertarget{fight_8cpp_a5044785afa89e1d33114e5051f425ee7}{\index{fight.\-cpp@{fight.\-cpp}!combat\-\_\-next\-\_\-dude@{combat\-\_\-next\-\_\-dude}}
+\index{combat\-\_\-next\-\_\-dude@{combat\-\_\-next\-\_\-dude}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{combat\-\_\-next\-\_\-dude}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A}$\ast$ combat\-\_\-next\-\_\-dude = 0}}\label{fight_8cpp_a5044785afa89e1d33114e5051f425ee7}
+\hypertarget{fight_8cpp_aa8e174d884b480483ea8f530ee2ac19c}{\index{fight.\-cpp@{fight.\-cpp}!crithit@{crithit}}
+\index{crithit@{crithit}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{crithit}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ crithit\mbox{[}$\,$\mbox{]}}}\label{fight_8cpp_aa8e174d884b480483ea8f530ee2ac19c}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"deft"}, \textcolor{stringliteral}{"nimble"}, 
+    \textcolor{stringliteral}{"forceful"}, \textcolor{stringliteral}{"deft"}, 
+    \textcolor{stringliteral}{"powerful"}, \textcolor{stringliteral}{"staggering"}, 
+    \textcolor{stringliteral}{"crushing"}, \textcolor{stringliteral}{"staggering"}, 
+    \textcolor{stringliteral}{"savage"}, \textcolor{stringliteral}{"brutal"}, 
+    \textcolor{stringliteral}{"hurtful"}, \textcolor{stringliteral}{"hurtful"}, 
+    \textcolor{stringliteral}{"savage"}, \textcolor{stringliteral}{"brutal"} 
+\}
+\end{DoxyCode}
+\hypertarget{fight_8cpp_ac05e7d5048e0da6a76a05818a531fc77}{\index{fight.\-cpp@{fight.\-cpp}!crithits@{crithits}}
+\index{crithits@{crithits}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{crithits}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ crithits\mbox{[}$\,$\mbox{]}}}\label{fight_8cpp_ac05e7d5048e0da6a76a05818a531fc77}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"deftly"}, \textcolor{stringliteral}{"nimbly"}, 
+    \textcolor{stringliteral}{"forcefully"}, \textcolor{stringliteral}{"deftly"}, 
+    \textcolor{stringliteral}{"savagely"}, \textcolor{stringliteral}{"brutally"}, 
+    \textcolor{stringliteral}{"powerfully"}, \textcolor{stringliteral}{"brutally"}, 
+    \textcolor{stringliteral}{"savagely"}, \textcolor{stringliteral}{"brutally"}, 
+    \textcolor{stringliteral}{"hurtfully"}, \textcolor{stringliteral}{"hurtfully"}, 
+    \textcolor{stringliteral}{"savagely"}, \textcolor{stringliteral}{"brutally"} 
+\}
+\end{DoxyCode}
+\hypertarget{fight_8cpp_a05ec111bc10c3663ed819b6a084f1490}{\index{fight.\-cpp@{fight.\-cpp}!cs\-\_\-name@{cs\-\_\-name}}
+\index{cs\-\_\-name@{cs\-\_\-name}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{cs\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ cs\-\_\-name\mbox{[}$\,$\mbox{]}}}\label{fight_8cpp_a05ec111bc10c3663ed819b6a084f1490}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"CritFail"}, \textcolor{stringliteral}{"ModrFail"}, \textcolor{stringliteral}{"ModrSucc"}, \textcolor{stringliteral}{"CritSucc"}, \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}
+\hypertarget{fight_8cpp_ac2bd75a8f64f11beea7049c24fa39086}{\index{fight.\-cpp@{fight.\-cpp}!damage\-\_\-types@{damage\-\_\-types}}
+\index{damage\-\_\-types@{damage\-\_\-types}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{damage\-\_\-types}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ damage\-\_\-types\mbox{[}$\,$\mbox{]}}}\label{fight_8cpp_ac2bd75a8f64f11beea7049c24fa39086}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"Stab"}, 
+    \textcolor{stringliteral}{"Pierce"}, 
+    \textcolor{stringliteral}{"Chop"}, 
+    \textcolor{stringliteral}{"Blunt"}, 
+    \textcolor{stringliteral}{"Slash"}, 
+    \textcolor{stringliteral}{"Frost"}, 
+    \textcolor{stringliteral}{"Fire"}, 
+    \textcolor{stringliteral}{"Bite"}, 
+    \textcolor{stringliteral}{"Claw"}, 
+    \textcolor{stringliteral}{"Fist"}, 
+    \textcolor{stringliteral}{"Pierce"} 
+\}
+\end{DoxyCode}
+\hypertarget{fight_8cpp_a37199c5bda6085c47b9f9cb08b402043}{\index{fight.\-cpp@{fight.\-cpp}!deathhit@{deathhit}}
+\index{deathhit@{deathhit}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{deathhit}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ deathhit\mbox{[}$\,$\mbox{]}}}\label{fight_8cpp_a37199c5bda6085c47b9f9cb08b402043}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"run through"}, \textcolor{stringliteral}{"perforated"}, \textcolor{stringliteral}{"mortally lacerated"},
+    \textcolor{stringliteral}{"skewered"}, \textcolor{stringliteral}{"run through"}, \textcolor{stringliteral}{"greviously impaled"},
+    \textcolor{stringliteral}{"torn open"}, \textcolor{stringliteral}{"rent asunder"}, \textcolor{stringliteral}{"hacked apart"},
+    \textcolor{stringliteral}{"smashed down"}, \textcolor{stringliteral}{"utterly ruined"}, \textcolor{stringliteral}{"brutally bludgeoned"},
+    \textcolor{stringliteral}{"cut down"}, \textcolor{stringliteral}{"torn open"}, \textcolor{stringliteral}{"sliced open"},
+    \textcolor{stringliteral}{"torn open"}, \textcolor{stringliteral}{"rent asunder"}, \textcolor{stringliteral}{"cut down"}
+\}
+\end{DoxyCode}
+\hypertarget{fight_8cpp_a7d0952982c7bc52806dcf0cc2b0c8fbe}{\index{fight.\-cpp@{fight.\-cpp}!dodge\-\_\-defense@{dodge\-\_\-defense}}
+\index{dodge\-\_\-defense@{dodge\-\_\-defense}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{dodge\-\_\-defense}]{\setlength{\rightskip}{0pt plus 5cm}const int dodge\-\_\-defense\mbox{[}4\mbox{]}\mbox{[}4\mbox{]}}}\label{fight_8cpp_a7d0952982c7bc52806dcf0cc2b0c8fbe}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \{\hyperlink{structs_8h_a0d5c7a51a98bef1a7455a88ed868d106}{RESULT\_FUMBLE}, \hyperlink{structs_8h_a026973c12da50b0d1fb5a88651bd1d32}{RESULT\_NONE}, \hyperlink{structs_8h_ac3a68d8a7c98913a58f848b2cd162897}{RESULT\_ADV}, RESULT\_ADV\},
+    \{\hyperlink{structs_8h_a026973c12da50b0d1fb5a88651bd1d32}{RESULT\_NONE}, \hyperlink{structs_8h_a026973c12da50b0d1fb5a88651bd1d32}{RESULT\_NONE}, \hyperlink{structs_8h_a026973c12da50b0d1fb5a88651bd1d32}{RESULT\_NONE}, 
+      \hyperlink{structs_8h_ac3a68d8a7c98913a58f848b2cd162897}{RESULT\_ADV}\},
+    \{\hyperlink{structs_8h_a026973c12da50b0d1fb5a88651bd1d32}{RESULT\_NONE}, \hyperlink{structs_8h_a026973c12da50b0d1fb5a88651bd1d32}{RESULT\_NONE}, \hyperlink{structs_8h_a026973c12da50b0d1fb5a88651bd1d32}{RESULT\_NONE}, RESULT\_NONE\},
+    \{\hyperlink{structs_8h_a026973c12da50b0d1fb5a88651bd1d32}{RESULT\_NONE}, \hyperlink{structs_8h_a026973c12da50b0d1fb5a88651bd1d32}{RESULT\_NONE}, \hyperlink{structs_8h_a026973c12da50b0d1fb5a88651bd1d32}{RESULT\_NONE}, RESULT\_NONE\}
+\}
+\end{DoxyCode}
+\hypertarget{fight_8cpp_a226f62b55df367a3801d18d3bb21d24a}{\index{fight.\-cpp@{fight.\-cpp}!dodge\-\_\-offense@{dodge\-\_\-offense}}
+\index{dodge\-\_\-offense@{dodge\-\_\-offense}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{dodge\-\_\-offense}]{\setlength{\rightskip}{0pt plus 5cm}const int dodge\-\_\-offense\mbox{[}4\mbox{]}\mbox{[}4\mbox{]}}}\label{fight_8cpp_a226f62b55df367a3801d18d3bb21d24a}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \{\hyperlink{structs_8h_a0d5c7a51a98bef1a7455a88ed868d106}{RESULT\_FUMBLE}, \hyperlink{structs_8h_a026973c12da50b0d1fb5a88651bd1d32}{RESULT\_NONE}, \hyperlink{structs_8h_a026973c12da50b0d1fb5a88651bd1d32}{RESULT\_NONE}, RESULT\_NONE\},
+    \{\hyperlink{structs_8h_a026973c12da50b0d1fb5a88651bd1d32}{RESULT\_NONE}, \hyperlink{structs_8h_a026973c12da50b0d1fb5a88651bd1d32}{RESULT\_NONE}, \hyperlink{structs_8h_a026973c12da50b0d1fb5a88651bd1d32}{RESULT\_NONE}, RESULT\_NONE\},
+    \{\hyperlink{structs_8h_abe46be9955ad0f3c1962feafea9d1135}{RESULT\_HIT2}, \hyperlink{structs_8h_a20cde0fde4827c6a928f983b41e0e76f}{RESULT\_HIT}, \hyperlink{structs_8h_a026973c12da50b0d1fb5a88651bd1d32}{RESULT\_NONE}, RESULT\_NONE\},
+    \{\hyperlink{structs_8h_a985424eb583128814ffdeccc5a1e7e81}{RESULT\_HIT4}, \hyperlink{structs_8h_abe46be9955ad0f3c1962feafea9d1135}{RESULT\_HIT2}, \hyperlink{structs_8h_a20cde0fde4827c6a928f983b41e0e76f}{RESULT\_HIT}, 
+      \hyperlink{structs_8h_a026973c12da50b0d1fb5a88651bd1d32}{RESULT\_NONE}\}
+\}
+\end{DoxyCode}
+\hypertarget{fight_8cpp_a55c71990ee4162ebec6abe401996cf15}{\index{fight.\-cpp@{fight.\-cpp}!engine@{engine}}
+\index{engine@{engine}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{engine}]{\setlength{\rightskip}{0pt plus 5cm}{\bf rpie\-::server} engine}}\label{fight_8cpp_a55c71990ee4162ebec6abe401996cf15}
+\hypertarget{fight_8cpp_a5b060535d2859d13af3254ec4ab5e0b3}{\index{fight.\-cpp@{fight.\-cpp}!expiremsg@{expiremsg}}
+\index{expiremsg@{expiremsg}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{expiremsg}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ expiremsg\mbox{[}$\,$\mbox{]}}}\label{fight_8cpp_a5b060535d2859d13af3254ec4ab5e0b3}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{""}
+\}
+\end{DoxyCode}
+\hypertarget{fight_8cpp_a7081c156c28a58540f3ae0bd09232d0d}{\index{fight.\-cpp@{fight.\-cpp}!fight\-\_\-tab@{fight\-\_\-tab}}
+\index{fight\-\_\-tab@{fight\-\_\-tab}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{fight\-\_\-tab}]{\setlength{\rightskip}{0pt plus 5cm}const struct {\bf fight\-\_\-data} fight\-\_\-tab\mbox{[}$\,$\mbox{]}}}\label{fight_8cpp_a7081c156c28a58540f3ae0bd09232d0d}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \{\textcolor{stringliteral}{"Frantic"}, 1.20, 0.75, -5\}, 
+    \{\textcolor{stringliteral}{"Aggressive"}, 1.05, 0.95, -1\}, 
+    \{\textcolor{stringliteral}{"Normal"}, 1.00, 1.00, 0\}, 
+    \{\textcolor{stringliteral}{"Careful"}, 0.90, 1.10, 1\}, 
+    \{\textcolor{stringliteral}{"Defensive"}, 0.80, 1.25, 5\}, 
+\}
+\end{DoxyCode}
+\hypertarget{fight_8cpp_ac374c87103cb39d1dd445db9d6217eb9}{\index{fight.\-cpp@{fight.\-cpp}!generic\-\_\-descriptor@{generic\-\_\-descriptor}}
+\index{generic\-\_\-descriptor@{generic\-\_\-descriptor}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{generic\-\_\-descriptor}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ generic\-\_\-descriptor\mbox{[}$\,$\mbox{]}}}\label{fight_8cpp_ac374c87103cb39d1dd445db9d6217eb9}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"clumsy "}, \textcolor{stringliteral}{"inept "}, \textcolor{stringliteral}{"wild "}, \textcolor{stringliteral}{"lazy "},
+    \textcolor{stringliteral}{"amateur "}, \textcolor{stringliteral}{"unskilled "}, \textcolor{stringliteral}{"novice "}, \textcolor{stringliteral}{"rudimentary "},
+    \textcolor{stringliteral}{""}, \textcolor{stringliteral}{""}, \textcolor{stringliteral}{""}, \textcolor{stringliteral}{""},
+    \textcolor{stringliteral}{"neat "}, \textcolor{stringliteral}{"measured "}, \textcolor{stringliteral}{"skilled "}, \textcolor{stringliteral}{"adept "},
+    \textcolor{stringliteral}{"expert "}, \textcolor{stringliteral}{"excellent "}, \textcolor{stringliteral}{"masterful "}, \textcolor{stringliteral}{"near perfect "}
+\}
+\end{DoxyCode}
+\hypertarget{fight_8cpp_ac9681aadd37703cf6fcb8669f78a5f22}{\index{fight.\-cpp@{fight.\-cpp}!ignore\-\_\-offense@{ignore\-\_\-offense}}
+\index{ignore\-\_\-offense@{ignore\-\_\-offense}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{ignore\-\_\-offense}]{\setlength{\rightskip}{0pt plus 5cm}const int ignore\-\_\-offense\mbox{[}4\mbox{]}}}\label{fight_8cpp_ac9681aadd37703cf6fcb8669f78a5f22}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{\hyperlink{structs_8h_a0d5c7a51a98bef1a7455a88ed868d106}{RESULT\_FUMBLE}, \hyperlink{structs_8h_a20cde0fde4827c6a928f983b41e0e76f}{RESULT\_HIT}, \hyperlink{structs_8h_abe46be9955ad0f3c1962feafea9d1135}{RESULT\_HIT2}, 
+      \hyperlink{structs_8h_a985424eb583128814ffdeccc5a1e7e81}{RESULT\_HIT4}\}
+\end{DoxyCode}
+\hypertarget{fight_8cpp_a9b989afb12ff9f3b26fb111b313def58}{\index{fight.\-cpp@{fight.\-cpp}!miss\-\_\-descriptor@{miss\-\_\-descriptor}}
+\index{miss\-\_\-descriptor@{miss\-\_\-descriptor}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{miss\-\_\-descriptor}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ miss\-\_\-descriptor\mbox{[}$\,$\mbox{]}}}\label{fight_8cpp_a9b989afb12ff9f3b26fb111b313def58}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"utterly "}, \textcolor{stringliteral}{"completely "},
+    \textcolor{stringliteral}{"broadly "}, \textcolor{stringliteral}{"easily "},
+    \textcolor{stringliteral}{""}, \textcolor{stringliteral}{""},
+    \textcolor{stringliteral}{"narrowly "}, \textcolor{stringliteral}{"barely "},
+    \textcolor{stringliteral}{"fractionally "}, \textcolor{stringliteral}{"only just "}
+\}
+\end{DoxyCode}
+\hypertarget{fight_8cpp_ae112d1778b2f2cb43e52cfbb9d14af1f}{\index{fight.\-cpp@{fight.\-cpp}!parry\-\_\-descriptor@{parry\-\_\-descriptor}}
+\index{parry\-\_\-descriptor@{parry\-\_\-descriptor}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{parry\-\_\-descriptor}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ parry\-\_\-descriptor\mbox{[}$\,$\mbox{]}}}\label{fight_8cpp_ae112d1778b2f2cb43e52cfbb9d14af1f}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"only just "}, \textcolor{stringliteral}{"clumsily "},
+    \textcolor{stringliteral}{"narrowly "}, \textcolor{stringliteral}{"hastily "},
+    \textcolor{stringliteral}{""}, \textcolor{stringliteral}{""},
+    \textcolor{stringliteral}{"deftly "}, \textcolor{stringliteral}{"easily "},
+    \textcolor{stringliteral}{"gracefully "}, \textcolor{stringliteral}{"effortlessly "},
+    \textcolor{stringliteral}{"eerily "}, \textcolor{stringliteral}{"flawlessly "}
+\}
+\end{DoxyCode}
+\hypertarget{fight_8cpp_a65cfdf054abf9195c010fa0b87167eef}{\index{fight.\-cpp@{fight.\-cpp}!rs\-\_\-name@{rs\-\_\-name}}
+\index{rs\-\_\-name@{rs\-\_\-name}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{rs\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ rs\-\_\-name\mbox{[}$\,$\mbox{]}}}\label{fight_8cpp_a65cfdf054abf9195c010fa0b87167eef}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"None"}, \textcolor{stringliteral}{"Advant"}, \textcolor{stringliteral}{"Block"}, \textcolor{stringliteral}{"Parry"}, \textcolor{stringliteral}{"Fumble"},
+    \textcolor{stringliteral}{"Hit0"}, \textcolor{stringliteral}{"Hit1"}, \textcolor{stringliteral}{"Hit2"}, \textcolor{stringliteral}{"Hit3"}, \textcolor{stringliteral}{"Hit4"}, \textcolor{stringliteral}{"Stumble"},
+    \textcolor{stringliteral}{"NearFumble"}, \textcolor{stringliteral}{"NearStumble"}, \textcolor{stringliteral}{"Dead"}, \textcolor{stringliteral}{"Any"}, \textcolor{stringliteral}{"WeaponBreak"},
+    \textcolor{stringliteral}{"ShieldBreak"}, \textcolor{stringliteral}{"KO"}, \textcolor{stringliteral}{"Just\_KO"}, \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}
+\hypertarget{fight_8cpp_a205a983e45898b1d0ef6f816812c054a}{\index{fight.\-cpp@{fight.\-cpp}!shield\-\_\-parry\-\_\-defense@{shield\-\_\-parry\-\_\-defense}}
+\index{shield\-\_\-parry\-\_\-defense@{shield\-\_\-parry\-\_\-defense}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{shield\-\_\-parry\-\_\-defense}]{\setlength{\rightskip}{0pt plus 5cm}const int shield\-\_\-parry\-\_\-defense\mbox{[}4\mbox{]}\mbox{[}4\mbox{]}}}\label{fight_8cpp_a205a983e45898b1d0ef6f816812c054a}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \{\hyperlink{structs_8h_a0d5c7a51a98bef1a7455a88ed868d106}{RESULT\_FUMBLE}, \hyperlink{structs_8h_a026973c12da50b0d1fb5a88651bd1d32}{RESULT\_NONE}, \hyperlink{structs_8h_ac3a68d8a7c98913a58f848b2cd162897}{RESULT\_ADV}, RESULT\_ADV\}, 
+    \{\hyperlink{structs_8h_a026973c12da50b0d1fb5a88651bd1d32}{RESULT\_NONE}, \hyperlink{structs_8h_ae056f27aaad12949d8b732aaa4fc1f13}{RESULT\_BLOCK}, \hyperlink{structs_8h_a026973c12da50b0d1fb5a88651bd1d32}{RESULT\_NONE}, 
+      \hyperlink{structs_8h_ac3a68d8a7c98913a58f848b2cd162897}{RESULT\_ADV}\}, 
+    \{\hyperlink{structs_8h_a026973c12da50b0d1fb5a88651bd1d32}{RESULT\_NONE}, \hyperlink{structs_8h_a026973c12da50b0d1fb5a88651bd1d32}{RESULT\_NONE}, \hyperlink{structs_8h_ae056f27aaad12949d8b732aaa4fc1f13}{RESULT\_BLOCK}, 
+      \hyperlink{structs_8h_ac3a68d8a7c98913a58f848b2cd162897}{RESULT\_ADV}\}, 
+    \{\hyperlink{structs_8h_a026973c12da50b0d1fb5a88651bd1d32}{RESULT\_NONE}, \hyperlink{structs_8h_a026973c12da50b0d1fb5a88651bd1d32}{RESULT\_NONE}, \hyperlink{structs_8h_a026973c12da50b0d1fb5a88651bd1d32}{RESULT\_NONE}, 
+      \hyperlink{structs_8h_ae056f27aaad12949d8b732aaa4fc1f13}{RESULT\_BLOCK}\} 
+\}
+\end{DoxyCode}
+\hypertarget{fight_8cpp_aad0b1271bad0580d84c240a9ceda8d44}{\index{fight.\-cpp@{fight.\-cpp}!shield\-\_\-parry\-\_\-offense@{shield\-\_\-parry\-\_\-offense}}
+\index{shield\-\_\-parry\-\_\-offense@{shield\-\_\-parry\-\_\-offense}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{shield\-\_\-parry\-\_\-offense}]{\setlength{\rightskip}{0pt plus 5cm}const int shield\-\_\-parry\-\_\-offense\mbox{[}4\mbox{]}\mbox{[}4\mbox{]}}}\label{fight_8cpp_aad0b1271bad0580d84c240a9ceda8d44}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \{\hyperlink{structs_8h_a0d5c7a51a98bef1a7455a88ed868d106}{RESULT\_FUMBLE}, \hyperlink{structs_8h_a026973c12da50b0d1fb5a88651bd1d32}{RESULT\_NONE}, \hyperlink{structs_8h_a026973c12da50b0d1fb5a88651bd1d32}{RESULT\_NONE}, RESULT\_NONE\},
+    \{\hyperlink{structs_8h_a026973c12da50b0d1fb5a88651bd1d32}{RESULT\_NONE}, \hyperlink{structs_8h_ae056f27aaad12949d8b732aaa4fc1f13}{RESULT\_BLOCK}, \hyperlink{structs_8h_a026973c12da50b0d1fb5a88651bd1d32}{RESULT\_NONE}, RESULT\_NONE\},
+    \{\hyperlink{structs_8h_a3125a99ee2a250c9edcc4dd308ae83b8}{RESULT\_HIT1}, \hyperlink{structs_8h_a20cde0fde4827c6a928f983b41e0e76f}{RESULT\_HIT}, \hyperlink{structs_8h_ae056f27aaad12949d8b732aaa4fc1f13}{RESULT\_BLOCK}, 
+      \hyperlink{structs_8h_a026973c12da50b0d1fb5a88651bd1d32}{RESULT\_NONE}\},
+    \{\hyperlink{structs_8h_a0b7819c564c713960e48232a556b35ad}{RESULT\_HIT3}, \hyperlink{structs_8h_a3125a99ee2a250c9edcc4dd308ae83b8}{RESULT\_HIT1}, \hyperlink{structs_8h_a20cde0fde4827c6a928f983b41e0e76f}{RESULT\_HIT}, 
+      \hyperlink{structs_8h_ae056f27aaad12949d8b732aaa4fc1f13}{RESULT\_BLOCK}\}
+\}
+\end{DoxyCode}
+\hypertarget{fight_8cpp_a3fb59046e0659e57bb5ce9a9ccce0417}{\index{fight.\-cpp@{fight.\-cpp}!src\-\_\-stats@{src\-\_\-stats}}
+\index{src\-\_\-stats@{src\-\_\-stats}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{src\-\_\-stats}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf stats\-\_\-data}  src\-\_\-stats}}\label{fight_8cpp_a3fb59046e0659e57bb5ce9a9ccce0417}
+\hypertarget{fight_8cpp_aa9b8dd532529e807c8b4b7b2992aaea0}{\index{fight.\-cpp@{fight.\-cpp}!tar\-\_\-stats@{tar\-\_\-stats}}
+\index{tar\-\_\-stats@{tar\-\_\-stats}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{tar\-\_\-stats}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf stats\-\_\-data}  tar\-\_\-stats}}\label{fight_8cpp_aa9b8dd532529e807c8b4b7b2992aaea0}
+\hypertarget{fight_8cpp_a4242b2b09201e4f2dd080629ac5402c9}{\index{fight.\-cpp@{fight.\-cpp}!weapon\-\_\-armor\-\_\-table@{weapon\-\_\-armor\-\_\-table}}
+\index{weapon\-\_\-armor\-\_\-table@{weapon\-\_\-armor\-\_\-table}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{weapon\-\_\-armor\-\_\-table}]{\setlength{\rightskip}{0pt plus 5cm}const int weapon\-\_\-armor\-\_\-table\mbox{[}10\mbox{]}\mbox{[}6\mbox{]}}}\label{fight_8cpp_a4242b2b09201e4f2dd080629ac5402c9}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    
+    
+    
+    
+    
+    
+    
+    \{0, 0, 0, -1, 0, -1\}, 
+    \{0, 0, 0, 0, -1, -1\}, 
+    \{1, 0, -1, -1, -1, 0\}, 
+    \{-1, -1, -1, 0, 0, 1\}, 
+    \{0, 0, 0, 0, 0, -1\}, 
+    \{0, -1, -1, -2, -3, -4\}, 
+    \{1, -1, -1, 1, 1, 2\}, 
+    \{0, 0, 0, -1, -1, -2\}, 
+    \{-1, -1, -1, -2, -2, -3\}, 
+    \{1, 1, 1, 0, 0, 0\} 
+\}
+\end{DoxyCode}
+\hypertarget{fight_8cpp_a9b6888c0578ce18192f3338b67323fb3}{\index{fight.\-cpp@{fight.\-cpp}!weapon\-\_\-nat\-\_\-attack\-\_\-table@{weapon\-\_\-nat\-\_\-attack\-\_\-table}}
+\index{weapon\-\_\-nat\-\_\-attack\-\_\-table@{weapon\-\_\-nat\-\_\-attack\-\_\-table}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{weapon\-\_\-nat\-\_\-attack\-\_\-table}]{\setlength{\rightskip}{0pt plus 5cm}const int weapon\-\_\-nat\-\_\-attack\-\_\-table\mbox{[}8\mbox{]}\mbox{[}6\mbox{]}}}\label{fight_8cpp_a9b6888c0578ce18192f3338b67323fb3}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    
+    \{-1, -2, -2, -2, -2, -3\}, 
+    \{0, 0, 0, 0, -1, -1\}, 
+    \{0, 0, 0, -1, 0, -1\}, 
+    \{0, 0, 0, 0, -1, -1\}, 
+    \{-1, -1, -1, 0, 0, -1\}, 
+    \{0, 0, -1, 0, 0, -1\}, 
+    \{-1, -1, 0, 1, 1, 1\}, 
+    \{0, 0, 0, -1, 0, -1\} 
+\}
+\end{DoxyCode}
+\hypertarget{fight_8cpp_ab23a76737d797ddcafa163796ebc70af}{\index{fight.\-cpp@{fight.\-cpp}!wtype@{wtype}}
+\index{wtype@{wtype}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{wtype}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ wtype\mbox{[}$\,$\mbox{]}}}\label{fight_8cpp_ab23a76737d797ddcafa163796ebc70af}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"stab"}, \textcolor{stringliteral}{"stab"}, \textcolor{stringliteral}{"pierce"}, 
+    \textcolor{stringliteral}{"thrust"}, \textcolor{stringliteral}{"lunge"}, \textcolor{stringliteral}{"stab"}, 
+    \textcolor{stringliteral}{"chop"}, \textcolor{stringliteral}{"hack"}, \textcolor{stringliteral}{"cut"}, 
+    \textcolor{stringliteral}{"strike"}, \textcolor{stringliteral}{"bash"}, \textcolor{stringliteral}{"crush"}, 
+    \textcolor{stringliteral}{"slash"}, \textcolor{stringliteral}{"slice"}, \textcolor{stringliteral}{"cut"}, 
+    \textcolor{stringliteral}{"lash"}, \textcolor{stringliteral}{"lash"}, \textcolor{stringliteral}{"slice"}, 
+    \textcolor{stringliteral}{"arc"}, \textcolor{stringliteral}{"blaze"}, \textcolor{stringliteral}{"fire"}
+\}
+\end{DoxyCode}
+\hypertarget{fight_8cpp_a801450d40409df3f1899a27a7a21eb23}{\index{fight.\-cpp@{fight.\-cpp}!wtype2@{wtype2}}
+\index{wtype2@{wtype2}!fight.cpp@{fight.\-cpp}}
+\subsubsection[{wtype2}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ wtype2\mbox{[}$\,$\mbox{]}}}\label{fight_8cpp_a801450d40409df3f1899a27a7a21eb23}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"stabs"}, \textcolor{stringliteral}{"stabs"}, \textcolor{stringliteral}{"pierces"}, 
+    \textcolor{stringliteral}{"thrusts"}, \textcolor{stringliteral}{"lunges"}, \textcolor{stringliteral}{"stabs"}, 
+    \textcolor{stringliteral}{"chops"}, \textcolor{stringliteral}{"hacks"}, \textcolor{stringliteral}{"cuts"}, 
+    \textcolor{stringliteral}{"strikes"}, \textcolor{stringliteral}{"bashes"}, \textcolor{stringliteral}{"crushes"}, 
+    \textcolor{stringliteral}{"slashes"}, \textcolor{stringliteral}{"slices"}, \textcolor{stringliteral}{"cuts"}, 
+    \textcolor{stringliteral}{"lashes"}, \textcolor{stringliteral}{"lashes"}, \textcolor{stringliteral}{"slices"}
+\}
+\end{DoxyCode}

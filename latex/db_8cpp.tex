@@ -1,0 +1,628 @@
+\hypertarget{db_8cpp}{\section{db.\-cpp File Reference}
+\label{db_8cpp}\index{db.\-cpp@{db.\-cpp}}
+}
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$ctype.\-h$>$}\\*
+{\ttfamily \#include $<$time.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$sys/types.\-h$>$}\\*
+{\ttfamily \#include $<$sys/stat.\-h$>$}\\*
+{\ttfamily \#include $<$dirent.\-h$>$}\\*
+{\ttfamily \#include $<$errno.\-h$>$}\\*
+{\ttfamily \#include $<$memory.\-h$>$}\\*
+{\ttfamily \#include $<$sys/time.\-h$>$}\\*
+{\ttfamily \#include $<$mysql/mysql.\-h$>$}\\*
+{\ttfamily \#include $<$signal.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}server.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}structs.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}net\-\_\-link.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}protos.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}decl.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}clan.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{db_8cpp_a1e71de7d70235fd62bcd727678802c23}{M\-A\-X\-\_\-\-P\-R\-E\-A\-L\-L\-O\-C\-\_\-\-R\-O\-O\-M\-S}~14000
+\item 
+\#define \hyperlink{db_8cpp_a34e93b55a345d2ddd5cb71f5ae19b7c0}{C\-H\-E\-C\-K\-\_\-\-D\-O\-U\-B\-L\-E\-\_\-\-D\-E\-F\-S}~0
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{db_8cpp_a9de68546fe7e74ebafc342f2bd67821c}{boot\-\_\-zones} (void)
+\item 
+void \hyperlink{db_8cpp_a99c89d603c0aec0acf87ae05682702a9}{setup\-\_\-dir} (F\-I\-L\-E $\ast$fl, \hyperlink{room_8h_aede519ef65d80b5242a4a28b69d5e097}{R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$room, int dir, int type)
+\item 
+\hyperlink{room_8h_aede519ef65d80b5242a4a28b69d5e097}{R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{db_8cpp_a389755994ccf30d021dc11430454003d}{allocate\-\_\-room} (int n\-Virtual)
+\item 
+char $\ast$ \hyperlink{db_8cpp_a3b54f0d4ef2d548ca33092fc493b8a07}{file\-\_\-to\-\_\-string} (char $\ast$name)
+\item 
+void \hyperlink{db_8cpp_adb583c298c257004336ff38daa7725e9}{reset\-\_\-time} (void)
+\item 
+void \hyperlink{db_8cpp_a03f6253a56490d7942a51adeee9b0af1}{reload\-\_\-hints} (void)
+\item 
+void \hyperlink{db_8cpp_a37ef3ff2d8667a67b5f301e8fe6238c7}{clear\-\_\-char} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{db_8cpp_ac61feea4d445cef0a0857453aa347e81}{boot\-\_\-mess} (void)
+\item 
+void \hyperlink{db_8cpp_ae95c0eabf8a02154c90681bc1035f1c2}{load\-\_\-messages} (void)
+\item 
+void \hyperlink{db_8cpp_a6c451bd4e0152703a6efcfe1619955f3}{boot\-\_\-social\-\_\-messages} (void)
+\item 
+\hyperlink{room_8h_aede519ef65d80b5242a4a28b69d5e097}{R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{db_8cpp_aef7cba4d76cbbec1a7d11ff6c8ea580d}{vnum\-\_\-to\-\_\-room} (int room\-\_\-vnum)
+\item 
+void \hyperlink{db_8cpp_a62832b240d106a50941bfd1bd66130c4}{add\-\_\-room\-\_\-to\-\_\-hash} (\hyperlink{room_8h_aede519ef65d80b5242a4a28b69d5e097}{R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$add\-\_\-room)
+\item 
+\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{db_8cpp_ada3d8fcb51c06539f91d886dd5f5e297}{vnum\-\_\-to\-\_\-mob} (int mob\-\_\-vnum)
+\item 
+void \hyperlink{db_8cpp_a8b28a5f823c1ae05a2a1786aa07b1638}{add\-\_\-mob\-\_\-to\-\_\-hash} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$add\-\_\-mob)
+\item 
+\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{db_8cpp_aab412153cecf4690d4d8b5fe7b4f1d4b}{vtoo} (int n\-Virtual)
+\item 
+void \hyperlink{db_8cpp_ad46ab534608c2ba9cc0254d7a3f6977a}{add\-\_\-obj\-\_\-to\-\_\-hash} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$add\-\_\-obj)
+\item 
+void \hyperlink{db_8cpp_ac2c72e64f0182ede00f3ed0931a905b2}{boot\-\_\-db} (void)
+\item 
+void \hyperlink{db_8cpp_a063c72db15ef965fe405edf1dac67b10}{stock\-\_\-new\-\_\-deliveries} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classrpie_1_1server}{rpie\-::server} \hyperlink{db_8cpp_a55c71990ee4162ebec6abe401996cf15}{engine}
+\item 
+int \hyperlink{db_8cpp_a37ca7e986d2273eb8bcd8b80dcab4bf7}{M\-A\-X\-\_\-\-M\-E\-M\-O\-R\-Y}
+\item 
+int \hyperlink{db_8cpp_aba3bce0f3ec39cf5367a1c9d8aeae5a3}{P\-E\-R\-M\-\_\-\-M\-E\-M\-O\-R\-Y\-\_\-\-S\-I\-Z\-E}
+\item 
+int \hyperlink{db_8cpp_ae4e8bb09de0c67e335282eff4295ad13}{M\-A\-X\-\_\-\-O\-V\-E\-R\-H\-E\-A\-D}
+\item 
+int \hyperlink{db_8cpp_ac7671a5b9487b7414c49ee7180684066}{mob\-\_\-start\-\_\-stat} = 12
+\item 
+int \hyperlink{db_8cpp_a5f340dfc19f9ff7c2f23b5d5b8f2db4a}{mem\-\_\-allocated} = 0
+\item 
+int \hyperlink{db_8cpp_af4ab511cc0a7e34fbea63e45629ce4be}{mem\-\_\-freed} = 0
+\item 
+\hyperlink{room_8h_aede519ef65d80b5242a4a28b69d5e097}{R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{db_8cpp_ac49a31a429951478151eba6ed0ee7df1}{wld\-\_\-tab} \mbox{[}\hyperlink{structs_8h_a9038fefbff7f02c8a6e70fdae195cc83}{Z\-O\-N\-E\-\_\-\-S\-I\-Z\-E}\mbox{]}
+\item 
+\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{db_8cpp_a0774a4cd62bc767520579df786efa5e4}{obj\-\_\-tab} \mbox{[}\hyperlink{structs_8h_a9038fefbff7f02c8a6e70fdae195cc83}{Z\-O\-N\-E\-\_\-\-S\-I\-Z\-E}\mbox{]}
+\item 
+\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{db_8cpp_a6943286086a27b7a01139e4e67e62b80}{mob\-\_\-tab} \mbox{[}\hyperlink{structs_8h_a9038fefbff7f02c8a6e70fdae195cc83}{Z\-O\-N\-E\-\_\-\-S\-I\-Z\-E}\mbox{]}
+\item 
+\hyperlink{structs_8h_a4b760d8457cc19a45975d817579fb6d0}{R\-O\-L\-E\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{db_8cpp_aa0c192cd82932575cea341e9627c9bb0}{role\-\_\-list} = N\-U\-L\-L
+\item 
+\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{db_8cpp_a764e22e8fc61484ca8ecd62fc522e95c}{object\-\_\-list} = N\-U\-L\-L
+\item 
+\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{db_8cpp_ac14603eecf3f87f9eacf30aaa88e4881}{character\-\_\-list} = N\-U\-L\-L
+\item 
+\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{db_8cpp_a470d660d0ddfd0c765df188a8463b3a7}{full\-\_\-mobile\-\_\-list} = N\-U\-L\-L
+\item 
+\hyperlink{room_8h_aede519ef65d80b5242a4a28b69d5e097}{R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{db_8cpp_ad92350989298c706af0d064f6becbf7b}{full\-\_\-room\-\_\-list} = N\-U\-L\-L
+\item 
+\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{db_8cpp_a3cbda2f9d2cdee17cd0e68768877f796}{full\-\_\-object\-\_\-list} = N\-U\-L\-L
+\item 
+\hyperlink{structs_8h_ad4ad10783dde8fd0183e2d5b9c57d9a4}{N\-E\-W\-B\-I\-E\-\_\-\-H\-I\-N\-T} $\ast$ \hyperlink{db_8cpp_a68919dcce6c00f30a75a9e695042f81a}{hint\-\_\-list} = N\-U\-L\-L
+\item 
+\hyperlink{structs_8h_a8b4b375191f963e086ad19c556df2438}{H\-E\-L\-P\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{db_8cpp_affb9187a3477f72ece8bcfe9564c3132}{help\-\_\-list} = N\-U\-L\-L
+\item 
+\hyperlink{structs_8h_a8b4b375191f963e086ad19c556df2438}{H\-E\-L\-P\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{db_8cpp_ae855ec459f1bba9f81508cf87ea81883}{bhelp\-\_\-list} = N\-U\-L\-L
+\item 
+\hyperlink{structs_8h_a0c3831e932a5072abea2d808d7085561}{T\-E\-X\-T\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{db_8cpp_a2f8b41718416f8bc37e077d71e587eac}{text\-\_\-list} = N\-U\-L\-L
+\item 
+\hyperlink{structs_8h_a0c3831e932a5072abea2d808d7085561}{T\-E\-X\-T\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{db_8cpp_a09aadf10eb62d6d50a284fb7277fe4d6}{document\-\_\-list} = N\-U\-L\-L
+\item 
+\hyperlink{structs_8h_a495309683b6f6354b20a79327e7d77d9}{S\-U\-B\-C\-R\-A\-F\-T\-\_\-\-H\-E\-A\-D\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{db_8cpp_a4d8c946c8fca28e26f33f3299ab5f2fc}{crafts} = N\-U\-L\-L
+\item 
+\hyperlink{structs_8h_abbdef5ffa3256b4a60e16f68ca3b949e}{S\-I\-T\-E\-\_\-\-I\-N\-F\-O} $\ast$ \hyperlink{db_8cpp_ad25a9964827702cb60dc1ed7f5130766}{banned\-\_\-site}
+\item 
+int \hyperlink{db_8cpp_ab4903bf695e3aa07975e4d1daa1e8312}{booting} = 1
+\item 
+int \hyperlink{db_8cpp_a85666b7e957c6b3efcf43588d675969a}{hash\-\_\-len}
+\item 
+int \hyperlink{db_8cpp_ad2ab292baa496bcabad485190ea683ba}{hash\-\_\-val}
+\item 
+char $\ast$ \hyperlink{db_8cpp_ac8b18b2e7f0fa918c943ed5c05afcd3c}{memory\-\_\-base} = N\-U\-L\-L
+\item 
+char $\ast$ \hyperlink{db_8cpp_a7cff9f930e4ee026a748e0cf393b2a5f}{memory\-\_\-top} = N\-U\-L\-L
+\item 
+char $\ast$ \hyperlink{db_8cpp_acb4f953c08f9fd1c1764cc57d15afb24}{memory\-\_\-next} = N\-U\-L\-L
+\item 
+char $\ast$ \hyperlink{db_8cpp_a44d488c5458c3dbe43287ef5ea189bd6}{overhead\-\_\-base} = N\-U\-L\-L
+\item 
+char $\ast$ \hyperlink{db_8cpp_a7f13def41b4dd517815f3121e882f8d8}{overhead\-\_\-top} = N\-U\-L\-L
+\item 
+char $\ast$ \hyperlink{db_8cpp_aff3c982e4dbe8f00c47a4456e7246722}{overhead\-\_\-next} = N\-U\-L\-L
+\item 
+char $\ast$ \hyperlink{db_8cpp_ae16cacea4574ceccfd689e813f66c721}{perm\-\_\-memory} = N\-U\-L\-L
+\item 
+char $\ast$ \hyperlink{db_8cpp_a1f121c76c9c448c69a1ffe71b4b3e095}{perm\-\_\-memory\-\_\-top} = N\-U\-L\-L
+\item 
+char $\ast$ \hyperlink{db_8cpp_a34db2ed4ce7da0014de963f0800033a0}{perm\-\_\-memory\-\_\-next} = N\-U\-L\-L
+\item 
+struct hash\-\_\-data $\ast$ \hyperlink{db_8cpp_a23e7df9fb817877a265b2d3126bcb7a1}{hash\-\_\-buckets} \mbox{[}\hyperlink{structs_8h_a0a9f9d2ebce3478d1f4ffeb197a0f085}{N\-U\-M\-\_\-\-B\-U\-C\-K\-E\-T\-S}\mbox{]}
+\item 
+char $\ast$ \hyperlink{db_8cpp_abb240f85a707548df6760e2ebb50cdae}{null\-\_\-string} = \char`\"{}\char`\"{}
+\item 
+char $\ast$ \hyperlink{db_8cpp_a7198332de440cd63c04ffeab811c2d61}{emergency\-\_\-data} = N\-U\-L\-L
+\item 
+int \hyperlink{db_8cpp_a2a96454e7789342f840eb4237aed78ab}{times\-\_\-do\-\_\-hour\-\_\-called} = 0
+\item 
+int \hyperlink{db_8cpp_a2857dfbab64f7b094c4658f28d433172}{next\-\_\-mob\-\_\-coldload\-\_\-id} = 0
+\item 
+int \hyperlink{db_8cpp_a3566506a8692188044261a95cca50d84}{next\-\_\-pc\-\_\-coldload\-\_\-id} = 0
+\item 
+int \hyperlink{db_8cpp_a60833e668b6c70c488bc43225f3019fe}{next\-\_\-obj\-\_\-coldload\-\_\-id} = 0
+\item 
+int \hyperlink{db_8cpp_a72682f1f62430d6878d1cf48fac624ea}{count\-\_\-max\-\_\-online} = 0
+\item 
+char \hyperlink{db_8cpp_a2c9ba4c614fcdd647b766ba9a263b778}{max\-\_\-online\-\_\-date} \mbox{[}32\mbox{]} = \char`\"{}\char`\"{}
+\item 
+int \hyperlink{db_8cpp_a904050232b00410433115ac2bcf6c086}{M\-A\-X\-\_\-\-Z\-O\-N\-E} = 100
+\item 
+int \hyperlink{db_8cpp_a0db92e51d11810e688915e275bcd127c}{second\-\_\-affect\-\_\-active} = 0
+\item 
+int \hyperlink{db_8cpp_adcb5510cd63e4a571090c02f030c28ff}{hash\-\_\-dup\-\_\-strings} = 0
+\item 
+int \hyperlink{db_8cpp_a76888ab381263ed78824c09a82d7bd29}{hash\-\_\-dup\-\_\-length} = 0
+\item 
+int \hyperlink{db_8cpp_a97fcb0e1731b36905e90757f211b1340}{x1} = 0
+\item 
+int \hyperlink{db_8cpp_a68e179aee61639eac9e2a0979b1dcf49}{check\-\_\-objects}
+\item 
+int \hyperlink{db_8cpp_aaad57f318d6636a073befd7a48813224}{check\-\_\-characters}
+\item 
+long \hyperlink{db_8cpp_a32f6214c82fbccb2cc157a1d1b7141e4}{mud\-\_\-time}
+\item 
+char $\ast$ \hyperlink{db_8cpp_a01a03909677b782a654353c3d7293002}{mud\-\_\-time\-\_\-str} = N\-U\-L\-L
+\item 
+int \hyperlink{db_8cpp_ada134ce86fbff6a0db4075d54634e1dd}{mp\-\_\-dirty} = 0
+\item 
+time\-\_\-t \hyperlink{db_8cpp_acc4780634849e6b017e7d1306b10957f}{next\-\_\-hour\-\_\-update}
+\item 
+time\-\_\-t \hyperlink{db_8cpp_a9d546b60a4c78e9c2d5cd63b44eed1d9}{next\-\_\-minute\-\_\-update}
+\item 
+int \hyperlink{db_8cpp_a8f5f78db0b34e7a296bd6f1e3d0fbd1f}{minute\-\_\-update\-\_\-count}
+\item 
+int \hyperlink{db_8cpp_af19b4f678cf0f218636f90cc002e9bed}{world\-\_\-version\-\_\-in} = 12
+\item 
+int \hyperlink{db_8cpp_a7027891e874f6e9401a682b07afb4199}{world\-\_\-version\-\_\-out} = 12
+\item 
+int \hyperlink{db_8cpp_aaa5b01867cb7853924771279faad3dbc}{pulse\-\_\-violence} = 8
+\item 
+\hyperlink{structs_8h_ae07fc4b53299890083903dd96e19bfc9}{R\-E\-G\-I\-S\-T\-R\-Y\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{db_8cpp_aee2c6248ce8c9f5bdc77379471da709d}{registry} \mbox{[}\hyperlink{structs_8h_a7ca8cf2311312cca53fb390c4e44e3b5}{M\-A\-X\-\_\-\-R\-E\-G\-I\-S\-T\-R\-Y}\mbox{]}
+\item 
+struct \hyperlink{structzone__data}{zone\-\_\-data} $\ast$ \hyperlink{db_8cpp_a05fe590640e6e476685743f356f74360}{zone\-\_\-table}
+\item 
+int \hyperlink{db_8cpp_adf1c19981dfe3f652d79fb0f00ef5fed}{advance\-\_\-hour\-\_\-now} = 0
+\item 
+char \hyperlink{db_8cpp_a7dc2f27c4f7211b708221f846d13ebdf}{B\-O\-O\-T} \mbox{[}24\mbox{]}
+\item 
+F\-I\-L\-E $\ast$ \hyperlink{db_8cpp_ad6ecf098aee66e4b8276007d98af6494}{fp\-\_\-log}
+\item 
+F\-I\-L\-E $\ast$ \hyperlink{db_8cpp_a9db9ae1849e1804c4a4efb092ed18dcf}{imm\-\_\-log}
+\item 
+F\-I\-L\-E $\ast$ \hyperlink{db_8cpp_aa47016851946a6ac731b4a34cc911950}{guest\-\_\-log}
+\item 
+F\-I\-L\-E $\ast$ \hyperlink{db_8cpp_a33f6fc849050c487a17c9142ee011aa8}{sys\-\_\-log}
+\item 
+struct \hyperlink{structtime__info__data}{time\-\_\-info\-\_\-data} \hyperlink{db_8cpp_a5d41a0e2cabffad8c740bd6e4c79c3a9}{time\-\_\-info}
+\item 
+int \hyperlink{db_8cpp_ac710c7bfde8686dcdfa07f1800ab01b5}{change}
+\item 
+\hyperlink{structs_8h_ad5c9d4ba3dc37783a528b0925dc981a0}{bool} \hyperlink{db_8cpp_a32638b836e7f2ccbafb307c4532ad2d6}{memory\-\_\-check} = false
+\item 
+struct \hyperlink{structdescriptor__data}{descriptor\-\_\-data} $\ast$ \hyperlink{db_8cpp_a7295a743852b0908b921bdf8f6b4d37e}{descriptor\-\_\-list}
+\item 
+struct msg\-\_\-data $\ast$ \hyperlink{db_8cpp_a31b5009e087fb47e71d18e6d832f0fb0}{msg\-\_\-list}
+\item 
+std\-::map$<$ int, \hyperlink{structmobile__ai}{mobile\-\_\-ai} $>$ \hyperlink{db_8cpp_afd9c42e0e13b5a54ceea33be2d3356f2}{mob\-\_\-ai\-\_\-list}
+\item 
+std\-::multimap$<$ int, \hyperlink{structroom__prog}{room\-\_\-prog} $>$ \hyperlink{db_8cpp_ab725bd2e806404aaa0c3801bc97cde29}{mob\-\_\-prog\-\_\-list}
+\item 
+std\-::multimap$<$ int, \hyperlink{structroom__prog}{room\-\_\-prog} $>$ \hyperlink{db_8cpp_a5b8ee11ca5cb281c6e10c897b4417a91}{obj\-\_\-prog\-\_\-list}
+\item 
+std\-::multimap$<$ std\-::string, \\*
+\hyperlink{structroom__prog}{room\-\_\-prog} $>$ \hyperlink{db_8cpp_a071f46361ec95ca001cfd6d25333db81}{craft\-\_\-prog\-\_\-list}
+\item 
+std\-::multimap$<$ int, \hyperlink{structvariable__data}{variable\-\_\-data} $>$ \hyperlink{db_8cpp_a4e0ad7ecc3c8659089bc4cb94f763e9e}{obj\-\_\-variable\-\_\-list}
+\item 
+std\-::multimap$<$ int, std\-::string $>$ \hyperlink{db_8cpp_a15211d93a3589aa57760f7d58ba35281}{variable\-\_\-categories}
+\item 
+std\-::multimap$<$ int, \\*
+\hyperlink{structmvariable__data}{mvariable\-\_\-data} $>$ \hyperlink{db_8cpp_a899371082a8ec6f9d7228aeaa0ba35f7}{mvariable\-\_\-list}
+\item 
+std\-::multimap$<$ int, std\-::string $>$ \hyperlink{db_8cpp_a048187518b7c56ee961edd5931007525}{mvariable\-\_\-categories}
+\item 
+\hyperlink{classtBroadwave}{t\-Broadwave} \hyperlink{db_8cpp_a9a0eda10d7fd6cd96b4b080bfd82e153}{Broadwave}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{db_8cpp_a34e93b55a345d2ddd5cb71f5ae19b7c0}{\index{db.\-cpp@{db.\-cpp}!C\-H\-E\-C\-K\-\_\-\-D\-O\-U\-B\-L\-E\-\_\-\-D\-E\-F\-S@{C\-H\-E\-C\-K\-\_\-\-D\-O\-U\-B\-L\-E\-\_\-\-D\-E\-F\-S}}
+\index{C\-H\-E\-C\-K\-\_\-\-D\-O\-U\-B\-L\-E\-\_\-\-D\-E\-F\-S@{C\-H\-E\-C\-K\-\_\-\-D\-O\-U\-B\-L\-E\-\_\-\-D\-E\-F\-S}!db.cpp@{db.\-cpp}}
+\subsubsection[{C\-H\-E\-C\-K\-\_\-\-D\-O\-U\-B\-L\-E\-\_\-\-D\-E\-F\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-H\-E\-C\-K\-\_\-\-D\-O\-U\-B\-L\-E\-\_\-\-D\-E\-F\-S~0}}\label{db_8cpp_a34e93b55a345d2ddd5cb71f5ae19b7c0}
+\hypertarget{db_8cpp_a1e71de7d70235fd62bcd727678802c23}{\index{db.\-cpp@{db.\-cpp}!M\-A\-X\-\_\-\-P\-R\-E\-A\-L\-L\-O\-C\-\_\-\-R\-O\-O\-M\-S@{M\-A\-X\-\_\-\-P\-R\-E\-A\-L\-L\-O\-C\-\_\-\-R\-O\-O\-M\-S}}
+\index{M\-A\-X\-\_\-\-P\-R\-E\-A\-L\-L\-O\-C\-\_\-\-R\-O\-O\-M\-S@{M\-A\-X\-\_\-\-P\-R\-E\-A\-L\-L\-O\-C\-\_\-\-R\-O\-O\-M\-S}!db.cpp@{db.\-cpp}}
+\subsubsection[{M\-A\-X\-\_\-\-P\-R\-E\-A\-L\-L\-O\-C\-\_\-\-R\-O\-O\-M\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-X\-\_\-\-P\-R\-E\-A\-L\-L\-O\-C\-\_\-\-R\-O\-O\-M\-S~14000}}\label{db_8cpp_a1e71de7d70235fd62bcd727678802c23}
+
+
+\subsection{Function Documentation}
+\hypertarget{db_8cpp_a8b28a5f823c1ae05a2a1786aa07b1638}{\index{db.\-cpp@{db.\-cpp}!add\-\_\-mob\-\_\-to\-\_\-hash@{add\-\_\-mob\-\_\-to\-\_\-hash}}
+\index{add\-\_\-mob\-\_\-to\-\_\-hash@{add\-\_\-mob\-\_\-to\-\_\-hash}!db.cpp@{db.\-cpp}}
+\subsubsection[{add\-\_\-mob\-\_\-to\-\_\-hash}]{\setlength{\rightskip}{0pt plus 5cm}void add\-\_\-mob\-\_\-to\-\_\-hash (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{add\-\_\-mob}
+\end{DoxyParamCaption}
+)}}\label{db_8cpp_a8b28a5f823c1ae05a2a1786aa07b1638}
+\hypertarget{db_8cpp_ad46ab534608c2ba9cc0254d7a3f6977a}{\index{db.\-cpp@{db.\-cpp}!add\-\_\-obj\-\_\-to\-\_\-hash@{add\-\_\-obj\-\_\-to\-\_\-hash}}
+\index{add\-\_\-obj\-\_\-to\-\_\-hash@{add\-\_\-obj\-\_\-to\-\_\-hash}!db.cpp@{db.\-cpp}}
+\subsubsection[{add\-\_\-obj\-\_\-to\-\_\-hash}]{\setlength{\rightskip}{0pt plus 5cm}void add\-\_\-obj\-\_\-to\-\_\-hash (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{add\-\_\-obj}
+\end{DoxyParamCaption}
+)}}\label{db_8cpp_ad46ab534608c2ba9cc0254d7a3f6977a}
+\hypertarget{db_8cpp_a62832b240d106a50941bfd1bd66130c4}{\index{db.\-cpp@{db.\-cpp}!add\-\_\-room\-\_\-to\-\_\-hash@{add\-\_\-room\-\_\-to\-\_\-hash}}
+\index{add\-\_\-room\-\_\-to\-\_\-hash@{add\-\_\-room\-\_\-to\-\_\-hash}!db.cpp@{db.\-cpp}}
+\subsubsection[{add\-\_\-room\-\_\-to\-\_\-hash}]{\setlength{\rightskip}{0pt plus 5cm}void add\-\_\-room\-\_\-to\-\_\-hash (
+\begin{DoxyParamCaption}
+\item[{{\bf R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$}]{add\-\_\-room}
+\end{DoxyParamCaption}
+)}}\label{db_8cpp_a62832b240d106a50941bfd1bd66130c4}
+\hypertarget{db_8cpp_a389755994ccf30d021dc11430454003d}{\index{db.\-cpp@{db.\-cpp}!allocate\-\_\-room@{allocate\-\_\-room}}
+\index{allocate\-\_\-room@{allocate\-\_\-room}!db.cpp@{db.\-cpp}}
+\subsubsection[{allocate\-\_\-room}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\-O\-O\-M\-\_\-\-D\-A\-T\-A}$\ast$ allocate\-\_\-room (
+\begin{DoxyParamCaption}
+\item[{int}]{n\-Virtual}
+\end{DoxyParamCaption}
+)}}\label{db_8cpp_a389755994ccf30d021dc11430454003d}
+\hypertarget{db_8cpp_ac2c72e64f0182ede00f3ed0931a905b2}{\index{db.\-cpp@{db.\-cpp}!boot\-\_\-db@{boot\-\_\-db}}
+\index{boot\-\_\-db@{boot\-\_\-db}!db.cpp@{db.\-cpp}}
+\subsubsection[{boot\-\_\-db}]{\setlength{\rightskip}{0pt plus 5cm}void boot\-\_\-db (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{db_8cpp_ac2c72e64f0182ede00f3ed0931a905b2}
+\hypertarget{db_8cpp_ac61feea4d445cef0a0857453aa347e81}{\index{db.\-cpp@{db.\-cpp}!boot\-\_\-mess@{boot\-\_\-mess}}
+\index{boot\-\_\-mess@{boot\-\_\-mess}!db.cpp@{db.\-cpp}}
+\subsubsection[{boot\-\_\-mess}]{\setlength{\rightskip}{0pt plus 5cm}void boot\-\_\-mess (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{db_8cpp_ac61feea4d445cef0a0857453aa347e81}
+\hypertarget{db_8cpp_a6c451bd4e0152703a6efcfe1619955f3}{\index{db.\-cpp@{db.\-cpp}!boot\-\_\-social\-\_\-messages@{boot\-\_\-social\-\_\-messages}}
+\index{boot\-\_\-social\-\_\-messages@{boot\-\_\-social\-\_\-messages}!db.cpp@{db.\-cpp}}
+\subsubsection[{boot\-\_\-social\-\_\-messages}]{\setlength{\rightskip}{0pt plus 5cm}void boot\-\_\-social\-\_\-messages (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{db_8cpp_a6c451bd4e0152703a6efcfe1619955f3}
+\hypertarget{db_8cpp_a9de68546fe7e74ebafc342f2bd67821c}{\index{db.\-cpp@{db.\-cpp}!boot\-\_\-zones@{boot\-\_\-zones}}
+\index{boot\-\_\-zones@{boot\-\_\-zones}!db.cpp@{db.\-cpp}}
+\subsubsection[{boot\-\_\-zones}]{\setlength{\rightskip}{0pt plus 5cm}void boot\-\_\-zones (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{db_8cpp_a9de68546fe7e74ebafc342f2bd67821c}
+\hypertarget{db_8cpp_a37ef3ff2d8667a67b5f301e8fe6238c7}{\index{db.\-cpp@{db.\-cpp}!clear\-\_\-char@{clear\-\_\-char}}
+\index{clear\-\_\-char@{clear\-\_\-char}!db.cpp@{db.\-cpp}}
+\subsubsection[{clear\-\_\-char}]{\setlength{\rightskip}{0pt plus 5cm}void clear\-\_\-char (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{db_8cpp_a37ef3ff2d8667a67b5f301e8fe6238c7}
+\hypertarget{db_8cpp_a3b54f0d4ef2d548ca33092fc493b8a07}{\index{db.\-cpp@{db.\-cpp}!file\-\_\-to\-\_\-string@{file\-\_\-to\-\_\-string}}
+\index{file\-\_\-to\-\_\-string@{file\-\_\-to\-\_\-string}!db.cpp@{db.\-cpp}}
+\subsubsection[{file\-\_\-to\-\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ file\-\_\-to\-\_\-string (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}}\label{db_8cpp_a3b54f0d4ef2d548ca33092fc493b8a07}
+\hypertarget{db_8cpp_ae95c0eabf8a02154c90681bc1035f1c2}{\index{db.\-cpp@{db.\-cpp}!load\-\_\-messages@{load\-\_\-messages}}
+\index{load\-\_\-messages@{load\-\_\-messages}!db.cpp@{db.\-cpp}}
+\subsubsection[{load\-\_\-messages}]{\setlength{\rightskip}{0pt plus 5cm}void load\-\_\-messages (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{db_8cpp_ae95c0eabf8a02154c90681bc1035f1c2}
+\hypertarget{db_8cpp_a03f6253a56490d7942a51adeee9b0af1}{\index{db.\-cpp@{db.\-cpp}!reload\-\_\-hints@{reload\-\_\-hints}}
+\index{reload\-\_\-hints@{reload\-\_\-hints}!db.cpp@{db.\-cpp}}
+\subsubsection[{reload\-\_\-hints}]{\setlength{\rightskip}{0pt plus 5cm}void reload\-\_\-hints (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{db_8cpp_a03f6253a56490d7942a51adeee9b0af1}
+\hypertarget{db_8cpp_adb583c298c257004336ff38daa7725e9}{\index{db.\-cpp@{db.\-cpp}!reset\-\_\-time@{reset\-\_\-time}}
+\index{reset\-\_\-time@{reset\-\_\-time}!db.cpp@{db.\-cpp}}
+\subsubsection[{reset\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}void reset\-\_\-time (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{db_8cpp_adb583c298c257004336ff38daa7725e9}
+\hypertarget{db_8cpp_a99c89d603c0aec0acf87ae05682702a9}{\index{db.\-cpp@{db.\-cpp}!setup\-\_\-dir@{setup\-\_\-dir}}
+\index{setup\-\_\-dir@{setup\-\_\-dir}!db.cpp@{db.\-cpp}}
+\subsubsection[{setup\-\_\-dir}]{\setlength{\rightskip}{0pt plus 5cm}void setup\-\_\-dir (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{fl, }
+\item[{{\bf R\-O\-O\-M\-\_\-\-D\-A\-T\-A} $\ast$}]{room, }
+\item[{int}]{dir, }
+\item[{int}]{type}
+\end{DoxyParamCaption}
+)}}\label{db_8cpp_a99c89d603c0aec0acf87ae05682702a9}
+\hypertarget{db_8cpp_a063c72db15ef965fe405edf1dac67b10}{\index{db.\-cpp@{db.\-cpp}!stock\-\_\-new\-\_\-deliveries@{stock\-\_\-new\-\_\-deliveries}}
+\index{stock\-\_\-new\-\_\-deliveries@{stock\-\_\-new\-\_\-deliveries}!db.cpp@{db.\-cpp}}
+\subsubsection[{stock\-\_\-new\-\_\-deliveries}]{\setlength{\rightskip}{0pt plus 5cm}void stock\-\_\-new\-\_\-deliveries (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{db_8cpp_a063c72db15ef965fe405edf1dac67b10}
+\hypertarget{db_8cpp_ada3d8fcb51c06539f91d886dd5f5e297}{\index{db.\-cpp@{db.\-cpp}!vnum\-\_\-to\-\_\-mob@{vnum\-\_\-to\-\_\-mob}}
+\index{vnum\-\_\-to\-\_\-mob@{vnum\-\_\-to\-\_\-mob}!db.cpp@{db.\-cpp}}
+\subsubsection[{vnum\-\_\-to\-\_\-mob}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A}$\ast$ vnum\-\_\-to\-\_\-mob (
+\begin{DoxyParamCaption}
+\item[{int}]{mob\-\_\-vnum}
+\end{DoxyParamCaption}
+)}}\label{db_8cpp_ada3d8fcb51c06539f91d886dd5f5e297}
+\hypertarget{db_8cpp_aef7cba4d76cbbec1a7d11ff6c8ea580d}{\index{db.\-cpp@{db.\-cpp}!vnum\-\_\-to\-\_\-room@{vnum\-\_\-to\-\_\-room}}
+\index{vnum\-\_\-to\-\_\-room@{vnum\-\_\-to\-\_\-room}!db.cpp@{db.\-cpp}}
+\subsubsection[{vnum\-\_\-to\-\_\-room}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\-O\-O\-M\-\_\-\-D\-A\-T\-A}$\ast$ vnum\-\_\-to\-\_\-room (
+\begin{DoxyParamCaption}
+\item[{int}]{room\-\_\-vnum}
+\end{DoxyParamCaption}
+)}}\label{db_8cpp_aef7cba4d76cbbec1a7d11ff6c8ea580d}
+\hypertarget{db_8cpp_aab412153cecf4690d4d8b5fe7b4f1d4b}{\index{db.\-cpp@{db.\-cpp}!vtoo@{vtoo}}
+\index{vtoo@{vtoo}!db.cpp@{db.\-cpp}}
+\subsubsection[{vtoo}]{\setlength{\rightskip}{0pt plus 5cm}{\bf O\-B\-J\-\_\-\-D\-A\-T\-A}$\ast$ vtoo (
+\begin{DoxyParamCaption}
+\item[{int}]{n\-Virtual}
+\end{DoxyParamCaption}
+)}}\label{db_8cpp_aab412153cecf4690d4d8b5fe7b4f1d4b}
+
+
+\subsection{Variable Documentation}
+\hypertarget{db_8cpp_adf1c19981dfe3f652d79fb0f00ef5fed}{\index{db.\-cpp@{db.\-cpp}!advance\-\_\-hour\-\_\-now@{advance\-\_\-hour\-\_\-now}}
+\index{advance\-\_\-hour\-\_\-now@{advance\-\_\-hour\-\_\-now}!db.cpp@{db.\-cpp}}
+\subsubsection[{advance\-\_\-hour\-\_\-now}]{\setlength{\rightskip}{0pt plus 5cm}int advance\-\_\-hour\-\_\-now = 0}}\label{db_8cpp_adf1c19981dfe3f652d79fb0f00ef5fed}
+\hypertarget{db_8cpp_ad25a9964827702cb60dc1ed7f5130766}{\index{db.\-cpp@{db.\-cpp}!banned\-\_\-site@{banned\-\_\-site}}
+\index{banned\-\_\-site@{banned\-\_\-site}!db.cpp@{db.\-cpp}}
+\subsubsection[{banned\-\_\-site}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\-I\-T\-E\-\_\-\-I\-N\-F\-O}$\ast$ banned\-\_\-site}}\label{db_8cpp_ad25a9964827702cb60dc1ed7f5130766}
+\hypertarget{db_8cpp_ae855ec459f1bba9f81508cf87ea81883}{\index{db.\-cpp@{db.\-cpp}!bhelp\-\_\-list@{bhelp\-\_\-list}}
+\index{bhelp\-\_\-list@{bhelp\-\_\-list}!db.cpp@{db.\-cpp}}
+\subsubsection[{bhelp\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}{\bf H\-E\-L\-P\-\_\-\-D\-A\-T\-A}$\ast$ bhelp\-\_\-list = N\-U\-L\-L}}\label{db_8cpp_ae855ec459f1bba9f81508cf87ea81883}
+\hypertarget{db_8cpp_a7dc2f27c4f7211b708221f846d13ebdf}{\index{db.\-cpp@{db.\-cpp}!B\-O\-O\-T@{B\-O\-O\-T}}
+\index{B\-O\-O\-T@{B\-O\-O\-T}!db.cpp@{db.\-cpp}}
+\subsubsection[{B\-O\-O\-T}]{\setlength{\rightskip}{0pt plus 5cm}char B\-O\-O\-T\mbox{[}24\mbox{]}}}\label{db_8cpp_a7dc2f27c4f7211b708221f846d13ebdf}
+\hypertarget{db_8cpp_ab4903bf695e3aa07975e4d1daa1e8312}{\index{db.\-cpp@{db.\-cpp}!booting@{booting}}
+\index{booting@{booting}!db.cpp@{db.\-cpp}}
+\subsubsection[{booting}]{\setlength{\rightskip}{0pt plus 5cm}int booting = 1}}\label{db_8cpp_ab4903bf695e3aa07975e4d1daa1e8312}
+\hypertarget{db_8cpp_a9a0eda10d7fd6cd96b4b080bfd82e153}{\index{db.\-cpp@{db.\-cpp}!Broadwave@{Broadwave}}
+\index{Broadwave@{Broadwave}!db.cpp@{db.\-cpp}}
+\subsubsection[{Broadwave}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-Broadwave} Broadwave}}\label{db_8cpp_a9a0eda10d7fd6cd96b4b080bfd82e153}
+\hypertarget{db_8cpp_ac710c7bfde8686dcdfa07f1800ab01b5}{\index{db.\-cpp@{db.\-cpp}!change@{change}}
+\index{change@{change}!db.cpp@{db.\-cpp}}
+\subsubsection[{change}]{\setlength{\rightskip}{0pt plus 5cm}int change}}\label{db_8cpp_ac710c7bfde8686dcdfa07f1800ab01b5}
+\hypertarget{db_8cpp_ac14603eecf3f87f9eacf30aaa88e4881}{\index{db.\-cpp@{db.\-cpp}!character\-\_\-list@{character\-\_\-list}}
+\index{character\-\_\-list@{character\-\_\-list}!db.cpp@{db.\-cpp}}
+\subsubsection[{character\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A}$\ast$ character\-\_\-list = N\-U\-L\-L}}\label{db_8cpp_ac14603eecf3f87f9eacf30aaa88e4881}
+\hypertarget{db_8cpp_aaad57f318d6636a073befd7a48813224}{\index{db.\-cpp@{db.\-cpp}!check\-\_\-characters@{check\-\_\-characters}}
+\index{check\-\_\-characters@{check\-\_\-characters}!db.cpp@{db.\-cpp}}
+\subsubsection[{check\-\_\-characters}]{\setlength{\rightskip}{0pt plus 5cm}int check\-\_\-characters}}\label{db_8cpp_aaad57f318d6636a073befd7a48813224}
+\hypertarget{db_8cpp_a68e179aee61639eac9e2a0979b1dcf49}{\index{db.\-cpp@{db.\-cpp}!check\-\_\-objects@{check\-\_\-objects}}
+\index{check\-\_\-objects@{check\-\_\-objects}!db.cpp@{db.\-cpp}}
+\subsubsection[{check\-\_\-objects}]{\setlength{\rightskip}{0pt plus 5cm}int check\-\_\-objects}}\label{db_8cpp_a68e179aee61639eac9e2a0979b1dcf49}
+\hypertarget{db_8cpp_a72682f1f62430d6878d1cf48fac624ea}{\index{db.\-cpp@{db.\-cpp}!count\-\_\-max\-\_\-online@{count\-\_\-max\-\_\-online}}
+\index{count\-\_\-max\-\_\-online@{count\-\_\-max\-\_\-online}!db.cpp@{db.\-cpp}}
+\subsubsection[{count\-\_\-max\-\_\-online}]{\setlength{\rightskip}{0pt plus 5cm}int count\-\_\-max\-\_\-online = 0}}\label{db_8cpp_a72682f1f62430d6878d1cf48fac624ea}
+\hypertarget{db_8cpp_a071f46361ec95ca001cfd6d25333db81}{\index{db.\-cpp@{db.\-cpp}!craft\-\_\-prog\-\_\-list@{craft\-\_\-prog\-\_\-list}}
+\index{craft\-\_\-prog\-\_\-list@{craft\-\_\-prog\-\_\-list}!db.cpp@{db.\-cpp}}
+\subsubsection[{craft\-\_\-prog\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}std\-::multimap$<$ std\-::string, {\bf room\-\_\-prog} $>$ craft\-\_\-prog\-\_\-list}}\label{db_8cpp_a071f46361ec95ca001cfd6d25333db81}
+\hypertarget{db_8cpp_a4d8c946c8fca28e26f33f3299ab5f2fc}{\index{db.\-cpp@{db.\-cpp}!crafts@{crafts}}
+\index{crafts@{crafts}!db.cpp@{db.\-cpp}}
+\subsubsection[{crafts}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\-U\-B\-C\-R\-A\-F\-T\-\_\-\-H\-E\-A\-D\-\_\-\-D\-A\-T\-A}$\ast$ crafts = N\-U\-L\-L}}\label{db_8cpp_a4d8c946c8fca28e26f33f3299ab5f2fc}
+\hypertarget{db_8cpp_a7295a743852b0908b921bdf8f6b4d37e}{\index{db.\-cpp@{db.\-cpp}!descriptor\-\_\-list@{descriptor\-\_\-list}}
+\index{descriptor\-\_\-list@{descriptor\-\_\-list}!db.cpp@{db.\-cpp}}
+\subsubsection[{descriptor\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf descriptor\-\_\-data}$\ast$ descriptor\-\_\-list}}\label{db_8cpp_a7295a743852b0908b921bdf8f6b4d37e}
+\hypertarget{db_8cpp_a09aadf10eb62d6d50a284fb7277fe4d6}{\index{db.\-cpp@{db.\-cpp}!document\-\_\-list@{document\-\_\-list}}
+\index{document\-\_\-list@{document\-\_\-list}!db.cpp@{db.\-cpp}}
+\subsubsection[{document\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}{\bf T\-E\-X\-T\-\_\-\-D\-A\-T\-A}$\ast$ document\-\_\-list = N\-U\-L\-L}}\label{db_8cpp_a09aadf10eb62d6d50a284fb7277fe4d6}
+\hypertarget{db_8cpp_a7198332de440cd63c04ffeab811c2d61}{\index{db.\-cpp@{db.\-cpp}!emergency\-\_\-data@{emergency\-\_\-data}}
+\index{emergency\-\_\-data@{emergency\-\_\-data}!db.cpp@{db.\-cpp}}
+\subsubsection[{emergency\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ emergency\-\_\-data = N\-U\-L\-L}}\label{db_8cpp_a7198332de440cd63c04ffeab811c2d61}
+\hypertarget{db_8cpp_a55c71990ee4162ebec6abe401996cf15}{\index{db.\-cpp@{db.\-cpp}!engine@{engine}}
+\index{engine@{engine}!db.cpp@{db.\-cpp}}
+\subsubsection[{engine}]{\setlength{\rightskip}{0pt plus 5cm}{\bf rpie\-::server} engine}}\label{db_8cpp_a55c71990ee4162ebec6abe401996cf15}
+\hypertarget{db_8cpp_ad6ecf098aee66e4b8276007d98af6494}{\index{db.\-cpp@{db.\-cpp}!fp\-\_\-log@{fp\-\_\-log}}
+\index{fp\-\_\-log@{fp\-\_\-log}!db.cpp@{db.\-cpp}}
+\subsubsection[{fp\-\_\-log}]{\setlength{\rightskip}{0pt plus 5cm}F\-I\-L\-E$\ast$ fp\-\_\-log}}\label{db_8cpp_ad6ecf098aee66e4b8276007d98af6494}
+\hypertarget{db_8cpp_a470d660d0ddfd0c765df188a8463b3a7}{\index{db.\-cpp@{db.\-cpp}!full\-\_\-mobile\-\_\-list@{full\-\_\-mobile\-\_\-list}}
+\index{full\-\_\-mobile\-\_\-list@{full\-\_\-mobile\-\_\-list}!db.cpp@{db.\-cpp}}
+\subsubsection[{full\-\_\-mobile\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A}$\ast$ full\-\_\-mobile\-\_\-list = N\-U\-L\-L}}\label{db_8cpp_a470d660d0ddfd0c765df188a8463b3a7}
+\hypertarget{db_8cpp_a3cbda2f9d2cdee17cd0e68768877f796}{\index{db.\-cpp@{db.\-cpp}!full\-\_\-object\-\_\-list@{full\-\_\-object\-\_\-list}}
+\index{full\-\_\-object\-\_\-list@{full\-\_\-object\-\_\-list}!db.cpp@{db.\-cpp}}
+\subsubsection[{full\-\_\-object\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}{\bf O\-B\-J\-\_\-\-D\-A\-T\-A}$\ast$ full\-\_\-object\-\_\-list = N\-U\-L\-L}}\label{db_8cpp_a3cbda2f9d2cdee17cd0e68768877f796}
+\hypertarget{db_8cpp_ad92350989298c706af0d064f6becbf7b}{\index{db.\-cpp@{db.\-cpp}!full\-\_\-room\-\_\-list@{full\-\_\-room\-\_\-list}}
+\index{full\-\_\-room\-\_\-list@{full\-\_\-room\-\_\-list}!db.cpp@{db.\-cpp}}
+\subsubsection[{full\-\_\-room\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\-O\-O\-M\-\_\-\-D\-A\-T\-A}$\ast$ full\-\_\-room\-\_\-list = N\-U\-L\-L}}\label{db_8cpp_ad92350989298c706af0d064f6becbf7b}
+\hypertarget{db_8cpp_aa47016851946a6ac731b4a34cc911950}{\index{db.\-cpp@{db.\-cpp}!guest\-\_\-log@{guest\-\_\-log}}
+\index{guest\-\_\-log@{guest\-\_\-log}!db.cpp@{db.\-cpp}}
+\subsubsection[{guest\-\_\-log}]{\setlength{\rightskip}{0pt plus 5cm}F\-I\-L\-E$\ast$ guest\-\_\-log}}\label{db_8cpp_aa47016851946a6ac731b4a34cc911950}
+\hypertarget{db_8cpp_a23e7df9fb817877a265b2d3126bcb7a1}{\index{db.\-cpp@{db.\-cpp}!hash\-\_\-buckets@{hash\-\_\-buckets}}
+\index{hash\-\_\-buckets@{hash\-\_\-buckets}!db.cpp@{db.\-cpp}}
+\subsubsection[{hash\-\_\-buckets}]{\setlength{\rightskip}{0pt plus 5cm}struct hash\-\_\-data$\ast$ hash\-\_\-buckets\mbox{[}{\bf N\-U\-M\-\_\-\-B\-U\-C\-K\-E\-T\-S}\mbox{]}}}\label{db_8cpp_a23e7df9fb817877a265b2d3126bcb7a1}
+\hypertarget{db_8cpp_a76888ab381263ed78824c09a82d7bd29}{\index{db.\-cpp@{db.\-cpp}!hash\-\_\-dup\-\_\-length@{hash\-\_\-dup\-\_\-length}}
+\index{hash\-\_\-dup\-\_\-length@{hash\-\_\-dup\-\_\-length}!db.cpp@{db.\-cpp}}
+\subsubsection[{hash\-\_\-dup\-\_\-length}]{\setlength{\rightskip}{0pt plus 5cm}int hash\-\_\-dup\-\_\-length = 0}}\label{db_8cpp_a76888ab381263ed78824c09a82d7bd29}
+\hypertarget{db_8cpp_adcb5510cd63e4a571090c02f030c28ff}{\index{db.\-cpp@{db.\-cpp}!hash\-\_\-dup\-\_\-strings@{hash\-\_\-dup\-\_\-strings}}
+\index{hash\-\_\-dup\-\_\-strings@{hash\-\_\-dup\-\_\-strings}!db.cpp@{db.\-cpp}}
+\subsubsection[{hash\-\_\-dup\-\_\-strings}]{\setlength{\rightskip}{0pt plus 5cm}int hash\-\_\-dup\-\_\-strings = 0}}\label{db_8cpp_adcb5510cd63e4a571090c02f030c28ff}
+\hypertarget{db_8cpp_a85666b7e957c6b3efcf43588d675969a}{\index{db.\-cpp@{db.\-cpp}!hash\-\_\-len@{hash\-\_\-len}}
+\index{hash\-\_\-len@{hash\-\_\-len}!db.cpp@{db.\-cpp}}
+\subsubsection[{hash\-\_\-len}]{\setlength{\rightskip}{0pt plus 5cm}int hash\-\_\-len}}\label{db_8cpp_a85666b7e957c6b3efcf43588d675969a}
+\hypertarget{db_8cpp_ad2ab292baa496bcabad485190ea683ba}{\index{db.\-cpp@{db.\-cpp}!hash\-\_\-val@{hash\-\_\-val}}
+\index{hash\-\_\-val@{hash\-\_\-val}!db.cpp@{db.\-cpp}}
+\subsubsection[{hash\-\_\-val}]{\setlength{\rightskip}{0pt plus 5cm}int hash\-\_\-val}}\label{db_8cpp_ad2ab292baa496bcabad485190ea683ba}
+\hypertarget{db_8cpp_affb9187a3477f72ece8bcfe9564c3132}{\index{db.\-cpp@{db.\-cpp}!help\-\_\-list@{help\-\_\-list}}
+\index{help\-\_\-list@{help\-\_\-list}!db.cpp@{db.\-cpp}}
+\subsubsection[{help\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}{\bf H\-E\-L\-P\-\_\-\-D\-A\-T\-A}$\ast$ help\-\_\-list = N\-U\-L\-L}}\label{db_8cpp_affb9187a3477f72ece8bcfe9564c3132}
+\hypertarget{db_8cpp_a68919dcce6c00f30a75a9e695042f81a}{\index{db.\-cpp@{db.\-cpp}!hint\-\_\-list@{hint\-\_\-list}}
+\index{hint\-\_\-list@{hint\-\_\-list}!db.cpp@{db.\-cpp}}
+\subsubsection[{hint\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}{\bf N\-E\-W\-B\-I\-E\-\_\-\-H\-I\-N\-T}$\ast$ hint\-\_\-list = N\-U\-L\-L}}\label{db_8cpp_a68919dcce6c00f30a75a9e695042f81a}
+\hypertarget{db_8cpp_a9db9ae1849e1804c4a4efb092ed18dcf}{\index{db.\-cpp@{db.\-cpp}!imm\-\_\-log@{imm\-\_\-log}}
+\index{imm\-\_\-log@{imm\-\_\-log}!db.cpp@{db.\-cpp}}
+\subsubsection[{imm\-\_\-log}]{\setlength{\rightskip}{0pt plus 5cm}F\-I\-L\-E$\ast$ imm\-\_\-log}}\label{db_8cpp_a9db9ae1849e1804c4a4efb092ed18dcf}
+\hypertarget{db_8cpp_a37ca7e986d2273eb8bcd8b80dcab4bf7}{\index{db.\-cpp@{db.\-cpp}!M\-A\-X\-\_\-\-M\-E\-M\-O\-R\-Y@{M\-A\-X\-\_\-\-M\-E\-M\-O\-R\-Y}}
+\index{M\-A\-X\-\_\-\-M\-E\-M\-O\-R\-Y@{M\-A\-X\-\_\-\-M\-E\-M\-O\-R\-Y}!db.cpp@{db.\-cpp}}
+\subsubsection[{M\-A\-X\-\_\-\-M\-E\-M\-O\-R\-Y}]{\setlength{\rightskip}{0pt plus 5cm}int M\-A\-X\-\_\-\-M\-E\-M\-O\-R\-Y}}\label{db_8cpp_a37ca7e986d2273eb8bcd8b80dcab4bf7}
+\hypertarget{db_8cpp_a2c9ba4c614fcdd647b766ba9a263b778}{\index{db.\-cpp@{db.\-cpp}!max\-\_\-online\-\_\-date@{max\-\_\-online\-\_\-date}}
+\index{max\-\_\-online\-\_\-date@{max\-\_\-online\-\_\-date}!db.cpp@{db.\-cpp}}
+\subsubsection[{max\-\_\-online\-\_\-date}]{\setlength{\rightskip}{0pt plus 5cm}char max\-\_\-online\-\_\-date\mbox{[}32\mbox{]} = \char`\"{}\char`\"{}}}\label{db_8cpp_a2c9ba4c614fcdd647b766ba9a263b778}
+\hypertarget{db_8cpp_ae4e8bb09de0c67e335282eff4295ad13}{\index{db.\-cpp@{db.\-cpp}!M\-A\-X\-\_\-\-O\-V\-E\-R\-H\-E\-A\-D@{M\-A\-X\-\_\-\-O\-V\-E\-R\-H\-E\-A\-D}}
+\index{M\-A\-X\-\_\-\-O\-V\-E\-R\-H\-E\-A\-D@{M\-A\-X\-\_\-\-O\-V\-E\-R\-H\-E\-A\-D}!db.cpp@{db.\-cpp}}
+\subsubsection[{M\-A\-X\-\_\-\-O\-V\-E\-R\-H\-E\-A\-D}]{\setlength{\rightskip}{0pt plus 5cm}int M\-A\-X\-\_\-\-O\-V\-E\-R\-H\-E\-A\-D}}\label{db_8cpp_ae4e8bb09de0c67e335282eff4295ad13}
+\hypertarget{db_8cpp_a904050232b00410433115ac2bcf6c086}{\index{db.\-cpp@{db.\-cpp}!M\-A\-X\-\_\-\-Z\-O\-N\-E@{M\-A\-X\-\_\-\-Z\-O\-N\-E}}
+\index{M\-A\-X\-\_\-\-Z\-O\-N\-E@{M\-A\-X\-\_\-\-Z\-O\-N\-E}!db.cpp@{db.\-cpp}}
+\subsubsection[{M\-A\-X\-\_\-\-Z\-O\-N\-E}]{\setlength{\rightskip}{0pt plus 5cm}int M\-A\-X\-\_\-\-Z\-O\-N\-E = 100}}\label{db_8cpp_a904050232b00410433115ac2bcf6c086}
+\hypertarget{db_8cpp_a5f340dfc19f9ff7c2f23b5d5b8f2db4a}{\index{db.\-cpp@{db.\-cpp}!mem\-\_\-allocated@{mem\-\_\-allocated}}
+\index{mem\-\_\-allocated@{mem\-\_\-allocated}!db.cpp@{db.\-cpp}}
+\subsubsection[{mem\-\_\-allocated}]{\setlength{\rightskip}{0pt plus 5cm}int mem\-\_\-allocated = 0}}\label{db_8cpp_a5f340dfc19f9ff7c2f23b5d5b8f2db4a}
+\hypertarget{db_8cpp_af4ab511cc0a7e34fbea63e45629ce4be}{\index{db.\-cpp@{db.\-cpp}!mem\-\_\-freed@{mem\-\_\-freed}}
+\index{mem\-\_\-freed@{mem\-\_\-freed}!db.cpp@{db.\-cpp}}
+\subsubsection[{mem\-\_\-freed}]{\setlength{\rightskip}{0pt plus 5cm}int mem\-\_\-freed = 0}}\label{db_8cpp_af4ab511cc0a7e34fbea63e45629ce4be}
+\hypertarget{db_8cpp_ac8b18b2e7f0fa918c943ed5c05afcd3c}{\index{db.\-cpp@{db.\-cpp}!memory\-\_\-base@{memory\-\_\-base}}
+\index{memory\-\_\-base@{memory\-\_\-base}!db.cpp@{db.\-cpp}}
+\subsubsection[{memory\-\_\-base}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ memory\-\_\-base = N\-U\-L\-L}}\label{db_8cpp_ac8b18b2e7f0fa918c943ed5c05afcd3c}
+\hypertarget{db_8cpp_a32638b836e7f2ccbafb307c4532ad2d6}{\index{db.\-cpp@{db.\-cpp}!memory\-\_\-check@{memory\-\_\-check}}
+\index{memory\-\_\-check@{memory\-\_\-check}!db.cpp@{db.\-cpp}}
+\subsubsection[{memory\-\_\-check}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} memory\-\_\-check = false}}\label{db_8cpp_a32638b836e7f2ccbafb307c4532ad2d6}
+\hypertarget{db_8cpp_acb4f953c08f9fd1c1764cc57d15afb24}{\index{db.\-cpp@{db.\-cpp}!memory\-\_\-next@{memory\-\_\-next}}
+\index{memory\-\_\-next@{memory\-\_\-next}!db.cpp@{db.\-cpp}}
+\subsubsection[{memory\-\_\-next}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ memory\-\_\-next = N\-U\-L\-L}}\label{db_8cpp_acb4f953c08f9fd1c1764cc57d15afb24}
+\hypertarget{db_8cpp_a7cff9f930e4ee026a748e0cf393b2a5f}{\index{db.\-cpp@{db.\-cpp}!memory\-\_\-top@{memory\-\_\-top}}
+\index{memory\-\_\-top@{memory\-\_\-top}!db.cpp@{db.\-cpp}}
+\subsubsection[{memory\-\_\-top}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ memory\-\_\-top = N\-U\-L\-L}}\label{db_8cpp_a7cff9f930e4ee026a748e0cf393b2a5f}
+\hypertarget{db_8cpp_a8f5f78db0b34e7a296bd6f1e3d0fbd1f}{\index{db.\-cpp@{db.\-cpp}!minute\-\_\-update\-\_\-count@{minute\-\_\-update\-\_\-count}}
+\index{minute\-\_\-update\-\_\-count@{minute\-\_\-update\-\_\-count}!db.cpp@{db.\-cpp}}
+\subsubsection[{minute\-\_\-update\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}int minute\-\_\-update\-\_\-count}}\label{db_8cpp_a8f5f78db0b34e7a296bd6f1e3d0fbd1f}
+\hypertarget{db_8cpp_afd9c42e0e13b5a54ceea33be2d3356f2}{\index{db.\-cpp@{db.\-cpp}!mob\-\_\-ai\-\_\-list@{mob\-\_\-ai\-\_\-list}}
+\index{mob\-\_\-ai\-\_\-list@{mob\-\_\-ai\-\_\-list}!db.cpp@{db.\-cpp}}
+\subsubsection[{mob\-\_\-ai\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$ int, {\bf mobile\-\_\-ai} $>$ mob\-\_\-ai\-\_\-list}}\label{db_8cpp_afd9c42e0e13b5a54ceea33be2d3356f2}
+\hypertarget{db_8cpp_ab725bd2e806404aaa0c3801bc97cde29}{\index{db.\-cpp@{db.\-cpp}!mob\-\_\-prog\-\_\-list@{mob\-\_\-prog\-\_\-list}}
+\index{mob\-\_\-prog\-\_\-list@{mob\-\_\-prog\-\_\-list}!db.cpp@{db.\-cpp}}
+\subsubsection[{mob\-\_\-prog\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}std\-::multimap$<$ int, {\bf room\-\_\-prog} $>$ mob\-\_\-prog\-\_\-list}}\label{db_8cpp_ab725bd2e806404aaa0c3801bc97cde29}
+\hypertarget{db_8cpp_ac7671a5b9487b7414c49ee7180684066}{\index{db.\-cpp@{db.\-cpp}!mob\-\_\-start\-\_\-stat@{mob\-\_\-start\-\_\-stat}}
+\index{mob\-\_\-start\-\_\-stat@{mob\-\_\-start\-\_\-stat}!db.cpp@{db.\-cpp}}
+\subsubsection[{mob\-\_\-start\-\_\-stat}]{\setlength{\rightskip}{0pt plus 5cm}int mob\-\_\-start\-\_\-stat = 12}}\label{db_8cpp_ac7671a5b9487b7414c49ee7180684066}
+\hypertarget{db_8cpp_a6943286086a27b7a01139e4e67e62b80}{\index{db.\-cpp@{db.\-cpp}!mob\-\_\-tab@{mob\-\_\-tab}}
+\index{mob\-\_\-tab@{mob\-\_\-tab}!db.cpp@{db.\-cpp}}
+\subsubsection[{mob\-\_\-tab}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A}$\ast$ mob\-\_\-tab\mbox{[}{\bf Z\-O\-N\-E\-\_\-\-S\-I\-Z\-E}\mbox{]}}}\label{db_8cpp_a6943286086a27b7a01139e4e67e62b80}
+\hypertarget{db_8cpp_ada134ce86fbff6a0db4075d54634e1dd}{\index{db.\-cpp@{db.\-cpp}!mp\-\_\-dirty@{mp\-\_\-dirty}}
+\index{mp\-\_\-dirty@{mp\-\_\-dirty}!db.cpp@{db.\-cpp}}
+\subsubsection[{mp\-\_\-dirty}]{\setlength{\rightskip}{0pt plus 5cm}int mp\-\_\-dirty = 0}}\label{db_8cpp_ada134ce86fbff6a0db4075d54634e1dd}
+\hypertarget{db_8cpp_a31b5009e087fb47e71d18e6d832f0fb0}{\index{db.\-cpp@{db.\-cpp}!msg\-\_\-list@{msg\-\_\-list}}
+\index{msg\-\_\-list@{msg\-\_\-list}!db.cpp@{db.\-cpp}}
+\subsubsection[{msg\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}struct msg\-\_\-data$\ast$ msg\-\_\-list}}\label{db_8cpp_a31b5009e087fb47e71d18e6d832f0fb0}
+\hypertarget{db_8cpp_a32f6214c82fbccb2cc157a1d1b7141e4}{\index{db.\-cpp@{db.\-cpp}!mud\-\_\-time@{mud\-\_\-time}}
+\index{mud\-\_\-time@{mud\-\_\-time}!db.cpp@{db.\-cpp}}
+\subsubsection[{mud\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}long mud\-\_\-time}}\label{db_8cpp_a32f6214c82fbccb2cc157a1d1b7141e4}
+\hypertarget{db_8cpp_a01a03909677b782a654353c3d7293002}{\index{db.\-cpp@{db.\-cpp}!mud\-\_\-time\-\_\-str@{mud\-\_\-time\-\_\-str}}
+\index{mud\-\_\-time\-\_\-str@{mud\-\_\-time\-\_\-str}!db.cpp@{db.\-cpp}}
+\subsubsection[{mud\-\_\-time\-\_\-str}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ mud\-\_\-time\-\_\-str = N\-U\-L\-L}}\label{db_8cpp_a01a03909677b782a654353c3d7293002}
+\hypertarget{db_8cpp_a048187518b7c56ee961edd5931007525}{\index{db.\-cpp@{db.\-cpp}!mvariable\-\_\-categories@{mvariable\-\_\-categories}}
+\index{mvariable\-\_\-categories@{mvariable\-\_\-categories}!db.cpp@{db.\-cpp}}
+\subsubsection[{mvariable\-\_\-categories}]{\setlength{\rightskip}{0pt plus 5cm}std\-::multimap$<$ int, std\-::string $>$ mvariable\-\_\-categories}}\label{db_8cpp_a048187518b7c56ee961edd5931007525}
+\hypertarget{db_8cpp_a899371082a8ec6f9d7228aeaa0ba35f7}{\index{db.\-cpp@{db.\-cpp}!mvariable\-\_\-list@{mvariable\-\_\-list}}
+\index{mvariable\-\_\-list@{mvariable\-\_\-list}!db.cpp@{db.\-cpp}}
+\subsubsection[{mvariable\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}std\-::multimap$<$ int, {\bf mvariable\-\_\-data} $>$ mvariable\-\_\-list}}\label{db_8cpp_a899371082a8ec6f9d7228aeaa0ba35f7}
+\hypertarget{db_8cpp_acc4780634849e6b017e7d1306b10957f}{\index{db.\-cpp@{db.\-cpp}!next\-\_\-hour\-\_\-update@{next\-\_\-hour\-\_\-update}}
+\index{next\-\_\-hour\-\_\-update@{next\-\_\-hour\-\_\-update}!db.cpp@{db.\-cpp}}
+\subsubsection[{next\-\_\-hour\-\_\-update}]{\setlength{\rightskip}{0pt plus 5cm}time\-\_\-t next\-\_\-hour\-\_\-update}}\label{db_8cpp_acc4780634849e6b017e7d1306b10957f}
+\hypertarget{db_8cpp_a9d546b60a4c78e9c2d5cd63b44eed1d9}{\index{db.\-cpp@{db.\-cpp}!next\-\_\-minute\-\_\-update@{next\-\_\-minute\-\_\-update}}
+\index{next\-\_\-minute\-\_\-update@{next\-\_\-minute\-\_\-update}!db.cpp@{db.\-cpp}}
+\subsubsection[{next\-\_\-minute\-\_\-update}]{\setlength{\rightskip}{0pt plus 5cm}time\-\_\-t next\-\_\-minute\-\_\-update}}\label{db_8cpp_a9d546b60a4c78e9c2d5cd63b44eed1d9}
+\hypertarget{db_8cpp_a2857dfbab64f7b094c4658f28d433172}{\index{db.\-cpp@{db.\-cpp}!next\-\_\-mob\-\_\-coldload\-\_\-id@{next\-\_\-mob\-\_\-coldload\-\_\-id}}
+\index{next\-\_\-mob\-\_\-coldload\-\_\-id@{next\-\_\-mob\-\_\-coldload\-\_\-id}!db.cpp@{db.\-cpp}}
+\subsubsection[{next\-\_\-mob\-\_\-coldload\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}int next\-\_\-mob\-\_\-coldload\-\_\-id = 0}}\label{db_8cpp_a2857dfbab64f7b094c4658f28d433172}
+\hypertarget{db_8cpp_a60833e668b6c70c488bc43225f3019fe}{\index{db.\-cpp@{db.\-cpp}!next\-\_\-obj\-\_\-coldload\-\_\-id@{next\-\_\-obj\-\_\-coldload\-\_\-id}}
+\index{next\-\_\-obj\-\_\-coldload\-\_\-id@{next\-\_\-obj\-\_\-coldload\-\_\-id}!db.cpp@{db.\-cpp}}
+\subsubsection[{next\-\_\-obj\-\_\-coldload\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}int next\-\_\-obj\-\_\-coldload\-\_\-id = 0}}\label{db_8cpp_a60833e668b6c70c488bc43225f3019fe}
+\hypertarget{db_8cpp_a3566506a8692188044261a95cca50d84}{\index{db.\-cpp@{db.\-cpp}!next\-\_\-pc\-\_\-coldload\-\_\-id@{next\-\_\-pc\-\_\-coldload\-\_\-id}}
+\index{next\-\_\-pc\-\_\-coldload\-\_\-id@{next\-\_\-pc\-\_\-coldload\-\_\-id}!db.cpp@{db.\-cpp}}
+\subsubsection[{next\-\_\-pc\-\_\-coldload\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}int next\-\_\-pc\-\_\-coldload\-\_\-id = 0}}\label{db_8cpp_a3566506a8692188044261a95cca50d84}
+\hypertarget{db_8cpp_abb240f85a707548df6760e2ebb50cdae}{\index{db.\-cpp@{db.\-cpp}!null\-\_\-string@{null\-\_\-string}}
+\index{null\-\_\-string@{null\-\_\-string}!db.cpp@{db.\-cpp}}
+\subsubsection[{null\-\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ null\-\_\-string = \char`\"{}\char`\"{}}}\label{db_8cpp_abb240f85a707548df6760e2ebb50cdae}
+\hypertarget{db_8cpp_a5b8ee11ca5cb281c6e10c897b4417a91}{\index{db.\-cpp@{db.\-cpp}!obj\-\_\-prog\-\_\-list@{obj\-\_\-prog\-\_\-list}}
+\index{obj\-\_\-prog\-\_\-list@{obj\-\_\-prog\-\_\-list}!db.cpp@{db.\-cpp}}
+\subsubsection[{obj\-\_\-prog\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}std\-::multimap$<$ int, {\bf room\-\_\-prog} $>$ obj\-\_\-prog\-\_\-list}}\label{db_8cpp_a5b8ee11ca5cb281c6e10c897b4417a91}
+\hypertarget{db_8cpp_a0774a4cd62bc767520579df786efa5e4}{\index{db.\-cpp@{db.\-cpp}!obj\-\_\-tab@{obj\-\_\-tab}}
+\index{obj\-\_\-tab@{obj\-\_\-tab}!db.cpp@{db.\-cpp}}
+\subsubsection[{obj\-\_\-tab}]{\setlength{\rightskip}{0pt plus 5cm}{\bf O\-B\-J\-\_\-\-D\-A\-T\-A}$\ast$ obj\-\_\-tab\mbox{[}{\bf Z\-O\-N\-E\-\_\-\-S\-I\-Z\-E}\mbox{]}}}\label{db_8cpp_a0774a4cd62bc767520579df786efa5e4}
+\hypertarget{db_8cpp_a4e0ad7ecc3c8659089bc4cb94f763e9e}{\index{db.\-cpp@{db.\-cpp}!obj\-\_\-variable\-\_\-list@{obj\-\_\-variable\-\_\-list}}
+\index{obj\-\_\-variable\-\_\-list@{obj\-\_\-variable\-\_\-list}!db.cpp@{db.\-cpp}}
+\subsubsection[{obj\-\_\-variable\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}std\-::multimap$<$ int, {\bf variable\-\_\-data} $>$ obj\-\_\-variable\-\_\-list}}\label{db_8cpp_a4e0ad7ecc3c8659089bc4cb94f763e9e}
+\hypertarget{db_8cpp_a764e22e8fc61484ca8ecd62fc522e95c}{\index{db.\-cpp@{db.\-cpp}!object\-\_\-list@{object\-\_\-list}}
+\index{object\-\_\-list@{object\-\_\-list}!db.cpp@{db.\-cpp}}
+\subsubsection[{object\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}{\bf O\-B\-J\-\_\-\-D\-A\-T\-A}$\ast$ object\-\_\-list = N\-U\-L\-L}}\label{db_8cpp_a764e22e8fc61484ca8ecd62fc522e95c}
+\hypertarget{db_8cpp_a44d488c5458c3dbe43287ef5ea189bd6}{\index{db.\-cpp@{db.\-cpp}!overhead\-\_\-base@{overhead\-\_\-base}}
+\index{overhead\-\_\-base@{overhead\-\_\-base}!db.cpp@{db.\-cpp}}
+\subsubsection[{overhead\-\_\-base}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ overhead\-\_\-base = N\-U\-L\-L}}\label{db_8cpp_a44d488c5458c3dbe43287ef5ea189bd6}
+\hypertarget{db_8cpp_aff3c982e4dbe8f00c47a4456e7246722}{\index{db.\-cpp@{db.\-cpp}!overhead\-\_\-next@{overhead\-\_\-next}}
+\index{overhead\-\_\-next@{overhead\-\_\-next}!db.cpp@{db.\-cpp}}
+\subsubsection[{overhead\-\_\-next}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ overhead\-\_\-next = N\-U\-L\-L}}\label{db_8cpp_aff3c982e4dbe8f00c47a4456e7246722}
+\hypertarget{db_8cpp_a7f13def41b4dd517815f3121e882f8d8}{\index{db.\-cpp@{db.\-cpp}!overhead\-\_\-top@{overhead\-\_\-top}}
+\index{overhead\-\_\-top@{overhead\-\_\-top}!db.cpp@{db.\-cpp}}
+\subsubsection[{overhead\-\_\-top}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ overhead\-\_\-top = N\-U\-L\-L}}\label{db_8cpp_a7f13def41b4dd517815f3121e882f8d8}
+\hypertarget{db_8cpp_ae16cacea4574ceccfd689e813f66c721}{\index{db.\-cpp@{db.\-cpp}!perm\-\_\-memory@{perm\-\_\-memory}}
+\index{perm\-\_\-memory@{perm\-\_\-memory}!db.cpp@{db.\-cpp}}
+\subsubsection[{perm\-\_\-memory}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ perm\-\_\-memory = N\-U\-L\-L}}\label{db_8cpp_ae16cacea4574ceccfd689e813f66c721}
+\hypertarget{db_8cpp_a34db2ed4ce7da0014de963f0800033a0}{\index{db.\-cpp@{db.\-cpp}!perm\-\_\-memory\-\_\-next@{perm\-\_\-memory\-\_\-next}}
+\index{perm\-\_\-memory\-\_\-next@{perm\-\_\-memory\-\_\-next}!db.cpp@{db.\-cpp}}
+\subsubsection[{perm\-\_\-memory\-\_\-next}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ perm\-\_\-memory\-\_\-next = N\-U\-L\-L}}\label{db_8cpp_a34db2ed4ce7da0014de963f0800033a0}
+\hypertarget{db_8cpp_aba3bce0f3ec39cf5367a1c9d8aeae5a3}{\index{db.\-cpp@{db.\-cpp}!P\-E\-R\-M\-\_\-\-M\-E\-M\-O\-R\-Y\-\_\-\-S\-I\-Z\-E@{P\-E\-R\-M\-\_\-\-M\-E\-M\-O\-R\-Y\-\_\-\-S\-I\-Z\-E}}
+\index{P\-E\-R\-M\-\_\-\-M\-E\-M\-O\-R\-Y\-\_\-\-S\-I\-Z\-E@{P\-E\-R\-M\-\_\-\-M\-E\-M\-O\-R\-Y\-\_\-\-S\-I\-Z\-E}!db.cpp@{db.\-cpp}}
+\subsubsection[{P\-E\-R\-M\-\_\-\-M\-E\-M\-O\-R\-Y\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}int P\-E\-R\-M\-\_\-\-M\-E\-M\-O\-R\-Y\-\_\-\-S\-I\-Z\-E}}\label{db_8cpp_aba3bce0f3ec39cf5367a1c9d8aeae5a3}
+\hypertarget{db_8cpp_a1f121c76c9c448c69a1ffe71b4b3e095}{\index{db.\-cpp@{db.\-cpp}!perm\-\_\-memory\-\_\-top@{perm\-\_\-memory\-\_\-top}}
+\index{perm\-\_\-memory\-\_\-top@{perm\-\_\-memory\-\_\-top}!db.cpp@{db.\-cpp}}
+\subsubsection[{perm\-\_\-memory\-\_\-top}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ perm\-\_\-memory\-\_\-top = N\-U\-L\-L}}\label{db_8cpp_a1f121c76c9c448c69a1ffe71b4b3e095}
+\hypertarget{db_8cpp_aaa5b01867cb7853924771279faad3dbc}{\index{db.\-cpp@{db.\-cpp}!pulse\-\_\-violence@{pulse\-\_\-violence}}
+\index{pulse\-\_\-violence@{pulse\-\_\-violence}!db.cpp@{db.\-cpp}}
+\subsubsection[{pulse\-\_\-violence}]{\setlength{\rightskip}{0pt plus 5cm}int pulse\-\_\-violence = 8}}\label{db_8cpp_aaa5b01867cb7853924771279faad3dbc}
+\hypertarget{db_8cpp_aee2c6248ce8c9f5bdc77379471da709d}{\index{db.\-cpp@{db.\-cpp}!registry@{registry}}
+\index{registry@{registry}!db.cpp@{db.\-cpp}}
+\subsubsection[{registry}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\-E\-G\-I\-S\-T\-R\-Y\-\_\-\-D\-A\-T\-A}$\ast$ registry\mbox{[}{\bf M\-A\-X\-\_\-\-R\-E\-G\-I\-S\-T\-R\-Y}\mbox{]}}}\label{db_8cpp_aee2c6248ce8c9f5bdc77379471da709d}
+\hypertarget{db_8cpp_aa0c192cd82932575cea341e9627c9bb0}{\index{db.\-cpp@{db.\-cpp}!role\-\_\-list@{role\-\_\-list}}
+\index{role\-\_\-list@{role\-\_\-list}!db.cpp@{db.\-cpp}}
+\subsubsection[{role\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\-O\-L\-E\-\_\-\-D\-A\-T\-A}$\ast$ role\-\_\-list = N\-U\-L\-L}}\label{db_8cpp_aa0c192cd82932575cea341e9627c9bb0}
+\hypertarget{db_8cpp_a0db92e51d11810e688915e275bcd127c}{\index{db.\-cpp@{db.\-cpp}!second\-\_\-affect\-\_\-active@{second\-\_\-affect\-\_\-active}}
+\index{second\-\_\-affect\-\_\-active@{second\-\_\-affect\-\_\-active}!db.cpp@{db.\-cpp}}
+\subsubsection[{second\-\_\-affect\-\_\-active}]{\setlength{\rightskip}{0pt plus 5cm}int second\-\_\-affect\-\_\-active = 0}}\label{db_8cpp_a0db92e51d11810e688915e275bcd127c}
+\hypertarget{db_8cpp_a33f6fc849050c487a17c9142ee011aa8}{\index{db.\-cpp@{db.\-cpp}!sys\-\_\-log@{sys\-\_\-log}}
+\index{sys\-\_\-log@{sys\-\_\-log}!db.cpp@{db.\-cpp}}
+\subsubsection[{sys\-\_\-log}]{\setlength{\rightskip}{0pt plus 5cm}F\-I\-L\-E$\ast$ sys\-\_\-log}}\label{db_8cpp_a33f6fc849050c487a17c9142ee011aa8}
+\hypertarget{db_8cpp_a2f8b41718416f8bc37e077d71e587eac}{\index{db.\-cpp@{db.\-cpp}!text\-\_\-list@{text\-\_\-list}}
+\index{text\-\_\-list@{text\-\_\-list}!db.cpp@{db.\-cpp}}
+\subsubsection[{text\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}{\bf T\-E\-X\-T\-\_\-\-D\-A\-T\-A}$\ast$ text\-\_\-list = N\-U\-L\-L}}\label{db_8cpp_a2f8b41718416f8bc37e077d71e587eac}
+\hypertarget{db_8cpp_a5d41a0e2cabffad8c740bd6e4c79c3a9}{\index{db.\-cpp@{db.\-cpp}!time\-\_\-info@{time\-\_\-info}}
+\index{time\-\_\-info@{time\-\_\-info}!db.cpp@{db.\-cpp}}
+\subsubsection[{time\-\_\-info}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf time\-\_\-info\-\_\-data} time\-\_\-info}}\label{db_8cpp_a5d41a0e2cabffad8c740bd6e4c79c3a9}
+\hypertarget{db_8cpp_a2a96454e7789342f840eb4237aed78ab}{\index{db.\-cpp@{db.\-cpp}!times\-\_\-do\-\_\-hour\-\_\-called@{times\-\_\-do\-\_\-hour\-\_\-called}}
+\index{times\-\_\-do\-\_\-hour\-\_\-called@{times\-\_\-do\-\_\-hour\-\_\-called}!db.cpp@{db.\-cpp}}
+\subsubsection[{times\-\_\-do\-\_\-hour\-\_\-called}]{\setlength{\rightskip}{0pt plus 5cm}int times\-\_\-do\-\_\-hour\-\_\-called = 0}}\label{db_8cpp_a2a96454e7789342f840eb4237aed78ab}
+\hypertarget{db_8cpp_a15211d93a3589aa57760f7d58ba35281}{\index{db.\-cpp@{db.\-cpp}!variable\-\_\-categories@{variable\-\_\-categories}}
+\index{variable\-\_\-categories@{variable\-\_\-categories}!db.cpp@{db.\-cpp}}
+\subsubsection[{variable\-\_\-categories}]{\setlength{\rightskip}{0pt plus 5cm}std\-::multimap$<$ int, std\-::string $>$ variable\-\_\-categories}}\label{db_8cpp_a15211d93a3589aa57760f7d58ba35281}
+\hypertarget{db_8cpp_ac49a31a429951478151eba6ed0ee7df1}{\index{db.\-cpp@{db.\-cpp}!wld\-\_\-tab@{wld\-\_\-tab}}
+\index{wld\-\_\-tab@{wld\-\_\-tab}!db.cpp@{db.\-cpp}}
+\subsubsection[{wld\-\_\-tab}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\-O\-O\-M\-\_\-\-D\-A\-T\-A}$\ast$ wld\-\_\-tab\mbox{[}{\bf Z\-O\-N\-E\-\_\-\-S\-I\-Z\-E}\mbox{]}}}\label{db_8cpp_ac49a31a429951478151eba6ed0ee7df1}
+\hypertarget{db_8cpp_af19b4f678cf0f218636f90cc002e9bed}{\index{db.\-cpp@{db.\-cpp}!world\-\_\-version\-\_\-in@{world\-\_\-version\-\_\-in}}
+\index{world\-\_\-version\-\_\-in@{world\-\_\-version\-\_\-in}!db.cpp@{db.\-cpp}}
+\subsubsection[{world\-\_\-version\-\_\-in}]{\setlength{\rightskip}{0pt plus 5cm}int world\-\_\-version\-\_\-in = 12}}\label{db_8cpp_af19b4f678cf0f218636f90cc002e9bed}
+\hypertarget{db_8cpp_a7027891e874f6e9401a682b07afb4199}{\index{db.\-cpp@{db.\-cpp}!world\-\_\-version\-\_\-out@{world\-\_\-version\-\_\-out}}
+\index{world\-\_\-version\-\_\-out@{world\-\_\-version\-\_\-out}!db.cpp@{db.\-cpp}}
+\subsubsection[{world\-\_\-version\-\_\-out}]{\setlength{\rightskip}{0pt plus 5cm}int world\-\_\-version\-\_\-out = 12}}\label{db_8cpp_a7027891e874f6e9401a682b07afb4199}
+\hypertarget{db_8cpp_a97fcb0e1731b36905e90757f211b1340}{\index{db.\-cpp@{db.\-cpp}!x1@{x1}}
+\index{x1@{x1}!db.cpp@{db.\-cpp}}
+\subsubsection[{x1}]{\setlength{\rightskip}{0pt plus 5cm}int x1 = 0}}\label{db_8cpp_a97fcb0e1731b36905e90757f211b1340}
+\hypertarget{db_8cpp_a05fe590640e6e476685743f356f74360}{\index{db.\-cpp@{db.\-cpp}!zone\-\_\-table@{zone\-\_\-table}}
+\index{zone\-\_\-table@{zone\-\_\-table}!db.cpp@{db.\-cpp}}
+\subsubsection[{zone\-\_\-table}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf zone\-\_\-data}$\ast$ zone\-\_\-table}}\label{db_8cpp_a05fe590640e6e476685743f356f74360}

@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -89,41 +89,132 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">default_item_data Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="structs_8h_source.html">structs.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a369de5226a234457768cb7a5f7b5bc6d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a369de5226a234457768cb7a5f7b5bc6d"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>flags</b></td></tr>
+<tr class="memitem:a369de5226a234457768cb7a5f7b5bc6d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdefault__item__data.html#a369de5226a234457768cb7a5f7b5bc6d">flags</a></td></tr>
 <tr class="separator:a369de5226a234457768cb7a5f7b5bc6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afca11eefdd1f0b777d97779af6e6833e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afca11eefdd1f0b777d97779af6e6833e"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>items</b> [MAX_DEFAULT_ITEMS]</td></tr>
+<tr class="memitem:afca11eefdd1f0b777d97779af6e6833e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdefault__item__data.html#afca11eefdd1f0b777d97779af6e6833e">items</a> [<a class="el" href="structs_8h.html#af7510d0aa60174df974ee60ec5c772db">MAX_DEFAULT_ITEMS</a>]</td></tr>
 <tr class="separator:afca11eefdd1f0b777d97779af6e6833e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e897ccb87583497982d1cba47357dc8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1e897ccb87583497982d1cba47357dc8"></a>
-short&#160;</td><td class="memItemRight" valign="bottom"><b>item_counts</b></td></tr>
+<tr class="memitem:a1e897ccb87583497982d1cba47357dc8"><td class="memItemLeft" align="right" valign="top">short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdefault__item__data.html#a1e897ccb87583497982d1cba47357dc8">item_counts</a></td></tr>
 <tr class="separator:a1e897ccb87583497982d1cba47357dc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3a491014b7b0fc299471f65ac37b6f8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa3a491014b7b0fc299471f65ac37b6f8"></a>
-<a class="el" href="structphase__data.html">PHASE_DATA</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>phase</b></td></tr>
+<tr class="memitem:aa3a491014b7b0fc299471f65ac37b6f8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structs_8h.html#a946fd03f2da414ee020673d226fbae22">PHASE_DATA</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdefault__item__data.html#aa3a491014b7b0fc299471f65ac37b6f8">phase</a></td></tr>
 <tr class="separator:aa3a491014b7b0fc299471f65ac37b6f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa7cbd63e2bbe2ef79c29af90a3911fcb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa7cbd63e2bbe2ef79c29af90a3911fcb"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>key_index</b></td></tr>
+<tr class="memitem:aa7cbd63e2bbe2ef79c29af90a3911fcb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdefault__item__data.html#aa7cbd63e2bbe2ef79c29af90a3911fcb">key_index</a></td></tr>
 <tr class="separator:aa7cbd63e2bbe2ef79c29af90a3911fcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a4976de1df5d41c62b120f391d82028"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8a4976de1df5d41c62b120f391d82028"></a>
-char *&#160;</td><td class="memItemRight" valign="bottom"><b>color</b></td></tr>
+<tr class="memitem:a8a4976de1df5d41c62b120f391d82028"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdefault__item__data.html#a8a4976de1df5d41c62b120f391d82028">color</a></td></tr>
 <tr class="separator:a8a4976de1df5d41c62b120f391d82028"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af96b27b213067d107137204932670608"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af96b27b213067d107137204932670608"></a>
-char *&#160;</td><td class="memItemRight" valign="bottom"><b>color2</b></td></tr>
+<tr class="memitem:af96b27b213067d107137204932670608"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdefault__item__data.html#af96b27b213067d107137204932670608">color2</a></td></tr>
 <tr class="separator:af96b27b213067d107137204932670608"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a32078627948216bce76bd7ac4375eb78"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a32078627948216bce76bd7ac4375eb78"></a>
-char *&#160;</td><td class="memItemRight" valign="bottom"><b>color3</b></td></tr>
+<tr class="memitem:a32078627948216bce76bd7ac4375eb78"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdefault__item__data.html#a32078627948216bce76bd7ac4375eb78">color3</a></td></tr>
 <tr class="separator:a32078627948216bce76bd7ac4375eb78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a8a4976de1df5d41c62b120f391d82028"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* default_item_data::color</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af96b27b213067d107137204932670608"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* default_item_data::color2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a32078627948216bce76bd7ac4375eb78"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* default_item_data::color3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a369de5226a234457768cb7a5f7b5bc6d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int default_item_data::flags</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1e897ccb87583497982d1cba47357dc8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">short default_item_data::item_counts</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="afca11eefdd1f0b777d97779af6e6833e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int default_item_data::items[<a class="el" href="structs_8h.html#af7510d0aa60174df974ee60ec5c772db">MAX_DEFAULT_ITEMS</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa7cbd63e2bbe2ef79c29af90a3911fcb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int default_item_data::key_index</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa3a491014b7b0fc299471f65ac37b6f8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structs_8h.html#a946fd03f2da414ee020673d226fbae22">PHASE_DATA</a>* default_item_data::phase</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li><a class="el" href="structs_8h_source.html">structs.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 17 2015 21:26:48 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 17 2015 22:02:23 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -1,0 +1,456 @@
+\hypertarget{mobprogs_8cpp}{\section{mobprogs.\-cpp File Reference}
+\label{mobprogs_8cpp}\index{mobprogs.\-cpp@{mobprogs.\-cpp}}
+}
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$ctype.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}server.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}structs.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}protos.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utility.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}decl.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}group.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{mobprogs_8cpp_a0c548037a4ea2e05101f651029ba1842}{M\-A\-X\-\_\-\-P\-R\-O\-G\-\_\-\-L\-I\-N\-E\-S}~1000
+\item 
+\#define \hyperlink{mobprogs_8cpp_a5db49eeef5c9bb774f02996f684df238}{M\-A\-X\-\_\-\-D\-E\-P\-T\-H}~500
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \\*
+\hyperlink{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55bae25ba6ed7a460841774de73f833d013f}{M\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-N\-T\-E\-G\-E\-R} = 1, 
+\hyperlink{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55baf80288c08b7e31ecdffe12d9ed8b04c8}{M\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-C\-H\-A\-R\-\_\-\-D\-A\-T\-A}, 
+\hyperlink{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55bae86c3677107dc24d08e5b5854581fb6e}{M\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-O\-B\-J\-\_\-\-D\-A\-T\-A}, 
+\hyperlink{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba6ff933c578ec9becb35ecc6d1f5a67d6}{M\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-R\-O\-O\-M\-\_\-\-D\-A\-T\-A}, 
+\\*
+\hyperlink{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55baca435611ea8182e2c466a33c276cdca5}{M\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-T\-R\-I\-N\-G}, 
+\hyperlink{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55baa05ed33fff20d5a58c8b862bf1831f69}{M\-P\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N}, 
+\hyperlink{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba07f408bcc1a05f55f9ec427c35e80498}{M\-P\-\_\-\-L\-E\-S\-S\-\_\-\-T\-H\-A\-N}, 
+\hyperlink{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba32d58a698fc5ff3022b7c0424ce5bd12}{M\-P\-\_\-\-G\-R\-E\-A\-T\-E\-R\-\_\-\-T\-H\-A\-N}, 
+\\*
+\hyperlink{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba82ea42143a08bea7571df4c8c1042a18}{M\-P\-\_\-\-E\-Q\-U\-A\-L}, 
+\hyperlink{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba26f8ac4c70eec1d78f14645e7cd910db}{M\-P\-\_\-\-G\-R\-E\-A\-T\-E\-R\-\_\-\-E\-Q\-U\-A\-L}, 
+\hyperlink{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba85621f5715fb4e418fbe8b972edd5161}{M\-P\-\_\-\-L\-E\-S\-S\-E\-R\-\_\-\-E\-Q\-U\-A\-L}, 
+\hyperlink{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55bad45cea32b2e90b7121eee8233b3c1e7e}{M\-P\-\_\-\-N\-O\-T\-\_\-\-E\-Q\-U\-A\-L}, 
+\\*
+\hyperlink{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba891abb7c4a7dfeb8e247e16a2cc6682f}{M\-P\-\_\-\-M\-O\-D}, 
+\hyperlink{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba7eeef73516061d3683355e154da45a10}{M\-P\-\_\-\-D\-I\-V}, 
+\hyperlink{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba8a7195e19360f33625476b7bfb4c6acb}{M\-P\-\_\-\-S\-U\-B}, 
+\hyperlink{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba80ef1fc45d971ad976c9b2bd5034236d}{M\-P\-\_\-\-P\-L\-U\-S}, 
+\\*
+\hyperlink{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55bad9032c96509eb520066810bdc9030347}{M\-P\-\_\-\-A\-N\-D}, 
+\hyperlink{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55baf5d57d8882c55258a46f60c375e90250}{M\-P\-\_\-\-O\-R}, 
+\hyperlink{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba4d0966b9091da2a083e6eef3d07d8a09}{M\-P\-\_\-\-M\-U\-L\-T}, 
+\hyperlink{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba3dcfd1fd8d701d07e9dd00cfc2137d30}{M\-P\-\_\-\-O\-P\-E\-N\-\_\-\-P\-A\-R}, 
+\\*
+\hyperlink{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba8b032de2dfdb99b4ca88e4345566345f}{M\-P\-\_\-\-C\-L\-O\-S\-E\-\_\-\-P\-A\-R}, 
+\hyperlink{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba041bfabb93923941d96ebf4a44ec0f50}{M\-P\-\_\-\-C\-O\-M\-M\-A}, 
+\hyperlink{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba53946026b3a92d63987b2ad07fb87579}{M\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-F\-O\-L\-L\-O\-W\-\_\-\-D\-A\-T\-A}
+ \}
+\item 
+enum \{ \hyperlink{mobprogs_8cpp_adf764cbdea00d65edcd07bb9953ad2b7a70ecd0b91d4b89c1d9a1f5b4ea06f02e}{M\-T\-\_\-\-O\-P\-E\-N\-\_\-\-P\-A\-R\-E\-N} = 1, 
+\hyperlink{mobprogs_8cpp_adf764cbdea00d65edcd07bb9953ad2b7a7c32cc8daa0ad18b955683d592e739cf}{M\-T\-\_\-\-V\-A\-R\-I\-A\-B\-L\-E}, 
+\hyperlink{mobprogs_8cpp_adf764cbdea00d65edcd07bb9953ad2b7abaf9c8f6b01e91c2fea9c8fb0bcc81a7}{M\-T\-\_\-\-C\-O\-M\-M\-A}, 
+\hyperlink{mobprogs_8cpp_adf764cbdea00d65edcd07bb9953ad2b7a64e2f63a05b736b4e1fd48dcda6a9639}{M\-T\-\_\-\-E\-Q\-U\-A\-L}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{mobprogs_8cpp_a6256db5054df6a84a8d4414ddd6e05eb}{mob\-\_\-get\-\_\-token} (char $\ast$$\ast$ptr, char $\ast$token, int token\-\_\-type)
+\item 
+void \hyperlink{mobprogs_8cpp_a513043c3852d6918d6286a769fd55149}{require\-\_\-open\-\_\-paren} (char $\ast$$\ast$ptr)
+\item 
+void \hyperlink{mobprogs_8cpp_a2f2b93e57663cce9cbdc09fb322e1c8c}{deletevar} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$mob, char $\ast$var\-\_\-name)
+\item 
+\hyperlink{structs_8h_af70a7a891b098d3b2332cc80444aecfb}{V\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{mobprogs_8cpp_a0bee911921a01d46634f00f2b0cae709}{getvar} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$mob, char $\ast$var\-\_\-name)
+\item 
+\hyperlink{structs_8h_af70a7a891b098d3b2332cc80444aecfb}{V\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{mobprogs_8cpp_a3b9631512cce90cc4b0878aeba8f1a6d}{setvar} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$mob, char $\ast$var\-\_\-name, int value, int type)
+\item 
+void \hyperlink{mobprogs_8cpp_a75373df724048d168de02639d2a3475d}{define\-\_\-variable} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$mob, \hyperlink{structs_8h_aff97465f085904952dbb89cbc3aaf55d}{M\-O\-B\-P\-R\-O\-G\-\_\-\-D\-A\-T\-A} $\ast$program, char $\ast$argument)
+\item 
+void \hyperlink{mobprogs_8cpp_a221191391cde81f368b87db50bc26e7d}{mob\-\_\-char\-\_\-indirect} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$mob, char $\ast$token, int $\ast$value, int $\ast$type)
+\item 
+void \hyperlink{mobprogs_8cpp_aab9fd31edf26b5b1b4a203410d00f219}{mob\-\_\-obj\-\_\-indirect} (char $\ast$token, int $\ast$value, int $\ast$type)
+\item 
+void \hyperlink{mobprogs_8cpp_ab60cfc8f5befb04e350faa32cb9f5adc}{mob\-\_\-room\-\_\-indirect} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$mob, char $\ast$token, int $\ast$value, int $\ast$type)
+\item 
+void \hyperlink{mobprogs_8cpp_a63094112b76c85a470ab354126f1d1d7}{mob\-\_\-int\-\_\-indirect} (char $\ast$token, int $\ast$value, int $\ast$type)
+\item 
+\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{mobprogs_8cpp_a014a31c71e23068520a07c6c1920a964}{mp\-\_\-whohasobj} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$mob, int obj\-\_\-virt)
+\item 
+int \hyperlink{mobprogs_8cpp_a7d0715f3be1b27da1996e723d46152fa}{mp\-\_\-get\-\_\-eval\-\_\-token} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$mob, char $\ast$$\ast$p, int $\ast$token\-\_\-type, int $\ast$value)
+\item 
+int \hyperlink{mobprogs_8cpp_a410a076d10ef372cabb07d480f5e5f58}{mp\-\_\-eval\-\_\-eq} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$mob, char $\ast$$\ast$equation)
+\item 
+char $\ast$ \hyperlink{mobprogs_8cpp_a629c2a649daeb27897fd1f8856335a08}{get\-\_\-prog\-\_\-token} (char $\ast$$\ast$buf, char $\ast$token)
+\item 
+char $\ast$ \hyperlink{mobprogs_8cpp_ae1059eb52f1761f1107d58a36bd14ed1}{get\-\_\-line} (char $\ast$$\ast$buf, char $\ast$ret\-\_\-buf)
+\item 
+void \hyperlink{mobprogs_8cpp_a8a9402bef26652a421007aac4ef9eed4}{mob\-\_\-string\-\_\-token} (char $\ast$$\ast$argument, char $\ast$arg\-\_\-first, int $\ast$quoted)
+\item 
+void \hyperlink{mobprogs_8cpp_a9788ba16b6b14a97644cca77a33dd6cd}{mob\-\_\-string} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$mob, char $\ast$$\ast$p, char $\ast$string)
+\item 
+void \hyperlink{mobprogs_8cpp_a58997d9576ebe7351a02737f9a3f8f90}{assignment} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$mob, \hyperlink{structs_8h_aff97465f085904952dbb89cbc3aaf55d}{M\-O\-B\-P\-R\-O\-G\-\_\-\-D\-A\-T\-A} $\ast$program, char $\ast$target\-\_\-name, char $\ast$$\ast$p)
+\item 
+void \hyperlink{mobprogs_8cpp_ae73a0b6c7dbad7aa6614879688a8374b}{mobprog} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$mob, \hyperlink{structs_8h_aff97465f085904952dbb89cbc3aaf55d}{M\-O\-B\-P\-R\-O\-G\-\_\-\-D\-A\-T\-A} $\ast$program, int \hyperlink{protos_8h_ab5ba884074e949f4cfc0c16d9dd7373c}{trigger}, char $\ast$argument, int $\ast$ret)
+\item 
+int \hyperlink{mobprogs_8cpp_ab5ba884074e949f4cfc0c16d9dd7373c}{trigger} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int trigger)
+\item 
+void \hyperlink{mobprogs_8cpp_a1bd4fa67e1163b88aa0eac4c80f61dfb}{add\-\_\-replace\-\_\-mobprog\-\_\-data} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$mob, char $\ast$trigger\-\_\-name, char $\ast$prog\-\_\-data)
+\item 
+void \hyperlink{mobprogs_8cpp_a4d3b4ebe63aac36f3aca0f8854d74e2c}{do\-\_\-prog} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{mobprogs_8cpp_a47263791335aa8bd7ec6accda30ed737}{delayed\-\_\-trigger\-\_\-activity} ()
+\item 
+void \hyperlink{mobprogs_8cpp_af17651d0a2e69f6b45bd4e735a52e4a0}{boot\-\_\-mobprogs} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classrpie_1_1server}{rpie\-::server} \hyperlink{mobprogs_8cpp_a55c71990ee4162ebec6abe401996cf15}{engine}
+\item 
+\hyperlink{structs_8h_af70a7a891b098d3b2332cc80444aecfb}{V\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{mobprogs_8cpp_a23c054142e1cfd6b52044067ac194d67}{global\-\_\-vars} = N\-U\-L\-L
+\item 
+char \hyperlink{mobprogs_8cpp_a99bd8856b002ae76bbbae3bdb45ed01f}{current\-\_\-line} \mbox{[}\hyperlink{constants_8h_a6789ebc0df71a8ef76bfbb4fb5f74aad}{M\-A\-X\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-L\-E\-N\-G\-T\-H}\mbox{]}
+\item 
+\hyperlink{structs_8h_aff97465f085904952dbb89cbc3aaf55d}{M\-O\-B\-P\-R\-O\-G\-\_\-\-D\-A\-T\-A} $\ast$ \hyperlink{mobprogs_8cpp_ac97516ab9cb8bd7ff8204a4eff28304c}{full\-\_\-prog\-\_\-list} = N\-U\-L\-L
+\item 
+const char $\ast$ \hyperlink{mobprogs_8cpp_a86d3853f32f3ba6d00e2d53c23e3122b}{mobprog\-\_\-triggers} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{mobprogs_8cpp_a5db49eeef5c9bb774f02996f684df238}{\index{mobprogs.\-cpp@{mobprogs.\-cpp}!M\-A\-X\-\_\-\-D\-E\-P\-T\-H@{M\-A\-X\-\_\-\-D\-E\-P\-T\-H}}
+\index{M\-A\-X\-\_\-\-D\-E\-P\-T\-H@{M\-A\-X\-\_\-\-D\-E\-P\-T\-H}!mobprogs.cpp@{mobprogs.\-cpp}}
+\subsubsection[{M\-A\-X\-\_\-\-D\-E\-P\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-X\-\_\-\-D\-E\-P\-T\-H~500}}\label{mobprogs_8cpp_a5db49eeef5c9bb774f02996f684df238}
+\hypertarget{mobprogs_8cpp_a0c548037a4ea2e05101f651029ba1842}{\index{mobprogs.\-cpp@{mobprogs.\-cpp}!M\-A\-X\-\_\-\-P\-R\-O\-G\-\_\-\-L\-I\-N\-E\-S@{M\-A\-X\-\_\-\-P\-R\-O\-G\-\_\-\-L\-I\-N\-E\-S}}
+\index{M\-A\-X\-\_\-\-P\-R\-O\-G\-\_\-\-L\-I\-N\-E\-S@{M\-A\-X\-\_\-\-P\-R\-O\-G\-\_\-\-L\-I\-N\-E\-S}!mobprogs.cpp@{mobprogs.\-cpp}}
+\subsubsection[{M\-A\-X\-\_\-\-P\-R\-O\-G\-\_\-\-L\-I\-N\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-X\-\_\-\-P\-R\-O\-G\-\_\-\-L\-I\-N\-E\-S~1000}}\label{mobprogs_8cpp_a0c548037a4ea2e05101f651029ba1842}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55b}{\subsubsection[{anonymous enum}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}\label{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55b}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{M\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-N\-T\-E\-G\-E\-R@{M\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-N\-T\-E\-G\-E\-R}!mobprogs.\-cpp@{mobprogs.\-cpp}}\index{mobprogs.\-cpp@{mobprogs.\-cpp}!M\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-N\-T\-E\-G\-E\-R@{M\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-N\-T\-E\-G\-E\-R}}\item[{\em 
+\hypertarget{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55bae25ba6ed7a460841774de73f833d013f}{M\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-N\-T\-E\-G\-E\-R}\label{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55bae25ba6ed7a460841774de73f833d013f}
+}]\index{M\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-C\-H\-A\-R\-\_\-\-D\-A\-T\-A@{M\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-C\-H\-A\-R\-\_\-\-D\-A\-T\-A}!mobprogs.\-cpp@{mobprogs.\-cpp}}\index{mobprogs.\-cpp@{mobprogs.\-cpp}!M\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-C\-H\-A\-R\-\_\-\-D\-A\-T\-A@{M\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-C\-H\-A\-R\-\_\-\-D\-A\-T\-A}}\item[{\em 
+\hypertarget{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55baf80288c08b7e31ecdffe12d9ed8b04c8}{M\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-C\-H\-A\-R\-\_\-\-D\-A\-T\-A}\label{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55baf80288c08b7e31ecdffe12d9ed8b04c8}
+}]\index{M\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-O\-B\-J\-\_\-\-D\-A\-T\-A@{M\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-O\-B\-J\-\_\-\-D\-A\-T\-A}!mobprogs.\-cpp@{mobprogs.\-cpp}}\index{mobprogs.\-cpp@{mobprogs.\-cpp}!M\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-O\-B\-J\-\_\-\-D\-A\-T\-A@{M\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-O\-B\-J\-\_\-\-D\-A\-T\-A}}\item[{\em 
+\hypertarget{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55bae86c3677107dc24d08e5b5854581fb6e}{M\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-O\-B\-J\-\_\-\-D\-A\-T\-A}\label{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55bae86c3677107dc24d08e5b5854581fb6e}
+}]\index{M\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-R\-O\-O\-M\-\_\-\-D\-A\-T\-A@{M\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-R\-O\-O\-M\-\_\-\-D\-A\-T\-A}!mobprogs.\-cpp@{mobprogs.\-cpp}}\index{mobprogs.\-cpp@{mobprogs.\-cpp}!M\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-R\-O\-O\-M\-\_\-\-D\-A\-T\-A@{M\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-R\-O\-O\-M\-\_\-\-D\-A\-T\-A}}\item[{\em 
+\hypertarget{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba6ff933c578ec9becb35ecc6d1f5a67d6}{M\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-R\-O\-O\-M\-\_\-\-D\-A\-T\-A}\label{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba6ff933c578ec9becb35ecc6d1f5a67d6}
+}]\index{M\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-T\-R\-I\-N\-G@{M\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-T\-R\-I\-N\-G}!mobprogs.\-cpp@{mobprogs.\-cpp}}\index{mobprogs.\-cpp@{mobprogs.\-cpp}!M\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-T\-R\-I\-N\-G@{M\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-T\-R\-I\-N\-G}}\item[{\em 
+\hypertarget{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55baca435611ea8182e2c466a33c276cdca5}{M\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-T\-R\-I\-N\-G}\label{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55baca435611ea8182e2c466a33c276cdca5}
+}]\index{M\-P\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N@{M\-P\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N}!mobprogs.\-cpp@{mobprogs.\-cpp}}\index{mobprogs.\-cpp@{mobprogs.\-cpp}!M\-P\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N@{M\-P\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N}}\item[{\em 
+\hypertarget{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55baa05ed33fff20d5a58c8b862bf1831f69}{M\-P\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N}\label{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55baa05ed33fff20d5a58c8b862bf1831f69}
+}]\index{M\-P\-\_\-\-L\-E\-S\-S\-\_\-\-T\-H\-A\-N@{M\-P\-\_\-\-L\-E\-S\-S\-\_\-\-T\-H\-A\-N}!mobprogs.\-cpp@{mobprogs.\-cpp}}\index{mobprogs.\-cpp@{mobprogs.\-cpp}!M\-P\-\_\-\-L\-E\-S\-S\-\_\-\-T\-H\-A\-N@{M\-P\-\_\-\-L\-E\-S\-S\-\_\-\-T\-H\-A\-N}}\item[{\em 
+\hypertarget{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba07f408bcc1a05f55f9ec427c35e80498}{M\-P\-\_\-\-L\-E\-S\-S\-\_\-\-T\-H\-A\-N}\label{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba07f408bcc1a05f55f9ec427c35e80498}
+}]\index{M\-P\-\_\-\-G\-R\-E\-A\-T\-E\-R\-\_\-\-T\-H\-A\-N@{M\-P\-\_\-\-G\-R\-E\-A\-T\-E\-R\-\_\-\-T\-H\-A\-N}!mobprogs.\-cpp@{mobprogs.\-cpp}}\index{mobprogs.\-cpp@{mobprogs.\-cpp}!M\-P\-\_\-\-G\-R\-E\-A\-T\-E\-R\-\_\-\-T\-H\-A\-N@{M\-P\-\_\-\-G\-R\-E\-A\-T\-E\-R\-\_\-\-T\-H\-A\-N}}\item[{\em 
+\hypertarget{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba32d58a698fc5ff3022b7c0424ce5bd12}{M\-P\-\_\-\-G\-R\-E\-A\-T\-E\-R\-\_\-\-T\-H\-A\-N}\label{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba32d58a698fc5ff3022b7c0424ce5bd12}
+}]\index{M\-P\-\_\-\-E\-Q\-U\-A\-L@{M\-P\-\_\-\-E\-Q\-U\-A\-L}!mobprogs.\-cpp@{mobprogs.\-cpp}}\index{mobprogs.\-cpp@{mobprogs.\-cpp}!M\-P\-\_\-\-E\-Q\-U\-A\-L@{M\-P\-\_\-\-E\-Q\-U\-A\-L}}\item[{\em 
+\hypertarget{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba82ea42143a08bea7571df4c8c1042a18}{M\-P\-\_\-\-E\-Q\-U\-A\-L}\label{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba82ea42143a08bea7571df4c8c1042a18}
+}]\index{M\-P\-\_\-\-G\-R\-E\-A\-T\-E\-R\-\_\-\-E\-Q\-U\-A\-L@{M\-P\-\_\-\-G\-R\-E\-A\-T\-E\-R\-\_\-\-E\-Q\-U\-A\-L}!mobprogs.\-cpp@{mobprogs.\-cpp}}\index{mobprogs.\-cpp@{mobprogs.\-cpp}!M\-P\-\_\-\-G\-R\-E\-A\-T\-E\-R\-\_\-\-E\-Q\-U\-A\-L@{M\-P\-\_\-\-G\-R\-E\-A\-T\-E\-R\-\_\-\-E\-Q\-U\-A\-L}}\item[{\em 
+\hypertarget{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba26f8ac4c70eec1d78f14645e7cd910db}{M\-P\-\_\-\-G\-R\-E\-A\-T\-E\-R\-\_\-\-E\-Q\-U\-A\-L}\label{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba26f8ac4c70eec1d78f14645e7cd910db}
+}]\index{M\-P\-\_\-\-L\-E\-S\-S\-E\-R\-\_\-\-E\-Q\-U\-A\-L@{M\-P\-\_\-\-L\-E\-S\-S\-E\-R\-\_\-\-E\-Q\-U\-A\-L}!mobprogs.\-cpp@{mobprogs.\-cpp}}\index{mobprogs.\-cpp@{mobprogs.\-cpp}!M\-P\-\_\-\-L\-E\-S\-S\-E\-R\-\_\-\-E\-Q\-U\-A\-L@{M\-P\-\_\-\-L\-E\-S\-S\-E\-R\-\_\-\-E\-Q\-U\-A\-L}}\item[{\em 
+\hypertarget{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba85621f5715fb4e418fbe8b972edd5161}{M\-P\-\_\-\-L\-E\-S\-S\-E\-R\-\_\-\-E\-Q\-U\-A\-L}\label{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba85621f5715fb4e418fbe8b972edd5161}
+}]\index{M\-P\-\_\-\-N\-O\-T\-\_\-\-E\-Q\-U\-A\-L@{M\-P\-\_\-\-N\-O\-T\-\_\-\-E\-Q\-U\-A\-L}!mobprogs.\-cpp@{mobprogs.\-cpp}}\index{mobprogs.\-cpp@{mobprogs.\-cpp}!M\-P\-\_\-\-N\-O\-T\-\_\-\-E\-Q\-U\-A\-L@{M\-P\-\_\-\-N\-O\-T\-\_\-\-E\-Q\-U\-A\-L}}\item[{\em 
+\hypertarget{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55bad45cea32b2e90b7121eee8233b3c1e7e}{M\-P\-\_\-\-N\-O\-T\-\_\-\-E\-Q\-U\-A\-L}\label{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55bad45cea32b2e90b7121eee8233b3c1e7e}
+}]\index{M\-P\-\_\-\-M\-O\-D@{M\-P\-\_\-\-M\-O\-D}!mobprogs.\-cpp@{mobprogs.\-cpp}}\index{mobprogs.\-cpp@{mobprogs.\-cpp}!M\-P\-\_\-\-M\-O\-D@{M\-P\-\_\-\-M\-O\-D}}\item[{\em 
+\hypertarget{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba891abb7c4a7dfeb8e247e16a2cc6682f}{M\-P\-\_\-\-M\-O\-D}\label{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba891abb7c4a7dfeb8e247e16a2cc6682f}
+}]\index{M\-P\-\_\-\-D\-I\-V@{M\-P\-\_\-\-D\-I\-V}!mobprogs.\-cpp@{mobprogs.\-cpp}}\index{mobprogs.\-cpp@{mobprogs.\-cpp}!M\-P\-\_\-\-D\-I\-V@{M\-P\-\_\-\-D\-I\-V}}\item[{\em 
+\hypertarget{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba7eeef73516061d3683355e154da45a10}{M\-P\-\_\-\-D\-I\-V}\label{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba7eeef73516061d3683355e154da45a10}
+}]\index{M\-P\-\_\-\-S\-U\-B@{M\-P\-\_\-\-S\-U\-B}!mobprogs.\-cpp@{mobprogs.\-cpp}}\index{mobprogs.\-cpp@{mobprogs.\-cpp}!M\-P\-\_\-\-S\-U\-B@{M\-P\-\_\-\-S\-U\-B}}\item[{\em 
+\hypertarget{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba8a7195e19360f33625476b7bfb4c6acb}{M\-P\-\_\-\-S\-U\-B}\label{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba8a7195e19360f33625476b7bfb4c6acb}
+}]\index{M\-P\-\_\-\-P\-L\-U\-S@{M\-P\-\_\-\-P\-L\-U\-S}!mobprogs.\-cpp@{mobprogs.\-cpp}}\index{mobprogs.\-cpp@{mobprogs.\-cpp}!M\-P\-\_\-\-P\-L\-U\-S@{M\-P\-\_\-\-P\-L\-U\-S}}\item[{\em 
+\hypertarget{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba80ef1fc45d971ad976c9b2bd5034236d}{M\-P\-\_\-\-P\-L\-U\-S}\label{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba80ef1fc45d971ad976c9b2bd5034236d}
+}]\index{M\-P\-\_\-\-A\-N\-D@{M\-P\-\_\-\-A\-N\-D}!mobprogs.\-cpp@{mobprogs.\-cpp}}\index{mobprogs.\-cpp@{mobprogs.\-cpp}!M\-P\-\_\-\-A\-N\-D@{M\-P\-\_\-\-A\-N\-D}}\item[{\em 
+\hypertarget{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55bad9032c96509eb520066810bdc9030347}{M\-P\-\_\-\-A\-N\-D}\label{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55bad9032c96509eb520066810bdc9030347}
+}]\index{M\-P\-\_\-\-O\-R@{M\-P\-\_\-\-O\-R}!mobprogs.\-cpp@{mobprogs.\-cpp}}\index{mobprogs.\-cpp@{mobprogs.\-cpp}!M\-P\-\_\-\-O\-R@{M\-P\-\_\-\-O\-R}}\item[{\em 
+\hypertarget{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55baf5d57d8882c55258a46f60c375e90250}{M\-P\-\_\-\-O\-R}\label{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55baf5d57d8882c55258a46f60c375e90250}
+}]\index{M\-P\-\_\-\-M\-U\-L\-T@{M\-P\-\_\-\-M\-U\-L\-T}!mobprogs.\-cpp@{mobprogs.\-cpp}}\index{mobprogs.\-cpp@{mobprogs.\-cpp}!M\-P\-\_\-\-M\-U\-L\-T@{M\-P\-\_\-\-M\-U\-L\-T}}\item[{\em 
+\hypertarget{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba4d0966b9091da2a083e6eef3d07d8a09}{M\-P\-\_\-\-M\-U\-L\-T}\label{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba4d0966b9091da2a083e6eef3d07d8a09}
+}]\index{M\-P\-\_\-\-O\-P\-E\-N\-\_\-\-P\-A\-R@{M\-P\-\_\-\-O\-P\-E\-N\-\_\-\-P\-A\-R}!mobprogs.\-cpp@{mobprogs.\-cpp}}\index{mobprogs.\-cpp@{mobprogs.\-cpp}!M\-P\-\_\-\-O\-P\-E\-N\-\_\-\-P\-A\-R@{M\-P\-\_\-\-O\-P\-E\-N\-\_\-\-P\-A\-R}}\item[{\em 
+\hypertarget{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba3dcfd1fd8d701d07e9dd00cfc2137d30}{M\-P\-\_\-\-O\-P\-E\-N\-\_\-\-P\-A\-R}\label{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba3dcfd1fd8d701d07e9dd00cfc2137d30}
+}]\index{M\-P\-\_\-\-C\-L\-O\-S\-E\-\_\-\-P\-A\-R@{M\-P\-\_\-\-C\-L\-O\-S\-E\-\_\-\-P\-A\-R}!mobprogs.\-cpp@{mobprogs.\-cpp}}\index{mobprogs.\-cpp@{mobprogs.\-cpp}!M\-P\-\_\-\-C\-L\-O\-S\-E\-\_\-\-P\-A\-R@{M\-P\-\_\-\-C\-L\-O\-S\-E\-\_\-\-P\-A\-R}}\item[{\em 
+\hypertarget{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba8b032de2dfdb99b4ca88e4345566345f}{M\-P\-\_\-\-C\-L\-O\-S\-E\-\_\-\-P\-A\-R}\label{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba8b032de2dfdb99b4ca88e4345566345f}
+}]\index{M\-P\-\_\-\-C\-O\-M\-M\-A@{M\-P\-\_\-\-C\-O\-M\-M\-A}!mobprogs.\-cpp@{mobprogs.\-cpp}}\index{mobprogs.\-cpp@{mobprogs.\-cpp}!M\-P\-\_\-\-C\-O\-M\-M\-A@{M\-P\-\_\-\-C\-O\-M\-M\-A}}\item[{\em 
+\hypertarget{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba041bfabb93923941d96ebf4a44ec0f50}{M\-P\-\_\-\-C\-O\-M\-M\-A}\label{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba041bfabb93923941d96ebf4a44ec0f50}
+}]\index{M\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-F\-O\-L\-L\-O\-W\-\_\-\-D\-A\-T\-A@{M\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-F\-O\-L\-L\-O\-W\-\_\-\-D\-A\-T\-A}!mobprogs.\-cpp@{mobprogs.\-cpp}}\index{mobprogs.\-cpp@{mobprogs.\-cpp}!M\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-F\-O\-L\-L\-O\-W\-\_\-\-D\-A\-T\-A@{M\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-F\-O\-L\-L\-O\-W\-\_\-\-D\-A\-T\-A}}\item[{\em 
+\hypertarget{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba53946026b3a92d63987b2ad07fb87579}{M\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-F\-O\-L\-L\-O\-W\-\_\-\-D\-A\-T\-A}\label{mobprogs_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba53946026b3a92d63987b2ad07fb87579}
+}]\end{description}
+\end{Desc}
+\hypertarget{mobprogs_8cpp_adf764cbdea00d65edcd07bb9953ad2b7}{\subsubsection[{anonymous enum}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}\label{mobprogs_8cpp_adf764cbdea00d65edcd07bb9953ad2b7}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{M\-T\-\_\-\-O\-P\-E\-N\-\_\-\-P\-A\-R\-E\-N@{M\-T\-\_\-\-O\-P\-E\-N\-\_\-\-P\-A\-R\-E\-N}!mobprogs.\-cpp@{mobprogs.\-cpp}}\index{mobprogs.\-cpp@{mobprogs.\-cpp}!M\-T\-\_\-\-O\-P\-E\-N\-\_\-\-P\-A\-R\-E\-N@{M\-T\-\_\-\-O\-P\-E\-N\-\_\-\-P\-A\-R\-E\-N}}\item[{\em 
+\hypertarget{mobprogs_8cpp_adf764cbdea00d65edcd07bb9953ad2b7a70ecd0b91d4b89c1d9a1f5b4ea06f02e}{M\-T\-\_\-\-O\-P\-E\-N\-\_\-\-P\-A\-R\-E\-N}\label{mobprogs_8cpp_adf764cbdea00d65edcd07bb9953ad2b7a70ecd0b91d4b89c1d9a1f5b4ea06f02e}
+}]\index{M\-T\-\_\-\-V\-A\-R\-I\-A\-B\-L\-E@{M\-T\-\_\-\-V\-A\-R\-I\-A\-B\-L\-E}!mobprogs.\-cpp@{mobprogs.\-cpp}}\index{mobprogs.\-cpp@{mobprogs.\-cpp}!M\-T\-\_\-\-V\-A\-R\-I\-A\-B\-L\-E@{M\-T\-\_\-\-V\-A\-R\-I\-A\-B\-L\-E}}\item[{\em 
+\hypertarget{mobprogs_8cpp_adf764cbdea00d65edcd07bb9953ad2b7a7c32cc8daa0ad18b955683d592e739cf}{M\-T\-\_\-\-V\-A\-R\-I\-A\-B\-L\-E}\label{mobprogs_8cpp_adf764cbdea00d65edcd07bb9953ad2b7a7c32cc8daa0ad18b955683d592e739cf}
+}]\index{M\-T\-\_\-\-C\-O\-M\-M\-A@{M\-T\-\_\-\-C\-O\-M\-M\-A}!mobprogs.\-cpp@{mobprogs.\-cpp}}\index{mobprogs.\-cpp@{mobprogs.\-cpp}!M\-T\-\_\-\-C\-O\-M\-M\-A@{M\-T\-\_\-\-C\-O\-M\-M\-A}}\item[{\em 
+\hypertarget{mobprogs_8cpp_adf764cbdea00d65edcd07bb9953ad2b7abaf9c8f6b01e91c2fea9c8fb0bcc81a7}{M\-T\-\_\-\-C\-O\-M\-M\-A}\label{mobprogs_8cpp_adf764cbdea00d65edcd07bb9953ad2b7abaf9c8f6b01e91c2fea9c8fb0bcc81a7}
+}]\index{M\-T\-\_\-\-E\-Q\-U\-A\-L@{M\-T\-\_\-\-E\-Q\-U\-A\-L}!mobprogs.\-cpp@{mobprogs.\-cpp}}\index{mobprogs.\-cpp@{mobprogs.\-cpp}!M\-T\-\_\-\-E\-Q\-U\-A\-L@{M\-T\-\_\-\-E\-Q\-U\-A\-L}}\item[{\em 
+\hypertarget{mobprogs_8cpp_adf764cbdea00d65edcd07bb9953ad2b7a64e2f63a05b736b4e1fd48dcda6a9639}{M\-T\-\_\-\-E\-Q\-U\-A\-L}\label{mobprogs_8cpp_adf764cbdea00d65edcd07bb9953ad2b7a64e2f63a05b736b4e1fd48dcda6a9639}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{mobprogs_8cpp_a1bd4fa67e1163b88aa0eac4c80f61dfb}{\index{mobprogs.\-cpp@{mobprogs.\-cpp}!add\-\_\-replace\-\_\-mobprog\-\_\-data@{add\-\_\-replace\-\_\-mobprog\-\_\-data}}
+\index{add\-\_\-replace\-\_\-mobprog\-\_\-data@{add\-\_\-replace\-\_\-mobprog\-\_\-data}!mobprogs.cpp@{mobprogs.\-cpp}}
+\subsubsection[{add\-\_\-replace\-\_\-mobprog\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}void add\-\_\-replace\-\_\-mobprog\-\_\-data (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{mob, }
+\item[{char $\ast$}]{trigger\-\_\-name, }
+\item[{char $\ast$}]{prog\-\_\-data}
+\end{DoxyParamCaption}
+)}}\label{mobprogs_8cpp_a1bd4fa67e1163b88aa0eac4c80f61dfb}
+\hypertarget{mobprogs_8cpp_a58997d9576ebe7351a02737f9a3f8f90}{\index{mobprogs.\-cpp@{mobprogs.\-cpp}!assignment@{assignment}}
+\index{assignment@{assignment}!mobprogs.cpp@{mobprogs.\-cpp}}
+\subsubsection[{assignment}]{\setlength{\rightskip}{0pt plus 5cm}void assignment (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{mob, }
+\item[{{\bf M\-O\-B\-P\-R\-O\-G\-\_\-\-D\-A\-T\-A} $\ast$}]{program, }
+\item[{char $\ast$}]{target\-\_\-name, }
+\item[{char $\ast$$\ast$}]{p}
+\end{DoxyParamCaption}
+)}}\label{mobprogs_8cpp_a58997d9576ebe7351a02737f9a3f8f90}
+\hypertarget{mobprogs_8cpp_af17651d0a2e69f6b45bd4e735a52e4a0}{\index{mobprogs.\-cpp@{mobprogs.\-cpp}!boot\-\_\-mobprogs@{boot\-\_\-mobprogs}}
+\index{boot\-\_\-mobprogs@{boot\-\_\-mobprogs}!mobprogs.cpp@{mobprogs.\-cpp}}
+\subsubsection[{boot\-\_\-mobprogs}]{\setlength{\rightskip}{0pt plus 5cm}void boot\-\_\-mobprogs (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mobprogs_8cpp_af17651d0a2e69f6b45bd4e735a52e4a0}
+\hypertarget{mobprogs_8cpp_a75373df724048d168de02639d2a3475d}{\index{mobprogs.\-cpp@{mobprogs.\-cpp}!define\-\_\-variable@{define\-\_\-variable}}
+\index{define\-\_\-variable@{define\-\_\-variable}!mobprogs.cpp@{mobprogs.\-cpp}}
+\subsubsection[{define\-\_\-variable}]{\setlength{\rightskip}{0pt plus 5cm}void define\-\_\-variable (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{mob, }
+\item[{{\bf M\-O\-B\-P\-R\-O\-G\-\_\-\-D\-A\-T\-A} $\ast$}]{program, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{mobprogs_8cpp_a75373df724048d168de02639d2a3475d}
+\hypertarget{mobprogs_8cpp_a47263791335aa8bd7ec6accda30ed737}{\index{mobprogs.\-cpp@{mobprogs.\-cpp}!delayed\-\_\-trigger\-\_\-activity@{delayed\-\_\-trigger\-\_\-activity}}
+\index{delayed\-\_\-trigger\-\_\-activity@{delayed\-\_\-trigger\-\_\-activity}!mobprogs.cpp@{mobprogs.\-cpp}}
+\subsubsection[{delayed\-\_\-trigger\-\_\-activity}]{\setlength{\rightskip}{0pt plus 5cm}void delayed\-\_\-trigger\-\_\-activity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{mobprogs_8cpp_a47263791335aa8bd7ec6accda30ed737}
+\hypertarget{mobprogs_8cpp_a2f2b93e57663cce9cbdc09fb322e1c8c}{\index{mobprogs.\-cpp@{mobprogs.\-cpp}!deletevar@{deletevar}}
+\index{deletevar@{deletevar}!mobprogs.cpp@{mobprogs.\-cpp}}
+\subsubsection[{deletevar}]{\setlength{\rightskip}{0pt plus 5cm}void deletevar (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{mob, }
+\item[{char $\ast$}]{var\-\_\-name}
+\end{DoxyParamCaption}
+)}}\label{mobprogs_8cpp_a2f2b93e57663cce9cbdc09fb322e1c8c}
+\hypertarget{mobprogs_8cpp_a4d3b4ebe63aac36f3aca0f8854d74e2c}{\index{mobprogs.\-cpp@{mobprogs.\-cpp}!do\-\_\-prog@{do\-\_\-prog}}
+\index{do\-\_\-prog@{do\-\_\-prog}!mobprogs.cpp@{mobprogs.\-cpp}}
+\subsubsection[{do\-\_\-prog}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-prog (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{mobprogs_8cpp_a4d3b4ebe63aac36f3aca0f8854d74e2c}
+\hypertarget{mobprogs_8cpp_ae1059eb52f1761f1107d58a36bd14ed1}{\index{mobprogs.\-cpp@{mobprogs.\-cpp}!get\-\_\-line@{get\-\_\-line}}
+\index{get\-\_\-line@{get\-\_\-line}!mobprogs.cpp@{mobprogs.\-cpp}}
+\subsubsection[{get\-\_\-line}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ get\-\_\-line (
+\begin{DoxyParamCaption}
+\item[{char $\ast$$\ast$}]{buf, }
+\item[{char $\ast$}]{ret\-\_\-buf}
+\end{DoxyParamCaption}
+)}}\label{mobprogs_8cpp_ae1059eb52f1761f1107d58a36bd14ed1}
+\hypertarget{mobprogs_8cpp_a629c2a649daeb27897fd1f8856335a08}{\index{mobprogs.\-cpp@{mobprogs.\-cpp}!get\-\_\-prog\-\_\-token@{get\-\_\-prog\-\_\-token}}
+\index{get\-\_\-prog\-\_\-token@{get\-\_\-prog\-\_\-token}!mobprogs.cpp@{mobprogs.\-cpp}}
+\subsubsection[{get\-\_\-prog\-\_\-token}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ get\-\_\-prog\-\_\-token (
+\begin{DoxyParamCaption}
+\item[{char $\ast$$\ast$}]{buf, }
+\item[{char $\ast$}]{token}
+\end{DoxyParamCaption}
+)}}\label{mobprogs_8cpp_a629c2a649daeb27897fd1f8856335a08}
+\hypertarget{mobprogs_8cpp_a0bee911921a01d46634f00f2b0cae709}{\index{mobprogs.\-cpp@{mobprogs.\-cpp}!getvar@{getvar}}
+\index{getvar@{getvar}!mobprogs.cpp@{mobprogs.\-cpp}}
+\subsubsection[{getvar}]{\setlength{\rightskip}{0pt plus 5cm}{\bf V\-A\-R\-\_\-\-D\-A\-T\-A}$\ast$ getvar (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{mob, }
+\item[{char $\ast$}]{var\-\_\-name}
+\end{DoxyParamCaption}
+)}}\label{mobprogs_8cpp_a0bee911921a01d46634f00f2b0cae709}
+\hypertarget{mobprogs_8cpp_a221191391cde81f368b87db50bc26e7d}{\index{mobprogs.\-cpp@{mobprogs.\-cpp}!mob\-\_\-char\-\_\-indirect@{mob\-\_\-char\-\_\-indirect}}
+\index{mob\-\_\-char\-\_\-indirect@{mob\-\_\-char\-\_\-indirect}!mobprogs.cpp@{mobprogs.\-cpp}}
+\subsubsection[{mob\-\_\-char\-\_\-indirect}]{\setlength{\rightskip}{0pt plus 5cm}void mob\-\_\-char\-\_\-indirect (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{mob, }
+\item[{char $\ast$}]{token, }
+\item[{int $\ast$}]{value, }
+\item[{int $\ast$}]{type}
+\end{DoxyParamCaption}
+)}}\label{mobprogs_8cpp_a221191391cde81f368b87db50bc26e7d}
+\hypertarget{mobprogs_8cpp_a6256db5054df6a84a8d4414ddd6e05eb}{\index{mobprogs.\-cpp@{mobprogs.\-cpp}!mob\-\_\-get\-\_\-token@{mob\-\_\-get\-\_\-token}}
+\index{mob\-\_\-get\-\_\-token@{mob\-\_\-get\-\_\-token}!mobprogs.cpp@{mobprogs.\-cpp}}
+\subsubsection[{mob\-\_\-get\-\_\-token}]{\setlength{\rightskip}{0pt plus 5cm}int mob\-\_\-get\-\_\-token (
+\begin{DoxyParamCaption}
+\item[{char $\ast$$\ast$}]{ptr, }
+\item[{char $\ast$}]{token, }
+\item[{int}]{token\-\_\-type}
+\end{DoxyParamCaption}
+)}}\label{mobprogs_8cpp_a6256db5054df6a84a8d4414ddd6e05eb}
+\hypertarget{mobprogs_8cpp_a63094112b76c85a470ab354126f1d1d7}{\index{mobprogs.\-cpp@{mobprogs.\-cpp}!mob\-\_\-int\-\_\-indirect@{mob\-\_\-int\-\_\-indirect}}
+\index{mob\-\_\-int\-\_\-indirect@{mob\-\_\-int\-\_\-indirect}!mobprogs.cpp@{mobprogs.\-cpp}}
+\subsubsection[{mob\-\_\-int\-\_\-indirect}]{\setlength{\rightskip}{0pt plus 5cm}void mob\-\_\-int\-\_\-indirect (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{token, }
+\item[{int $\ast$}]{value, }
+\item[{int $\ast$}]{type}
+\end{DoxyParamCaption}
+)}}\label{mobprogs_8cpp_a63094112b76c85a470ab354126f1d1d7}
+\hypertarget{mobprogs_8cpp_aab9fd31edf26b5b1b4a203410d00f219}{\index{mobprogs.\-cpp@{mobprogs.\-cpp}!mob\-\_\-obj\-\_\-indirect@{mob\-\_\-obj\-\_\-indirect}}
+\index{mob\-\_\-obj\-\_\-indirect@{mob\-\_\-obj\-\_\-indirect}!mobprogs.cpp@{mobprogs.\-cpp}}
+\subsubsection[{mob\-\_\-obj\-\_\-indirect}]{\setlength{\rightskip}{0pt plus 5cm}void mob\-\_\-obj\-\_\-indirect (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{token, }
+\item[{int $\ast$}]{value, }
+\item[{int $\ast$}]{type}
+\end{DoxyParamCaption}
+)}}\label{mobprogs_8cpp_aab9fd31edf26b5b1b4a203410d00f219}
+\hypertarget{mobprogs_8cpp_ab60cfc8f5befb04e350faa32cb9f5adc}{\index{mobprogs.\-cpp@{mobprogs.\-cpp}!mob\-\_\-room\-\_\-indirect@{mob\-\_\-room\-\_\-indirect}}
+\index{mob\-\_\-room\-\_\-indirect@{mob\-\_\-room\-\_\-indirect}!mobprogs.cpp@{mobprogs.\-cpp}}
+\subsubsection[{mob\-\_\-room\-\_\-indirect}]{\setlength{\rightskip}{0pt plus 5cm}void mob\-\_\-room\-\_\-indirect (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{mob, }
+\item[{char $\ast$}]{token, }
+\item[{int $\ast$}]{value, }
+\item[{int $\ast$}]{type}
+\end{DoxyParamCaption}
+)}}\label{mobprogs_8cpp_ab60cfc8f5befb04e350faa32cb9f5adc}
+\hypertarget{mobprogs_8cpp_a9788ba16b6b14a97644cca77a33dd6cd}{\index{mobprogs.\-cpp@{mobprogs.\-cpp}!mob\-\_\-string@{mob\-\_\-string}}
+\index{mob\-\_\-string@{mob\-\_\-string}!mobprogs.cpp@{mobprogs.\-cpp}}
+\subsubsection[{mob\-\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}void mob\-\_\-string (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{mob, }
+\item[{char $\ast$$\ast$}]{p, }
+\item[{char $\ast$}]{string}
+\end{DoxyParamCaption}
+)}}\label{mobprogs_8cpp_a9788ba16b6b14a97644cca77a33dd6cd}
+\hypertarget{mobprogs_8cpp_a8a9402bef26652a421007aac4ef9eed4}{\index{mobprogs.\-cpp@{mobprogs.\-cpp}!mob\-\_\-string\-\_\-token@{mob\-\_\-string\-\_\-token}}
+\index{mob\-\_\-string\-\_\-token@{mob\-\_\-string\-\_\-token}!mobprogs.cpp@{mobprogs.\-cpp}}
+\subsubsection[{mob\-\_\-string\-\_\-token}]{\setlength{\rightskip}{0pt plus 5cm}void mob\-\_\-string\-\_\-token (
+\begin{DoxyParamCaption}
+\item[{char $\ast$$\ast$}]{argument, }
+\item[{char $\ast$}]{arg\-\_\-first, }
+\item[{int $\ast$}]{quoted}
+\end{DoxyParamCaption}
+)}}\label{mobprogs_8cpp_a8a9402bef26652a421007aac4ef9eed4}
+\hypertarget{mobprogs_8cpp_ae73a0b6c7dbad7aa6614879688a8374b}{\index{mobprogs.\-cpp@{mobprogs.\-cpp}!mobprog@{mobprog}}
+\index{mobprog@{mobprog}!mobprogs.cpp@{mobprogs.\-cpp}}
+\subsubsection[{mobprog}]{\setlength{\rightskip}{0pt plus 5cm}void mobprog (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{mob, }
+\item[{{\bf M\-O\-B\-P\-R\-O\-G\-\_\-\-D\-A\-T\-A} $\ast$}]{program, }
+\item[{int}]{trigger, }
+\item[{char $\ast$}]{argument, }
+\item[{int $\ast$}]{ret}
+\end{DoxyParamCaption}
+)}}\label{mobprogs_8cpp_ae73a0b6c7dbad7aa6614879688a8374b}
+\hypertarget{mobprogs_8cpp_a410a076d10ef372cabb07d480f5e5f58}{\index{mobprogs.\-cpp@{mobprogs.\-cpp}!mp\-\_\-eval\-\_\-eq@{mp\-\_\-eval\-\_\-eq}}
+\index{mp\-\_\-eval\-\_\-eq@{mp\-\_\-eval\-\_\-eq}!mobprogs.cpp@{mobprogs.\-cpp}}
+\subsubsection[{mp\-\_\-eval\-\_\-eq}]{\setlength{\rightskip}{0pt plus 5cm}int mp\-\_\-eval\-\_\-eq (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{mob, }
+\item[{char $\ast$$\ast$}]{equation}
+\end{DoxyParamCaption}
+)}}\label{mobprogs_8cpp_a410a076d10ef372cabb07d480f5e5f58}
+\hypertarget{mobprogs_8cpp_a7d0715f3be1b27da1996e723d46152fa}{\index{mobprogs.\-cpp@{mobprogs.\-cpp}!mp\-\_\-get\-\_\-eval\-\_\-token@{mp\-\_\-get\-\_\-eval\-\_\-token}}
+\index{mp\-\_\-get\-\_\-eval\-\_\-token@{mp\-\_\-get\-\_\-eval\-\_\-token}!mobprogs.cpp@{mobprogs.\-cpp}}
+\subsubsection[{mp\-\_\-get\-\_\-eval\-\_\-token}]{\setlength{\rightskip}{0pt plus 5cm}int mp\-\_\-get\-\_\-eval\-\_\-token (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{mob, }
+\item[{char $\ast$$\ast$}]{p, }
+\item[{int $\ast$}]{token\-\_\-type, }
+\item[{int $\ast$}]{value}
+\end{DoxyParamCaption}
+)}}\label{mobprogs_8cpp_a7d0715f3be1b27da1996e723d46152fa}
+\hypertarget{mobprogs_8cpp_a014a31c71e23068520a07c6c1920a964}{\index{mobprogs.\-cpp@{mobprogs.\-cpp}!mp\-\_\-whohasobj@{mp\-\_\-whohasobj}}
+\index{mp\-\_\-whohasobj@{mp\-\_\-whohasobj}!mobprogs.cpp@{mobprogs.\-cpp}}
+\subsubsection[{mp\-\_\-whohasobj}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A}$\ast$ mp\-\_\-whohasobj (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{mob, }
+\item[{int}]{obj\-\_\-virt}
+\end{DoxyParamCaption}
+)}}\label{mobprogs_8cpp_a014a31c71e23068520a07c6c1920a964}
+\hypertarget{mobprogs_8cpp_a513043c3852d6918d6286a769fd55149}{\index{mobprogs.\-cpp@{mobprogs.\-cpp}!require\-\_\-open\-\_\-paren@{require\-\_\-open\-\_\-paren}}
+\index{require\-\_\-open\-\_\-paren@{require\-\_\-open\-\_\-paren}!mobprogs.cpp@{mobprogs.\-cpp}}
+\subsubsection[{require\-\_\-open\-\_\-paren}]{\setlength{\rightskip}{0pt plus 5cm}void require\-\_\-open\-\_\-paren (
+\begin{DoxyParamCaption}
+\item[{char $\ast$$\ast$}]{ptr}
+\end{DoxyParamCaption}
+)}}\label{mobprogs_8cpp_a513043c3852d6918d6286a769fd55149}
+\hypertarget{mobprogs_8cpp_a3b9631512cce90cc4b0878aeba8f1a6d}{\index{mobprogs.\-cpp@{mobprogs.\-cpp}!setvar@{setvar}}
+\index{setvar@{setvar}!mobprogs.cpp@{mobprogs.\-cpp}}
+\subsubsection[{setvar}]{\setlength{\rightskip}{0pt plus 5cm}{\bf V\-A\-R\-\_\-\-D\-A\-T\-A}$\ast$ setvar (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{mob, }
+\item[{char $\ast$}]{var\-\_\-name, }
+\item[{int}]{value, }
+\item[{int}]{type}
+\end{DoxyParamCaption}
+)}}\label{mobprogs_8cpp_a3b9631512cce90cc4b0878aeba8f1a6d}
+\hypertarget{mobprogs_8cpp_ab5ba884074e949f4cfc0c16d9dd7373c}{\index{mobprogs.\-cpp@{mobprogs.\-cpp}!trigger@{trigger}}
+\index{trigger@{trigger}!mobprogs.cpp@{mobprogs.\-cpp}}
+\subsubsection[{trigger}]{\setlength{\rightskip}{0pt plus 5cm}int trigger (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{trigger}
+\end{DoxyParamCaption}
+)}}\label{mobprogs_8cpp_ab5ba884074e949f4cfc0c16d9dd7373c}
+
+
+\subsection{Variable Documentation}
+\hypertarget{mobprogs_8cpp_a99bd8856b002ae76bbbae3bdb45ed01f}{\index{mobprogs.\-cpp@{mobprogs.\-cpp}!current\-\_\-line@{current\-\_\-line}}
+\index{current\-\_\-line@{current\-\_\-line}!mobprogs.cpp@{mobprogs.\-cpp}}
+\subsubsection[{current\-\_\-line}]{\setlength{\rightskip}{0pt plus 5cm}char current\-\_\-line\mbox{[}{\bf M\-A\-X\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-L\-E\-N\-G\-T\-H}\mbox{]}}}\label{mobprogs_8cpp_a99bd8856b002ae76bbbae3bdb45ed01f}
+\hypertarget{mobprogs_8cpp_a55c71990ee4162ebec6abe401996cf15}{\index{mobprogs.\-cpp@{mobprogs.\-cpp}!engine@{engine}}
+\index{engine@{engine}!mobprogs.cpp@{mobprogs.\-cpp}}
+\subsubsection[{engine}]{\setlength{\rightskip}{0pt plus 5cm}{\bf rpie\-::server} engine}}\label{mobprogs_8cpp_a55c71990ee4162ebec6abe401996cf15}
+\hypertarget{mobprogs_8cpp_ac97516ab9cb8bd7ff8204a4eff28304c}{\index{mobprogs.\-cpp@{mobprogs.\-cpp}!full\-\_\-prog\-\_\-list@{full\-\_\-prog\-\_\-list}}
+\index{full\-\_\-prog\-\_\-list@{full\-\_\-prog\-\_\-list}!mobprogs.cpp@{mobprogs.\-cpp}}
+\subsubsection[{full\-\_\-prog\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\-O\-B\-P\-R\-O\-G\-\_\-\-D\-A\-T\-A}$\ast$ full\-\_\-prog\-\_\-list = N\-U\-L\-L}}\label{mobprogs_8cpp_ac97516ab9cb8bd7ff8204a4eff28304c}
+\hypertarget{mobprogs_8cpp_a23c054142e1cfd6b52044067ac194d67}{\index{mobprogs.\-cpp@{mobprogs.\-cpp}!global\-\_\-vars@{global\-\_\-vars}}
+\index{global\-\_\-vars@{global\-\_\-vars}!mobprogs.cpp@{mobprogs.\-cpp}}
+\subsubsection[{global\-\_\-vars}]{\setlength{\rightskip}{0pt plus 5cm}{\bf V\-A\-R\-\_\-\-D\-A\-T\-A}$\ast$ global\-\_\-vars = N\-U\-L\-L}}\label{mobprogs_8cpp_a23c054142e1cfd6b52044067ac194d67}
+\hypertarget{mobprogs_8cpp_a86d3853f32f3ba6d00e2d53c23e3122b}{\index{mobprogs.\-cpp@{mobprogs.\-cpp}!mobprog\-\_\-triggers@{mobprog\-\_\-triggers}}
+\index{mobprog\-\_\-triggers@{mobprog\-\_\-triggers}!mobprogs.cpp@{mobprogs.\-cpp}}
+\subsubsection[{mobprog\-\_\-triggers}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ mobprog\-\_\-triggers\mbox{[}$\,$\mbox{]}}}\label{mobprogs_8cpp_a86d3853f32f3ba6d00e2d53c23e3122b}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \{
+  \textcolor{stringliteral}{"place-holder"},
+  \textcolor{stringliteral}{"say"},
+  \textcolor{stringliteral}{"enter"},
+  \textcolor{stringliteral}{"exit"},
+  \textcolor{stringliteral}{"hit"},
+  \textcolor{stringliteral}{"mobact"},
+  \textcolor{stringliteral}{"alarm"},
+  \textcolor{stringliteral}{"hour"},
+  \textcolor{stringliteral}{"day"},
+  \textcolor{stringliteral}{"teach"},
+  \textcolor{stringliteral}{"whisper"},
+  \textcolor{stringliteral}{"prisoner"},
+  \textcolor{stringliteral}{"knock"},
+  \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}

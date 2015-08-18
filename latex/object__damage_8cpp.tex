@@ -1,0 +1,285 @@
+\hypertarget{object__damage_8cpp}{\section{object\-\_\-damage.\-cpp File Reference}
+\label{object__damage_8cpp}\index{object\-\_\-damage.\-cpp@{object\-\_\-damage.\-cpp}}
+}
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$time.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}server.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}structs.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}protos.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}object\-\_\-damage.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utility.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+short \hyperlink{object__damage_8cpp_a1cf68b7aa5fda3c7376b716de191efb9}{skill\-\_\-to\-\_\-damage\-\_\-name\-\_\-index} (ushort n\-\_\-skill)
+\item 
+\hyperlink{object__damage_8h_a5a0c6470eee77c8c093bdc24f3e266c0}{O\-B\-J\-E\-C\-T\-\_\-\-D\-A\-M\-A\-G\-E} $\ast$ \hyperlink{object__damage_8cpp_a60d40546751ec243fe3dfea3ab1236cd}{object\-\_\-damage\-\_\-\-\_\-new} ()
+\item 
+\hyperlink{object__damage_8h_a5a0c6470eee77c8c093bdc24f3e266c0}{O\-B\-J\-E\-C\-T\-\_\-\-D\-A\-M\-A\-G\-E} $\ast$ \hyperlink{object__damage_8cpp_af52ede0fb5eb7ff2a5d9e73fcf9ad858}{object\-\_\-damage\-\_\-\-\_\-new\-\_\-init} (\hyperlink{object__damage_8h_ab80f609de4f2344d8067ac1746dde4a6}{D\-A\-M\-A\-G\-E\-\_\-\-T\-Y\-P\-E} source, int impact, \hyperlink{object__damage_8h_ab2ceeba9e730d841b64f72b35d6278f2}{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-T\-Y\-P\-E} material, int permanent, int cmd)
+\item 
+void \hyperlink{object__damage_8cpp_ad39f3c520d16641d0d310a376e8ad895}{free\-\_\-damage} (\hyperlink{object__damage_8h_a5a0c6470eee77c8c093bdc24f3e266c0}{O\-B\-J\-E\-C\-T\-\_\-\-D\-A\-M\-A\-G\-E} $\ast$\hyperlink{protos_8h_ab6fab1a0d63773245da84a305bfa0407}{damage})
+\item 
+int \hyperlink{object__damage_8cpp_a4ad4196a671577dda411f389e73ca27c}{has\-\_\-enviro\-\_\-conds} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj)
+\item 
+void \hyperlink{object__damage_8cpp_a59880ca71cdcdb597e8e26bad76a3862}{object\-\_\-damage\-\_\-\-\_\-delete} (\hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj, \hyperlink{object__damage_8h_a5a0c6470eee77c8c093bdc24f3e266c0}{O\-B\-J\-E\-C\-T\-\_\-\-D\-A\-M\-A\-G\-E} $\ast$\hyperlink{protos_8h_ab6fab1a0d63773245da84a305bfa0407}{damage})
+\item 
+char $\ast$ \hyperlink{object__damage_8cpp_a9832fa10f631aa5bbbc50c6bbd2d8d40}{object\-\_\-damage\-\_\-\-\_\-get\-\_\-sdesc} (\hyperlink{object__damage_8h_a5a0c6470eee77c8c093bdc24f3e266c0}{O\-B\-J\-E\-C\-T\-\_\-\-D\-A\-M\-A\-G\-E} $\ast$this\-Ptr)
+\item 
+int \hyperlink{object__damage_8cpp_a90ac46089730ed1357747e589ef1c532}{object\-\_\-damage\-\_\-\-\_\-write\-\_\-to\-\_\-file} (\hyperlink{object__damage_8h_a5a0c6470eee77c8c093bdc24f3e266c0}{O\-B\-J\-E\-C\-T\-\_\-\-D\-A\-M\-A\-G\-E} $\ast$this\-Ptr, F\-I\-L\-E $\ast$fp)
+\item 
+\hyperlink{object__damage_8h_a5a0c6470eee77c8c093bdc24f3e266c0}{O\-B\-J\-E\-C\-T\-\_\-\-D\-A\-M\-A\-G\-E} $\ast$ \hyperlink{object__damage_8cpp_a48b80457dc354c864967b3002d6a49f6}{object\-\_\-damage\-\_\-\-\_\-read\-\_\-from\-\_\-file} (F\-I\-L\-E $\ast$fp)
+\item 
+void \hyperlink{object__damage_8cpp_a9469d18ee1b2bff84e05859a6c1981f9}{npc\-\_\-repair} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, \hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$mob, \hyperlink{structs_8h_aaa59141dfc8c6ecdb6bfcf1537dd52d1}{O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$obj, char $\ast$argument)
+\item 
+void \hyperlink{object__damage_8cpp_a65d12ab35b3870a028bc3dc504a473db}{do\-\_\-mend} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{object__damage_8cpp_ad27392a812569976a1702213468cab32}{delayed\-\_\-mend1} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{object__damage_8cpp_ac018686d18b8401ed809f56c8822cd83}{delayed\-\_\-mend2} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\item 
+void \hyperlink{object__damage_8cpp_a7eef99a16a62420beb9308605df4de43}{do\-\_\-clean} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
+\item 
+void \hyperlink{object__damage_8cpp_a4cbbd461e8a8d43bf24bd0bb6a13e057}{delayed\-\_\-long\-\_\-clean} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classrpie_1_1server}{rpie\-::server} \hyperlink{object__damage_8cpp_a55c71990ee4162ebec6abe401996cf15}{engine}
+\item 
+const char $\ast$ \hyperlink{object__damage_8cpp_aaaa692566f4c1f7d6821fdc7e19411fe}{enviro\-\_\-desc} \mbox{[}\hyperlink{object__damage_8h_a900fe72fff2c343fd3f146c228d21196a3eb46d3d7318e8e02daa0c9b2e5540ca}{C\-O\-N\-D\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-A\-X}\mbox{]}\mbox{[}6\mbox{]}
+\item 
+const char $\ast$ \hyperlink{object__damage_8cpp_ad6889baca55c416148a1989efe1abfdc}{damage\-\_\-type} \mbox{[}\hyperlink{object__damage_8h_aec13eb452f5adf9bf2356bef65b6e632a96ab3cbac60e7c4befa7c4445e2fe4bd}{D\-A\-M\-A\-G\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-A\-X}+1\mbox{]}
+\item 
+const char $\ast$ \hyperlink{object__damage_8cpp_a5d5af3a5fb445761fced9dde875b6fac}{material\-\_\-type} \mbox{[}\hyperlink{object__damage_8h_a054c7a0c5cebe63d082920ad23a8b0baa05181f58cd858874001d6864889d8f85}{M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-A\-X}+1\mbox{]}
+\item 
+const char $\ast$ \hyperlink{object__damage_8cpp_aeb237ee59061bfeb19b1b64bef34e7ce}{damage\-\_\-severity} \mbox{[}\hyperlink{object__damage_8h_ae57f65faa21c70ac0ffdd4449edfb5daa6b91668fb2e51f375310a41dd10490cb}{D\-A\-M\-A\-G\-E\-\_\-\-S\-E\-V\-E\-R\-I\-T\-Y\-\_\-\-M\-A\-X}+1\mbox{]}
+\item 
+const char $\ast$ \hyperlink{object__damage_8cpp_aaec15591e40e7e248f3a44bcb84d7d1e}{conditions} \mbox{[}8\mbox{]}\mbox{[}6\mbox{]}
+\item 
+const char $\ast$ \hyperlink{object__damage_8cpp_ae47ac6272ef3f2dcf608f2289b1a7b69}{scuffs\-\_\-desc} \mbox{[}6\mbox{]}
+\item 
+const char $\ast$ \hyperlink{object__damage_8cpp_a107f96407a4be0b9f628e0f8aac51e11}{worn\-\_\-desc} \mbox{[}6\mbox{]}
+\item 
+const char $\ast$ \hyperlink{object__damage_8cpp_ac42ced073f35bedde7024370fa5059a9}{damage\-\_\-name} \mbox{[}11\mbox{]}\mbox{[}8\mbox{]}\mbox{[}4\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{object__damage_8cpp_a4cbbd461e8a8d43bf24bd0bb6a13e057}{\index{object\-\_\-damage.\-cpp@{object\-\_\-damage.\-cpp}!delayed\-\_\-long\-\_\-clean@{delayed\-\_\-long\-\_\-clean}}
+\index{delayed\-\_\-long\-\_\-clean@{delayed\-\_\-long\-\_\-clean}!object_damage.cpp@{object\-\_\-damage.\-cpp}}
+\subsubsection[{delayed\-\_\-long\-\_\-clean}]{\setlength{\rightskip}{0pt plus 5cm}void delayed\-\_\-long\-\_\-clean (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{object__damage_8cpp_a4cbbd461e8a8d43bf24bd0bb6a13e057}
+\hypertarget{object__damage_8cpp_ad27392a812569976a1702213468cab32}{\index{object\-\_\-damage.\-cpp@{object\-\_\-damage.\-cpp}!delayed\-\_\-mend1@{delayed\-\_\-mend1}}
+\index{delayed\-\_\-mend1@{delayed\-\_\-mend1}!object_damage.cpp@{object\-\_\-damage.\-cpp}}
+\subsubsection[{delayed\-\_\-mend1}]{\setlength{\rightskip}{0pt plus 5cm}void delayed\-\_\-mend1 (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{object__damage_8cpp_ad27392a812569976a1702213468cab32}
+\hypertarget{object__damage_8cpp_ac018686d18b8401ed809f56c8822cd83}{\index{object\-\_\-damage.\-cpp@{object\-\_\-damage.\-cpp}!delayed\-\_\-mend2@{delayed\-\_\-mend2}}
+\index{delayed\-\_\-mend2@{delayed\-\_\-mend2}!object_damage.cpp@{object\-\_\-damage.\-cpp}}
+\subsubsection[{delayed\-\_\-mend2}]{\setlength{\rightskip}{0pt plus 5cm}void delayed\-\_\-mend2 (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch}
+\end{DoxyParamCaption}
+)}}\label{object__damage_8cpp_ac018686d18b8401ed809f56c8822cd83}
+\hypertarget{object__damage_8cpp_a7eef99a16a62420beb9308605df4de43}{\index{object\-\_\-damage.\-cpp@{object\-\_\-damage.\-cpp}!do\-\_\-clean@{do\-\_\-clean}}
+\index{do\-\_\-clean@{do\-\_\-clean}!object_damage.cpp@{object\-\_\-damage.\-cpp}}
+\subsubsection[{do\-\_\-clean}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-clean (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{object__damage_8cpp_a7eef99a16a62420beb9308605df4de43}
+\hypertarget{object__damage_8cpp_a65d12ab35b3870a028bc3dc504a473db}{\index{object\-\_\-damage.\-cpp@{object\-\_\-damage.\-cpp}!do\-\_\-mend@{do\-\_\-mend}}
+\index{do\-\_\-mend@{do\-\_\-mend}!object_damage.cpp@{object\-\_\-damage.\-cpp}}
+\subsubsection[{do\-\_\-mend}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-mend (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{char $\ast$}]{argument, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{object__damage_8cpp_a65d12ab35b3870a028bc3dc504a473db}
+\hypertarget{object__damage_8cpp_ad39f3c520d16641d0d310a376e8ad895}{\index{object\-\_\-damage.\-cpp@{object\-\_\-damage.\-cpp}!free\-\_\-damage@{free\-\_\-damage}}
+\index{free\-\_\-damage@{free\-\_\-damage}!object_damage.cpp@{object\-\_\-damage.\-cpp}}
+\subsubsection[{free\-\_\-damage}]{\setlength{\rightskip}{0pt plus 5cm}void free\-\_\-damage (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-E\-C\-T\-\_\-\-D\-A\-M\-A\-G\-E} $\ast$}]{damage}
+\end{DoxyParamCaption}
+)}}\label{object__damage_8cpp_ad39f3c520d16641d0d310a376e8ad895}
+\hypertarget{object__damage_8cpp_a4ad4196a671577dda411f389e73ca27c}{\index{object\-\_\-damage.\-cpp@{object\-\_\-damage.\-cpp}!has\-\_\-enviro\-\_\-conds@{has\-\_\-enviro\-\_\-conds}}
+\index{has\-\_\-enviro\-\_\-conds@{has\-\_\-enviro\-\_\-conds}!object_damage.cpp@{object\-\_\-damage.\-cpp}}
+\subsubsection[{has\-\_\-enviro\-\_\-conds}]{\setlength{\rightskip}{0pt plus 5cm}int has\-\_\-enviro\-\_\-conds (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj}
+\end{DoxyParamCaption}
+)}}\label{object__damage_8cpp_a4ad4196a671577dda411f389e73ca27c}
+\hypertarget{object__damage_8cpp_a9469d18ee1b2bff84e05859a6c1981f9}{\index{object\-\_\-damage.\-cpp@{object\-\_\-damage.\-cpp}!npc\-\_\-repair@{npc\-\_\-repair}}
+\index{npc\-\_\-repair@{npc\-\_\-repair}!object_damage.cpp@{object\-\_\-damage.\-cpp}}
+\subsubsection[{npc\-\_\-repair}]{\setlength{\rightskip}{0pt plus 5cm}void npc\-\_\-repair (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
+\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{mob, }
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj, }
+\item[{char $\ast$}]{argument}
+\end{DoxyParamCaption}
+)}}\label{object__damage_8cpp_a9469d18ee1b2bff84e05859a6c1981f9}
+\hypertarget{object__damage_8cpp_a59880ca71cdcdb597e8e26bad76a3862}{\index{object\-\_\-damage.\-cpp@{object\-\_\-damage.\-cpp}!object\-\_\-damage\-\_\-\-\_\-delete@{object\-\_\-damage\-\_\-\-\_\-delete}}
+\index{object\-\_\-damage\-\_\-\-\_\-delete@{object\-\_\-damage\-\_\-\-\_\-delete}!object_damage.cpp@{object\-\_\-damage.\-cpp}}
+\subsubsection[{object\-\_\-damage\-\_\-\-\_\-delete}]{\setlength{\rightskip}{0pt plus 5cm}void object\-\_\-damage\-\_\-\-\_\-delete (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-\_\-\-D\-A\-T\-A} $\ast$}]{obj, }
+\item[{{\bf O\-B\-J\-E\-C\-T\-\_\-\-D\-A\-M\-A\-G\-E} $\ast$}]{damage}
+\end{DoxyParamCaption}
+)}}\label{object__damage_8cpp_a59880ca71cdcdb597e8e26bad76a3862}
+\hypertarget{object__damage_8cpp_a9832fa10f631aa5bbbc50c6bbd2d8d40}{\index{object\-\_\-damage.\-cpp@{object\-\_\-damage.\-cpp}!object\-\_\-damage\-\_\-\-\_\-get\-\_\-sdesc@{object\-\_\-damage\-\_\-\-\_\-get\-\_\-sdesc}}
+\index{object\-\_\-damage\-\_\-\-\_\-get\-\_\-sdesc@{object\-\_\-damage\-\_\-\-\_\-get\-\_\-sdesc}!object_damage.cpp@{object\-\_\-damage.\-cpp}}
+\subsubsection[{object\-\_\-damage\-\_\-\-\_\-get\-\_\-sdesc}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ object\-\_\-damage\-\_\-\-\_\-get\-\_\-sdesc (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-E\-C\-T\-\_\-\-D\-A\-M\-A\-G\-E} $\ast$}]{this\-Ptr}
+\end{DoxyParamCaption}
+)}}\label{object__damage_8cpp_a9832fa10f631aa5bbbc50c6bbd2d8d40}
+\hypertarget{object__damage_8cpp_a60d40546751ec243fe3dfea3ab1236cd}{\index{object\-\_\-damage.\-cpp@{object\-\_\-damage.\-cpp}!object\-\_\-damage\-\_\-\-\_\-new@{object\-\_\-damage\-\_\-\-\_\-new}}
+\index{object\-\_\-damage\-\_\-\-\_\-new@{object\-\_\-damage\-\_\-\-\_\-new}!object_damage.cpp@{object\-\_\-damage.\-cpp}}
+\subsubsection[{object\-\_\-damage\-\_\-\-\_\-new}]{\setlength{\rightskip}{0pt plus 5cm}{\bf O\-B\-J\-E\-C\-T\-\_\-\-D\-A\-M\-A\-G\-E}$\ast$ object\-\_\-damage\-\_\-\-\_\-new (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{object__damage_8cpp_a60d40546751ec243fe3dfea3ab1236cd}
+\hypertarget{object__damage_8cpp_af52ede0fb5eb7ff2a5d9e73fcf9ad858}{\index{object\-\_\-damage.\-cpp@{object\-\_\-damage.\-cpp}!object\-\_\-damage\-\_\-\-\_\-new\-\_\-init@{object\-\_\-damage\-\_\-\-\_\-new\-\_\-init}}
+\index{object\-\_\-damage\-\_\-\-\_\-new\-\_\-init@{object\-\_\-damage\-\_\-\-\_\-new\-\_\-init}!object_damage.cpp@{object\-\_\-damage.\-cpp}}
+\subsubsection[{object\-\_\-damage\-\_\-\-\_\-new\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}{\bf O\-B\-J\-E\-C\-T\-\_\-\-D\-A\-M\-A\-G\-E}$\ast$ object\-\_\-damage\-\_\-\-\_\-new\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-A\-M\-A\-G\-E\-\_\-\-T\-Y\-P\-E}}]{source, }
+\item[{int}]{impact, }
+\item[{{\bf M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-T\-Y\-P\-E}}]{material, }
+\item[{int}]{permanent, }
+\item[{int}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{object__damage_8cpp_af52ede0fb5eb7ff2a5d9e73fcf9ad858}
+\hypertarget{object__damage_8cpp_a48b80457dc354c864967b3002d6a49f6}{\index{object\-\_\-damage.\-cpp@{object\-\_\-damage.\-cpp}!object\-\_\-damage\-\_\-\-\_\-read\-\_\-from\-\_\-file@{object\-\_\-damage\-\_\-\-\_\-read\-\_\-from\-\_\-file}}
+\index{object\-\_\-damage\-\_\-\-\_\-read\-\_\-from\-\_\-file@{object\-\_\-damage\-\_\-\-\_\-read\-\_\-from\-\_\-file}!object_damage.cpp@{object\-\_\-damage.\-cpp}}
+\subsubsection[{object\-\_\-damage\-\_\-\-\_\-read\-\_\-from\-\_\-file}]{\setlength{\rightskip}{0pt plus 5cm}{\bf O\-B\-J\-E\-C\-T\-\_\-\-D\-A\-M\-A\-G\-E}$\ast$ object\-\_\-damage\-\_\-\-\_\-read\-\_\-from\-\_\-file (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{fp}
+\end{DoxyParamCaption}
+)}}\label{object__damage_8cpp_a48b80457dc354c864967b3002d6a49f6}
+\hypertarget{object__damage_8cpp_a90ac46089730ed1357747e589ef1c532}{\index{object\-\_\-damage.\-cpp@{object\-\_\-damage.\-cpp}!object\-\_\-damage\-\_\-\-\_\-write\-\_\-to\-\_\-file@{object\-\_\-damage\-\_\-\-\_\-write\-\_\-to\-\_\-file}}
+\index{object\-\_\-damage\-\_\-\-\_\-write\-\_\-to\-\_\-file@{object\-\_\-damage\-\_\-\-\_\-write\-\_\-to\-\_\-file}!object_damage.cpp@{object\-\_\-damage.\-cpp}}
+\subsubsection[{object\-\_\-damage\-\_\-\-\_\-write\-\_\-to\-\_\-file}]{\setlength{\rightskip}{0pt plus 5cm}int object\-\_\-damage\-\_\-\-\_\-write\-\_\-to\-\_\-file (
+\begin{DoxyParamCaption}
+\item[{{\bf O\-B\-J\-E\-C\-T\-\_\-\-D\-A\-M\-A\-G\-E} $\ast$}]{this\-Ptr, }
+\item[{F\-I\-L\-E $\ast$}]{fp}
+\end{DoxyParamCaption}
+)}}\label{object__damage_8cpp_a90ac46089730ed1357747e589ef1c532}
+\hypertarget{object__damage_8cpp_a1cf68b7aa5fda3c7376b716de191efb9}{\index{object\-\_\-damage.\-cpp@{object\-\_\-damage.\-cpp}!skill\-\_\-to\-\_\-damage\-\_\-name\-\_\-index@{skill\-\_\-to\-\_\-damage\-\_\-name\-\_\-index}}
+\index{skill\-\_\-to\-\_\-damage\-\_\-name\-\_\-index@{skill\-\_\-to\-\_\-damage\-\_\-name\-\_\-index}!object_damage.cpp@{object\-\_\-damage.\-cpp}}
+\subsubsection[{skill\-\_\-to\-\_\-damage\-\_\-name\-\_\-index}]{\setlength{\rightskip}{0pt plus 5cm}short skill\-\_\-to\-\_\-damage\-\_\-name\-\_\-index (
+\begin{DoxyParamCaption}
+\item[{ushort}]{n\-\_\-skill}
+\end{DoxyParamCaption}
+)}}\label{object__damage_8cpp_a1cf68b7aa5fda3c7376b716de191efb9}
+
+
+\subsection{Variable Documentation}
+\hypertarget{object__damage_8cpp_aaec15591e40e7e248f3a44bcb84d7d1e}{\index{object\-\_\-damage.\-cpp@{object\-\_\-damage.\-cpp}!conditions@{conditions}}
+\index{conditions@{conditions}!object_damage.cpp@{object\-\_\-damage.\-cpp}}
+\subsubsection[{conditions}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ conditions\mbox{[}8\mbox{]}\mbox{[}6\mbox{]}}}\label{object__damage_8cpp_aaec15591e40e7e248f3a44bcb84d7d1e}
+\hypertarget{object__damage_8cpp_ac42ced073f35bedde7024370fa5059a9}{\index{object\-\_\-damage.\-cpp@{object\-\_\-damage.\-cpp}!damage\-\_\-name@{damage\-\_\-name}}
+\index{damage\-\_\-name@{damage\-\_\-name}!object_damage.cpp@{object\-\_\-damage.\-cpp}}
+\subsubsection[{damage\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ damage\-\_\-name\mbox{[}11\mbox{]}\mbox{[}8\mbox{]}\mbox{[}4\mbox{]}}}\label{object__damage_8cpp_ac42ced073f35bedde7024370fa5059a9}
+\hypertarget{object__damage_8cpp_aeb237ee59061bfeb19b1b64bef34e7ce}{\index{object\-\_\-damage.\-cpp@{object\-\_\-damage.\-cpp}!damage\-\_\-severity@{damage\-\_\-severity}}
+\index{damage\-\_\-severity@{damage\-\_\-severity}!object_damage.cpp@{object\-\_\-damage.\-cpp}}
+\subsubsection[{damage\-\_\-severity}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ damage\-\_\-severity\mbox{[}{\bf D\-A\-M\-A\-G\-E\-\_\-\-S\-E\-V\-E\-R\-I\-T\-Y\-\_\-\-M\-A\-X}+1\mbox{]}}}\label{object__damage_8cpp_aeb237ee59061bfeb19b1b64bef34e7ce}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \{
+    \textcolor{stringliteral}{"small"},
+    \textcolor{stringliteral}{"minor"},
+    \textcolor{stringliteral}{"moderate"},
+    \textcolor{stringliteral}{"large"},
+    \textcolor{stringliteral}{"huge"},
+    \textcolor{stringliteral}{"massive"},
+    \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}
+\hypertarget{object__damage_8cpp_ad6889baca55c416148a1989efe1abfdc}{\index{object\-\_\-damage.\-cpp@{object\-\_\-damage.\-cpp}!damage\-\_\-type@{damage\-\_\-type}}
+\index{damage\-\_\-type@{damage\-\_\-type}!object_damage.cpp@{object\-\_\-damage.\-cpp}}
+\subsubsection[{damage\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ damage\-\_\-type\mbox{[}{\bf D\-A\-M\-A\-G\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-A\-X}+1\mbox{]}}}\label{object__damage_8cpp_ad6889baca55c416148a1989efe1abfdc}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{ \textcolor{stringliteral}{"stab"}, \textcolor{stringliteral}{"pierce"}, \textcolor{stringliteral}{"chop"}, \textcolor{stringliteral}{"crush"}, \textcolor{stringliteral}{"slash"}, \textcolor{stringliteral}{"chill"}, \textcolor{stringliteral}{"burn"}, \textcolor{stringliteral}{"bite"}, \textcolor{stringliteral}{"claw"}, \textcolor{stringliteral}{"fist"}, \textcolor{stringliteral}{"bullet"}, \textcolor{stringliteral}{"\(\backslash\)n"} \}
+\end{DoxyCode}
+\hypertarget{object__damage_8cpp_a55c71990ee4162ebec6abe401996cf15}{\index{object\-\_\-damage.\-cpp@{object\-\_\-damage.\-cpp}!engine@{engine}}
+\index{engine@{engine}!object_damage.cpp@{object\-\_\-damage.\-cpp}}
+\subsubsection[{engine}]{\setlength{\rightskip}{0pt plus 5cm}{\bf rpie\-::server} engine}}\label{object__damage_8cpp_a55c71990ee4162ebec6abe401996cf15}
+\hypertarget{object__damage_8cpp_aaaa692566f4c1f7d6821fdc7e19411fe}{\index{object\-\_\-damage.\-cpp@{object\-\_\-damage.\-cpp}!enviro\-\_\-desc@{enviro\-\_\-desc}}
+\index{enviro\-\_\-desc@{enviro\-\_\-desc}!object_damage.cpp@{object\-\_\-damage.\-cpp}}
+\subsubsection[{enviro\-\_\-desc}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ enviro\-\_\-desc\mbox{[}{\bf C\-O\-N\-D\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-A\-X}\mbox{]}\mbox{[}6\mbox{]}}}\label{object__damage_8cpp_aaaa692566f4c1f7d6821fdc7e19411fe}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \{
+    \{\textcolor{stringliteral}{"stains"}, \textcolor{stringliteral}{"faintly stained"}, \textcolor{stringliteral}{"stained"}, \textcolor{stringliteral}{"stain-covered"}, \textcolor{stringliteral}{"stain-ridden"}, \textcolor{stringliteral}{"cleaning"}\},
+    \{\textcolor{stringliteral}{"dirt"},  \textcolor{stringliteral}{"slightly dirty"}, \textcolor{stringliteral}{"dirty"}, \textcolor{stringliteral}{"dirt-covered"}, \textcolor{stringliteral}{"dirt-encrusted"}, \textcolor{stringliteral}{"cleaning"}\},
+    \{\textcolor{stringliteral}{"dust"},  \textcolor{stringliteral}{"a little dusty"}, \textcolor{stringliteral}{"dusty"}, \textcolor{stringliteral}{"dust-covered"}, \textcolor{stringliteral}{"dust-stricken"}, \textcolor{stringliteral}{"wiping"}\},
+    \{\textcolor{stringliteral}{"blood"},  \textcolor{stringliteral}{"spotted with blood"}, \textcolor{stringliteral}{"bloody"}, \textcolor{stringliteral}{"blood-covered"}, \textcolor{stringliteral}{"blood-drenched"}, \textcolor{stringliteral}{"cleaning"}\},
+    \{\textcolor{stringliteral}{"water"},  \textcolor{stringliteral}{"damp"}, \textcolor{stringliteral}{"wet"}, \textcolor{stringliteral}{"soaking"}, \textcolor{stringliteral}{"satured"}, \textcolor{stringliteral}{"squeezing"}\},
+    \{\textcolor{stringliteral}{"filth"},  \textcolor{stringliteral}{"a little filthy"}, \textcolor{stringliteral}{"filthy"}, \textcolor{stringliteral}{"filth-covered"}, \textcolor{stringliteral}{"filth-ridden"}, \textcolor{stringliteral}{"cleaning"}\},
+    \{\textcolor{stringliteral}{"slime"},  \textcolor{stringliteral}{"somewhat slimy"}, \textcolor{stringliteral}{"slimy"}, \textcolor{stringliteral}{"slime-covered"}, \textcolor{stringliteral}{"slime-covered"}, \textcolor{stringliteral}{"wiping"}\},
+    \{\textcolor{stringliteral}{"rust"},  \textcolor{stringliteral}{"starting to rust"}, \textcolor{stringliteral}{"rusting"}, \textcolor{stringliteral}{"rusted"}, \textcolor{stringliteral}{"rust-covered"}, \textcolor{stringliteral}{"scouring"}\}
+\}
+\end{DoxyCode}
+\hypertarget{object__damage_8cpp_a5d5af3a5fb445761fced9dde875b6fac}{\index{object\-\_\-damage.\-cpp@{object\-\_\-damage.\-cpp}!material\-\_\-type@{material\-\_\-type}}
+\index{material\-\_\-type@{material\-\_\-type}!object_damage.cpp@{object\-\_\-damage.\-cpp}}
+\subsubsection[{material\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ material\-\_\-type\mbox{[}{\bf M\-A\-T\-E\-R\-I\-A\-L\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-A\-X}+1\mbox{]}}}\label{object__damage_8cpp_a5d5af3a5fb445761fced9dde875b6fac}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \{
+    \textcolor{stringliteral}{"undefined"},
+    \textcolor{stringliteral}{"organic"},
+    \textcolor{stringliteral}{"textile"},
+    \textcolor{stringliteral}{"metal"},
+    \textcolor{stringliteral}{"ceramic"},
+    \textcolor{stringliteral}{"glass"},
+    \textcolor{stringliteral}{"electronic"},
+    \textcolor{stringliteral}{"plastics"},
+    \textcolor{stringliteral}{"\(\backslash\)n"}
+\}
+\end{DoxyCode}
+\hypertarget{object__damage_8cpp_ae47ac6272ef3f2dcf608f2289b1a7b69}{\index{object\-\_\-damage.\-cpp@{object\-\_\-damage.\-cpp}!scuffs\-\_\-desc@{scuffs\-\_\-desc}}
+\index{scuffs\-\_\-desc@{scuffs\-\_\-desc}!object_damage.cpp@{object\-\_\-damage.\-cpp}}
+\subsubsection[{scuffs\-\_\-desc}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ scuffs\-\_\-desc\mbox{[}6\mbox{]}}}\label{object__damage_8cpp_ae47ac6272ef3f2dcf608f2289b1a7b69}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"\(\backslash\)n"},
+    \textcolor{stringliteral}{" and has a few small damages"},
+    \textcolor{stringliteral}{" and has a number of small damages"},
+    \textcolor{stringliteral}{" and has lots of small damages"},
+    \textcolor{stringliteral}{" and bears scores small damages"},
+    \textcolor{stringliteral}{" and badly suffers from hundreds of small damages"}
+\}
+\end{DoxyCode}
+\hypertarget{object__damage_8cpp_a107f96407a4be0b9f628e0f8aac51e11}{\index{object\-\_\-damage.\-cpp@{object\-\_\-damage.\-cpp}!worn\-\_\-desc@{worn\-\_\-desc}}
+\index{worn\-\_\-desc@{worn\-\_\-desc}!object_damage.cpp@{object\-\_\-damage.\-cpp}}
+\subsubsection[{worn\-\_\-desc}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ worn\-\_\-desc\mbox{[}6\mbox{]}}}\label{object__damage_8cpp_a107f96407a4be0b9f628e0f8aac51e11}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+\{
+    \textcolor{stringliteral}{"\(\backslash\)n"},
+    \textcolor{stringliteral}{". It is not as new as it once was"},
+    \textcolor{stringliteral}{". It is beginning to show its age"},
+    \textcolor{stringliteral}{". It has clearly seen a lot of use"},
+    \textcolor{stringliteral}{". It has seen more than its fair share of use"},
+    \textcolor{stringliteral}{". It is beyond any repair"}
+\}
+\end{DoxyCode}
