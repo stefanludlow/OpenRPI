@@ -11,6 +11,7 @@
 #include <unistd.h>
 #include <sys/stat.h>
 #include <math.h>
+#include <sstream>
 
 #include "structs.h"
 #include "protos.h"
@@ -5127,7 +5128,7 @@ void
 // or to just a keyword [in which case it matches the first in direction array index order
 int find_door (CHAR_DATA * ch, char *type, char *dir)
 {
-  ostringstream oss;
+  std::ostringstream oss;
   int dir_index = -1;
   struct room_direction_data *exit = NULL;
   

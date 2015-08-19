@@ -28,6 +28,7 @@
 
 #include <string>
 #include <stdio.h>
+#include <vector>
 
 #ifndef MACOSX
 #include <malloc.h>
@@ -38,7 +39,6 @@
 
 
 #include "clan.h"
-#include "BroadwaveClient.h"
 
 #ifndef uint16
 typedef unsigned short uint16;
@@ -78,7 +78,6 @@ extern char *mud_time_str;
 extern int world_version_in;
 extern int world_version_out;
 extern const int restricted_skills[];
-extern tBroadwave Broadwave;
 
 extern std::vector<arena_gladiators*> arena_gladiators_list;
 extern std::vector<arena_fights*> arena_fights_list;
@@ -534,7 +533,6 @@ void do_hour (CHAR_DATA * ch, char *argument, int cmd);
 void do_ic (CHAR_DATA * ch, char *argument, int cmd);
 void do_ichat (CHAR_DATA * ch, char *argument, int cmd);
 void do_idea (CHAR_DATA * ch, char *argument, int cmd);
-void do_broadwave (CHAR_DATA *ch, char * argument, int cmd);
 void do_immcommands (CHAR_DATA * ch, char *argument, int cmd);
 void do_immtell (CHAR_DATA * ch, char *argument, int cmd);
 void do_inside (CHAR_DATA * ch, char *argument, int cmd);

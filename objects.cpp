@@ -14,6 +14,9 @@
 #include <stdlib.h>
 #include <math.h>
 #include <ctype.h>
+#include <vector>
+#include <sstream>
+#include <string>
 
 #include "server.h"
 #include "structs.h"
@@ -3659,7 +3662,7 @@ void
 	third_person.append("#0");
 
 	bool tasted;
-	std:string taste;
+	std::string taste;
 
 	if (drink->ink_color && str_cmp(drink->ink_color, "(null)"))
 	{
@@ -3776,7 +3779,7 @@ void
 	third_person.append("#0");
 
 	bool tasted;
-	std:string taste;
+	std::string taste;
 
 	if (drink->ink_color && str_cmp(drink->ink_color, "(null)"))
 	{
@@ -7651,7 +7654,7 @@ void
 
 				j = 1;
 
-				vector<foraged_good*>::iterator it;
+				std::vector<foraged_good*>::iterator it;
 				for (it = foraged_goods_list.begin(); it != foraged_goods_list.end(); it++)
 				{
 					if ((*it)->sector != sector_type)
@@ -10532,7 +10535,7 @@ void
 		}
 	}
 
-	vector<foraged_good*>::iterator it;
+	std::vector<foraged_good*>::iterator it;
 	char forage_buf[MAX_STRING_LENGTH] = { '\0' };
 	for (it = foraged_goods_list.begin(); it != foraged_goods_list.end(); it++)
 	{

@@ -6952,7 +6952,7 @@ read_virtual_message (CHAR_DATA * ch, char *name, char *argument)
         return 1;
     }
 
-    ostringstream oss;
+    std::ostringstream oss;
     oss << "#6Date:#0     " <<  message->date << "\n"
 	<< "#6Author:#0   " << message->poster << "\n"
 	<< "#6Subject:#0  " << message->subject << "\n";

@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <cstring>
+#include <sstream>
 #include "structs.h"
 #include "net_link.h"
 #include "protos.h"
@@ -458,11 +459,7 @@ const struct command_data commands[] =
 	{"\\", do_ichat, DEAD, C_DOA | C_DEL | C_HID},
 	{"ichat", do_ichat, DEAD, C_DOA | C_DEL | C_HID},
 	{"wiznet", do_ichat, DEAD, C_DOA | C_DEL | C_HID},
-	{"broadwave", do_broadwave, DEAD, C_DOA | C_DEL | C_HID},
-	{"bwave", do_broadwave, DEAD, C_DOA | C_DEL | C_HID},
-	{"wizlist", do_wizlist, DEAD,
-		C_DEL | C_HID | C_SUB | C_DOA | C_BLD | C_PAR
-	},
+	{"wizlist", do_wizlist, DEAD,C_DEL | C_HID | C_SUB | C_DOA | C_BLD | C_PAR},
 
 	/* Basic Builder level 1: (basic commands, room and objects only) */
 	{"at", do_at, DEAD, C_LV1},
@@ -510,11 +507,6 @@ const struct command_data commands[] =
 	{"vmob", do_mvariables, DEAD, C_LV1},
 	{"variables", do_variables, DEAD, C_LV1},
 	{"zsave", do_zsave, DEAD, C_LV1},
-
-	/* Turf related commands */
-	{"turf", do_turf, DEAD, C_LV1},
-	{"immturf", do_immturf, DEAD, C_LV1},
-	{"setturf", do_setturf, DEAD, C_LV1},
 
 	/*Advanced Builder Level 2:  (mobs and crafts) */
 	{"classify", do_classify, DEAD, C_LV2},

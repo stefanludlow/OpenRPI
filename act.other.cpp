@@ -11,6 +11,7 @@
 #include <ctype.h>
 #include <time.h>
 #include <sstream>
+#include <iostream>
 
 #include "server.h"
 #include "structs.h"
@@ -209,7 +210,8 @@ sound_to_descriptor(DESCRIPTOR_DATA* d, const char* txt)
 	MSP_ON;
 	MSP_OK;
 
-	thisround = write(d->hSocketFD, txt, total);
+//	thisround = write(d->hSocketFD, txt, total);
+// \todo commented out above code. write was not declared in scope.
 	return 0;
 }
 

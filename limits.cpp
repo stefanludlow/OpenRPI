@@ -13,6 +13,7 @@
 #include <time.h>
 #include <ctype.h>
 #include <string.h>
+#include <stdexcept>
 
 #include "structs.h"
 #include "account.h"

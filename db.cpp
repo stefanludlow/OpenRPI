@@ -147,7 +147,6 @@ std::multimap< int, variable_data > obj_variable_list;
 std::multimap< int, std::string > variable_categories;
 std::multimap< int, mvariable_data > mvariable_list;
 std::multimap< int, std::string > mvariable_categories;
-tBroadwave Broadwave;
 
 ROOM_DATA * vnum_to_room( int room_vnum ) {
 	static ROOM_DATA * room = NULL;
@@ -465,9 +464,6 @@ void boot_db( void ) {
 
 	mm( "post boot variable lists" );
 
-	system_log( "Loading turf.", false );
-	load_turf_systems();
-	load_turf_hoods();
 
 	system_log( "Loading craft information.", false );
 	boot_crafts();
