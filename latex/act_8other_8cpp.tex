@@ -7,6 +7,7 @@
 {\ttfamily \#include $<$string.\-h$>$}\\*
 {\ttfamily \#include $<$ctype.\-h$>$}\\*
 {\ttfamily \#include $<$sstream$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
 {\ttfamily \#include \char`\"{}server.\-h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}structs.\-h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}net\-\_\-link.\-h\char`\"{}}\\*
@@ -243,13 +244,13 @@ std\-::multimap$<$ int, std\-::string $>$ \hyperlink{act_8other_8cpp_a388a9b052c
 \item 
 std\-::vector$<$ \hyperlink{structmonitor__data}{monitor\-\_\-data} $\ast$ $>$ \hyperlink{act_8other_8cpp_a139f4c42a4bd9b3688dcd936e27ad469}{monitor\-\_\-list}
 \item 
-char \hyperlink{act_8other_8cpp_a442e7468d5a246f499066f64e790a206}{msp\-\_\-sound\-\_\-on} \mbox{[}$\,$\mbox{]} = \{(char) \hyperlink{BroadwaveClient_8cpp_a8eebea7e67724c49a6f97c3215a7e72d}{I\-A\-C}, (char) \hyperlink{BroadwaveClient_8cpp_a5b0d9c9bc497a710de9cb73b3aaa8e0d}{W\-I\-L\-L}, (char) \hyperlink{act_8other_8cpp_ac3f12f4118c53e4c5ec95993f80d2829}{M\-S\-P}, '\textbackslash{}0'\}
+char \hyperlink{act_8other_8cpp_a442e7468d5a246f499066f64e790a206}{msp\-\_\-sound\-\_\-on} \mbox{[}$\,$\mbox{]} = \{(char) I\-A\-C, (char) W\-I\-L\-L, (char) \hyperlink{act_8other_8cpp_ac3f12f4118c53e4c5ec95993f80d2829}{M\-S\-P}, '\textbackslash{}0'\}
 \item 
-char \hyperlink{act_8other_8cpp_adab3c624bdee126f66373cb704597aa0}{msp\-\_\-sound\-\_\-off} \mbox{[}$\,$\mbox{]} = \{(char) \hyperlink{BroadwaveClient_8cpp_a8eebea7e67724c49a6f97c3215a7e72d}{I\-A\-C}, (char) \hyperlink{BroadwaveClient_8cpp_a4e7340b8cc2e3357e46e04f80256cfa1}{W\-O\-N\-T}, (char) \hyperlink{act_8other_8cpp_ac3f12f4118c53e4c5ec95993f80d2829}{M\-S\-P}, '\textbackslash{}0'\}
+char \hyperlink{act_8other_8cpp_adab3c624bdee126f66373cb704597aa0}{msp\-\_\-sound\-\_\-off} \mbox{[}$\,$\mbox{]} = \{(char) I\-A\-C, (char) W\-O\-N\-T, (char) \hyperlink{act_8other_8cpp_ac3f12f4118c53e4c5ec95993f80d2829}{M\-S\-P}, '\textbackslash{}0'\}
 \item 
-char \hyperlink{act_8other_8cpp_a728843a6406e7c623128363514bcfcda}{msp\-\_\-sound\-\_\-ok} \mbox{[}$\,$\mbox{]} = \{(char) \hyperlink{BroadwaveClient_8cpp_a8eebea7e67724c49a6f97c3215a7e72d}{I\-A\-C}, (char) \hyperlink{BroadwaveClient_8cpp_a89f8701562ac09bf5c1e58516124c500}{D\-O}, (char) \hyperlink{act_8other_8cpp_ac3f12f4118c53e4c5ec95993f80d2829}{M\-S\-P}, '\textbackslash{}0'\}
+char \hyperlink{act_8other_8cpp_a728843a6406e7c623128363514bcfcda}{msp\-\_\-sound\-\_\-ok} \mbox{[}$\,$\mbox{]} = \{(char) I\-A\-C, (char) D\-O, (char) \hyperlink{act_8other_8cpp_ac3f12f4118c53e4c5ec95993f80d2829}{M\-S\-P}, '\textbackslash{}0'\}
 \item 
-char \hyperlink{act_8other_8cpp_addb663ad2b8880e3d56a09e3b100da4f}{msp\-\_\-sound\-\_\-no} \mbox{[}$\,$\mbox{]} = \{(char) \hyperlink{BroadwaveClient_8cpp_a8eebea7e67724c49a6f97c3215a7e72d}{I\-A\-C}, (char) \hyperlink{BroadwaveClient_8cpp_a8dc667627b3d301fa5a8d63d478dd35b}{D\-O\-N\-T}, (char) \hyperlink{act_8other_8cpp_ac3f12f4118c53e4c5ec95993f80d2829}{M\-S\-P}, '\textbackslash{}0'\}
+char \hyperlink{act_8other_8cpp_addb663ad2b8880e3d56a09e3b100da4f}{msp\-\_\-sound\-\_\-no} \mbox{[}$\,$\mbox{]} = \{(char) I\-A\-C, (char) D\-O\-N\-T, (char) \hyperlink{act_8other_8cpp_ac3f12f4118c53e4c5ec95993f80d2829}{M\-S\-P}, '\textbackslash{}0'\}
 \item 
 const char $\ast$ \hyperlink{act_8other_8cpp_a777a8db542c01d0fcce4dd467cf72be9}{dorthonion\-\_\-trees} \mbox{[}$\,$\mbox{]}
 \item 
@@ -1127,16 +1128,16 @@ Check the necessity of this code. I believe it is a relic from a former implemen
 \subsubsection[{monitor\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf monitor\-\_\-data}$\ast$$>$ monitor\-\_\-list}}\label{act_8other_8cpp_a139f4c42a4bd9b3688dcd936e27ad469}
 \hypertarget{act_8other_8cpp_addb663ad2b8880e3d56a09e3b100da4f}{\index{act.\-other.\-cpp@{act.\-other.\-cpp}!msp\-\_\-sound\-\_\-no@{msp\-\_\-sound\-\_\-no}}
 \index{msp\-\_\-sound\-\_\-no@{msp\-\_\-sound\-\_\-no}!act.other.cpp@{act.\-other.\-cpp}}
-\subsubsection[{msp\-\_\-sound\-\_\-no}]{\setlength{\rightskip}{0pt plus 5cm}char msp\-\_\-sound\-\_\-no\mbox{[}$\,$\mbox{]} = \{(char) {\bf I\-A\-C}, (char) {\bf D\-O\-N\-T}, (char) {\bf M\-S\-P}, '\textbackslash{}0'\}}}\label{act_8other_8cpp_addb663ad2b8880e3d56a09e3b100da4f}
+\subsubsection[{msp\-\_\-sound\-\_\-no}]{\setlength{\rightskip}{0pt plus 5cm}char msp\-\_\-sound\-\_\-no\mbox{[}$\,$\mbox{]} = \{(char) I\-A\-C, (char) D\-O\-N\-T, (char) {\bf M\-S\-P}, '\textbackslash{}0'\}}}\label{act_8other_8cpp_addb663ad2b8880e3d56a09e3b100da4f}
 \hypertarget{act_8other_8cpp_adab3c624bdee126f66373cb704597aa0}{\index{act.\-other.\-cpp@{act.\-other.\-cpp}!msp\-\_\-sound\-\_\-off@{msp\-\_\-sound\-\_\-off}}
 \index{msp\-\_\-sound\-\_\-off@{msp\-\_\-sound\-\_\-off}!act.other.cpp@{act.\-other.\-cpp}}
-\subsubsection[{msp\-\_\-sound\-\_\-off}]{\setlength{\rightskip}{0pt plus 5cm}char msp\-\_\-sound\-\_\-off\mbox{[}$\,$\mbox{]} = \{(char) {\bf I\-A\-C}, (char) {\bf W\-O\-N\-T}, (char) {\bf M\-S\-P}, '\textbackslash{}0'\}}}\label{act_8other_8cpp_adab3c624bdee126f66373cb704597aa0}
+\subsubsection[{msp\-\_\-sound\-\_\-off}]{\setlength{\rightskip}{0pt plus 5cm}char msp\-\_\-sound\-\_\-off\mbox{[}$\,$\mbox{]} = \{(char) I\-A\-C, (char) W\-O\-N\-T, (char) {\bf M\-S\-P}, '\textbackslash{}0'\}}}\label{act_8other_8cpp_adab3c624bdee126f66373cb704597aa0}
 \hypertarget{act_8other_8cpp_a728843a6406e7c623128363514bcfcda}{\index{act.\-other.\-cpp@{act.\-other.\-cpp}!msp\-\_\-sound\-\_\-ok@{msp\-\_\-sound\-\_\-ok}}
 \index{msp\-\_\-sound\-\_\-ok@{msp\-\_\-sound\-\_\-ok}!act.other.cpp@{act.\-other.\-cpp}}
-\subsubsection[{msp\-\_\-sound\-\_\-ok}]{\setlength{\rightskip}{0pt plus 5cm}char msp\-\_\-sound\-\_\-ok\mbox{[}$\,$\mbox{]} = \{(char) {\bf I\-A\-C}, (char) {\bf D\-O}, (char) {\bf M\-S\-P}, '\textbackslash{}0'\}}}\label{act_8other_8cpp_a728843a6406e7c623128363514bcfcda}
+\subsubsection[{msp\-\_\-sound\-\_\-ok}]{\setlength{\rightskip}{0pt plus 5cm}char msp\-\_\-sound\-\_\-ok\mbox{[}$\,$\mbox{]} = \{(char) I\-A\-C, (char) D\-O, (char) {\bf M\-S\-P}, '\textbackslash{}0'\}}}\label{act_8other_8cpp_a728843a6406e7c623128363514bcfcda}
 \hypertarget{act_8other_8cpp_a442e7468d5a246f499066f64e790a206}{\index{act.\-other.\-cpp@{act.\-other.\-cpp}!msp\-\_\-sound\-\_\-on@{msp\-\_\-sound\-\_\-on}}
 \index{msp\-\_\-sound\-\_\-on@{msp\-\_\-sound\-\_\-on}!act.other.cpp@{act.\-other.\-cpp}}
-\subsubsection[{msp\-\_\-sound\-\_\-on}]{\setlength{\rightskip}{0pt plus 5cm}char msp\-\_\-sound\-\_\-on\mbox{[}$\,$\mbox{]} = \{(char) {\bf I\-A\-C}, (char) {\bf W\-I\-L\-L}, (char) {\bf M\-S\-P}, '\textbackslash{}0'\}}}\label{act_8other_8cpp_a442e7468d5a246f499066f64e790a206}
+\subsubsection[{msp\-\_\-sound\-\_\-on}]{\setlength{\rightskip}{0pt plus 5cm}char msp\-\_\-sound\-\_\-on\mbox{[}$\,$\mbox{]} = \{(char) I\-A\-C, (char) W\-I\-L\-L, (char) {\bf M\-S\-P}, '\textbackslash{}0'\}}}\label{act_8other_8cpp_a442e7468d5a246f499066f64e790a206}
 \hypertarget{act_8other_8cpp_a0648ea431a490ba9090b5a71a099283b}{\index{act.\-other.\-cpp@{act.\-other.\-cpp}!obj\-\_\-variable\-\_\-list@{obj\-\_\-variable\-\_\-list}}
 \index{obj\-\_\-variable\-\_\-list@{obj\-\_\-variable\-\_\-list}!act.other.cpp@{act.\-other.\-cpp}}
 \subsubsection[{obj\-\_\-variable\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}std\-::multimap$<$int, {\bf variable\-\_\-data}$>$ obj\-\_\-variable\-\_\-list}}\label{act_8other_8cpp_a0648ea431a490ba9090b5a71a099283b}

@@ -92,11 +92,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><code>#include &lt;string&gt;</code><br/>
 <code>#include &lt;stdio.h&gt;</code><br/>
+<code>#include &lt;vector&gt;</code><br/>
 <code>#include &lt;malloc.h&gt;</code><br/>
 <code>#include &lt;sys/time.h&gt;</code><br/>
 <code>#include &lt;mysql/mysql.h&gt;</code><br/>
 <code>#include &quot;<a class="el" href="clan_8h_source.html">clan.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="BroadwaveClient_8h_source.html">BroadwaveClient.h</a>&quot;</code><br/>
 </div>
 <p><a href="protos_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -535,8 +535,6 @@ Functions</h2></td></tr>
 <tr class="separator:a53cbbf1239038b1cb266547a475a853f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9a5502e4cf6ddce82cf48bc8848d595"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="protos_8h.html#aa9a5502e4cf6ddce82cf48bc8848d595">do_idea</a> (<a class="el" href="structs_8h.html#af33ed1e66e8541a08bed257124f50f31">CHAR_DATA</a> *ch, char *argument, int cmd)</td></tr>
 <tr class="separator:aa9a5502e4cf6ddce82cf48bc8848d595"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d7f0a4e4f7595dfb96c8b10cb000deb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="protos_8h.html#a8d7f0a4e4f7595dfb96c8b10cb000deb">do_broadwave</a> (<a class="el" href="structs_8h.html#af33ed1e66e8541a08bed257124f50f31">CHAR_DATA</a> *ch, char *argument, int cmd)</td></tr>
-<tr class="separator:a8d7f0a4e4f7595dfb96c8b10cb000deb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa92d940911876349e5f9e03dd7c450b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="protos_8h.html#aa92d940911876349e5f9e03dd7c450b3">do_immcommands</a> (<a class="el" href="structs_8h.html#af33ed1e66e8541a08bed257124f50f31">CHAR_DATA</a> *ch, char *argument, int cmd)</td></tr>
 <tr class="separator:aa92d940911876349e5f9e03dd7c450b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae84db2d1d5695180adb0bd5249ce3dc0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="protos_8h.html#ae84db2d1d5695180adb0bd5249ce3dc0">do_immtell</a> (<a class="el" href="structs_8h.html#af33ed1e66e8541a08bed257124f50f31">CHAR_DATA</a> *ch, char *argument, int cmd)</td></tr>
@@ -3331,8 +3329,6 @@ Variables</h2></td></tr>
 <tr class="separator:a7027891e874f6e9401a682b07afb4199"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a046c8fe80895108ea45909e188946904"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="protos_8h.html#a046c8fe80895108ea45909e188946904">restricted_skills</a> []</td></tr>
 <tr class="separator:a046c8fe80895108ea45909e188946904"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a0eda10d7fd6cd96b4b080bfd82e153"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtBroadwave.html">tBroadwave</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="protos_8h.html#a9a0eda10d7fd6cd96b4b080bfd82e153">Broadwave</a></td></tr>
-<tr class="separator:a9a0eda10d7fd6cd96b4b080bfd82e153"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62b083c9d653a8867ba2f496cccc07dc"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classarena__gladiators.html">arena_gladiators</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="protos_8h.html#a62b083c9d653a8867ba2f496cccc07dc">arena_gladiators_list</a></td></tr>
 <tr class="separator:a62b083c9d653a8867ba2f496cccc07dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a151aa5fbb04e8ccc92d06102864e73ce"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classarena__fights.html">arena_fights</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="protos_8h.html#a151aa5fbb04e8ccc92d06102864e73ce">arena_fights_list</a></td></tr>
@@ -13263,38 +13259,6 @@ Return to the caller after the message has been sent to any recipients  </li>
       <table class="memname">
         <tr>
           <td class="memname">void do_broadcast </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structs_8h.html#af33ed1e66e8541a08bed257124f50f31">CHAR_DATA</a> *&#160;</td>
-          <td class="paramname"><em>ch</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>argument</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>cmd</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a8d7f0a4e4f7595dfb96c8b10cb000deb"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void do_broadwave </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structs_8h.html#af33ed1e66e8541a08bed257124f50f31">CHAR_DATA</a> *&#160;</td>
           <td class="paramname"><em>ch</em>, </td>
@@ -46841,18 +46805,6 @@ Return to the caller after the message has been sent to any recipients  </li>
 
 </div>
 </div>
-<a class="anchor" id="a9a0eda10d7fd6cd96b4b080bfd82e153"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classtBroadwave.html">tBroadwave</a> Broadwave</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="ada6662d650828d4536134390dcf746b3"></a>
 <div class="memitem">
 <div class="memproto">
@@ -49592,7 +49544,7 @@ Return to the caller after the message has been sent to any recipients  </li>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 17 2015 22:02:23 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 18 2015 21:38:48 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

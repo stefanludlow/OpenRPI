@@ -30,7 +30,6 @@ var searchData=
   ['load_5fexact_5fcolor',['LOAD_EXACT_COLOR',['../utils_8h.html#acf75ed68bffa6a24cf55b05d4572bb6d',1,'utils.h']]],
   ['location',['LOCATION',['../structs_8h.html#ac27b81440ce6781d5bfcab7a9bbdef99',1,'structs.h']]],
   ['looking_5ffor',['LOOKING_FOR',['../auctions_8cpp.html#ae7a45c92fd76efafe099350822e58150',1,'auctions.cpp']]],
-  ['love',['LOVE',['../turf_8h.html#a8e05dd913115a4129a7f7bedf59f765c',1,'turf.h']]],
   ['low',['LOW',['../utils_8h.html#a03f2bcaf4b7c01c302b7632570858b8d',1,'utils.h']]],
   ['lowair',['LOWAIR',['../structs_8h.html#a82da2c39e90dafc407e66c92a24b8222',1,'structs.h']]]
 ];

@@ -20,7 +20,6 @@ var searchData=
   ['fbullet',['fBULLET',['../structs_8h.html#a8a44c4368168d2172f68417ee8bdd36b',1,'structs.h']]],
   ['fclose',['fclose',['../decl_8h.html#a8b9c3a533b9c6429d63aa0a970fb214c',1,'decl.h']]],
   ['fdesc',['fdesc',['../structmob__variable__data.html#a08e2b2ce07fcbbd4bb86c9fb2f359298',1,'mob_variable_data']]],
-  ['fear',['FEAR',['../turf_8h.html#a65e0be0d1c4c968a42dd5b3c539d27a6',1,'turf.h']]],
   ['feature_5flist',['feature_list',['../create__mobile_8cpp.html#aee1f0f5934f86ce99c962f2068870147',1,'feature_list():&#160;create_mobile.cpp'],['../protos_8h.html#aee1f0f5934f86ce99c962f2068870147',1,'feature_list():&#160;create_mobile.cpp']]],
   ['fellow',['FELLOW',['../structs_8h.html#ad8a168313c233436995423841a9c26fc',1,'structs.h']]],
   ['fem_5fages',['fem_ages',['../create__mobile_8cpp.html#acf6b82905d49d39ac71e747729ae21a1',1,'fem_ages():&#160;create_mobile.cpp'],['../protos_8h.html#acf6b82905d49d39ac71e747729ae21a1',1,'fem_ages():&#160;create_mobile.cpp']]],

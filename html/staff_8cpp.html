@@ -102,6 +102,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &lt;sys/stat.h&gt;</code><br/>
 <code>#include &lt;mysql/mysql.h&gt;</code><br/>
 <code>#include &lt;limits.h&gt;</code><br/>
+<code>#include &lt;vector&gt;</code><br/>
+<code>#include &lt;string&gt;</code><br/>
 <code>#include &quot;<a class="el" href="server_8h_source.html">server.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="structs_8h_source.html">structs.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="net__link_8h_source.html">net_link.h</a>&quot;</code><br/>
@@ -198,8 +200,6 @@ Functions</h2></td></tr>
 <tr class="separator:ab6be93db07f3e8372e2b34952273c4ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa47a6f0eb0eed7d65ad5d4a41629860a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="staff_8cpp.html#aa47a6f0eb0eed7d65ad5d4a41629860a">do_disconnect</a> (<a class="el" href="structs_8h.html#af33ed1e66e8541a08bed257124f50f31">CHAR_DATA</a> *ch, char *argument, int cmd)</td></tr>
 <tr class="separator:aa47a6f0eb0eed7d65ad5d4a41629860a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d7f0a4e4f7595dfb96c8b10cb000deb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="staff_8cpp.html#a8d7f0a4e4f7595dfb96c8b10cb000deb">do_broadwave</a> (<a class="el" href="structs_8h.html#af33ed1e66e8541a08bed257124f50f31">CHAR_DATA</a> *ch, char *argument, int cmd)</td></tr>
-<tr class="separator:a8d7f0a4e4f7595dfb96c8b10cb000deb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6fb881ae3944c85d39a639a44ba6a929"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="staff_8cpp.html#a6fb881ae3944c85d39a639a44ba6a929">do_ban</a> (<a class="el" href="structs_8h.html#af33ed1e66e8541a08bed257124f50f31">CHAR_DATA</a> *ch, char *argument, int cmd)</td></tr>
 <tr class="separator:a6fb881ae3944c85d39a639a44ba6a929"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af1969ebdddb41f0493be2303d5e04900"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="staff_8cpp.html#af1969ebdddb41f0493be2303d5e04900">personalize_echo_string</a> (<a class="el" href="structs_8h.html#af33ed1e66e8541a08bed257124f50f31">CHAR_DATA</a> *src, <a class="el" href="structs_8h.html#af33ed1e66e8541a08bed257124f50f31">CHAR_DATA</a> *tar, char *emote)</td></tr>
@@ -1523,38 +1523,6 @@ Variables</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">void do_broadcast </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structs_8h.html#af33ed1e66e8541a08bed257124f50f31">CHAR_DATA</a> *&#160;</td>
-          <td class="paramname"><em>ch</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>argument</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>cmd</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a8d7f0a4e4f7595dfb96c8b10cb000deb"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void do_broadwave </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structs_8h.html#af33ed1e66e8541a08bed257124f50f31">CHAR_DATA</a> *&#160;</td>
           <td class="paramname"><em>ch</em>, </td>
@@ -5222,7 +5190,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 17 2015 22:02:23 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 18 2015 21:38:48 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

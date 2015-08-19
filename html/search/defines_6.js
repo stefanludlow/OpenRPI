@@ -2,7 +2,6 @@ var searchData=
 [
   ['fall',['FALL',['../structs_8h.html#af7adfe18f66075cb14809924787eff80',1,'structs.h']]],
   ['fbullet',['fBULLET',['../structs_8h.html#a8a44c4368168d2172f68417ee8bdd36b',1,'structs.h']]],
-  ['fear',['FEAR',['../turf_8h.html#a65e0be0d1c4c968a42dd5b3c539d27a6',1,'turf.h']]],
   ['fellow',['FELLOW',['../structs_8h.html#ad8a168313c233436995423841a9c26fc',1,'structs.h']]],
   ['fight',['FIGHT',['../structs_8h.html#a7f0f49f349d8a6d2e1660672cd1f3445',1,'structs.h']]],
   ['find_5fchar_5froom',['FIND_CHAR_ROOM',['../structs_8h.html#a39617a4152df40403fcc64c0c74fadc3',1,'structs.h']]],

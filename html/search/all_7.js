@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['ga',['GA',['../BroadwaveClient_8cpp.html#aee72d049d05c4a0b3b152799d34667b4',1,'BroadwaveClient.cpp']]],
   ['gain_5fcondition',['gain_condition',['../protos_8h.html#a46dd4d61f9b1faec30dc3c7a8bfd8b09',1,'protos.h']]],
   ['gale',['GALE',['../weather_8h.html#ac8a11cda50e327cef399b96e21ea147fae881d935d3cac534b5f803a1f7a0d2c2',1,'weather.h']]],
   ['game_5fbase_5fyear',['GAME_BASE_YEAR',['../structs_8h.html#a669fd3334f8ca5bc809327d1eeec5064',1,'structs.h']]],
@@ -131,7 +130,7 @@ var searchData=
   ['get_5fobj_5fweight',['GET_OBJ_WEIGHT',['../utils_8h.html#ab51b3fdaaad6406929abd2527c5c455f',1,'utils.h']]],
   ['get_5fobject_5fin_5fequip_5fvis',['get_object_in_equip_vis',['../protos_8h.html#a690e3f2a0bb28554aa2f2052fd606aff',1,'protos.h']]],
   ['get_5foffense',['GET_OFFENSE',['../utils_8h.html#a0a6b654e014672680db213a00b773636',1,'utils.h']]],
-  ['get_5fpage_5foval',['get_page_oval',['../protos_8h.html#a3c5a9b8c05d14542969549a2c76d8cde',1,'get_page_oval(OBJ_DATA *obj):&#160;utility.cpp'],['../utility_8cpp.html#a3c5a9b8c05d14542969549a2c76d8cde',1,'get_page_oval(OBJ_DATA *obj):&#160;utility.cpp'],['../utils_8h.html#adc31c9c147afd863e16aa2c4b1d76949',1,'GET_PAGE_OVAL():&#160;utils.h']]],
+  ['get_5fpage_5foval',['GET_PAGE_OVAL',['../utils_8h.html#adc31c9c147afd863e16aa2c4b1d76949',1,'GET_PAGE_OVAL():&#160;utils.h'],['../protos_8h.html#a3c5a9b8c05d14542969549a2c76d8cde',1,'get_page_oval(OBJ_DATA *obj):&#160;utility.cpp'],['../utility_8cpp.html#a3c5a9b8c05d14542969549a2c76d8cde',1,'get_page_oval(OBJ_DATA *obj):&#160;utility.cpp']]],
   ['get_5fpassword_5fsql_5fsafe',['get_password_sql_safe',['../classaccount.html#a2c96518fefa89811fe96c5778c300acd',1,'account']]],
   ['get_5fpc',['get_pc',['../protos_8h.html#ae6782b4b56dc4359a1c25314a8b5850a',1,'get_pc(char *buf):&#160;utility.cpp'],['../utility_8cpp.html#ae6782b4b56dc4359a1c25314a8b5850a',1,'get_pc(char *buf):&#160;utility.cpp']]],
   ['get_5fpc_5fdead',['get_pc_dead',['../utility_8cpp.html#a7d36fcbe554dc1c496fc7166e3aa138e',1,'utility.cpp']]],

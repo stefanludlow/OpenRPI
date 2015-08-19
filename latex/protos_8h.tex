@@ -3,11 +3,11 @@
 }
 {\ttfamily \#include $<$string$>$}\\*
 {\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
 {\ttfamily \#include $<$malloc.\-h$>$}\\*
 {\ttfamily \#include $<$sys/time.\-h$>$}\\*
 {\ttfamily \#include $<$mysql/mysql.\-h$>$}\\*
 {\ttfamily \#include \char`\"{}clan.\-h\char`\"{}}\\*
-{\ttfamily \#include \char`\"{}Broadwave\-Client.\-h\char`\"{}}\\*
 \subsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
@@ -442,8 +442,6 @@ void \hyperlink{protos_8h_a809303d740334b5898522fe4c5aee471}{do\-\_\-ic} (\hyper
 void \hyperlink{protos_8h_a53cbbf1239038b1cb266547a475a853f}{do\-\_\-ichat} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
 \item 
 void \hyperlink{protos_8h_aa9a5502e4cf6ddce82cf48bc8848d595}{do\-\_\-idea} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
-\item 
-void \hyperlink{protos_8h_a8d7f0a4e4f7595dfb96c8b10cb000deb}{do\-\_\-broadwave} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
 \item 
 void \hyperlink{protos_8h_aa92d940911876349e5f9e03dd7c450b3}{do\-\_\-immcommands} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
 \item 
@@ -3237,8 +3235,6 @@ int \hyperlink{protos_8h_af19b4f678cf0f218636f90cc002e9bed}{world\-\_\-version\-
 int \hyperlink{protos_8h_a7027891e874f6e9401a682b07afb4199}{world\-\_\-version\-\_\-out}
 \item 
 const int \hyperlink{protos_8h_a046c8fe80895108ea45909e188946904}{restricted\-\_\-skills} \mbox{[}$\,$\mbox{]}
-\item 
-\hyperlink{classtBroadwave}{t\-Broadwave} \hyperlink{protos_8h_a9a0eda10d7fd6cd96b4b080bfd82e153}{Broadwave}
 \item 
 std\-::vector$<$ \hyperlink{classarena__gladiators}{arena\-\_\-gladiators} $\ast$ $>$ \hyperlink{protos_8h_a62b083c9d653a8867ba2f496cccc07dc}{arena\-\_\-gladiators\-\_\-list}
 \item 
@@ -6873,15 +6869,6 @@ Poor healers try hard, but they can't do much more than stop the bleeding and so
 \item[{int}]{cmd}
 \end{DoxyParamCaption}
 )}}\label{protos_8h_ae04d0c3cf5c429ac066af98499715231}
-\hypertarget{protos_8h_a8d7f0a4e4f7595dfb96c8b10cb000deb}{\index{protos.\-h@{protos.\-h}!do\-\_\-broadwave@{do\-\_\-broadwave}}
-\index{do\-\_\-broadwave@{do\-\_\-broadwave}!protos.h@{protos.\-h}}
-\subsubsection[{do\-\_\-broadwave}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-broadwave (
-\begin{DoxyParamCaption}
-\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
-\item[{char $\ast$}]{argument, }
-\item[{int}]{cmd}
-\end{DoxyParamCaption}
-)}}\label{protos_8h_a8d7f0a4e4f7595dfb96c8b10cb000deb}
 \hypertarget{protos_8h_af4f50c076ffd586134ee00e7289e21b4}{\index{protos.\-h@{protos.\-h}!do\-\_\-buck@{do\-\_\-buck}}
 \index{do\-\_\-buck@{do\-\_\-buck}!protos.h@{protos.\-h}}
 \subsubsection[{do\-\_\-buck}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-buck (
@@ -17295,9 +17282,6 @@ requires weather \hypertarget{protos_8h_a36a0a991b0135103ed0bbc0bbcc5c63d}{\inde
 \hypertarget{protos_8h_a8087ac0f02a7970c8f87da5f5c082cbf}{\index{protos.\-h@{protos.\-h}!B\-O\-O\-T@{B\-O\-O\-T}}
 \index{B\-O\-O\-T@{B\-O\-O\-T}!protos.h@{protos.\-h}}
 \subsubsection[{B\-O\-O\-T}]{\setlength{\rightskip}{0pt plus 5cm}char B\-O\-O\-T\mbox{[}$\,$\mbox{]}}}\label{protos_8h_a8087ac0f02a7970c8f87da5f5c082cbf}
-\hypertarget{protos_8h_a9a0eda10d7fd6cd96b4b080bfd82e153}{\index{protos.\-h@{protos.\-h}!Broadwave@{Broadwave}}
-\index{Broadwave@{Broadwave}!protos.h@{protos.\-h}}
-\subsubsection[{Broadwave}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-Broadwave} Broadwave}}\label{protos_8h_a9a0eda10d7fd6cd96b4b080bfd82e153}
 \hypertarget{protos_8h_ada6662d650828d4536134390dcf746b3}{\index{protos.\-h@{protos.\-h}!calibers@{calibers}}
 \index{calibers@{calibers}!protos.h@{protos.\-h}}
 \subsubsection[{calibers}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ calibers\mbox{[}$\,$\mbox{]}}}\label{protos_8h_ada6662d650828d4536134390dcf746b3}

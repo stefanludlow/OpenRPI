@@ -6,7 +6,6 @@ var searchData=
   ['target_5fsighted',['target_sighted',['../act_8informative_8cpp.html#a0ba88c4cf6be5a5b9e68f22d62dcc617',1,'target_sighted(CHAR_DATA *ch, CHAR_DATA *target):&#160;act.informative.cpp'],['../protos_8h.html#a0ba88c4cf6be5a5b9e68f22d62dcc617',1,'target_sighted(CHAR_DATA *ch, CHAR_DATA *target):&#160;act.informative.cpp']]],
   ['target_5fsighted_5freaction',['target_sighted_reaction',['../act_8informative_8cpp.html#a97792f33634a97003a9eb254629305ea',1,'target_sighted_reaction(CHAR_DATA *ch, CHAR_DATA *target):&#160;act.informative.cpp'],['../protos_8h.html#a97792f33634a97003a9eb254629305ea',1,'target_sighted_reaction(CHAR_DATA *ch, CHAR_DATA *target):&#160;act.informative.cpp']]],
   ['tashal_5fprisoner_5frelease',['tashal_prisoner_release',['../protos_8h.html#aa8f3ab19e5e40b9933f3d271f14b7197',1,'protos.h']]],
-  ['tbroadwave',['tBroadwave',['../classtBroadwave.html#a49e6459acc422e1e50ea686dc57d2908',1,'tBroadwave']]],
   ['teach_5fskill',['teach_skill',['../act_8other_8cpp.html#aa583caa2fbadaf170d4d262be1cc8e6a',1,'act.other.cpp']]],
   ['temproom',['temproom',['../protos_8h.html#a87ec18bfd2ccaa9f5b64bbc34e1c21ac',1,'protos.h']]],
   ['ten_5fsecond_5fupdate',['ten_second_update',['../act_8other_8cpp.html#a52108a603753e8a95e75e69f287d6d67',1,'ten_second_update(void):&#160;act.other.cpp'],['../protos_8h.html#a52108a603753e8a95e75e69f287d6d67',1,'ten_second_update(void):&#160;act.other.cpp']]],
@@ -70,7 +69,6 @@ var searchData=
   ['trigger_5fsay',['trigger_say',['../protos_8h.html#aba67934a061cd91f2a2d6a0ca100bd75',1,'protos.h']]],
   ['trim',['trim',['../classStringstack.html#ad7a1dcd59e92618fc6a52bba41e5854c',1,'Stringstack']]],
   ['try_5fload_5fchar',['try_load_char',['../protos_8h.html#ac6ab1dbca229c7277f60f74c4a265d04',1,'protos.h']]],
-  ['turf_5fupdate',['turf_update',['../turf_8cpp.html#abac70a09902ae961ed9a4cb4c3e1472c',1,'turf_update(void):&#160;turf.cpp'],['../turf_8h.html#abac70a09902ae961ed9a4cb4c3e1472c',1,'turf_update(void):&#160;turf.cpp']]],
   ['turfsystem',['TurfSystem',['../classTurfSystem.html#a3e827914ebf7414a6ff27c0371e33700',1,'TurfSystem']]],
   ['turnreport',['turnReport',['../classTurfSystem.html#a734bb47ddd51a3376b48d18d88d4514b',1,'TurfSystem']]],
   ['type_5fto_5fspell_5fname',['type_to_spell_name',['../protos_8h.html#aac12f3085292e49bb5fe026e0a898b5b',1,'type_to_spell_name(int type):&#160;utility.cpp'],['../utility_8cpp.html#aac12f3085292e49bb5fe026e0a898b5b',1,'type_to_spell_name(int type):&#160;utility.cpp']]]

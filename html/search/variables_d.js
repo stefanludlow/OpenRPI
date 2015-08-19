@@ -7,7 +7,6 @@ var searchData=
   ['natural_5fdelay',['natural_delay',['../structchar__data.html#a02326e2a714aa8c6500289ceda8a3ec0',1,'char_data::natural_delay()'],['../structrace__data.html#aa66a491ce4b1d0643a8437932791f7fb',1,'race_data::natural_delay()']]],
   ['ncraftminutes',['nCraftMinutes',['../structrepair__data.html#aaf9cb30501da0fcdd9ec2d3a7f046163',1,'repair_data']]],
   ['negotiations',['negotiations',['../structshop__data.html#a6533f81eb5c76904b1010f2a1712169d',1,'shop_data']]],
-  ['neighbourhoods',['Neighbourhoods',['../turf_8cpp.html#a7a520abe7bd1045b5eec7ee3f17636ba',1,'Neighbourhoods():&#160;turf.cpp'],['../turf_8h.html#a7a520abe7bd1045b5eec7ee3f17636ba',1,'Neighbourhoods():&#160;turf.cpp']]],
   ['new_5faccounts',['new_accounts',['../nanny_8cpp.html#a2a7ff9fd395ce14c00492768a957636a',1,'new_accounts():&#160;nanny.cpp'],['../protos_8h.html#a2a7ff9fd395ce14c00492768a957636a',1,'new_accounts():&#160;nanny.cpp']]],
   ['new_5fauctions',['new_auctions',['../auctions_8cpp.html#afdd1db36b411d65b9b284b0c22d4823b',1,'new_auctions():&#160;auctions.cpp'],['../comm_8cpp.html#afdd1db36b411d65b9b284b0c22d4823b',1,'new_auctions():&#160;auctions.cpp'],['../protos_8h.html#afdd1db36b411d65b9b284b0c22d4823b',1,'new_auctions():&#160;auctions.cpp']]],
   ['new_5fname',['new_name',['../structname__switch__data.html#a1678ec4303dcc6a0b0b1a23ba293cd53',1,'name_switch_data']]],

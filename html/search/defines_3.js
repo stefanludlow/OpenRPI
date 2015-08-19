@@ -90,7 +90,6 @@ var searchData=
   ['combat_5fdisplay',['COMBAT_DISPLAY',['../structs_8h.html#affeac09d9ede83c80b899adcea36e26d',1,'structs.h']]],
   ['combat_5ffilter',['COMBAT_FILTER',['../structs_8h.html#a94381024a44496cbe65fb44b5c86da22',1,'structs.h']]],
   ['comment_5fhelp',['COMMENT_HELP',['../structs_8h.html#a556afdbc38a14d8a94c7cdecdedcdecb',1,'structs.h']]],
-  ['compress2',['COMPRESS2',['../BroadwaveClient_8cpp.html#ab5d007fcc5446670d675eb92f4167b8a',1,'BroadwaveClient.cpp']]],
   ['constitution_5fmultiplier',['CONSTITUTION_MULTIPLIER',['../constants_8h.html#a2bc6224c7b8a8bcd7cc4e0d156d3dba7',1,'constants.h']]],
   ['cont_5fbeheaded',['CONT_BEHEADED',['../structs_8h.html#a2ce0541302c70e79998e9905d3b40bfa',1,'structs.h']]],
   ['cont_5fcloseable',['CONT_CLOSEABLE',['../structs_8h.html#ac8e52b714022b40ab1c0cb38cba8279d',1,'structs.h']]],

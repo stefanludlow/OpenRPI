@@ -25,9 +25,5 @@ var searchData=
   ['board_5fdir',['BOARD_DIR',['../structs_8h.html#ab732d6ab8aa3465828953855007ef7b4',1,'structs.h']]],
   ['brawl',['BRAWL',['../structs_8h.html#a0f76f1c6a9d21f95aaf624a6173d6e97',1,'structs.h']]],
   ['brief_5fmode',['BRIEF_MODE',['../structs_8h.html#adb41249a715f2dd6c286d782da979d24',1,'structs.h']]],
-  ['broadwave_5fip',['BROADWAVE_IP',['../BroadwaveClient_8h.html#aefbaabfe76731941f769f0d7a1c27ccf',1,'BroadwaveClient.h']]],
-  ['broadwave_5fpassword',['BROADWAVE_PASSWORD',['../BroadwaveClient_8h.html#a34d4e65de321746232496212a974e6a7',1,'BroadwaveClient.h']]],
-  ['broadwave_5fport',['BROADWAVE_PORT',['../BroadwaveClient_8h.html#a762da26cab7104a17aa24a1c2886ce36',1,'BroadwaveClient.h']]],
-  ['broadwave_5fusername',['BROADWAVE_USERNAME',['../BroadwaveClient_8h.html#acbda98d731a2e29da1c3f86d3b23681b',1,'BroadwaveClient.h']]],
   ['buyout_5faccepted',['BUYOUT_ACCEPTED',['../auctions_8cpp.html#af59cc176a9ebb6a69fb1d082d54bcb19',1,'auctions.cpp']]]
 ];

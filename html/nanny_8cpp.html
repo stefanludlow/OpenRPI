@@ -325,7 +325,7 @@ Functions</h2></td></tr>
 Variables</h2></td></tr>
 <tr class="memitem:a55c71990ee4162ebec6abe401996cf15"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrpie_1_1server.html">rpie::server</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nanny_8cpp.html#a55c71990ee4162ebec6abe401996cf15">engine</a></td></tr>
 <tr class="separator:a55c71990ee4162ebec6abe401996cf15"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb07f7777c2ecbebef204cf7935c79e6"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nanny_8cpp.html#abb07f7777c2ecbebef204cf7935c79e6">echo_off_str</a> [] = { (char) <a class="el" href="BroadwaveClient_8cpp.html#a8eebea7e67724c49a6f97c3215a7e72d">IAC</a>, (char) <a class="el" href="BroadwaveClient_8cpp.html#a5b0d9c9bc497a710de9cb73b3aaa8e0d">WILL</a>, (char) TELOPT_ECHO, '\0' }</td></tr>
+<tr class="memitem:abb07f7777c2ecbebef204cf7935c79e6"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nanny_8cpp.html#abb07f7777c2ecbebef204cf7935c79e6">echo_off_str</a> [] = { (char) IAC, (char) WILL, (char) TELOPT_ECHO, '\0' }</td></tr>
 <tr class="separator:abb07f7777c2ecbebef204cf7935c79e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f027825b0546ad253ae2406b4b938d3"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nanny_8cpp.html#a5f027825b0546ad253ae2406b4b938d3">echo_on_str</a> []</td></tr>
 <tr class="separator:a5f027825b0546ad253ae2406b4b938d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2801,7 +2801,7 @@ if ( tyme_passed &gt; 100 &amp;&amp; tyme_passed &lt; 21600 ) // more than 100 f
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">char echo_off_str[] = { (char) <a class="el" href="BroadwaveClient_8cpp.html#a8eebea7e67724c49a6f97c3215a7e72d">IAC</a>, (char) <a class="el" href="BroadwaveClient_8cpp.html#a5b0d9c9bc497a710de9cb73b3aaa8e0d">WILL</a>, (char) TELOPT_ECHO, '\0' }</td>
+          <td class="memname">char echo_off_str[] = { (char) IAC, (char) WILL, (char) TELOPT_ECHO, '\0' }</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -2817,11 +2817,9 @@ if ( tyme_passed &gt; 100 &amp;&amp; tyme_passed &lt; 21600 ) // more than 100 f
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= { (char) <a class="code" href="BroadwaveClient_8cpp.html#a8eebea7e67724c49a6f97c3215a7e72d">IAC</a>, (<span class="keywordtype">char</span>) <a class="code" href="BroadwaveClient_8cpp.html#a4e7340b8cc2e3357e46e04f80256cfa1">WONT</a>, (char) TELOPT_ECHO,</div>
+<b>Initial value:</b><div class="fragment"><div class="line">= { (char) IAC, (<span class="keywordtype">char</span>) WONT, (char) TELOPT_ECHO,</div>
 <div class="line">                       <span class="charliteral">&#39;\r&#39;</span>, <span class="charliteral">&#39;\n&#39;</span>, <span class="charliteral">&#39;\0&#39;</span></div>
 <div class="line">                     }</div>
-<div class="ttc" id="BroadwaveClient_8cpp_html_a8eebea7e67724c49a6f97c3215a7e72d"><div class="ttname"><a href="BroadwaveClient_8cpp.html#a8eebea7e67724c49a6f97c3215a7e72d">IAC</a></div><div class="ttdeci">#define IAC</div><div class="ttdef"><b>Definition:</b> BroadwaveClient.cpp:16</div></div>
-<div class="ttc" id="BroadwaveClient_8cpp_html_a4e7340b8cc2e3357e46e04f80256cfa1"><div class="ttname"><a href="BroadwaveClient_8cpp.html#a4e7340b8cc2e3357e46e04f80256cfa1">WONT</a></div><div class="ttdeci">#define WONT</div><div class="ttdef"><b>Definition:</b> BroadwaveClient.cpp:13</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2868,7 +2866,7 @@ if ( tyme_passed &gt; 100 &amp;&amp; tyme_passed &lt; 21600 ) // more than 100 f
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 17 2015 22:02:22 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 18 2015 21:38:47 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

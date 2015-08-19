@@ -51,7 +51,6 @@ var searchData=
   ['bot_5fbits',['bot_bits',['../structrace__data.html#a647bbc5bd551b8fcec36a20586e8b6c3',1,'race_data']]],
   ['break_5fdef',['break_def',['../fight_8cpp.html#a44823cb4b5892d2c77831850056e6306',1,'fight.cpp']]],
   ['breaks',['breaks',['../structstats__data.html#a5d0d327b625586d49304613246db3c4e',1,'stats_data']]],
-  ['broadwave',['Broadwave',['../db_8cpp.html#a9a0eda10d7fd6cd96b4b080bfd82e153',1,'Broadwave():&#160;db.cpp'],['../protos_8h.html#a9a0eda10d7fd6cd96b4b080bfd82e153',1,'Broadwave():&#160;db.cpp']]],
   ['bt',['bt',['../structcbt.html#acb61cec983ee9409da61c5fbb4c75749',1,'cbt']]],
   ['buf',['buf',['../structdescriptor__data.html#ac2c42749928a0918eb951a0195190b88',1,'descriptor_data']]],
   ['bullet',['bullet',['../unionobj__info.html#acf2324b3d090ccafc9bf528a2165cabc',1,'obj_info']]],

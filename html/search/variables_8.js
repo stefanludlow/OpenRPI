@@ -19,7 +19,6 @@ var searchData=
   ['info',['info',['../structmessage__data.html#af31540c3a3a2deea7204404d96514edd',1,'message_data::info()'],['../structsecond__affect.html#ab92fc06ae75014b5bf4d66270176b2c8',1,'second_affect::info()'],['../structhelp__info.html#a7e6e76d90ae4aeb1db48cee1eeee33d8',1,'help_info::info()']]],
   ['info2',['info2',['../structsecond__affect.html#acf12f75277cf3a76670c8ed0e647c7e1',1,'second_affect']]],
   ['initial',['initial',['../structgroup__data.html#a43dac1515f8e79344686fd54792a40da',1,'group_data']]],
-  ['initialised',['initialised',['../classtBroadwave.html#a870c289fd02820e7398ee604675c9783',1,'tBroadwave::initialised()'],['../BroadwaveClient_8cpp.html#add529d9b40461ec4b6b4f2e2eb8c7d48',1,'initialised():&#160;BroadwaveClient.cpp']]],
   ['ink',['ink',['../structwriting__data.html#ae6042cc8593e6b92b63704ba71a38adb',1,'writing_data']]],
   ['ink_5fcolor',['ink_color',['../structobj__data.html#a7762dc7230f9183a9a3fb097cae7c37f',1,'obj_data']]],
   ['innate_5fabilities',['innate_abilities',['../structrace__data.html#aabfad44caae33643060e721cb53a0120',1,'race_data']]],

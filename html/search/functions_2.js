@@ -20,6 +20,5 @@ var searchData=
   ['branching_5fcheck',['branching_check',['../crafts_8cpp.html#aa24943ce784d46e0d0c71a89b030588a',1,'crafts.cpp']]],
   ['break_5fdelay',['break_delay',['../handler_8cpp.html#a3fdd993f769032b34260fe87981e3e04',1,'break_delay(CHAR_DATA *ch):&#160;handler.cpp'],['../protos_8h.html#a5aedc1afed0decabda95c261acb8666f',1,'break_delay(struct char_data *ch):&#160;handler.cpp']]],
   ['breath_5fbar',['breath_bar',['../act_8informative_8cpp.html#adaddd1776807ac62f07ec842c69a5f11',1,'breath_bar(CHAR_DATA *ch, bool prompt):&#160;act.informative.cpp'],['../protos_8h.html#ae22a3d05c2cce67fee238623499003c5',1,'breath_bar(CHAR_DATA *ch, bool prompt=true):&#160;act.informative.cpp']]],
-  ['broadcastbroadwave',['broadcastBroadwave',['../classtBroadwave.html#a0c5a7502622dbc6e5250787c60994be6',1,'tBroadwave']]],
   ['broke_5faim',['broke_aim',['../firearms_8cpp.html#a8cddaa160e100ad9617efea0ac637d36',1,'broke_aim(CHAR_DATA *ch, int cmd):&#160;firearms.cpp'],['../protos_8h.html#a8cddaa160e100ad9617efea0ac637d36',1,'broke_aim(CHAR_DATA *ch, int cmd):&#160;firearms.cpp']]]
 ];

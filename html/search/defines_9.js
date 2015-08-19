@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['iac',['IAC',['../BroadwaveClient_8cpp.html#a8eebea7e67724c49a6f97c3215a7e72d',1,'BroadwaveClient.cpp']]],
   ['if_5fstr',['IF_STR',['../utils_8h.html#ace67c12a73ea6077d19ac50f10fb05bc',1,'utils.h']]],
   ['illegal_5fitem',['ILLEGAL_ITEM',['../auctions_8cpp.html#aa48b02ed128be5774fea0f46b3d0736f',1,'auctions.cpp']]],
   ['imote_5fopchar',['IMOTE_OPCHAR',['../staff_8cpp.html#a8636d162243788233dff39dfaa548283',1,'staff.cpp']]],

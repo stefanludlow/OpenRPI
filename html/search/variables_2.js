@@ -44,7 +44,6 @@ var searchData=
   ['clanrank',['clanrank',['../structtrack__data.html#a5fe2d58facd7b6441340aafbeb5854b2',1,'track_data']]],
   ['clans',['clans',['../structmonitor__data.html#a25333cb59bdd5b479dc0a1453a2731e4',1,'monitor_data::clans()'],['../structchar__data.html#ab6a4062f8bfdacb5aea94236760062e3',1,'char_data::clans()'],['../structsubcraft__head__data.html#a1825e41c58bf7d3eb3d0f84f6f439c35',1,'subcraft_head_data::clans()']]],
   ['clantrack',['clantrack',['../structtrack__data.html#a39d1099f1c751a13cf5326a1217e8df7',1,'track_data']]],
-  ['clientservice',['clientService',['../classtBroadwave.html#adff4bca86536a98a70666d4a6151f0c0',1,'tBroadwave']]],
   ['clip',['clip',['../unionobj__info.html#acc99009097df8afe28a196266eb1624c',1,'obj_info']]],
   ['cloak',['cloak',['../unionobj__info.html#aa90c655fc6e7875a67dd4594ac93271b',1,'obj_info']]],
   ['clock',['clock',['../structobj__data.html#a31e1c7ba26a3cd211fdd2fb3bde8ef0f',1,'obj_data::clock()'],['../structchar__data.html#a8ccd0ef401064315ddc7bf1341b5c8ca',1,'char_data::clock()']]],

@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['ga',['GA',['../BroadwaveClient_8cpp.html#aee72d049d05c4a0b3b152799d34667b4',1,'BroadwaveClient.cpp']]],
   ['game_5fbase_5fyear',['GAME_BASE_YEAR',['../structs_8h.html#a669fd3334f8ca5bc809327d1eeec5064',1,'structs.h']]],
   ['game_5fseconds_5fbeginning',['GAME_SECONDS_BEGINNING',['../structs_8h.html#a85e93bba3985e7a4e8dfa953e83b9da3',1,'structs.h']]],
   ['game_5fseconds_5fper_5fday',['GAME_SECONDS_PER_DAY',['../structs_8h.html#a37b6efb269334c3778f4f19ea6fc2759',1,'structs.h']]],

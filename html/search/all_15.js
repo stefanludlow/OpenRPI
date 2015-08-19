@@ -60,7 +60,7 @@ var searchData=
   ['use_5ftable',['use_table',['../handler_8cpp.html#a9d211dbdfbe2130acc5f17d47bad3263',1,'use_table():&#160;handler.cpp'],['../protos_8h.html#a9d211dbdfbe2130acc5f17d47bad3263',1,'use_table():&#160;handler.cpp']]],
   ['use_5ftable_5fdata',['use_table_data',['../structuse__table__data.html',1,'']]],
   ['uses',['uses',['../structperfume__data.html#abd44f553157c34ce18af6876c89960c4',1,'perfume_data']]],
-  ['uses_5fbook_5fcode',['uses_book_code',['../protos_8h.html#a9307456a5bde51516ba5c44ef3695fce',1,'uses_book_code(OBJ_DATA *obj):&#160;utility.cpp'],['../utility_8cpp.html#a9307456a5bde51516ba5c44ef3695fce',1,'uses_book_code(OBJ_DATA *obj):&#160;utility.cpp'],['../utils_8h.html#aa869fb37deca77fed0c274f6ce1bb9d7',1,'USES_BOOK_CODE():&#160;utils.h']]],
+  ['uses_5fbook_5fcode',['USES_BOOK_CODE',['../utils_8h.html#aa869fb37deca77fed0c274f6ce1bb9d7',1,'USES_BOOK_CODE():&#160;utils.h'],['../protos_8h.html#a9307456a5bde51516ba5c44ef3695fce',1,'uses_book_code(OBJ_DATA *obj):&#160;utility.cpp'],['../utility_8cpp.html#a9307456a5bde51516ba5c44ef3695fce',1,'uses_book_code(OBJ_DATA *obj):&#160;utility.cpp']]],
   ['utility_2ecpp',['utility.cpp',['../utility_8cpp.html',1,'']]],
   ['utility_2eh',['utility.h',['../utility_8h.html',1,'']]],
   ['utils_2eh',['utils.h',['../utils_8h.html',1,'']]],

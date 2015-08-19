@@ -1,7 +1,6 @@
 var searchData=
 [
   ['targeted_5fbys',['targeted_bys',['../structtargeted__bys.html',1,'']]],
-  ['tbroadwave',['tBroadwave',['../classtBroadwave.html',1,'']]],
   ['text_5fdata',['text_data',['../structtext__data.html',1,'']]],
   ['threat_5fdata',['threat_data',['../structthreat__data.html',1,'']]],
   ['ticket_5fdata',['ticket_data',['../structticket__data.html',1,'']]],

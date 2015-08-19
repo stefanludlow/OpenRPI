@@ -65,6 +65,5 @@ var searchData=
   ['num_5fattackers',['num_attackers',['../act_8offensive_8cpp.html#abf0c38615fd43371a69422054de4bd42',1,'num_attackers(CHAR_DATA *ch):&#160;act.offensive.cpp'],['../protos_8h.html#abf0c38615fd43371a69422054de4bd42',1,'num_attackers(CHAR_DATA *ch):&#160;act.offensive.cpp']]],
   ['num_5ffollowers',['num_followers',['../group_8cpp.html#afce55114623240c6098626f141fc9a8b',1,'num_followers(CHAR_DATA *ch):&#160;group.cpp'],['../group_8h.html#afce55114623240c6098626f141fc9a8b',1,'num_followers(CHAR_DATA *ch):&#160;group.cpp']]],
   ['num_5fstarting_5flocs',['num_starting_locs',['../mysql_8cpp.html#aa2f1e5a40c4c055bd088796588ea6390',1,'num_starting_locs(int race):&#160;mysql.cpp'],['../protos_8h.html#aa2f1e5a40c4c055bd088796588ea6390',1,'num_starting_locs(int race):&#160;mysql.cpp']]],
-  ['num_5fundelayed_5ffollowers',['num_undelayed_followers',['../turf_8cpp.html#a1222e891819f2cdecde3465b2228df58',1,'turf.cpp']]],
   ['number',['number',['../protos_8h.html#a64e42eea1f3c3fbcb3e64b2c6c547428',1,'number(int from, int to):&#160;utility.cpp'],['../utility_8cpp.html#a64e42eea1f3c3fbcb3e64b2c6c547428',1,'number(int from, int to):&#160;utility.cpp']]]
 ];

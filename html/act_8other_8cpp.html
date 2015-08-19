@@ -95,6 +95,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &lt;string.h&gt;</code><br/>
 <code>#include &lt;ctype.h&gt;</code><br/>
 <code>#include &lt;sstream&gt;</code><br/>
+<code>#include &lt;iostream&gt;</code><br/>
 <code>#include &quot;<a class="el" href="server_8h_source.html">server.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="structs_8h_source.html">structs.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="net__link_8h_source.html">net_link.h</a>&quot;</code><br/>
@@ -331,13 +332,13 @@ Variables</h2></td></tr>
 <tr class="separator:a388a9b052cfa85e2de421c447839c258"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a139f4c42a4bd9b3688dcd936e27ad469"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structmonitor__data.html">monitor_data</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act_8other_8cpp.html#a139f4c42a4bd9b3688dcd936e27ad469">monitor_list</a></td></tr>
 <tr class="separator:a139f4c42a4bd9b3688dcd936e27ad469"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a442e7468d5a246f499066f64e790a206"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act_8other_8cpp.html#a442e7468d5a246f499066f64e790a206">msp_sound_on</a> [] = {(char) <a class="el" href="BroadwaveClient_8cpp.html#a8eebea7e67724c49a6f97c3215a7e72d">IAC</a>, (char) <a class="el" href="BroadwaveClient_8cpp.html#a5b0d9c9bc497a710de9cb73b3aaa8e0d">WILL</a>, (char) <a class="el" href="act_8other_8cpp.html#ac3f12f4118c53e4c5ec95993f80d2829">MSP</a>, '\0'}</td></tr>
+<tr class="memitem:a442e7468d5a246f499066f64e790a206"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act_8other_8cpp.html#a442e7468d5a246f499066f64e790a206">msp_sound_on</a> [] = {(char) IAC, (char) WILL, (char) <a class="el" href="act_8other_8cpp.html#ac3f12f4118c53e4c5ec95993f80d2829">MSP</a>, '\0'}</td></tr>
 <tr class="separator:a442e7468d5a246f499066f64e790a206"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adab3c624bdee126f66373cb704597aa0"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act_8other_8cpp.html#adab3c624bdee126f66373cb704597aa0">msp_sound_off</a> [] = {(char) <a class="el" href="BroadwaveClient_8cpp.html#a8eebea7e67724c49a6f97c3215a7e72d">IAC</a>, (char) <a class="el" href="BroadwaveClient_8cpp.html#a4e7340b8cc2e3357e46e04f80256cfa1">WONT</a>, (char) <a class="el" href="act_8other_8cpp.html#ac3f12f4118c53e4c5ec95993f80d2829">MSP</a>, '\0'}</td></tr>
+<tr class="memitem:adab3c624bdee126f66373cb704597aa0"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act_8other_8cpp.html#adab3c624bdee126f66373cb704597aa0">msp_sound_off</a> [] = {(char) IAC, (char) WONT, (char) <a class="el" href="act_8other_8cpp.html#ac3f12f4118c53e4c5ec95993f80d2829">MSP</a>, '\0'}</td></tr>
 <tr class="separator:adab3c624bdee126f66373cb704597aa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a728843a6406e7c623128363514bcfcda"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act_8other_8cpp.html#a728843a6406e7c623128363514bcfcda">msp_sound_ok</a> [] = {(char) <a class="el" href="BroadwaveClient_8cpp.html#a8eebea7e67724c49a6f97c3215a7e72d">IAC</a>, (char) <a class="el" href="BroadwaveClient_8cpp.html#a89f8701562ac09bf5c1e58516124c500">DO</a>, (char) <a class="el" href="act_8other_8cpp.html#ac3f12f4118c53e4c5ec95993f80d2829">MSP</a>, '\0'}</td></tr>
+<tr class="memitem:a728843a6406e7c623128363514bcfcda"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act_8other_8cpp.html#a728843a6406e7c623128363514bcfcda">msp_sound_ok</a> [] = {(char) IAC, (char) DO, (char) <a class="el" href="act_8other_8cpp.html#ac3f12f4118c53e4c5ec95993f80d2829">MSP</a>, '\0'}</td></tr>
 <tr class="separator:a728843a6406e7c623128363514bcfcda"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:addb663ad2b8880e3d56a09e3b100da4f"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act_8other_8cpp.html#addb663ad2b8880e3d56a09e3b100da4f">msp_sound_no</a> [] = {(char) <a class="el" href="BroadwaveClient_8cpp.html#a8eebea7e67724c49a6f97c3215a7e72d">IAC</a>, (char) <a class="el" href="BroadwaveClient_8cpp.html#a8dc667627b3d301fa5a8d63d478dd35b">DONT</a>, (char) <a class="el" href="act_8other_8cpp.html#ac3f12f4118c53e4c5ec95993f80d2829">MSP</a>, '\0'}</td></tr>
+<tr class="memitem:addb663ad2b8880e3d56a09e3b100da4f"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act_8other_8cpp.html#addb663ad2b8880e3d56a09e3b100da4f">msp_sound_no</a> [] = {(char) IAC, (char) DONT, (char) <a class="el" href="act_8other_8cpp.html#ac3f12f4118c53e4c5ec95993f80d2829">MSP</a>, '\0'}</td></tr>
 <tr class="separator:addb663ad2b8880e3d56a09e3b100da4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a777a8db542c01d0fcce4dd467cf72be9"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="act_8other_8cpp.html#a777a8db542c01d0fcce4dd467cf72be9">dorthonion_trees</a> []</td></tr>
 <tr class="separator:a777a8db542c01d0fcce4dd467cf72be9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2958,7 +2959,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">char msp_sound_no[] = {(char) <a class="el" href="BroadwaveClient_8cpp.html#a8eebea7e67724c49a6f97c3215a7e72d">IAC</a>, (char) <a class="el" href="BroadwaveClient_8cpp.html#a8dc667627b3d301fa5a8d63d478dd35b">DONT</a>, (char) <a class="el" href="act_8other_8cpp.html#ac3f12f4118c53e4c5ec95993f80d2829">MSP</a>, '\0'}</td>
+          <td class="memname">char msp_sound_no[] = {(char) IAC, (char) DONT, (char) <a class="el" href="act_8other_8cpp.html#ac3f12f4118c53e4c5ec95993f80d2829">MSP</a>, '\0'}</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -2970,7 +2971,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">char msp_sound_off[] = {(char) <a class="el" href="BroadwaveClient_8cpp.html#a8eebea7e67724c49a6f97c3215a7e72d">IAC</a>, (char) <a class="el" href="BroadwaveClient_8cpp.html#a4e7340b8cc2e3357e46e04f80256cfa1">WONT</a>, (char) <a class="el" href="act_8other_8cpp.html#ac3f12f4118c53e4c5ec95993f80d2829">MSP</a>, '\0'}</td>
+          <td class="memname">char msp_sound_off[] = {(char) IAC, (char) WONT, (char) <a class="el" href="act_8other_8cpp.html#ac3f12f4118c53e4c5ec95993f80d2829">MSP</a>, '\0'}</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -2982,7 +2983,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">char msp_sound_ok[] = {(char) <a class="el" href="BroadwaveClient_8cpp.html#a8eebea7e67724c49a6f97c3215a7e72d">IAC</a>, (char) <a class="el" href="BroadwaveClient_8cpp.html#a89f8701562ac09bf5c1e58516124c500">DO</a>, (char) <a class="el" href="act_8other_8cpp.html#ac3f12f4118c53e4c5ec95993f80d2829">MSP</a>, '\0'}</td>
+          <td class="memname">char msp_sound_ok[] = {(char) IAC, (char) DO, (char) <a class="el" href="act_8other_8cpp.html#ac3f12f4118c53e4c5ec95993f80d2829">MSP</a>, '\0'}</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -2994,7 +2995,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">char msp_sound_on[] = {(char) <a class="el" href="BroadwaveClient_8cpp.html#a8eebea7e67724c49a6f97c3215a7e72d">IAC</a>, (char) <a class="el" href="BroadwaveClient_8cpp.html#a5b0d9c9bc497a710de9cb73b3aaa8e0d">WILL</a>, (char) <a class="el" href="act_8other_8cpp.html#ac3f12f4118c53e4c5ec95993f80d2829">MSP</a>, '\0'}</td>
+          <td class="memname">char msp_sound_on[] = {(char) IAC, (char) WILL, (char) <a class="el" href="act_8other_8cpp.html#ac3f12f4118c53e4c5ec95993f80d2829">MSP</a>, '\0'}</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -3040,7 +3041,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 17 2015 22:02:22 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 18 2015 21:38:47 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

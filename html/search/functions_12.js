@@ -43,7 +43,6 @@ var searchData=
   ['save_5fshop',['save_shop',['../protos_8h.html#a628fef66789d34a1f9db52fe9459cddc',1,'protos.h']]],
   ['save_5fstayput_5fmobiles',['save_stayput_mobiles',['../mysql_8cpp.html#abf1d215b17170ed634bed97f1e7ad66d',1,'save_stayput_mobiles():&#160;mysql.cpp'],['../protos_8h.html#abf1d215b17170ed634bed97f1e7ad66d',1,'save_stayput_mobiles():&#160;mysql.cpp']]],
   ['save_5ftracks',['save_tracks',['../mysql_8cpp.html#a1d8a695614c158a935cf1736433260cf',1,'save_tracks(void):&#160;mysql.cpp'],['../protos_8h.html#a637c009a97eea247e66ffa96210e0e8f',1,'save_tracks():&#160;mysql.cpp']]],
-  ['save_5fturf_5fmysql',['save_turf_mysql',['../turf_8h.html#a5b12f0a9253d6ce8df2a5ccc2b3f621a',1,'turf.h']]],
   ['save_5fworld_5fstate',['save_world_state',['../comm_8cpp.html#a13b73616be1d2ae64d9e0ddaf03ba498',1,'comm.cpp']]],
   ['save_5fwriting',['save_writing',['../mysql_8cpp.html#a6a083efd6c0624a89a6c457c3aac1b5a',1,'save_writing(OBJ_DATA *obj):&#160;mysql.cpp'],['../protos_8h.html#a6a083efd6c0624a89a6c457c3aac1b5a',1,'save_writing(OBJ_DATA *obj):&#160;mysql.cpp']]],
   ['saveblock',['saveBlock',['../classBlock.html#a76ab5cc26d168222de57266857087f3f',1,'Block']]],
@@ -203,6 +202,5 @@ var searchData=
   ['survival_5froutine',['survival_routine',['../mobact_8cpp.html#a862127dc66301b3954a2f82393a8156f',1,'survival_routine(CHAR_DATA *ch):&#160;mobact.cpp'],['../protos_8h.html#a862127dc66301b3954a2f82393a8156f',1,'survival_routine(CHAR_DATA *ch):&#160;mobact.cpp']]],
   ['swap_5fxmote_5ftarget',['swap_xmote_target',['../protos_8h.html#ae85ff91cf7508160eb106eba4aa83014',1,'swap_xmote_target(CHAR_DATA *ch, char *argument, int cmd):&#160;utility.cpp'],['../utility_8cpp.html#ae85ff91cf7508160eb106eba4aa83014',1,'swap_xmote_target(CHAR_DATA *ch, char *argument, int cmd):&#160;utility.cpp']]],
   ['swimming_5fcheck',['swimming_check',['../act_8movement_8cpp.html#a5bfce4e716903e293dd0441c2f461094',1,'swimming_check(CHAR_DATA *ch):&#160;act.movement.cpp'],['../protos_8h.html#a5bfce4e716903e293dd0441c2f461094',1,'swimming_check(CHAR_DATA *ch):&#160;act.movement.cpp']]],
-  ['system_5flog',['system_log',['../mysql_8cpp.html#a84a16f74790ef1711bc72fdb9b2aebda',1,'system_log(const char *str, bool error):&#160;mysql.cpp'],['../protos_8h.html#a84a16f74790ef1711bc72fdb9b2aebda',1,'system_log(const char *str, bool error):&#160;mysql.cpp']]],
-  ['systembroadwave',['systemBroadwave',['../classtBroadwave.html#a9440718c9bc24ec9ca48c4cec153ee79',1,'tBroadwave']]]
+  ['system_5flog',['system_log',['../mysql_8cpp.html#a84a16f74790ef1711bc72fdb9b2aebda',1,'system_log(const char *str, bool error):&#160;mysql.cpp'],['../protos_8h.html#a84a16f74790ef1711bc72fdb9b2aebda',1,'system_log(const char *str, bool error):&#160;mysql.cpp']]]
 ];

@@ -14,6 +14,8 @@
 {\ttfamily \#include $<$sys/stat.\-h$>$}\\*
 {\ttfamily \#include $<$mysql/mysql.\-h$>$}\\*
 {\ttfamily \#include $<$limits.\-h$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
 {\ttfamily \#include \char`\"{}server.\-h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}structs.\-h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}net\-\_\-link.\-h\char`\"{}}\\*
@@ -109,8 +111,6 @@ void \hyperlink{staff_8cpp_a1b3322e00ed2236bb466b52431773f0a}{disconnect\-\_\-ba
 void \hyperlink{staff_8cpp_ab6be93db07f3e8372e2b34952273c4ed}{ban\-\_\-host} (char $\ast$host, char $\ast$banned\-\_\-by, int length)
 \item 
 void \hyperlink{staff_8cpp_aa47a6f0eb0eed7d65ad5d4a41629860a}{do\-\_\-disconnect} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
-\item 
-void \hyperlink{staff_8cpp_a8d7f0a4e4f7595dfb96c8b10cb000deb}{do\-\_\-broadwave} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
 \item 
 void \hyperlink{staff_8cpp_a6fb881ae3944c85d39a639a44ba6a929}{do\-\_\-ban} (\hyperlink{structs_8h_af33ed1e66e8541a08bed257124f50f31}{C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$ch, char $\ast$argument, int cmd)
 \item 
@@ -730,15 +730,6 @@ std\-::vector$<$ \hyperlink{structdefined__scent}{defined\-\_\-scent} $\ast$ $>$
 \item[{int}]{cmd}
 \end{DoxyParamCaption}
 )}}\label{staff_8cpp_ae04d0c3cf5c429ac066af98499715231}
-\hypertarget{staff_8cpp_a8d7f0a4e4f7595dfb96c8b10cb000deb}{\index{staff.\-cpp@{staff.\-cpp}!do\-\_\-broadwave@{do\-\_\-broadwave}}
-\index{do\-\_\-broadwave@{do\-\_\-broadwave}!staff.cpp@{staff.\-cpp}}
-\subsubsection[{do\-\_\-broadwave}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-broadwave (
-\begin{DoxyParamCaption}
-\item[{{\bf C\-H\-A\-R\-\_\-\-D\-A\-T\-A} $\ast$}]{ch, }
-\item[{char $\ast$}]{argument, }
-\item[{int}]{cmd}
-\end{DoxyParamCaption}
-)}}\label{staff_8cpp_a8d7f0a4e4f7595dfb96c8b10cb000deb}
 \hypertarget{staff_8cpp_aff79972ebd61f1b6c9e2014efad1a565}{\index{staff.\-cpp@{staff.\-cpp}!do\-\_\-checkshop@{do\-\_\-checkshop}}
 \index{do\-\_\-checkshop@{do\-\_\-checkshop}!staff.cpp@{staff.\-cpp}}
 \subsubsection[{do\-\_\-checkshop}]{\setlength{\rightskip}{0pt plus 5cm}void do\-\_\-checkshop (
