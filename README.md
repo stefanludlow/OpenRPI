@@ -1,14 +1,21 @@
-OpenRPI Project Sourcecode
-Please see https://github.com/Sebguer/OpenRPI for server setup. This project is the original OpenRPI after having been worked on for about 2 years. If you would like to utilize this engine, please contact me at ludlow.stefan@gmail.com and I'll happily provide a snapshot of the development server via DigitalOcean. 
-Read the licenses. Don't like them, don't run the MUD.
 
-#Basic Instructions to Run a Server on DigitalOcean
+# OpenRPI
 
-##Step 1, purchase a Droplet.
+**Description**:  OpenRPI is an open-source c++ linux engine for text-based multiplayer online games, aka MUDs. It shares ancestry with DIKU muds, though it is one of the "RPI" class of engines, meaning that it supports permanant character death, classless/levelless character progression, in addition to many other features. Variants of the engine are currently used by Shadows of Isildur (www.middle-earth.us), Parallel (www.parallelrpi.com), Black Sands (now defunct), Atonement (now defunct), and many others. 
+
+The engine is currently live and actively maintained.
+
+Pre-configured DigitalOcean snapshots are available for use. Please contact me at ludlow.stefan@gmail.com. These snapshots will allow you to get the engine up and running within minutes without having to manage much of the server configuration. 
+
+
+## Basic Instructions to Run
+*These instructions were originally drafted by github.com/sebguer and github.com/yourcyborg*
+
+### Step 1, purchase a Droplet.
 
 Go to http://www.digitalocean.com and register an account.
 
-##Step 2, spin up your Droplet.b
+### Step 2, spin up your Droplet.b
 
 Select your Hostname at the top. If you have a domain purchased somewhere, go ahead and use that domain as your hostname.
 
@@ -21,7 +28,7 @@ make sure VirtIO is checked. Consider enable backups. The pricing for backups is
 
 Hit Create.
 
-##Step 3, log in.
+### Step 3, log in.
 
 Once your Droplet's created, you'll get an e-mail with the root password. At this point, if you're using a Mac or Linux locally,
 you can use your terminal to ssh in:
@@ -37,7 +44,7 @@ Once you've installed it, put your IP as the host, port 22, and for authenticati
 Then hit connect.
 
 
-##Step 4, configuration!
+### Step 4, configuration!
 
 At this point, you should be greeted by root@hostname:~#
 
@@ -99,6 +106,8 @@ Now type:
 
 cd ~
 git clone git@github.com:Sebguer/OpenRPI.git
+
+*note: the sebguer OpenRPI contains the needed directory structure for the engine to function. Highly suggested that you utilize that structure using the above commands and then cd /home/<directoryname>/src and then git clone git@github.com:stefanludlow/OpenRPI.git*
 
 Now we're going to add all of the sql files in *RPI into those databases you just made.
 
@@ -189,9 +198,33 @@ grep -rnw 'tp' -e "BlahBlahBlah"
 
 mysqldump -u myuser --no-create-info databasename > myfile.sql
 Then you can just do a find on myfile.sql for the string you want.
+## Credits
+- James Hansen, aka "Kithrater" 
+- Donathin Frye, aka "Jaunt"
+- Stefan Ludlow, aka "Icarus"
+- Faye Yao, aka "Tiamat"
+- Michael Guerin., aka "Holmes"
+- Andrej A., aka "Ceredir"
+- Carl M., aka "Grommit" 
+- Mary Hudson, aka "Bristlecone"
+- Huan
+- Jonathan W. Webb, aka "Sighentist"
+- Serinde
+- C. W. McHenry, aka "Traithe"
+- Japheth 
+- Liam W., aka "Kite" 
+- Evan Colyer, aka "Krelm" (He built half these games) 
+- Octavius (He built massive amounts as well. At the very least he taught us what not to do. Valuable lesson all the same)
+- Charles Rand, aka "Rassilon"
+- Hans Henrik Staerfeldt
+- Tom Madson
+- Katja Nyboe
+- Michael Seifert
+- Sebastian Hammer
 
+*And many more. If we have no included your contribution, please let us know and we will promptly correct it! This codebase is the work of dozens of individuals over more than three decades, and without each of these individuals this engine simply wouldn't exist.*
 
-License:
+## License:
 Copyright (c) 2015, Stefan Ludlow
 All rights reserved.
 
@@ -204,3 +237,5 @@ Redistribution and use in source and binary forms, with or without modification,
 3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+*Please note that historical licenses exist in the ./lib directory.*
