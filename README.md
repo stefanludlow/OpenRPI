@@ -222,7 +222,7 @@ Then you can just do a find on myfile.sql for the string you want.
 - Michael Seifert
 - Sebastian Hammer
 
-*And many more. If we have no included your contribution, please let us know and we will promptly correct it! This codebase is the work of dozens of individuals over more than three decades, and without each of these individuals this engine simply wouldn't exist.*
+*And many more. If we have not included your contribution, please let us know and we will promptly correct it! This codebase is the work of dozens of individuals over more than three decades, and without each of these individuals this engine simply wouldn't exist.*
 
 ## License:
 Copyright (c) 2015, Stefan Ludlow
