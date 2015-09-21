@@ -25,6 +25,7 @@
 #include "utils.h"
 #include "decl.h"
 #include "utility.h"
+#include "sha256.h"
 
 extern rpie::server engine;
 
@@ -244,7 +245,7 @@ display_unread_messages (DESCRIPTOR_DATA * d)
         return;
 
     sprintf (buf,
-             "#6There %s %d unread Hobbitmail%s awaiting your attention!#0\n\n",
+             "#6There %s %d unread MUD-Mail%s awaiting your attention!#0\n\n",
              unread > 1 ? "are" : "is", unread, unread > 1 ? "s" : "");
     SEND_TO_Q (buf, d);
 }
@@ -319,8 +320,19 @@ display_main_menu (DESCRIPTOR_DATA * d)
 char *
 encrypt_buf (const char *buf)
 {
-    //  extern char *crypt (const char *key, const char *salt);
-    return str_dup (crypt (buf, "CR"));
+
+	char salted[MAX_STRING_LENGTH];
+	char *pw;
+	
+	
+	sprintf(salted, "%sYoursaltgoeshere", buf);
+	pw = str_dup(salted);
+	
+	std::string str;
+	str = sha256(pw);
+	buf = str.c_str();
+	
+    return str_dup(buf);
 }
 
 int
@@ -336,6 +348,89 @@ check_password (const char *pass, const char *encrypted)
     mem_free (p); // char* from crypt()
 
     return return_value;
+}
+
+void nanny_reset_password (DESCRIPTOR_DATA *d, char *argument)
+{
+	
+	 if (str_cmp (CAP (argument), "Anonymous"))
+    {
+        d->acct = new account (argument);
+    }
+
+    if (!str_cmp (argument, "Anonymous") || !d->acct->is_registered ())
+    {
+        SEND_TO_Q ("\nNo such account. If you wish to create a new account,\n"
+                   "please choose option 'C' from the main menu.\n", d);
+        if (!maintenance_lock)
+            SEND_TO_Q (get_text_buffer (NULL, text_list, "greetings"), d);
+        else
+            SEND_TO_Q (get_text_buffer (NULL, text_list, "greetings.maintenance"),
+                       d);
+        
+		
+		d->connected = CON_LOGIN;
+		return;
+    }
+	
+	SEND_TO_Q( "\nPlease enter your account's email address: ", d);
+		d->connected = CON_RESET_PW_EMAIL;
+}
+
+std::string RandomString(int len)
+{
+   srand(time(0));
+   string str = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+   int pos;
+   while(str.size() != len) {
+    pos = ((rand() % (str.size() - 1)));
+    str.erase (pos, 1);
+   }
+   return str;
+}
+
+void nanny_verify_email_pw_reset (DESCRIPTOR_DATA *d, char *argument)
+{
+	char	buf[MAX_STRING_LENGTH];
+	char	email[MAX_STRING_LENGTH];
+	char	pass[MAX_STRING_LENGTH];
+	std::string pw = RandomString(12);
+	
+	if ( !d->acct ){
+		SEND_TO_Q("\nFor some reason your account wasn't loaded.\n", d);
+		d->connected = CON_PENDING_DISC;
+		return;
+	}
+	
+	if ( str_cmp(d->acct->email.c_str(), argument)){
+		SEND_TO_Q("\nThe email address you entered is incorrect. This attempt has been logged.\n", d);
+		d->connected = CON_PENDING_DISC;
+		SEND_TO_Q("\n[Press Enter]\n", d);
+		return;
+	}
+	
+	if ( strstr(d->acct->email.c_str(), "yourmudrpi.com")){
+		SEND_TO_Q("\nStaff accounts are unable to have their password reset through this manner. Please contact Mogrol.\n", d);
+		d->connected = CON_PENDING_DISC;
+		SEND_TO_Q("\n[Press Enter]\n", d);
+		return;
+	}
+	
+	
+	sprintf(email, "Hello,\nOur records indicate that you have requested a password reset. Please log in with the password below and change it upon logging in.\n\n"
+	"The IP used to submit this request was: %s\n\nThanks\nyourmud RPI Staff\n\nPassword: %s", d->strClientHostname, pw.c_str());
+	
+	sprintf(pass, "%s", pw.c_str());
+	sprintf(pass, "%s", encrypt_buf(pass));
+	d->acct->update_password (pass);
+	
+	send_email (d->acct, STAFF_EMAIL,
+                                "Account Security <" STAFF_EMAIL ">", "Password Reset",
+                                email);
+	
+	SEND_TO_Q("\nAn email has been sent to your account including a new password. Please use this password and change it upon logging in.\n", d);
+	SEND_TO_Q("\n[Press Enter]\n", d);
+	d->connected = CON_PENDING_DISC;
 }
 
 void
@@ -368,7 +463,7 @@ nanny_login_choice (DESCRIPTOR_DATA * d, char *argument)
         return;
     }
 
-    if (*buf != 'C' && *buf != 'L' && *buf != 'X')
+    if (*buf != 'C' && *buf != 'L' && *buf != 'X' && *buf != 'R')
     {
         SEND_TO_Q ("That is not a valid option, friend.\n", d);
         SEND_TO_Q ("Your Selection: ", d);
@@ -413,6 +508,13 @@ nanny_login_choice (DESCRIPTOR_DATA * d, char *argument)
         d->connected = CON_ENTER_ACCT_NME;
         return;
     }
+	
+	else if ( *buf == 'R')
+	{
+		SEND_TO_Q ("To reset your account password, please enter your account name: ", d);
+		d->connected = CON_RESET_PW;
+		return;
+	}
 
     else if (*buf == 'X')
     {
@@ -658,7 +760,7 @@ nanny_check_password (DESCRIPTOR_DATA * d, char *argument)
             }
         }
         SEND_TO_Q
-        ("\n\nIncorrect password - have you forgotten it? Visit here to obtain a new one:\n\nhttp://www.laketownrpi.us/forums",
+        ("\n\nIncorrect password - have you forgotten it? Choose 'reset my password' from the main menu.",
          d);
         d->acct->password_attempt++;
         return;
@@ -1737,7 +1839,7 @@ nanny_composing_message (DESCRIPTOR_DATA * d, char *argument)
     else
     {
         SEND_TO_Q
-        ("#2Thanks! Your Hobbitmail has been delivered to the specified account.#0\n\n",
+        ("#2Thanks! Your MUD-Mail has been delivered to the specified account.#0\n\n",
          d);
         for (td = descriptor_list; td; td = td->next)
         {
@@ -1746,7 +1848,7 @@ nanny_composing_message (DESCRIPTOR_DATA * d, char *argument)
                 continue;
             if (str_cmp (td->acct->name.c_str (), acct->name.c_str ()) == 0)
                 SEND_TO_Q
-                ("#6\nA new Hobbitmail has arrived for your account!#0\n", td);
+                ("#6\nA new MUD-Mail has arrived for your account!#0\n", td);
         }
     }
 
@@ -1785,7 +1887,7 @@ nanny_compose_message (DESCRIPTOR_DATA * d, char *argument)
     ("\n#2Enter message; terminate with an '@' when completed. Once finished,\n",
      d);
     SEND_TO_Q
-    ("hit ENTER again to send and return to the main Hobbitmail menu.#0\n\n",
+    ("hit ENTER again to send and return to the main MUD-Mail menu.#0\n\n",
      d);
 
     d->pending_message->message = NULL;
@@ -1925,7 +2027,7 @@ nanny_compose_mail_to (DESCRIPTOR_DATA * d, char *argument)
     if (str_cmp (acct->name.c_str (), "Guest") == 0)
     {
         SEND_TO_Q
-        ("#1\nSorry, but Hobbitmail cannot be sent to the guest account.#0\n",
+        ("#1\nSorry, but MUD-Mail cannot be sent to the guest account.#0\n",
          d);
         SEND_TO_Q ("\nTo which PC's player do you wish to send a message? ", d);
         unload_pc (tch);
@@ -2147,7 +2249,7 @@ nanny_read_message (DESCRIPTOR_DATA * d, char *argument)
         ("DELETE FROM hobbitmail WHERE account = '%s' AND id = %d",
          d->acct->name.c_str (), (long int) d->stored);
         sprintf (buf,
-                 "\n#1The specified Hobbitmail has been deleted from your account.#0\n\n");
+                 "\n#1The specified MUD-Mail has been deleted from your account.#0\n\n");
         SEND_TO_Q (buf, d);
 
         display_hobbitmail_inbox (d, d->acct);
@@ -3387,7 +3489,7 @@ nanny_choose_pc (DESCRIPTOR_DATA * d, char *argument)
     {
         send_to_char ("\n", d->character);
         act
-        ("Welcome to SoI-Laketown RPI! If you are a new player and have any questions, please type #6HELP HELPLINE#0. If your questions require an admin, please type #6HELP PETITION#0. We don't bite, promise.",
+        ("Welcome to yourmud RPI! If you are a new player and have any questions, please type #6HELP HELPLINE#0. If your questions require an admin, please type #6HELP PETITION#0. We don't bite, promise.",
          false, d->character, 0, 0, TO_CHAR | _ACT_FORMAT);
     }
 

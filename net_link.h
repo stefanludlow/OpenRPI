@@ -154,7 +154,9 @@ enum connection_state
   CON_DESC_ONE_HALF,
   CON_DESC_TWO,
   CON_DESC_THREE,
-  CON_DESC_FOUR
+  CON_DESC_FOUR,
+  CON_RESET_PW,
+  CON_RESET_PW_EMAIL
 };
 typedef enum connection_state CONNECTION_STATE;
 
