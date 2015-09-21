@@ -24,13 +24,13 @@ guides.o handler.o hash.o item_card.o item_tossable.o \
 limits.o magic.o mobact.o mobprogs.o mysql.o \
 nanny.o net_link.o object_damage.o objects.o olc.o \
 perception.o psionics.o roles.o roomprogs.o save.o \
-server.o somatics.o \
+server.o sha256.o somatics.o \
 staff.o transformation.o utility.o weather.o wounds.o \
 traps.o electronic.o variables.o firearms.o 
 
 HEADERS = \
 account.h clan.h constants.h decl.h group.h net_link.h \
-object_damage.h protos.h server.h structs.h trigram.h utils.h  
+object_damage.h protos.h server.h sha256.h structs.h trigram.h utils.h  
 
 # default target
 /home/sanctuary/tp/bin/server: $(OBJS)
