@@ -1923,7 +1923,12 @@ randomize_mobile (CHAR_DATA * mob)
 */
 	// return;
 	
-	if ( !IS_NPC(mob) && mob->race == lookup_race_id("Human"))
+	// Fix the guest lounge bug, probably a temporary fix but it works - Morgol
+	
+	// Add this line to the check below later if you want, but 'human' doesn't exist in the openRPI engine.
+	// && mob->race == lookup_race_id("Human")
+	
+	if ( !IS_NPC(mob) )
     {
 	    new_randomize_mobile(mob, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
         return;
